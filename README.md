@@ -32,11 +32,10 @@ Astro es un framework moderno para crear sitios web rápidos y optimizados. Comb
 
 ```
 
-## 🧑‍💻 Tecnologías Utilizadas:
+## 🧑‍💻 Tecnologías Utilizadas
 
-⚡ Astro: Para la estructura principal del sitio.
-⚛️ React: Componentes interactivos y reutilizables.
-🎨 CSS / Tailwind (opcional): Estilos modernos y personalizables.
-📄 Markdown: Ideal para la creación de entradas del blog o contenido estático.
-▶️ Comenzar
+- ⚡ **Astro**: Para la estructura principal del sitio.  
+- ⚛️ **React**: Componentes interactivos y reutilizables.  
+- 🎨 **CSS / Tailwind (opcional)**: Estilos modernos y personalizables.  
+- 📄 **Markdown**: Ideal para la creación de entradas del blog o contenido estático.
 
