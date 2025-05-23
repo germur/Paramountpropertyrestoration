@@ -1,0 +1,226 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  author: string;
+  date: Date;
+  slug: string;
+  tags: string[];
+  image?: string;
+  featured?: boolean;
+}
+
+const { title, description, author, date, slug, tags, image, featured = false } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class={`blog-card ${featured ? 'featured' : ''}`}>
+  {image && (
+    <div class="blog-card-image">
+      <a href={`/blog/${slug}`}>
+        <img src={image} alt={title} loading="lazy" />
+      </a>
+      {featured && (
+        <div class="featured-badge">
+          <span>Destacado</span>
+        </div>
+      )}
+    </div>
+  )}
+  
+  <div class="blog-card-content">
+    <div class="blog-card-tags">
+      {tags.slice(0, 3).map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+    
+    <h3 class="blog-card-title">
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h3>
+    
+    <p class="blog-card-description">{description}</p>
+    
+    <div class="blog-card-footer">
+      <div class="blog-card-meta">
+        <span class="blog-card-author">Por {author}</span>
+        <time class="blog-card-date" datetime={date.toISOString()}>
+          {formattedDate}
+        </time>
+      </div>
+      
+      <a href={`/blog/${slug}`} class="read-more">
+        Leer más
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .blog-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .blog-card.featured {
+    border: 2px solid var(--color-primary);
+  }
+
+  .blog-card-image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: var(--spacing-3);
+    right: var(--spacing-3);
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+
+  .blog-card-content {
+    padding: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .blog-card-tags {
+    display: flex;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  .blog-card-title {
+    margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-xl);
+    line-height: 1.3;
+  }
+
+  .blog-card-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .blog-card-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .blog-card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-6);
+    flex-grow: 1;
+  }
+
+  .blog-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+
+  .blog-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+
+  .blog-card-author {
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .blog-card-date {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+  }
+
+  .read-more {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease;
+  }
+
+  .read-more:hover {
+    color: var(--color-primary-dark);
+    transform: translateX(2px);
+  }
+
+  .read-more svg {
+    transition: transform 0.2s ease;
+  }
+
+  .read-more:hover svg {
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 768px) {
+    .blog-card-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-3);
+    }
+
+    .blog-card-meta {
+      width: 100%;
+    }
+
+    .read-more {
+      align-self: flex-end;
+    }
+  }
+</style>

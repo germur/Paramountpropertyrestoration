@@ -1,0 +1,770 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.jsx";
+---
+
+<BaseLayout
+  title="Contacto - Mi Sitio Web"
+  description="Ponte en contacto con nosotros. Estamos aquí para ayudarte con tu proyecto digital. Consulta gratuita disponible."
+>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Contactanos</h1>
+        <p class="hero-description">
+          ¿Tienes un proyecto en mente? ¿Necesitas ayuda con tu presencia
+          digital? Estamos aquí para ayudarte. Contáctanos y comencemos a
+          trabajar juntos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <div class="form-header">
+            <h2>Envíanos un mensaje</h2>
+            <p>
+              Completa el formulario y te responderemos en menos de 24 horas.
+            </p>
+          </div>
+          <ContactForm client:load />
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-section">
+          <div class="info-card">
+            <h3>Información de contacto</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:info@misitio.com">info@misitio.com</a>
+                <a href="mailto:contacto@misitio.com">contacto@misitio.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Teléfono</h4>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="tel:+0987654321">+0 (987) 654-321</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Dirección</h4>
+                <p>
+                  123 Calle Principal<br />
+                  Ciudad, Estado 12345<br />
+                  País
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Horario de atención</h4>
+                <p>
+                  Lunes - Viernes: 9:00 AM - 6:00 PM<br />
+                  Sábados: 10:00 AM - 2:00 PM<br />
+                  Domingos: Cerrado
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-card">
+            <h3>Síguenos en redes sociales</h3>
+            <div class="social-links">
+              <a href="#" class="social-link facebook">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+                Facebook
+              </a>
+              <a href="#" class="social-link twitter">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  ></path>
+                </svg>
+                Twitter
+              </a>
+              <a href="#" class="social-link linkedin">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  ></path>
+                </svg>
+                LinkedIn
+              </a>
+              <a href="#" class="social-link instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <!-- Fondo con gradiente de Instagram -->
+                  <defs>
+                    <linearGradient
+                      id="instagram-gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" style="stop-color:#f09433"></stop>
+                      <stop offset="25%" style="stop-color:#e6683c"></stop>
+                      <stop offset="50%" style="stop-color:#dc2743"></stop>
+                      <stop offset="75%" style="stop-color:#cc2366"></stop>
+                      <stop offset="100%" style="stop-color:#bc1888"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="6"
+                    ry="6"
+                    fill="url(#instagram-gradient)"></rect>
+                  <!-- Círculo central (cámara) -->
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"></circle>
+                  <!-- Punto superior derecho -->
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="white"></circle>
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <h2 class="section-title">Nuestra ubicación</h2>
+      <div class="map-container">
+        <!-- Placeholder para el mapa - puedes integrar Google Maps o similar -->
+        <div class="map-placeholder">
+          <div class="map-content">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <h3>Visítanos en nuestra oficina</h3>
+            <p>123 Calle Principal, Ciudad, Estado 12345</p>
+            <a href="https://maps.google.com" target="_blank" class="btn"
+              >Ver en Google Maps</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Respuestas rápidas a las consultas más comunes</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" data-faq="faq1">
+            <span>¿Ofrecen consultas gratuitas?</span>
+            <svg
+              class="faq-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq1">
+            <p>
+              Sí, ofrecemos una consulta inicial gratuita de 30 minutos para
+              discutir tu proyecto y entender tus necesidades. Durante esta
+              sesión, evaluaremos tus objetivos y te proporcionaremos
+              recomendaciones iniciales.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" data-faq="faq2">
+            <span>¿Cuál es su tiempo de respuesta?</span>
+            <svg
+              class="faq-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq2">
+            <p>
+              Nos comprometemos a responder todos los mensajes dentro de las 24
+              horas durante días hábiles. Para consultas urgentes, también
+              puedes contactarnos por teléfono durante nuestro horario de
+              atención.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" data-faq="faq3">
+            <span>¿Trabajan con clientes internacionales?</span>
+            <svg
+              class="faq-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq3">
+            <p>
+              Absolutamente. Trabajamos con clientes de todo el mundo.
+              Utilizamos herramientas de comunicación digital y podemos adaptar
+              nuestros horarios para facilitar la colaboración en diferentes
+              zonas horarias.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" data-faq="faq4">
+            <span>¿Qué información necesitan para empezar?</span>
+            <svg
+              class="faq-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq4">
+            <p>
+              Para comenzar, necesitamos entender tus objetivos, presupuesto
+              aproximado, cronograma deseado y cualquier material existente
+              (logos, contenido, etc.). Cuanta más información compartas, mejor
+              podremos personalizar nuestra propuesta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Listo para comenzar tu proyecto?</h2>
+        <p>
+          No esperes más. Contáctanos hoy mismo y da el primer paso hacia el
+          éxito digital de tu negocio.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact-form" class="btn">Enviar mensaje</a>
+          <a href="tel:+1234567890" class="btn btn-secondary">Llamar ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-dark) 100%
+    );
+    color: white;
+    padding: var(--spacing-12) 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-6);
+    color: white;
+  }
+
+  .hero-description {
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-12);
+    align-items: start;
+  }
+
+  .contact-form-section {
+    background: white;
+    padding: var(--spacing-8);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-header {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .form-header h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .form-header p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
+
+  .info-card,
+  .social-card {
+    background: white;
+    padding: var(--spacing-6);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+  }
+
+  .info-card h3,
+  .social-card h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-6);
+    font-size: var(--font-size-xl);
+  }
+
+  .contact-item {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .contact-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .contact-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-details h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .contact-details a {
+    color: var(--color-primary);
+    text-decoration: none;
+    display: block;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .contact-details a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-details p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+
+  .social-link.facebook {
+    color: #1877f2;
+    background: rgba(24, 119, 242, 0.1);
+  }
+
+  .social-link.twitter {
+    color: #1da1f2;
+    background: rgba(29, 161, 242, 0.1);
+  }
+
+  .social-link.linkedin {
+    color: #0077b5;
+    background: rgba(0, 119, 181, 0.1);
+  }
+
+  .social-link.instagram {
+    color: #e4405f;
+    background: rgba(228, 64, 95, 0.1);
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .map-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-16) 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-8);
+    color: var(--text-primary);
+  }
+
+  .map-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .map-placeholder {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-content {
+    text-align: center;
+    padding: var(--spacing-8);
+  }
+
+  .map-content svg {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .map-content h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .map-content p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-4);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: var(--spacing-6);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    background: var(--bg-secondary);
+  }
+
+  .faq-question.active {
+    background: var(--bg-secondary);
+  }
+
+  .faq-icon {
+    transition: transform 0.2s ease;
+    color: var(--color-primary);
+  }
+
+  .faq-question.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-answer.active {
+    max-height: 200px;
+  }
+
+  .faq-answer p {
+    padding: 0 var(--spacing-6) var(--spacing-6);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    background: var(--bg-secondary);
+    padding: var(--spacing-12);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .cta-content h2 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .cta-content p {
+    margin-bottom: var(--spacing-6);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-8);
+    }
+
+    .contact-info-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-form-section {
+      padding: var(--spacing-6);
+    }
+
+    .contact-info-section {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contact-icon {
+      align-self: center;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // FAQ functionality
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+      question.addEventListener("click", () => {
+        const faqId = (question as HTMLElement).dataset.faq;
+        const answer = document.getElementById(faqId || "");
+
+        // Close all other FAQs
+        faqQuestions.forEach((otherQuestion) => {
+          if (otherQuestion !== question) {
+            otherQuestion.classList.remove("active");
+            const otherId = (otherQuestion as HTMLElement).dataset.faq;
+            const otherAnswer = document.getElementById(otherId || "");
+            otherAnswer?.classList.remove("active");
+          }
+        });
+
+        // Toggle current FAQ
+        question.classList.toggle("active");
+        answer?.classList.toggle("active");
+      });
+    });
+
+    // Smooth scroll to contact form
+    const contactFormLink = document.querySelector('a[href="#contact-form"]');
+    if (contactFormLink) {
+      contactFormLink.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+        const formSection = document.querySelector(".contact-form-section");
+        if (formSection) {
+          formSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    }
+  });
+</script>
