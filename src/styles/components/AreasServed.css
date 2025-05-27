@@ -1,0 +1,51 @@
+.areas-served {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.areas-served h3 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 40px 10px 30px;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1400px;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.area-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    transition: transform 0.3s ease;
+    max-width: 350px;
+}
+
+.area-card:hover {
+    transform: scale(1.05);
+}
+
+.area-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.area-card p {
+    margin: 20px 0 20px;
+    font-weight: 700;
+    color: #333;
+}

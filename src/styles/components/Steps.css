@@ -1,0 +1,63 @@
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    background-color: white;
+    color: #0C4E6E;
+    font-size: 25px;
+    font-weight: bold;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.4), 0 -2px 0 0 rgba(10, 0, 18, 0.1);
+}
+
+.step:not(:last-child) .step-number::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + 20px);
+    background-color: rgba(16, 24, 40, 0.05);
+}
+
+.step-content .step-tittle {
+    font-size: 20px;
+    font-weight:400;
+    color: #333;
+    line-height: 1.2;
+}
+
+.step-content .step-text {
+    margin: 8px 0 0;
+    font-size: 16px;
+    color: #6F6F6F;
+    line-height: 1.2;
+}
+.step-tiitlePrinci{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 15px 20px 30px;
+    line-height: 1.2;
+}
