@@ -20,9 +20,9 @@ const CtaAll = () => {
                     </div>
                     <div className="team-section">
                         <div className="team-images">
-                            <img src="/images/avatarOne.png" alt="Person 1" className="team-member one" />
-                            <img src="/images/avatarTwo.png" alt="Person 2" className="team-member two" />
-                            <img src="/images/avatarThree.png" alt="Person 3" className="team-member three" />
+                            <img src="images/avatarOne.png" alt="Person 1" className="team-member one" />
+                            <img src="images/avatarTwo.png" alt="Person 2" className="team-member two" />
+                            <img src="images/avatarThree.png" alt="Person 3" className="team-member three" />
                         </div>
                         <h2 className='tittleH2Team'>Shaping Spaces, Inspiring Futures</h2>
                     </div>

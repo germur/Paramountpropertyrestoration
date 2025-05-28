@@ -7,14 +7,14 @@ export default function ProjectsFilter() {
     const [fadeKey, setFadeKey] = useState(0);
 
     const projects = [
-        { id: 1, name: "Cocina Moderna", category: "Kitchens", image: "/images/cocina.jpg", description: "Una cocina moderna con acabados en mármol y diseño minimalista." },
-        { id: 2, name: "Cocina Clásica", category: "Kitchens", image: "/images/cocinaClasica.jpg", description: "Un diseño clásico con madera y toques vintage." },
-        { id: 3, name: "Baño Minimalista", category: "Bathrooms", image: "/images/bañoMinimalista.jpg", description: "Baño con estilo minimalista, ducha de vidrio y tonos neutros." },
-        { id: 4, name: "Baño de Lujo", category: "Bathrooms", image: "/images/bañoLujo.jpg", description: "Baño con jacuzzi, iluminación LED y mármol italiano." },
-        { id: 5, name: "Habitación Rústica", category: "Rooms", image: "/images/habitaRustica.jpg", description: "Habitación con madera natural y decoración acogedora." },
-        { id: 6, name: "Habitación Moderna", category: "Rooms", image: "/images/habitacionModerna.jpg", description: "Diseño con luces LED y muebles contemporáneos." },
-        { id: 7, name: "Tienda de Moda", category: "Commercials", image: "/images/tiendaModa.jpg", description: "Diseño moderno para tienda de ropa con vitrinas amplias." },
-        { id: 8, name: "Oficina Ejecutiva", category: "Commercials", image: "/images/oficinaEjecutiva.jpg", description: "Espacio de trabajo con decoración colorida y funcional." }
+        { id: 1, name: "Cocina Moderna", category: "Kitchens", image: "images/cocina.jpg", description: "Una cocina moderna con acabados en mármol y diseño minimalista." },
+        { id: 2, name: "Cocina Clásica", category: "Kitchens", image: "images/cocinaClasica.jpg", description: "Un diseño clásico con madera y toques vintage." },
+        { id: 3, name: "Baño Minimalista", category: "Bathrooms", image: "images/bañoMinimalista.jpg", description: "Baño con estilo minimalista, ducha de vidrio y tonos neutros." },
+        { id: 4, name: "Baño de Lujo", category: "Bathrooms", image: "images/bañoLujo.jpg", description: "Baño con jacuzzi, iluminación LED y mármol italiano." },
+        { id: 5, name: "Habitación Rústica", category: "Rooms", image: "images/habitaRustica.jpg", description: "Habitación con madera natural y decoración acogedora." },
+        { id: 6, name: "Habitación Moderna", category: "Rooms", image: "images/habitacionModerna.jpg", description: "Diseño con luces LED y muebles contemporáneos." },
+        { id: 7, name: "Tienda de Moda", category: "Commercials", image: "images/tiendaModa.jpg", description: "Diseño moderno para tienda de ropa con vitrinas amplias." },
+        { id: 8, name: "Oficina Ejecutiva", category: "Commercials", image: "images/oficinaEjecutiva.jpg", description: "Espacio de trabajo con decoración colorida y funcional." }
     ];
 
     const handleCategoryClick = (category) => {
