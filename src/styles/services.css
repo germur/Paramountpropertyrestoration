@@ -9,6 +9,7 @@
 }
 
 .hero-text h1 {
+    line-height: 1.2;
     color: black;
     font-size: 60px;
     margin: 0;

@@ -68,11 +68,12 @@ try {
               src="../../src/assets/remoKitchenHome.jpg"
             />
           </figure>
+          <div class="cnt-tag">
+            <span class="tagServices"> palabra 1 </span>
+            <span class="tagServices"> palabra 1.2 </span>
+          </div>
         </div>
-        <div class="cnt-tag">
-          <span class="tagServices"> palabra 1 </span>
-          <span class="tagServices"> palabra 1.2 </span>
-        </div>
+
         <div class="cnt-card">
           <h2 class="tittleCardServices">
             <span class="NumCardService">02</span>Bathroom Remodeling
@@ -83,11 +84,12 @@ try {
               src="../../src/assets/remoBathroomHome.jpg"
             />
           </figure>
+          <div class="cnt-tag">
+            <div class="tagServices">palabra 2</div>
+            <div class="tagServices">palabra 2.2</div>
+          </div>
         </div>
-        <div class="cnt-tag">
-          <div class="tagServices">palabra 2</div>
-          <div class="tagServices">palabra 2.2</div>
-        </div>
+
         <div class="cnt-card">
           <h2 class="tittleCardServices">
             <span class="NumCardService">03</span>Commercial Build-Outs
@@ -98,10 +100,10 @@ try {
               src="../../src/assets/remoComerHome.jpg"
             />
           </figure>
-        </div>
-        <div class="cnt-tag">
-          <div class="tagServices">palabra 3</div>
-          <div class="tagServices">palabra 3.3</div>
+          <div class="cnt-tag">
+            <div class="tagServices">palabra 3</div>
+            <div class="tagServices">palabra 3.3</div>
+          </div>
         </div>
       </div>
     </div>
@@ -282,8 +284,6 @@ try {
       </section>
     )
   }
-
-
 </BaseLayout>
 
 <style>
@@ -302,6 +302,7 @@ try {
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
+    border: 1px solid var(--color-primary);
   }
 
   .blog-card:hover {

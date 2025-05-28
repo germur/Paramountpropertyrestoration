@@ -7,8 +7,8 @@
 
 :root {
     /* Colores principales */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1d4ed8;
+    --color-primary: #0C4E6E;
+    --color-primary-dark: #03174f;
     --color-secondary: #64748b;
     --color-accent: #f59e0b;
 
@@ -75,48 +75,6 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--spacing-4);
-}
-
-/* Tipografía */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: var(--spacing-4);
-}
-
-h1 {
-    font-size: var(--font-size-4xl);
-    color: var(--text-primary);
-}
-
-h2 {
-    font-size: var(--font-size-3xl);
-    color: var(--text-primary);
-}
-
-h3 {
-    font-size: var(--font-size-2xl);
-    color: var(--text-primary);
-}
-
-p {
-    margin-bottom: var(--spacing-4);
-    color: var(--text-secondary);
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--color-primary-dark);
 }
 
 /* Botones */
