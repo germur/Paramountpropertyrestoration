@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
-import "/src/styles/index.css";
+import "../styles/index.css";
 
 // Obtener posts destacados del blog
 let allPosts: CollectionEntry<"blog">[] = [];
@@ -30,7 +30,7 @@ try {
       <figure class="cnt-imgPortada">
         <img
           class="portadaHome"
-          src="../../src/assets/portadaHome.jpg"
+          src="/src/assets/portadaHome.jpg"
           alt="Portada"
         />
         <div class="cnt-title">
@@ -64,7 +64,7 @@ try {
           <figure>
             <img
               class="imgCardService"
-              src="../../src/assets/remoKitchenHome.jpg"
+              src="/src/assets/remoKitchenHome.jpg"
             />
           </figure>
           <div class="cnt-tag">
@@ -80,7 +80,7 @@ try {
           <figure>
             <img
               class="imgCardService"
-              src="../../src/assets/remoBathroomHome.jpg"
+              src="/src/assets/remoBathroomHome.jpg"
             />
           </figure>
           <div class="cnt-tag">
@@ -96,7 +96,7 @@ try {
           <figure>
             <img
               class="imgCardService"
-              src="../../src/assets/remoComerHome.jpg"
+              src="/src/assets/remoComerHome.jpg"
             />
           </figure>
           <div class="cnt-tag">
@@ -109,7 +109,6 @@ try {
   </section>
 
   <!-- Section Three -->
-
   <section>
     <div>
       <h2 class="subTittleChoseUs">
@@ -154,7 +153,6 @@ try {
   </section>
 
   <!-- Section Four -->
-
   <section>
     <Steps />
     <div class="cnt-btnStep">
@@ -166,7 +164,6 @@ try {
   </section>
 
   <!-- Section Four -->
-
   <section>
     <div class="cnt-fatherResorces">
       <div>
@@ -204,7 +201,6 @@ try {
   </section>
 
   <!-- Section Six-->
-
   <section>
     <div>
       <div>

@@ -1,5 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import '/src/styles/components/CtaAll.css';
+import '../../styles/components/CtaAll.css';
 
 const CtaAll = () => {
     return (
