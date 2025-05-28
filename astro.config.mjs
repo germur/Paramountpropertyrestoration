@@ -3,7 +3,14 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   integrations: [react()],
-  site: 'https://tu-dominio.com', // Cambia por tu dominio
+  
+  // Configuración para GitHub Pages
+  site: 'https://jotajotam1.github.io',
+  base: '/Astro_1GCConstruction2.0',
+  
+  // Configuración de salida estática
+  output: 'static',
+  
   markdown: {
     shikiConfig: {
       theme: 'github-dark',
