@@ -3,8 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
-
-import "../styles/index.css";
+import "/styles/index.css";
 
 // Obtener posts destacados del blog
 let allPosts: CollectionEntry<"blog">[] = [];
