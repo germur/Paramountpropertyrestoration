@@ -17,13 +17,16 @@ const formattedDate = date.toLocaleDateString('es-ES', {
   month: 'long',
   day: 'numeric'
 });
+
+// Asegurar que la imagen tenga la ruta correcta
+const imageUrl = image ? (image.startsWith('/') ? image : `/${image}`) : null;
 ---
 
 <article class={`blog-card ${featured ? 'featured' : ''}`}>
-  {image && (
+  {imageUrl && (
     <div class="blog-card-image">
       <a href={`/blog/${slug}`}>
-        <img src={image} alt={title} loading="lazy" />
+        <img src={imageUrl} alt={title} loading="lazy" />
       </a>
       {featured && (
         <div class="featured-badge">
