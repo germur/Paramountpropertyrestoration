@@ -3,16 +3,6 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
-  output: 'static',
-  site: 'https://jotajotam1.github.io',
-  base: '/Astro_1GCConstruction2.0',
-  build: {
-    assets: '_astro'
-  },
-  vite: {
-    build: {
-      assetsInlineLimit: 0
-    }
-  }
+  site: 'http://localhost:4321', // Para desarrollo local
+  integrations: [react()]
 });
