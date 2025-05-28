@@ -1,20 +1,18 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 
+// https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  
-  // Configuración para GitHub Pages
+  output: 'static',
   site: 'https://jotajotam1.github.io',
   base: '/Astro_1GCConstruction2.0',
-  
-  // Configuración de salida estática
-  output: 'static',
-  
-  markdown: {
-    shikiConfig: {
-      theme: 'github-dark',
-      wrap: true
+  build: {
+    assets: '_astro'
+  },
+  vite: {
+    build: {
+      assetsInlineLimit: 0
     }
   }
 });
