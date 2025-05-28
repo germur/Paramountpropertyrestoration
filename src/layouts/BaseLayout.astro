@@ -14,7 +14,11 @@ const {
   description = "Tu descripción por defecto",
   image = "/images/og-image.jpg",
 } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Manejar URLs de forma segura
+const siteUrl = Astro.site?.toString() || `${Astro.url.protocol}//${Astro.url.host}`;
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageURL = new URL(image, siteUrl);
 ---
 
 <!doctype html>
@@ -31,7 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image" content={imageURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
 
@@ -39,7 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:image" content={imageURL} />
 
     <!-- Favicon and Bootstrap Icons-->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
