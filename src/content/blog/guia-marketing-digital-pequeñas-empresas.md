@@ -5,7 +5,7 @@ author: "Tu Nombre"
 date: 2025-01-10
 tags: ["Marketing Digital", "Pequeñas Empresas", "Estrategia"]
 featured: false
-image: "images/blog/marketing-pequeñas-empresas.jpg"
+image: "/images/blog/marketing-pequeñas-empresas.jpg"
 ---
 
 # Guía completa de marketing digital para pequeñas empresas

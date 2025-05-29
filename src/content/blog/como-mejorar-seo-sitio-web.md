@@ -5,7 +5,7 @@ author: "Tu Nombre"
 date: 2025-01-15
 tags: ["SEO", "Marketing Digital", "Web"]
 featured: true
-image: "images/blog/seo-2025.jpg"
+image: "/images/blog/seo-2025.jpg"
 ---
 
 # Cómo mejorar el SEO de tu sitio web en 2025

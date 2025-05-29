@@ -5,7 +5,7 @@ author: "Tu Nombre"
 date: 2025-01-20
 tags: ["Desarrollo Web", "Tecnología", "Tendencias"]
 featured: true
-image: "images/blog/tendencias-web-2025.jpg"
+image: "/images/blog/tendencias-web-2025.jpg"
 ---
 
 # Las tendencias más importantes del desarrollo web en 2025
