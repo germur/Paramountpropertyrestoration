@@ -292,7 +292,6 @@ export function getAllCombinations() {
 
     return combinations;
 }
-
 // Función para obtener datos específicos
 export function getServicioData(slug) {
     return servicios.find(s => s.slug === slug);
