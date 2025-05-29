@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Acordeon from "../components/Acordeons.jsx";
 import AreasServed from "../components/AreasServed.jsx";
 import TabsNavegation from "../components/TabsNavegation.jsx";
+import LinkBuildingSection from "../components/linkBuilding";
 import "../styles/services.css";
 ---
 
@@ -29,6 +30,9 @@ import "../styles/services.css";
   </section>
   <section>
     <AreasServed client:load />
+  </section>
+  <section>
+    <LinkBuildingSection />
   </section>
   <section>
     <Acordeon client:load />
