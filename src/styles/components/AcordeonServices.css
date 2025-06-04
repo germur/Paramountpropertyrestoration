@@ -1,0 +1,168 @@
+/* AcordeonServices.css */
+
+/* Container principal */
+.faqContainer {
+    margin: 10px;
+    border-radius: 8px;
+    padding: 60px 0 120px;
+}
+
+/* Título del FAQ */
+.faqTitle {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 40px 10px 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Wrapper del accordion */
+.accordionWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Item individual del accordion */
+.accordionItem {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordionItem:last-child {
+    border-bottom: none;
+}
+
+/* Botón del accordion */
+.accordionButton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border-radius: 12px;
+    background: none;
+    border: none;
+    text-align: left;
+}
+
+.accordionButton:hover {
+    background: #ebebeb;
+}
+
+
+/* Pregunta */
+.accordionQuestion {
+    font-weight: 400;
+    margin: 0;
+    color: #333;
+    padding-right: 2rem;
+    line-height: 1.4;
+}
+
+/* Icono */
+.accordionIcon {
+    font-size: 15px;
+    transition: transform 0.3s ease;
+    color: #0C4E6E;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.accordionIcon.iconOpen {
+    transform: rotate(360deg);
+}
+
+/* Contenido/Respuesta */
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordionContent.contentOpen {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.accordionAnswer {
+    color: gray;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faqContainer {
+        padding: 40px 0 60px;
+    }
+
+    .faqTitle {
+        font-size: 30px;
+        padding: 30px 10px 20px;
+    }
+
+    .accordionButton {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .accordionQuestion {
+        padding-right: 1.5rem;
+    }
+
+    .accordionAnswer {
+        font-size: 0.95rem;
+    }
+
+    .accordionIcon {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faqTitle {
+        font-size: 26px;
+        padding: 20px 10px 15px;
+    }
+
+    .accordionButton {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .accordionQuestion {
+        padding-right: 1rem;
+    }
+
+    .accordionAnswer {
+        font-size: 0.9rem;
+    }
+
+    .accordionItem {
+        padding: 8px;
+    }
+}
+
+/* Animación suave para el contenido */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordionContent.contentOpen .accordionAnswer {
+    animation: slideDown 0.3s ease-out;
+}

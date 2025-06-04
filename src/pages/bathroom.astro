@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/pages/bathroom.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from '../components/AcordeonServices.jsx';
 ---
 
 <BaseLayout
@@ -154,5 +155,92 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
         </div>
       </div>
     </section>
+  </section>
+
+  <!-- Section Portfolio -->
+
+  <section class="recent-remodels-section">
+    <h2 class="recent-remodels-title">Recent Bathroom Remodels</h2>
+    <div class="remodels-gallery">
+      <!-- Remodel 1 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioOne.jpg" alt="Master Bathroom" />
+        </div>
+        <h3>Master Bathroom</h3>
+        <p>Miami</p>
+      </div>
+
+      <!-- Remodel 2 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioTwo.jpg" alt="ADA Bathroom" />
+        </div>
+        <h3>ADA Bathroom</h3>
+        <p>Orlando</p>
+      </div>
+
+      <!-- Remodel 3 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioThree.jpg" alt="Small Bathroom" />
+        </div>
+        <h3>Small Bathroom</h3>
+        <p>Tampa</p>
+      </div>
+    </div>
+
+    <!-- Tags-Portfolio -->
+
+    <div class="cnt-tagsPorfolio">
+      <span class="tag-itemPorfolio">Bathroom Renovation</span>
+      <span class="tag-itemPorfolio">Shower Installation</span>
+      <span class="tag-itemPorfolio">Tile Replacement</span>
+      <span class="tag-itemPorfolio">Vanity Upgrade</span>
+      <span class="tag-itemPorfolio">Bathroom Waterproofing</span>
+      <span class="tag-itemPorfolio">Modern Bathroom Design</span>
+    </div>
+  </section>
+
+  <!-- Blog Ba;os -->
+
+  <section class="sectionBlogBathroom">
+    <div>
+      <div>
+        <h2 class="tittleSection-cardBlogBathroo">
+          Bathroom Remodeling Guides
+        </h2>
+      </div>
+      <div>
+        <div class="cntFather-cardBlogBathroo">
+          <div class="cnt-cardBlogBathroom">
+            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <p class="text-cardBlogBathroom">
+              Esta es la description para invitar a ver los blos sobre las cosas
+              de ba;o
+            </p>
+            <a class="link-blogBathroom"
+              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+            >
+          </div>
+          <div class="cnt-cardBlogBathroom">
+            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <p class="text-cardBlogBathroom">
+              Esta es la description para invitar a ver los blos sobre las cosas
+              de ba;o
+            </p>
+            <a class="link-blogBathroom"
+              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <FAQ client:load
+      category="flooring"
+      title="Preguntas Frecuentes sobre Remodelación de Cocinas"
+    />
   </section>
 </BaseLayout>

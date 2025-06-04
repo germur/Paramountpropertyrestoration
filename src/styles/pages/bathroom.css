@@ -1,6 +1,9 @@
 /* bathroom.css */
 
-/* Hero Section */
+/* =====================
+    HERO SECTION
+   ===================== */
+
 .hero-section {
     position: relative;
     height: 600px;
@@ -67,52 +70,9 @@
     box-shadow: 0 4px 20px rgba(0, 102, 204, 0.4);
 }
 
-/* Hero Responsive */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 400px;
-    }
-
-    .hero-content {
-        margin-left: 1rem;
-        padding: 1.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        height: 350px;
-    }
-
-    .hero-content {
-        margin-left: 0;
-        padding: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.75rem;
-    }
-
-    .hero-content p {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Grid Container */
+/* =====================
+    SERVICES GRID
+   ===================== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -121,7 +81,6 @@
     margin: 0 auto;
 }
 
-/* Service Items */
 .service-item {
     text-align: center;
     padding: 1rem;
@@ -134,7 +93,6 @@
     transform: translateY(-5px);
 }
 
-/* Icons */
 .service-item i {
     font-size: 2.5rem;
     color: #0066cc;
@@ -146,7 +104,6 @@
     color: #0052a3;
 }
 
-/* Titles */
 .service-item h3 {
     font-size: 0.85rem;
     margin: 0;
@@ -154,48 +111,9 @@
     font-weight: 500;
 }
 
-/* Tablet adjustments */
-@media (max-width: 768px) and (min-width: 481px) {
-    .services-grid {
-        grid-template-columns: repeat(6, 1fr);
-        padding: 1.5rem;
-    }
-
-    .service-item {
-        padding: 0.75rem;
-    }
-
-    .service-item i {
-        font-size: 2rem;
-    }
-
-    .service-item h3 {
-        font-size: 0.75rem;
-    }
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        padding: 1rem;
-    }
-
-    .service-item {
-        padding: 8px;
-    }
-
-    .service-item i {
-        font-size: 2rem;
-    }
-
-    .service-item h3 {
-        font-size: 0.7rem;
-    }
-}
-
-/* Solutions Section */
+/* =====================
+    SOLUTIONS SECTION
+   ===================== */
 .solutions-section {
     padding: 4rem 2rem;
     background-color: #f8f9fa;
@@ -279,40 +197,11 @@
     background-color: #34495e;
 }
 
-/* Solutions Responsive */
-@media (max-width: 768px) {
-    .solutions-section {
-        padding: 3rem 1rem;
-    }
-
-    .solutions-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .solutions-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .solutions-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card-content h3 {
-        font-size: 1.1rem;
-    }
-
-    .card-content p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Steps Section */
+/* =====================
+    STEPS SECTION
+   ===================== */
 .steps-section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem;
 }
 
 .steps-title {
@@ -331,7 +220,6 @@
     position: relative;
 }
 
-/* Timeline line for desktop */
 .steps-container::before {
     content: '';
     position: absolute;
@@ -349,10 +237,9 @@
     position: relative;
 }
 
-
 .step-icon {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -362,6 +249,7 @@
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .step-icon i {
@@ -387,20 +275,222 @@
     margin: 0 auto;
 }
 
-/* Steps Section Responsive */
+/* =====================
+    RECENT REMODELS SECTION
+   ===================== */
+.recent-remodels-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.recent-remodels-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.remodels-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.remodel-item {
+    text-align: center;
+}
+
+.remodel-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.remodel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.remodel-item:hover .remodel-image img {
+    transform: scale(1.05);
+}
+
+.remodel-item h3 {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.remodel-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* =====================
+    TAGS PORTFOLIO
+   ===================== */
+.cnt-tagsPorfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
+    gap: var(--spacing-2);
+}
+
+.tag-itemPorfolio {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-itemPorfolio:hover {
+    background: var(--color-primary);
+    color: var(--text-white);
+}
+
+/* =====================
+    BLOGS BA;OS
+   ===================== */
+
+.sectionBlogBathroom {
+    background-color: var(--bg-secondary);
+    padding: 2rem 32px;
+    gap: 2rem;
+}
+
+.tittleSection-cardBlogBathroo{
+    text-align: center;
+    margin-bottom: var(--spacing-12);
+}
+
+.cntFather-cardBlogBathroo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cnt-cardBlogBathroom {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-primary);
+    padding: var(--spacing-6);
+}
+
+.title-cardBlogBathroom {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+}
+
+.text-cardBlogBathroom {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-4);
+}
+
+.link-blogBathroom {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.flechaBlog {
+    font-size: 12px;
+}
+
+/* =====================
+    RESPONSIVE STYLES
+   ===================== */
+
+/* Tablet - 992px */
 @media (max-width: 992px) {
+
+    /* Steps Section */
     .steps-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem 2rem;
     }
 
-    /* Hide horizontal line on tablet */
     .steps-container::before {
         display: none;
     }
 }
 
+/* Tablet - 768px */
+@media (max-width: 768px) and (min-width: 481px) {
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(6, 1fr);
+        padding: 1.5rem;
+    }
+
+    .service-item {
+        padding: 0.75rem;
+    }
+
+    .service-item i {
+        font-size: 2rem;
+    }
+
+    .service-item h3 {
+        font-size: 0.75rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content {
+        margin-left: 1rem;
+        padding: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Solutions Section */
+    .solutions-section {
+        padding: 3rem 1rem;
+    }
+
+    .solutions-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Steps Section */
     .steps-title {
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -415,18 +505,105 @@
         max-width: 300px;
         margin: 0 auto;
     }
+
+    /* Recent Remodels */
+    .recent-remodels-section {
+        padding: 3rem 1rem;
+    }
+
+    .recent-remodels-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .remodels-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .remodel-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
+/* Mobile - 480px */
 @media (max-width: 480px) {
+
+    /* Hero Section */
+    .hero-section {
+        height: 350px;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 1rem;
+    }
+
+    .service-item {
+        padding: 8px;
+    }
+
+    .service-item i {
+        font-size: 2rem;
+    }
+
+    .service-item h3 {
+        font-size: 0.7rem;
+    }
+
+    /* Solutions Section */
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Steps Section */
     .steps-section {
         padding: 3rem 1rem;
     }
 
     .step-item h3 {
-        font-size: 21px;
+        font-size: 1.1rem;
     }
 
     .step-item p {
-        font-size: 16px;
+        font-size: 0.95rem;
+    }
+
+    /* Recent Remodels */
+    .remodel-item h3 {
+        font-size: 1rem;
+    }
+
+    .remodel-item p {
+        font-size: 0.95rem;
     }
 }
