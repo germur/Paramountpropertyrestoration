@@ -1,3 +1,8 @@
+.Section-Ctall{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 .cnt-cardCTAservices {
     margin: 10px;
     background-color: black;
@@ -113,4 +118,16 @@
     background-color: #F9C3D3;
     margin-left: -15px;
     z-index: 1;
+}
+
+@media (min-width: 1024px){
+    .cardCTAservices{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .titleCardCTAServ{
+        width: 450px;
+    }
+
 }

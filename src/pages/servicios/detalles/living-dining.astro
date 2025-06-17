@@ -1,0 +1,256 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/pages/living-dining.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../../components/AcordeonServices";
+---
+
+<BaseLayout
+  title="Bathroom Remodeling Services"
+  description="Transform your bathroom with our professional remodeling services. Modern design, high-quality materials, and customized solutions to renew your space with style and functionality."
+>
+  <!-- Section One -->
+  <section class="hero-sectionLivinDining">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Living & Dining Room Remodels: Your Perfect Gathering Space</h1>
+      <p>
+        Create inviting, functional spaces for entertaining and relaxation.
+        Custom designs for every style, serving Central Florida and coastal
+        areas.
+      </p>
+      <a href="/contact" class="cta-button"
+        >Get Your Free Living & Dining Estimate →</a
+      >
+    </div>
+  </section>
+
+  <!-- Section Two -->
+  <section>
+    <div class="services-grid">
+      <div class="service-item">
+        <i class="fas fa-couch"></i>
+        <h3>Living Room Remodel</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-utensils"></i>
+        <h3>Dining Area Design</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Lighting Solutions</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-layer-group"></i>
+        <h3>Flooring Installation</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Wall Finishes</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-expand"></i>
+        <h3>Open Concept Conversion</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Three - Solutions Cards -->
+  <section class="solutions-section">
+    <h2 class="solutions-title">
+      Tailored Living & Dining Remodeling Solutions
+    </h2>
+    <div class="solutions-grid">
+      <!-- Card 1 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/bathtub-replacement.jpg"
+            alt="Bathtub Replacement"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Open Concept Transformations</h3>
+          <p>
+            Remove walls to create spacious, flowing layouts. Enhance natural
+            light and promote seamless connectivity between living, dining, and
+            kitchen areas.
+          </p>
+          <a href="/contact" class="card-cta">View Open Concept Projects</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/vanity-storage.jpg" alt="Vanity & Storage" />
+        </div>
+        <div class="card-content">
+          <h3>Custom Built-Ins & Storage</h3>
+          <p>Design and install custom shelving, media centers, and display units. Maximize space and add architectural interest while keeping your area clutter-free.</p>
+          <a href="/contact" class="card-cta">Explore Storage Ideas</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/moisture-repair.jpg" alt="Moisture Repair" />
+        </div>
+        <div class="card-content">
+          <h3>Flooring & Lighting Upgrades</h3>
+          <p>Elevate ambiance with new flooring (hardwood, tile, laminate) and strategic lighting solutions (recessed, pendant, accent lighting) to brighten and define zones.</p>
+          <a href="/contact" class="card-cta">See Design Possibilities</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/waterproofing.jpg" alt="Waterproofing" />
+        </div>
+        <div class="card-content">
+          <h3>Architectural Enhancements</h3>
+          <p>Add character with new archways, decorative moldings, or custom fireplaces. We seamlessly integrate these features for a sophisticated finish. Ask us about smart lighting and climate control!</p>
+          <a href="/contact" class="card-cta">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Section Steps -->
+
+    <section class="steps-section">
+      <h2 class="steps-title">How It Works</h2>
+      <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-item" data-step="1">
+          <div class="step-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Consultation</h3>
+          <p>Free 3D Design Session (Virtual or On Site)</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item" data-step="2">
+          <div class="step-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h3>Material Selection</h3>
+          <p>Choose from 50+ Tile Designs & Fixtures</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item" data-step="3">
+          <div class="step-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Installation</h3>
+          <p>Demolition, Process | Avg. Time: 2.5 Days</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-item" data-step="4">
+          <div class="step-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <h3>Final Walkthrough</h3>
+          <p>Quality Check & Client Approval</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Section Portfolio -->
+
+  <section class="recent-remodels-section">
+    <h2 class="recent-remodels-title">Recent Bathroom Remodels</h2>
+    <div class="remodels-gallery">
+      <!-- Remodel 1 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioOne.jpg" alt="Master Bathroom" />
+        </div>
+        <h3>Master Bathroom</h3>
+        <p>Miami</p>
+      </div>
+
+      <!-- Remodel 2 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioTwo.jpg" alt="ADA Bathroom" />
+        </div>
+        <h3>ADA Bathroom</h3>
+        <p>Orlando</p>
+      </div>
+
+      <!-- Remodel 3 -->
+      <div class="remodel-item">
+        <div class="remodel-image">
+          <img src="/images/banoPortfolioThree.jpg" alt="Small Bathroom" />
+        </div>
+        <h3>Small Bathroom</h3>
+        <p>Tampa</p>
+      </div>
+    </div>
+
+    <!-- Tags-Portfolio -->
+
+    <div class="cnt-tagsPorfolio">
+      <span class="tag-itemPorfolio">Bathroom Renovation</span>
+      <span class="tag-itemPorfolio">Shower Installation</span>
+      <span class="tag-itemPorfolio">Tile Replacement</span>
+      <span class="tag-itemPorfolio">Vanity Upgrade</span>
+      <span class="tag-itemPorfolio">Bathroom Waterproofing</span>
+      <span class="tag-itemPorfolio">Modern Bathroom Design</span>
+    </div>
+  </section>
+
+  <!-- Blog Ba;os -->
+
+  <section class="sectionBlogBathroom">
+    <div>
+      <div>
+        <h2 class="tittleSection-cardBlogBathroo">
+          Bathroom Remodeling Guides
+        </h2>
+      </div>
+      <div>
+        <div class="cntFather-cardBlogBathroo">
+          <div class="cnt-cardBlogBathroom">
+            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <p class="text-cardBlogBathroom">
+              Esta es la description para invitar a ver los blos sobre las cosas
+              de ba;o
+            </p>
+            <a class="link-blogBathroom"
+              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+            >
+          </div>
+          <div class="cnt-cardBlogBathroom">
+            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <p class="text-cardBlogBathroom">
+              Esta es la description para invitar a ver los blos sobre las cosas
+              de ba;o
+            </p>
+            <a class="link-blogBathroom"
+              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <FAQ
+      client:load
+      category="living-dining";
+      title="FAQs"
+    />
+  </section>
+</BaseLayout>

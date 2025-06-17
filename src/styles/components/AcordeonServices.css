@@ -54,7 +54,6 @@
     background: #ebebeb;
 }
 
-
 /* Pregunta */
 .accordionQuestion {
     font-weight: 400;
@@ -95,6 +94,16 @@
     font-size: 1rem;
     line-height: 1.6;
     padding: 0;
+}
+
+/* Grid layout para pantallas grandes */
+@media (min-width: 1024px) {
+    .accordionWrapper {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 /* Responsive */

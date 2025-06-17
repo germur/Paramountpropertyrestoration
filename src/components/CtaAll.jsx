@@ -3,20 +3,22 @@ import '../styles/components/CtaAll.css';
 
 const CtaAll = () => {
     return (
-        <section>
+        <section className="Section-Ctall">
             <div className="cnt-cardCTAservices">
                 <div className="cardCTAservices">
-                    <h2 className="titleCardCTAServ">Designing the Future of Architecture Today</h2>
-                    <p className="textCardCTAServ">Crafting Spaces That Reflect Your Dreams</p>
-                    <div className="btn-fatherCTAbtn">
-                        <button className="btn-OneCtaServices">
-                            Contact Us
-                            <i className="arrowCtaServices bi bi-arrow-up-right"></i>
-                        </button>
-                        <button className="btn-TwoCtaServices">
-                            Our Services
-                            <i className="arrowCtaServices bi bi-arrow-up-right"></i>
-                        </button>
+                    <div>
+                        <h2 className="titleCardCTAServ">Designing the Future of Architecture Today</h2>
+                        <p className="textCardCTAServ">Crafting Spaces That Reflect Your Dreams</p>
+                        <div className="btn-fatherCTAbtn">
+                            <button className="btn-OneCtaServices">
+                                Contact Us
+                                <i className="arrowCtaServices bi bi-arrow-up-right"></i>
+                            </button>
+                            <button className="btn-TwoCtaServices">
+                                Our Services
+                                <i className="arrowCtaServices bi bi-arrow-up-right"></i>
+                            </button>
+                        </div>
                     </div>
                     <div className="team-section">
                         <div className="team-images">
