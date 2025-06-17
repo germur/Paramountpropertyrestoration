@@ -1,5 +1,22 @@
 ---
-import Navigation from "./Navigation.astro";
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Inicio" },
+  {
+    href: "/servicios",
+    label: "Servicios",
+    dropdown: [
+      { href: "/servicios/detalles/kitchen", label: "Kitchen" },
+      { href: "/servicios/detalles/bathroom", label: "Bathroom" },
+      { href: "/servicios/detalles/home-additions", label: "Home Additions" },
+      { href: "/servicios/detalles/living-dining", label: "Living & Dining" },
+      { href: "/servicios/detalles/bedroom-remodeling", label: "Bedroom Remodeling" },
+    ],
+  },
+  { href: "/blog", label: "Blog" },
+  { href: "/contacto", label: "Contacto" },
+];
 ---
 
 <header class="header">
@@ -10,74 +27,400 @@ import Navigation from "./Navigation.astro";
           <h2>Mi Sitio Web</h2>
         </a>
       </div>
-      <Navigation />
-      <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+      
+      <!-- Navegación desktop -->
+      <nav class="nav desktop-nav">
+        <ul class="nav-list">
+          {navItems.map((item) => (
+            <li class="nav-item">
+              {item.dropdown ? (
+                <div class="dropdown">
+                  <div class="dropdown-trigger">
+                    <a href={item.href} class={`nav-link ${currentPath === item.href ? "active" : ""}`}>
+                      {item.label}
+                    </a>
+                    <button class="dropdown-btn" aria-label="Abrir submenú">
+                      <span class="arrow">▼</span>
+                    </button>
+                  </div>
+                  <ul class="dropdown-menu">
+                    {item.dropdown.map((subItem) => (
+                      <li>
+                        <a href={subItem.href} class={currentPath === subItem.href ? "active" : ""}>
+                          {subItem.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <a href={item.href} class={`nav-link ${currentPath === item.href ? "active" : ""}`}>
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <button class="mobile-menu-btn" aria-label="Abrir menú">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+    
+    <!-- Navegación móvil -->
+    <nav class="nav mobile-nav">
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li class="nav-item">
+            {item.dropdown ? (
+              <>
+                <div class="mobile-item">
+                  <a href={item.href} class={`nav-link ${currentPath === item.href ? "active" : ""}`}>
+                    {item.label}
+                  </a>
+                  <button class="dropdown-btn" aria-label="Abrir submenú">
+                    <span class="arrow">▼</span>
+                  </button>
+                </div>
+                <ul class="submenu">
+                  {item.dropdown.map((subItem) => (
+                    <li>
+                      <a href={subItem.href} class={currentPath === subItem.href ? "active" : ""}>
+                        {subItem.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a href={item.href} class={`nav-link ${currentPath === item.href ? "active" : ""}`}>
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </header>
 
 <style>
+  /* Base */
   .header {
-    background-color: var(--bg-primary);
-    box-shadow: var(--shadow);
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-4) 0;
+    height: 60px;
+  }
+
+  /* Logo */
+  .logo h2 {
+    margin: 0;
+    color: #2563eb;
   }
 
   .logo a {
-    color: var(--color-primary);
     text-decoration: none;
   }
 
-  .logo h2 {
+  /* Nav común */
+  .nav-list {
+    list-style: none;
     margin: 0;
-    font-size: var(--font-size-xl);
+    padding: 0;
   }
 
-  .mobile-menu-toggle {
+  .nav-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #1f2937;
+  }
+
+  /* Desktop Nav */
+  .desktop-nav .nav-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .dropdown-btn {
+    background: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .dropdown-btn:hover {
+    background: #1f2937;
+  }
+
+  .dropdown-btn.active {
+    background: #2563eb;
+  }
+
+  .arrow {
+    font-size: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .dropdown-btn.active .arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 200px;
+    padding: 0.5rem;
+    display: none;
+    list-style-type: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    color: #666;
+    text-decoration: none;
+  }
+
+  .dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+  }
+
+  .dropdown-menu a.active {
+    color: #1f2937;
+    font-weight: 500;
+  }
+
+  /* Mobile */
+  .mobile-menu-btn {
     display: none;
     flex-direction: column;
+    gap: 4px;
     background: none;
     border: none;
+    padding: 0.5rem;
     cursor: pointer;
-    padding: var(--spacing-2);
   }
 
-  .mobile-menu-toggle span {
+  .mobile-menu-btn span {
     width: 25px;
     height: 3px;
-    background-color: var(--text-primary);
-    margin: 2px 0;
-    transition: 0.3s;
+    background: #374151;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .mobile-nav {
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .mobile-nav.show {
+    display: block;
+  }
+
+  .mobile-nav .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-nav .nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+  }
+
+  .mobile-item {
+    display: flex;
+    align-items: center;
+    background: #f9fafb;
+    border-radius: 8px;
+  }
+
+  .mobile-item .nav-link {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .mobile-item .dropdown-btn {
+    border-radius: 5px;
+    margin-right: 0.5rem;
+  }
+
+  .submenu {
+    list-style: none;
+    padding: 0 0.5rem 0.5rem 1rem;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    text-decoration: none;
+  }
+
+  .submenu.show {
+    max-height: 300px;
+  }
+
+  .submenu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #666;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .submenu a:hover {
+    background: #f3f4f6;
+    color: #2563eb;
+  }
+
+  .submenu a.active {
+    color: #2563eb;
+    background: #eff6ff;
   }
 
   @media (max-width: 768px) {
-    .mobile-menu-toggle {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-menu-btn {
       display: flex;
     }
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-    const navigation = document.querySelector(".navigation");
+  // Toggle menú móvil
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNav = document.querySelector('.mobile-nav');
+  
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('show');
+    mobileMenuBtn.classList.toggle('active');
+  });
 
-    mobileMenuToggle?.addEventListener("click", () => {
-      navigation?.classList.toggle("mobile-open");
-      mobileMenuToggle.classList.toggle("active");
+  // Desktop dropdowns
+  document.querySelectorAll('.desktop-nav .dropdown').forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropdown-btn');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    btn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // Cerrar otros
+      document.querySelectorAll('.desktop-nav .dropdown').forEach(other => {
+        if (other !== dropdown) {
+          other.querySelector('.dropdown-menu')?.classList.remove('show');
+          other.querySelector('.dropdown-btn')?.classList.remove('active');
+        }
+      });
+      
+      // Toggle actual
+      menu?.classList.toggle('show');
+      btn.classList.toggle('active');
+    });
+  });
+
+  // Mobile dropdowns (acordeón)
+  document.querySelectorAll('.mobile-nav .dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      
+      const submenu = btn.closest('.nav-item')?.querySelector('.submenu');
+      submenu?.classList.toggle('show');
+      btn.classList.toggle('active');
+    });
+  });
+
+  // Cerrar dropdowns al hacer clic fuera
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.classList.remove('show');
+    });
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+  });
+
+  // Cerrar móvil al navegar
+  document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.remove('show');
+      mobileMenuBtn?.classList.remove('active');
     });
   });
 </script>
