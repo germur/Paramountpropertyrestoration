@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/pages/bathroom-remodeling.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import FAQ from '../../../components/AcordeonServices';
+import FAQ from "../../../components/AcordeonServices";
 ---
 
 <BaseLayout
@@ -18,7 +18,7 @@ import FAQ from '../../../components/AcordeonServices';
         Professional remodeling services with modern designs, premium materials,
         and expert craftsmanship to create the bathroom of your dreams.
       </p>
-      <a href="/contact" class="cta-button">Get Your Free Quote</a>
+      <a href="/contact" class="cta-button">Get Estimate →</a>
     </div>
   </section>
 
@@ -72,7 +72,11 @@ import FAQ from '../../../components/AcordeonServices';
         </div>
         <div class="card-content">
           <h3>Bathtub Replacement</h3>
-          <p>Materials: Reinforced acrylic + demolition</p>
+          <p>
+            Upgrade your bath with durable, reinforced acrylic tubs. Our
+            efficient process often allows for installation in just one day,
+            minimizing disruption without demolition.
+          </p>
           <a href="/contact" class="card-cta">View Details</a>
         </div>
       </div>
@@ -84,7 +88,11 @@ import FAQ from '../../../components/AcordeonServices';
         </div>
         <div class="card-content">
           <h3>Vanity & Storage</h3>
-          <p>Designs: Tempered glass + new LED lighting</p>
+          <p>
+            Transform your space with sleek, modern walk-in showers featuring
+            tempered glass. Enjoy enhanced safety with non-slip flooring and
+            superior moisture-resistant designs.
+          </p>
           <a href="/contact" class="card-cta">View Details</a>
         </div>
       </div>
@@ -96,7 +104,11 @@ import FAQ from '../../../components/AcordeonServices';
         </div>
         <div class="card-content">
           <h3>Moisture Repair</h3>
-          <p>Moisture-resistant materials</p>
+          <p>
+            Maximize functionality and style with our custom vanity and storage
+            options. Choose from elegant double sinks or integrated built-in
+            shelves crafted from treated wood.
+          </p>
           <a href="/contact" class="card-cta">View Details</a>
         </div>
       </div>
@@ -108,54 +120,59 @@ import FAQ from '../../../components/AcordeonServices';
         </div>
         <div class="card-content">
           <h3>Waterproofing</h3>
-          <p>Complete waterproofing system</p>
+          <p>
+            Ensure lasting protection with advanced waterproofing systems,
+            including Schluter membrane technology. Our ventilation solutions
+            are code compliant, providing optimal air quality and preventing
+            moisture issues
+          </p>
           <a href="/contact" class="card-cta">View Details</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Section Steps -->
+  <!-- Section Steps -->
 
-    <section class="steps-section">
-      <h2 class="steps-title">How It Works</h2>
-      <div class="steps-container">
-        <!-- Step 1 -->
-        <div class="step-item" data-step="1">
-          <div class="step-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <h3>Consultation</h3>
-          <p>Free 3D Design Session (Virtual or On Site)</p>
+  <section class="steps-section">
+    <h2 class="steps-title">How It Works</h2>
+    <div class="steps-container">
+      <!-- Step 1 -->
+      <div class="step-item" data-step="1">
+        <div class="step-icon">
+          <i class="fas fa-phone-alt"></i>
         </div>
-
-        <!-- Step 2 -->
-        <div class="step-item" data-step="2">
-          <div class="step-icon">
-            <i class="fas fa-cube"></i>
-          </div>
-          <h3>Material Selection</h3>
-          <p>Choose from 50+ Tile Designs & Fixtures</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-item" data-step="3">
-          <div class="step-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3>Installation</h3>
-          <p>Demolition, Process | Avg. Time: 2.5 Days</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-item" data-step="4">
-          <div class="step-icon">
-            <i class="fas fa-check"></i>
-          </div>
-          <h3>Final Walkthrough</h3>
-          <p>Quality Check & Client Approval</p>
-        </div>
+        <h3>Consultation</h3>
+        <p>Free 3D Design Session (Virtual or On Site)</p>
       </div>
-    </section>
+
+      <!-- Step 2 -->
+      <div class="step-item" data-step="2">
+        <div class="step-icon">
+          <i class="fas fa-cube"></i>
+        </div>
+        <h3>Material Selection</h3>
+        <p>Choose from 50+ Tile Designs & Fixtures</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-item" data-step="3">
+        <div class="step-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Installation</h3>
+        <p>Demolition, Process | Avg. Time: 2.5 Days</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-item" data-step="4">
+        <div class="step-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <h3>Final Walkthrough</h3>
+        <p>Quality Check & Client Approval</p>
+      </div>
+    </div>
   </section>
 
   <!-- Section Portfolio -->
@@ -239,9 +256,6 @@ import FAQ from '../../../components/AcordeonServices';
     </div>
   </section>
   <section>
-    <FAQ client:load
-      category="bathroom"
-      title="FAQs"
-    />
+    <FAQ client:load category="bathroom" title="FAQs" />
   </section>
 </BaseLayout>
