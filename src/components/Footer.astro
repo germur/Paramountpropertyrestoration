@@ -7,8 +7,7 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <!-- Logo y descripción -->
       <div class="footer-section">
-        <h3>Mi Sitio Web</h3>
-        <p>Ofrecemos soluciones profesionales para hacer crecer tu negocio online.</p>
+        <img class="LogoFooter" src="/images/LogoPrin.png"></img>
         <div class="social-links">
           <a href="#" aria-label="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -88,6 +87,10 @@ const currentYear = new Date().getFullYear();
     padding: var(--spacing-16) 0 var(--spacing-8);
     margin-top: auto;
   }
+  .LogoFooter{
+    height: 100px;
+    width: 130px;
+  }
 
   .footer-content {
     display: grid;
@@ -96,22 +99,15 @@ const currentYear = new Date().getFullYear();
     margin-bottom: var(--spacing-12);
   }
 
-  .footer-section h3 {
+  .footer-section img {
     color: var(--color-primary);
     margin-bottom: var(--spacing-4);
-    font-size: var(--font-size-xl);
   }
 
   .footer-section h4 {
     color: white;
     margin-bottom: var(--spacing-4);
     font-size: var(--font-size-lg);
-  }
-
-  .footer-section p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin-bottom: var(--spacing-4);
   }
 
   .social-links {
