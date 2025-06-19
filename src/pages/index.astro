@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.css";
 
 // Obtener posts destacados del blog
@@ -105,21 +106,21 @@ try {
       <div class="parent2">
         <div class="cnt-card2">
           <figure class="icon-container">
-            <i class="iconUs bi bi-badge-3d-fill"></i>
+            <i class="iconUs fas fa-cube"></i>
           </figure>
           <h2 class="tittleCard2">3D Project Preview</h2>
           <p class="textcard2">See your remodel digitally before we start</p>
         </div>
         <div class="cnt-card2">
           <figure class="icon-container">
-            <i class="iconUs bi bi-camera2"></i>
+            <i class="iconUs fas fa-camera"></i>
           </figure>
           <h2 class="tittleCard2">Daily Photo Updates</h2>
           <p class="textcard2">Track progress via our client portal</p>
         </div>
         <div class="cnt-card2">
           <figure class="icon-container">
-            <i class="iconUs bi bi-wallet-fill"></i>
+            <i class="iconUs fas fa-wallet"></i>
           </figure>
           <h2 class="tittleCard2">Open-Book Pricing</h2>
           <p class="textcard2">
@@ -132,7 +133,7 @@ try {
       <a class="rutVideo" href="#">
         <button class="btn-Hww btn-steps">
           Schedule a Free Q&A Cal
-          <i class="arrowbtnHww bi bi-arrow-right"></i>
+          <i class="arrowbtnHww fas fa-arrow-right"></i>
         </button>
       </a>
     </div>
@@ -144,8 +145,7 @@ try {
     <Steps />
     <div class="cnt-btnStep">
       <button class="btn-steps"
-        >Watch Our Process Video<i class="arrowbtnHww bi bi-arrow-right"
-        ></i></button
+        >Watch Our Process Video<i class="arrowbtnHww fas fa-arrow-right"></i></button
       >
     </div>
   </section>
@@ -220,7 +220,9 @@ try {
             <li><a href="#">Flooring, finishes, and coatings</a></li>
             <li><a href="#">Metal and concrete structures</a></li>
             <li><a href="#">Custom carpentry and furniture</a></li>
-            <li><a href="#">Sustainable and energy-efficient construction</a></li>
+            <li>
+              <a href="#">Sustainable and energy-efficient construction</a>
+            </li>
             <li><a href="#">Project management and supervision</a></li>
             <li><a href="#">Construction consulting and advisory</a></li>
           </ul>
@@ -257,7 +259,7 @@ try {
                     </span>
                   </div>
                   <a href={`/blog/${post.slug}`} class="read-more">
-                    Leer más →
+                    Leer más<i class="arrowbtnHww fas fa-arrow-right"></i>
                   </a>
                 </div>
               </article>

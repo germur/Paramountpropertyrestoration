@@ -1,4 +1,4 @@
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/components/CtaAll.css';
 
 const CtaAll = () => {
@@ -12,11 +12,11 @@ const CtaAll = () => {
                         <div className="btn-fatherCTAbtn">
                             <button className="btn-OneCtaServices">
                                 Contact Us
-                                <i className="arrowCtaServices bi bi-arrow-up-right"></i>
+                                <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
                             </button>
                             <button className="btn-TwoCtaServices">
                                 Our Services
-                                <i className="arrowCtaServices bi bi-arrow-up-right"></i>
+                                <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
                             </button>
                         </div>
                     </div>

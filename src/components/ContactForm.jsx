@@ -1,15 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    address: '',
     subject: '',
     message: ''
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    // Use Astro environment variables
+    const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+    
+    if (publicKey) {
+      emailjs.init(publicKey);
+    } else {
+      console.error('EmailJS Public Key not found');
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,26 +40,59 @@ export default function ContactForm() {
     setSubmitStatus('');
 
     try {
-      // Aquí puedes integrar con tu servicio de formularios
-      // Por ejemplo: Netlify Forms, Formspree, EmailJS, etc.
-      
-      // Simulación de envío
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Simulación de éxito (cambia esto por tu lógica real)
-      console.log('Formulario enviado:', formData);
-      
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      // Get environment variables
+      const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+
+      // Verify we have credentials
+      if (!serviceId || !templateId) {
+        throw new Error('EmailJS credentials not configured');
+      }
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          subject: formData.subject,
+          message: formData.message,
+          // Additional fields you can use in your template
+          to_name: 'Your Company', // Recipient name (you)
+          from_name: formData.name, // Sender name
+          reply_to: formData.email, // Reply-to email
+        }
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus('success');
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Optional: Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('');
+        }, 5000);
+      }
       
     } catch (error) {
-      console.error('Error al enviar formulario:', error);
+      console.error('Error sending form:', error);
       setSubmitStatus('error');
+      
+      // Optional: Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('');
+      }, 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -55,7 +103,7 @@ export default function ContactForm() {
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name" className="form-label">
-            Nombre completo *
+            Full Name *
           </label>
           <input
             type="text"
@@ -65,13 +113,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="form-input"
-            placeholder="Tu nombre completo"
+            placeholder="John Doe"
           />
         </div>
 
         <div className="form-group">
           <label htmlFor="email" className="form-label">
-            Correo electrónico *
+            Email Address *
           </label>
           <input
             type="email"
@@ -81,13 +129,44 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="form-input"
-            placeholder="tu@email.com"
+            placeholder="john@example.com"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phone" className="form-label">
+            Phone Number *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="form-input"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="address" className="form-label">
+            Project Address
+          </label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            className="form-input"
+            placeholder="123 Main St, City, State 12345"
           />
         </div>
 
         <div className="form-group">
           <label htmlFor="subject" className="form-label">
-            Asunto *
+            Project Type *
           </label>
           <select
             id="subject"
@@ -97,20 +176,22 @@ export default function ContactForm() {
             required
             className="form-select"
           >
-            <option value="">Selecciona un asunto</option>
-            <option value="consulta-general">Consulta general</option>
-            <option value="desarrollo-web">Desarrollo web</option>
-            <option value="consultoria">Consultoría</option>
-            <option value="marketing-digital">Marketing digital</option>
-            <option value="seo">SEO</option>
-            <option value="soporte">Soporte técnico</option>
-            <option value="otro">Otro</option>
+            <option value="">Select a project type</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="bathroom">Bathroom</option>
+            <option value="home-additions">Home Additions</option>
+            <option value="living-dining">Living and Dining</option>
+            <option value="bedroom">Bedroom</option>
+            <option value="general-repair">General Repair</option>
+            <option value="new-construction">New Construction</option>
+            <option value="complete-remodel">Complete Remodel</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
         <div className="form-group">
           <label htmlFor="message" className="form-label">
-            Mensaje *
+            Project Description *
           </label>
           <textarea
             id="message"
@@ -120,7 +201,7 @@ export default function ContactForm() {
             required
             rows="6"
             className="form-textarea"
-            placeholder="Cuéntanos más sobre tu proyecto o consulta..."
+            placeholder="Tell us about your project: What needs to be repaired, built, or remodeled? What are your ideas? Do you have a specific timeline?"
           ></textarea>
         </div>
 
@@ -132,10 +213,10 @@ export default function ContactForm() {
           {isSubmitting ? (
             <>
               <span className="spinner"></span>
-              Enviando...
+              Sending...
             </>
           ) : (
-            'Enviar mensaje'
+            'Get Free Quote'
           )}
         </button>
 
@@ -145,7 +226,7 @@ export default function ContactForm() {
               <path d="M9 12l2 2 4-4"/>
               <circle cx="12" cy="12" r="10"/>
             </svg>
-            ¡Gracias por tu mensaje! Te responderemos lo antes posible.
+            Thank you for your message! We'll contact you within 24 hours to discuss your project.
           </div>
         )}
 
@@ -156,7 +237,7 @@ export default function ContactForm() {
               <line x1="15" y1="9" x2="9" y2="15"/>
               <line x1="9" y1="9" x2="15" y2="15"/>
             </svg>
-            Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.
+            There was an error sending your message. Please try again or contact us directly by phone.
           </div>
         )}
       </form>
@@ -257,6 +338,18 @@ export default function ContactForm() {
           align-items: center;
           gap: 0.5rem;
           font-weight: 500;
+          animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .form-message.success {
