@@ -99,7 +99,7 @@ main{
 }
 
 .btn:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-accent);
     transform: translateY(-1px);
     box-shadow: var(--shadow-lg);
 }

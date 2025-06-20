@@ -53,6 +53,10 @@
     cursor: pointer;
 }
 
+.btn-OneCtaServices:hover{
+    background-color: var(--color-accent);
+}
+
 .arrowCtaServices {
     font-size: 11px;
     padding-left: 10px;
@@ -66,11 +70,15 @@
     width: 140px;
     height: 3rem;
     font-size: 15px;
-    color: #6F6F6F;
+    color: white;
     background-color: black;
     border: 1px solid white;
     border-radius: 30px;
     cursor: pointer;
+}
+
+.btn-TwoCtaServices:hover{
+    background-color: var(--color-primary);
 }
 
 .team-section {

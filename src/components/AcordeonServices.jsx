@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/components/AcordeonServices.css';
 
 // Banco de preguntas categorizadas
@@ -390,7 +390,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
             >
                 <h3 className="accordionQuestion">{question}</h3>
                 <span className={`accordionIcon ${isOpen ? 'iconOpen' : ''}`}>
-                    <i className={`bi bi-chevron-${isOpen ? 'up' : 'down'}`}></i>
+                    <i className={`fas fa-chevron-${isOpen ? 'up' : 'down'}`}></i>
                 </span>
             </button>
             <div

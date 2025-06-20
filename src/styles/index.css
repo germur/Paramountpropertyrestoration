@@ -64,7 +64,7 @@
     align-items: center;
     justify-content: center;
     padding: 0.7rem 1.5rem;
-    background: linear-gradient(135deg, #197fe5 0%, #1565c0 100%);
+    background: var(--color-primary);
     color: white;
     font-size: 0.85rem;
     font-weight: 700;
@@ -73,7 +73,6 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(25, 127, 229, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     animation: slideInUp 1s ease-out 0.4s both;
@@ -81,8 +80,7 @@
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(25, 127, 229, 0.6);
-    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, orange 100%);
 }
 
 .cta-button:active {
@@ -352,13 +350,17 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #0C4E6E;
+    background-color: var(--color-primary);
     border: none;
     height: 2.5rem;
     width: 11rem;
     border-radius: 3rem;
     box-shadow: -1px 7px 5px -6px rgba(0, 0, 0, 0.75);
     cursor: pointer;
+}
+
+.btn-cardResorces:hover {
+    background-color: var(--color-accent);
 }
 
 .tittleTotalServi {
@@ -383,7 +385,12 @@
 div.cnt-ul>ul>li>a {
     line-height: 2.8;
     text-decoration: none;
-    color: #0C4E6E;
+    color: var(--color-primary);
+}
+
+div.cnt-ul>ul>li>a:hover{
+    text-decoration: underline;
+    color: var(--color-accent);
 }
 
 /* Small phones */
@@ -466,37 +473,48 @@ div.cnt-ul>ul>li>a {
         grid-template-rows: repeat(1, 1fr);
         padding: 30px;
     }
-    .step-tiitlePrinci{
+
+    .step-tiitlePrinci {
         padding: 60px 100px 50px;
     }
-    .tittleResorces{
+
+    .tittleResorces {
         padding: 60px 100px 50px;
     }
-    .cnt-fatherResorces{
+
+    .cnt-fatherResorces {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .tittleTotalServi{
+
+    .tittleTotalServi {
         text-align: center;
         padding: 75px 100px 50px;
     }
 
-    .textTotalServi{
+    .cnt-cardResorces {
+        padding: 10px 30px;
+    }
+
+    .textTotalServi {
         text-align: center;
         padding: 10px 100px 60px;
     }
-    .cnt-ulLinkServices{
+
+    .cnt-ulLinkServices {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         list-style: none;
     }
-    .container{
+
+    .container {
         padding: 30px;
     }
-    .cnt-linkServices{
+
+    .cnt-linkServices {
         display: flex;
         justify-content: space-evenly;
 
@@ -517,13 +535,16 @@ div.cnt-ul>ul>li>a {
         padding: 1rem 2.5rem;
         font-size: 1.1rem;
     }
-    .subTittleService{
+
+    .subTittleService {
         padding: 60px 170px 20px;
     }
+
     .parent {
         grid-template-columns: repeat(3, 1fr);
         padding: 30px;
     }
+
     .parent2 {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(1, 1fr);
