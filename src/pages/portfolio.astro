@@ -12,7 +12,7 @@ import TabsNavegation from "../components/TabsNavegation.jsx";
   <!-- Section One -->
 
   <section class="projects-section">
-    <div class="projects-container">
+    <div class="projects-containerPort">
       <div class="project-frame image-one">
         <img
           src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80"
@@ -43,46 +43,47 @@ import TabsNavegation from "../components/TabsNavegation.jsx";
     </div>
   </section>
 
+  <section>
+    <TabsNavegation client:load />
+  </section>
+
   <!-- Section Two -->
 
   <section class="image-gallery-section">
-  <h2 class="gallery-title">Our gallery</h2>
-  
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img
-        src="/images/remoKitchenHome.jpg"
-        alt="ProyectKitchen"
-        class="gallery-image"
-      />
-    </div>
-    
-    <div class="gallery-item">
-      <img
-        src="/images/habitacionModerna.jpg"
-        alt="ProyectBedroom"
-        class="gallery-image"
-      />
-    </div>
+    <h2 class="gallery-title">Our gallery</h2>
 
-    <div class="gallery-item">
-      <img
-        src="/images/bañoMinimalista.jpg"
-        alt="ProyectBathroom"
-        class="gallery-image"
-      />
-    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img
+          src="/images/remoKitchenHome.jpg"
+          alt="ProyectKitchen"
+          class="gallery-image"
+        />
+      </div>
 
-    <div class="gallery-item">
-      <img
-        src="/images/livingDiningHero.jpg"
-        alt="ProyectLivingDining"
-        class="gallery-image"
-      />
+      <div class="gallery-item">
+        <img
+          src="/images/habitacionModerna.jpg"
+          alt="ProyectBedroom"
+          class="gallery-image"
+        />
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="/images/bañoMinimalista.jpg"
+          alt="ProyectBathroom"
+          class="gallery-image"
+        />
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="/images/livingDiningHero.jpg"
+          alt="ProyectLivingDining"
+          class="gallery-image"
+        />
+      </div>
     </div>
-  </div>
-</section>
-<section>
-  <TabsNavegation client:load />
-</section>
+  </section>
 </BaseLayout>

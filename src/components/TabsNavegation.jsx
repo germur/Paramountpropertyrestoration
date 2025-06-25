@@ -2,7 +2,16 @@ import { useState } from "react";
 import '../styles/components/TabsNavegation.css';
 
 export default function ProjectsFilter() {
-    const categories = ["All", "Kitchens", "Bathrooms", "Rooms", "Commercials"];
+    // Array de categorías actualizado con los nuevos íconos
+    const categories = [
+        { name: "All", iconClass: "fas fa-border-all" },
+        { name: "Kitchens", iconClass: "fas fa-kitchen-set" },
+        { name: "Bathrooms", iconClass: "fas fa-bath" },
+        { name: "Bedroom", iconClass: "fas fa-bed" },
+        { name: "Home Additions", iconClass: "fas fa-house-chimney-window" },
+        { name: "Living Dining", iconClass: "fas fa-couch" },
+    ];
+
     const [activeCategory, setActiveCategory] = useState("All");
     const [fadeKey, setFadeKey] = useState(0);
 
@@ -11,10 +20,11 @@ export default function ProjectsFilter() {
         { id: 2, name: "Cocina Clásica", category: "Kitchens", image: "images/cocinaClasica.jpg", description: "Un diseño clásico con madera y toques vintage." },
         { id: 3, name: "Baño Minimalista", category: "Bathrooms", image: "images/bañoMinimalista.jpg", description: "Baño con estilo minimalista, ducha de vidrio y tonos neutros." },
         { id: 4, name: "Baño de Lujo", category: "Bathrooms", image: "images/bañoLujo.jpg", description: "Baño con jacuzzi, iluminación LED y mármol italiano." },
-        { id: 5, name: "Habitación Rústica", category: "Rooms", image: "images/habitaRustica.jpg", description: "Habitación con madera natural y decoración acogedora." },
-        { id: 6, name: "Habitación Moderna", category: "Rooms", image: "images/habitacionModerna.jpg", description: "Diseño con luces LED y muebles contemporáneos." },
+        { id: 5, name: "Habitación Rústica", category: "Bedroom", image: "images/habitaRustica.jpg", description: "Habitación con madera natural y decoración acogedora." },
+        { id: 6, name: "Habitación Moderna", category: "Bedroom", image: "images/habitacionModerna.jpg", description: "Diseño con luces LED y muebles contemporáneos." },
         { id: 7, name: "Tienda de Moda", category: "Commercials", image: "images/tiendaModa.jpg", description: "Diseño moderno para tienda de ropa con vitrinas amplias." },
-        { id: 8, name: "Oficina Ejecutiva", category: "Commercials", image: "images/oficinaEjecutiva.jpg", description: "Espacio de trabajo con decoración colorida y funcional." }
+        { id: 8, name: "Oficina Ejecutiva", category: "Commercials", image: "images/oficinaEjecutiva.jpg", description: "Espacio de trabajo con decoración colorida y funcional." },
+        // Aquí podrías añadir proyectos para "Home Additions" y "Living Dining"
     ];
 
     const handleCategoryClick = (category) => {
@@ -30,14 +40,16 @@ export default function ProjectsFilter() {
     return (
         <div className="projects-container">
             <div className="tabs">
+                {/* Se ha vuelto a usar <button> por accesibilidad */}
                 {categories.map((category) => (
-                    <button
-                        key={category}
-                        className={`tab-button ${activeCategory === category ? "active" : ""}`}
-                        onClick={() => handleCategoryClick(category)}
+                    <div
+                        key={category.name}
+                        className={`tab-button ${activeCategory === category.name ? "active" : ""}`}
+                        onClick={() => handleCategoryClick(category.name)}
                     >
-                        {category}
-                    </button>
+                        <i className={category.iconClass}></i>
+                        <span>{category.name}</span>
+                    </div>
                 ))}
             </div>
 
