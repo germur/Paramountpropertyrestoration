@@ -80,7 +80,6 @@
     padding: 1rem;
     border-radius: 8px;
     transition: transform 0.3s ease;
-    cursor: pointer;
 }
 
 .service-item:hover {
