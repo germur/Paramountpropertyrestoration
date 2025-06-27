@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Acordeon from "../components/Acordeons.jsx";
 import AreasServed from "../components/AreasServed.jsx";
-import TabsNavegation from "../components/TabsNavegation.jsx";
 import LinkBuildingSection from "../components/linkBuilding";
 import "../styles/services.css";
 ---
@@ -22,6 +21,157 @@ import "../styles/services.css";
       </div>
       <div class="hero-text">
         <h1>Professional Remodeling Services</h1>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="tabs-container">
+      <div class="tabs-services">
+        <div class="cnt-iconsServices">
+          <a href="/servicios/detalles/kitchen-remodeling" class="tab-button">
+            <i class="fas fa-kitchen-set"></i>
+            <span>Kitchens</span>
+          </a>
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/servicios/detalles/bathroom-remodeling" class="tab-button">
+            <i class="fas fa-bath"></i>
+            <span>Bathrooms</span>
+          </a>
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/servicios/detalles/bedroom-remodeling" class="tab-button">
+            <i class="fas fa-bed"></i>
+            <span>Bedroom</span>
+          </a>
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/servicios/detalles/home-additions" class="tab-button">
+            <i class="fas fa-house-chimney-window"></i>
+            <span>HomeAdditions</span>
+          </a>
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/servicios/detalles/living-dining" class="tab-button">
+            <i class="fas fa-couch"></i>
+            <span>Living & Dining</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services-grid-container">
+    <div class="services-grid">
+      <div class="service-card">
+        <img
+          src="/images/kitchenHero.jpg"
+          alt="Remodelación de Cocina"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Kitchen Remodeling</h3>
+          <div class="cnt-tagsServices">
+            <span>Kitchen Islands</span>
+            <span>Compact Kitchens</span>
+            <span>Luxury Upgrades</span>
+            <span>Sustainable Designs</span>
+            <span>Smart Tech Integration</span>
+            <span>Modern kitchen Design</span>
+          </div>
+          <a href="/servicios/detalles/kitchen-remodeling" class="card-link"
+            >Ver más &rarr;</a
+          >
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/bathroomHero.jpg"
+          alt="Renovación de Baño"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Bathroom Renovation</h3>
+          <div class="cnt-tagsServices">
+            <span>Bathroom Renovation</span>
+            <span>Shower Installation</span>
+            <span>Tile Replacement</span>
+            <span>Vanity Upgrade</span>
+            <span>Bathroom Waterproofing</span>
+            <span>Modern Bathroom Design</span>
+          </div>
+          <a href="/servicios/detalles/bathroom-remodeling" class="card-link"
+            >Ver más &rarr;</a
+          >
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/bedroomHero.jpg"
+          alt="Diseño de Habitaciones"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Bedroom Design</h3>
+          <div class="cnt-tagsServices">
+            <span>Master Bedrooms</span>
+            <span>Guest & Kids Rooms</span>
+            <span>Luxury Upgrades</span>
+            <span>Smart Home Integration</span>
+            <span>Eco-Friendly Designs</span>
+          </div>
+          <a href="/servicios/detalles/bedroom-remodeling" class="card-link"
+            >Ver más &rarr;</a
+          >
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/livingDiningHero.jpg"
+          alt="Salas y Comedores"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Living & Dining</h3>
+          <div class="cnt-tagsServices">
+            <span>Living Rooms</span>
+            <span>Dining Rooms</span>
+            <span>Luxury Upgrades</span>
+            <span>Smart Lighting</span>
+            <span>Bathroom Waterproofing</span>
+            <span>Modern Bathroom Design</span>
+          </div>
+          <a href="/servicios/detalles/living-dining" class="card-link"
+            >Ver más &rarr;</a
+          >
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/home-additionsHero.jpg"
+          alt="Adiciones al Hogar"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Home Additions</h3>
+          <div class="cnt-tagsServices">
+            <span>Room Expansions</span>
+            <span>Multi-Story Projects</span>
+            <span>Outdoor Structures</span>
+            <span>Smart Home Integration</span>
+            <span>Energy Efficient Additions</span>
+          </div>
+          <a href="/servicios/detalles/home-additions" class="card-link"
+            >Ver más &rarr;</a
+          >
+        </div>
       </div>
     </div>
   </section>
