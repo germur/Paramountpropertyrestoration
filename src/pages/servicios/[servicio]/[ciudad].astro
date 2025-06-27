@@ -1,20 +1,24 @@
 ---
 // src/pages/servicios/[servicio]/[ciudad].astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getAllCombinations, getServicioData, getCiudadData } from '../../../data/servicios.js';
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  getAllCombinations,
+  getServicioData,
+  getCiudadData,
+} from "../../../data/servicios.js";
 
 export async function getStaticPaths() {
   const combinations = getAllCombinations();
-  
+
   return combinations.map(({ servicio, ciudad, servicioData, ciudadData }) => ({
-    params: { 
-      servicio, 
-      ciudad 
+    params: {
+      servicio,
+      ciudad,
     },
-    props: { 
-      servicioData, 
-      ciudadData 
-    }
+    props: {
+      servicioData,
+      ciudadData,
+    },
   }));
 }
 
@@ -29,46 +33,57 @@ const pageDescription = `Fast, affordable, and code-compliant ${servicioData.nom
 const heroContent = {
   title: `${servicioData.nombre} in ${ciudadData.nombre}`,
   subtitle: `Fast, affordable, and code-compliant ${servicioData.nombre.toLowerCase()} services in ${ciudadData.nombre}.`,
-  ctaText: `Get a Free Quote in ${ciudadData.nombre}`
+  ctaText: `Get a Free Quote in ${ciudadData.nombre}`,
 };
 
 // Servicios relacionados para mostrar como badges
 const allServices = [
-  { name: 'Bathroom Remodeling', icon: '🛁' },
-  { name: 'Kitchen Remodeling', icon: '🍳' },
-  { name: 'Exterior Construction', icon: '🏡' },
-  { name: 'Living & Dining', icon: '🛋️' },
-  { name: 'Bedroom Remodeling', icon: '🛏️' },
-  { name: 'Office Construction', icon: '💼' }
+  { name: "Bathroom Remodeling", icon: "🛁" },
+  { name: "Kitchen Remodeling", icon: "🍳" },
+  { name: "Exterior Construction", icon: "🏡" },
+  { name: "Living & Dining", icon: "🛋️" },
+  { name: "Bedroom Remodeling", icon: "🛏️" },
+  { name: "Office Construction", icon: "💼" },
 ];
 
 // Ciudades cercanas para el área de servicio
 const serviceAreaCities = [
-  'Weston', 'Pembroke Pines', 'Coral Gables', 'Aventura', 'Doral', 'Kendall'
+  "Weston",
+  "Pembroke Pines",
+  "Coral Gables",
+  "Aventura",
+  "Doral",
+  "Kendall",
 ];
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={pageDescription}
->
+<BaseLayout title={pageTitle} description={pageDescription}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
       <div class="hero-content">
         <!-- Service badges -->
         <div class="service-badges">
-          {allServices.map((service) => (
-            <span class="service-badge" class:list={[service.name.replace(' ', '').toLowerCase() === servicioData.nombre.replace(' ', '').toLowerCase() && 'active']}>
-              <span class="badge-icon">{service.icon}</span>
-              <span class="badge-text">{service.name}</span>
-            </span>
-          ))}
+          {
+            allServices.map((service) => (
+              <span
+                class="service-badge"
+                class:list={[
+                  service.name.replace(" ", "").toLowerCase() ===
+                    servicioData.nombre.replace(" ", "").toLowerCase() &&
+                    "active",
+                ]}
+              >
+                <span class="badge-icon">{service.icon}</span>
+                <span class="badge-text">{service.name}</span>
+              </span>
+            ))
+          }
         </div>
 
         <!-- Main heading -->
         <h1 class="hero-title">
-          Professional {servicioData.nombre}<br/>
+          Professional {servicioData.nombre}<br />
           in {ciudadData.nombre}
         </h1>
 
@@ -79,7 +94,7 @@ const serviceAreaCities = [
 
         <!-- CTA Button -->
         <div class="hero-cta">
-          <a href="/estimate" class="btn-primary">
+          <a href="/contacto" class="btn-primary">
             {heroContent.ctaText} →
           </a>
         </div>
@@ -94,10 +109,12 @@ const serviceAreaCities = [
         <div class="overview-content">
           <h2>Complete {servicioData.nombre} Services You Can Trust</h2>
           <p class="overview-text">
-            We deliver full-service {servicioData.nombre.toLowerCase()} in {ciudadData.nombre} with expert contractors, 
-            clean installations, and results you can rely on.
+            We deliver full-service {servicioData.nombre.toLowerCase()} in {
+              ciudadData.nombre
+            } with expert contractors, clean installations, and results you can rely
+            on.
           </p>
-          
+
           <ul class="service-features">
             <li>
               <span class="feature-icon">✓</span>
@@ -121,10 +138,12 @@ const serviceAreaCities = [
         <div class="overview-sidebar">
           <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
           <p>
-            We offer {servicioData.nombre.toLowerCase()} in {ciudadData.nombre} and throughout {ciudadData.region}, 
-            including neighborhoods like {serviceAreaCities.slice(0, 3).join(', ')}, and {serviceAreaCities[3]}.
+            We offer {servicioData.nombre.toLowerCase()} in {ciudadData.nombre} and
+            throughout {ciudadData.region}, including neighborhoods like {
+              serviceAreaCities.slice(0, 3).join(", ")
+            }, and {serviceAreaCities[3]}.
           </p>
-          <a href="/service-area" class="btn-outline">
+          <a href="/contacto" class="btn-outline">
             Check Availability in Your Neighborhood →
           </a>
         </div>
@@ -135,27 +154,44 @@ const serviceAreaCities = [
   <!-- Visual Gallery Section -->
   <section class="section gallery-section">
     <div class="container">
-      <h2 class="section-title">See Our {servicioData.nombre} Projects Across Florida</h2>
+      <h2 class="section-title">
+        See Our {servicioData.nombre} Projects Across Florida
+      </h2>
       <p class="section-subtitle">
-        We offer {servicioData.nombre.toLowerCase()} in {ciudadData.nombre} and throughout {ciudadData.region}, 
-        including neighborhoods like {serviceAreaCities.slice(0, 2).join(' and ')}.
+        We offer {servicioData.nombre.toLowerCase()} in {ciudadData.nombre} and throughout
+        {ciudadData.region}, including neighborhoods like {
+          serviceAreaCities.slice(0, 2).join(" and ")
+        }.
       </p>
-      
+
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="/images/BanoAntesDespues.jpeg" alt="Kitchen Remodeling Before and After" class="gallery-image" />
-          <div class="gallery-overlay">
-            <h4>Kitchen Transformation</h4>
-            <p>Modern design with custom cabinets</p>
+        <a href="/portfolio" class="gallery-card-link">
+          <div class="gallery-item">
+            <img
+              src="/images/BanoAntesDespues.jpeg"
+              alt="Bathroom Remodeling Before and After"
+              class="gallery-image"
+            />
+            <div class="gallery-overlay">
+              <h4>Bathroom Transformation</h4>
+              <p>Luxury finishes and modern fixtures</p>
+            </div>
           </div>
-        </div>
-        <div class="gallery-item">
-          <img src="/images/concinaAntesDespues.jpeg" alt="Bathroom Renovation" class="gallery-image" />
-          <div class="gallery-overlay">
-            <h4>Bathroom Upgrade</h4>
-            <p>Luxury finishes and modern fixtures</p>
+        </a>
+
+        <a href="/portfolio" class="gallery-card-link">
+          <div class="gallery-item">
+            <img
+              src="/images/concinaAntesDespues.jpeg"
+              alt="Kitchen Renovation"
+              class="gallery-image"
+            />
+            <div class="gallery-overlay">
+              <h4>Kitchen Upgrade</h4>
+              <p>Modern design with custom cabinets</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -163,15 +199,20 @@ const serviceAreaCities = [
   <!-- FAQs Section -->
   <section class="section faq-section">
     <div class="container">
-      <h2 class="section-title">FAQs About {servicioData.nombre} in {ciudadData.nombre}</h2>
-      
+      <h2 class="section-title">
+        FAQs About {servicioData.nombre} in {ciudadData.nombre}
+      </h2>
+
       <div class="faq-grid">
         <div class="faq-item">
           <h3 class="faq-question">
-            Do I need a permit for {servicioData.nombre.toLowerCase()} in {ciudadData.nombre}?
+            Do I need a permit for {servicioData.nombre.toLowerCase()} in {
+              ciudadData.nombre
+            }?
           </h3>
           <p class="faq-answer">
-            Yes, but we handle all permits and city documentation for you. Our team is familiar with 
+            Yes, but we handle all permits and city documentation for you. Our
+            team is familiar with
             {ciudadData.county} requirements and ensures full compliance.
           </p>
         </div>
@@ -181,8 +222,10 @@ const serviceAreaCities = [
             How long does a typical {servicioData.nombre.toLowerCase()} project take?
           </h3>
           <p class="faq-answer">
-            Most {servicioData.nombre.toLowerCase()} projects in {ciudadData.nombre} are completed within 
-            5–10 business days, depending on the scope and complexity.
+            Most {servicioData.nombre.toLowerCase()} projects in {
+              ciudadData.nombre
+            } are completed within 5–10 business days, depending on the scope and
+            complexity.
           </p>
         </div>
 
@@ -191,8 +234,10 @@ const serviceAreaCities = [
             What areas of {ciudadData.nombre} do you serve?
           </h3>
           <p class="faq-answer">
-            We serve all of {ciudadData.nombre} and surrounding areas in {ciudadData.region}, including 
-            {serviceAreaCities.slice(0, 4).join(', ')}, and more.
+            We serve all of {ciudadData.nombre} and surrounding areas in {
+              ciudadData.region
+            }, including
+            {serviceAreaCities.slice(0, 4).join(", ")}, and more.
           </p>
         </div>
 
@@ -201,8 +246,8 @@ const serviceAreaCities = [
             Do you offer warranties on your {servicioData.nombre.toLowerCase()}?
           </h3>
           <p class="faq-answer">
-            Yes, all our {servicioData.nombre.toLowerCase()} work comes with comprehensive warranties 
-            covering both materials and labor for your peace of mind.
+            Yes, all our {servicioData.nombre.toLowerCase()} work comes with comprehensive
+            warranties covering both materials and labor for your peace of mind.
           </p>
         </div>
       </div>
@@ -216,9 +261,12 @@ const serviceAreaCities = [
     display: flex;
     justify-content: center;
     align-items: center;
-    background: 
-      linear-gradient(135deg, rgba(12, 78, 110, 0.4) 0%, rgba(3, 23, 79, 0.5) 100%),
-      url('/images/backgroundTemplateSeo.jpg');
+    background: linear-gradient(
+        135deg,
+        rgba(12, 78, 110, 0.4) 0%,
+        rgba(3, 23, 79, 0.5) 100%
+      ),
+      url("/images/backgroundTemplateSeo.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -228,13 +276,17 @@ const serviceAreaCities = [
   }
 
   .hero-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(12, 78, 110, 0.2) 0%, rgba(3, 23, 79, 0.3) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(12, 78, 110, 0.2) 0%,
+      rgba(3, 23, 79, 0.3) 100%
+    );
     z-index: 1;
   }
 
@@ -535,7 +587,6 @@ const serviceAreaCities = [
     color: var(--text-secondary);
     line-height: 1.6;
   }
-
 
   /* Responsive Design */
   @media (max-width: 768px) {

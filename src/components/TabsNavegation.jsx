@@ -111,20 +111,20 @@ export default function ProjectsFilter() {
                     <div key={project.id} className="project-card">
                         <img src={project.image} alt={project.name} className="project-image" />
                         <div className="project-info">
-                            <h3 className="titleCard">{project.name}</h3>
+                            <h2 className="titleCard">{project.name}</h2>
                             <p>{project.description}</p>
                             
                             <div className="project-details-extra">
-                                <h3 className="project-detail-heading">Challenge</h3>
+                                <h2 className="project-detail-heading">Challenge</h2>
                                 <p className="project-detail-text">{project.challenge}</p>
 
-                                <h3 className="project-detail-heading">Solution</h3>
+                                <h2 className="project-detail-heading">Solution</h2>
                                 <p className="project-detail-text">{project.solution}</p>
 
-                                <h3 className="project-detail-heading">Execution</h3>
+                                <h2 className="project-detail-heading">Execution</h2>
                                 <p className="project-detail-text">{project.execution}</p>
 
-                                <h3 className="project-detail-heading">Project Timeline</h3>
+                                <h2 className="project-detail-heading">Project Timeline</h2>
                                 <p className="project-detail-text">{project.time}</p>
                             </div>
                         </div>

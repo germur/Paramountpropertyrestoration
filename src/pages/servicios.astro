@@ -10,18 +10,14 @@ import "../styles/services.css";
   title="Servicios - Mi Sitio Web"
   description="Descubre nuestros servicios profesionales: desarrollo web, consultoría digital, marketing online, SEO y más. Soluciones personalizadas para tu negocio."
 >
-  <section>
-    <div class="heroContainerH1">
-      <div class="cnt-Back-images">
-        <img
-          src="images/arquite2.jpg"
-          alt="Background 1"
-          class="background-image"
-        />
-      </div>
-      <div class="hero-text">
-        <h1>Professional Remodeling Services</h1>
-      </div>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Professional Remodeling Services</h1>
+      <p class="hero-subtitle">
+        Transforming spaces in Cali with quality craftsmanship and attention to
+        detail.
+      </p>
+      <a href="/contacto" class="hero-cta-button">Get a Free Quote</a>
     </div>
   </section>
   <section>
@@ -73,7 +69,7 @@ import "../styles/services.css";
           class="card-image"
         />
         <div class="card-content">
-          <h3 class="card-title">Kitchen Remodeling</h3>
+          <h2 class="card-title">Kitchen Remodeling</h2>
           <div class="cnt-tagsServices">
             <span>Kitchen Islands</span>
             <span>Compact Kitchens</span>
@@ -82,9 +78,11 @@ import "../styles/services.css";
             <span>Smart Tech Integration</span>
             <span>Modern kitchen Design</span>
           </div>
-          <a href="/servicios/detalles/kitchen-remodeling" class="card-link"
-            >Ver más &rarr;</a
-          >
+          <div>
+            <a href="/servicios/detalles/kitchen-remodeling" class="card-link"
+              >Ver más &rarr;</a
+            >
+          </div>
         </div>
       </div>
 
@@ -95,7 +93,7 @@ import "../styles/services.css";
           class="card-image"
         />
         <div class="card-content">
-          <h3 class="card-title">Bathroom Renovation</h3>
+          <h2 class="card-title">Bathroom Renovation</h2>
           <div class="cnt-tagsServices">
             <span>Bathroom Renovation</span>
             <span>Shower Installation</span>
@@ -104,9 +102,11 @@ import "../styles/services.css";
             <span>Bathroom Waterproofing</span>
             <span>Modern Bathroom Design</span>
           </div>
-          <a href="/servicios/detalles/bathroom-remodeling" class="card-link"
-            >Ver más &rarr;</a
-          >
+          <div>
+            <a href="/servicios/detalles/bathroom-remodeling" class="card-link"
+              >Ver más &rarr;</a
+            >
+          </div>
         </div>
       </div>
 
@@ -117,7 +117,7 @@ import "../styles/services.css";
           class="card-image"
         />
         <div class="card-content">
-          <h3 class="card-title">Bedroom Design</h3>
+          <h2 class="card-title">Bedroom Design</h2>
           <div class="cnt-tagsServices">
             <span>Master Bedrooms</span>
             <span>Guest & Kids Rooms</span>
@@ -125,9 +125,11 @@ import "../styles/services.css";
             <span>Smart Home Integration</span>
             <span>Eco-Friendly Designs</span>
           </div>
-          <a href="/servicios/detalles/bedroom-remodeling" class="card-link"
-            >Ver más &rarr;</a
-          >
+          <div>
+            <a href="/servicios/detalles/bedroom-remodeling" class="card-link"
+              >Ver más &rarr;</a
+            >
+          </div>
         </div>
       </div>
 
@@ -138,7 +140,7 @@ import "../styles/services.css";
           class="card-image"
         />
         <div class="card-content">
-          <h3 class="card-title">Living & Dining</h3>
+          <h2 class="card-title">Living & Dining</h2>
           <div class="cnt-tagsServices">
             <span>Living Rooms</span>
             <span>Dining Rooms</span>
@@ -147,9 +149,11 @@ import "../styles/services.css";
             <span>Bathroom Waterproofing</span>
             <span>Modern Bathroom Design</span>
           </div>
-          <a href="/servicios/detalles/living-dining" class="card-link"
-            >Ver más &rarr;</a
-          >
+          <div>
+            <a href="/servicios/detalles/living-dining" class="card-link"
+              >Ver más &rarr;</a
+            >
+          </div>
         </div>
       </div>
 
@@ -160,7 +164,7 @@ import "../styles/services.css";
           class="card-image"
         />
         <div class="card-content">
-          <h3 class="card-title">Home Additions</h3>
+          <h2 class="card-title">Home Additions</h2>
           <div class="cnt-tagsServices">
             <span>Room Expansions</span>
             <span>Multi-Story Projects</span>
@@ -168,9 +172,11 @@ import "../styles/services.css";
             <span>Smart Home Integration</span>
             <span>Energy Efficient Additions</span>
           </div>
-          <a href="/servicios/detalles/home-additions" class="card-link"
-            >Ver más &rarr;</a
-          >
+          <div class="cnt-card-linkServices">
+            <a href="/servicios/detalles/home-additions" class="card-link"
+              >Ver más &rarr;</a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -180,14 +186,5 @@ import "../styles/services.css";
   </section>
   <section>
     <LinkBuildingSection />
-  </section>
-  <section>
-    <Acordeon client:load />
-    <div class="cnt-btn-FAQ">
-      <button class="btn-ctaFAQ"
-        >Free Quote<i class="ArrowFreeCtaAcordeon bi bi-arrow-up-right"
-        ></i></button
-      >
-    </div>
   </section>
 </BaseLayout>

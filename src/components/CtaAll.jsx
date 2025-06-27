@@ -7,17 +7,18 @@ const CtaAll = () => {
             <div className="cnt-cardCTAservices">
                 <div className="cardCTAservices">
                     <div>
-                        <h2 className="titleCardCTAServ">Designing the Future of Architecture Today</h2>
+                        <h4 className="titleCardCTAServ">Designing the Future of Architecture Today</h4>
                         <p className="textCardCTAServ">Crafting Spaces That Reflect Your Dreams</p>
                         <div className="btn-fatherCTAbtn">
-                            <button className="btn-OneCtaServices">
+                            <a href="/contacto" className="btn-OneCtaServices">
                                 Contact Us
                                 <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
-                            </button>
-                            <button className="btn-TwoCtaServices">
+                            </a>
+
+                            <a href="/servicios" className="btn-TwoCtaServices">
                                 Our Services
                                 <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div className="team-section">
@@ -26,7 +27,7 @@ const CtaAll = () => {
                             <img src="/images/avatarTwo.png" alt="Person 2" className="team-member two" />
                             <img src="/images/avatarThree.png" alt="Person 3" className="team-member three" />
                         </div>
-                        <h2 className='tittleH2Team'>Shaping Spaces, Inspiring Futures</h2>
+                        <h4 className='tittleH2Team'>Shaping Spaces, Inspiring Futures</h4>
                     </div>
                 </div>
             </div>

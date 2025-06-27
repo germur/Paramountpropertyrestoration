@@ -5,98 +5,86 @@ const LinkBuildingSection = ({
     showStats = false,
     showTitle = false,
     compact = true,
-    categories = "all" // "all", "major", "premium", "growth", "central", "coastal", "services"
+    categories = "all"
 }) => {
 
+    // El objeto de datos ahora está organizado por regiones geográficas
     const linkData = {
-        major: {
-            title: "Major Markets",
-            icon: "🏙️",
-            description: "High population centers with maximum search volume",
-            links: [
-                { href: "/servicios/bathroom/miami", text: "Bathroom Remodeling Miami" },
-                { href: "/servicios/kitchen/miami", text: "Kitchen Remodeling Miami" },
-                { href: "/servicios/bathroom/orlando", text: "Bathroom Remodeling Orlando" },
-                { href: "/servicios/kitchen/orlando", text: "Kitchen Remodeling Orlando" },
-                { href: "/servicios/bathroom/tampa", text: "Bathroom Remodeling Tampa" },
-                { href: "/servicios/kitchen/tampa", text: "Kitchen Remodeling Tampa" },
-                { href: "/servicios/exterior/fort-lauderdale", text: "Exterior Construction Fort Lauderdale" },
-                { href: "/servicios/living-dining/west-palm-beach", text: "Living & Dining West Palm Beach" }
-            ]
-        },
-        premium: {
-            title: "Premium Areas",
-            icon: "💎",
-            description: "High-value markets with affluent demographics",
-            links: [
-                { href: "/servicios/kitchen/boca-raton", text: "Kitchen Remodeling Boca Raton" },
-                { href: "/servicios/bathroom/coral-gables", text: "Bathroom Remodeling Coral Gables" },
-                { href: "/servicios/exterior/miami-beach", text: "Exterior Construction Miami Beach" },
-                { href: "/servicios/bedroom/naples", text: "Bedroom Remodeling Naples" },
-                { href: "/servicios/office/sarasota", text: "Office Construction Sarasota" },
-                { href: "/servicios/living-dining/marco-island", text: "Living & Dining Marco Island" },
-                { href: "/servicios/kitchen/bonita-springs", text: "Kitchen Remodeling Bonita Springs" },
-                { href: "/servicios/bathroom/hollywood", text: "Bathroom Remodeling Hollywood" }
-            ]
-        },
-        growth: {
-            title: "Growth Areas",
-            icon: "📈",
-            description: "Emerging markets with development potential",
-            links: [
-                { href: "/servicios/exterior/cape-coral", text: "Exterior Construction Cape Coral" },
-                { href: "/servicios/bathroom/port-st-lucie", text: "Bathroom Remodeling Port St. Lucie" },
-                { href: "/servicios/kitchen/pembroke-pines", text: "Kitchen Remodeling Pembroke Pines" },
-                { href: "/servicios/living-dining/miramar", text: "Living & Dining Miramar" },
-                { href: "/servicios/bedroom/lakeland", text: "Bedroom Remodeling Lakeland" },
-                { href: "/servicios/office/clearwater", text: "Office Construction Clearwater" },
-                { href: "/servicios/exterior/st-petersburg", text: "Exterior Construction St. Petersburg" },
-                { href: "/servicios/bathroom/fort-myers", text: "Bathroom Remodeling Fort Myers" }
-            ]
-        },
-        central: {
+        centralFlorida: {
             title: "Central Florida",
             icon: "🎯",
-            description: "Tourism and residential hub markets",
+            description: "Covering the tourism and residential hubs of the state's core.",
             links: [
-                { href: "/servicios/kitchen/kissimmee", text: "Kitchen Remodeling Kissimmee" },
-                { href: "/servicios/bathroom/winter-garden", text: "Bathroom Remodeling Winter Garden" },
-                { href: "/servicios/exterior/clermont", text: "Exterior Construction Clermont" },
-                { href: "/servicios/living-dining/sanford", text: "Living & Dining Sanford" },
-                { href: "/servicios/bedroom/altamonte-springs", text: "Bedroom Remodeling Altamonte Springs" },
-                { href: "/servicios/office/oviedo", text: "Office Construction Oviedo" },
+                { href: "/servicios/kitchen/orlando", text: "Kitchen Remodeling Orlando" },
+                { href: "/servicios/bathroom/kissimmee", text: "Bathroom Remodeling Kissimmee" },
+                { href: "/servicios/exterior/winter-garden", text: "Exterior Construction Winter Garden" },
+                { href: "/servicios/living-dining/clermont", text: "Living & Dining Clermont" },
+                { href: "/servicios/bedroom/lakeland", text: "Bedroom Remodeling Lakeland" },
+                { href: "/servicios/office/sanford", text: "Office Construction Sanford" },
+                { href: "/servicios/kitchen/altamonte-springs", text: "Kitchen Remodeling Altamonte Springs" },
+                { href: "/servicios/bathroom/oviedo", text: "Bathroom Remodeling Oviedo" }
+            ]
+        },
+        tampaBayRegion: {
+            title: "Tampa Bay Region",
+            icon: "⛵",
+            description: "Serving the vibrant and growing markets around Tampa Bay.",
+            links: [
+                { href: "/servicios/kitchen/tampa", text: "Kitchen Remodeling Tampa" },
+                { href: "/servicios/exterior/st-petersburg", text: "Exterior Construction St. Petersburg" },
+                { href: "/servicios/office/clearwater", text: "Office Construction Clearwater" },
                 { href: "/servicios/bathroom/brandon", text: "Bathroom Remodeling Brandon" },
-                { href: "/servicios/kitchen/bradenton", text: "Kitchen Remodeling Bradenton" }
+                { href: "/servicios/living-dining/sarasota", text: "Living & Dining Sarasota" },
+                { href: "/servicios/bedroom/bradenton", text: "Bedroom Remodeling Bradenton" },
+                { href: "/servicios/kitchen/lakeland", text: "Kitchen Remodeling Lakeland" },
+                { href: "/servicios/bathroom/largo", text: "Bathroom Remodeling Largo" }
             ]
         },
-        coastal: {
-            title: "Coastal Markets",
-            icon: "🏖️",
-            description: "Premium coastal and waterfront communities",
+        southFlorida: {
+            title: "South Florida",
+            icon: "🌴",
+            description: "Our premier services for the dynamic South Florida metropolis.",
             links: [
-                { href: "/servicios/exterior/vero-beach", text: "Exterior Construction Vero Beach" },
-                { href: "/servicios/bathroom/stuart", text: "Bathroom Remodeling Stuart" },
-                { href: "/servicios/kitchen/homestead", text: "Kitchen Remodeling Homestead" },
-                { href: "/servicios/living-dining/miami-beach", text: "Living & Dining Miami Beach" },
-                { href: "/servicios/bedroom/hollywood", text: "Bedroom Remodeling Hollywood" },
-                { href: "/servicios/office/fort-lauderdale", text: "Office Construction Fort Lauderdale" },
-                { href: "/servicios/exterior/naples", text: "Exterior Construction Naples" },
-                { href: "/servicios/bathroom/marco-island", text: "Bathroom Remodeling Marco Island" }
-            ]
-        },
-        services: {
-            title: "All Services",
-            icon: "🛠️",
-            description: "Complete service portfolio showcase",
-            links: [
-                { href: "/servicios/office/miami", text: "Office Construction Miami" },
-                { href: "/servicios/bedroom/orlando", text: "Bedroom Remodeling Orlando" },
-                { href: "/servicios/living-dining/tampa", text: "Living & Dining Tampa" },
+                { href: "/servicios/bathroom/miami", text: "Bathroom Remodeling Miami" },
+                { href: "/servicios/kitchen/fort-lauderdale", text: "Kitchen Remodeling Fort Lauderdale" },
+                { href: "/servicios/living-dining/west-palm-beach", text: "Living & Dining West Palm Beach" },
                 { href: "/servicios/office/boca-raton", text: "Office Construction Boca Raton" },
-                { href: "/servicios/bedroom/fort-lauderdale", text: "Bedroom Remodeling Fort Lauderdale" },
-                { href: "/servicios/living-dining/coral-gables", text: "Living & Dining Coral Gables" },
-                { href: "/servicios/office/cape-coral", text: "Office Construction Cape Coral" },
-                { href: "/servicios/bedroom/clearwater", text: "Bedroom Remodeling Clearwater" }
+                { href: "/servicios/bedroom/hollywood", text: "Bedroom Remodeling Hollywood" },
+                { href: "/servicios/exterior/coral-gables", text: "Exterior Construction Coral Gables" },
+                { href: "/servicios/kitchen/homestead", text: "Kitchen Remodeling Homestead" },
+                { href: "/servicios/bathroom/pembroke-pines", text: "Bathroom Remodeling Pembroke Pines" },
+                { href: "/servicios/living-dining/miramar", text: "Living & Dining Miramar" },
+                { href: "/servicios/exterior/miami-beach", text: "Exterior Construction Miami Beach" }
+            ]
+        },
+        southwestFlorida: {
+            title: "Southwest Florida",
+            icon: "☀️",
+            description: "High-end remodeling for Florida's beautiful Gulf Coast communities.",
+            links: [
+                { href: "/servicios/bedroom/naples", text: "Bedroom Remodeling Naples" },
+                { href: "/servicios/exterior/cape-coral", text: "Exterior Construction Cape Coral" },
+                { href: "/servicios/bathroom/fort-myers", text: "Bathroom Remodeling Fort Myers" },
+                { href: "/servicios/kitchen/bonita-springs", text: "Kitchen Remodeling Bonita Springs" },
+                { href: "/servicios/living-dining/marco-island", text: "Living & Dining Marco Island" },
+                { href: "/servicios/office/port-charlotte", text: "Office Construction Port Charlotte" },
+                { href: "/servicios/bathroom/venice", text: "Bathroom Remodeling Venice" },
+                { href: "/servicios/kitchen/estero", text: "Kitchen Remodeling Estero" }
+            ]
+        },
+        treasureCoast: {
+            title: "Treasure Coast",
+            icon: "💎",
+            description: "Expert construction and remodeling along the Treasure Coast.",
+            links: [
+                { href: "/servicios/bathroom/port-st-lucie", text: "Bathroom Remodeling Port St. Lucie" },
+                { href: "/servicios/kitchen/stuart", text: "Kitchen Remodeling Stuart" },
+                { href: "/servicios/exterior/vero-beach", text: "Exterior Construction Vero Beach" },
+                { href: "/servicios/living-dining/jupiter", text: "Living & Dining Jupiter" },
+                { href: "/servicios/bedroom/palm-city", text: "Bedroom Remodeling Palm City" },
+                { href: "/servicios/office/hobe-sound", text: "Office Construction Hobe Sound" },
+                { href: "/servicios/bathroom/fort-pierce", text: "Bathroom Remodeling Fort Pierce" },
+                { href: "/servicios/kitchen/jensen-beach", text: "Kitchen Remodeling Jensen Beach" }
             ]
         }
     };
@@ -116,51 +104,16 @@ const LinkBuildingSection = ({
                 {showTitle && (
                     <div className={`link-building-header ${compact ? 'compact' : ''}`}>
                         <h2 className={`link-building-title ${compact ? 'compact' : ''}`}>
-                            Strategic Link Building
+                            Our Service Areas
                         </h2>
                         <p className={`link-building-subtitle ${compact ? 'compact' : ''}`}>
-                            Optimized internal linking structure targeting high-impact service and location combinations
-                            for maximum SEO efficiency and user experience.
+                            Providing expert remodeling and construction services across Florida's key regions.
                         </p>
                     </div>
                 )}
 
                 {showStats && (
-                    <div className={`link-building-stats ${compact ? 'compact' : ''}`}>
-                        <h3 className={`link-building-stats-title ${compact ? 'compact' : ''}`}>
-                            SEO Strategy Overview
-                        </h3>
-                        <div className={`link-building-stats-grid ${compact ? 'compact' : ''}`}>
-                            <div className="link-building-stat-item">
-                                <div className={`link-building-stat-number ${compact ? 'compact' : ''}`}>
-                                    {totalLinks}
-                                </div>
-                                <div className={`link-building-stat-label ${compact ? 'compact' : ''}`}>
-                                    Strategic Links
-                                </div>
-                            </div>
-                            <div className="link-building-stat-item">
-                                <div className={`link-building-stat-number ${compact ? 'compact' : ''}`}>6</div>
-                                <div className={`link-building-stat-label ${compact ? 'compact' : ''}`}>
-                                    Core Services
-                                </div>
-                            </div>
-                            <div className="link-building-stat-item">
-                                <div className={`link-building-stat-number ${compact ? 'compact' : ''}`}>192</div>
-                                <div className={`link-building-stat-label ${compact ? 'compact' : ''}`}>
-                                    Total Pages
-                                </div>
-                            </div>
-                            <div className="link-building-stat-item">
-                                <div className={`link-building-stat-number ${compact ? 'compact' : ''}`}>
-                                    {Math.round((totalLinks / 192) * 100)}%
-                                </div>
-                                <div className={`link-building-stat-label ${compact ? 'compact' : ''}`}>
-                                    Coverage Rate
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div className={`link-building-stats ${compact ? 'compact' : ''}`}></div>
                 )}
 
                 <div className={`link-building-grid ${compact ? 'compact' : ''}`}>
@@ -181,7 +134,7 @@ const LinkBuildingSection = ({
                                 </div>
                                 <div className={`links-list ${compact ? 'compact' : ''}`}>
                                     {category.links.map((link, index) => (
-                                        <a
+                                        <a  target="_blank"
                                             key={index}
                                             href={`${baseUrl}${link.href}`}
                                             className={`link-item ${compact ? 'compact' : ''}`}

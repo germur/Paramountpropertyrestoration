@@ -51,6 +51,7 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-OneCtaServices:hover{
@@ -75,6 +76,7 @@
     border: 1px solid white;
     border-radius: 30px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-TwoCtaServices:hover{
