@@ -1,11 +1,13 @@
-/* Contenedor principal de los filtros */
+/* ==========================================================================
+   1. Estilos de los Filtros y Contenedor Principal
+   ========================================================================== */
+
 .projects-container {
     margin: 0 auto;
     padding: 10px;
-    cursor: pointer;
+    max-width: 1200px;
 }
 
-/* Estilos de pestañas */
 .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +28,8 @@
     gap: 0.5rem;
     min-width: 100px;
     min-height: 80px;
+    border: none;
+    background: none;
 }
 
 .tab-button i {
@@ -48,60 +52,67 @@
     transform: translateY(-2px);
 }
 
-.projects-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-    transition: opacity 0.4s ease-in-out;
-}
+/* ==========================================================================
+   2. Estilos para el Layout Zig-Zag (Mobile-First)
+   ========================================================================== */
 
-.project-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #f9f9f9;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+.project-feature-block {
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s;
-    padding: 20px;
+    margin-bottom: 2rem;
 }
 
-.project-card:hover {
-    transform: scale(1.03);
+.feature-content {
+    padding: 1.5rem;
 }
 
-.project-image {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
+.feature-content h2 {
+    font-size: 1.75rem;
+    color: #1a202c;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
-.project-info {
-    padding: 20px 0;
-}
-
-.project-info h2 {
+.feature-content ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-size: 16px;
-    color: black;
-    font-weight: 600;
 }
 
-.project-info p {
-    margin: 5px 0 15px;
-    color: #666;
-    line-height: 1.2;
-    font-size: 14px;
+.feature-content li {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 1.2em;
+    position: relative;
 }
 
+.feature-content li::before {
+    content: '•';
+    color: var(--color-accent, #ff8c00);
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.feature-image img {
+    object-fit: cover;
+    display: block;
+    max-width: 500px;
+    max-height: 334px;
+}
+
+/* Animación de fundido */
 .fade-in {
-    animation: fadeIn 0.4s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(10px);
     }
 
     to {
@@ -110,19 +121,34 @@
     }
 }
 
-/* --- MEDIA QUERIES (SIN CAMBIOS) --- */
-@media (min-width: 768px) {
-    .projects-list {
-        grid-template-columns: repeat(2, minmax(280px, 1fr));
-    }
+/* ==========================================================================
+   3. Estilos para Tablet y Escritorio (min-width: 768px)
+   ========================================================================== */
 
+@media (min-width: 768px) {
     .tabs {
         padding: 30px 0;
     }
-}
 
-@media (min-width: 1024px) {
-    .projects-list {
-        grid-template-columns: repeat(3, minmax(280px, 1fr));
+    .project-feature-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .feature-content {
+        padding: 0;
+    }
+
+    /* El truco del Zig-Zag */
+    .project-feature-block:nth-child(even) .feature-image {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .project-feature-block:nth-child(even) .feature-content {
+        grid-column: 2 / 3;
     }
 }
