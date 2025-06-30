@@ -4,7 +4,6 @@ description: "Estrategias prácticas y económicas para que tu pequeña empresa 
 author: "Tu Nombre"
 date: 2025-01-10
 tags: ["Marketing Digital", "Pequeñas Empresas", "Estrategia"]
-featured: false
 image: "/images/blog/marketing-pequeñas-empresas.jpg"
 ---
 

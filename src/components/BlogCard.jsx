@@ -1,15 +1,13 @@
-// -----------------------------------------------------------------------------
-// Archivo 1: src/components/BlogCard.jsx (NUEVO - Conversión de tu .astro)
-// -----------------------------------------------------------------------------
-export default function BlogCard({ title, description, author, date, slug, tags, image, featured }) {
-  // Formateamos la fecha directamente aquí
+import React from 'react';
+
+// LA SOLUCIÓN: Añadimos un valor por defecto a 'featured' para hacerlo opcional.
+export default function BlogCard({ title, description, author, date, slug, tags, image, featured = false }) {
   const formattedDate = new Date(date).toLocaleDateString("es-ES", {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
 
-  // Aseguramos que la imagen tenga la ruta correcta
   const imageUrl = image ? (image.startsWith('/') ? image : `/${image}`) : null;
 
   return (

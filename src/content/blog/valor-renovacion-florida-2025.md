@@ -6,6 +6,7 @@ date: 2025-06-25
 tags: ["Home Renovation", "Florida", "Cost Guide", "Remodeling Budget"]
 featured: true
 image: "/images/blog/remo-costo.jpg"
+import: "../../styles/blog/valor-renovacion-florida-2025.css"
 ---
 
 <h1>How Much Does a Home Renovation Cost in Florida in 2025?</h1>
