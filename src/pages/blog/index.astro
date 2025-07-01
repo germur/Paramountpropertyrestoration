@@ -6,7 +6,7 @@ import type { CollectionEntry } from "astro:content";
 
 const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
 const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
 );
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 const recentPosts = sortedPosts.slice(0, 5);
@@ -17,12 +17,13 @@ const recentPosts = sortedPosts.slice(0, 5);
   description="Mantente actualizado con nuestros artículos sobre desarrollo web, marketing digital, SEO y tendencias tecnológicas."
 >
   <section class="blog-hero">
-    <div class="container">
+    <div class="containerBlog">
       <div class="hero-content">
-        <h1>Nuestro Blog</h1>
+        <h1>Florida Homeowner's Hub</h1>
         <p class="hero-description">
-          Comparte conocimiento, tendencias y consejos prácticos sobre
-          desarrollo web, marketing digital y tecnología.
+          Transform your home with confidence. Our guides offer expert advice on
+          planning, budgeting, and maintenance to ensure its long-term beauty
+          and value.
         </p>
       </div>
     </div>
@@ -44,213 +45,254 @@ const recentPosts = sortedPosts.slice(0, 5);
   /* ==========================================================================
      1. ESTILOS PARA LA PÁGINA PRINCIPAL DEL BLOG (Layout, Hero, Sidebar, etc.)
      ========================================================================== */
-  
+  /* --- Estilos para la Sección Hero del Blog --- */
+
+  .blog-hero {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    background-image: url("/images/blog/heroBlog.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .blog-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .blog-hero .containerBlog {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-hero .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content h1 {
+    max-width: 700px;
+    font-size: clamp(3.1rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    padding: 0 40px;
+  }
+
   .section {
     padding: var(--spacing-12) 0;
   }
 
-  .container {
+  .containerBlog {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-6);
   }
 
-  .mobile-search-widget { 
-    display: block; 
-    margin-bottom: var(--spacing-8); 
+  .mobile-search-widget {
+    display: block;
+    margin-bottom: var(--spacing-8);
   }
-  .desktop-search-widget { 
-    display: none; 
-  }
-
-  .blog-layout { 
-    display: grid; 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-8); 
-    align-items: start; 
+  .desktop-search-widget {
+    display: none;
   }
 
-  .blog-hero { 
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); 
-    color: white; 
-    padding: var(--spacing-12) 0; 
-    text-align: center; 
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    align-items: start;
   }
 
-  .hero-content h1 { 
-    font-size: var(--font-size-4xl); 
-    margin-bottom: var(--spacing-6); 
-    color: white; 
+  .blog-hero {
+    color: white;
+    padding: var(--spacing-12) 0;
+    text-align: center;
   }
 
-  .hero-description { 
-    font-size: var(--font-size-lg); 
-    max-width: 600px; 
-    margin: 0 auto; 
-    color: rgba(255, 255, 255, 0.9); 
-    line-height: 1.6; 
+  .blog-main {
+    width: 100%;
   }
 
-  .blog-main { 
-    width: 100%; 
+  .section-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-8);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: var(--spacing-3);
+    display: inline-block;
   }
 
-  .section-title { 
-    font-size: var(--font-size-2xl); 
-    margin-bottom: var(--spacing-8); 
-    color: var(--text-primary); 
-    border-bottom: 1px solid var(--color-primary); 
-    padding-bottom: var(--spacing-3); 
-    display: inline-block; 
+  .search-results-info {
+    background: var(--bg-secondary);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .search-results-info { 
-    background: var(--bg-secondary); 
-    padding: var(--spacing-4); 
-    border-radius: var(--border-radius); 
-    margin-bottom: var(--spacing-6); 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+  .clear-search-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: background-color 0.2s ease;
+  }
+  .clear-search-btn:hover {
+    background: var(--color-primary-dark);
   }
 
-  .clear-search-btn { 
-    background: var(--color-primary); 
-    color: white; 
-    border: none; 
-    padding: var(--spacing-2) var(--spacing-4); 
-    border-radius: var(--border-radius); 
-    cursor: pointer; 
-    font-size: var(--font-size-sm); 
-    transition: background-color 0.2s ease; 
+  .no-results {
+    text-align: center;
+    padding: var(--spacing-12);
+    color: var(--text-secondary);
   }
-  .clear-search-btn:hover { 
-    background: var(--color-primary-dark); 
+  .no-results h3 {
+    margin-bottom: var(--spacing-4);
+    color: var(--text-primary);
   }
 
-  .no-results { 
-    text-align: center; 
-    padding: var(--spacing-12); 
-    color: var(--text-secondary); 
-  }
-  .no-results h3 { 
-    margin-bottom: var(--spacing-4); 
-    color: var(--text-primary); 
+  .featured-section {
+    margin-bottom: var(--spacing-16);
   }
 
-  .featured-section { 
-    margin-bottom: var(--spacing-16); 
+  .featured-grid,
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
   }
 
-  .featured-grid, .posts-grid { 
-    display: grid; 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-8); 
+  .blog-sidebar {
+    position: sticky;
+    top: var(--spacing-8);
   }
 
-  .blog-sidebar { 
-    position: sticky; 
-    top: var(--spacing-8); 
+  .sidebar-widget {
+    background: white;
+    padding: var(--spacing-6);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-6);
   }
 
-  .sidebar-widget { 
-    background: white; 
-    padding: var(--spacing-6); 
-    border-radius: var(--border-radius-lg); 
-    box-shadow: var(--shadow); 
-    margin-bottom: var(--spacing-6); 
+  .sidebar-widget h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-4);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: var(--spacing-2);
   }
 
-  .sidebar-widget h3 { 
-    font-size: var(--font-size-lg); 
-    margin-bottom: var(--spacing-4); 
-    color: var(--text-primary); 
-    border-bottom: 1px solid var(--color-primary); 
-    padding-bottom: var(--spacing-2); 
+  .search-box {
+    display: flex;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
   }
 
-  .search-box { 
-    display: flex; 
-    border: 1px solid #e2e8f0; 
-    border-radius: var(--border-radius); 
-    overflow: hidden; 
+  .search-input {
+    flex: 1;
+    padding: var(--spacing-3);
+    border: none;
+    outline: none;
+    font-size: var(--font-size-base);
   }
 
-  .search-input { 
-    flex: 1; 
-    padding: var(--spacing-3); 
-    border: none; 
-    outline: none; 
-    font-size: var(--font-size-base); 
+  .search-button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: var(--spacing-1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .search-button:hover {
+    background: var(--color-primary-dark);
   }
 
-  .search-button { 
-    background: var(--color-primary); 
-    color: white; 
-    border: none; 
-    padding: var(--spacing-1); 
-    cursor: pointer; 
-    transition: background-color 0.2s ease; 
+  .recent-posts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
   }
-  .search-button:hover { 
-    background: var(--color-primary-dark); 
+  .recent-post {
+    padding-bottom: var(--spacing-3);
+    border-bottom: 1px solid #e2e8f0;
   }
-
-  .recent-posts { 
-    display: flex; 
-    flex-direction: column; 
-    gap: var(--spacing-4); 
+  .recent-post:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
-  .recent-post { 
-    padding-bottom: var(--spacing-3); 
-    border-bottom: 1px solid #e2e8f0; 
+  .recent-post-link {
+    text-decoration: none;
+    display: block;
   }
-  .recent-post:last-child { 
-    border-bottom: none; 
-    padding-bottom: 0; 
+  .recent-post h4 {
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-1);
+    line-height: 1.4;
+    transition: color 0.2s ease;
   }
-  .recent-post-link { 
-    text-decoration: none; 
-    display: block; 
+  .recent-post-link:hover h4 {
+    color: var(--color-primary);
   }
-  .recent-post h4 { 
-    font-size: var(--font-size-sm); 
-    color: var(--text-primary); 
-    margin-bottom: var(--spacing-1); 
-    line-height: 1.4; 
-    transition: color 0.2s ease; 
-  }
-  .recent-post-link:hover h4 { 
-    color: var(--color-primary); 
-  }
-  .recent-post-date { 
-    font-size: var(--font-size-sm); 
-    color: var(--text-light); 
+  .recent-post-date {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
   }
 
-  .tags-cloud { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: var(--spacing-2); 
+  .tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
   }
-  .tag-item { 
-    background: var(--bg-secondary); 
-    color: var(--color-primary); 
-    padding: var(--spacing-1) var(--spacing-3); 
-    border-radius: var(--border-radius); 
-    font-size: var(--font-size-sm); 
-    cursor: pointer; 
-    transition: all 0.2s ease; 
+  .tag-item {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
-  .tag-item:hover, .tag-item.active { 
-    background: var(--color-primary); 
-    color: white; 
+  .tag-item:hover,
+  .tag-item.active {
+    background: var(--color-primary);
+    color: white;
   }
 
   /* ==========================================================================
      2. ESTILOS PARA EL COMPONENTE BlogCard.jsx
      ========================================================================== */
-  
+
   .blog-card {
     background: white;
     border-radius: var(--border-radius-lg);
@@ -393,7 +435,7 @@ const recentPosts = sortedPosts.slice(0, 5);
   .read-more:hover svg {
     transform: translateX(2px);
   }
-  
+
   /* --- NUEVOS ESTILOS PARA LA PAGINACIÓN --- */
   .pagination-controls {
     display: flex;
@@ -432,7 +474,7 @@ const recentPosts = sortedPosts.slice(0, 5);
     opacity: 0.5;
     cursor: not-allowed;
   }
-  
+
   .pagination-numbers {
     display: flex;
     gap: var(--spacing-2);
@@ -448,24 +490,27 @@ const recentPosts = sortedPosts.slice(0, 5);
       align-items: flex-start;
       gap: var(--spacing-3);
     }
-    .blog-card-meta { 
-      width: 100%; 
+    .blog-card-meta {
+      width: 100%;
     }
-    .read-more { 
-      align-self: flex-end; 
+    .read-more {
+      align-self: flex-end;
     }
   }
 
   @media (max-width: 480px) {
     .pagination-numbers {
-      display: none; /* Oculta los números en pantallas muy pequeñas */
+      display: none;
     }
   }
 
   @media (min-width: 768px) {
-    .featured-grid, 
+    .featured-grid,
     .posts-grid {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .hero-description {
+      padding: 0;
     }
   }
 
