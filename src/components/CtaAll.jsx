@@ -10,12 +10,12 @@ const CtaAll = () => {
                         <h4 className="titleCardCTAServ">Designing the Future of Architecture Today</h4>
                         <p className="textCardCTAServ">Crafting Spaces That Reflect Your Dreams</p>
                         <div className="btn-fatherCTAbtn">
-                            <a href="/contacto" className="btn-OneCtaServices">
+                            <a href="/contact" className="btn-OneCtaServices">
                                 Contact Us
                                 <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
                             </a>
 
-                            <a href="/servicios" className="btn-TwoCtaServices">
+                            <a href="/services" className="btn-TwoCtaServices">
                                 Our Services
                                 <i className="arrowCtaServices fas fa-arrow-up-right-from-square"></i>
                             </a>

@@ -1,6 +1,3 @@
-import React from 'react';
-
-// LA SOLUCIÓN: Añadimos un valor por defecto a 'featured' para hacerlo opcional.
 export default function BlogCard({ title, description, author, date, slug, tags, image, featured = false }) {
   const formattedDate = new Date(date).toLocaleDateString("es-ES", {
     year: 'numeric',

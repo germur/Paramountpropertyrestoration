@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import "../../../styles/pages/home-additions.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/bathroom-remodeling.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import FAQ from "../../../components/AcordeonServices";
+import FAQ from "../../components/AcordeonServices";
 ---
 
 <BaseLayout
@@ -10,17 +10,15 @@ import FAQ from "../../../components/AcordeonServices";
   description="Transform your bathroom with our professional remodeling services. Modern design, high-quality materials, and customized solutions to renew your space with style and functionality."
 >
   <!-- Section One -->
-  <section class="hero-sectionHomeAdditions">
+  <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Home Additions in Florida: Expand Your Living Space</h1>
+      <h1>Transform Your Bathroom Into Your Personal Oasis</h1>
       <p>
-        Seamlessly integrate new rooms, second stories, or expanded areas.
-        Custom designs for your growing needs in Orlando, Miami, Tampa & beyond.
+        Professional remodeling services with modern designs, premium materials,
+        and expert craftsmanship to create the bathroom of your dreams.
       </p>
-      <a href="/contacto" class="cta-button"
-        >Get Your Free Home Addition Estimate →</a
-      >
+      <a href="/contacto" class="cta-button">Get Estimate →</a>
     </div>
   </section>
 
@@ -28,89 +26,106 @@ import FAQ from "../../../components/AcordeonServices";
   <section>
     <div class="services-grid">
       <div class="service-item">
-        <i class="fas fa-home"></i>
-        <h3>Room Additions</h3>
+        <i class="fas fa-bath"></i>
+        <h3>Bathtub Replacement</h3>
       </div>
 
       <div class="service-item">
-        <i class="fas fa-door-open"></i>
-        <h3>Sunrooms & Enclosures</h3>
+        <i class="fas fa-shower"></i>
+        <h3>Walk-in Showers</h3>
       </div>
 
       <div class="service-item">
-        <i class="fas fa-stairs"></i>
-        <h3>Second-Story Expansions</h3>
+        <i class="fas fa-sink"></i>
+        <h3>Vanity & Storage</h3>
       </div>
 
       <div class="service-item">
-        <i class="fas fa-car"></i>
-        <h3>Garage Conversions</h3>
+        <i class="fas fa-tint"></i>
+        <h3>Waterproofing</h3>
       </div>
 
       <div class="service-item">
-        <i class="fas fa-vector-square"></i>
-        <h3>Floor Plan Redesign</h3>
+        <i class="fas fa-fan"></i>
+        <h3>Ventilation Upgrade</h3>
       </div>
 
       <div class="service-item">
-        <i class="fas fa-expand"></i>
-        <h3>Whole-House Expansion</h3>
+        <i class="fas fa-hammer"></i>
+        <h3>Full Remodel</h3>
       </div>
     </div>
   </section>
 
   <!-- Section Three - Solutions Cards -->
-  <section class="solutions-section">
-    <h2 class="solutions-title">Custom Home Addition Solutions</h2>
-    <div class="solutions-grid">
 
+  <section class="solutions-section">
+    <h2 class="solutions-title">Bathroom Remodeling Solutions</h2>
+    <div class="solutions-grid">
       <!-- Card 1 -->
       <div class="solution-card">
         <div class="card-image">
           <img
-            src="/images/homeAddSolutionsOne.jpg"
-            alt="homeAddSolutionsOne"
+            src="/images/bathtub-replacement.jpg"
+            alt="Bathtub Replacement"
           />
         </div>
         <div class="card-content">
-          <h3>Room Additions</h3>
-          <p>Add new bedrooms, living areas, or specialized rooms. Designed to blend seamlessly with your existing home's architecture and style.</p>
-          <a href="/contacto" class="card-cta">View Room Addition Examples</a>
+          <h3>Bathtub Replacement</h3>
+          <p>
+            Upgrade your bath with durable, reinforced acrylic tubs. Our
+            efficient process often allows for installation in just one day,
+            minimizing disruption without demolition.
+          </p>
+          <a href="/contacto" class="card-cta">View Details</a>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/homeAddSolutionsTwo.jpg" alt="homeAddSolutionsTwo" />
+          <img src="/images/vanity-storage.jpg" alt="Vanity & Storage" />
         </div>
         <div class="card-content">
-          <h3>Second Story Additions</h3>
-          <p>Maximize your property's footprint by adding a new level. Ideal for growing families or enhancing views. Expert structural planning.</p>
-          <a href="/contacto" class="card-cta">Explore Second Story Projects</a>
+          <h3>Vanity & Storage</h3>
+          <p>
+            Transform your space with sleek, modern walk-in showers featuring
+            tempered glass. Enjoy enhanced safety with non-slip flooring and
+            superior moisture-resistant designs.
+          </p>
+          <a href="/contacto" class="card-cta">View Details</a>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/homeAddSolutionsThree.jpg" alt="homeAddSolutionsThree" />
+          <img src="/images/moisture-repair.jpg" alt="Moisture Repair" />
         </div>
         <div class="card-content">
-          <h3>Sunrooms & Outdoor Living</h3>
-          <p>Bring the outdoors in with custom sunrooms, screened enclosures, or expansive patio additions. Perfect for enjoying Florida's climate.</p>
-          <a href="/contacto" class="card-cta">See Outdoor Living Designs</a>
+          <h3>Moisture Repair</h3>
+          <p>
+            Maximize functionality and style with our custom vanity and storage
+            options. Choose from elegant double sinks or integrated built-in
+            shelves crafted from treated wood.
+          </p>
+          <a href="/contacto" class="card-cta">View Details</a>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/homeAddSolutionsFour.jpg" alt="homeAddSolutionsFour" />
+          <img src="/images/waterproofing.jpg" alt="Waterproofing" />
         </div>
         <div class="card-content">
-          <h3>Master Suites & In-Law Suites</h3>
-          <p>Create private retreats or comfortable guest accommodations. Includes custom bathrooms, walk-in closets, and independent living areas. Ask us about smart home integrations</p>
+          <h3>Waterproofing</h3>
+          <p>
+            Ensure lasting protection with advanced waterproofing systems,
+            including Schluter membrane technology. Our ventilation solutions
+            are code compliant, providing optimal air quality and preventing
+            moisture issues
+          </p>
           <a href="/contacto" class="card-cta">View Details</a>
         </div>
       </div>
@@ -196,11 +211,12 @@ import FAQ from "../../../components/AcordeonServices";
     <!-- Tags-Portfolio -->
 
     <div class="cnt-tagsPorfolio">
-      <span class="tag-itemPorfolio">Room Expansions</span>
-      <span class="tag-itemPorfolio">Multi-Story Projects</span>
-      <span class="tag-itemPorfolio">Outdoor Structures</span>
-      <span class="tag-itemPorfolio">Smart Home Integration</span>
-      <span class="tag-itemPorfolio">Energy Efficient Additions</span>
+      <span class="tag-itemPorfolio">Bathroom Renovation</span>
+      <span class="tag-itemPorfolio">Shower Installation</span>
+      <span class="tag-itemPorfolio">Tile Replacement</span>
+      <span class="tag-itemPorfolio">Vanity Upgrade</span>
+      <span class="tag-itemPorfolio">Bathroom Waterproofing</span>
+      <span class="tag-itemPorfolio">Modern Bathroom Design</span>
     </div>
   </section>
 
@@ -240,6 +256,6 @@ import FAQ from "../../../components/AcordeonServices";
     </div>
   </section>
   <section>
-    <FAQ client:load category="home-additions" title="FAQs" />
+    <FAQ client:load category="bathroom" title="FAQs" />
   </section>
 </BaseLayout>

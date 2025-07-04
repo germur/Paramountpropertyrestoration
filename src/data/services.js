@@ -1,6 +1,6 @@
 // src/data/servicios.js
 
-export const servicios = [
+export const services = [
     {
         slug: 'bathroom',
         nombre: 'Bathroom Remodeling',
@@ -96,7 +96,7 @@ export const ciudades = [
 export function getAllCombinations() {
     const combinations = [];
 
-    servicios.forEach(servicio => {
+    services.forEach(servicio => {
         ciudades.forEach(ciudad => {
             combinations.push({
                 servicio: servicio.slug,
