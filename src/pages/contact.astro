@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/ContactForm.jsx";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../components/AcordeonServices";
 ---
 
@@ -9,39 +9,31 @@ import FAQ from "../components/AcordeonServices";
   title="Contact 1GC – Schedule Your Free Quote Today"
   description="Reach out to licensed remodeling contractors in Florida. Fast estimates, friendly service."
 >
-  <!-- Hero Section -->
   <section class="contact-hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Contactanos</h1>
-        <p class="hero-description">
-
-        </p>
-      </div>
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p class="hero-description">
+        Let's discuss your project. Get a free, no-obligation quote and expert
+        advice.
+      </p>
     </div>
   </section>
 
-  <!-- Contact Content Section -->
   <section class="section">
     <div class="container">
       <div class="contact-layout">
-        <!-- Contact Form -->
         <div class="contact-form-section">
           <div class="form-header">
-            <h2>Envíanos un mensaje</h2>
-            <p>
-              Completa el formulario y te responderemos en menos de 24 horas.
-            </p>
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form and we'll get back to you within 24 hours.</p>
           </div>
           <ContactForm client:load />
         </div>
 
-        <!-- Contact Info -->
         <div class="contact-info-section">
           <div class="info-card">
             <h3>Información de contacto</h3>
 
-            <!-- Email -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-envelope"></i>
@@ -53,7 +45,6 @@ import FAQ from "../components/AcordeonServices";
               </div>
             </div>
 
-            <!-- Teléfono -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-phone-alt"></i>
@@ -65,7 +56,6 @@ import FAQ from "../components/AcordeonServices";
               </div>
             </div>
 
-            <!-- Dirección -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-map-marker-alt"></i>
@@ -80,7 +70,6 @@ import FAQ from "../components/AcordeonServices";
               </div>
             </div>
 
-            <!-- Horario de atención -->
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-clock"></i>
@@ -100,7 +89,6 @@ import FAQ from "../components/AcordeonServices";
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="section">
     <div class="container">
       <div class="cta-content">
@@ -119,32 +107,60 @@ import FAQ from "../components/AcordeonServices";
 </BaseLayout>
 
 <style>
-  .iconPrueba{
+  .iconPrueba {
     color: black;
   }
+
+  /* --- INICIO DE ESTILOS MODIFICADOS PARA EL HERO (SIMPLIFICADO) --- */
   .contact-hero {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary) 0%,
-      var(--color-primary-dark) 100%
-    );
-    color: white;
-    padding: var(--spacing-12) 0;
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
     text-align: center;
+    color: white;
+    background-image: url("/images/heroContact.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .contact-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay oscuro con opacidad */
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative; /* Para estar encima del overlay */
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .hero-content h1 {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-6);
-    color: white;
+    max-width: 700px;
+    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   }
 
   .hero-description {
-    font-size: var(--font-size-lg);
-    max-width: 600px;
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    font-size: clamp(1.2rem, 2vw, 1.25rem);
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    padding: 0 20px;
   }
 
   .contact-layout {
@@ -156,12 +172,13 @@ import FAQ from "../components/AcordeonServices";
 
   .contact-form-section {
     background: white;
-    padding: var(--spacing-8);
+    padding: var(--spacing-4);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
   }
 
   .form-header {
+    text-align: center;
     margin-bottom: var(--spacing-8);
   }
 
@@ -194,6 +211,7 @@ import FAQ from "../components/AcordeonServices";
     color: var(--text-primary);
     margin-bottom: var(--spacing-6);
     font-size: var(--font-size-xl);
+    text-align: center;
   }
 
   .contact-item {
@@ -422,6 +440,7 @@ import FAQ from "../components/AcordeonServices";
   @media (max-width: 1024px) {
     .contact-layout {
       grid-template-columns: 1fr;
+      grid-template-rows: 2fr;
       gap: var(--spacing-8);
     }
 
@@ -432,7 +451,12 @@ import FAQ from "../components/AcordeonServices";
     }
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
+    .contact-hero {
+      background-position: top;
+      padding: var(--spacing-16) 0; /* Reduzco un poco el padding en móvil */
+    }
+
     .contact-form-section {
       padding: var(--spacing-6);
     }
@@ -484,7 +508,9 @@ import FAQ from "../components/AcordeonServices";
     });
 
     // Smooth scroll to contact form
-    const contactFormLink = document.querySelector('a[href="#contact-form"]');
+    const contactFormLink = document.querySelector(
+      'a:where([href="#contact-form"])',
+    );
     if (contactFormLink) {
       contactFormLink.addEventListener("click", (e: Event) => {
         e.preventDefault();

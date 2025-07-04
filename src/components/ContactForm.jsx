@@ -22,7 +22,6 @@ export default function ContactForm() {
     if (publicKey) {
       emailjs.init(publicKey);
     } else {
-      console.error('EmailJS Public Key not found');
     }
   }, []);
 
