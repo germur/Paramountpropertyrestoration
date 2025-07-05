@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CtaAll from "../components/CtaAll";
+import Breadcrumbs from "../components/Breadcrumbs.jsx";
 import "../styles/global.css";
 
 export interface Props {
@@ -16,11 +17,28 @@ const {
   image = "/images/og-image.jpg",
 } = Astro.props;
 
-// Manejar URLs de forma segura
+// Generación de URLs absolutas para un SEO robusto.
 const siteUrl =
   Astro.site?.toString() || `${Astro.url.protocol}//${Astro.url.host}`;
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const imageURL = new URL(image, siteUrl);
+
+// Lógica para generar migas de pan dinámicamente a partir de la ruta.
+const pathname = Astro.url.pathname;
+const segments = pathname.split('/').filter(Boolean);
+let pathSoFar = '';
+const crumbs = segments.map(segment => {
+  pathSoFar += `/${segment}`;
+  const label = segment
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase());
+
+  return {
+    label: label,
+    href: pathSoFar,
+  };
+});
+const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
 ---
 
 <!doctype html>
@@ -29,34 +47,38 @@ const imageURL = new URL(image, siteUrl);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph -->
+    {/* Metatags para Open Graph (Facebook, etc.) */}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card -->
+    {/* Metatags para Twitter Cards */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageURL} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageURL} />
 
-    <!-- Favicon-->
     <link rel="icon" type="image/svg+xml" href="/1gc blue.png" />
   </head>
   <body>
     <Header />
     <main>
+      {/* Renderizado condicional: Las migas de pan solo aparecen si no estamos en la página de inicio. */}
+      {breadcrumbData.length > 1 && (
+        <div class="container">
+          <Breadcrumbs client:load crumbs={breadcrumbData} />
+        </div>
+      )}
       <slot />
     </main>
     <section>
-      <CtaAll client:load />
+      <CtaAll client:visible />
     </section>
     <Footer />
   </body>

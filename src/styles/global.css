@@ -65,7 +65,8 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
 }
-main{
+
+main {
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -135,6 +136,52 @@ main{
 
 .mb-12 {
     margin-bottom: var(--spacing-12);
+}
+
+/* Estilos para las Migas de Pan (Breadcrumbs) */
+.breadcrumb-nav {
+    padding: var(--spacing-4) 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.breadcrumb-nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Para que se ajuste en pantallas pequeñas */
+    gap: var(--spacing-2);
+}
+
+.breadcrumb-nav li {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del separador (>) */
+.breadcrumb-nav li:not(:last-child)::after {
+    content: '>';
+    margin: 0 var(--spacing-2);
+    color: var(--text-light);
+}
+
+.breadcrumb-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el elemento actual (la última miga de pan) */
+.breadcrumb-nav span[aria-current="page"] {
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 /* Responsive */
