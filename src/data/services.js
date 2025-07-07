@@ -2,31 +2,25 @@
 
 export const services = [
     {
-        slug: 'bathroom',
+        slug: 'bathroom-remodeling',
         nombre: 'Bathroom Remodeling',
         descripcion: 'Complete bathroom renovation and remodeling services with modern designs and quality fixtures',
         icon: '🛁'
     },
     {
-        slug: 'kitchen',
+        slug: 'kitchen-remodeling',
         nombre: 'Kitchen Remodeling',
         descripcion: 'Custom kitchen renovation with premium cabinets, countertops, and modern appliances',
         icon: '🍳'
     },
     {
-        slug: 'exterior',
-        nombre: 'Exterior Construction',
-        descripcion: 'Exterior improvements including siding, roofing, windows, and outdoor living spaces',
-        icon: '🏡'
-    },
-    {
-        slug: 'living-dining',
+        slug: 'living-dining-remodeling',
         nombre: 'Living & Dining',
         descripcion: 'Living room and dining area renovation to create open, functional, and beautiful spaces',
         icon: '🛋️'
     },
     {
-        slug: 'bedroom',
+        slug: 'bedroom-remodeling',
         nombre: 'Bedroom Remodeling',
         descripcion: 'Bedroom renovation and expansion services to create your perfect personal retreat',
         icon: '🛏️'
@@ -36,6 +30,12 @@ export const services = [
         nombre: 'Office Construction',
         descripcion: 'Home office and commercial office space construction and renovation services',
         icon: '💼'
+    },
+        {
+        slug: 'home-additions-remodeling',
+        nombre: 'home additions remodeling',
+        descripcion: 'Expand your living space with custom room additions, sunrooms, or second-story extensions.',
+        icon: '🏡'
     }
 ];
 
@@ -55,9 +55,9 @@ export const ciudades = [
     { slug: 'st-petersburg', nombre: 'St. Petersburg', region: 'Tampa Bay Region', poblacion: '258,308', county: 'Pinellas County' },
     { slug: 'clearwater', nombre: 'Clearwater', region: 'Tampa Bay Region', poblacion: '117,292', county: 'Pinellas County' },
     { slug: 'brandon', nombre: 'Brandon', region: 'Tampa Bay Region', poblacion: '114,626', county: 'Hillsborough County' },
-    { slug: 'sarasota', nombre: 'Sarasota', region: 'Tampa Bay Region', poblacion: '57,738', county: 'Sarasota County' }, // REGIÓN CORREGIDA
-    { slug: 'bradenton', nombre: 'Bradenton', region: 'Tampa Bay Region', poblacion: '59,439', county: 'Manatee County' }, // REGIÓN CORREGIDA
-    { slug: 'largo', nombre: 'Largo', region: 'Tampa Bay Region', poblacion: '82,485', county: 'Pinellas County' }, // AÑADIDA
+    { slug: 'sarasota', nombre: 'Sarasota', region: 'Tampa Bay Region', poblacion: '57,738', county: 'Sarasota County' }, 
+    { slug: 'bradenton', nombre: 'Bradenton', region: 'Tampa Bay Region', poblacion: '59,439', county: 'Manatee County' },
+    { slug: 'largo', nombre: 'Largo', region: 'Tampa Bay Region', poblacion: '82,485', county: 'Pinellas County' },
 
     // South Florida
     { slug: 'miami', nombre: 'Miami', region: 'South Florida', poblacion: '442,241', county: 'Miami-Dade County' },
@@ -77,19 +77,19 @@ export const ciudades = [
     { slug: 'fort-myers', nombre: 'Fort Myers', region: 'Southwest Florida', poblacion: '86,395', county: 'Lee County' },
     { slug: 'bonita-springs', nombre: 'Bonita Springs', region: 'Southwest Florida', poblacion: '53,644', county: 'Lee County' },
     { slug: 'marco-island', nombre: 'Marco Island', region: 'Southwest Florida', poblacion: '17,963', county: 'Collier County' },
-    { slug: 'port-charlotte', nombre: 'Port Charlotte', region: 'Southwest Florida', poblacion: '60,625', county: 'Charlotte County' }, // AÑADIDA
-    { slug: 'venice', nombre: 'Venice', region: 'Southwest Florida', poblacion: '25,463', county: 'Sarasota County' }, // AÑADIDA
-    { slug: 'estero', nombre: 'Estero', region: 'Southwest Florida', poblacion: '36,939', county: 'Lee County' }, // AÑADIDA
+    { slug: 'port-charlotte', nombre: 'Port Charlotte', region: 'Southwest Florida', poblacion: '60,625', county: 'Charlotte County' },
+    { slug: 'venice', nombre: 'Venice', region: 'Southwest Florida', poblacion: '25,463', county: 'Sarasota County' },
+    { slug: 'estero', nombre: 'Estero', region: 'Southwest Florida', poblacion: '36,939', county: 'Lee County' },
 
     // Treasure Coast
     { slug: 'port-st-lucie', nombre: 'Port St. Lucie', region: 'Treasure Coast', poblacion: '204,851', county: 'St. Lucie County' },
     { slug: 'stuart', nombre: 'Stuart', region: 'Treasure Coast', poblacion: '17,287', county: 'Martin County' },
     { slug: 'vero-beach', nombre: 'Vero Beach', region: 'Treasure Coast', poblacion: '17,350', county: 'Indian River County' },
-    { slug: 'jupiter', nombre: 'Jupiter', region: 'Treasure Coast', poblacion: '61,047', county: 'Palm Beach County' }, // AÑADIDA
-    { slug: 'palm-city', nombre: 'Palm City', region: 'Treasure Coast', poblacion: '25,836', county: 'Martin County' }, // AÑADIDA
-    { slug: 'hobe-sound', nombre: 'Hobe Sound', region: 'Treasure Coast', poblacion: '14,699', county: 'Martin County' }, // AÑADIDA
-    { slug: 'fort-pierce', nombre: 'Fort Pierce', region: 'Treasure Coast', poblacion: '47,297', county: 'St. Lucie County' }, // AÑADIDA
-    { slug: 'jensen-beach', nombre: 'Jensen Beach', region: 'Treasure Coast', poblacion: '12,652', county: 'Martin County' }, // AÑADIDA
+    { slug: 'jupiter', nombre: 'Jupiter', region: 'Treasure Coast', poblacion: '61,047', county: 'Palm Beach County' }, 
+    { slug: 'palm-city', nombre: 'Palm City', region: 'Treasure Coast', poblacion: '25,836', county: 'Martin County' },
+    { slug: 'hobe-sound', nombre: 'Hobe Sound', region: 'Treasure Coast', poblacion: '14,699', county: 'Martin County' },
+    { slug: 'fort-pierce', nombre: 'Fort Pierce', region: 'Treasure Coast', poblacion: '47,297', county: 'St. Lucie County' },
+    { slug: 'jensen-beach', nombre: 'Jensen Beach', region: 'Treasure Coast', poblacion: '12,652', county: 'Martin County' },
 ];
 
 // Función para generar todas las combinaciones
@@ -111,7 +111,7 @@ export function getAllCombinations() {
 }
 // Función para obtener datos específicos
 export function getServicioData(slug) {
-    return servicios.find(s => s.slug === slug);
+    return services.find(s => s.slug === slug);
 }
 
 export function getCiudadData(slug) {
@@ -126,9 +126,9 @@ export function getCiudadesByRegion(region) {
 // Función para obtener estadísticas
 export function getStats() {
     return {
-        totalServicios: servicios.length,
+        totalServicios: services.length,
         totalCiudades: ciudades.length,
-        totalCombinaciones: servicios.length * ciudades.length,
+        totalCombinaciones: services.length * ciudades.length,
         regiones: [...new Set(ciudades.map(c => c.region))]
     };
 }
