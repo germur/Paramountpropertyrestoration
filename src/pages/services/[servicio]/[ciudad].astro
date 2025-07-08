@@ -40,13 +40,10 @@ const heroContent = {
 const allServices = [
   { name: "Bathroom Remodeling", icon: "🛁" },
   { name: "Kitchen Remodeling", icon: "🍳" },
-  { name: "Exterior Construction", icon: "🏡" },
   { name: "Living & Dining", icon: "🛋️" },
   { name: "Bedroom Remodeling", icon: "🛏️" },
-  { name: "Office Construction", icon: "💼" },
-  {name: "Home Additions Remodeling", icon: "🏡"}
+  { name: "Home Additions Remodeling", icon: "🏡" },
 ];
-
 
 const serviceAreaCities = [
   "Weston",
@@ -108,7 +105,7 @@ const serviceAreaCities = [
     <div class="container">
       <div class="overview-grid">
         <div class="overview-content">
-          <h2>Complete {servicioData.nombre} Services You Can Trust</h2>
+          <h2>{servicioData.nombre} Services You Can Trust</h2>
           <p class="overview-text">
             We deliver full-service {servicioData.nombre.toLowerCase()} in {
               ciudadData.nombre
@@ -325,10 +322,8 @@ const serviceAreaCities = [
   }
 
   .service-badge.active {
-    background: rgba(245, 158, 11, 0.8);
+    background: var(--color-primary);
     color: white;
-    border-color: var(--color-accent);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
   }
 
   .service-badge:hover {
@@ -367,7 +362,7 @@ const serviceAreaCities = [
     display: inline-flex;
     align-items: center;
     padding: var(--spacing-4) var(--spacing-8);
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: white;
     text-decoration: none;
     border-radius: var(--border-radius-lg);
@@ -376,14 +371,13 @@ const serviceAreaCities = [
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 4px 15px var(--color-primary);
     text-shadow: none;
   }
 
   .btn-primary:hover {
-    background: #d97706;
+    background: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
   }
 
   .btn-large {
@@ -398,14 +392,15 @@ const serviceAreaCities = [
     background: transparent;
     color: var(--color-primary);
     text-decoration: none;
-    border: 2px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
     border-radius: var(--border-radius-lg);
     font-weight: 600;
     transition: all 0.3s ease;
   }
 
   .btn-outline:hover {
-    background: var(--color-primary);
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent);
     color: white;
     transform: translateY(-2px);
   }
@@ -436,7 +431,7 @@ const serviceAreaCities = [
 
   .overview-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-16);
     align-items: start;
   }
@@ -472,7 +467,7 @@ const serviceAreaCities = [
   .feature-icon {
     width: 24px;
     height: 24px;
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -503,14 +498,19 @@ const serviceAreaCities = [
     margin-bottom: var(--spacing-6);
   }
 
+  .containerHeroSEO{
+    padding: 0 var(--spacing-6);
+  }
+
   /* Gallery Section */
   .gallery-section {
     background: var(--bg-secondary);
+    border-radius: 20px;
   }
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-8);
   }
 
@@ -520,6 +520,7 @@ const serviceAreaCities = [
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     transition: transform 0.3s ease;
+    height: 300px;
   }
 
   .gallery-item:hover {
@@ -566,8 +567,8 @@ const serviceAreaCities = [
 
   .faq-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-8);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
   }
 
   .faq-item {
@@ -590,7 +591,7 @@ const serviceAreaCities = [
   }
 
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .hero-title {
       font-size: var(--font-size-3xl);
     }
@@ -598,11 +599,15 @@ const serviceAreaCities = [
     .service-badges {
       justify-content: center;
     }
-
-    .overview-grid,
-    .gallery-grid,
-    .faq-grid {
+    .overview-grid {
       grid-template-columns: 1fr;
+    }
+    .gallery-grid, .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .faq-grid{
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .section-title {
@@ -611,6 +616,16 @@ const serviceAreaCities = [
 
     .hero-section {
       padding: var(--spacing-8) 0 var(--spacing-12);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing-8);
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
   }
 </style>
