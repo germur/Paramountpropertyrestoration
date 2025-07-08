@@ -1,7 +1,7 @@
 ---
 title: "Guía completa para la reparación de baños: consejos y soluciones prácticas"
 description: "Aprende cómo reparar tu baño con consejos expertos, soluciones fáciles y mantenimiento básico para evitar problemas comunes."
-author: "Tu Nombre"
+author: "Roger Murillo"
 date: 2025-06-19
 tags: ["Reparación", "Baños", "Hogar", "Mantenimiento"]
 featured: true

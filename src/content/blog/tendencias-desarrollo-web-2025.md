@@ -1,7 +1,7 @@
 ---
 title: "Las tendencias más importantes del desarrollo web en 2025"
 description: "Descubre las tecnologías y metodologías que están definiendo el futuro del desarrollo web este año."
-author: "Tu Nombre"
+author: "Roger Murillo"
 date: 2025-01-20
 tags: ["Desarrollo Web", "Tecnología", "Tendencias"]
 featured: true

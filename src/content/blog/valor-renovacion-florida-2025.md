@@ -1,7 +1,7 @@
 ---
 title: "How Much Does a Home Renovation Cost in Florida in 2025?"
 description: "Learn the average renovation costs in Florida by project type, region, and materials. Get a realistic budget before you start."
-author: "Your Name"
+author: "Roger Murillo"
 date: 2025-06-25
 tags: ["Home Renovation", "Florida", "Cost Guide", "Remodeling Budget"]
 featured: true

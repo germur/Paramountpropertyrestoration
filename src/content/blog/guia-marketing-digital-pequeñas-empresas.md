@@ -1,7 +1,7 @@
 ---
 title: "Guía completa de marketing digital para pequeñas empresas"
 description: "Estrategias prácticas y económicas para que tu pequeña empresa tenga éxito en el mundo digital."
-author: "Tu Nombre"
+author: "Roger Murillo"
 date: 2025-01-10
 tags: ["Marketing Digital", "Pequeñas Empresas", "Estrategia"]
 image: "/images/blog/marketing-pequeñas-empresas.jpg"

@@ -59,13 +59,13 @@ export default function InteractiveBlog({ allPosts, allTags, recentPosts }) {
         <div className="blog-layout">
             {/* Columna Principal */}
             <main className="blog-main">
-                <div className="sidebar-widget mobile-search-widget"><h3>Buscar Artículos</h3><div className="search-box"><input type="text" placeholder="Buscar..." className="search-input" value={searchTerm} onChange={handleSearchChange} /></div></div>
-                {isFiltering && (<div className="search-results-info"><span>{filteredPosts.length} artículo{filteredPosts.length !== 1 ? "s" : ""} encontrado{filteredPosts.length !== 1 ? "s" : ""}</span><button onClick={clearFilters} className="clear-search-btn">Limpiar Filtros</button></div>)}
-                {filteredPosts.length === 0 && isFiltering && (<div className="no-results"><h3>No se encontraron artículos</h3><p>Intenta con otras palabras clave o limpia los filtros.</p></div>)}
-
+                <div className="sidebar-widget mobile-search-widget"><h3>Search Articles</h3><div className="search-box"><input type="text" placeholder="Buscar..." className="search-input" value={searchTerm} onChange={handleSearchChange} /></div></div>
+                {isFiltering && (<div className="search-results-info"><span>{filteredPosts.length} article{filteredPosts.length !== 1 ? "s" : ""} found{filteredPosts.length !== 1 ? "s" : ""}</span><button onClick={clearFilters} className="clear-search-btn">Clear Filters</button></div>)}
+                {filteredPosts.length === 0 && isFiltering && (<div className="no-results"><h3>No articles found</h3>
+                    <p>Try different keywords or clear the filters.</p></div>)}
                 {featuredPosts.length > 0 && (
                     <section className="featured-section">
-                        <h2 className="section-title">Artículos Destacados</h2>
+                        <h2 className="section-title">Featured Articles</h2>
                         <div className="featured-grid">
                             {featuredPosts.map((post) => (
                                 <BlogCard key={post.id} {...post.data} slug={post.slug} />
@@ -77,9 +77,9 @@ export default function InteractiveBlog({ allPosts, allTags, recentPosts }) {
 
             {/* Barra Lateral */}
             <aside className="blog-sidebar">
-                <div className="sidebar-widget desktop-search-widget"><h3>Buscar Artículos</h3><div className="search-box"><input type="text" placeholder="Buscar..." className="search-input" value={searchTerm} onChange={handleSearchChange} /></div></div>
-                <div className="sidebar-widget"><h3>Artículos Recientes</h3><div className="recent-posts">{recentPosts.map((post) => (<article className="recent-post" key={post.id}><a href={`/blog/${post.slug}`} className="recent-post-link"><h4>{post.data.title}</h4><time className="recent-post-date">{new Date(post.data.date).toLocaleDateString("es-ES", { year: "numeric", month: "short", day: "numeric" })}</time></a></article>))}</div></div>
-                <div className="sidebar-widget"><h3>Etiquetas</h3><div className="tags-cloud">{allTags.map((tag) => (<span key={tag} className={`tag-item ${activeTag === tag ? "active" : ""}`} onClick={() => handleTagClick(tag)}>{tag}</span>))}</div></div>
+                <div className="sidebar-widget desktop-search-widget"><h3>Search Articles</h3><div className="search-box"><input type="text" placeholder="Buscar..." className="search-input" value={searchTerm} onChange={handleSearchChange} /></div></div>
+                <div className="sidebar-widget"><h3>Recent Articles</h3><div className="recent-posts">{recentPosts.map((post) => (<article className="recent-post" key={post.id}><a href={`/blog/${post.slug}`} className="recent-post-link"><h4>{post.data.title}</h4><time className="recent-post-date">{new Date(post.data.date).toLocaleDateString("es-ES", { year: "numeric", month: "short", day: "numeric" })}</time></a></article>))}</div></div>
+                <div className="sidebar-widget"><h3>Tags</h3><div className="tags-cloud">{allTags.map((tag) => (<span key={tag} className={`tag-item ${activeTag === tag ? "active" : ""}`} onClick={() => handleTagClick(tag)}>{tag}</span>))}</div></div>
             </aside>
         </div>
     );

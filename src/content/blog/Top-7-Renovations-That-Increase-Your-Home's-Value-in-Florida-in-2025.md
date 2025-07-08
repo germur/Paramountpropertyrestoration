@@ -1,7 +1,7 @@
 ---
 title: "Top 7 Renovations That Increase Your Home's Value in Florida in 2025"
 description: "Discover the home improvement projects that deliver the highest ROI and make your Florida property stand out in the market."
-author: "Your Name"
+author: "Roger Murillo"
 date: 2025-06-28
 tags: ["Renovation", "Home Value", "Florida", "ROI"]
 featured: true
