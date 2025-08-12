@@ -332,7 +332,6 @@
 
 /* Segundo nivel móvil (para mega) */
 .nav-item.nested .mobile-item.nested {
-    padding: .5rem .5rem;
     background: #fff;
     border-radius: 8px;
     display: flex;
