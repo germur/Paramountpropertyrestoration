@@ -270,13 +270,13 @@
     }
 }
 
-@media (max-width: 1440px){
+@media (min-width: 1440px){
     .hero__media img {
         width: 620px;
     }
 }
 
-@media (max-width: 2440px){
+@media (min-width: 2440px){
     .hero__media img {
         width: 625px;
     }
