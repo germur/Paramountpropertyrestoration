@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AreasServed from "../components/AreasServed";
+import LinkBuildingSection from "../components/linkBuilding";
+import "../styles/restoration.css";
+---
+
+<BaseLayout
+    title="Restoration Services in Florida | Water, Fire, Mold & Storm"
+    description="Certified restoration services for water, fire, mold, and storm damage. 24/7 emergency response. Licensed & insured."
+>
+    <section class="hero">
+        <div class="hero__inner">
+            <!-- Columna texto -->
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Property Restoration Services Across Florida
+                </h1>
+                <p class="hero__subtitle">
+                    Need restoration help in Florida? We provide certified
+                    water, fire, mold, and storm damage restoration services for
+                    homes and businesses. Fast response, full cleanup, and
+                    rebuild—available 24/7.
+                </p>
+                <a href="/contact" class="btn btn--primary"
+                    >Explore Our Services</a
+                >
+            </div>
+
+            <!-- Columna imagen -->
+            <div class="hero__media">
+                <img
+                    src="/images/heroRestoration.jpeg"
+                    alt="Technician performing water extraction"
+                    loading="eager"
+                    width="720"
+                    height="520"
+                />
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="tabs-container">
+            <div class="tabs-services">
+                <div class="cnt-iconsServices">
+                    <a href="/services/water-damage" class="tab-button"
+                        ><i class="fas fa-water"></i>Water</a
+                    >
+                </div>
+
+                <div class="cnt-iconsServices">
+                    <a href="/services/fire-damage" class="tab-button"
+                        ><i class="fas fa-fire"></i>Fire</a
+                    >
+                </div>
+
+                <div class="cnt-iconsServices">
+                    <a href="/services/storm-damage" class="tab-button"
+                        ><i class="fas fa-cloud-bolt"></i>Storm</a
+                    >
+                </div>
+
+                <div class="cnt-iconsServices">
+                    <a href="/services/mold-remediation" class="tab-button"
+                        ><i class="fas fa-virus"></i>Mold</a
+                    >
+                </div>
+
+                <div class="cnt-iconsServices">
+                    <a href="/services/mitigation" class="tab-button"
+                        ><i class="fas fa-shield-halved"></i>Mitigation</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-grid-container">
+        <div class="services-grid">
+            <div class="service-card">
+                <img
+                    src="/images/waterDamage.jpg"
+                    alt="Remodelación de Cocina"
+                    class="card-image"
+                />
+                <div class="card-content">
+                    <h2 class="card-title">Water Damage</h2>
+                    <div class="cnt-tagsServices">
+                        <span>Flood Damage</span>
+                        <span>Leak Repair</span>
+                        <span>Basement Flooding</span>
+                        <span>Ceiling Water Damage</span>
+                        <span>Emergency Water Removal</span>
+                    </div>
+                    <div>
+                        <a href="#" class="card-link"
+                            >Fix My Water Damage Now &rarr;</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img
+                    src="/images/fireDamage.jpg"
+                    alt="Renovación de Baño"
+                    class="card-image"
+                />
+                <div class="card-content">
+                    <h2 class="card-title">Fire Damage</h2>
+                    <div class="cnt-tagsServices">
+                        <span>Smoke Damage</span>
+                        <span>Soot Cleanup</span>
+                        <span>Fire Damage Repair</span>
+                        <span>Emergency Fire Response</span>
+                    </div>
+                    <div>
+                        <a
+                            href="#"
+                            class="card-link"
+                            >Clean Up After Fire &rarr;</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img
+                    src="/images/stormDamage.jpg"
+                    alt="Diseño de Habitaciones"
+                    class="card-image"
+                />
+                <div class="card-content">
+                    <h2 class="card-title">Storm Damage</h2>
+                    <div class="cnt-tagsServices">
+                        <span>Hurricane Damage</span>
+                        <span>Wind Damage</span>
+                        <span>Storm Debris Removal</span>
+                        <span>Emergency Storm Repair</span>
+                    </div>
+                    <div>
+                        <a href="#" class="card-link"
+                            >Repair Storm Damage Today &rarr;</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img
+                    src="/images/moldDamage.jpg"
+                    alt="Salas y Comedores"
+                    class="card-image"
+                />
+                <div class="card-content">
+                    <h2 class="card-title">Mold Damage</h2>
+                    <div class="cnt-tagsServices">
+                        <span>Mold Inspection</span>
+                        <span>Black Mold Removal</span>
+                        <span>Mold Prevention</span>
+                        <span>Mold testing</span>
+                    </div>
+                    <div>
+                        <a href="#" class="card-link"
+                            >Remove Mold Fast &rarr;</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img
+                    src="/images/mitigation.jpg"
+                    alt="Adiciones al Hogar"
+                    class="card-image"
+                />
+                <div class="card-content">
+                    <h2 class="card-title">Mitigation</h2>
+                    <div class="cnt-tagsServices">
+                        <span>Water Mitigation</span>
+                        <span>Fire Mitigation</span>
+                        <span>Mold Mitigation</span>
+                        <span>Storm Mitigation</span>
+                    </div>
+                    <div class="cnt-card-linkServices">
+                        <a href="#" class="card-link"
+                            >Prevent Further Damage &rarr;</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <AreasServed client:load />
+    </section>
+    <section>
+        <LinkBuildingSection />
+    </section>
+</BaseLayout>
