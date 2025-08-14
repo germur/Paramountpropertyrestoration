@@ -3,6 +3,48 @@ import '../styles/components/AcordeonServices.css';
 
 // Banco de preguntas categorizadas
 const faqData = {
+    storm: [
+        {
+            id: 'storm-1',
+            question: 'What should I do right after storm damage?',
+            answer: 'Ensure safety, shut off utilities if needed, document damage with photos, and call us for emergency tarping and board-up.'
+        },
+        {
+            id: 'storm-2',
+            question: 'Do you provide emergency roof tarping and board-up?',
+            answer: 'Yes. We secure roofs and openings immediately to prevent additional water intrusion and theft.'
+        },
+        {
+            id: 'storm-3',
+            question: 'Can you remove fallen trees and debris?',
+            answer: 'We safely remove branches, trees, and exterior debris to clear access and reduce hazards.'
+        },
+        {
+            id: 'storm-4',
+            question: 'What if water entered the house during the storm?',
+            answer: 'We perform water extraction, structural drying, and antimicrobial treatment to prevent mold growth.'
+        },
+        {
+            id: 'storm-5',
+            question: 'How long does storm restoration take?',
+            answer: 'Minor repairs can take a few days; major exterior and interior rebuilds may take several weeks depending on scope and materials'
+        },
+        {
+            id: 'storm-6',
+            question: 'Do you work with insurance claims?',
+            answer: 'Yes. We document damages, provide estimates, and coordinate with your insurer to streamline the process.'
+        },
+        {
+            id: 'storm-7',
+            question: 'Is it safe to stay in the property after storm damage?',
+            answer: 'It depends on structural stability, electrical safety, and contamination. We assess safety during our inspection.'
+        },
+        {
+            id: 'storm-8',
+            question: 'What areas do you serve?',
+            answer: 'We serve Orlando, Miami, Tampa, and surrounding communities for emergency response and full restoration.'
+        }
+    ],
     mold: [
         {
             id: 'mold-1',
