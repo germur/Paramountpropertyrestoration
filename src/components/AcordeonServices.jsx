@@ -3,6 +3,50 @@ import '../styles/components/AcordeonServices.css';
 
 // Banco de preguntas categorizadas
 const faqData = {
+    mold: [
+        {
+            id: 'mold-1',
+            question: 'How do I know if I have mold?',
+            answer: 'Common signs include musty odors, visible spots, humidity issues, and allergy-like symptoms. An inspection and testing confirm presence and type.'
+        },
+        {
+            id: 'mold-2',
+            question: 'Is black mold dangerous?',
+            answer: 'Some species can trigger respiratory issues and allergies. We use strict PPE, containment, and HEPA filtration to remove it safel'
+        },
+        {
+            id: 'mold-3',
+            question: 'What does mold remediation include?',
+            answer: `• Inspection, moisture mapping & lab testing.
+            • Containment barriers & negative air/HEPA filtration.
+            • Removal of contaminated materials & deep cleaning.
+            • Antimicrobial treatment & source correction.
+            • Antimicrobial treatment & source correction.` },
+        {
+            id: 'mold-4',
+            question: 'Do you test mold before and after?', answer: 'Yes. Pre- and post-remediation tests verify scope and confirm success (clearance testing).'
+        },
+        {
+            id: 'mold-5',
+            question: 'How long does remediation take?',
+            answer: 'Most projects take 1–5 days depending on size, materials, and humidity levels.'
+        },
+        {
+            id: 'mold-6',
+            question: 'Will mold come back?',
+            answer: 'Not if the moisture source is fixed. We address leaks, improve ventilation, and set humidity targets to prevent recurrence.'
+        },
+        {
+            id: 'mold-7',
+            question: 'Is mold removal covered by insurance?',
+            answer: 'Coverage varies. Sudden water events may be covered; ongoing leaks or maintenance issues often are not. We help with documentation.'
+        },
+        {
+            id: 'mold-8',
+            question: 'Is it safe to stay in my home during remediation?',
+            answer: 'We isolate work areas and use HEPA filtration. For large projects or sensitive individuals, temporary relocation may be recommended.'
+        }
+    ],
     water: [
         {
             id: 'water-1',
