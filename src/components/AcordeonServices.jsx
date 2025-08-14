@@ -3,6 +3,52 @@ import '../styles/components/AcordeonServices.css';
 
 // Banco de preguntas categorizadas
 const faqData = {
+    water: [
+        {
+            id: 'water-1',
+            question: 'How fast should water damage restoration start?',
+            answer: 'Within 24 hours is ideal. Early extraction and drying reduce structural damage and the risk of mold growth.'
+        },
+        {
+            id: 'water-2',
+            question: 'What does the water damage process include?',
+            answer: `Our process typically includes:
+            • Emergency inspection & moisture mapping Water extraction
+            • Cleaning, sanitizing & odor control
+            • Repairs and finish restoration
+    `
+        },
+        {
+            id: 'water-3',
+            question: 'Do you handle floods, leaks, and burst pipes?',
+            answer: 'Yes. We respond to storm flooding, appliance failures, roof leaks, slab leaks, and burst supply lines.'
+        },
+        {
+            id: 'water-4',
+            question: 'Can you prevent mold after water damage?',
+            answer: 'We control humidity, remove wet materials when needed, and apply antimicrobial treatments to prevent mold.'
+        },
+        {
+            id: 'water-5',
+            question: 'How long does structural drying take?',
+            answer: 'Typically 2–5 days, depending on materials, saturation, ventilation, and indoor humidity. We monitor daily.'
+        },
+        {
+            id: 'water-6',
+            question: 'Will my insurance cover water damage?',
+            answer: 'Many policies cover sudden/accidental water events. Flood coverage may require separate policies. We assist with documentation.'
+        },
+        {
+            id: 'water-7',
+            question: 'What items can be saved after water damage?',
+            answer: 'Non-porous items clean well. Porous items (carpet pad, some insulation, swollen MDF) may require replacement depending on contamination.'
+        },
+        {
+            id: 'water-8',
+            question: 'Is the property safe during restoration?',
+            answer: 'We isolate affected areas, use safe equipment, and follow IICRC best practices to protect occupants and workers.'
+        }
+    ],
     fire: [
         {
             id: 'fire-1',

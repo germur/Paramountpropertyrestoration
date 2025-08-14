@@ -1,11 +1,245 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../components/AcordeonServices";
 ---
 
 <BaseLayout
-    title="Kitchen Remodeling Experts | 1GC Construction"
-    description="From open layouts to premium countertops – transform your kitchen today with 1GC’s expert team."
+    title="Water Damage Restoration | 1GC Construction"
+    description="Rapid water extraction, structural drying, and full restoration. Serving Orlando, Miami, Tampa & beyond."
 >
-    <h1>Hola soy la pagina de water</h1>
+    <!-- Section One (Hero) -->
+    <section class="hero-sectionKitchen">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Water Damage? We Remove, Dry & Restore</h1>
+            <p>
+                Fast water extraction, moisture control, and structural drying
+                to prevent mold and further damage. Serving Orlando, Miami,
+                Tampa & beyond.
+            </p>
+            <a href="/contact" class="cta-button"
+                >Free Water Damage Assessment →</a
+            >
+        </div>
+    </section>
+
+    <!-- Section Two (Service Icons) -->
+    <section>
+        <div class="services-grid">
+            <div class="service-item">
+                <i class="fas fa-water"></i>
+                <h3>Flood Damage</h3>
+            </div>
+
+            <div class="service-item">
+                <i class="fas fa-wrench"></i>
+                <h3>Leak Repair</h3>
+            </div>
+
+            <div class="service-item">
+                <i class="fas fa-house-flood-water"></i>
+                <h3>Basement Flooding</h3>
+            </div>
+
+            <div class="service-item">
+                <i class="fas fa-tint"></i>
+                <h3>Ceiling Water Damage</h3>
+            </div>
+
+            <div class="service-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Emergency Water Removal</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Three - Solutions Cards -->
+    <section class="solutions-section">
+        <h2 class="solutions-title">Comprehensive Water Damage Solutions</h2>
+        <div class="solutions-grid">
+            <!-- Card 1 -->
+            <div class="solution-card">
+                <div class="card-image">
+                    <img
+                        src="/images/FloodDamage.jpg"
+                        alt="Emergency water extraction with pumps and hoses"
+                    />
+                </div>
+                <div class="card-content">
+                    <h3>Flood Damage</h3>
+                    <p>
+                        Rapid extraction from floods, leaks, or burst pipes to
+                        stop damage and protect structure and contents.
+                    </p>
+                    <a href="/contact" class="card-cta"
+                        >Start Water Extraction</a
+                    >
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="solution-card">
+                <div class="card-image">
+                    <img
+                        src="/images/LeakRepair.jpg"
+                        alt="Professional air movers and dehumidifiers drying interiors"
+                    />
+                </div>
+                <div class="card-content">
+                    <h3>Leak Repair</h3>
+                    <p>
+                        Industrial dehumidifiers and air movers to dry walls,
+                        floors, and cavities with moisture monitoring.
+                    </p>
+                    <a href="/contact" class="card-cta"
+                        >Schedule Drying Service</a
+                    >
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="solution-card">
+                <div class="card-image">
+                    <img
+                        src="/images/BasementFlooding.jpg"
+                        alt="Technician applying antimicrobial treatment"
+                    />
+                </div>
+                <div class="card-content">
+                    <h3>Basement Flooding</h3>
+                    <p>
+                        Antimicrobial treatments and humidity control to prevent
+                        mold growth after water exposure.
+                    </p>
+                    <a href="/contact" class="card-cta">Protect Against Mold</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="solution-card">
+                <div class="card-image">
+                    <img
+                        src="/images/CeilingWaterDamage.jpg"
+                        alt="Restoration team repairing water-damaged drywall and flooring"
+                    />
+                </div>
+                <div class="card-content">
+                    <h3>Ceiling Water Damage</h3>
+                    <p>
+                        Replace damaged drywall, insulation, and flooring;
+                        restore finishes to pre-loss condition.
+                    </p>
+                    <a href="/contact" class="card-cta">Schedule Ceiling Repair</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="solution-card">
+                <div class="card-image">
+                    <img
+                        src="/images/EmergencyWaterRemoval.jpg"
+                        alt="Technician applying antimicrobial treatment"
+                    />
+                </div>
+                <div class="card-content">
+                    <h3>Emergency Water Removal</h3>
+                    <p>
+                        Rapidly extract standing water to prevent mold, protect structure, and start restoration immediately.
+                    </p>
+                    <a href="/contact" class="card-cta">Request Water Removal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Steps (Water Workflow) -->
+    <section class="steps-section">
+        <h2 class="steps-title">How It Works</h2>
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-item" data-step="1">
+                <div class="step-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Emergency Call</h3>
+                <p>Free on-site inspection & moisture assessment</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item" data-step="2">
+                <div class="step-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Water Extraction</h3>
+                <p>Pumps & vacuums remove standing water</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item" data-step="3">
+                <div class="step-icon">
+                    <i class="fas fa-fan"></i>
+                </div>
+                <h3>Drying & Dehumidifying</h3>
+                <p>Air movers, dehumidifiers & moisture readings</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item" data-step="4">
+                <div class="step-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Cleaning & Repairs</h3>
+                <p>Sanitize, deodorize, and restore materials</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Guides -->
+    <section class="sectionBlogBathroom">
+        <div>
+            <div>
+                <h2 class="tittleSection-cardBlogBathroo">
+                    Home & Workplace Water Damage Prevention Guides
+                </h2>
+            </div>
+            <div>
+                <div class="cntFather-cardBlogBathroo">
+                    <div class="cnt-cardBlogBathroom">
+                        <h3 class="title-cardBlogBathroom">
+                            How to Stop a Leak Fast
+                        </h3>
+                        <p class="text-cardBlogBathroom">
+                            Quick shut-off steps, safety tips, and what to
+                            photograph for insurance.
+                        </p>
+                        <a class="link-blogBathroom"
+                            >Read More <i class="flechaBlog fas fa-arrow-right"
+                            ></i></a
+                        >
+                    </div>
+                    <div class="cnt-cardBlogBathroom">
+                        <h3 class="title-cardBlogBathroom">
+                            Preventing Mold After a Flood
+                        </h3>
+                        <p class="text-cardBlogBathroom">
+                            Drying timelines, humidity targets, and materials to
+                            remove first.
+                        </p>
+                        <a class="link-blogBathroom"
+                            >Read More <i class="flechaBlog fas fa-arrow-right"
+                            ></i></a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <!-- Requiere la categoría 'water' en tu AcordeonServices (te la dejo abajo) -->
+        <FAQ client:load category="water" title="Water Damage FAQs" />
+    </section>
 </BaseLayout>
