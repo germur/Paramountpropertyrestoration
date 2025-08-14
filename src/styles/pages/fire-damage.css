@@ -5,7 +5,7 @@
 .hero-sectionKitchen {
     position: relative;
     height: 600px;
-    background-image: url(/images/kitchenHero.jpg);
+    background-image: url(/images/herofire.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(to right, rgb(0 0 0 / 68%), rgb(0 0 0 / 0%));
     z-index: 1;
 }
 
@@ -73,9 +73,9 @@
    ===================== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -435,7 +435,7 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         padding: 1.5rem;
     }
 
@@ -552,7 +552,7 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         padding: 1rem;
     }

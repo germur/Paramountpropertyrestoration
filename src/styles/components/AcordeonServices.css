@@ -94,6 +94,7 @@
     font-size: 1rem;
     line-height: 1.6;
     padding: 0;
+    white-space: pre-line;
 }
 
 /* Grid layout para pantallas grandes */

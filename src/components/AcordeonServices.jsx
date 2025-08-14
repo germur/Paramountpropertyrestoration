@@ -3,6 +3,52 @@ import '../styles/components/AcordeonServices.css';
 
 // Banco de preguntas categorizadas
 const faqData = {
+    fire: [
+        {
+            id: 'fire-1',
+            question: 'How quickly should fire damage restoration begin?',
+            answer: 'It’s best to start fire damage restoration within 24–48 hours to prevent further structural damage, limit smoke and soot penetration, and reduce the risk of mold growth from firefighting water.'
+        },
+        {
+            id: 'fire-2',
+            question: 'What does the fire damage restoration process include?',
+            answer: `Our process typically includes:
+            • Emergency board-up and property securing.
+            • Water extraction and drying (from firefighting).
+            • Smoke and soot cleanup from surfaces and air.
+            • Structural repairs and rebuilding as needed.`
+        },
+        {
+            id: 'fire-3',
+            question: 'Can smoke odor be completely removed?',
+            answer: 'Yes. We use advanced deodorization techniques such as thermal fogging, ozone treatment, and HEPA air filtration to completely remove smoke odors from structures and contents.'
+        },
+        {
+            id: 'fire-4',
+            question: 'Will my belongings be restored or replaced?',
+            answer: 'We evaluate all items individually. Many belongings can be cleaned and restored using specialized equipment. Severely damaged items may need replacement, and we can help document them for insurance claims.'
+        },
+        {
+            id: 'fire-5',
+            question: 'Do you work with insurance companies?',
+            answer: 'Yes, we work directly with most insurance providers to speed up the claims process, handle required documentation, and ensure the restoration aligns with your policy coverage.'
+        },
+        {
+            id: 'fire-6',
+            question: 'Is fire damage covered by my insurance?',
+            answer: 'Most standard homeowner’s insurance policies cover fire damage, including smoke and water damage caused by firefighting. Coverage details vary, so we recommend reviewing your policy with your insurer.'
+        },
+        {
+            id: 'fire-7',
+            question: 'How long does fire damage restoration take?',
+            answer: 'Restoration timelines depend on the extent of the damage. Minor cases can take a few days, while major structural repairs can take several weeks. We provide a detailed timeline after inspection.'
+        },
+        {
+            id: 'fire-8',
+            question: 'Is my property safe to enter after a fire?',
+            answer: 'Never enter without clearance from fire officials. Structural instability, lingering smoke, and hazardous debris can pose serious risks. We assess safety before beginning any work.'
+        }
+    ],
     kitchen: [
         {
             id: 'kitchen-1',
