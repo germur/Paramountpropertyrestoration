@@ -54,7 +54,7 @@ const faqData = {
         {
             id: 'mold-2',
             question: 'Is black mold dangerous?',
-            answer: 'Some species can trigger respiratory issues and allergies. We use strict PPE, containment, and HEPA filtration to remove it safel'
+            answer: 'Some species can trigger respiratory issues and allergies. We use strict PPE, containment, and HEPA filtration to remove it safely.'
         },
         {
             id: 'mold-3',
@@ -62,8 +62,8 @@ const faqData = {
             answer: `• Inspection, moisture mapping & lab testing.
             • Containment barriers & negative air/HEPA filtration.
             • Removal of contaminated materials & deep cleaning.
-            • Antimicrobial treatment & source correction.
-            • Antimicrobial treatment & source correction.` },
+            • Antimicrobial treatment & source correction.`
+        },
         {
             id: 'mold-4',
             question: 'Do you test mold before and after?', answer: 'Yes. Pre- and post-remediation tests verify scope and confirm success (clearance testing).'
@@ -99,7 +99,8 @@ const faqData = {
             id: 'water-2',
             question: 'What does the water damage process include?',
             answer: `Our process typically includes:
-            • Emergency inspection & moisture mapping Water extraction
+            • Emergency inspection & moisture mapping
+            • Water extraction
             • Cleaning, sanitizing & odor control
             • Repairs and finish restoration
     `

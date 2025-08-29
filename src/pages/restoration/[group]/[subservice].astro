@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getAllCombos } from "../../../data/restoration.js";
+
+import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
+import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
+import StormTemplate from "../../../components/restoration/templates/StormTemplate.astro";
+import MoldTemplate from "../../../components/restoration/templates/MoldTemplate.astro";
+import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
+import GenericTemplate from "../../../components/restoration/templates/GenericTemplate.astro";
+
+export async function getStaticPaths() {
+    return getAllCombos();
+}
+
+const { groupData, subData } = Astro.props;
+
+const pageTitle =
+    subData?.seo?.title ??
+    `${subData.title} | ${groupData.name} | 1GC Construction`;
+const pageDescription = subData?.seo?.description ?? groupData.description;
+
+const templates = {
+    water: WaterTemplate,
+    fire: FireTemplate,
+    storm: StormTemplate,
+    mold: MoldTemplate,
+    mitigation: MitigationTemplate,
+};
+const Template = templates[groupData.template] ?? GenericTemplate;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <Template group={groupData} sub={subData} />
+</BaseLayout>
