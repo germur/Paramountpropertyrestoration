@@ -3,204 +3,199 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
+import RestorationCTA from "../../components/RestorationCTA";
+import WhyChooseUs from "../../components/WhyChooseUs";
+import ServiceHighlights from "../../components/ServiceHighlights";
 ---
 
 <BaseLayout
-    title="Mold Remediation & Prevention | 1GC Construction"
-    description="Certified mold inspection, safe removal, and long-term prevention. Serving Orlando, Miami, Tampa & beyond."
+  title="Mold Remediation in Florida | Black Mold Removal & Testing"
+  description="Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today."
 >
-    <!-- Hero -->
-    <section class="hero-sectionKitchen">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Mold Problems? We Inspect, Remove & Prevent</h1>
-            <p>
-                Certified mold inspections, safe remediation, and moisture
-                control to protect your home and health. Serving Orlando, Miami,
-                Tampa & beyond.
-            </p>
-            <a href="/contact" class="cta-button">Schedule Mold Inspection →</a>
+  <!-- Hero -->
+  <section class="hero-sectionKitchen">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Mold Remediation & Removal Services in Florida</h1>
+      <p>
+        Our Florida teams provide 24/7 mold remediation to protect your home,
+        office, and health. From black mold testing to full remediation and
+        prevention, we deliver safe, lasting results.
+      </p>
+      <a href="/contact" class="cta-button">Remove Mold Fast →</a>
+    </div>
+  </section>
+
+  <!-- Service Icons -->
+  <section>
+    <div class="services-grid">
+      <div class="service-item">
+        <i class="fas fa-search"></i>
+        <h3>Mold Inspection</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-biohazard"></i>
+        <h3>Black Mold Removal</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Mold Prevention</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-vials"></i>
+        <h3>Mold Testing</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Cards -->
+  <section class="solutions-section">
+    <h2 class="solutions-title">Comprehensive Mold Damage Solutions</h2>
+    <div class="solutions-grid">
+      <!-- Card 1 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/MoldInspection.jpg"
+            alt="Technician inspecting wall for mold with moisture meter"
+          />
         </div>
-    </section>
-
-    <!-- Service Icons -->
-    <section>
-        <div class="services-grid">
-            <div class="service-item">
-                <i class="fas fa-search"></i>
-                <h3>Mold Inspection</h3>
-            </div>
-
-            <div class="service-item">
-                <i class="fas fa-biohazard"></i>
-                <h3>Black Mold Removal</h3>
-            </div>
-
-            <div class="service-item">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Mold Prevention</h3>
-            </div>
-
-            <div class="service-item">
-                <i class="fas fa-vials"></i>
-                <h3>Mold Testing</h3>
-            </div>
+        <div class="card-content">
+          <h3>Mold Inspection</h3>
+          <p>
+            Visual assessment, moisture mapping, and infrared scanning to locate
+            hidden mold and sources of humidity.
+          </p>
+          <a href="/contact" class="card-cta">Book Inspection</a>
         </div>
-    </section>
+      </div>
 
-    <!-- Solutions Cards -->
-    <section class="solutions-section">
-        <h2 class="solutions-title">Comprehensive Mold Damage Solutions</h2>
-        <div class="solutions-grid">
-            <!-- Card 1 -->
-            <div class="solution-card">
-                <div class="card-image">
-                    <img
-                        src="/images/MoldInspection.jpg"
-                        alt="Technician inspecting wall for mold with moisture meter"
-                    />
-                </div>
-                <div class="card-content">
-                    <h3>Mold Inspection</h3>
-                    <p>
-                        Visual assessment, moisture mapping, and infrared
-                        scanning to locate hidden mold and sources of humidity.
-                    </p>
-                    <a href="/contact" class="card-cta">Book Inspection</a>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="solution-card">
-                <div class="card-image">
-                    <img
-                        src="/images/BlackMoldRemoval.jpg"
-                        alt="Technician removing black mold with PPE and containment"
-                    />
-                </div>
-                <div class="card-content">
-                    <h3>Black Mold Removal</h3>
-                    <p>
-                        Safe containment, HEPA filtration, and PPE protocols to
-                        remove toxic mold and protect occupants.
-                    </p>
-                    <a href="/contact" class="card-cta">Remove Black Mold</a>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="solution-card">
-                <div class="card-image">
-                    <img
-                        src="/images/MoldPrevention.jpg"
-                        alt="Cleaning and disinfecting affected materials with HEPA vacuums"
-                    />
-                </div>
-                <div class="card-content">
-                    <h3>Mold Prevention</h3>
-                    <p>
-                        Source correction, material removal, HEPA vacuuming, and
-                        antimicrobial cleaning per IICRC best practices.
-                    </p>
-                    <a href="/contact" class="card-cta">Start Remediation</a>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="solution-card">
-                <div class="card-image">
-                    <img
-                        src="/images/Moldtesting.jpg"
-                        alt="Dehumidifier and ventilation solutions to prevent future mold"
-                    />
-                </div>
-                <div class="card-content">
-                    <h3>Mold testing</h3>
-                    <p>
-                        Dehumidification, ventilation upgrades, and moisture
-                        control plans to stop mold from returning.
-                    </p>
-                    <a href="/contact" class="card-cta">Prevent Future Mold</a>
-                </div>
-            </div>
+      <!-- Card 2 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/BlackMoldRemoval.jpg"
+            alt="Technician removing black mold with PPE and containment"
+          />
         </div>
-    </section>
-
-    <!-- Steps -->
-    <section class="steps-section">
-        <h2 class="steps-title">How It Works</h2>
-        <div class="steps-container">
-            <div class="step-item" data-step="1">
-                <div class="step-icon"><i class="fas fa-search"></i></div>
-                <h3>Inspect & Test</h3>
-                <p>Assessment, moisture mapping & air/surface sampling</p>
-            </div>
-
-            <div class="step-item" data-step="2">
-                <div class="step-icon"><i class="fas fa-wind"></i></div>
-                <h3>Contain & Filter</h3>
-                <p>Isolation barriers & HEPA air filtration</p>
-            </div>
-
-            <div class="step-item" data-step="3">
-                <div class="step-icon"><i class="fas fa-broom"></i></div>
-                <h3>Remove & Clean</h3>
-                <p>
-                    Material removal, HEPA vacuuming & antimicrobial treatment
-                </p>
-            </div>
-
-            <div class="step-item" data-step="4">
-                <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Verify & Prevent</h3>
-                <p>Clearance testing & long-term moisture control plan</p>
-            </div>
+        <div class="card-content">
+          <h3>Black Mold Removal</h3>
+          <p>
+            Safe containment, HEPA filtration, and PPE protocols to remove toxic
+            mold and protect occupants.
+          </p>
+          <a href="/contact" class="card-cta">Remove Black Mold</a>
         </div>
-    </section>
+      </div>
 
-    <!-- Blog / Guides -->
-    <section class="sectionBlogBathroom">
-        <div>
-            <div>
-                <h2 class="tittleSection-cardBlogBathroo">
-                    Mold Safety & Prevention Guides
-                </h2>
-            </div>
-            <div>
-                <div class="cntFather-cardBlogBathroo">
-                    <div class="cnt-cardBlogBathroom">
-                        <h3 class="title-cardBlogBathroom">
-                            Signs You May Have Hidden Mold
-                        </h3>
-                        <p class="text-cardBlogBathroom">
-                            Smells, stains, and humidity clues you shouldn’t
-                            ignore.
-                        </p>
-                        <a class="link-blogBathroom"
-                            >Read More <i class="flechaBlog fas fa-arrow-right"
-                            ></i></a
-                        >
-                    </div>
-                    <div class="cnt-cardBlogBathroom">
-                        <h3 class="title-cardBlogBathroom">
-                            How to Prevent Mold After a Leak
-                        </h3>
-                        <p class="text-cardBlogBathroom">
-                            Drying timelines, target humidity, and materials to
-                            remove first.
-                        </p>
-                        <a class="link-blogBathroom"
-                            >Read More <i class="flechaBlog fas fa-arrow-right"
-                            ></i></a
-                        >
-                    </div>
-                </div>
-            </div>
+      <!-- Card 3 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/MoldPrevention.jpg"
+            alt="Cleaning and disinfecting affected materials with HEPA vacuums"
+          />
         </div>
-    </section>
+        <div class="card-content">
+          <h3>Mold Prevention</h3>
+          <p>
+            Source correction, material removal, HEPA vacuuming, and
+            antimicrobial cleaning per IICRC best practices.
+          </p>
+          <a href="/contact" class="card-cta">Start Remediation</a>
+        </div>
+      </div>
 
-    <!-- FAQ -->
-    <section>
-        <FAQ client:load category="mold" title="Mold Remediation FAQs" />
-    </section>
+      <!-- Card 4 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/Moldtesting.jpg"
+            alt="Dehumidifier and ventilation solutions to prevent future mold"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Mold testing</h3>
+          <p>
+            Dehumidification, ventilation upgrades, and moisture control plans
+            to stop mold from returning.
+          </p>
+          <a href="/contact" class="card-cta">Prevent Future Mold</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="steps-section">
+    <h2 class="steps-title">How It Works</h2>
+    <div class="steps-container">
+      <div class="step-item" data-step="1">
+        <div class="step-icon"><i class="fas fa-search"></i></div>
+        <h3>Inspect & Test</h3>
+        <p>Assessment, moisture mapping & air/surface sampling</p>
+      </div>
+
+      <div class="step-item" data-step="2">
+        <div class="step-icon"><i class="fas fa-wind"></i></div>
+        <h3>Contain & Filter</h3>
+        <p>Isolation barriers & HEPA air filtration</p>
+      </div>
+
+      <div class="step-item" data-step="3">
+        <div class="step-icon"><i class="fas fa-broom"></i></div>
+        <h3>Remove & Clean</h3>
+        <p>Material removal, HEPA vacuuming & antimicrobial treatment</p>
+      </div>
+
+      <div class="step-item" data-step="4">
+        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Verify & Prevent</h3>
+        <p>Clearance testing & long-term moisture control plan</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <WhyChooseUs
+    client:load
+    title="Why Choose Us"
+    items={[
+      "Safe mold removal for homes & businesses",
+      "Black mold experts with advanced equipment",
+      "Focus on health & indoor air quality",
+      "Moisture control to prevent regrowth",
+      "Local Florida response—fast and reliable",
+    ]}
+  />
+
+  <!-- Service Highlights -->
+  <ServiceHighlights
+    client:load
+    title="Service Highlights"
+    highlights={[
+      "Black mold inspection & removal",
+      "Hidden mold detection in walls & HVAC systems",
+      "Antimicrobial cleaning & sealing",
+      "Dehumidification & moisture monitoring",
+      "Post-remediation air quality testing",
+    ]}
+  />
+
+  <!-- FAQ -->
+  <section>
+    <FAQ client:load category="mold" title="Mold Remediation FAQs" />
+  </section>
+
+  <!-- Final CTA -->
+  <RestorationCTA
+    client:load
+    title="Protect your home and health from mold."
+    subtitle="Schedule your inspection today and get professional mold remediation in Florida."
+    buttonText="Remove Mold Fast"
+    buttonLink="/contact"
+  />
 </BaseLayout>

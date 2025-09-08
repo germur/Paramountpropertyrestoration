@@ -3,177 +3,207 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/pages/fire-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
+import RestorationCTA from "../../components/RestorationCTA";
+import WhyChooseUs from "../../components/WhyChooseUs";
+import ServiceHighlights from "../../components/ServiceHighlights";
+import RegionalCoverage from "../../components/RegionalCoverage";
 ---
 
 <BaseLayout
-    title="Kitchen Remodeling Experts | 1GC Construction"
-    description="From open layouts to premium countertops – transform your kitchen today with 1GC’s expert team."
+  title="Fire Damage Restoration in Florida | Smoke & Soot Cleanup"
+  description="Florida fire damage restoration experts. 24/7 cleanup for smoke, soot, and structural repair. Serving Orlando, Miami, Tampa & more. Request a free inspection today."
 >
-    <!-- Section One -->
-    <section class="hero-sectionKitchen">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Fire Damage? We Restore, You Rebuild Your Life</h1>
-            <p>
-                Restore your home with expert fire damage repairs, smoke cleanup, and odor removal. Serving Orlando, Miami, Tampa & beyond.
-            </p>
-            <a href="/contact" class="cta-button"
-                >Request Your Free Fire Damage Assessment →</a
-            >
-        </div>
-    </section>
-
-    <!-- Section Two -->
-<section>
-    <div class="services-grid">
-        <div class="service-item">
-            <i class="fas fa-smog"></i>
-            <h3>Smoke Damage</h3>
-        </div>
-
-        <div class="service-item">
-            <i class="fas fa-broom"></i>
-            <h3>Soot Cleanup</h3>
-        </div>
-
-        <div class="service-item">
-            <i class="fas fa-tools"></i>
-            <h3>Fire Damage Repair</h3>
-        </div>
-
-        <div class="service-item">
-            <i class="fas fa-ambulance"></i>
-            <h3>Emergency Fire Response</h3>
-        </div>
+  <!-- Section One -->
+  <section class="hero-sectionKitchen">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Fire Damage Restoration Services in Florida</h1>
+      <p>
+        We provide 24/7 fire and smoke damage restoration across Florida. From
+        emergency board-up to soot removal and full repairs, our team restores
+        homes and businesses to safe, pre-loss condition.
+      </p>
+      <a href="/contact" class="cta-button">Clean Up After Fire →</a>
     </div>
-</section>
+  </section>
 
+  <!-- Section Two -->
+  <section>
+    <div class="services-grid">
+      <div class="service-item">
+        <i class="fas fa-smog"></i>
+        <h3>Smoke Damage</h3>
+      </div>
 
-<!-- Section Three - Solutions Cards -->
-<section class="solutions-section">
+      <div class="service-item">
+        <i class="fas fa-broom"></i>
+        <h3>Soot Cleanup</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-tools"></i>
+        <h3>Fire Damage Repair</h3>
+      </div>
+
+      <div class="service-item">
+        <i class="fas fa-ambulance"></i>
+        <h3>Emergency Fire Response</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Three - Solutions Cards -->
+  <section class="solutions-section">
     <h2 class="solutions-title">Comprehensive Fire Damage Solutions</h2>
     <div class="solutions-grid">
-        <!-- Card 1 -->
-        <div class="solution-card">
-            <div class="card-image">
-                <img
-                    src="/images/SmokeDamage.jpg"
-                    alt="Smoke Damage Restoration"
-                />
-            </div>
-            <div class="card-content">
-                <h3>Smoke Damage</h3>
-                <p>
-                    Remove harmful smoke residue, restore air quality, and
-                    protect your property from long-term damage caused by fire.
-                </p>
-                <a href="/contact" class="card-cta">Request Smoke Cleanup</a>
-            </div>
+      <!-- Card 1 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/SmokeDamage.jpg" alt="Smoke Damage Restoration" />
         </div>
+        <div class="card-content">
+          <h3>Smoke Damage</h3>
+          <p>
+            Remove harmful smoke residue, restore air quality, and protect your
+            property from long-term damage caused by fire.
+          </p>
+          <a href="/contact" class="card-cta">Request Smoke Cleanup</a>
+        </div>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="solution-card">
-            <div class="card-image">
-                <img
-                    src="/images/SootCleanup.jpg"
-                    alt="Soot Cleanup Service"
-                />
-            </div>
-            <div class="card-content">
-                <h3>Soot Cleanup</h3>
-                <p>
-                    Deep clean and remove stubborn soot stains from walls,
-                    ceilings, and surfaces, restoring your property’s appearance.
-                </p>
-                <a href="/contact" class="card-cta">Book Soot Removal</a>
-            </div>
+      <!-- Card 2 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/SootCleanup.jpg" alt="Soot Cleanup Service" />
         </div>
+        <div class="card-content">
+          <h3>Soot Cleanup</h3>
+          <p>
+            Deep clean and remove stubborn soot stains from walls, ceilings, and
+            surfaces, restoring your property’s appearance.
+          </p>
+          <a href="/contact" class="card-cta">Book Soot Removal</a>
+        </div>
+      </div>
 
-        <!-- Card 3 -->
-        <div class="solution-card">
-            <div class="card-image">
-                <img
-                    src="/images/FireDamageRepair.jpg"
-                    alt="Fire Damage Repair"
-                />
-            </div>
-            <div class="card-content">
-                <h3>Fire Damage Repair</h3>
-                <p>
-                    Repair structural damage, replace destroyed materials, and
-                    rebuild affected areas to restore safety and comfort.
-                </p>
-                <a href="/contact" class="card-cta">Start Repairs Today</a>
-            </div>
+      <!-- Card 3 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/FireDamageRepair.jpg" alt="Fire Damage Repair" />
         </div>
+        <div class="card-content">
+          <h3>Fire Damage Repair</h3>
+          <p>
+            Repair structural damage, replace destroyed materials, and rebuild
+            affected areas to restore safety and comfort.
+          </p>
+          <a href="/contact" class="card-cta">Start Repairs Today</a>
+        </div>
+      </div>
 
-        <!-- Card 4 -->
-        <div class="solution-card">
-            <div class="card-image">
-                <img
-                    src="/images/EmergencyFireResponse.jpg"
-                    alt="Emergency Fire Response"
-                />
-            </div>
-            <div class="card-content">
-                <h3>Emergency Fire Response</h3>
-                <p>
-                    24/7 rapid response to fire emergencies, minimizing damage
-                    and beginning restoration work immediately on arrival.
-                </p>
-                <a href="/contact" class="card-cta">Get Emergency Help</a>
-            </div>
+      <!-- Card 4 -->
+      <div class="solution-card">
+        <div class="card-image">
+          <img
+            src="/images/EmergencyFireResponse.jpg"
+            alt="Emergency Fire Response"
+          />
         </div>
+        <div class="card-content">
+          <h3>Emergency Fire Response</h3>
+          <p>
+            24/7 rapid response to fire emergencies, minimizing damage and
+            beginning restoration work immediately on arrival.
+          </p>
+          <a href="/contact" class="card-cta">Get Emergency Help</a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- Section Steps -->
 
-    <!-- Section Steps -->
-
-    <section class="steps-section">
-        <h2 class="steps-title">How It Works</h2>
-        <div class="steps-container">
-            <!-- Step 1 -->
-            <div class="step-item" data-step="1">
-                <div class="step-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <h3>Consultation</h3>
-                <p>Free 3D Design Session (Virtual or On Site)</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-item" data-step="2">
-                <div class="step-icon">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <h3>Material Selection</h3>
-                <p>Choose from 50+ Tile Designs & Fixtures</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-item" data-step="3">
-                <div class="step-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3>Installation</h3>
-                <p>Demolition, Process | Avg. Time: 2.5 Days</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-item" data-step="4">
-                <div class="step-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <h3>Final Walkthrough</h3>
-                <p>Quality Check & Client Approval</p>
-            </div>
+  <section class="steps-section">
+    <h2 class="steps-title">How It Works</h2>
+    <div class="steps-container">
+      <!-- Step 1 -->
+      <div class="step-item" data-step="1">
+        <div class="step-icon">
+          <i class="fas fa-phone-alt"></i>
         </div>
-    </section>
+        <h3>Emergency Response & Board-Up</h3>
+        <p>Secure the property immediately after the fire</p>
+      </div>
 
-    <!-- Section Portfolio -->
+      <!-- Step 2 -->
+      <div class="step-item" data-step="2">
+        <div class="step-icon">
+          <i class="fas fa-cube"></i>
+        </div>
+        <h3>Soot & Smoke Removal</h3>
+        <p>Clean affected areas with advanced tools and techniques</p>
+      </div>
 
-    <!-- <section class="recent-remodels-section">
+      <!-- Step 3 -->
+      <div class="step-item" data-step="3">
+        <div class="step-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Odor Treatment</h3>
+        <p>Deodorize air, walls, and belongings for a safe living space</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-item" data-step="4">
+        <div class="step-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <h3>Repairs & Restoration</h3>
+        <p>Rebuild damaged structures and restore finishes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <WhyChooseUs
+    client:load
+    title="Why Choose Us"
+    items={[
+      "24/7 fire and smoke restoration in Florida",
+      "Local teams for fast dispatch",
+      "Complete service—from cleanup to rebuild",
+      "We assist with insurance paperwork",
+      "Trusted by Florida homeowners & businesses",
+    ]}
+  />
+
+  <!-- Service Highlights -->
+  <ServiceHighlights
+    client:load
+    title="Service Highlights"
+    highlights={[
+      "Smoke odor removal",
+      "Soot cleaning & disinfection",
+      "HVAC system cleaning",
+      "Emergency property board-up",
+      "Fire + water damage mitigation",
+    ]}
+  />
+
+  <!-- Regional Coverage -->
+  <RegionalCoverage
+    client:load
+    title="Regional Coverage"
+    internalLinks={[
+      { text: "Fire Damage in Orlando", url: "/restoration/fire-damage/orlando" },
+      { text: "Smoke Cleanup Miami", url: "/restoration/fire-damage/miami" },
+      { text: "Soot Removal Tampa", url: "/restoration/fire-damage/tampa" }
+    ]}
+  />
+
+  <!-- Section Portfolio -->
+
+  <!-- <section class="recent-remodels-section">
         <h2 class="recent-remodels-title">Inspiring Kitchen Transformations</h2>
         <div class="remodels-gallery">
 
@@ -221,48 +251,17 @@ import FAQ from "../../components/AcordeonServices";
         </div>
     </section> -->
 
-    <!-- Blog Ba;os -->
+  <!-- Blog Ba;os -->
+  <section>
+    <FAQ client:load category="fire" title="FAQs" />
+  </section>
 
-    <section class="sectionBlogBathroom">
-        <div>
-            <div>
-                <h2 class="tittleSection-cardBlogBathroo">
-                    Home & Workplace Fire Prevention Guides
-                </h2>
-            </div>
-            <div>
-                <div class="cntFather-cardBlogBathroo">
-                    <div class="cnt-cardBlogBathroom">
-                        <h3 class="title-cardBlogBathroom">
-                            Este es el Titulo de la card
-                        </h3>
-                        <p class="text-cardBlogBathroom">
-                            Esta es la description para invitar a ver los blos
-                            sobre las cosas de ba;o
-                        </p>
-                        <a class="link-blogBathroom"
-                            >Leer Más <i class="flechaBlog fas fa-arrow-right"
-                            ></i></a
-                        >
-                    </div>
-                    <div class="cnt-cardBlogBathroom">
-                        <h3 class="title-cardBlogBathroom">
-                            Este es el Titulo de la card
-                        </h3>
-                        <p class="text-cardBlogBathroom">
-                            Esta es la description para invitar a ver los blos
-                            sobre las cosas de ba;o
-                        </p>
-                        <a class="link-blogBathroom"
-                            >Leer Más <i class="flechaBlog fas fa-arrow-right"
-                            ></i></a
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <FAQ client:load category="fire" title="FAQs" />
-    </section>
+  <!-- Final CTA -->
+  <RestorationCTA
+    client:load
+    title="Don't wait after a fire—damage spreads quickly."
+    subtitle="Call now for 24/7 fire damage restoration in Florida."
+    buttonText="Clean Up After Fire"
+    buttonLink="/contact"
+  />
 </BaseLayout>

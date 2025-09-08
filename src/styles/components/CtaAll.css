@@ -1,143 +1,143 @@
-.Section-Ctall{
-    max-width: 1280px;
-    margin: 0 auto;
+.Section-Ctall {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .cnt-cardCTAservices {
-    margin: 10px;
-    background-color: black;
-    color: white;
-    border-radius: 21px;
+  margin: 10px;
+  margin-bottom: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 21px;
 }
 
 .cardCTAservices {
-    text-align: center;
-    padding: 30px 0 20px;
+  text-align: center;
+  padding: 30px 0 20px;
 }
 
 .titleCardCTAServ {
-    color: white;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.2;
-    padding-bottom: 20px;
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-bottom: 20px;
 }
 
 .textCardCTAServ {
-    font-size: 16px;
-    color: #6F6F6F;
-    line-height: 24px;
-    padding-bottom: 20px;
+  font-size: 16px;
+  color: #6f6f6f;
+  line-height: 24px;
+  padding-bottom: 20px;
 }
 
 .btn-fatherCTAbtn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .btn-OneCtaServices {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 3rem;
-    font-size: 15px;
-    color: white;
-    background-color: #0C4E6E;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 3rem;
+  font-size: 15px;
+  color: white;
+  background-color: #0c4e6e;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.btn-OneCtaServices:hover{
-    background-color: var(--color-accent);
+.btn-OneCtaServices:hover {
+  background-color: var(--color-accent);
 }
 
 .arrowCtaServices {
-    font-size: 11px;
-    padding-left: 10px;
+  font-size: 11px;
+  padding-left: 10px;
 }
 
 .btn-TwoCtaServices {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 3rem;
-    font-size: 15px;
-    color: white;
-    background-color: black;
-    border: 1px solid white;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 3rem;
+  font-size: 15px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.btn-TwoCtaServices:hover{
-    background-color: var(--color-primary);
+.btn-TwoCtaServices:hover {
+  background-color: var(--color-primary);
 }
 
 .team-section {
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 40px 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 40px 0;
 }
 
-.team-section .tittleH2Team{
-    color: white;
+.team-section .tittleH2Team {
+  color: white;
 }
 
 .team-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 20px;
 }
 
 .team-member {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-    position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  position: relative;
 }
 
 .one {
-    background-color: #BFE3D4;
-    margin-right: -15px;
-    z-index: 1;
+  background-color: #bfe3d4;
+  margin-right: -15px;
+  z-index: 1;
 }
 
 .two {
-    width: 110px;
-    height: 110px;
-    background-color: #EAE8B3;
-    z-index: 2;
+  width: 110px;
+  height: 110px;
+  background-color: #eae8b3;
+  z-index: 2;
 }
 
 .three {
-    background-color: #F9C3D3;
-    margin-left: -15px;
-    z-index: 1;
+  background-color: #f9c3d3;
+  margin-left: -15px;
+  z-index: 1;
 }
 
-@media (min-width: 1024px){
-    .cardCTAservices{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    .titleCardCTAServ{
-        width: 450px;
-    }
-
+@media (min-width: 1024px) {
+  .cardCTAservices {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .titleCardCTAServ {
+    width: 450px;
+  }
 }

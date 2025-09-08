@@ -93,17 +93,12 @@ const faqData = {
         {
             id: 'water-1',
             question: 'How fast should water damage restoration start?',
-            answer: 'Within 24 hours is ideal. Early extraction and drying reduce structural damage and the risk of mold growth.'
+            answer: 'Ideally within 24 hours. Early extraction and drying reduce structural damage and the risk of mold growth.'
         },
         {
             id: 'water-2',
             question: 'What does the water damage process include?',
-            answer: `Our process typically includes:
-            • Emergency inspection & moisture mapping
-            • Water extraction
-            • Cleaning, sanitizing & odor control
-            • Repairs and finish restoration
-    `
+            answer: 'Our process includes: emergency inspection & moisture mapping, water extraction, cleaning & sanitizing, odor control, repairs, and finish restoration.'
         },
         {
             id: 'water-3',
@@ -113,27 +108,37 @@ const faqData = {
         {
             id: 'water-4',
             question: 'Can you prevent mold after water damage?',
-            answer: 'We control humidity, remove wet materials when needed, and apply antimicrobial treatments to prevent mold.'
+            answer: 'Yes. We control humidity, remove wet materials when needed, and apply antimicrobial treatments to prevent mold.'
         },
         {
             id: 'water-5',
             question: 'How long does structural drying take?',
-            answer: 'Typically 2–5 days, depending on materials, saturation, ventilation, and indoor humidity. We monitor daily.'
+            answer: 'Typically 2–5 days, depending on materials, saturation, ventilation, and indoor humidity. We monitor progress daily.'
         },
         {
             id: 'water-6',
             question: 'Will my insurance cover water damage?',
-            answer: 'Many policies cover sudden/accidental water events. Flood coverage may require separate policies. We assist with documentation.'
+            answer: 'Many policies cover sudden or accidental water events. Flooding from storms may require separate flood insurance. We assist with documentation for your claim.'
         },
         {
             id: 'water-7',
             question: 'What items can be saved after water damage?',
-            answer: 'Non-porous items clean well. Porous items (carpet pad, some insulation, swollen MDF) may require replacement depending on contamination.'
+            answer: 'Non-porous items often clean well. Porous materials like carpet padding, insulation, and MDF may need replacement based on contamination level.'
         },
         {
             id: 'water-8',
             question: 'Is the property safe during restoration?',
-            answer: 'We isolate affected areas, use safe equipment, and follow IICRC best practices to protect occupants and workers.'
+            answer: 'Absolutely. We isolate affected areas, use safe equipment, and follow industry best practices to protect occupants and workers.'
+        },
+        {
+            id: 'water-9',
+            question: 'What should I do first after a flood?',
+            answer: 'Stay safe, shut off electricity if needed, and call for emergency water removal. Avoid entering rooms with standing water.'
+        },
+        {
+            id: 'water-10',
+            question: 'What happens if flood water isn\'t removed quickly?',
+            answer: 'Mold, structural damage, and electrical hazards escalate within days, turning small repairs into major reconstruction.'
         }
     ],
     fire: [
@@ -537,6 +542,28 @@ const faqData = {
             id: 'addition-10',
             question: 'Can I incorporate smart home technology into my new addition?',
             answer: 'Absolutely. We specialize in integrating smart home technology into new constructions and additions. From automated lighting and climate control to advanced security systems and AI-driven home management, we can design a modern, connected living space tailored to your preferences.'
+        }
+    ],
+    mitigation: [
+        {
+            id: 'mitigation-1',
+            question: 'What are mitigation services?',
+            answer: 'Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss.'
+        },
+        {
+            id: 'mitigation-2',
+            question: 'What is the difference between mitigation and restoration?',
+            answer: 'Mitigation reduces the impact of damage immediately—like drying water or boarding windows—while restoration repairs and rebuilds the property to pre-loss condition.'
+        },
+        {
+            id: 'mitigation-3',
+            question: 'Why is mitigation important?',
+            answer: 'Acting fast with mitigation saves money, reduces risks, and prevents small problems (like leaks or smoke) from becoming major structural issues.'
+        },
+        {
+            id: 'mitigation-4',
+            question: 'Does insurance cover mitigation?',
+            answer: 'Most policies cover mitigation services as part of property loss claims, since they are critical to reducing overall damage.'
         }
     ],
     general: [
