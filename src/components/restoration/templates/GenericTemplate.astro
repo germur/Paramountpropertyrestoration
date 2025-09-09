@@ -107,12 +107,11 @@ const customQuestions = rawFaqs.map((faq, index) => ({
   answer: faq.a,
 }));
 
-// CTA FINAL
-const finalCta = sub?.finalCta ?? {
-  title: "Need help now?",
-  text: "Call us for immediate assistance and a free assessment.",
-  cta: "Contact Us",
-  href: "/contact",
+const finalCta = {
+  title: sub?.cta?.headline ?? "Need help now?",
+  text: sub?.cta?.text ?? "",
+  cta: sub?.cta?.button ?? "Contact Us",
+  href: sub?.cta?.href ?? "/contact",
 };
 ---
 

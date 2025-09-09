@@ -33,6 +33,10 @@ export const restorationGroups = [
         slug: "flood-damage",
         title: "Flood Damage Cleanup in Florida",
         short: "Cleanup & restoration after flooding",
+        cta: {
+          headline: "Don't Let Flood Damage Ruin Your Home",
+          button: "Start Flood Extraction Now"
+        },
         hero: {
           description:
             "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home’s structure, and restore safety. Immediate response across Orlando, Miami, Tampa, and statewide.",
@@ -121,6 +125,10 @@ export const restorationGroups = [
         slug: "leak-repair",
         title: "Leak Repair Services in Florida | Ceiling, Wall & Pipe Leaks",
         short: "Find & fix leaks quickly",
+        cta: {
+          headline: "Don't Let a Small Leak Turn Into a Disaster",
+          button: "Fix My Leak Today"
+        },
         hero: {
           description:
             "Fast leak detection and permanent repair to prevent hidden moisture damage.",
@@ -201,6 +209,10 @@ export const restorationGroups = [
         slug: "basement-flooding",
         title: "Basement Flooding",
         short: "Pumping & drying basements",
+        cta: {
+          headline: "Don't Let a Flooded Basement Damage Your Foundation",
+          button: "Protect Against Mold"
+        },
         hero: {
           description:
             "Basement pump-out and structural drying to remove water quickly and safely.",
@@ -277,6 +289,10 @@ export const restorationGroups = [
         slug: "ceiling-water-damage",
         title: "Ceiling Water Damage",
         short: "Ceiling stains & sagging repair",
+        cta: {
+          headline: "Don't Let a Small Leak Turn Into a Ceiling Collapse",
+          button: "Request Emergency Help"
+        },
         hero: {
           description:
             "Leak tracing, ceiling drying, and safe repair to prevent collapse and mold.",
@@ -463,6 +479,10 @@ export const restorationGroups = [
         slug: "smoke-damage",
         title: "Smoke Damage",
         short: "Soot removal & odor control",
+        cta: {
+          headline: "Don't Let Smoke Linger in Your Home or Business",
+          button: "Get Smoke Damage Help Today"
+        },
         hero: {
           description:
             "HEPA vacuuming, dry/wet cleaning, and odor neutralization to restore air quality.",
@@ -537,6 +557,10 @@ export const restorationGroups = [
         slug: "soot-cleanup",
         title: "Soot Cleanup",
         short: "Deep cleaning of soot residues",
+        cta: {
+          headline: "Don't let soot damage linger—restore your home or business today",
+          button: "Request Soot Cleanup Now"
+        },
         hero: {
           description:
             "Specialized cleaning for soot on walls, ceilings, contents, and HVAC.",
@@ -611,6 +635,10 @@ export const restorationGroups = [
         slug: "fire-damage-repair",
         title: "Fire Damage Repair",
         short: "Structural repair & rebuild",
+        cta: {
+          headline: "Don't let soot, smoke, and fire debris linger—restore your property today",
+          button: "Request Fire Cleanup Now"
+        },
         hero: {
           description:
             "From shoring and demolition to full rebuild and final finishes.",
@@ -685,6 +713,10 @@ export const restorationGroups = [
         slug: "emergency-fire-response",
         title: "Emergency Fire Response",
         short: "Board-up & immediate response",
+        cta: {
+          headline: "Don't wait—every minute after a fire counts",
+          button: "Request Emergency Fire Response Now"
+        },
         hero: {
           description:
             "Emergency board-up, roof tarping, and site stabilization after a fire.",
@@ -771,6 +803,10 @@ export const restorationGroups = [
         slug: "mold-inspection",
         title: "Mold Inspection",
         short: "Moisture & air sampling",
+        cta: {
+          headline: "Don't let hidden mold grow into a bigger problem",
+          button: "Schedule Your Certified Inspection Today"
+        },
         hero: {
           description:
             "Certified inspection with moisture mapping and air sampling when needed.",
@@ -845,6 +881,10 @@ export const restorationGroups = [
         slug: "black-mold-removal",
         title: "Black Mold Removal",
         short: "Safe containment & removal",
+        cta: {
+          headline: "Protect your family. Breathe safe again",
+          button: "Request Black Mold Removal Now"
+        },
         hero: {
           description:
             "Containment, negative air, HEPA filtration, and safe material removal.",
@@ -919,6 +959,10 @@ export const restorationGroups = [
         slug: "mold-prevention",
         title: "Mold Prevention",
         short: "Treatments & humidity control",
+        cta: {
+          headline: "Keep mold out of your home—before it becomes a problem",
+          button: "Schedule Mold Prevention Service Today"
+        },
         hero: {
           description:
             "Moisture source control, ventilation upgrades, and antimicrobial treatments.",
@@ -993,6 +1037,10 @@ export const restorationGroups = [
         slug: "mold-testing",
         title: "Mold Testing",
         short: "Lab reports & clearances",
+        cta: {
+          headline: "Know What's in Your Air—Protect Your Health & Property",
+          button: "Book Certified Mold Testing Now"
+        },
         hero: {
           description:
             "Pre/post remediation testing with lab reports and clearance criteria.",
@@ -1079,6 +1127,10 @@ export const restorationGroups = [
         slug: "hurricane-damage",
         title: "Hurricane Damage",
         short: "Emergency tarping & repair",
+        cta: {
+          headline: "Don't Wait—Protect Your Home After the Hurricane",
+          button: "Request Emergency Hurricane Help"
+        },
         hero: {
           description:
             "Emergency tarping, temporary power, and structural stabilization.",
@@ -1153,6 +1205,10 @@ export const restorationGroups = [
         slug: "wind-damage",
         title: "Wind Damage",
         short: "Siding, roofing & windows",
+        cta: {
+          headline: "Restore Your Home After Wind Damage—Act Fast",
+          button: "Get Emergency Wind Repair"
+        },
         hero: {
           description:
             "Repair of roofing, siding, and windows damaged by strong winds.",
@@ -1227,6 +1283,10 @@ export const restorationGroups = [
         slug: "storm-debris-removal",
         title: "Storm Debris Removal",
         short: "Clean-up & hauling",
+        cta: {
+          headline: "Clear your property from storm debris safely and fast",
+          button: "Schedule Debris Cleanup Today"
+        },
         hero: {
           description:
             "Safe debris removal and haul-away to restore access and safety.",
@@ -1301,6 +1361,10 @@ export const restorationGroups = [
         slug: "emergency-storm-repair",
         title: "Emergency Storm Repair",
         short: "Rapid stabilization",
+        cta: {
+          headline: "Don't Wait – Restore Your Home After the Storm",
+          button: "Get Emergency Storm Repair Now"
+        },
         hero: {
           description:
             "Board-up, temporary repairs, and water intrusion control after storms.",
@@ -1387,6 +1451,10 @@ export const restorationGroups = [
         slug: "water-mitigation",
         title: "Water Mitigation",
         short: "Extraction, drying, dehumidification",
+        cta: {
+          headline: "Don't wait for water to cause permanent damage",
+          button: "Protect Your Property with Professional Water Mitigation Today"
+        },
         hero: {
           description:
             "Stop source, extract water, and dry structures to prevent secondary damage.",
@@ -1461,6 +1529,10 @@ export const restorationGroups = [
         slug: "fire-mitigation",
         title: "Fire Mitigation",
         short: "Board-up, shoring, odor control",
+        cta: {
+          headline: "Secure your property after a fire—don't wait",
+          button: "Request 24/7 Fire Mitigation Services Across Florida"
+        },
         hero: {
           description:
             "Immediate board-up, shoring, and smoke odor control after a fire.",
@@ -1535,6 +1607,10 @@ export const restorationGroups = [
         slug: "mold-mitigation",
         title: "Mold Mitigation",
         short: "Containment & drying",
+        cta: {
+          headline: "Don't let mold spread across your home",
+          button: "Protect Your Property & Health with Professional Mold Mitigation in Florida"
+        },
         hero: {
           description:
             "Containment and targeted drying to prevent mold spread and damage.",
@@ -1609,6 +1685,10 @@ export const restorationGroups = [
         slug: "storm-mitigation",
         title: "Storm Mitigation",
         short: "Tarping & temporary fixes",
+        cta: {
+          headline: "Don't leave your home exposed after a storm",
+          button: "Call Now for 24/7 Storm Mitigation Services in Florida"
+        },
         hero: {
           description:
             "Tarping, temporary patches, and moisture control after severe weather.",
