@@ -9,27 +9,29 @@
  * 6) CTA final
  */
 import "../../../styles/components/GenericTemplate.css";
+import RestorationCTA from "../../RestorationCTA.jsx";
+import FAQ from "../../AcordeonServices.jsx";
 
 const { group, sub } = Astro.props;
 
 // Theme por grupo (fallbacks)
 const themeByGroup = {
-  water:      { primary: "#0ea5e9", primaryDark: "#0369a1", accent: "#7dd3fc" },
-  fire:       { primary: "#e53935", primaryDark: "#b71c1c", accent: "#ffb300" },
-  storm:      { primary: "#475569", primaryDark: "#334155", accent: "#94a3b8" },
-  mold:       { primary: "#16a34a", primaryDark: "#166534", accent: "#86efac" },
+  water: { primary: "#0ea5e9", primaryDark: "#0369a1", accent: "#7dd3fc" },
+  fire: { primary: "#e53935", primaryDark: "#b71c1c", accent: "#ffb300" },
+  storm: { primary: "#475569", primaryDark: "#334155", accent: "#94a3b8" },
+  mold: { primary: "#16a34a", primaryDark: "#166534", accent: "#86efac" },
   mitigation: { primary: "#f59e0b", primaryDark: "#b45309", accent: "#fde68a" },
 };
 const base = themeByGroup[group?.template] ?? themeByGroup.water;
 
-const primary     = sub?.palette?.primary     ?? base.primary;
+const primary = sub?.palette?.primary ?? base.primary;
 const primaryDark = sub?.palette?.primaryDark ?? base.primaryDark;
-const accent      = sub?.palette?.accent      ?? base.accent;
+const accent = sub?.palette?.accent ?? base.accent;
 
 // HERO
 const heroTitle = sub.title;
-const heroDesc  = sub?.hero?.description ?? sub?.short ?? group?.description;
-const heroCTA   = sub?.hero?.cta ?? "Get Help Now";
+const heroDesc = sub?.hero?.description ?? sub?.short ?? group?.description;
+const heroCTA = sub?.hero?.cta ?? "Get Help Now";
 
 // Fallbacks por template (carpetas cortas como usas en /images/water/..)
 const defaultHeroByTemplate = {
@@ -42,39 +44,68 @@ const defaultHeroByTemplate = {
 const heroBg =
   sub?.hero?.bg ??
   sub?.images?.hero ??
-  defaultHeroByTemplate[group?.template] ?? "/images/placeholder-hero.jpg";
+  defaultHeroByTemplate[group?.template] ??
+  "/images/placeholder-hero.jpg";
 
 // PASO A PASO
 const steps = sub?.steps ?? [
-  { title: "Assessment",  text: "We inspect damage and plan the response.", icon: "fa-solid fa-clipboard-check" },
-  { title: "Mitigation",  text: "Stop the cause and protect unaffected areas.", icon: "fa-solid fa-shield-halved" },
-  { title: "Drying/Clean",text: "Extraction, dehumidification or soot cleanup.", icon: "fa-solid fa-wind" },
-  { title: "Repair",      text: "Structural fixes and finish work.",            icon: "fa-solid fa-screwdriver-wrench" },
+  {
+    title: "Assessment",
+    text: "We inspect damage and plan the response.",
+    icon: "fa-solid fa-clipboard-check",
+  },
+  {
+    title: "Mitigation",
+    text: "Stop the cause and protect unaffected areas.",
+    icon: "fa-solid fa-shield-halved",
+  },
+  {
+    title: "Drying/Clean",
+    text: "Extraction, dehumidification or soot cleanup.",
+    icon: "fa-solid fa-wind",
+  },
+  {
+    title: "Repair",
+    text: "Structural fixes and finish work.",
+    icon: "fa-solid fa-screwdriver-wrench",
+  },
 ];
 
 // Asegura icono por defecto
-steps.forEach(s => { if (!s.icon) s.icon = "fa-solid fa-circle-dot"; });
+steps.forEach((s) => {
+  if (!s.icon) s.icon = "fa-solid fa-circle-dot";
+});
 
 // POR QUÉ ELEGIRNOS
 const reasons = sub?.reasons ?? [
-  { title: "24/7 Response",   text: "Rapid arrival to reduce damage." },
-  { title: "Certified Team",  text: "IICRC-certified professionals." },
-  { title: "Insurance Help",  text: "We document and coordinate claims." },
+  { title: "24/7 Response", text: "Rapid arrival to reduce damage." },
+  { title: "Certified Team", text: "IICRC-certified professionals." },
+  { title: "Insurance Help", text: "We document and coordinate claims." },
   { title: "Guaranteed Work", text: "Quality workmanship you can trust." },
 ];
 
 // LINK BUILDING
 const autoLinks = (group?.subservices ?? [])
   .filter((s) => s.slug !== sub.slug)
-  .map((s) => ({ href: `/restoration/${group.slug}/${s.slug}`, label: s.title }));
+  .map((s) => ({
+    href: `/restoration/${group.slug}/${s.slug}`,
+    label: s.title,
+  }));
 
-const links = (sub?.links && sub.links.length > 0) ? sub.links : autoLinks;
+const links = sub?.links && sub.links.length > 0 ? sub.links : autoLinks;
 
-// FAQ
-const faqs = sub?.faqs ?? [
-  { q: "How fast can you arrive?",     a: "Usually within 60–90 minutes." },
-  { q: "Do you work with insurance?",  a: "Yes, we document and coordinate." },
+// FAQ - Transform data structure for AcordeonServices component
+const rawFaqs = sub?.faqs ?? [
+  { q: "How fast can you arrive?", a: "Usually within 60–90 minutes." },
+  { q: "Do you work with insurance?", a: "Yes, we document and coordinate." },
 ];
+
+// Convert {q, a} format to {question, answer} format for AcordeonServices
+const customQuestions = rawFaqs.map((faq, index) => ({
+  id: `custom-${index}`,
+  question: faq.q,
+  answer: faq.a,
+}));
 
 // CTA FINAL
 const finalCta = sub?.finalCta ?? {
@@ -101,7 +132,7 @@ const finalCta = sub?.finalCta ?? {
       steps.map((s) => (
         <li class="timeline__step">
           <div class="timeline__icon">
-            <i class={s.icon}></i>
+            <i class={s.icon} />
           </div>
           <div class="timeline__content">
             <h3 class="timeline__title">{s.title}</h3>
@@ -113,7 +144,6 @@ const finalCta = sub?.finalCta ?? {
   </ol>
 </section>
 
-
 <section class="reasons container">
   <h2 class="section__title">Why choose us</h2>
   <div class="cards">
@@ -121,7 +151,7 @@ const finalCta = sub?.finalCta ?? {
       reasons.map((r) => (
         <article class="card">
           <div class="card__header">
-            {r?.icon && <i class={`card__icon ${r.icon}`} aria-hidden="true"></i>}
+            {r?.icon && <i class={`card__icon ${r.icon}`} aria-hidden="true" />}
             <h3 class="card__title">{r.title}</h3>
           </div>
 
@@ -138,7 +168,6 @@ const finalCta = sub?.finalCta ?? {
   </div>
 </section>
 
-
 <section class="links container">
   <h2 class="section__title">Related services</h2>
   <ul class="links__grid">
@@ -154,19 +183,17 @@ const finalCta = sub?.finalCta ?? {
   </ul>
 </section>
 
-<section class="faq container">
-  <h2 class="section__title">FAQ</h2>
-  <ul class="faq__list">
-    {
-      faqs.map((f) => (
-        <li class="faq__item">
-          <details>
-            <summary>{f.q}</summary>
-            <p>{f.a}</p>
-          </details>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<FAQ
+  category={group?.template || "general"}
+  customQuestions={customQuestions}
+  title="FAQ"
+  client:load
+/>
 
+<RestorationCTA
+  title={finalCta.title}
+  subtitle={finalCta.text}
+  buttonText={finalCta.cta}
+  buttonLink={finalCta.href}
+  client:load
+/>
