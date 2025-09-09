@@ -190,16 +190,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Can you detect hidden leaks?",
-            a: "Yes, with thermal cameras and moisture mapping we locate concealed moisture sources.",
+            q: "How do I know if I have a hidden water leak?",
+            a: "Signs include moldy odors, warped walls, and unexplained water bills. We use specialized tools to detect hidden leaks.",
           },
           {
-            q: "Do you repair the plumbing?",
-            a: "We repair directly or coordinate licensed plumbers depending on scope.",
+            q: "Can a ceiling leak cause mold?",
+            a: "Yes. Within 24–48 hours, mold may develop on damp ceilings. Fast drying and repairs are essential.",
           },
           {
-            q: "How fast can you respond?",
-            a: "Same-day inspections in most areas; emergency service available.",
+            q: "Can leaking pipes be fixed without replacing everything?",
+            a: "Often yes. We patch, seal, or replace sections of pipe depending on severity.",
+          },
+          {
+            q: "How long does leak repair take?",
+            a: "Small leaks may be fixed same-day; larger or hidden leaks may take 2–3 days including drying and restoration.",
           },
         ],
       },
@@ -274,12 +278,24 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "How quickly can you pump out a basement?",
-            a: "Often within hours depending on volume and access.",
+            q: "What causes basement flooding?",
+            a: "Common causes include heavy rains, poor drainage, foundation cracks, burst pipes, or failed sump pumps.",
           },
           {
-            q: "Is the water safe?",
-            a: "Flood water is often contaminated—avoid contact and let pros handle it.",
+            q: "Can a flooded basement be saved?",
+            a: "Yes. With fast pump-out and drying, most basements can be restored. Delays increase risks of mold and foundation damage.",
+          },
+          {
+            q: "Do I need a sump pump installed?",
+            a: "For flood-prone basements, a sump system with backup power is strongly recommended to prevent future flooding.",
+          },
+          {
+            q: "How long does basement drying take?",
+            a: "Typically 2–5 days depending on water volume and humidity levels. Continuous monitoring ensures safe results.",
+          },
+          {
+            q: "Does insurance cover basement flooding?",
+            a: "Coverage depends on the source—sudden leaks may be covered, but floodwater often requires separate flood insurance.",
           },
         ],
       },
@@ -354,12 +370,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Is a sagging ceiling dangerous?",
-            a: "It can be; avoid the area and call a pro to assess and stabilize.",
+            q: "How do I know if ceiling water damage is serious?",
+            a: "Look for sagging, discoloration, musty odors, or peeling paint. These signal hidden water issues.",
           },
           {
-            q: "Will stains come back?",
-            a: "Not if the source is repaired and materials are dried/primed correctly.",
+            q: "Can I just paint over ceiling stains?",
+            a: "No. Without fixing the leak source, stains and mold will return.",
+          },
+          {
+            q: "How long does it take to repair ceiling water damage?",
+            a: "Small repairs: 1–2 days. Major restoration: up to a week.",
+          },
+          {
+            q: "Can water-damaged ceilings collapse?",
+            a: "Yes. Untreated damage weakens drywall & beams, raising collapse risk.",
           },
         ],
       },
@@ -446,10 +470,21 @@ export const restorationGroups = [
           primaryDark: "#ef6c00",
         },
         faqs: [
-          { q: "How fast can you arrive?", a: "Usually within 60–90 minutes." },
           {
-            q: "Do you work with insurance?",
-            a: "Yes, we document and coordinate.",
+            q: "Can water be removed immediately after a flood?",
+            a: "Yes. With industrial pumps, most water is extracted within hours. Acting quickly prevents mold and structural damage.",
+          },
+          {
+            q: "What happens if water isn't removed right away?",
+            a: "It seeps into drywall, flooring, insulation—leading to mold, odor, and weakened structures.",
+          },
+          {
+            q: "Is emergency water removal different from drying?",
+            a: "Yes. Removal extracts large volumes fast; drying stabilizes hidden moisture after.",
+          },
+          {
+            q: "Do you handle commercial water emergencies?",
+            a: "Absolutely. We service offices, warehouses, and retail spaces with minimal downtime.",
           },
         ],
         images: {
@@ -544,12 +579,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Can smoke smell be fully removed?",
-            a: "Yes—using proper cleaning, filtration, and odor neutralization methods.",
+            q: "Can smoke damage be fully removed?",
+            a: "Yes. With professional cleaning and deodorization, odors and particles can be eliminated.",
           },
           {
-            q: "Is soot hazardous?",
-            a: "It can be; avoid DIY cleaning to prevent smearing and exposure.",
+            q: "How long does it take to clean smoke damage?",
+            a: "Minor jobs: 1–2 days. Severe smoke with deep odors: up to a week.",
+          },
+          {
+            q: "Is smoke damage dangerous?",
+            a: "Yes. Smoke contains toxic particles that may trigger allergies, asthma, and respiratory issues.",
+          },
+          {
+            q: "Does insurance cover smoke damage?",
+            a: "Most Florida homeowners' policies cover it. We provide full documentation for claims.",
           },
         ],
       },
@@ -622,12 +665,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Can I wipe soot myself?",
-            a: "No recomendado: puede fijarse a la pintura. Usa limpieza profesional.",
+            q: "What is soot cleanup?",
+            a: "It's the removal of smoke residue after a fire, including cleaning, deodorizing, and restoring surfaces.",
           },
           {
-            q: "How long does it take?",
-            a: "Según alcance/superficies: desde 1–3 días típicamente.",
+            q: "Can I clean soot myself?",
+            a: "Small spots can be wiped, but DIY often spreads residue. Professionals ensure full and safe removal.",
+          },
+          {
+            q: "Is soot dangerous?",
+            a: "Yes. Soot contains toxic particles that irritate lungs and corrode surfaces if untreated.",
+          },
+          {
+            q: "How fast should soot be cleaned?",
+            a: "Immediately. Delays cause permanent staining and higher repair costs.",
           },
         ],
       },
@@ -700,12 +751,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do you manage permits?",
-            a: "Sí, según jurisdicción y alcance del rebuild.",
+            q: "What is fire cleanup?",
+            a: "It's the professional removal of debris, soot, and smoke after a fire—making your property safe for restoration.",
           },
           {
-            q: "How long does rebuild take?",
-            a: "Depende de daños: semanas a meses con inspecciones.",
+            q: "Can I do fire cleanup myself?",
+            a: "No. Improper cleaning spreads residue deeper. Certified fire cleanup teams use HEPA, ozone & safe chemicals.",
+          },
+          {
+            q: "How long does fire cleanup take in Florida?",
+            a: "1–3 days for minor fire cleanup; up to a week for heavy soot and debris.",
+          },
+          {
+            q: "Does insurance cover fire cleanup?",
+            a: "Most homeowners' insurance policies cover fire cleanup services. We help with full documentation.",
           },
         ],
       },
@@ -778,12 +837,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do you handle permits?",
-            a: "We coordinate with local authorities when required.",
+            q: "What should I do immediately after a fire?",
+            a: "Call 911 if active, then contact our emergency fire response team to secure and restore your property.",
           },
           {
-            q: "How fast can you board up?",
-            a: "Usually the same day, depending on distance and scope.",
+            q: "How fast can your fire response team arrive?",
+            a: "We're available 24/7 and usually arrive within hours of your call.",
+          },
+          {
+            q: "Why is emergency fire response critical?",
+            a: "Because fire, smoke, soot, and water spread damage quickly. The sooner we act, the less permanent damage occurs.",
+          },
+          {
+            q: "Does insurance cover emergency fire response in Florida?",
+            a: "Yes. Most policies cover it as part of restoration. We coordinate directly with insurers.",
           },
         ],
       },
@@ -868,12 +935,16 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do I need air testing?",
-            a: "Se recomienda cuando hay dudas o para clearance post-remediación.",
+            q: "Do I really need a mold inspection?",
+            a: "Yes. Early detection prevents hidden structural damage and health risks.",
           },
           {
-            q: "How soon do I get results?",
-            a: "Usualmente 24–72 horas según laboratorio.",
+            q: "How long does a mold inspection take?",
+            a: "Most homes: 1–2 hours, with a full report the same day.",
+          },
+          {
+            q: "Does inspection include testing?",
+            a: "Absolutely. We test air and surfaces to identify mold type and levels.",
           },
         ],
       },
@@ -946,12 +1017,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Is black mold more dangerous?",
-            a: "Algunos tipos pueden provocar reacciones; seguimos protocolos de seguridad.",
+            q: "Is black mold dangerous?",
+            a: "Yes. It produces toxic spores that can cause serious respiratory issues.",
           },
           {
-            q: "Do I need to leave home?",
-            a: "Puede ser necesario durante etapas de demolición/filtración.",
+            q: "Can I remove black mold myself?",
+            a: "Not safely. DIY cleaning often spreads spores further—professional removal is essential.",
+          },
+          {
+            q: "How long does black mold removal take?",
+            a: "Small jobs: 1–2 days. Severe infestations: up to a week.",
+          },
+          {
+            q: "Does insurance cover black mold removal?",
+            a: "Often yes, if caused by a covered water damage event.",
           },
         ],
       },
@@ -1024,12 +1103,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "What humidity is safe indoors?",
-            a: "Generalmente 40–55% RH para minimizar riesgo de moho.",
+            q: "How can I prevent mold in Florida homes?",
+            a: "By controlling humidity, fixing leaks, and applying preventive coatings.",
           },
           {
-            q: "Do preventive coatings last?",
-            a: "Depende del ambiente y mantenimiento; se recomiendan revisiones anuales.",
+            q: "Does mold prevention really work?",
+            a: "Yes. Professional prevention reduces risk of infestation by controlling conditions mold needs.",
+          },
+          {
+            q: "What's the difference between mold prevention and mold removal?",
+            a: "Prevention stops growth before it starts, while removal handles active infestations.",
+          },
+          {
+            q: "Is mold prevention covered by insurance?",
+            a: "Usually no—insurance covers damage, not prevention. But prevention lowers long-term costs.",
           },
         ],
       },
@@ -1102,12 +1189,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do I need both air and surface samples?",
-            a: "Depende del caso; a menudo se combinan para mejor diagnóstico.",
+            q: "What's the difference between inspection and testing?",
+            a: "Inspection = visual & moisture scan. Testing = lab-confirmed type & spore count.",
           },
           {
-            q: "Is testing required for clearance?",
-            a: "Es comúnmente recomendado para validar remediación.",
+            q: "How accurate are mold tests?",
+            a: "Lab-certified results with 99% accuracy.",
+          },
+          {
+            q: "Is mold testing required before removal?",
+            a: "Yes—testing confirms the strain & guides safe remediation.",
+          },
+          {
+            q: "How long until I get results?",
+            a: "Most reports delivered in 24–48 hours.",
           },
         ],
       },
@@ -1192,12 +1287,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do you work after-hours during hurricanes?",
-            a: "Sí, priorizamos emergencias según seguridad y acceso.",
+            q: "What is hurricane damage restoration?",
+            a: "It's the process of securing, cleaning, drying, and repairing properties after hurricanes.",
           },
           {
-            q: "Can you coordinate tree removal?",
-            a: "Sí, contamos con equipos y socios para retiro seguro.",
+            q: "How long does hurricane restoration take?",
+            a: "Minor repairs may take days; major structural rebuilds can take weeks.",
+          },
+          {
+            q: "Does insurance cover hurricane damage in Florida?",
+            a: "Yes—most homeowners have hurricane coverage. We assist with full documentation.",
+          },
+          {
+            q: "Can you remove fallen trees after a hurricane?",
+            a: "Yes. Our crews safely clear trees and storm debris from your property.",
           },
         ],
       },
@@ -1270,12 +1373,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Can you match shingles/siding?",
-            a: "Haremos lo posible; si no, proponemos alternativas compatibles.",
+            q: "What is wind damage restoration?",
+            a: "It's the process of repairing roofs, siding, windows, and interiors after wind-related destruction.",
           },
           {
-            q: "How fast are temporary repairs?",
-            a: "Generalmente el mismo día según materiales y clima.",
+            q: "How do you know if your roof has wind damage?",
+            a: "Look for missing shingles, leaks, or visible debris impacts.",
+          },
+          {
+            q: "Does insurance cover wind damage in Florida?",
+            a: "Yes—most policies include windstorm coverage. We assist with claim documentation.",
+          },
+          {
+            q: "Can you repair broken windows after wind damage?",
+            a: "Absolutely—we provide emergency board-up and window replacement.",
           },
         ],
       },
@@ -1348,12 +1459,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do you remove fallen trees?",
-            a: "Sí, coordinamos corte y retiro con equipo adecuado.",
+            q: "What is storm debris removal?",
+            a: "It's the process of clearing and safely disposing of trees, branches, and construction debris left after a storm.",
           },
           {
-            q: "Where do you take debris?",
-            a: "A sitios autorizados según tipo/material.",
+            q: "Can you remove large fallen trees?",
+            a: "Yes. Our crews use heavy equipment to cut and haul away even the largest trees.",
+          },
+          {
+            q: "Do you also haul away construction debris after storms?",
+            a: "Absolutely. We clear siding, roofing, drywall, and other structural debris.",
+          },
+          {
+            q: "Is storm debris removal covered by insurance?",
+            a: "In most cases, yes. We document everything for smooth claim approval.",
           },
         ],
       },
@@ -1426,12 +1545,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Do you prioritize emergencies?",
-            a: "Sí, según severidad, seguridad y disponibilidad.",
+            q: "What is emergency storm repair?",
+            a: "It's immediate action after severe storm damage to secure, stabilize, and begin property restoration.",
           },
           {
-            q: "Can you handle multiple properties?",
-            a: "Coordinamos equipos para cubrir varias ubicaciones.",
+            q: "How fast can storm repair teams respond?",
+            a: "Our teams mobilize within hours, available 24/7 across Florida.",
+          },
+          {
+            q: "Does insurance cover emergency storm repairs?",
+            a: "Yes, most policies cover emergency tarping, water removal, and repairs after a storm.",
+          },
+          {
+            q: "What should I do while waiting for emergency storm repair?",
+            a: "Stay safe, avoid hazards like live wires, and document damages for your insurance claim.",
           },
         ],
       },
@@ -1516,12 +1643,20 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "How long does mitigation take?",
-            a: "Típicamente 2–4 días según materiales, humedad y ventilación.",
+            q: "What is water damage mitigation vs restoration?",
+            a: "Mitigation = stop further damage (extraction, drying, stabilization). Restoration = repairs & rebuild. Both are essential.",
           },
           {
-            q: "Do you work with insurance?",
-            a: "Sí, proveemos documentación completa.",
+            q: "Can I do water mitigation myself?",
+            a: "Minor spills = yes. Floods, roof leaks, or burst pipes = need industrial drying to avoid mold & structural weakening.",
+          },
+          {
+            q: "How long does water mitigation take?",
+            a: "Usually 1–3 days, depending on severity. Large floods may require longer with daily monitoring.",
+          },
+          {
+            q: "Does insurance cover water mitigation?",
+            a: "Yes—most policies cover mitigation since it reduces total claim costs. We provide full documentation for insurers.",
           },
         ],
       },
@@ -1594,12 +1729,24 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Can you start same day?",
-            a: "Generalmente sí, según distancia y seguridad del sitio.",
+            q: "What is fire damage mitigation?",
+            a: "It's the process of securing & stabilizing a property after a fire—board-ups, smoke containment, ventilation.",
           },
           {
-            q: "Do you handle odors?",
-            a: "Sí, combinamos métodos para eliminar olores, no solo cubrirlos.",
+            q: "Why is fire mitigation important?",
+            a: "Without mitigation, soot spreads, odors become permanent, and structures weaken—making restoration harder & costlier.",
+          },
+          {
+            q: "What's the difference between fire mitigation and restoration?",
+            a: "Mitigation = prevention of further damage. Restoration = rebuild to pre-loss condition.",
+          },
+          {
+            q: "How fast should fire mitigation start?",
+            a: "Immediately. The first 24 hours are critical.",
+          },
+          {
+            q: "Does insurance cover fire mitigation?",
+            a: "Yes—most policies cover mitigation since it reduces claim costs. We provide full documentation for adjusters.",
           },
         ],
       },
@@ -1672,12 +1819,24 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "Is mitigation same as remediation?",
-            a: "La mitigación contiene y estabiliza; la remediación elimina el moho.",
+            q: "What is mold mitigation?",
+            a: "It's the process of containing mold, improving air quality, and controlling moisture before remediation begins.",
           },
           {
-            q: "Do I need a clearance test?",
-            a: "Recomendado tras remediación completa para verificar.",
+            q: "Does mold mitigation remove mold?",
+            a: "No—mitigation prevents spread, but remediation removes colonies permanently.",
+          },
+          {
+            q: "Why is mold mitigation important?",
+            a: "It protects health, limits property damage, and reduces remediation costs.",
+          },
+          {
+            q: "How long does mitigation take?",
+            a: "Usually 1–3 days, depending on moisture and area size.",
+          },
+          {
+            q: "Can mold return after mitigation?",
+            a: "Yes—if moisture isn't controlled. That's why mitigation always includes humidity monitoring.",
           },
         ],
       },
@@ -1750,12 +1909,24 @@ export const restorationGroups = [
         ],
         faqs: [
           {
-            q: "How long do temporary repairs last?",
-            a: "Están pensados para días/semanas, hasta hacer la reparación definitiva.",
+            q: "What is storm damage mitigation?",
+            a: "It's securing & stabilizing a property after a storm—tarping roofs, boarding windows, removing debris.",
           },
           {
-            q: "Can you coordinate roofers?",
-            a: "Sí, coordinamos equipos para continuidad.",
+            q: "Why is storm mitigation important?",
+            a: "Without it, rain, debris & humidity cause higher repair costs & safety risks.",
+          },
+          {
+            q: "What's the difference between storm mitigation & restoration?",
+            a: "Mitigation = prevent more damage. Restoration = repair & rebuild.",
+          },
+          {
+            q: "What is the most common storm damage in Florida?",
+            a: "Roof damage: missing shingles, leaks, structural weakening. Also water intrusion & fallen trees.",
+          },
+          {
+            q: "How fast should storm mitigation start?",
+            a: "Immediately after the storm clears. The sooner it's secured, the less secondary damage occurs.",
           },
         ],
       },
