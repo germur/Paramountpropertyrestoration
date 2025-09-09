@@ -118,6 +118,28 @@ export const restorationGroups = [
             a: "Mold, structural damage, and electrical hazards escalate within days, turning small repairs into major reconstruction.",
           },
         ],
+        microBenefits: [
+          {
+            icon: "⚡",
+            title: "Faster Recovery",
+            description: "Stop flood damage from spreading."
+          },
+          {
+            icon: "💲",
+            title: "Lower Costs",
+            description: "Early mitigation prevents expensive repairs."
+          },
+          {
+            icon: "❤️",
+            title: "Health Protection",
+            description: "Reduce mold and bacteria risks."
+          }
+        ],
+        whatNotToDo: [
+          "Don't use electricity near floodwater.",
+          "Don't attempt to dry soaked ceilings yourself.",
+          "Don't delay calling professionals—damage worsens quickly."
+        ],
       },
 
       // WATER — LEAK REPAIR
@@ -205,6 +227,11 @@ export const restorationGroups = [
             q: "How long does leak repair take?",
             a: "Small leaks may be fixed same-day; larger or hidden leaks may take 2–3 days including drying and restoration.",
           },
+        ],
+        whatNotToDo: [
+          "Don't ignore small stains – they often hide bigger leaks.",
+          "Don't paint over damp areas – mold will spread underneath.",
+          "Don't delay professional help – DIY fixes rarely solve hidden leaks."
         ],
       },
 
@@ -298,6 +325,28 @@ export const restorationGroups = [
             a: "Coverage depends on the source—sudden leaks may be covered, but floodwater often requires separate flood insurance.",
           },
         ],
+        microBenefits: [
+          {
+            icon: "❤️",
+            title: "Health Protection",
+            description: "Prevent mold spores and bacteria in your home."
+          },
+          {
+            icon: "🏗️",
+            title: "Structural Safety",
+            description: "Protect your foundation from weakening."
+          },
+          {
+            icon: "💲",
+            title: "Lower Claim Costs",
+            description: "Early cleanup reduces total damage."
+          }
+        ],
+        whatNotToDo: [
+          "Don't enter a flooded basement if power outlets are submerged.",
+          "Don't keep wet furniture or boxes together—separate and dry.",
+          "Don't repaint or refinish until full drying is confirmed."
+        ],
       },
 
       // WATER — CEILING WATER DAMAGE
@@ -385,6 +434,12 @@ export const restorationGroups = [
             q: "Can water-damaged ceilings collapse?",
             a: "Yes. Untreated damage weakens drywall & beams, raising collapse risk.",
           },
+        ],
+        whatNotToDo: [
+          "Don't poke or push a sagging ceiling",
+          "Don't paint over stains without repair",
+          "Don't ignore small leaks—they spread fast",
+          "Don't delay professional help"
         ],
       },
 
@@ -680,6 +735,25 @@ export const restorationGroups = [
             q: "How fast should soot be cleaned?",
             a: "Immediately. Delays cause permanent staining and higher repair costs.",
           },
+        ],
+        microBenefits: [
+          {
+            title: "Health Protection",
+            description: "Reduce toxic particle exposure."
+          },
+          {
+            title: "Faster Recovery",
+            description: "Minimize permanent stains & repairs."
+          },
+          {
+            title: "Cost Savings",
+            description: "Early action lowers insurance claim costs."
+          }
+        ],
+        whatNotToDo: [
+          "Don't scrub soot with water—it spreads and embeds deeper.",
+          "Don't ignore smoke odors—they signal hidden contamination.",
+          "Don't delay cleanup—acidic soot worsens damage every hour."
         ],
       },
       {

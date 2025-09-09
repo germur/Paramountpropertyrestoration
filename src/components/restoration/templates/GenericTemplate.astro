@@ -11,6 +11,9 @@
 import "../../../styles/components/GenericTemplate.css";
 import RestorationCTA from "../../RestorationCTA.jsx";
 import FAQ from "../../AcordeonServices.jsx";
+import RegionalCoverage from "../../RegionalCoverage";
+import MicroBenefits from "../../MicroBenefits.jsx";
+import WhatNotToDo from "../../WhatNotToDo.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -167,6 +170,16 @@ const finalCta = {
   </div>
 </section>
 
+<!-- Micro Benefits -->
+{sub?.microBenefits && (
+  <MicroBenefits benefits={sub.microBenefits} client:load />
+)}
+
+<!-- What Not To Do -->
+{sub?.whatNotToDo && (
+  <WhatNotToDo items={sub.whatNotToDo} client:load />
+)}
+
 <section class="links container">
   <h2 class="section__title">Related services</h2>
   <ul class="links__grid">
@@ -181,6 +194,9 @@ const finalCta = {
     }
   </ul>
 </section>
+
+<!-- Regional Coverage -->
+<RegionalCoverage client:load title="Regional Coverage" internalLinks={[]} />
 
 <FAQ
   category={group?.template || "general"}
