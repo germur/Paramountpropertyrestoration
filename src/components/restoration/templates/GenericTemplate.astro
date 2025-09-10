@@ -9,11 +9,13 @@
  * 6) CTA final
  */
 import "../../../styles/components/GenericTemplate.css";
-import RestorationCTA from "../../RestorationCTA.jsx";
 import FAQ from "../../AcordeonServices.jsx";
-import RegionalCoverage from "../../RegionalCoverage";
+import FloridaScenarios from "../../FloridaScenarios.jsx";
 import MicroBenefits from "../../MicroBenefits.jsx";
+import RegionalCoverage from "../../RegionalCoverage";
+import RestorationCTA from "../../RestorationCTA.jsx";
 import WhatNotToDo from "../../WhatNotToDo.jsx";
+import WhyEssential from "../../WhyEssential.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -113,48 +115,78 @@ const finalCta = {
   </div>
 </section>
 
-<section class="steps container">
-  <h2 class="section__title">Quick Relief – How It Works</h2>
-  <ol class="timeline">
-    {
-      steps.map((s) => (
-        <li class="timeline__step">
-          <div class="timeline__icon">
-            <i class={s.icon} />
-          </div>
-          <div class="timeline__content">
-            <h3 class="timeline__title">{s.title}</h3>
-            <p class="timeline__text">{s.text}</p>
-          </div>
-        </li>
-      ))
-    }
-  </ol>
-</section>
+<!-- Why Essential Section -->
+{
+  sub?.whyEssential && (
+    <WhyEssential whyEssential={sub.whyEssential} client:load />
+  )
+}
 
-<section class="reasons container">
-  <h2 class="section__title">Why choose us</h2>
-  <div class="cards">
-    {
-      reasons.map((r) => (
-        <article class="card">
-          <div class="card__header">
-            {r?.icon && <i class={`card__icon ${r.icon}`} aria-hidden="true" />}
-            <h3 class="card__title">{r.title}</h3>
-          </div>
+{
+  sub?.steps && (
+    <section class="steps container">
+      <h2 class="section__title">Quick Relief – How It Works</h2>
+      <ol class="timeline">
+        {steps.map((s) => (
+          <li class="timeline__step">
+            <div class="timeline__icon">
+              <i class={s.icon} />
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">{s.title}</h3>
+              <p class="timeline__text">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
 
-          <p class="card__text">{r.text}</p>
+{
+  sub?.process && (
+    <section class="steps container">
+      <h2 class="section__title">{sub?.process?.title}</h2>
+      <ol class="timeline">
+        {sub?.process?.steps.map((s) => (
+          <li class="timeline__step">
+            <div class="timeline__icon">
+              <i class={s.icon} />
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">{s.title}</h3>
+              <p class="timeline__text">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
 
-          {r?.cta?.href && r?.cta?.label && (
-            <a href={r.cta.href} class="btn btn--card">
-              {r.cta.label}
-            </a>
-          )}
-        </article>
-      ))
-    }
-  </div>
-</section>
+<!-- Florida Scenarios -->
+{
+  sub?.floridaScenarios && (
+    <FloridaScenarios scenarios={sub.floridaScenarios} client:load />
+  )
+}
+
+<!-- Why Choose Us -->
+{
+  sub?.whyChooseUs && (
+    <section class="why-choose-us container">
+      <h2 class="section__title">Why Choose Us</h2>
+      <ul class="why-choose-us__list">
+        {sub.whyChooseUs.map((point) => (
+          <li class="why-choose-us__item">
+            <span class="why-choose-us__icon">✓</span>
+            <span class="why-choose-us__text">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
 <!-- Micro Benefits -->
 {

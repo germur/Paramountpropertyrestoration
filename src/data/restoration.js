@@ -44,7 +44,8 @@ export const restorationGroups = [
           button: "Start Flood Extraction Now",
         },
         hero: {
-          title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
+          title:
+            "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description:
             "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety. Immediate response across Orlando, Miami, Tampa, and statewide.",
           cta: "Start Flood Extraction Now",
@@ -263,7 +264,8 @@ export const restorationGroups = [
           button: "Protect Against Mold",
         },
         hero: {
-          title: "Basement Flooding? We Pump Out Water & Protect Your Foundation",
+          title:
+            "Basement Flooding? We Pump Out Water & Protect Your Foundation",
           description:
             "Is your basement underwater? Our Florida team provides 24/7 basement flooding cleanup, including pump-out, cavity drying, and mold prevention. We remove water fast, protect your foundation, and restore your property safely. Serving Orlando, Miami, Tampa, and all Florida regions.",
           cta: "Protect Against Mold",
@@ -573,11 +575,9 @@ export const restorationGroups = [
           hero: "/images/EmergencyWaterRemoval.jpg",
           gallery: ["/images/EmergencyWaterRemoval.jpg"],
         },
-        finalCta: {
-          title: "Need emergency extraction?",
-          text: "Call our 24/7 team for immediate help.",
-          cta: "Call 24/7",
-          href: "tel:+1-000-000-0000",
+        cta: {
+          headline: "Need emergency extraction?",
+          button: "Call our 24/7 team for immediate help.",
         },
       },
     ],
@@ -1281,7 +1281,8 @@ export const restorationGroups = [
           button: "Book Certified Mold Testing Now",
         },
         hero: {
-          title: "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
+          title:
+            "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
           description:
             "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
           cta: "Schedule My Mold Test Today",
@@ -1386,7 +1387,8 @@ export const restorationGroups = [
           button: "Request Emergency Hurricane Help",
         },
         hero: {
-          title: "Hurricane Damage? We Restore Homes & Businesses Across Florida",
+          title:
+            "Hurricane Damage? We Restore Homes & Businesses Across Florida",
           description:
             "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
           cta: "Restore After Hurricane Now",
@@ -1479,7 +1481,8 @@ export const restorationGroups = [
           button: "Get Emergency Wind Repair",
         },
         hero: {
-          title: "Wind Damage? We Repair Roofs, Siding & Structures Across Florida",
+          title:
+            "Wind Damage? We Repair Roofs, Siding & Structures Across Florida",
           description:
             "Strong winds can tear shingles, break windows, and damage property. Our 24/7 emergency response team restores safety and structure fast.",
           cta: "Request Wind Damage Repair Now",
@@ -1776,33 +1779,44 @@ export const restorationGroups = [
           cta: "Start Water Mitigation Now",
           bg: "/images/EmergencyWaterRemoval.jpg",
         },
-        steps: [
-          {
-            title: "Source Control",
-            text: "Detener fuga/ingreso de agua.",
-            icon: "fa-solid fa-droplet-slash",
-          },
-          {
-            title: "Extraction",
-            text: "Quitar el volumen de agua rápidamente.",
-            icon: "fa-solid fa-water",
-          },
-          {
-            title: "Dry & Dehumidify",
-            text: "Estabilizar humedad y materiales.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Sanitize",
-            text: "Tratamientos según categoría de agua.",
-            icon: "fa-solid fa-spray-can-sparkles",
-          },
-          {
-            title: "Monitor",
-            text: "Lecturas diarias hasta estándar seco.",
-            icon: "fa-solid fa-gauge",
-          },
-        ],
+        whyEssential: {
+          title: "Why Water Mitigation Is Essential",
+          steps: [
+            "Mold can begin growing in 24–48 hours",
+            "Water seeps into drywall, flooring, insulation → hidden long-term damage",
+            "Early drying = lower costs & smaller insurance claims",
+          ],
+        },
+        process: {
+          title: "Our Water Mitigation Process",
+          steps: [
+            {
+              title: "Emergency Inspection & Moisture Mapping",
+              text: "Detect visible + hidden water.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Rapid Water Extraction",
+              text: "Pumps & wet vacs remove standing water fast.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Industrial Drying & Dehumidification",
+              text: "Stabilize humidity with pro gear.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Antimicrobial Treatment",
+              text: "Stop mold & bacteria before they spread.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Ongoing Monitoring",
+              text: "Daily checks until property is fully dry.",
+              icon: "fa-solid fa-gauge",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Fast Action",
@@ -1847,6 +1861,30 @@ export const restorationGroups = [
             a: "Yes—most policies cover mitigation since it reduces total claim costs. We provide full documentation for insurers.",
           },
         ],
+        highlights: [
+          "Emergency water extraction & removal",
+          "Industrial drying & dehumidification",
+          "Moisture mapping & monitoring",
+          "Antimicrobial treatments",
+          "Mold prevention protocols",
+        ],
+        risks: [
+          "Structural weakening of wood, drywall & flooring",
+          "Mold growth in hidden spaces",
+          "Electrical hazards from water intrusion",
+          "Higher insurance costs due to larger claims",
+        ],
+        floridaScenarios: [
+          "Hurricane flooding in Miami & Tampa",
+          "Burst pipes in Orlando condos",
+          "Roof leaks during South Florida storms",
+        ],
+        whyChooseUs: [
+          "24/7 Rapid Response Across Florida",
+          "Focus on limiting loss, not just cleanup",
+          "Professional industrial-grade drying equipment",
+          "We act as the bridge between emergency & restoration",
+        ],
       },
       {
         slug: "fire-mitigation",
@@ -1869,33 +1907,45 @@ export const restorationGroups = [
           cta: "Secure My Property Now",
           bg: "/images/EmergencyFireResponse.jpg",
         },
-        steps: [
-          {
-            title: "Secure & Board-Up",
-            text: "Asegurar perímetro y openings.",
-            icon: "fa-solid fa-warehouse",
-          },
-          {
-            title: "Shoring",
-            text: "Apuntalamientos temporales.",
-            icon: "fa-solid fa-crutch",
-          },
-          {
-            title: "Soot/Smoke Control",
-            text: "Filtración y control de olores.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Selective Demo",
-            text: "Remoción de materiales comprometidos.",
-            icon: "fa-solid fa-hammer",
-          },
-          {
-            title: "Plan Next Steps",
-            text: "Transición a limpieza/reparación.",
-            icon: "fa-solid fa-clipboard-list",
-          },
-        ],
+        whyEssential: {
+          title: "Why Fire Mitigation Is Essential",
+          steps: [
+            "Soot spreads quickly, coating walls, ceilings, and belongings",
+            "Smoke odor penetrates fabrics, furniture & HVAC systems",
+            "Weakened structures (roofs, walls, framing) need stabilization",
+            "Board-up & tarping prevent theft, weather damage & liability risks",
+          ],
+        },
+        process: {
+          title: "Our Fire Mitigation Process",
+          steps: [
+            {
+              title: "Emergency Board-Up & Tarping",
+              text: "Secure windows, doors, roofs.",
+              icon: "fa-solid fa-warehouse",
+            },
+            {
+              title: "Smoke & Soot Containment",
+              text: "Isolate affected areas to stop spread.",
+              icon: "fa-solid fa-vector-square",
+            },
+            {
+              title: "Ventilation & Air Scrubbing",
+              text: "HEPA filters + negative air machines.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Protection of Belongings",
+              text: "Salvage & store safe items.",
+              icon: "fa-solid fa-boxes-stacked",
+            },
+            {
+              title: "Moisture Control from Firefighting",
+              text: "Drying to prevent mold.",
+              icon: "fa-solid fa-droplet",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Rapid Stabilization",
@@ -1944,6 +1994,32 @@ export const restorationGroups = [
             a: "Yes—most policies cover mitigation since it reduces claim costs. We provide full documentation for adjusters.",
           },
         ],
+        highlights: [
+          "Emergency board-up & roof tarping",
+          "Smoke & soot containment",
+          "HVAC protection & cleaning",
+          "Salvage & content protection",
+          "Moisture drying after firefighting",
+        ],
+        risks: [
+          "Permanent smoke odor in walls, HVAC & fabrics",
+          "Corrosion from soot on appliances & metal surfaces",
+          "Structural collapse risks if framing isn't secured",
+          "Higher restoration costs if damage spreads unchecked",
+        ],
+        floridaScenarios: [
+          "Kitchen fires in Orlando & Miami condos",
+          "Electrical fires in aging buildings",
+          "Hurricane-related fires from downed power lines",
+          "Wildfire smoke intrusion in Central & South Florida",
+        ],
+        whyChooseUs: [
+          "24/7 Emergency Response Across Florida",
+          "Expert board-up, tarping & security solutions",
+          "Advanced smoke & odor containment systems",
+          "We protect what restoration will rebuild",
+          "Trusted by homeowners & businesses statewide",
+        ],
       },
       {
         slug: "mold-mitigation",
@@ -1967,33 +2043,45 @@ export const restorationGroups = [
           cta: "Stop Mold Spread Today",
           bg: "/images/MoldPrevention.jpg",
         },
-        steps: [
-          {
-            title: "Containment",
-            text: "Aislar áreas con barreras/negativa.",
-            icon: "fa-solid fa-vector-square",
-          },
-          {
-            title: "Ventilation/HEPA",
-            text: "Control de esporas en el aire.",
-            icon: "fa-solid fa-fan",
-          },
-          {
-            title: "Drying",
-            text: "Reducir humedad y secar sustratos.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Sanitize",
-            text: "Antimicrobiano donde corresponda.",
-            icon: "fa-solid fa-spray-can-sparkles",
-          },
-          {
-            title: "Monitor",
-            text: "Lecturas y seguimiento.",
-            icon: "fa-solid fa-gauge",
-          },
-        ],
+        whyEssential: {
+          title: "Why Mold Mitigation Is Essential",
+          steps: [
+            "Mold colonies can grow within 24–48 hours after moisture exposure",
+            "Airborne spores contaminate HVAC systems and circulate through the property",
+            "Health risks: allergies, asthma triggers, respiratory issues",
+            "Early containment makes remediation faster, safer, and less costly",
+          ],
+        },
+        process: {
+          title: "Our Mold Mitigation Process",
+          steps: [
+            {
+              title: "Inspection & Moisture Assessment",
+              text: "Detect leaks, water damage & humidity.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Containment of Affected Areas",
+              text: "Plastic barriers + negative air pressure.",
+              icon: "fa-solid fa-vector-square",
+            },
+            {
+              title: "HEPA Air Filtration",
+              text: "Capture airborne spores with high-efficiency systems.",
+              icon: "fa-solid fa-fan",
+            },
+            {
+              title: "Antimicrobial & Preventive Treatment",
+              text: "Apply eco-safe treatments to surfaces.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Moisture Control & Monitoring",
+              text: "Industrial dehumidifiers + continuous checks.",
+              icon: "fa-solid fa-gauge",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Stop Spread",
@@ -2042,6 +2130,32 @@ export const restorationGroups = [
             a: "Yes—if moisture isn't controlled. That's why mitigation always includes humidity monitoring.",
           },
         ],
+        highlights: [
+          "Mold containment & sealing",
+          "HEPA air filtration & cleaning",
+          "Antimicrobial surface treatment",
+          "Moisture & humidity control",
+          "Hidden mold inspection",
+        ],
+        risks: [
+          "Rapid spread into walls, ceilings, crawlspaces",
+          "Poor indoor air quality → chronic health problems",
+          "Higher remediation costs if contamination grows unchecked",
+          "Long-term structural damage from mold exposure",
+        ],
+        floridaScenarios: [
+          "Subtropical humidity in South Florida accelerates mold growth",
+          "Hurricane flooding leaves hidden water → mold hotspots",
+          "Roof leaks in Central Florida create perfect spore conditions",
+          "AC condensation leads to hidden HVAC mold contamination",
+        ],
+        whyChooseUs: [
+          "Rapid response across Florida",
+          "Containment-first approach to stop mold spread",
+          "HEPA filtration + antimicrobial treatments",
+          "Moisture control for lasting protection",
+          "Protects health until remediation is complete",
+        ],
       },
       {
         slug: "storm-mitigation",
@@ -2064,33 +2178,40 @@ export const restorationGroups = [
           cta: "Request Storm Mitigation Now",
           bg: "/images/EmergencyStormRepair.jpg",
         },
-        steps: [
-          {
-            title: "Initial Safety",
-            text: "Riesgos y corte de servicios si aplica.",
-            icon: "fa-solid fa-triangle-exclamation",
-          },
-          {
-            title: "Tarp & Seal",
-            text: "Cubiertas y parches temporales.",
-            icon: "fa-solid fa-umbrella",
-          },
-          {
-            title: "Water Control",
-            text: "Extracción si hay intrusión.",
-            icon: "fa-solid fa-water",
-          },
-          {
-            title: "Drying",
-            text: "Estabiliza humedad y evita moho.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Plan Repairs",
-            text: "Transición a reparación definitiva.",
-            icon: "fa-solid fa-clipboard-list",
-          },
-        ],
+        whyEssential: {
+          title: "Why Storm Mitigation Is Essential",
+          steps: [
+            "Roof tarping & board-up prevent water intrusion after shingles/windows break",
+            "Debris removal keeps properties safe & accessible",
+            "Moisture control stops mold growth in Florida's humid climate",
+            "Property security reduces theft & liability after destruction",
+          ],
+        },
+        process: {
+          title: "Our Storm Mitigation Process",
+          steps: [
+            {
+              title: "Emergency Board-Up & Roof Tarping",
+              text: "Seal windows, doors & roofs against further water.",
+              icon: "fa-solid fa-umbrella",
+            },
+            {
+              title: "Debris & Tree Removal",
+              text: "Clear dangerous debris, fallen trees, and damaged structures.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "Water Intrusion Control",
+              text: "Extract standing water, dry interiors, apply antimicrobials.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Structural Stabilization",
+              text: "Shore up walls, ceilings, and framing until restoration starts.",
+              icon: "fa-solid fa-helmet-safety",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Fast Protection",
@@ -2138,6 +2259,32 @@ export const restorationGroups = [
             q: "How fast should storm mitigation start?",
             a: "Immediately after the storm clears. The sooner it's secured, the less secondary damage occurs.",
           },
+        ],
+        highlights: [
+          "Emergency roof tarping",
+          "Window & door board-up",
+          "Fallen tree & debris removal",
+          "Water extraction & mold prevention",
+          "Temporary structural stabilization",
+        ],
+        risks: [
+          "Severe water damage from rain entering unprotected areas",
+          "Mold growth within 24–48 hours in Florida humidity",
+          "Structural collapse if weakened framing isn't supported",
+          "Higher repair costs from prolonged exposure",
+        ],
+        floridaScenarios: [
+          "Hurricanes & tropical storms → Treasure Coast & South Florida",
+          "Tornado-related roof damage → Central Florida",
+          "Storm surges & heavy rains → Tampa Bay & Gulf Coast",
+          "Fallen trees on homes → Florida suburban neighborhoods",
+        ],
+        whyChooseUs: [
+          "24/7 emergency storm response across Florida",
+          "Roof tarping, board-up & water control",
+          "Debris removal & structural stabilization",
+          "Local teams for fast dispatch",
+          "Insurance claim assistance & documentation",
         ],
       },
     ],
