@@ -148,6 +148,12 @@ export const restorationGroups = [
           "Don't attempt to dry soaked ceilings yourself.",
           "Don't delay calling professionals—damage worsens quickly.",
         ],
+        whyChooseUs: [
+          "24/7 rapid response teams across Florida",
+          "Industrial-grade pumps, vacuums, and drying systems",
+          "Stop flood damage from spreading with early mitigation",
+          "End-to-end service from mitigation to rebuild",
+        ],
       },
 
       // WATER — LEAK REPAIR
@@ -246,6 +252,12 @@ export const restorationGroups = [
           "Don't ignore small stains – they often hide bigger leaks.",
           "Don't paint over damp areas – mold will spread underneath.",
           "Don't delay professional help – DIY fixes rarely solve hidden leaks.",
+        ],
+        whyChooseUs: [
+          "Non-invasive thermal imaging & detection tools",
+          "Root-cause fixes, not just symptoms",
+          "Damage prevention with precise drying",
+          "Workmanship warranty on repairs",
         ],
       },
 
@@ -368,6 +380,12 @@ export const restorationGroups = [
           "Don't keep wet furniture or boxes together—separate and dry.",
           "Don't repaint or refinish until full drying is confirmed.",
         ],
+        whyChooseUs: [
+          "Emergency pump-out reduces structural damage",
+          "Industrial drying equipment sized for basements & crawlspaces",
+          "Mold prevention treatments protect surfaces",
+          "Insurance documentation with moisture logs & photos",
+        ],
       },
 
       // WATER — CEILING WATER DAMAGE
@@ -468,6 +486,12 @@ export const restorationGroups = [
           "Don't paint over stains without repair",
           "Don't ignore small leaks—they spread fast",
           "Don't delay professional help",
+        ],
+        whyChooseUs: [
+          "Quick leak isolation to avoid collapse",
+          "Targeted drying reduces demolition needs",
+          "Sanitize & seal to restore pre-loss condition",
+          "Insurance documentation with photos, logs & estimates",
         ],
       },
 
@@ -579,6 +603,12 @@ export const restorationGroups = [
           headline: "Need emergency extraction?",
           button: "Call our 24/7 team for immediate help.",
         },
+        whyChooseUs: [
+          "24/7 rapid response within 60 minutes",
+          "Industrial-grade pumps, vacuums, and drying systems",
+          "Insurance-ready reports with logs, photos & estimates",
+          "Full service from mitigation through rebuild",
+        ],
       },
     ],
   },
@@ -613,33 +643,36 @@ export const restorationGroups = [
           cta: "Request Smoke Damage Help Now",
           bg: "/images/SmokeDamage.jpg",
         },
-        steps: [
-          {
-            title: "Assessment",
-            text: "Identify smoke spread and surface types.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Soot Removal",
-            text: "HEPA vacuuming and dry/wet cleaning.",
-            icon: "fa-solid fa-broom",
-          },
-          {
-            title: "Odor Neutralization",
-            text: "Deodorants, hydroxyl/ozone as needed.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "HVAC Cleaning",
-            text: "Filters and ducts addressed to prevent re-soiling.",
-            icon: "fa-solid fa-fan",
-          },
-          {
-            title: "Final Verification",
-            text: "Air quality & odor checks.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "How Our Smoke Damage Process Works",
+          steps: [
+            {
+              title: "Assessment & Air Quality Testing",
+              text: "Identify contamination and affected zones.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Emergency Soot & Debris Removal",
+              text: "Prevent permanent staining and corrosion.",
+              icon: "fa-solid fa-broom",
+            },
+            {
+              title: "Odor Neutralization",
+              text: "HEPA filters, ozone & hydroxyl treatments.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Deep Cleaning & Sanitization",
+              text: "Walls, furniture, fabrics fully restored.",
+              icon: "fa-solid fa-soap",
+            },
+            {
+              title: "Final Repairs & Quality Check",
+              text: "Structural fixes + guaranteed clean air.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Smoke Specialists",
@@ -684,6 +717,12 @@ export const restorationGroups = [
             a: "Most Florida homeowners' policies cover it. We provide full documentation for claims.",
           },
         ],
+        whyChooseUs: [
+          "Local Florida teams with fast dispatch",
+          "24/7 emergency smoke cleanup",
+          "Full-service: cleanup, deodorization, and repairs",
+          "Insurance claim support included",
+        ],
       },
       {
         slug: "soot-cleanup",
@@ -706,33 +745,36 @@ export const restorationGroups = [
           cta: "Request Soot Cleanup Now",
           bg: "/images/SootCleanup.jpg",
         },
-        steps: [
-          {
-            title: "Surface Testing",
-            text: "Determine wet/dry soot and best chemistries.",
-            icon: "fa-solid fa-flask",
-          },
-          {
-            title: "Dry Cleaning",
-            text: "HEPA vac + chem esponja para no manchar.",
-            icon: "fa-solid fa-broom",
-          },
-          {
-            title: "Wet Cleaning",
-            text: "Detergentes y neutralizantes específicos.",
-            icon: "fa-solid fa-soap",
-          },
-          {
-            title: "Odor Control",
-            text: "Filtración/neutralización complementaria.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "QA & Photos",
-            text: "Verificación y documentación.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Our Soot Cleanup Process",
+          steps: [
+            {
+              title: "Inspection & Assessment",
+              text: "Identify soot-affected areas and damage levels.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Containment & Safety",
+              text: "Seal clean areas to stop residue from spreading.",
+              icon: "fa-solid fa-vector-square",
+            },
+            {
+              title: "Deep Cleaning & Removal",
+              text: "HEPA vacuums, dry sponges & chemical cleaners for surfaces.",
+              icon: "fa-solid fa-broom",
+            },
+            {
+              title: "Odor Neutralization",
+              text: "Ozone treatment & thermal fogging to remove smoke smells.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Final Restoration",
+              text: "Refinish walls, ceilings, and furniture back to pre-fire condition.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Correct Media",
@@ -796,6 +838,12 @@ export const restorationGroups = [
           "Don't ignore smoke odors—they signal hidden contamination.",
           "Don't delay cleanup—acidic soot worsens damage every hour.",
         ],
+        whyChooseUs: [
+          "Certified Florida soot cleanup specialists",
+          "Eco-friendly, safe methods (no harsh chemicals)", 
+          "End-to-end service: assess → clean → restore",
+          "24/7 emergency response statewide",
+        ],
       },
       {
         slug: "fire-damage-repair",
@@ -819,33 +867,36 @@ export const restorationGroups = [
           cta: "Request Fire Cleanup Now",
           bg: "/images/FireDamageRepair.jpg",
         },
-        steps: [
-          {
-            title: "Safety & Scope",
-            text: "Apuntalamiento, evaluación estructural y permisos.",
-            icon: "fa-solid fa-helmet-safety",
-          },
-          {
-            title: "Demolition & Debris",
-            text: "Retiro seguro y control de polvo.",
-            icon: "fa-solid fa-dumpster",
-          },
-          {
-            title: "Odor/Residue Control",
-            text: "Tratamientos antes de reconstruir.",
-            icon: "fa-solid fa-wand-magic-sparkles",
-          },
-          {
-            title: "Rebuild",
-            text: "Estructura, acabados y MEP coordinados.",
-            icon: "fa-solid fa-hammer",
-          },
-          {
-            title: "Final QA",
-            text: "Inspección y cierre con el cliente.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Our Fire Cleanup Process",
+          steps: [
+            {
+              title: "Inspection & Safety Check",
+              text: "Assess structural risks and smoke residue spread.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Debris & Ash Removal",
+              text: "Remove hazardous debris and fire-damaged materials.",
+              icon: "fa-solid fa-dumpster",
+            },
+            {
+              title: "Soot & Smoke Cleanup",
+              text: "HEPA vacuums, sponges, and safe chemical treatments.",
+              icon: "fa-solid fa-broom",
+            },
+            {
+              title: "Odor Neutralization",
+              text: "Ozone & thermal fogging to remove smoke smell.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Final Sanitization",
+              text: "Prepare property for fire damage repairs.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "One-Stop",
@@ -890,6 +941,12 @@ export const restorationGroups = [
             a: "Most homeowners' insurance policies cover fire cleanup services. We help with full documentation.",
           },
         ],
+        whyChooseUs: [
+          "Complete fire cleanup services in Florida",
+          "Certified crews with HEPA filtration & safe chemicals",
+          "Odor removal & insurance claim support",
+          "Fast response for heavy soot and debris",
+        ],
       },
       {
         slug: "emergency-fire-response",
@@ -911,33 +968,36 @@ export const restorationGroups = [
           cta: "Request Emergency Response Now",
           bg: "/images/EmergencyFireResponse.jpg",
         },
-        steps: [
-          {
-            title: "Dispatch",
-            text: "Llegada rápida para asegurar la escena.",
-            icon: "fa-solid fa-truck",
-          },
-          {
-            title: "Board-Up",
-            text: "Cierre de aberturas y puntos vulnerables.",
-            icon: "fa-solid fa-warehouse",
-          },
-          {
-            title: "Roof Tarping",
-            text: "Tarp para evitar intrusión de clima/agua.",
-            icon: "fa-solid fa-umbrella",
-          },
-          {
-            title: "Stabilize",
-            text: "Apuntalamiento y control de riesgos.",
-            icon: "fa-solid fa-helmet-safety",
-          },
-          {
-            title: "Plan Next Steps",
-            text: "Mitigación y limpieza inicial.",
-            icon: "fa-solid fa-clipboard-list",
-          },
-        ],
+        process: {
+          title: "Our 24/7 Fire Emergency Process",
+          steps: [
+            {
+              title: "Call & Dispatch",
+              text: "Teams deployed instantly.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "On-Site Assessment",
+              text: "Document damage for insurance.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Secure the Property",
+              text: "Board-ups, roof tarps, stabilization.",
+              icon: "fa-solid fa-warehouse",
+            },
+            {
+              title: "Cleanup & Extraction",
+              text: "Debris, soot, and water removed.",
+              icon: "fa-solid fa-broom",
+            },
+            {
+              title: "Prepare for Repair",
+              text: "Seamless handoff to fire damage restoration.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "24/7 Response",
@@ -982,6 +1042,12 @@ export const restorationGroups = [
             a: "Yes. Most policies cover it as part of restoration. We coordinate directly with insurers.",
           },
         ],
+        whyChooseUs: [
+          "24/7 emergency response across Florida",
+          "Expert board-up, tarping & security solutions",
+          "Advanced smoke & odor containment systems",
+          "Trusted by homeowners & businesses statewide",
+        ],
       },
     ],
   },
@@ -1015,33 +1081,31 @@ export const restorationGroups = [
           cta: "Book My Inspection Now",
           bg: "/images/MoldInspection.jpg",
         },
-        steps: [
-          {
-            title: "Visual & Mapping",
-            text: "Inspección y mapeo de humedad.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Sampling (If Needed)",
-            text: "Muestreo de aire/superficie para laboratorio.",
-            icon: "fa-solid fa-vial",
-          },
-          {
-            title: "Source Analysis",
-            text: "Identificar causas de humedad.",
-            icon: "fa-solid fa-droplet",
-          },
-          {
-            title: "Plan & Estimate",
-            text: "Estrategia y criterios de clearance.",
-            icon: "fa-solid fa-clipboard-list",
-          },
-          {
-            title: "Report",
-            text: "Informe con hallazgos y recomendaciones.",
-            icon: "fa-solid fa-file-pdf",
-          },
-        ],
+        process: {
+          title: "Our Proven 4-Step Inspection",
+          steps: [
+            {
+              title: "Visual Scan & Hotspot Check",
+              text: "Identify stains, discoloration, or early mold growth.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Infrared + Air Testing",
+              text: "Detect hidden moisture and analyze indoor air quality.",
+              icon: "fa-solid fa-camera",
+            },
+            {
+              title: "Photo & Lab Report",
+              text: "Clear evidence and certified results for insurance or repairs.",
+              icon: "fa-solid fa-file-pdf",
+            },
+            {
+              title: "Clear Action Plan",
+              text: "Step-by-step guidance to fix and prevent mold.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Certified Inspectors",
@@ -1082,6 +1146,12 @@ export const restorationGroups = [
             a: "Absolutely. We test air and surfaces to identify mold type and levels.",
           },
         ],
+        whyChooseUs: [
+          "Licensed & Certified Inspectors in Florida",
+          "Advanced Technology: IR cameras + air/surface testing",
+          "Same-Day Reports with actionable insights",
+          "Full Service: Inspection → Removal → Prevention",
+        ],
       },
       {
         slug: "black-mold-removal",
@@ -1103,33 +1173,31 @@ export const restorationGroups = [
           cta: "Get Black Mold Removal Now",
           bg: "/images/BlackMoldRemoval.jpg",
         },
-        steps: [
-          {
-            title: "Containment",
-            text: "Barreras y presión negativa.",
-            icon: "fa-solid fa-vector-square",
-          },
-          {
-            title: "HEPA & Filtration",
-            text: "Filtrado de aire y limpieza de partículas.",
-            icon: "fa-solid fa-fan",
-          },
-          {
-            title: "Removal",
-            text: "Demolición controlada y descarte seguro.",
-            icon: "fa-solid fa-trash-can",
-          },
-          {
-            title: "Sanitize",
-            text: "Biocidas/antimicrobianos según guía.",
-            icon: "fa-solid fa-spray-can-sparkles",
-          },
-          {
-            title: "Clearance",
-            text: "Pruebas y verificación final.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Our Black Mold Remediation Process (4 Steps)",
+          steps: [
+            {
+              title: "Inspection & Testing",
+              text: "Detect mold spread and measure spore levels.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Containment & Safety Setup",
+              text: "Seal affected areas to prevent further spread.",
+              icon: "fa-solid fa-vector-square",
+            },
+            {
+              title: "Removal & Air Scrubbing",
+              text: "HEPA filtration, safe disposal, and eco-friendly cleaning.",
+              icon: "fa-solid fa-fan",
+            },
+            {
+              title: "Moisture Control & Prevention",
+              text: "Fix leaks, humidity, and future mold risks.",
+              icon: "fa-solid fa-droplet",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Safety First",
@@ -1174,6 +1242,12 @@ export const restorationGroups = [
             a: "Often yes, if caused by a covered water damage event.",
           },
         ],
+        whyChooseUs: [
+          "Certified Florida mold remediation specialists",
+          "Eco-friendly, safe methods (no harsh chemicals)",
+          "End-to-end service: detect → remove → prevent",
+          "24/7 emergency response statewide",
+        ],
       },
       {
         slug: "mold-prevention",
@@ -1195,33 +1269,31 @@ export const restorationGroups = [
           cta: "Protect My Home From Mold",
           bg: "/images/MoldPrevention.jpg",
         },
-        steps: [
-          {
-            title: "Assess Humidity",
-            text: "Inspección de fuentes y hábito de ventilación.",
-            icon: "fa-solid fa-droplet",
-          },
-          {
-            title: "Ventilation Upgrades",
-            text: "Mejoras en flujo/renovación de aire.",
-            icon: "fa-solid fa-fan",
-          },
-          {
-            title: "Treat Surfaces",
-            text: "Productos preventivos en áreas críticas.",
-            icon: "fa-solid fa-spray-can-sparkles",
-          },
-          {
-            title: "Dehumidification",
-            text: "Control de humedad relativa.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Monitoring",
-            text: "Seguimiento con medidores/IoT si aplica.",
-            icon: "fa-solid fa-gauge",
-          },
-        ],
+        process: {
+          title: "Our Mold Prevention Process (4 Steps)",
+          steps: [
+            {
+              title: "Moisture Assessment",
+              text: "Identify leaks, humidity levels & hidden risks.",
+              icon: "fa-solid fa-droplet",
+            },
+            {
+              title: "Air Quality & Ventilation Check",
+              text: "Ensure airflow prevents condensation & spores.",
+              icon: "fa-solid fa-fan",
+            },
+            {
+              title: "Protective Barriers & Treatments",
+              text: "Apply safe coatings to walls, attics & crawlspaces.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Ongoing Prevention Plan",
+              text: "Recommendations for dehumidifiers, HVAC care & seasonal checks.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Proactive Plan",
@@ -1266,6 +1338,12 @@ export const restorationGroups = [
             a: "Usually no—insurance covers damage, not prevention. But prevention lowers long-term costs.",
           },
         ],
+        whyChooseUs: [
+          "Proactive prevention costs less than remediation",
+          "Targeted treatments for high-risk areas",
+          "Ventilation improvement recommendations",
+          "Humidity monitoring systems",
+        ],
       },
       {
         slug: "mold-testing",
@@ -1288,33 +1366,36 @@ export const restorationGroups = [
           cta: "Schedule My Mold Test Today",
           bg: "/images/Moldtesting.jpg",
         },
-        steps: [
-          {
-            title: "Define Scope",
-            text: "Áreas, tipos de muestra, criterios.",
-            icon: "fa-solid fa-clipboard-list",
-          },
-          {
-            title: "Air/Surface Samples",
-            text: "Tomas conforme a estándares.",
-            icon: "fa-solid fa-vial",
-          },
-          {
-            title: "Lab Analysis",
-            text: "Resultados cuantitativos/cualitativos.",
-            icon: "fa-solid fa-flask",
-          },
-          {
-            title: "Compare & Interpret",
-            text: "Con baseline/criterios de clearance.",
-            icon: "fa-solid fa-scale-balanced",
-          },
-          {
-            title: "Report & Next Steps",
-            text: "Recomendaciones finales.",
-            icon: "fa-solid fa-file-pdf",
-          },
-        ],
+        process: {
+          title: "How Our Mold Testing Works (5 Steps)",
+          steps: [
+            {
+              title: "Initial Walkthrough",
+              text: "Spot visible mold + moisture risks.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Air Sampling",
+              text: "Lab-grade pumps detect invisible mold spores.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Surface Testing",
+              text: "Swabs confirm mold type on walls, vents, furniture.",
+              icon: "fa-solid fa-vial",
+            },
+            {
+              title: "Lab Analysis",
+              text: "Certified labs identify strain + spore levels.",
+              icon: "fa-solid fa-flask",
+            },
+            {
+              title: "Clear Report",
+              text: "Easy-to-read results + photos + action plan.",
+              icon: "fa-solid fa-file-pdf",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Independent Lab",
@@ -1359,6 +1440,12 @@ export const restorationGroups = [
             a: "Most reports delivered in 24–48 hours.",
           },
         ],
+        whyChooseUs: [
+          "Independent lab results (reliable & traceable)",
+          "Clear criteria interpretation",
+          "Fast turnaround (24–72h typically)",
+          "Actionable next steps if findings detected",
+        ],
       },
     ],
   },
@@ -1394,33 +1481,36 @@ export const restorationGroups = [
           cta: "Restore After Hurricane Now",
           bg: "/images/HurricaneDamage.jpg",
         },
-        steps: [
-          {
-            title: "Site Safety",
-            text: "Evaluación de riesgos y corte de servicios si aplica.",
-            icon: "fa-solid fa-triangle-exclamation",
-          },
-          {
-            title: "Temporary Power/Water",
-            text: "Medidas temporales para operar seguro.",
-            icon: "fa-solid fa-plug",
-          },
-          {
-            title: "Tarp & Seal",
-            text: "Tarping de techos y sellos en aperturas.",
-            icon: "fa-solid fa-umbrella",
-          },
-          {
-            title: "Debris Removal",
-            text: "Retiro de árboles/escombros.",
-            icon: "fa-solid fa-truck",
-          },
-          {
-            title: "Stabilize & Plan",
-            text: "Apuntalamiento y plan de reparación.",
-            icon: "fa-solid fa-helmet-safety",
-          },
-        ],
+        process: {
+          title: "Our 5-Step Hurricane Restoration Process",
+          steps: [
+            {
+              title: "Emergency Board-Up & Roof Tarping",
+              text: "Protect interiors from wind & rain.",
+              icon: "fa-solid fa-umbrella",
+            },
+            {
+              title: "Water Extraction & Drying",
+              text: "Industrial pumps, dehumidifiers, air movers.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Debris & Tree Removal",
+              text: "Clear fallen trees and hazardous debris.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "Structural Repair & Roofing",
+              text: "Rebuild roofs, siding, drywall & interiors.",
+              icon: "fa-solid fa-hammer",
+            },
+            {
+              title: "Insurance Claim Support",
+              text: "Documentation & direct adjuster communication.",
+              icon: "fa-solid fa-file-shield",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Rapid Tarping",
@@ -1465,6 +1555,12 @@ export const restorationGroups = [
             a: "Yes. Our crews safely clear trees and storm debris from your property.",
           },
         ],
+        whyChooseUs: [
+          "24/7 local emergency response",
+          "Licensed & insured storm restoration crews",
+          "Full-service: cleanup + structural repair",
+          "Experience across Central & South Florida",
+        ],
       },
       {
         slug: "wind-damage",
@@ -1488,33 +1584,31 @@ export const restorationGroups = [
           cta: "Request Wind Damage Repair Now",
           bg: "/images/WindDamage.jpg",
         },
-        steps: [
-          {
-            title: "Inspection",
-            text: "Techos, siding y ventanas.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Temporary Protection",
-            text: "Sellos, parches y cubiertas.",
-            icon: "fa-solid fa-shield-halved",
-          },
-          {
-            title: "Component Repair",
-            text: "Tejados, fascias y cristales.",
-            icon: "fa-solid fa-screwdriver-wrench",
-          },
-          {
-            title: "Weatherproofing",
-            text: "Sellado y pruebas de estanqueidad.",
-            icon: "fa-solid fa-cloud-rain",
-          },
-          {
-            title: "Final QA",
-            text: "Verificación de seguridad y acabados.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "4-Step Wind Damage Process",
+          steps: [
+            {
+              title: "Emergency Tarping & Board-Up",
+              text: "Prevent rain and debris from entering.",
+              icon: "fa-solid fa-umbrella",
+            },
+            {
+              title: "Roof & Siding Repair",
+              text: "Replace missing shingles, siding, or panels.",
+              icon: "fa-solid fa-hammer",
+            },
+            {
+              title: "Debris & Hazard Removal",
+              text: "Clear fallen branches and dangerous objects.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "Structural & Interior Repairs",
+              text: "Restore walls, ceilings, and insulation.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Roof Pros",
@@ -1559,6 +1653,12 @@ export const restorationGroups = [
             a: "Absolutely—we provide emergency board-up and window replacement.",
           },
         ],
+        whyChooseUs: [
+          "24/7 Emergency Response After Storms",
+          "Licensed, Insured & Experienced Teams",
+          "Full-Service: From Tarping to Full Rebuild",
+          "Serving Central Florida, Tampa Bay & South Florida",
+        ],
       },
       {
         slug: "storm-debris-removal",
@@ -1580,33 +1680,31 @@ export const restorationGroups = [
           cta: "Request Debris Cleanup Now",
           bg: "/images/StormDebrisRemoval.jpg",
         },
-        steps: [
-          {
-            title: "Assessment & Safety",
-            text: "Riesgos, rutas y accesos.",
-            icon: "fa-solid fa-triangle-exclamation",
-          },
-          {
-            title: "Segmentation",
-            text: "Clasificación de material/volumen.",
-            icon: "fa-solid fa-diagram-project",
-          },
-          {
-            title: "Removal",
-            text: "Carga y retiro con equipo adecuado.",
-            icon: "fa-solid fa-truck",
-          },
-          {
-            title: "Disposal",
-            text: "Gestión y disposición autorizada.",
-            icon: "fa-solid fa-recycle",
-          },
-          {
-            title: "Final Sweep",
-            text: "Revisión de accesos y limpieza.",
-            icon: "fa-solid fa-broom",
-          },
-        ],
+        process: {
+          title: "Our Cleanup Process (4 Steps)",
+          steps: [
+            {
+              title: "Tree & Branch Removal",
+              text: "Cut, clear, and haul away fallen trees.",
+              icon: "fa-solid fa-tree",
+            },
+            {
+              title: "Debris Collection",
+              text: "Remove scattered siding, shingles, and rubble.",
+              icon: "fa-solid fa-boxes-stacked",
+            },
+            {
+              title: "Safe Disposal",
+              text: "Transport debris for eco-friendly disposal.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "Site Restoration",
+              text: "Prepare property for repair and safe use.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Heavy Equipment",
@@ -1651,6 +1749,12 @@ export const restorationGroups = [
             a: "In most cases, yes. We document everything for smooth claim approval.",
           },
         ],
+        whyChooseUs: [
+          "Emergency 24/7 Cleanup Teams",
+          "Heavy Equipment & Trained Crew",
+          "Full Service: Removal + Disposal + Restoration",
+          "Serving Central Florida, Tampa Bay & South Florida",
+        ],
       },
       {
         slug: "emergency-storm-repair",
@@ -1673,33 +1777,31 @@ export const restorationGroups = [
           cta: "Request Emergency Storm Repair",
           bg: "/images/EmergencyStormRepair.jpg",
         },
-        steps: [
-          {
-            title: "Rapid Response",
-            text: "Asegurar sitio y evaluar daños.",
-            icon: "fa-solid fa-truck",
-          },
-          {
-            title: "Temporary Repairs",
-            text: "Tarp, sellos, apuntalamiento.",
-            icon: "fa-solid fa-screwdriver-wrench",
-          },
-          {
-            title: "Water Control",
-            text: "Bombeo/extracción si hay intrusión.",
-            icon: "fa-solid fa-water",
-          },
-          {
-            title: "Stabilize",
-            text: "Medidas para evitar daños mayores.",
-            icon: "fa-solid fa-helmet-safety",
-          },
-          {
-            title: "Plan & Transition",
-            text: "Handoff a reparación permanente.",
-            icon: "fa-solid fa-clipboard-check",
-          },
-        ],
+        process: {
+          title: "4-Step Emergency Repair Process",
+          steps: [
+            {
+              title: "Immediate Roof Tarping & Board-Up",
+              text: "Protect from rain, wind & further damage.",
+              icon: "fa-solid fa-umbrella",
+            },
+            {
+              title: "Water Extraction & Drying",
+              text: "Industrial pumps & dehumidifiers stop mold and structural weakening.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Debris & Hazard Cleanup",
+              text: "Safe removal of fallen trees, branches, and shattered materials.",
+              icon: "fa-solid fa-truck",
+            },
+            {
+              title: "Structural & Interior Repairs",
+              text: "Restore roofing, walls, insulation & finishes.",
+              icon: "fa-solid fa-hammer",
+            },
+          ],
+        },
         reasons: [
           {
             title: "24/7 Teams",
@@ -1743,6 +1845,13 @@ export const restorationGroups = [
             q: "What should I do while waiting for emergency storm repair?",
             a: "Stay safe, avoid hazards like live wires, and document damages for your insurance claim.",
           },
+        ],
+        whyChooseUs: [
+          "24/7 emergency response across Florida",
+          "Roof tarping, board-up & water control",
+          "Debris removal & structural stabilization",
+          "Local teams for fast dispatch",
+          "Insurance claim assistance & documentation",
         ],
       },
     ],

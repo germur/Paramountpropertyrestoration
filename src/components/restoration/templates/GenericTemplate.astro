@@ -9,6 +9,8 @@
  * 6) CTA final
  */
 import "../../../styles/components/GenericTemplate.css";
+import "../../../styles/components/Risks.css";
+import "../../../styles/components/Highlights.css";
 import FAQ from "../../AcordeonServices.jsx";
 import FloridaScenarios from "../../FloridaScenarios.jsx";
 import MicroBenefits from "../../MicroBenefits.jsx";
@@ -123,6 +125,65 @@ const finalCta = {
 }
 
 {
+  sub?.process && (
+    <section class="steps container">
+      <h2 class="section__title">{sub?.process?.title}</h2>
+      <ol class="timeline">
+        {sub?.process?.steps.map((s) => (
+          <li class="timeline__step">
+            <div class="timeline__icon">
+              <i class={s.icon} />
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">{s.title}</h3>
+              <p class="timeline__text">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<!-- Highlights Section -->
+{
+  sub?.highlights && (
+    <section class="highlights container">
+      <h2 class="highlights__title">Service Highlights</h2>
+      <ul class="highlights__list">
+        {sub.highlights.map((highlight, index) => (
+          <li class="highlights__item">
+            <span class="highlights__icon">✓</span>
+            <span class="highlights__text">{highlight}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<!-- Risks Section -->
+{
+  sub?.risks && (
+    <section class="risks container">
+      <div class="risks__card">
+        <h2 class="risks__title">Risks of Delaying Action</h2>
+        <ul class="risks__list">
+          {sub.risks.map((risk, index) => (
+            <li class="risks__item">
+              <span class="risks__icon" aria-hidden="true">
+                🚫
+              </span>
+              <span class="risks__text">{risk}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+{
   sub?.steps && (
     <section class="steps container">
       <h2 class="section__title">Quick Relief – How It Works</h2>
@@ -143,24 +204,10 @@ const finalCta = {
   )
 }
 
+<!-- Micro Benefits -->
 {
-  sub?.process && (
-    <section class="steps container">
-      <h2 class="section__title">{sub?.process?.title}</h2>
-      <ol class="timeline">
-        {sub?.process?.steps.map((s) => (
-          <li class="timeline__step">
-            <div class="timeline__icon">
-              <i class={s.icon} />
-            </div>
-            <div class="timeline__content">
-              <h3 class="timeline__title">{s.title}</h3>
-              <p class="timeline__text">{s.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </section>
+  sub?.microBenefits && (
+    <MicroBenefits benefits={sub.microBenefits} client:load />
   )
 }
 
@@ -185,13 +232,6 @@ const finalCta = {
         ))}
       </ul>
     </section>
-  )
-}
-
-<!-- Micro Benefits -->
-{
-  sub?.microBenefits && (
-    <MicroBenefits benefits={sub.microBenefits} client:load />
   )
 }
 
