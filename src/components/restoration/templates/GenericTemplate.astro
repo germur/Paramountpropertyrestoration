@@ -17,22 +17,8 @@ import WhatNotToDo from "../../WhatNotToDo.jsx";
 
 const { group, sub } = Astro.props;
 
-// Theme por grupo (fallbacks)
-const themeByGroup = {
-  water: { primary: "#0ea5e9", primaryDark: "#0369a1", accent: "#7dd3fc" },
-  fire: { primary: "#e53935", primaryDark: "#b71c1c", accent: "#ffb300" },
-  storm: { primary: "#475569", primaryDark: "#334155", accent: "#94a3b8" },
-  mold: { primary: "#16a34a", primaryDark: "#166534", accent: "#86efac" },
-  mitigation: { primary: "#f59e0b", primaryDark: "#b45309", accent: "#fde68a" },
-};
-const base = themeByGroup[group?.template] ?? themeByGroup.water;
-
-const primary = sub?.palette?.primary ?? base.primary;
-const primaryDark = sub?.palette?.primaryDark ?? base.primaryDark;
-const accent = sub?.palette?.accent ?? base.accent;
-
 // HERO
-const heroTitle = sub.title;
+const heroTitle = sub?.hero?.title ?? sub?.title;
 const heroDesc = sub?.hero?.description ?? sub?.short ?? group?.description;
 const heroCTA = sub?.hero?.cta ?? "Get Help Now";
 
@@ -171,14 +157,14 @@ const finalCta = {
 </section>
 
 <!-- Micro Benefits -->
-{sub?.microBenefits && (
-  <MicroBenefits benefits={sub.microBenefits} client:load />
-)}
+{
+  sub?.microBenefits && (
+    <MicroBenefits benefits={sub.microBenefits} client:load />
+  )
+}
 
 <!-- What Not To Do -->
-{sub?.whatNotToDo && (
-  <WhatNotToDo items={sub.whatNotToDo} client:load />
-)}
+{sub?.whatNotToDo && <WhatNotToDo items={sub.whatNotToDo} client:load />}
 
 <section class="links container">
   <h2 class="section__title">Related services</h2>
