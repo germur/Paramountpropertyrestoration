@@ -31,7 +31,7 @@ export const restorationGroups = [
     subservices: [
       {
         slug: "flood-damage",
-        title: "Flood Damage Cleanup in Florida",
+        title: "Flood Damage Cleanup",
         short: "Cleanup & restoration after flooding",
         seo: {
           title:
@@ -215,7 +215,7 @@ export const restorationGroups = [
       // WATER — LEAK REPAIR
       {
         slug: "leak-repair",
-        title: "Leak Repair Services in Florida | Ceiling, Wall & Pipe Leaks",
+        title: "Leak Repair Services",
         short: "Find & fix leaks quickly",
         seo: {
           title: "Leak Repair Services in Florida | Ceiling, Wall & Pipe Leaks",
@@ -370,7 +370,7 @@ export const restorationGroups = [
       // WATER — BASEMENT FLOODING
       {
         slug: "basement-flooding",
-        title: "Basement Flooding",
+        title: "Basement Flooding Cleanup",
         short: "Pumping & drying basements",
         seo: {
           title: "Basement Flooding Cleanup Florida | 24/7 Pump-Out & Drying",
@@ -553,7 +553,7 @@ export const restorationGroups = [
       // WATER — CEILING WATER DAMAGE
       {
         slug: "ceiling-water-damage",
-        title: "Ceiling Water Damage",
+        title: "Ceiling Water Damage Repair",
         short: "Ceiling stains & sagging repair",
         seo: {
           title:
@@ -870,7 +870,7 @@ export const restorationGroups = [
     subservices: [
       {
         slug: "smoke-damage",
-        title: "Smoke Damage",
+        title: "Smoke Damage Restoration",
         short: "Soot removal & odor control",
         seo: {
           title:
@@ -1464,11 +1464,26 @@ export const restorationGroups = [
         emergencyIncludes: {
           title: "What Our Emergency Fire Response Includes",
           items: [
-            { title: "Immediate Arrival", text: "Crews on-site within hours, not days." },
-            { title: "Property Securing", text: "Boarding windows, tarping roofs, stabilizing walls." },
-            { title: "Debris Removal", text: "Safe disposal of fire residue and hazardous materials." },
-            { title: "Water Extraction", text: "Remove hose water to prevent mold & structural issues." },
-            { title: "Initial Smoke & Odor Control", text: "HEPA scrubbers and deodorization for safety." },
+            {
+              title: "Immediate Arrival",
+              text: "Crews on-site within hours, not days.",
+            },
+            {
+              title: "Property Securing",
+              text: "Boarding windows, tarping roofs, stabilizing walls.",
+            },
+            {
+              title: "Debris Removal",
+              text: "Safe disposal of fire residue and hazardous materials.",
+            },
+            {
+              title: "Water Extraction",
+              text: "Remove hose water to prevent mold & structural issues.",
+            },
+            {
+              title: "Initial Smoke & Odor Control",
+              text: "HEPA scrubbers and deodorization for safety.",
+            },
           ],
         },
         faqs: [
@@ -2003,7 +2018,7 @@ export const restorationGroups = [
     subservices: [
       {
         slug: "hurricane-damage",
-        title: "Hurricane Damage",
+        title: "Hurricane Damage Restoration",
         short: "Emergency tarping & repair",
         seo: {
           title:
@@ -2141,7 +2156,7 @@ export const restorationGroups = [
       },
       {
         slug: "wind-damage",
-        title: "Wind Damage",
+        title: "Wind Damage Restoration",
         short: "Siding, roofing & windows",
         seo: {
           title:
@@ -3094,6 +3109,305 @@ export const restorationGroups = [
   },
 ];
 
+export const ciudades = [
+  // Central Florida
+  {
+    slug: "orlando",
+    nombre: "Orlando",
+    region: "Central Florida",
+    poblacion: "307,573",
+    county: "Orange County",
+  },
+  {
+    slug: "kissimmee",
+    nombre: "Kissimmee",
+    region: "Central Florida",
+    poblacion: "79,226",
+    county: "Osceola County",
+  },
+  {
+    slug: "winter-garden",
+    nombre: "Winter Garden",
+    region: "Central Florida",
+    poblacion: "46,964",
+    county: "Orange County",
+  },
+  {
+    slug: "clermont",
+    nombre: "Clermont",
+    region: "Central Florida",
+    poblacion: "43,021",
+    county: "Lake County",
+  },
+  {
+    slug: "lakeland",
+    nombre: "Lakeland",
+    region: "Central Florida",
+    poblacion: "115,451",
+    county: "Polk County",
+  },
+  {
+    slug: "sanford",
+    nombre: "Sanford",
+    region: "Central Florida",
+    poblacion: "61,051",
+    county: "Seminole County",
+  },
+  {
+    slug: "altamonte-springs",
+    nombre: "Altamonte Springs",
+    region: "Central Florida",
+    poblacion: "46,231",
+    county: "Seminole County",
+  },
+  {
+    slug: "oviedo",
+    nombre: "Oviedo",
+    region: "Central Florida",
+    poblacion: "41,062",
+    county: "Seminole County",
+  },
+
+  // Tampa Bay Region (Nombre de región corregido para consistencia)
+  {
+    slug: "tampa",
+    nombre: "Tampa",
+    region: "Tampa Bay Region",
+    poblacion: "384,959",
+    county: "Hillsborough County",
+  },
+  {
+    slug: "st-petersburg",
+    nombre: "St. Petersburg",
+    region: "Tampa Bay Region",
+    poblacion: "258,308",
+    county: "Pinellas County",
+  },
+  {
+    slug: "clearwater",
+    nombre: "Clearwater",
+    region: "Tampa Bay Region",
+    poblacion: "117,292",
+    county: "Pinellas County",
+  },
+  {
+    slug: "brandon",
+    nombre: "Brandon",
+    region: "Tampa Bay Region",
+    poblacion: "114,626",
+    county: "Hillsborough County",
+  },
+  {
+    slug: "sarasota",
+    nombre: "Sarasota",
+    region: "Tampa Bay Region",
+    poblacion: "57,738",
+    county: "Sarasota County",
+  },
+  {
+    slug: "bradenton",
+    nombre: "Bradenton",
+    region: "Tampa Bay Region",
+    poblacion: "59,439",
+    county: "Manatee County",
+  },
+  {
+    slug: "largo",
+    nombre: "Largo",
+    region: "Tampa Bay Region",
+    poblacion: "82,485",
+    county: "Pinellas County",
+  },
+
+  // South Florida
+  {
+    slug: "miami",
+    nombre: "Miami",
+    region: "South Florida",
+    poblacion: "442,241",
+    county: "Miami-Dade County",
+  },
+  {
+    slug: "fort-lauderdale",
+    nombre: "Fort Lauderdale",
+    region: "South Florida",
+    poblacion: "182,760",
+    county: "Broward County",
+  },
+  {
+    slug: "west-palm-beach",
+    nombre: "West Palm Beach",
+    region: "South Florida",
+    poblacion: "117,415",
+    county: "Palm Beach County",
+  },
+  {
+    slug: "boca-raton",
+    nombre: "Boca Raton",
+    region: "South Florida",
+    poblacion: "97,422",
+    county: "Palm Beach County",
+  },
+  {
+    slug: "hollywood",
+    nombre: "Hollywood",
+    region: "South Florida",
+    poblacion: "153,067",
+    county: "Broward County",
+  },
+  {
+    slug: "coral-gables",
+    nombre: "Coral Gables",
+    region: "South Florida",
+    poblacion: "49,700",
+    county: "Miami-Dade County",
+  },
+  {
+    slug: "homestead",
+    nombre: "Homestead",
+    region: "South Florida",
+    poblacion: "80,737",
+    county: "Miami-Dade County",
+  },
+  {
+    slug: "pembroke-pines",
+    nombre: "Pembroke Pines",
+    region: "South Florida",
+    poblacion: "171,178",
+    county: "Broward County",
+  },
+  {
+    slug: "miramar",
+    nombre: "Miramar",
+    region: "South Florida",
+    poblacion: "134,721",
+    county: "Broward County",
+  },
+  {
+    slug: "miami-beach",
+    nombre: "Miami Beach",
+    region: "South Florida",
+    poblacion: "82,890",
+    county: "Miami-Dade County",
+  },
+
+  // Southwest Florida
+  {
+    slug: "naples",
+    nombre: "Naples",
+    region: "Southwest Florida",
+    poblacion: "22,088",
+    county: "Collier County",
+  },
+  {
+    slug: "cape-coral",
+    nombre: "Cape Coral",
+    region: "Southwest Florida",
+    poblacion: "194,016",
+    county: "Lee County",
+  },
+  {
+    slug: "fort-myers",
+    nombre: "Fort Myers",
+    region: "Southwest Florida",
+    poblacion: "86,395",
+    county: "Lee County",
+  },
+  {
+    slug: "bonita-springs",
+    nombre: "Bonita Springs",
+    region: "Southwest Florida",
+    poblacion: "53,644",
+    county: "Lee County",
+  },
+  {
+    slug: "marco-island",
+    nombre: "Marco Island",
+    region: "Southwest Florida",
+    poblacion: "17,963",
+    county: "Collier County",
+  },
+  {
+    slug: "port-charlotte",
+    nombre: "Port Charlotte",
+    region: "Southwest Florida",
+    poblacion: "60,625",
+    county: "Charlotte County",
+  },
+  {
+    slug: "venice",
+    nombre: "Venice",
+    region: "Southwest Florida",
+    poblacion: "25,463",
+    county: "Sarasota County",
+  },
+  {
+    slug: "estero",
+    nombre: "Estero",
+    region: "Southwest Florida",
+    poblacion: "36,939",
+    county: "Lee County",
+  },
+
+  // Treasure Coast
+  {
+    slug: "port-st-lucie",
+    nombre: "Port St. Lucie",
+    region: "Treasure Coast",
+    poblacion: "204,851",
+    county: "St. Lucie County",
+  },
+  {
+    slug: "stuart",
+    nombre: "Stuart",
+    region: "Treasure Coast",
+    poblacion: "17,287",
+    county: "Martin County",
+  },
+  {
+    slug: "vero-beach",
+    nombre: "Vero Beach",
+    region: "Treasure Coast",
+    poblacion: "17,350",
+    county: "Indian River County",
+  },
+  {
+    slug: "jupiter",
+    nombre: "Jupiter",
+    region: "Treasure Coast",
+    poblacion: "61,047",
+    county: "Palm Beach County",
+  },
+  {
+    slug: "palm-city",
+    nombre: "Palm City",
+    region: "Treasure Coast",
+    poblacion: "25,836",
+    county: "Martin County",
+  },
+  {
+    slug: "hobe-sound",
+    nombre: "Hobe Sound",
+    region: "Treasure Coast",
+    poblacion: "14,699",
+    county: "Martin County",
+  },
+  {
+    slug: "fort-pierce",
+    nombre: "Fort Pierce",
+    region: "Treasure Coast",
+    poblacion: "47,297",
+    county: "St. Lucie County",
+  },
+  {
+    slug: "jensen-beach",
+    nombre: "Jensen Beach",
+    region: "Treasure Coast",
+    poblacion: "12,652",
+    county: "Martin County",
+  },
+];
+
 // ===== Utils =====
 export function findGroup(slug) {
   return restorationGroups.find((g) => g.slug === slug);
@@ -3109,4 +3423,65 @@ export function getAllCombos() {
       props: { groupData: g, subData: s },
     }))
   );
+}
+
+// ===== City Page Utils (similar to services.js) =====
+
+// Generate all restoration service/city combinations for dynamic pages
+// URL structure: /restoration/{service}/{subcategory}/{city}/
+export function getAllRestorationCombinations() {
+  const combinations = [];
+
+  restorationGroups.forEach((group) => {
+    group.subservices.forEach((subservice) => {
+      ciudades.forEach((ciudad) => {
+        combinations.push({
+          service: group.slug, // service group slug (water-damage, fire-damage, etc.)
+          subcategory: subservice.slug, // subservice slug (flood-damage, leak-repair, etc.)
+          ciudad: ciudad.slug, // city slug (orlando, miami, etc.)
+          servicioData: subservice, // full subservice object
+          ciudadData: ciudad, // full city object
+          groupData: group, // full group object
+        });
+      });
+    });
+  });
+
+  return combinations;
+}
+
+// Get specific restoration service data by group and subservice slugs
+export function getRestorationServiceData(groupSlug, subserviceSlug) {
+  return findSubservice(groupSlug, subserviceSlug);
+}
+
+// Get city data by slug (reusing existing ciudades array)
+export function getCiudadData(slug) {
+  return ciudades.find((c) => c.slug === slug);
+}
+
+// Get cities by region for filtering
+export function getCiudadesByRegion(region) {
+  return ciudades.filter((c) => c.region === region);
+}
+
+// Get statistics about restoration combinations
+export function getRestorationStats() {
+  const totalSubservices = restorationGroups.reduce(
+    (acc, group) => acc + group.subservices.length,
+    0
+  );
+
+  return {
+    totalGroups: restorationGroups.length,
+    totalSubservices: totalSubservices,
+    totalCiudades: ciudades.length,
+    totalCombinations: totalSubservices * ciudades.length,
+    regiones: [...new Set(ciudades.map((c) => c.region))],
+    groups: restorationGroups.map((g) => ({
+      slug: g.slug,
+      name: g.name,
+      subserviceCount: g.subservices.length,
+    })),
+  };
 }

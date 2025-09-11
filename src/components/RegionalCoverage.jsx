@@ -19,10 +19,20 @@ const defaultRegions = [
   },
 ];
 
+// Helper function to convert city names to URL-friendly slugs
+const cityToSlug = (cityName) => {
+  return cityName
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]/g, '');
+};
+
 export default function RegionalCoverage({
   title = "Regional Coverage",
   regions = defaultRegions,
   internalLinks = [],
+  service = "water-damage",
+  subcategory = "emergency",
 }) {
   return (
     <section className="regional-coverage">
@@ -36,7 +46,19 @@ export default function RegionalCoverage({
           {regions.map((region, index) => (
             <div className="region-item" key={index}>
               <h3 className="region-name">{region.name}:</h3>
-              <p className="region-cities">{region.cities.join(", ")}</p>
+              <p className="region-cities">
+                {region.cities.map((city, cityIndex) => (
+                  <span key={cityIndex}>
+                    <a 
+                      href={`/restoration/${service}/${subcategory}/${cityToSlug(city)}`}
+                      className="city-link"
+                    >
+                      {city}
+                    </a>
+                    {cityIndex < region.cities.length - 1 && ", "}
+                  </span>
+                ))}
+              </p>
             </div>
           ))}
         </div>

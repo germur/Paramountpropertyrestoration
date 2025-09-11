@@ -1,0 +1,188 @@
+/* Restoration City Page Styles */
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 0 60px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.service-badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.service-badge.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-weight: 600;
+}
+
+.service-badge:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  margin-right: 0.5rem;
+}
+
+.hero-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-icon-item .icon {
+  font-size: 2rem;
+  display: block;
+}
+
+.hero-icon-item .text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+.emergency-badge {
+  background: linear-gradient(45deg, #ff4444, #ff6666);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.btn-emergency {
+  background: linear-gradient(45deg, #ff4444, #ff6666);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+}
+
+.btn-emergency:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4);
+  background: linear-gradient(45deg, #ff3333, #ff5555);
+}
+
+.hero-tagline {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 0 40px;
+    min-height: 60vh;
+  }
+  
+  .hero-icons {
+    gap: 1rem;
+  }
+  
+  .hero-icon-item .icon {
+    font-size: 1.5rem;
+  }
+  
+  .service-badges {
+    gap: 0.3rem;
+  }
+  
+  .service-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 0 30px;
+  }
+  
+  .hero-icons {
+    gap: 0.8rem;
+  }
+  
+  .service-badges {
+    margin-bottom: 1.5rem;
+  }
+  
+  .emergency-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-emergency {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}

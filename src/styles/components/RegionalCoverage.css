@@ -84,6 +84,18 @@
   font-weight: 500;
 }
 
+.city-link {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.city-link:hover {
+  color: #4a90e2;
+  text-decoration: underline;
+}
+
 .internal-links-section {
   background: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
   padding: 40px;

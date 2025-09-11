@@ -180,7 +180,11 @@ const finalCta = {
 {sub?.waterSigns && <WaterSigns waterSigns={sub.waterSigns} client:load />}
 
 <!-- Service Cards -->
-{sub?.serviceCards && <ServiceCards serviceCards={sub.serviceCards} client:load />}
+{
+  sub?.serviceCards && (
+    <ServiceCards serviceCards={sub.serviceCards} client:load />
+  )
+}
 
 <!-- Why Acting Fast -->
 {
@@ -298,7 +302,13 @@ const finalCta = {
 </section>
 
 <!-- Regional Coverage -->
-<RegionalCoverage client:load title="Regional Coverage" internalLinks={[]} />
+<RegionalCoverage
+  client:load
+  title="Regional Coverage"
+  internalLinks={[]}
+  service={group?.slug}
+  subcategory={sub?.slug}
+/>
 
 <FAQ
   category={group?.template || "general"}
