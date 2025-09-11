@@ -57,33 +57,36 @@ export const restorationGroups = [
             {icon: "🛠️", text: "Repair"}
           ]
         },
-        steps: [
-          {
-            title: "Inspection & Moisture Mapping",
-            text: "Identify visible and hidden flood damage.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Rapid Water Extraction",
-            text: "Remove standing floodwater using high-capacity pumps.",
-            icon: "fa-solid fa-faucet-drip",
-          },
-          {
-            title: "Drying & Dehumidification",
-            text: "Stabilize humidity with industrial air movers.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Antimicrobial Treatment",
-            text: "Protect walls, flooring, and furniture against mold.",
-            icon: "fa-solid fa-shield-virus",
-          },
-          {
-            title: "Ongoing Monitoring",
-            text: "Daily moisture checks until drying is complete.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Quick Relief – How It Works",
+          steps: [
+            {
+              title: "Inspection & Moisture Mapping",
+              text: "Identify visible and hidden flood damage.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Rapid Water Extraction",
+              text: "Remove standing floodwater using high-capacity pumps.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Drying & Dehumidification",
+              text: "Stabilize humidity with industrial air movers.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Antimicrobial Treatment",
+              text: "Protect walls, flooring, and furniture against mold.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Ongoing Monitoring",
+              text: "Daily moisture checks until drying is complete.",
+              icon: "fa-solid fa-gauge",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Emergency",
@@ -117,6 +120,44 @@ export const restorationGroups = [
             "Structural weakening of drywall, framing, and flooring",
             "Electrical hazards from water intrusion",
             "Higher insurance claim costs if damage spreads",
+          ],
+        },
+        waterSigns: {
+          title: "Common Signs of Flood Damage",
+          items: [
+            { text: "Standing water in rooms or basements", icon: "💧" },
+            { text: "Water stains on ceilings and walls", icon: "🟤" },
+            { text: "Musty odors after rain or storm", icon: "😷" },
+            { text: "Warped floors or bubbling paint", icon: "🏚️" },
+          ],
+        },
+        serviceCards: {
+          title: "What We Do",
+          items: [
+            {
+              icon: "🚚",
+              title: "Emergency Water Extraction",
+              text: "Pumps and vacuums remove large volumes of water quickly.",
+              cta: { text: "Request Flood Water Removal", href: "/contact" },
+            },
+            {
+              icon: "🌬️",
+              title: "Industrial Drying",
+              text: "Air movers and dehumidifiers dry walls, floors, and cavities.",
+              cta: { text: "Schedule Drying Service", href: "/contact" },
+            },
+            {
+              icon: "🧪",
+              title: "Mold Prevention",
+              text: "Antimicrobial treatments protect against bacteria and mold.",
+              cta: { text: "Protect Against Mold", href: "/contact" },
+            },
+            {
+              icon: "🛠️",
+              title: "Structural Stabilization",
+              text: "Support for weakened ceilings, floors, and framing.",
+              cta: { text: "Start Repairs Today", href: "/contact" },
+            },
           ],
         },
         faqs: [
@@ -198,33 +239,36 @@ export const restorationGroups = [
             {icon: "🦠", text: "Mold Prevention"}
           ]
         },
-        steps: [
-          {
-            title: "Detection",
-            text: "Thermal and moisture meters to find the source.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Containment",
-            text: "Stop the leak and protect unaffected areas.",
-            icon: "fa-solid fa-square-minus",
-          },
-          {
-            title: "Targeted Drying",
-            text: "Dry walls/ceilings to remove trapped moisture.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Sanitize",
-            text: "Antimicrobial application to prevent mold.",
-            icon: "fa-solid fa-spray-can-sparkles",
-          },
-          {
-            title: "Repair & Monitor",
-            text: "Fix the source and verify moisture reduction.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Our Leak Repair Process",
+          steps: [
+            {
+              title: "Inspection & Leak Detection",
+              text: "Thermal imaging & moisture meters find the source.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Emergency Containment",
+              text: "Stop water flow, prevent further damage.",
+              icon: "fa-solid fa-square-minus",
+            },
+            {
+              title: "Drying & Dehumidification",
+              text: "Industrial air movers, dehumidifiers.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Repair & Restoration",
+              text: "Pipes, drywall, ceilings, and flooring fixed.",
+              icon: "fa-solid fa-screwdriver-wrench",
+            },
+            {
+              title: "Mold Prevention & Quality Check",
+              text: "Antimicrobial treatment + testing.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Non-invasive Tools",
@@ -257,6 +301,39 @@ export const restorationGroups = [
             "Moisture spreads through walls and insulation within first 24h",
             "Mold growth begins within 48h, odors intensify",
             "Structural damage and costly repairs become likely after 72h+",
+          ],
+        },
+        waterSigns: {
+          title: "Common Signs of a Leak",
+          items: [
+            { text: "Water stains on ceilings or walls", icon: "💧" },
+            { text: "Bubbling paint or warped drywall", icon: "🪞" },
+            { text: "Musty smell or early mold growth", icon: "🦠" },
+            { text: "Unexpected spike in your water bill", icon: "📉" },
+            { text: "Low water pressure in sinks or showers", icon: "🚰" },
+          ],
+        },
+        serviceCards: {
+          title: "Subservices",
+          items: [
+            {
+              icon: "🛠️",
+              title: "Ceiling Leak Repair",
+              text: "Repair water-damaged ceilings, replace drywall & insulation.",
+              cta: { text: "Schedule Ceiling Repair", href: "/contact" },
+            },
+            {
+              icon: "🚰",
+              title: "Pipe Leak Repair",
+              text: "Fix burst, corroded, or leaking pipes to restore flow & safety.",
+              cta: { text: "Request Pipe Repair", href: "/contact" },
+            },
+            {
+              icon: "🔍",
+              title: "Hidden Leak Detection",
+              text: "Advanced tools locate leaks inside walls, floors, or basements.",
+              cta: { text: "Find My Leak", href: "/contact" },
+            },
           ],
         },
         faqs: [
@@ -318,33 +395,36 @@ export const restorationGroups = [
             {icon: "🧱", text: "Foundation"}
           ]
         },
-        steps: [
-          {
-            title: "Safety & Assessment",
-            text: "Check electrical/hazards and inspect water level.",
-            icon: "fa-solid fa-triangle-exclamation",
-          },
-          {
-            title: "Pump-Out",
-            text: "High-capacity pumps evacuate water fast.",
-            icon: "fa-solid fa-pump-soap",
-          },
-          {
-            title: "Drying & Dehumidification",
-            text: "Air movers & dehumidifiers stabilize humidity.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Sanitization",
-            text: "Antimicrobial treatment to prevent mold/bacteria.",
-            icon: "fa-solid fa-shield-virus",
-          },
-          {
-            title: "Monitoring",
-            text: "Daily moisture readings until dry standard.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Quick Relief – How It Works",
+          steps: [
+            {
+              title: "Safety & Assessment",
+              text: "Check for electrical hazards and structural risks before entry.",
+              icon: "fa-solid fa-triangle-exclamation",
+            },
+            {
+              title: "Pump-Out & Water Removal",
+              text: "High-capacity pumps quickly clear standing basement water.",
+              icon: "fa-solid fa-pump-soap",
+            },
+            {
+              title: "Cavity Drying",
+              text: "Industrial dehumidifiers and air movers dry walls, flooring, and crawlspaces.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Humidity Control",
+              text: "Stabilize indoor moisture levels to safe conditions.",
+              icon: "fa-solid fa-gauge",
+            },
+            {
+              title: "Antimicrobial Treatment",
+              text: "Apply disinfectants to prevent mold and bacteria growth.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Emergency Pump-Out",
@@ -378,6 +458,44 @@ export const restorationGroups = [
             "Structural damage to foundation and framing",
             "Electrical shock risk from outlets and panels",
             "Damaged furniture, stored items, and HVAC systems",
+          ],
+        },
+        waterSigns: {
+          title: "Common Signs of Basement Flooding",
+          items: [
+            { text: "Pooling water near foundations", icon: "💧" },
+            { text: "Musty odors and damp walls", icon: "😷" },
+            { text: "Rusty appliances or water heater", icon: "⚡" },
+            { text: "Cracks or leaks around basement windows", icon: "🪟" },
+          ],
+        },
+        serviceCards: {
+          title: "What We Do",
+          items: [
+            {
+              icon: "🪠",
+              title: "Basement Pump-Out",
+              text: "Rapid water evacuation with high-volume pumps.",
+              cta: { text: "Request Pump-Out", href: "/contact" },
+            },
+            {
+              icon: "🧱",
+              title: "Structural Drying",
+              text: "Dry walls, subfloors, and insulation to protect the foundation.",
+              cta: { text: "Schedule Drying", href: "/contact" },
+            },
+            {
+              icon: "🛡️",
+              title: "Mold Prevention",
+              text: "Apply treatments and humidity control to stop mold growth.",
+              cta: { text: "Protect Basement", href: "/contact" },
+            },
+            {
+              icon: "📊",
+              title: "Moisture Monitoring",
+              text: "Track safe drying progress with daily readings.",
+              cta: { text: "Monitor My Basement", href: "/contact" },
+            },
           ],
         },
         faqs: [
@@ -460,33 +578,36 @@ export const restorationGroups = [
             {icon: "🦠", text: "Mold"}
           ]
         },
-        steps: [
-          {
-            title: "Trace the Source",
-            text: "Find the leak path with thermal & moisture tools.",
-            icon: "fa-solid fa-magnifying-glass",
-          },
-          {
-            title: "Stabilize Area",
-            text: "Contain, protect contents, and ensure safety.",
-            icon: "fa-solid fa-helmet-safety",
-          },
-          {
-            title: "Dry the Ceiling",
-            text: "Ventilated & targeted drying prevents sagging.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Treat & Repair",
-            text: "Antimicrobial + drywall/plaster restoration.",
-            icon: "fa-solid fa-screwdriver-wrench",
-          },
-          {
-            title: "Verify",
-            text: "Moisture checks before repaint/finish.",
-            icon: "fa-solid fa-circle-check",
-          },
-        ],
+        process: {
+          title: "Our Ceiling Repair Process",
+          steps: [
+            {
+              title: "Inspection & Moisture Detection",
+              text: "Thermal cameras to locate leaks.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Containment & Drying",
+              text: "Industrial dehumidifiers & air movers.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Drywall & Insulation Replacement",
+              text: "Remove damaged materials.",
+              icon: "fa-solid fa-screwdriver-wrench",
+            },
+            {
+              title: "Mold Prevention",
+              text: "Antimicrobial treatments applied.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Finish Restoration",
+              text: "Paint, texture & restore ceiling.",
+              icon: "fa-solid fa-circle-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Ceiling Leak Experts",
@@ -520,6 +641,45 @@ export const restorationGroups = [
             "Mold spores begin to grow within 48h",
             "Structural damage to drywall, beams, insulation after 72h",
             "Ceiling collapse + electrical hazards after 1 week+",
+          ],
+        },
+        waterSigns: {
+          title: "Common Signs of Ceiling Water Damage",
+          items: [
+            { text: "Brown or yellow stains on ceiling", icon: "🟤" },
+            { text: "Bubbling paint or peeling plaster", icon: "🖌️" },
+            { text: "Sagging drywall or soft spots", icon: "📉" },
+            { text: "Musty odors (possible hidden mold)", icon: "🦠" },
+            { text: "Dripping water or visible leaks", icon: "💧" },
+          ],
+        },
+        serviceCards: {
+          title: "Subservices",
+          items: [
+            {
+              icon: "🔎",
+              title: "Leak Source Repair",
+              text: "Fix pipes, roof leaks, or AC condensation.",
+              cta: { text: "Find My Leak", href: "/contact" },
+            },
+            {
+              icon: "🧱",
+              title: "Drywall & Ceiling Replacement",
+              text: "Remove & replace water-damaged sections.",
+              cta: { text: "Schedule Drywall Repair", href: "/contact" },
+            },
+            {
+              icon: "🎨",
+              title: "Stain & Finish Restoration",
+              text: "Prime, paint, and re-texture surfaces.",
+              cta: { text: "Restore My Ceiling", href: "/contact" },
+            },
+            {
+              icon: "🦠",
+              title: "Mold Remediation",
+              text: "Long-term protection against hidden growth.",
+              cta: { text: "Prevent Mold Growth", href: "/contact" },
+            },
           ],
         },
         faqs: [
@@ -579,33 +739,36 @@ export const restorationGroups = [
             {icon: "🏢", text: "Commercial"}
           ]
         },
-        steps: [
-          {
-            title: "Rapid Dispatch",
-            text: "Team on-site to assess and triage.",
-            icon: "fa-solid fa-truck",
-          },
-          {
-            title: "Immediate Extraction",
-            text: "Portable or truck-mount extraction units.",
-            icon: "fa-solid fa-water",
-          },
-          {
-            title: "Industrial Drying",
-            text: "Air movers & dehumidifiers stabilize humidity.",
-            icon: "fa-solid fa-wind",
-          },
-          {
-            title: "Sanitize",
-            text: "Antimicrobial application as needed.",
-            icon: "fa-solid fa-shield-virus",
-          },
-          {
-            title: "Monitor & Report",
-            text: "Daily readings, documentation for insurance.",
-            icon: "fa-solid fa-clipboard-check",
-          },
-        ],
+        process: {
+          title: "Our Emergency Water Removal Process",
+          steps: [
+            {
+              title: "Inspection & Safety Check",
+              text: "Identify hazards, source of water.",
+              icon: "fa-solid fa-magnifying-glass",
+            },
+            {
+              title: "Water Extraction",
+              text: "Industrial pumps + vacuums remove standing water.",
+              icon: "fa-solid fa-water",
+            },
+            {
+              title: "Drying & Dehumidification",
+              text: "Air movers + dehumidifiers stabilize humidity.",
+              icon: "fa-solid fa-wind",
+            },
+            {
+              title: "Antimicrobial Treatment",
+              text: "Stop mold & bacteria growth.",
+              icon: "fa-solid fa-spray-can-sparkles",
+            },
+            {
+              title: "Damage Assessment & Restoration Plan",
+              text: "Full documentation for insurance.",
+              icon: "fa-solid fa-clipboard-check",
+            },
+          ],
+        },
         reasons: [
           {
             title: "Immediate Extraction",
@@ -649,6 +812,15 @@ export const restorationGroups = [
             "Moisture spreads to drywall, ceilings, insulation (24–48h)",
             "Mold colonization + structural weakening (48–72h)",
             "Collapse risk, toxic mold, costly rebuilds (72h+)",
+          ],
+        },
+        waterSigns: {
+          title: "Common Scenarios for Emergency Water Removal",
+          items: [
+            { text: "Flooded living rooms & basements", icon: "🌊" },
+            { text: "Burst pipes or plumbing failures", icon: "🚰" },
+            { text: "Storm or hurricane flooding", icon: "🌪️" },
+            { text: "Commercial water emergencies", icon: "🏢" },
           ],
         },
         faqs: [

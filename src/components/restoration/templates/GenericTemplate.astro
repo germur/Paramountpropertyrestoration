@@ -21,6 +21,8 @@ import WhyActingFast from "../../WhyActingFast.jsx";
 import WhyEssential from "../../WhyEssential.jsx";
 import EmergencySigns from "../../EmergencySigns.jsx";
 import StormDamages from "../../StormDamages.jsx";
+import WaterSigns from "../../WaterSigns.jsx";
+import ServiceCards from "../../ServiceCards.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -71,14 +73,6 @@ const steps = sub?.steps ?? [
 steps.forEach((s) => {
   if (!s.icon) s.icon = "fa-solid fa-circle-dot";
 });
-
-// POR QUÉ ELEGIRNOS
-const reasons = sub?.reasons ?? [
-  { title: "24/7 Response", text: "Rapid arrival to reduce damage." },
-  { title: "Certified Team", text: "IICRC-certified professionals." },
-  { title: "Insurance Help", text: "We document and coordinate claims." },
-  { title: "Guaranteed Work", text: "Quality workmanship you can trust." },
-];
 
 // LINK BUILDING
 const autoLinks = (group?.subservices ?? [])
@@ -160,6 +154,33 @@ const finalCta = {
   )
 }
 
+{
+  sub?.steps && (
+    <section class="steps container">
+      <h2 class="section__title">Quick Relief – How It Works</h2>
+      <ol class="timeline">
+        {steps.map((s) => (
+          <li class="timeline__step">
+            <div class="timeline__icon">
+              <i class={s.icon} />
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">{s.title}</h3>
+              <p class="timeline__text">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<!-- Water Signs -->
+{sub?.waterSigns && <WaterSigns waterSigns={sub.waterSigns} client:load />}
+
+<!-- Service Cards -->
+{sub?.serviceCards && <ServiceCards serviceCards={sub.serviceCards} client:load />}
+
 <!-- Why Acting Fast -->
 {
   sub?.whyActingFast && (
@@ -215,27 +236,6 @@ const finalCta = {
           ))}
         </ul>
       </div>
-    </section>
-  )
-}
-
-{
-  sub?.steps && (
-    <section class="steps container">
-      <h2 class="section__title">Quick Relief – How It Works</h2>
-      <ol class="timeline">
-        {steps.map((s) => (
-          <li class="timeline__step">
-            <div class="timeline__icon">
-              <i class={s.icon} />
-            </div>
-            <div class="timeline__content">
-              <h3 class="timeline__title">{s.title}</h3>
-              <p class="timeline__text">{s.text}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
     </section>
   )
 }
