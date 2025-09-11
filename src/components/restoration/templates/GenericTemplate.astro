@@ -17,7 +17,10 @@ import MicroBenefits from "../../MicroBenefits.jsx";
 import RegionalCoverage from "../../RegionalCoverage";
 import RestorationCTA from "../../RestorationCTA.jsx";
 import WhatNotToDo from "../../WhatNotToDo.jsx";
+import WhyActingFast from "../../WhyActingFast.jsx";
 import WhyEssential from "../../WhyEssential.jsx";
+import EmergencySigns from "../../EmergencySigns.jsx";
+import StormDamages from "../../StormDamages.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -114,16 +117,18 @@ const finalCta = {
     <h1 class="hero__title">{heroTitle}</h1>
     <p class="hero__desc">{heroDesc}</p>
     <a href="/contact" class="btn btn--primary">{heroCTA}</a>
-    {sub?.hero?.iconRow && (
-      <div class="hero__icon-row">
-        {sub.hero.iconRow.map((item) => (
-          <div class="hero__icon-item">
-            <span class="hero__icon">{item.icon}</span>
-            <span class="hero__icon-text">{item.text}</span>
-          </div>
-        ))}
-      </div>
-    )}
+    {
+      sub?.hero?.iconRow && (
+        <div class="hero__icon-row">
+          {sub.hero.iconRow.map((item) => (
+            <div class="hero__icon-item">
+              <span class="hero__icon">{item.icon}</span>
+              <span class="hero__icon-text">{item.text}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
   </div>
 </section>
 
@@ -152,6 +157,27 @@ const finalCta = {
         ))}
       </ol>
     </section>
+  )
+}
+
+<!-- Why Acting Fast -->
+{
+  sub?.whyActingFast && (
+    <WhyActingFast whyActingFast={sub.whyActingFast} client:load />
+  )
+}
+
+<!-- Emergency Signs -->
+{
+  sub?.emergencySigns && (
+    <EmergencySigns emergencySigns={sub.emergencySigns} client:load />
+  )
+}
+
+<!-- Storm Damages -->
+{
+  sub?.stormDamages && (
+    <StormDamages stormDamages={sub.stormDamages} client:load />
   )
 }
 

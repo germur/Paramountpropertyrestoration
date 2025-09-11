@@ -110,6 +110,15 @@ export const restorationGroups = [
             cta: { label: "Get a Free Estimate", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Mold can begin in 24–48 hours",
+            "Structural weakening of drywall, framing, and flooring",
+            "Electrical hazards from water intrusion",
+            "Higher insurance claim costs if damage spreads",
+          ],
+        },
         faqs: [
           {
             q: "How long does flood cleanup take?",
@@ -242,6 +251,14 @@ export const restorationGroups = [
             cta: { label: "See Warranty", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Moisture spreads through walls and insulation within first 24h",
+            "Mold growth begins within 48h, odors intensify",
+            "Structural damage and costly repairs become likely after 72h+",
+          ],
+        },
         faqs: [
           {
             q: "How do I know if I have a hidden water leak?",
@@ -354,6 +371,15 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Mold forms in 24–48 hours in damp basements",
+            "Structural damage to foundation and framing",
+            "Electrical shock risk from outlets and panels",
+            "Damaged furniture, stored items, and HVAC systems",
+          ],
+        },
         faqs: [
           {
             q: "What causes basement flooding?",
@@ -487,6 +513,15 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Moisture spreads inside ceiling cavities within 24h",
+            "Mold spores begin to grow within 48h",
+            "Structural damage to drywall, beams, insulation after 72h",
+            "Ceiling collapse + electrical hazards after 1 week+",
+          ],
+        },
         faqs: [
           {
             q: "How do I know if ceiling water damage is serious?",
@@ -606,6 +641,15 @@ export const restorationGroups = [
         palette: {
           primary: "#ff9800",
           primaryDark: "#ef6c00",
+        },
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Immediate removal prevents mold, warped floors, electrical hazards (0–24h)",
+            "Moisture spreads to drywall, ceilings, insulation (24–48h)",
+            "Mold colonization + structural weakening (48–72h)",
+            "Collapse risk, toxic mold, costly rebuilds (72h+)",
+          ],
         },
         faqs: [
           {
@@ -736,6 +780,14 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Within 24–48 hours, smoke particles settle deep into porous materials",
+            "Odors become nearly permanent, corroding surfaces",
+            "Health risks escalate with prolonged exposure",
+          ],
+        },
         faqs: [
           {
             q: "Can smoke damage be fully removed?",
@@ -844,6 +896,14 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Soot is acidic—within hours it stains surfaces permanently",
+            "Materials weaken and become harder to restore",
+            "Long-term repair costs increase dramatically",
+          ],
+        },
         faqs: [
           {
             q: "What is soot cleanup?",
@@ -972,6 +1032,14 @@ export const restorationGroups = [
             cta: { label: "See Timeline", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Fire, smoke, soot, and water spread damage quickly",
+            "The sooner action is taken, the less permanent damage occurs",
+            "Delays turn small repairs into major reconstruction",
+          ],
+        },
         faqs: [
           {
             q: "What is fire cleanup?",
@@ -1079,6 +1147,15 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Speed Matters in Fire Emergencies",
+          points: [
+            "Prevents structural collapse",
+            "Stops soot and smoke from embedding deeper into materials",
+            "Protects belongings & furniture from permanent loss",
+            "Reduces insurance claim costs and delays",
+          ],
+        },
         faqs: [
           {
             q: "What should I do immediately after a fire?",
@@ -1192,6 +1269,15 @@ export const restorationGroups = [
             cta: { label: "Get Plan", href: "/contact" },
           },
         ],
+        emergencySigns: {
+          title: "When to Call Immediately",
+          items: [
+            { text: "Persistent musty odor", icon: "🌀" },
+            { text: "Dark spots on walls/ceilings", icon: "🎨" },
+            { text: "Unexplained allergies or breathing issues", icon: "😮‍💨" },
+            { text: "Recent leaks, flooding, or humidity problems", icon: "💧" },
+          ],
+        },
         faqs: [
           {
             q: "Do I really need a mold inspection?",
@@ -1290,6 +1376,15 @@ export const restorationGroups = [
             cta: { label: "Pass Clearance", href: "/contact" },
           },
         ],
+        emergencySigns: {
+          title: "Signs of Black Mold Exposure",
+          items: [
+            { text: "Persistent coughing or sneezing indoors", icon: "🤢" },
+            { text: "Breathing difficulty or chest tightness", icon: "😮‍💨" },
+            { text: "Black or dark-green patches on walls/ceilings", icon: "🖤" },
+            { text: "Musty odor in closed rooms", icon: "🏚️" },
+          ],
+        },
         faqs: [
           {
             q: "Is black mold dangerous?",
@@ -1392,6 +1487,23 @@ export const restorationGroups = [
             cta: { label: "Start Monitoring", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Saves You",
+          points: [
+            "Mold spreads in 24–48 hours if conditions are right",
+            "Prevention is up to 70% cheaper than removal",
+            "Early steps protect insurance eligibility for water-related claims",
+          ],
+        },
+        emergencySigns: {
+          title: "When to Get Mold Prevention",
+          items: [
+            { text: "High humidity homes (Florida climate = mold risk all year)", icon: "💧" },
+            { text: "After storms, leaks, or flooding", icon: "🌀" },
+            { text: "Older homes with poor ventilation", icon: "🏚️" },
+            { text: "Families with asthma or allergy sensitivities", icon: "👨‍👩‍👧" },
+          ],
+        },
         faqs: [
           {
             q: "How can I prevent mold in Florida homes?",
@@ -1500,6 +1612,25 @@ export const restorationGroups = [
             cta: { label: "Next Steps", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Mold grows in 24–48 hours and spreads unseen",
+            "Certain strains (like black mold) release toxic spores",
+            "Early testing = save thousands in future remediation",
+            "Certified reports = stronger insurance & legal documentation",
+          ],
+        },
+        emergencySigns: {
+          title: "Signs You Need Mold Testing",
+          items: [
+            { text: "Musty or damp odor indoors", icon: "☑️" },
+            { text: "Allergy or asthma symptoms at home (but not outdoors)", icon: "☑️" },
+            { text: "Past water damage or recent leak", icon: "☑️" },
+            { text: "Spots/discoloration but unsure if it's mold", icon: "☑️" },
+            { text: "Buying or selling property (inspection requirement)", icon: "☑️" },
+          ],
+        },
         faqs: [
           {
             q: "What's the difference between inspection and testing?",
@@ -1621,6 +1752,23 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Mold begins within 24–48 hours",
+            "Soaked materials cause structural weakening",
+            "Insurance claims get more complex and costly if delayed",
+          ],
+        },
+        stormDamages: {
+          title: "Common Hurricane Damage We Handle",
+          items: [
+            { text: "Roof Leaks & Collapse Risks – Wind and flying debris cause hidden roof damage", icon: "🏚️" },
+            { text: "Flooding & Water Intrusion – Standing water weakens foundations & walls", icon: "💧" },
+            { text: "Fallen Trees & Debris – Storm-force winds scatter debris across property", icon: "🌳" },
+            { text: "Power & Utility Hazards – Downed lines and outages create safety risks", icon: "⚡" },
+          ],
+        },
         faqs: [
           {
             q: "What is hurricane damage restoration?",
@@ -1725,6 +1873,23 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Prevents water intrusion through broken shingles/windows",
+            "Reduces risk of structural weakening",
+            "Minimizes insurance complications with timely documentation",
+          ],
+        },
+        stormDamages: {
+          title: "Common Wind Damage We Handle",
+          items: [
+            { text: "Roof Shingle Loss – Exposed underlayment leads to leaks", icon: "🏚️" },
+            { text: "Broken Windows & Glass – Flying debris causes breakage and safety risks", icon: "🪟" },
+            { text: "Fallen Branches & Debris – Impacts puncture roofs and siding", icon: "🌳" },
+            { text: "Siding & Gutter Damage – High winds loosen or rip away exterior materials", icon: "🧱" },
+          ],
+        },
         faqs: [
           {
             q: "What is wind damage restoration?",
@@ -1827,6 +1992,23 @@ export const restorationGroups = [
             cta: { label: "Restore Access", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Prevents injuries from unstable debris",
+            "Avoids secondary damage to roofs, fences, and vehicles",
+            "Ensures insurance claims process smoothly",
+          ],
+        },
+        stormDamages: {
+          title: "Common Storm Debris & Risks if Ignored",
+          items: [
+            { text: "Fallen trees blocking driveways", icon: "🌳" },
+            { text: "Broken branches damaging roofs", icon: "🪵" },
+            { text: "Shattered siding, shingles, and gutters", icon: "🧱" },
+            { text: "Debris tangled near power lines", icon: "⚡" },
+          ],
+        },
         faqs: [
           {
             q: "What is storm debris removal?",
@@ -1930,6 +2112,23 @@ export const restorationGroups = [
             cta: { label: "Claim Support", href: "/contact" },
           },
         ],
+        whyActingFast: {
+          title: "Why Acting Fast Matters",
+          points: [
+            "Prevents secondary damage (mold, leaks, structural rot)",
+            "Ensures insurance claim success with proper documentation",
+            "Keeps families & businesses safe from hazards",
+          ],
+        },
+        stormDamages: {
+          title: "Common Emergency Storm Damages We Handle",
+          items: [
+            { text: "Collapsed or Damaged Roofs – From wind uplift or falling trees", icon: "🏚️" },
+            { text: "Water Intrusion – Flooding, leaks & soaked interiors", icon: "💧" },
+            { text: "Tree & Debris Impact – Structural risks from branches and projectiles", icon: "🌳" },
+            { text: "Power & Utility Hazards – Downed lines or damaged electrical systems", icon: "🔌" },
+          ],
+        },
         faqs: [
           {
             q: "What is emergency storm repair?",
