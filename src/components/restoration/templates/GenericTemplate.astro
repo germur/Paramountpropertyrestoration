@@ -114,6 +114,16 @@ const finalCta = {
     <h1 class="hero__title">{heroTitle}</h1>
     <p class="hero__desc">{heroDesc}</p>
     <a href="/contact" class="btn btn--primary">{heroCTA}</a>
+    {sub?.hero?.iconRow && (
+      <div class="hero__icon-row">
+        {sub.hero.iconRow.map((item) => (
+          <div class="hero__icon-item">
+            <span class="hero__icon">{item.icon}</span>
+            <span class="hero__icon-text">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    )}
   </div>
 </section>
 

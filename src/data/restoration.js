@@ -50,6 +50,12 @@ export const restorationGroups = [
             "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety. Immediate response across Orlando, Miami, Tampa, and statewide.",
           cta: "Start Flood Extraction Now",
           bg: "/images/FloodDamage.jpg",
+          iconRow: [
+            {icon: "💧", text: "Water Extraction"},
+            {icon: "🌬️", text: "Drying"},
+            {icon: "🧪", text: "Mold Prevention"},
+            {icon: "🛠️", text: "Repair"}
+          ]
         },
         steps: [
           {
@@ -176,6 +182,12 @@ export const restorationGroups = [
             "Whether it's a burst pipe, ceiling leak, or hidden water damage inside your walls, our Florida leak repair specialists act fast to protect your home or business. With 24/7 emergency response and advanced detection tools, we fix leaks before they become costly disasters.",
           cta: "Fix My Leak Now",
           bg: "/images/LeakRepair.jpg",
+          iconRow: [
+            {icon: "💧", text: "Ceilings"},
+            {icon: "🚰", text: "Pipes"},
+            {icon: "🏚️", text: "Walls"},
+            {icon: "🦠", text: "Mold Prevention"}
+          ]
         },
         steps: [
           {
@@ -282,6 +294,12 @@ export const restorationGroups = [
             "Is your basement underwater? Our Florida team provides 24/7 basement flooding cleanup, including pump-out, cavity drying, and mold prevention. We remove water fast, protect your foundation, and restore your property safely. Serving Orlando, Miami, Tampa, and all Florida regions.",
           cta: "Protect Against Mold",
           bg: "/images/BasementFlooding.jpg",
+          iconRow: [
+            {icon: "🪠", text: "Pump-Out"},
+            {icon: "🌬️", text: "Drying"},
+            {icon: "🛡️", text: "Mold Prevention"},
+            {icon: "🧱", text: "Foundation"}
+          ]
         },
         steps: [
           {
@@ -409,6 +427,12 @@ export const restorationGroups = [
             "From small leaks to major ceiling collapses, our Florida ceiling repair teams restore drywall, insulation, and finishes—stopping hidden mold before it spreads. With 24/7 emergency response and licensed specialists, we protect your home or business from water damage and ceiling collapse.",
           cta: "Schedule Ceiling Repair",
           bg: "/images/CeilingWaterDamage.jpg",
+          iconRow: [
+            {icon: "💧", text: "Leaks"},
+            {icon: "🟤", text: "Stains"},
+            {icon: "🪵", text: "Drywall"},
+            {icon: "🦠", text: "Mold"}
+          ]
         },
         steps: [
           {
@@ -513,6 +537,12 @@ export const restorationGroups = [
           description:
             "Flooding, burst pipes, or storm intrusion can overwhelm your home or business in minutes. Our Florida emergency water removal teams respond 24/7 with industrial pumps, vacuums, and drying systems—eliminating standing water before it spreads. Protect your property, prevent mold, and restore safety now.",
           bg: "/images/EmergencyWaterRemoval.jpg",
+          iconRow: [
+            {icon: "🌊", text: "Flood"},
+            {icon: "🚰", text: "Pipes"},
+            {icon: "🌪️", text: "Storms"},
+            {icon: "🏢", text: "Commercial"}
+          ]
         },
         steps: [
           {
@@ -642,6 +672,13 @@ export const restorationGroups = [
             "When smoke invades your property, the damage goes beyond stains and odors—it impacts your health and safety. Our certified Florida restoration teams provide 24/7 smoke cleanup, soot removal, odor elimination, and surface repairs. Restore clean air and peace of mind today.",
           cta: "Request Smoke Damage Help Now",
           bg: "/images/SmokeDamage.jpg",
+          iconRow: [
+            {icon: "🧹", text: "Soot"},
+            {icon: "🌬️", text: "Odors"},
+            {icon: "🛋️", text: "Furniture"},
+            {icon: "🏠", text: "Structure"},
+            {icon: "🩺", text: "Health"}
+          ]
         },
         process: {
           title: "How Our Smoke Damage Process Works",
@@ -744,6 +781,12 @@ export const restorationGroups = [
             "After a fire, soot and smoke residue can spread fast—coating walls, ceilings, furniture, and even air ducts. Our Florida soot cleanup teams respond 24/7 to remove hazardous particles, neutralize odors, and restore your property safely. Protect your health and belongings with certified restoration services.",
           cta: "Request Soot Cleanup Now",
           bg: "/images/SootCleanup.jpg",
+          iconRow: [
+            {icon: "🧹", text: "Cleaning"},
+            {icon: "🏠", text: "Walls & Ceilings"},
+            {icon: "🛋️", text: "Furniture"},
+            {icon: "🌬️", text: "Odor Removal"}
+          ]
         },
         process: {
           title: "Our Soot Cleanup Process",
@@ -866,6 +909,12 @@ export const restorationGroups = [
             "Need urgent fire cleanup in Florida? Our certified crews provide complete fire debris removal, smoke residue cleanup, and soot removal. We act fast to restore safety, eliminate odors, and prepare your home or business for full fire damage repair.",
           cta: "Request Fire Cleanup Now",
           bg: "/images/FireDamageRepair.jpg",
+          iconRow: [
+            {icon: "🧹", text: "Debris"},
+            {icon: "🌬️", text: "Smoke"},
+            {icon: "🪣", text: "Soot"},
+            {icon: "🛡️", text: "Sanitization"}
+          ]
         },
         process: {
           title: "Our Fire Cleanup Process",
@@ -967,6 +1016,12 @@ export const restorationGroups = [
             "When fire strikes, every minute matters. Our emergency fire response team in Florida is on call 24/7 to secure your property, stop damage from spreading, and begin immediate recovery—day, night, weekends, or holidays.",
           cta: "Request Emergency Response Now",
           bg: "/images/EmergencyFireResponse.jpg",
+          iconRow: [
+            {icon: "🔥", text: "Emergency"},
+            {icon: "🛡️", text: "Secure"},
+            {icon: "🧹", text: "Cleanup"},
+            {icon: "🏠", text: "Restore"}
+          ]
         },
         process: {
           title: "Our 24/7 Fire Emergency Process",
@@ -1080,6 +1135,11 @@ export const restorationGroups = [
             "Our certified inspectors uncover hidden mold, leaks, and air risks—so you can breathe safe and avoid costly damage.",
           cta: "Book My Inspection Now",
           bg: "/images/MoldInspection.jpg",
+          iconRow: [
+            {icon: "🫁", text: "Health"},
+            {icon: "🏡", text: "Home"},
+            {icon: "⏳", text: "Prevention"}
+          ]
         },
         process: {
           title: "Our Proven 4-Step Inspection",
@@ -1172,6 +1232,12 @@ export const restorationGroups = [
             "Our certified Florida teams eliminate dangerous black mold, clean the air, and protect your family's health with proven remediation methods.",
           cta: "Get Black Mold Removal Now",
           bg: "/images/BlackMoldRemoval.jpg",
+          iconRow: [
+            {icon: "🫁", text: "Health"},
+            {icon: "🏠", text: "Home"},
+            {icon: "💨", text: "Clean Air"},
+            {icon: "🛡️", text: "Prevention"}
+          ]
         },
         process: {
           title: "Our Black Mold Remediation Process (4 Steps)",
@@ -1268,6 +1334,12 @@ export const restorationGroups = [
             "Our certified Florida specialists protect your property with proven prevention strategies—moisture control, air treatment, and protective barriers.",
           cta: "Protect My Home From Mold",
           bg: "/images/MoldPrevention.jpg",
+          iconRow: [
+            {icon: "🛡️", text: "Prevention"},
+            {icon: "💧", text: "Moisture Control"},
+            {icon: "🌬️", text: "Air Treatment"},
+            {icon: "🏠", text: "Protection"}
+          ]
         },
         process: {
           title: "Our Mold Prevention Process (4 Steps)",
@@ -1365,6 +1437,12 @@ export const restorationGroups = [
             "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
           cta: "Schedule My Mold Test Today",
           bg: "/images/Moldtesting.jpg",
+          iconRow: [
+            {icon: "🔬", text: "Testing"},
+            {icon: "📊", text: "Analysis"},
+            {icon: "🫁", text: "Air Quality"},
+            {icon: "📋", text: "Reports"}
+          ]
         },
         process: {
           title: "How Our Mold Testing Works (5 Steps)",
@@ -1480,6 +1558,12 @@ export const restorationGroups = [
             "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
           cta: "Restore After Hurricane Now",
           bg: "/images/HurricaneDamage.jpg",
+          iconRow: [
+            {icon: "🌪️", text: "Roof"},
+            {icon: "💧", text: "Flood"},
+            {icon: "🧹", text: "Debris"},
+            {icon: "🛠️", text: "Repair"}
+          ]
         },
         process: {
           title: "Our 5-Step Hurricane Restoration Process",
@@ -1583,6 +1667,12 @@ export const restorationGroups = [
             "Strong winds can tear shingles, break windows, and damage property. Our 24/7 emergency response team restores safety and structure fast.",
           cta: "Request Wind Damage Repair Now",
           bg: "/images/WindDamage.jpg",
+          iconRow: [
+            {icon: "🏚️", text: "Roof"},
+            {icon: "🪟", text: "Windows"},
+            {icon: "🧱", text: "Siding"},
+            {icon: "🌳", text: "Debris"}
+          ]
         },
         process: {
           title: "4-Step Wind Damage Process",
@@ -1679,6 +1769,12 @@ export const restorationGroups = [
             "Safe and fast cleanup of fallen trees, branches, and storm debris.",
           cta: "Request Debris Cleanup Now",
           bg: "/images/StormDebrisRemoval.jpg",
+          iconRow: [
+            {icon: "🌳", text: "Trees"},
+            {icon: "🪵", text: "Branches"},
+            {icon: "🏗️", text: "Heavy Equipment"},
+            {icon: "♻️", text: "Disposal"}
+          ]
         },
         process: {
           title: "Our Cleanup Process (4 Steps)",
@@ -1776,6 +1872,12 @@ export const restorationGroups = [
             "When storms strike, every minute matters. Our emergency crews secure, repair, and restore homes and businesses across Central, Tampa Bay & South Florida.",
           cta: "Request Emergency Storm Repair",
           bg: "/images/EmergencyStormRepair.jpg",
+          iconRow: [
+            {icon: "⚡", text: "Emergency"},
+            {icon: "🏚️", text: "Roof Repair"},
+            {icon: "💧", text: "Water Control"},
+            {icon: "🛠️", text: "Restoration"}
+          ]
         },
         process: {
           title: "4-Step Emergency Repair Process",
@@ -1887,6 +1989,12 @@ export const restorationGroups = [
             "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
           cta: "Start Water Mitigation Now",
           bg: "/images/EmergencyWaterRemoval.jpg",
+          iconRow: [
+            {icon: "💧", text: "Water Extraction"},
+            {icon: "🌬️", text: "Drying"},
+            {icon: "🛡️", text: "Mold Prevention"},
+            {icon: "🏠", text: "Property Protection"}
+          ]
         },
         whyEssential: {
           title: "Why Water Mitigation Is Essential",
@@ -2015,6 +2123,12 @@ export const restorationGroups = [
             "After a fire, the damage doesn't end when the flames are out. Smoke, soot, and structural instability keep spreading harm. Fire damage mitigation focuses on securing, containing, and stabilizing your property to prevent further loss—while restoration repairs and rebuilds later. Mitigation is the bridge between emergency response and full recovery.",
           cta: "Secure My Property Now",
           bg: "/images/EmergencyFireResponse.jpg",
+          iconRow: [
+            {icon: "🛡️", text: "Secure"},
+            {icon: "🧹", text: "Contain"},
+            {icon: "🌬️", text: "Ventilate"},
+            {icon: "🏠", text: "Stabilize"}
+          ]
         },
         whyEssential: {
           title: "Why Fire Mitigation Is Essential",
@@ -2151,6 +2265,12 @@ export const restorationGroups = [
             "Mold mitigation is about prevention and containment—stopping mold from spreading, controlling humidity, and protecting your property until full remediation can safely remove it. Unlike remediation, which eliminates colonies, mitigation is the first line of defense against contamination and health risks.",
           cta: "Stop Mold Spread Today",
           bg: "/images/MoldPrevention.jpg",
+          iconRow: [
+            {icon: "🛡️", text: "Contain"},
+            {icon: "💧", text: "Control Moisture"},
+            {icon: "🌬️", text: "Air Quality"},
+            {icon: "🫁", text: "Health Protection"}
+          ]
         },
         whyEssential: {
           title: "Why Mold Mitigation Is Essential",
@@ -2286,6 +2406,12 @@ export const restorationGroups = [
             "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact. Unlike restoration, which repairs and rebuilds, mitigation prevents additional loss while you prepare for full recovery.",
           cta: "Request Storm Mitigation Now",
           bg: "/images/EmergencyStormRepair.jpg",
+          iconRow: [
+            {icon: "🛡️", text: "Secure"},
+            {icon: "☔", text: "Waterproof"},
+            {icon: "🧹", text: "Debris Removal"},
+            {icon: "🏠", text: "Stabilize"}
+          ]
         },
         whyEssential: {
           title: "Why Storm Mitigation Is Essential",
