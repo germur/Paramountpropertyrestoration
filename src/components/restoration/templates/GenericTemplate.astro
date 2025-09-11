@@ -23,6 +23,7 @@ import EmergencySigns from "../../EmergencySigns.jsx";
 import StormDamages from "../../StormDamages.jsx";
 import WaterSigns from "../../WaterSigns.jsx";
 import ServiceCards from "../../ServiceCards.jsx";
+import EmergencyIncludes from "../../EmergencyIncludes.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -185,6 +186,13 @@ const finalCta = {
 {
   sub?.whyActingFast && (
     <WhyActingFast whyActingFast={sub.whyActingFast} client:load />
+  )
+}
+
+<!-- Emergency Includes -->
+{
+  sub?.emergencyIncludes && (
+    <EmergencyIncludes emergencyIncludes={sub.emergencyIncludes} client:load />
   )
 }
 

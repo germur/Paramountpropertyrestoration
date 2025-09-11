@@ -51,11 +51,11 @@ export const restorationGroups = [
           cta: "Start Flood Extraction Now",
           bg: "/images/FloodDamage.jpg",
           iconRow: [
-            {icon: "💧", text: "Water Extraction"},
-            {icon: "🌬️", text: "Drying"},
-            {icon: "🧪", text: "Mold Prevention"},
-            {icon: "🛠️", text: "Repair"}
-          ]
+            { icon: "💧", text: "Water Extraction" },
+            { icon: "🌬️", text: "Drying" },
+            { icon: "🧪", text: "Mold Prevention" },
+            { icon: "🛠️", text: "Repair" },
+          ],
         },
         process: {
           title: "Quick Relief – How It Works",
@@ -233,11 +233,11 @@ export const restorationGroups = [
           cta: "Fix My Leak Now",
           bg: "/images/LeakRepair.jpg",
           iconRow: [
-            {icon: "💧", text: "Ceilings"},
-            {icon: "🚰", text: "Pipes"},
-            {icon: "🏚️", text: "Walls"},
-            {icon: "🦠", text: "Mold Prevention"}
-          ]
+            { icon: "💧", text: "Ceilings" },
+            { icon: "🚰", text: "Pipes" },
+            { icon: "🏚️", text: "Walls" },
+            { icon: "🦠", text: "Mold Prevention" },
+          ],
         },
         process: {
           title: "Our Leak Repair Process",
@@ -389,11 +389,11 @@ export const restorationGroups = [
           cta: "Protect Against Mold",
           bg: "/images/BasementFlooding.jpg",
           iconRow: [
-            {icon: "🪠", text: "Pump-Out"},
-            {icon: "🌬️", text: "Drying"},
-            {icon: "🛡️", text: "Mold Prevention"},
-            {icon: "🧱", text: "Foundation"}
-          ]
+            { icon: "🪠", text: "Pump-Out" },
+            { icon: "🌬️", text: "Drying" },
+            { icon: "🛡️", text: "Mold Prevention" },
+            { icon: "🧱", text: "Foundation" },
+          ],
         },
         process: {
           title: "Quick Relief – How It Works",
@@ -572,11 +572,11 @@ export const restorationGroups = [
           cta: "Schedule Ceiling Repair",
           bg: "/images/CeilingWaterDamage.jpg",
           iconRow: [
-            {icon: "💧", text: "Leaks"},
-            {icon: "🟤", text: "Stains"},
-            {icon: "🪵", text: "Drywall"},
-            {icon: "🦠", text: "Mold"}
-          ]
+            { icon: "💧", text: "Leaks" },
+            { icon: "🟤", text: "Stains" },
+            { icon: "🪵", text: "Drywall" },
+            { icon: "🦠", text: "Mold" },
+          ],
         },
         process: {
           title: "Our Ceiling Repair Process",
@@ -733,11 +733,11 @@ export const restorationGroups = [
             "Flooding, burst pipes, or storm intrusion can overwhelm your home or business in minutes. Our Florida emergency water removal teams respond 24/7 with industrial pumps, vacuums, and drying systems—eliminating standing water before it spreads. Protect your property, prevent mold, and restore safety now.",
           bg: "/images/EmergencyWaterRemoval.jpg",
           iconRow: [
-            {icon: "🌊", text: "Flood"},
-            {icon: "🚰", text: "Pipes"},
-            {icon: "🌪️", text: "Storms"},
-            {icon: "🏢", text: "Commercial"}
-          ]
+            { icon: "🌊", text: "Flood" },
+            { icon: "🚰", text: "Pipes" },
+            { icon: "🌪️", text: "Storms" },
+            { icon: "🏢", text: "Commercial" },
+          ],
         },
         process: {
           title: "Our Emergency Water Removal Process",
@@ -889,12 +889,12 @@ export const restorationGroups = [
           cta: "Request Smoke Damage Help Now",
           bg: "/images/SmokeDamage.jpg",
           iconRow: [
-            {icon: "🧹", text: "Soot"},
-            {icon: "🌬️", text: "Odors"},
-            {icon: "🛋️", text: "Furniture"},
-            {icon: "🏠", text: "Structure"},
-            {icon: "🩺", text: "Health"}
-          ]
+            { icon: "🧹", text: "Soot" },
+            { icon: "🌬️", text: "Odors" },
+            { icon: "🛋️", text: "Furniture" },
+            { icon: "🏠", text: "Structure" },
+            { icon: "🩺", text: "Health" },
+          ],
         },
         process: {
           title: "How Our Smoke Damage Process Works",
@@ -960,6 +960,54 @@ export const restorationGroups = [
             "Health risks escalate with prolonged exposure",
           ],
         },
+        emergencySigns: {
+          title: "Common Signs of Smoke Damage",
+          items: [
+            { text: "Blackened walls & ceilings", icon: "⚫" },
+            { text: "Persistent smoke odors", icon: "👃" },
+            { text: "Stained furniture or fabrics", icon: "🛋️" },
+            { text: "Yellowed paint & bubbling finishes", icon: "🎨" },
+            {
+              text: "Health issues: headaches, allergies, breathing difficulty",
+              icon: "🤒",
+            },
+          ],
+        },
+        serviceCards: {
+          title: "Specialized Smoke Damage Services",
+          items: [
+            {
+              icon: "🧹",
+              title: "Soot & Residue Removal",
+              text: "Remove acidic soot before it corrodes surfaces.",
+              cta: { text: "Remove Soot Now", href: "/contact" },
+            },
+            {
+              icon: "🌬️",
+              title: "Odor Elimination",
+              text: "Advanced deodorization with ozone & hydroxyl machines.",
+              cta: { text: "Eliminate Odors", href: "/contact" },
+            },
+            {
+              icon: "🛋️",
+              title: "Furniture & Fabric Restoration",
+              text: "Upholstery, carpets & curtains saved from smoke absorption.",
+              cta: { text: "Restore Furniture", href: "/contact" },
+            },
+            {
+              icon: "🏠",
+              title: "Structural Cleaning",
+              text: "Ceilings, walls & HVAC fully decontaminated.",
+              cta: { text: "Clean Structure", href: "/contact" },
+            },
+            {
+              icon: "🩺",
+              title: "Health & Safety Controls",
+              text: "Protect indoor air quality for families & employees.",
+              cta: { text: "Protect Health", href: "/contact" },
+            },
+          ],
+        },
         faqs: [
           {
             q: "Can smoke damage be fully removed?",
@@ -1006,11 +1054,11 @@ export const restorationGroups = [
           cta: "Request Soot Cleanup Now",
           bg: "/images/SootCleanup.jpg",
           iconRow: [
-            {icon: "🧹", text: "Cleaning"},
-            {icon: "🏠", text: "Walls & Ceilings"},
-            {icon: "🛋️", text: "Furniture"},
-            {icon: "🌬️", text: "Odor Removal"}
-          ]
+            { icon: "🧹", text: "Cleaning" },
+            { icon: "🏠", text: "Walls & Ceilings" },
+            { icon: "🛋️", text: "Furniture" },
+            { icon: "🌬️", text: "Odor Removal" },
+          ],
         },
         process: {
           title: "Our Soot Cleanup Process",
@@ -1076,6 +1124,21 @@ export const restorationGroups = [
             "Long-term repair costs increase dramatically",
           ],
         },
+        emergencySigns: {
+          title: "Risks & Symptoms of Soot Damage",
+          items: [
+            {
+              text: "Black stains on walls, ceilings, or furniture",
+              icon: "⚫",
+            },
+            { text: "Persistent smoke odors that won't fade", icon: "👃" },
+            {
+              text: "Respiratory irritation from airborne soot particles",
+              icon: "🫁",
+            },
+            { text: "Corrosion of electronics and appliances", icon: "⚡" },
+          ],
+        },
         faqs: [
           {
             q: "What is soot cleanup?",
@@ -1113,9 +1176,38 @@ export const restorationGroups = [
           "Don't ignore smoke odors—they signal hidden contamination.",
           "Don't delay cleanup—acidic soot worsens damage every hour.",
         ],
+        serviceCards: {
+          title: "What We Do (Specialized Services)",
+          items: [
+            {
+              icon: "🏠",
+              title: "Wall & Ceiling Soot Removal",
+              text: "Clean stains safely without damaging paint or drywall.",
+              cta: { text: "Clean My Walls Today", href: "/contact" },
+            },
+            {
+              icon: "🛋️",
+              title: "Furniture & Upholstery Cleanup",
+              text: "Restore salvageable sofas, chairs & fabrics.",
+              cta: { text: "Save My Furniture", href: "/contact" },
+            },
+            {
+              icon: "🌬️",
+              title: "Air Duct & Vent Cleaning",
+              text: "Remove hidden soot and restore safe indoor air.",
+              cta: { text: "Clean My Air Ducts", href: "/contact" },
+            },
+            {
+              icon: "🫧",
+              title: "Odor Control Solutions",
+              text: "Advanced ozone & hydroxyl treatments to neutralize smells.",
+              cta: { text: "Remove Smoke Odor Now", href: "/contact" },
+            },
+          ],
+        },
         whyChooseUs: [
           "Certified Florida soot cleanup specialists",
-          "Eco-friendly, safe methods (no harsh chemicals)", 
+          "Eco-friendly, safe methods (no harsh chemicals)",
           "End-to-end service: assess → clean → restore",
           "24/7 emergency response statewide",
         ],
@@ -1142,11 +1234,11 @@ export const restorationGroups = [
           cta: "Request Fire Cleanup Now",
           bg: "/images/FireDamageRepair.jpg",
           iconRow: [
-            {icon: "🧹", text: "Debris"},
-            {icon: "🌬️", text: "Smoke"},
-            {icon: "🪣", text: "Soot"},
-            {icon: "🛡️", text: "Sanitization"}
-          ]
+            { icon: "🧹", text: "Debris" },
+            { icon: "🌬️", text: "Smoke" },
+            { icon: "🪣", text: "Soot" },
+            { icon: "🛡️", text: "Sanitization" },
+          ],
         },
         process: {
           title: "Our Fire Cleanup Process",
@@ -1212,6 +1304,18 @@ export const restorationGroups = [
             "Delays turn small repairs into major reconstruction",
           ],
         },
+        emergencySigns: {
+          title: "Common Problems After a Fire",
+          items: [
+            {
+              text: "Black soot stains on walls, ceilings, and furniture",
+              icon: "⚫",
+            },
+            { text: "Persistent smoke odor embedded in fabrics", icon: "👃" },
+            { text: "Corrosion of electronics and appliances", icon: "⚡" },
+            { text: "Health issues from airborne fire particles", icon: "🫁" },
+          ],
+        },
         faqs: [
           {
             q: "What is fire cleanup?",
@@ -1230,6 +1334,35 @@ export const restorationGroups = [
             a: "Most homeowners' insurance policies cover fire cleanup services. We help with full documentation.",
           },
         ],
+        serviceCards: {
+          title: "Specialized Fire Cleanup Services",
+          items: [
+            {
+              icon: "🗑️",
+              title: "Debris & Ash Removal",
+              text: "Clear fire remains safely.",
+              cta: { text: "Clear My Property", href: "/contact" },
+            },
+            {
+              icon: "🌬️",
+              title: "Smoke Residue Cleanup",
+              text: "Remove smoke stains and particles.",
+              cta: { text: "Remove Smoke Residue", href: "/contact" },
+            },
+            {
+              icon: "🧹",
+              title: "Soot Removal",
+              text: "Deep cleaning for walls, ceilings, and furniture.",
+              cta: { text: "Clean My Home", href: "/contact" },
+            },
+            {
+              icon: "💨",
+              title: "Odor Elimination & Air Quality Control",
+              text: "HEPA filtration, ozone & hydroxyl machines.",
+              cta: { text: "Remove Fire Odor", href: "/contact" },
+            },
+          ],
+        },
         whyChooseUs: [
           "Complete fire cleanup services in Florida",
           "Certified crews with HEPA filtration & safe chemicals",
@@ -1257,11 +1390,11 @@ export const restorationGroups = [
           cta: "Request Emergency Response Now",
           bg: "/images/EmergencyFireResponse.jpg",
           iconRow: [
-            {icon: "🔥", text: "Emergency"},
-            {icon: "🛡️", text: "Secure"},
-            {icon: "🧹", text: "Cleanup"},
-            {icon: "🏠", text: "Restore"}
-          ]
+            { icon: "🔥", text: "Emergency" },
+            { icon: "🛡️", text: "Secure" },
+            { icon: "🧹", text: "Cleanup" },
+            { icon: "🏠", text: "Restore" },
+          ],
         },
         process: {
           title: "Our 24/7 Fire Emergency Process",
@@ -1328,6 +1461,16 @@ export const restorationGroups = [
             "Reduces insurance claim costs and delays",
           ],
         },
+        emergencyIncludes: {
+          title: "What Our Emergency Fire Response Includes",
+          items: [
+            { title: "Immediate Arrival", text: "Crews on-site within hours, not days." },
+            { title: "Property Securing", text: "Boarding windows, tarping roofs, stabilizing walls." },
+            { title: "Debris Removal", text: "Safe disposal of fire residue and hazardous materials." },
+            { title: "Water Extraction", text: "Remove hose water to prevent mold & structural issues." },
+            { title: "Initial Smoke & Odor Control", text: "HEPA scrubbers and deodorization for safety." },
+          ],
+        },
         faqs: [
           {
             q: "What should I do immediately after a fire?",
@@ -1347,10 +1490,10 @@ export const restorationGroups = [
           },
         ],
         whyChooseUs: [
-          "24/7 emergency response across Florida",
-          "Expert board-up, tarping & security solutions",
-          "Advanced smoke & odor containment systems",
-          "Trusted by homeowners & businesses statewide",
+          "Crews available 24/7, weekends & holidays",
+          "Full-service: from emergency cleanup to complete restoration",
+          "Licensed, insured, experienced in residential & commercial fire recovery",
+          "Insurance claim assistance from the first call",
         ],
       },
     ],
@@ -1385,10 +1528,10 @@ export const restorationGroups = [
           cta: "Book My Inspection Now",
           bg: "/images/MoldInspection.jpg",
           iconRow: [
-            {icon: "🫁", text: "Health"},
-            {icon: "🏡", text: "Home"},
-            {icon: "⏳", text: "Prevention"}
-          ]
+            { icon: "🫁", text: "Health" },
+            { icon: "🏡", text: "Home" },
+            { icon: "⏳", text: "Prevention" },
+          ],
         },
         process: {
           title: "Our Proven 4-Step Inspection",
@@ -1447,7 +1590,10 @@ export const restorationGroups = [
             { text: "Persistent musty odor", icon: "🌀" },
             { text: "Dark spots on walls/ceilings", icon: "🎨" },
             { text: "Unexplained allergies or breathing issues", icon: "😮‍💨" },
-            { text: "Recent leaks, flooding, or humidity problems", icon: "💧" },
+            {
+              text: "Recent leaks, flooding, or humidity problems",
+              icon: "💧",
+            },
           ],
         },
         faqs: [
@@ -1491,11 +1637,11 @@ export const restorationGroups = [
           cta: "Get Black Mold Removal Now",
           bg: "/images/BlackMoldRemoval.jpg",
           iconRow: [
-            {icon: "🫁", text: "Health"},
-            {icon: "🏠", text: "Home"},
-            {icon: "💨", text: "Clean Air"},
-            {icon: "🛡️", text: "Prevention"}
-          ]
+            { icon: "🫁", text: "Health" },
+            { icon: "🏠", text: "Home" },
+            { icon: "💨", text: "Clean Air" },
+            { icon: "🛡️", text: "Prevention" },
+          ],
         },
         process: {
           title: "Our Black Mold Remediation Process (4 Steps)",
@@ -1553,7 +1699,10 @@ export const restorationGroups = [
           items: [
             { text: "Persistent coughing or sneezing indoors", icon: "🤢" },
             { text: "Breathing difficulty or chest tightness", icon: "😮‍💨" },
-            { text: "Black or dark-green patches on walls/ceilings", icon: "🖤" },
+            {
+              text: "Black or dark-green patches on walls/ceilings",
+              icon: "🖤",
+            },
             { text: "Musty odor in closed rooms", icon: "🏚️" },
           ],
         },
@@ -1602,11 +1751,11 @@ export const restorationGroups = [
           cta: "Protect My Home From Mold",
           bg: "/images/MoldPrevention.jpg",
           iconRow: [
-            {icon: "🛡️", text: "Prevention"},
-            {icon: "💧", text: "Moisture Control"},
-            {icon: "🌬️", text: "Air Treatment"},
-            {icon: "🏠", text: "Protection"}
-          ]
+            { icon: "🛡️", text: "Prevention" },
+            { icon: "💧", text: "Moisture Control" },
+            { icon: "🌬️", text: "Air Treatment" },
+            { icon: "🏠", text: "Protection" },
+          ],
         },
         process: {
           title: "Our Mold Prevention Process (4 Steps)",
@@ -1670,10 +1819,16 @@ export const restorationGroups = [
         emergencySigns: {
           title: "When to Get Mold Prevention",
           items: [
-            { text: "High humidity homes (Florida climate = mold risk all year)", icon: "💧" },
+            {
+              text: "High humidity homes (Florida climate = mold risk all year)",
+              icon: "💧",
+            },
             { text: "After storms, leaks, or flooding", icon: "🌀" },
             { text: "Older homes with poor ventilation", icon: "🏚️" },
-            { text: "Families with asthma or allergy sensitivities", icon: "👨‍👩‍👧" },
+            {
+              text: "Families with asthma or allergy sensitivities",
+              icon: "👨‍👩‍👧",
+            },
           ],
         },
         faqs: [
@@ -1722,11 +1877,11 @@ export const restorationGroups = [
           cta: "Schedule My Mold Test Today",
           bg: "/images/Moldtesting.jpg",
           iconRow: [
-            {icon: "🔬", text: "Testing"},
-            {icon: "📊", text: "Analysis"},
-            {icon: "🫁", text: "Air Quality"},
-            {icon: "📋", text: "Reports"}
-          ]
+            { icon: "🔬", text: "Testing" },
+            { icon: "📊", text: "Analysis" },
+            { icon: "🫁", text: "Air Quality" },
+            { icon: "📋", text: "Reports" },
+          ],
         },
         process: {
           title: "How Our Mold Testing Works (5 Steps)",
@@ -1797,10 +1952,16 @@ export const restorationGroups = [
           title: "Signs You Need Mold Testing",
           items: [
             { text: "Musty or damp odor indoors", icon: "☑️" },
-            { text: "Allergy or asthma symptoms at home (but not outdoors)", icon: "☑️" },
+            {
+              text: "Allergy or asthma symptoms at home (but not outdoors)",
+              icon: "☑️",
+            },
             { text: "Past water damage or recent leak", icon: "☑️" },
             { text: "Spots/discoloration but unsure if it's mold", icon: "☑️" },
-            { text: "Buying or selling property (inspection requirement)", icon: "☑️" },
+            {
+              text: "Buying or selling property (inspection requirement)",
+              icon: "☑️",
+            },
           ],
         },
         faqs: [
@@ -1862,11 +2023,11 @@ export const restorationGroups = [
           cta: "Restore After Hurricane Now",
           bg: "/images/HurricaneDamage.jpg",
           iconRow: [
-            {icon: "🌪️", text: "Roof"},
-            {icon: "💧", text: "Flood"},
-            {icon: "🧹", text: "Debris"},
-            {icon: "🛠️", text: "Repair"}
-          ]
+            { icon: "🌪️", text: "Roof" },
+            { icon: "💧", text: "Flood" },
+            { icon: "🧹", text: "Debris" },
+            { icon: "🛠️", text: "Repair" },
+          ],
         },
         process: {
           title: "Our 5-Step Hurricane Restoration Process",
@@ -1935,10 +2096,22 @@ export const restorationGroups = [
         stormDamages: {
           title: "Common Hurricane Damage We Handle",
           items: [
-            { text: "Roof Leaks & Collapse Risks – Wind and flying debris cause hidden roof damage", icon: "🏚️" },
-            { text: "Flooding & Water Intrusion – Standing water weakens foundations & walls", icon: "💧" },
-            { text: "Fallen Trees & Debris – Storm-force winds scatter debris across property", icon: "🌳" },
-            { text: "Power & Utility Hazards – Downed lines and outages create safety risks", icon: "⚡" },
+            {
+              text: "Roof Leaks & Collapse Risks – Wind and flying debris cause hidden roof damage",
+              icon: "🏚️",
+            },
+            {
+              text: "Flooding & Water Intrusion – Standing water weakens foundations & walls",
+              icon: "💧",
+            },
+            {
+              text: "Fallen Trees & Debris – Storm-force winds scatter debris across property",
+              icon: "🌳",
+            },
+            {
+              text: "Power & Utility Hazards – Downed lines and outages create safety risks",
+              icon: "⚡",
+            },
           ],
         },
         faqs: [
@@ -1988,11 +2161,11 @@ export const restorationGroups = [
           cta: "Request Wind Damage Repair Now",
           bg: "/images/WindDamage.jpg",
           iconRow: [
-            {icon: "🏚️", text: "Roof"},
-            {icon: "🪟", text: "Windows"},
-            {icon: "🧱", text: "Siding"},
-            {icon: "🌳", text: "Debris"}
-          ]
+            { icon: "🏚️", text: "Roof" },
+            { icon: "🪟", text: "Windows" },
+            { icon: "🧱", text: "Siding" },
+            { icon: "🌳", text: "Debris" },
+          ],
         },
         process: {
           title: "4-Step Wind Damage Process",
@@ -2056,10 +2229,22 @@ export const restorationGroups = [
         stormDamages: {
           title: "Common Wind Damage We Handle",
           items: [
-            { text: "Roof Shingle Loss – Exposed underlayment leads to leaks", icon: "🏚️" },
-            { text: "Broken Windows & Glass – Flying debris causes breakage and safety risks", icon: "🪟" },
-            { text: "Fallen Branches & Debris – Impacts puncture roofs and siding", icon: "🌳" },
-            { text: "Siding & Gutter Damage – High winds loosen or rip away exterior materials", icon: "🧱" },
+            {
+              text: "Roof Shingle Loss – Exposed underlayment leads to leaks",
+              icon: "🏚️",
+            },
+            {
+              text: "Broken Windows & Glass – Flying debris causes breakage and safety risks",
+              icon: "🪟",
+            },
+            {
+              text: "Fallen Branches & Debris – Impacts puncture roofs and siding",
+              icon: "🌳",
+            },
+            {
+              text: "Siding & Gutter Damage – High winds loosen or rip away exterior materials",
+              icon: "🧱",
+            },
           ],
         },
         faqs: [
@@ -2107,11 +2292,11 @@ export const restorationGroups = [
           cta: "Request Debris Cleanup Now",
           bg: "/images/StormDebrisRemoval.jpg",
           iconRow: [
-            {icon: "🌳", text: "Trees"},
-            {icon: "🪵", text: "Branches"},
-            {icon: "🏗️", text: "Heavy Equipment"},
-            {icon: "♻️", text: "Disposal"}
-          ]
+            { icon: "🌳", text: "Trees" },
+            { icon: "🪵", text: "Branches" },
+            { icon: "🏗️", text: "Heavy Equipment" },
+            { icon: "♻️", text: "Disposal" },
+          ],
         },
         process: {
           title: "Our Cleanup Process (4 Steps)",
@@ -2227,11 +2412,11 @@ export const restorationGroups = [
           cta: "Request Emergency Storm Repair",
           bg: "/images/EmergencyStormRepair.jpg",
           iconRow: [
-            {icon: "⚡", text: "Emergency"},
-            {icon: "🏚️", text: "Roof Repair"},
-            {icon: "💧", text: "Water Control"},
-            {icon: "🛠️", text: "Restoration"}
-          ]
+            { icon: "⚡", text: "Emergency" },
+            { icon: "🏚️", text: "Roof Repair" },
+            { icon: "💧", text: "Water Control" },
+            { icon: "🛠️", text: "Restoration" },
+          ],
         },
         process: {
           title: "4-Step Emergency Repair Process",
@@ -2295,10 +2480,22 @@ export const restorationGroups = [
         stormDamages: {
           title: "Common Emergency Storm Damages We Handle",
           items: [
-            { text: "Collapsed or Damaged Roofs – From wind uplift or falling trees", icon: "🏚️" },
-            { text: "Water Intrusion – Flooding, leaks & soaked interiors", icon: "💧" },
-            { text: "Tree & Debris Impact – Structural risks from branches and projectiles", icon: "🌳" },
-            { text: "Power & Utility Hazards – Downed lines or damaged electrical systems", icon: "🔌" },
+            {
+              text: "Collapsed or Damaged Roofs – From wind uplift or falling trees",
+              icon: "🏚️",
+            },
+            {
+              text: "Water Intrusion – Flooding, leaks & soaked interiors",
+              icon: "💧",
+            },
+            {
+              text: "Tree & Debris Impact – Structural risks from branches and projectiles",
+              icon: "🌳",
+            },
+            {
+              text: "Power & Utility Hazards – Downed lines or damaged electrical systems",
+              icon: "🔌",
+            },
           ],
         },
         faqs: [
@@ -2361,11 +2558,11 @@ export const restorationGroups = [
           cta: "Start Water Mitigation Now",
           bg: "/images/EmergencyWaterRemoval.jpg",
           iconRow: [
-            {icon: "💧", text: "Water Extraction"},
-            {icon: "🌬️", text: "Drying"},
-            {icon: "🛡️", text: "Mold Prevention"},
-            {icon: "🏠", text: "Property Protection"}
-          ]
+            { icon: "💧", text: "Water Extraction" },
+            { icon: "🌬️", text: "Drying" },
+            { icon: "🛡️", text: "Mold Prevention" },
+            { icon: "🏠", text: "Property Protection" },
+          ],
         },
         whyEssential: {
           title: "Why Water Mitigation Is Essential",
@@ -2495,11 +2692,11 @@ export const restorationGroups = [
           cta: "Secure My Property Now",
           bg: "/images/EmergencyFireResponse.jpg",
           iconRow: [
-            {icon: "🛡️", text: "Secure"},
-            {icon: "🧹", text: "Contain"},
-            {icon: "🌬️", text: "Ventilate"},
-            {icon: "🏠", text: "Stabilize"}
-          ]
+            { icon: "🛡️", text: "Secure" },
+            { icon: "🧹", text: "Contain" },
+            { icon: "🌬️", text: "Ventilate" },
+            { icon: "🏠", text: "Stabilize" },
+          ],
         },
         whyEssential: {
           title: "Why Fire Mitigation Is Essential",
@@ -2637,11 +2834,11 @@ export const restorationGroups = [
           cta: "Stop Mold Spread Today",
           bg: "/images/MoldPrevention.jpg",
           iconRow: [
-            {icon: "🛡️", text: "Contain"},
-            {icon: "💧", text: "Control Moisture"},
-            {icon: "🌬️", text: "Air Quality"},
-            {icon: "🫁", text: "Health Protection"}
-          ]
+            { icon: "🛡️", text: "Contain" },
+            { icon: "💧", text: "Control Moisture" },
+            { icon: "🌬️", text: "Air Quality" },
+            { icon: "🫁", text: "Health Protection" },
+          ],
         },
         whyEssential: {
           title: "Why Mold Mitigation Is Essential",
@@ -2778,11 +2975,11 @@ export const restorationGroups = [
           cta: "Request Storm Mitigation Now",
           bg: "/images/EmergencyStormRepair.jpg",
           iconRow: [
-            {icon: "🛡️", text: "Secure"},
-            {icon: "☔", text: "Waterproof"},
-            {icon: "🧹", text: "Debris Removal"},
-            {icon: "🏠", text: "Stabilize"}
-          ]
+            { icon: "🛡️", text: "Secure" },
+            { icon: "☔", text: "Waterproof" },
+            { icon: "🧹", text: "Debris Removal" },
+            { icon: "🏠", text: "Stabilize" },
+          ],
         },
         whyEssential: {
           title: "Why Storm Mitigation Is Essential",
