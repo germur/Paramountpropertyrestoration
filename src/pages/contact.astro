@@ -6,26 +6,65 @@ import FAQ from "../components/AcordeonServices";
 ---
 
 <BaseLayout
-  title="Contact 1GC - Schedule Your Free Quote Today"
-  description="Reach out to licensed remodeling contractors in Florida. Fast estimates, friendly service."
+  title="Contact Paramount Property Restoration - Emergency Help & Free Quotes"
+  description="Contact Florida's complete property partner for 24/7 emergency restoration or professional remodeling. Licensed, insured, rapid response guaranteed."
 >
+  <!-- EMERGENCY ALERT BAR -->
+  <div class="emergency-alert">
+    <div class="emergency-content">
+      <div class="emergency-icon">🚨</div>
+      <div class="emergency-text">
+        <strong>PROPERTY EMERGENCY?</strong> Don't wait - every minute counts!
+      </div>
+      <a href="tel:+17866022217" class="emergency-btn">
+        Call Now: (786) 602-2217
+      </a>
+    </div>
+  </div>
+
   <section class="contact-hero">
     <div class="hero-content">
-      <h1>Contact Us</h1>
+      <h1>Contact Paramount Property Restoration</h1>
       <p class="hero-description">
-        Let's discuss your project. Get a free, no-obligation quote and expert
-        advice.
+        Emergency restoration response or expert remodeling consultation - we're here to help with all your property needs.
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <!-- DUAL CTA SECTION -->
+      <div class="dual-cta-section">
+        <div class="emergency-cta">
+          <div class="cta-icon">🚨</div>
+          <h3>Emergency Restoration</h3>
+          <p>Water, fire, mold, or storm damage? We respond 24/7</p>
+          <div class="emergency-actions">
+            <a href="tel:+17866022217" class="btn btn-emergency">
+              <i class="fas fa-phone"></i> Call: (786) 602-2217
+            </a>
+            <p class="response-time">⚡ 30-minute response time</p>
+          </div>
+        </div>
+
+        <div class="remodeling-cta">
+          <div class="cta-icon">🔨</div>
+          <h3>Remodeling & Construction</h3>
+          <p>Planning a renovation? Get your free project estimate</p>
+          <div class="remodeling-actions">
+            <a href="#contact-form" class="btn btn-remodeling">
+              <i class="fas fa-calculator"></i> Get Free Estimate
+            </a>
+            <p class="response-time">📅 Same-day quote response</p>
+          </div>
+        </div>
+      </div>
+
       <div class="contact-layout">
-        <div class="contact-form-section">
+        <div class="contact-form-section" id="contact-form">
           <div class="form-header">
             <h2>Send Us a Message</h2>
-            <p>Fill out the form and we'll get back to you within 24 hours.</p>
+            <p>Tell us about your project or emergency - we'll get back to you within 2 hours.</p>
           </div>
           <ContactForm client:load />
         </div>
@@ -34,25 +73,37 @@ import FAQ from "../components/AcordeonServices";
           <div class="info-card">
             <h3>Contact Information</h3>
 
+            <!-- EMERGENCY CONTACT -->
+            <div class="contact-item emergency-contact">
+              <div class="contact-icon emergency-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div class="contact-details">
+                <h4>🚨 Emergency Line - 24/7</h4>
+                <a href="tel:+17866022217" class="emergency-phone">(786) 602-2217</a>
+                <p class="emergency-note">Available 24/7/365 - Immediate response for emergencies</p>
+              </div>
+            </div>
+
+            <!-- REGULAR BUSINESS CONTACT -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Business Office</h4>
+                <a href="tel:+17866022217">(786) 602-2217</a>
+                <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 3:00 PM</p>
+              </div>
+            </div>
+
             <div class="contact-item">
               <div class="contact-icon">
                 <i class="fas fa-envelope"></i>
               </div>
               <div class="contact-details">
                 <h4>Email</h4>
-                <a href="mailto:info@misitio.com">info@misitio.com</a>
-                <a href="mailto:contacto@misitio.com">contacto@misitio.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Phone</h4>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-                <a href="tel:+0987654321">+0 (987) 654-321</a>
+                <a href="mailto:services@paramountpropertyrestoration.com">services@paramountpropertyrestoration.com</a>
               </div>
             </div>
 
@@ -61,25 +112,26 @@ import FAQ from "../components/AcordeonServices";
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <div class="contact-details">
-                <h4>Addres</h4>
+                <h4>Service Area</h4>
                 <p>
-                  123 Calle Principal<br />
-                  Ciudad, Estado 12345<br />
-                  País
+                  Serving All of Florida<br />
+                  Orlando • Tampa • Miami<br />
+                  Jacksonville • Fort Lauderdale<br />
+                  St. Petersburg & More
                 </p>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="contact-icon">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-shield-alt"></i>
               </div>
               <div class="contact-details">
-                <h4>Opening Hours</h4>
+                <h4>Licensing & Insurance</h4>
                 <p>
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturdays: 10:00 AM - 2:00 PM<br />
-                  Sundays: Closed
+                  Licensed General Contractor<br />
+                  IICRC Certified Restoration<br />
+                  Fully Insured & Bonded
                 </p>
               </div>
             </div>
@@ -92,14 +144,13 @@ import FAQ from "../components/AcordeonServices";
   <section class="section">
     <div class="container">
       <div class="cta-content">
-        <h2>Ready to build your vision?</h2>
+        <h2>Ready to Restore or Remodel?</h2>
         <p>
-          Let's get started. Contact us today to take the first step towards
-          making your project a reality.
+          From emergency disasters to dream renovations, Paramount Property Restoration is Florida's complete property partner.
         </p>
         <div class="cta-buttons">
-          <a href="#contact-form" class="btn">Get a Free Quote</a>
-          <a href="tel:+1234567890" class="btn btn-secondary">Call Us Now</a>
+          <a href="tel:+18557774357" class="btn btn-emergency">Emergency? Call Now</a>
+          <a href="#contact-form" class="btn btn-remodeling">Get Free Quote</a>
         </div>
       </div>
     </div>
@@ -107,11 +158,162 @@ import FAQ from "../components/AcordeonServices";
 </BaseLayout>
 
 <style>
+  /* EMERGENCY ALERT BAR */
+  .emergency-alert {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  }
+
+  .emergency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .emergency-icon {
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+  }
+
+  .emergency-btn {
+    background: white;
+    color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .emergency-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* DUAL CTA SECTION */
+  .dual-cta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .emergency-cta, .remodeling-cta {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 4px solid;
+  }
+
+  .emergency-cta {
+    border-top-color: #dc3545;
+  }
+
+  .remodeling-cta {
+    border-top-color: #007bff;
+  }
+
+  .cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .emergency-cta .cta-icon {
+    color: #dc3545;
+  }
+
+  .remodeling-cta .cta-icon {
+    color: #007bff;
+  }
+
+  .btn-emergency {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-remodeling {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-emergency:hover, .btn-remodeling:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  .response-time {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* EMERGENCY CONTACT STYLING */
+  .emergency-contact {
+    background: rgba(220, 53, 69, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid rgba(220, 53, 69, 0.2);
+  }
+
+  .emergency-icon {
+    background: #dc3545 !important;
+  }
+
+  .emergency-phone {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #dc3545 !important;
+  }
+
+  .emergency-note {
+    color: #dc3545;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  /* EXISTING STYLES - UPDATED */
   .iconPrueba {
     color: black;
   }
 
-  /* --- INICIO DE ESTILOS MODIFICADOS PARA EL HERO (SIMPLIFICADO) --- */
   .contact-hero {
     position: relative;
     width: 100%;
@@ -134,12 +336,12 @@ import FAQ from "../components/AcordeonServices";
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Overlay oscuro con opacidad */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
 
   .hero-content {
-    position: relative; /* Para estar encima del overlay */
+    position: relative;
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
@@ -157,7 +359,7 @@ import FAQ from "../components/AcordeonServices";
   .hero-description {
     font-size: clamp(1.2rem, 2vw, 1.25rem);
     font-weight: 400;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto 2rem;
     opacity: 0.9;
     padding: 0 20px;
@@ -166,59 +368,57 @@ import FAQ from "../components/AcordeonServices";
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 400px;
-    gap: var(--spacing-12);
+    gap: var(--spacing-12, 3rem);
     align-items: start;
   }
 
   .contact-form-section {
     background: white;
-    padding: var(--spacing-4);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-4, 1.5rem);
+    border-radius: var(--border-radius-lg, 12px);
+    box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.1));
   }
 
   .form-header {
     text-align: center;
-    margin-bottom: var(--spacing-8);
+    margin-bottom: var(--spacing-8, 2rem);
   }
 
   .form-header h2 {
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-3);
+    color: var(--text-primary, #2d3748);
+    margin-bottom: var(--spacing-3, 1rem);
   }
 
   .form-header p {
-    color: var(--text-secondary);
+    color: var(--text-secondary, #4a5568);
     margin: 0;
   }
 
   .contact-info-section {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6);
+    gap: var(--spacing-6, 1.5rem);
   }
 
-  .info-card,
-  .social-card {
+  .info-card {
     background: white;
-    padding: var(--spacing-6);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
+    padding: var(--spacing-6, 1.5rem);
+    border-radius: var(--border-radius-lg, 12px);
+    box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.1));
   }
 
-  .info-card h3,
-  .social-card h3 {
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-6);
-    font-size: var(--font-size-xl);
+  .info-card h3 {
+    color: var(--text-primary, #2d3748);
+    margin-bottom: var(--spacing-6, 1.5rem);
+    font-size: var(--font-size-xl, 1.25rem);
     text-align: center;
   }
 
   .contact-item {
     display: flex;
-    gap: var(--spacing-4);
-    margin-bottom: var(--spacing-6);
-    padding-bottom: var(--spacing-6);
+    gap: var(--spacing-4, 1rem);
+    margin-bottom: var(--spacing-6, 1.5rem);
+    padding-bottom: var(--spacing-6, 1.5rem);
     border-bottom: 1px solid #e2e8f0;
   }
 
@@ -232,7 +432,7 @@ import FAQ from "../components/AcordeonServices";
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    background: var(--color-primary);
+    background: var(--color-primary, #007bff);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -241,16 +441,18 @@ import FAQ from "../components/AcordeonServices";
   }
 
   .contact-details h4 {
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-2);
-    font-size: var(--font-size-lg);
+    color: var(--text-primary, #2d3748);
+    margin-bottom: var(--spacing-2, 0.5rem);
+    font-size: var(--font-size-lg, 1.125rem);
   }
 
   .contact-details a {
-    color: var(--color-primary);
+    color: var(--color-primary, #007bff);
     text-decoration: none;
     display: block;
-    margin-bottom: var(--spacing-1);
+    margin-bottom: var(--spacing-1, 0.25rem);
+    word-break: break-all;
+    font-size: 0.9rem;
   }
 
   .contact-details a:hover {
@@ -258,173 +460,25 @@ import FAQ from "../components/AcordeonServices";
   }
 
   .contact-details p {
-    color: var(--text-secondary);
+    color: var(--text-secondary, #4a5568);
     line-height: 1.5;
-    margin: 0;
-  }
-
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-3);
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-3);
-    padding: var(--spacing-3);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-weight: 500;
-  }
-
-  .social-link.facebook {
-    color: #1877f2;
-    background: rgba(24, 119, 242, 0.1);
-  }
-
-  .social-link.twitter {
-    color: #1da1f2;
-    background: rgba(29, 161, 242, 0.1);
-  }
-
-  .social-link.linkedin {
-    color: #0077b5;
-    background: rgba(0, 119, 181, 0.1);
-  }
-
-  .social-link.instagram {
-    color: #e4405f;
-    background: rgba(228, 64, 95, 0.1);
-  }
-
-  .social-link:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-8);
-    color: var(--text-primary);
-  }
-
-  .map-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .map-placeholder {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .map-content {
-    text-align: center;
-    padding: var(--spacing-8);
-  }
-
-  .map-content svg {
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-4);
-  }
-
-  .map-content h3 {
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-3);
-  }
-
-  .map-content p {
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-6);
-  }
-
-  .faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    margin-bottom: var(--spacing-4);
-    overflow: hidden;
-  }
-
-  .faq-question {
-    width: 100%;
-    padding: var(--spacing-6);
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: var(--font-size-lg);
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: background-color 0.2s ease;
-  }
-
-  .faq-question:hover {
-    background: var(--bg-secondary);
-  }
-
-  .faq-question.active {
-    background: var(--bg-secondary);
-  }
-
-  .faq-icon {
-    transition: transform 0.2s ease;
-    color: var(--color-primary);
-  }
-
-  .faq-question.active .faq-icon {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .faq-answer.active {
-    max-height: 200px;
-  }
-
-  .faq-answer p {
-    padding: 0 var(--spacing-6) var(--spacing-6);
-    color: var(--text-secondary);
-    line-height: 1.6;
     margin: 0;
   }
 
   .cta-content {
     text-align: center;
-    background: var(--bg-secondary);
-    padding: var(--spacing-12);
-    border-radius: var(--border-radius-lg);
+    background: var(--bg-secondary, #f7fafc);
+    padding: var(--spacing-12, 3rem);
+    border-radius: var(--border-radius-lg, 12px);
   }
 
   .cta-content h2 {
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-4, 1rem);
   }
 
   .cta-content p {
-    margin-bottom: var(--spacing-6);
-    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-6, 1.5rem);
+    font-size: var(--font-size-lg, 1.125rem);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -432,54 +486,29 @@ import FAQ from "../components/AcordeonServices";
 
   .cta-buttons {
     display: flex;
-    gap: var(--spacing-4);
+    gap: var(--spacing-4, 1rem);
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .btn-secondary{
-    border: 1px solid var(--color-primary);
-  }
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .emergency-content {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-  @media (max-width: 1024px) {
+    .dual-cta-section {
+      grid-template-columns: 1fr;
+    }
+
     .contact-layout {
       grid-template-columns: 1fr;
-      grid-template-rows: 2fr;
-      gap: var(--spacing-8);
-    }
-
-    .contact-info-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--spacing-6);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .contact-hero {
-      background-position: top;
-      padding: var(--spacing-16) 0; /* Reduzco un poco el padding en móvil */
-    }
-
-    .contact-form-section {
-      padding: var(--spacing-6);
-    }
-
-    .contact-info-section {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-item {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .contact-icon {
-      align-self: center;
+      gap: 2rem;
     }
 
     .cta-buttons {
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
     }
   }
@@ -487,36 +516,10 @@ import FAQ from "../components/AcordeonServices";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // FAQ functionality
-    const faqQuestions = document.querySelectorAll(".faq-question");
-
-    faqQuestions.forEach((question) => {
-      question.addEventListener("click", () => {
-        const faqId = (question as HTMLElement).dataset.faq;
-        const answer = document.getElementById(faqId || "");
-
-        // Close all other FAQs
-        faqQuestions.forEach((otherQuestion) => {
-          if (otherQuestion !== question) {
-            otherQuestion.classList.remove("active");
-            const otherId = (otherQuestion as HTMLElement).dataset.faq;
-            const otherAnswer = document.getElementById(otherId || "");
-            otherAnswer?.classList.remove("active");
-          }
-        });
-
-        // Toggle current FAQ
-        question.classList.toggle("active");
-        answer?.classList.toggle("active");
-      });
-    });
-
     // Smooth scroll to contact form
-    const contactFormLink = document.querySelector(
-      'a:where([href="#contact-form"])',
-    );
-    if (contactFormLink) {
-      contactFormLink.addEventListener("click", (e: Event) => {
+    const contactFormLinks = document.querySelectorAll('a[href="#contact-form"]');
+    contactFormLinks.forEach(link => {
+      link.addEventListener("click", (e: Event) => {
         e.preventDefault();
         const formSection = document.querySelector(".contact-form-section");
         if (formSection) {
@@ -526,6 +529,14 @@ import FAQ from "../components/AcordeonServices";
           });
         }
       });
-    }
+    });
+
+    // Emergency phone number tracking
+    const emergencyButtons = document.querySelectorAll('a[href^="tel:+17866022217"]');
+    emergencyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        console.log('Emergency call initiated');
+      });
+    });
   });
 </script>

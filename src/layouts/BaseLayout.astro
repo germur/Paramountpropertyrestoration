@@ -13,7 +13,7 @@ export interface Props {
 
 const {
   title,
-  description = "Tu descripción por defecto",
+  description = "Florida's complete property partner: 24/7 emergency restoration (water, fire, mold, storm) + professional remodeling services. Licensed, insured, rapid response.",
   image = "/images/og-image.jpg",
 } = Astro.props;
 
@@ -51,12 +51,16 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
+    {/* Keywords globales para PPR */}
+    <meta name="keywords" content="property restoration Florida, emergency restoration, water damage restoration, fire damage restoration, mold remediation, storm damage restoration, kitchen remodeling, bathroom remodeling, general contractor Florida, 24/7 emergency response" />
+
     {/* Metatags para Open Graph (Facebook, etc.) */}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageURL} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Paramount Property Restoration" />
 
     {/* Metatags para Twitter Cards */}
     <meta name="twitter:card" content="summary_large_image" />
@@ -64,16 +68,85 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={imageURL} />
 
-    <link rel="icon" type="image/svg+xml" href="/ppr-logo.png" />
+    {/* Favicon actualizado */}
+    <link rel="icon" type="image/png" href="/ppr-logo.png" />
+    <link rel="apple-touch-icon" href="/ppr-logo.png" />
 
+    {/* Schema.org para negocio local dual */}
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "description": "Emergency property restoration and professional remodeling services in Florida",
+        "url": "https://paramountpropertyrestoration.com",
+        "telephone": "+1-786-602-2217",
+        "email": "services@paramountpropertyrestoration.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Florida",
+          "addressCountry": "US"
+        },
+        "areaServed": {
+          "@type": "State",
+          "name": "Florida"
+        },
+        "serviceType": [
+          "Emergency Water Damage Restoration",
+          "Fire Damage Restoration", 
+          "Mold Remediation",
+          "Storm Damage Restoration",
+          "Kitchen Remodeling",
+          "Bathroom Remodeling",
+          "General Contracting",
+          "Home Additions"
+        ],
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "$$",
+        "image": "https://paramountpropertyrestoration.com/images/og-image.jpg",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Property Restoration & Remodeling Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Emergency Water Damage Restoration",
+                "description": "24/7 emergency water damage restoration and cleanup"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Kitchen Remodeling",
+                "description": "Complete kitchen renovation and remodeling services"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    {/* Google Analytics actualizado */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HW8CW41S53" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-HW8CW41S53');
+      gtag('config', 'G-HW8CW41S53', {
+        'site_name': 'Paramount Property Restoration',
+        'custom_map': {
+          'custom_parameter_1': 'service_type'
+        }
+      });
     </script>
+
+    {/* Preconnect para performance */}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
   </head>
   <body>
     <Header />
@@ -90,5 +163,25 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
       <CtaAll client:visible />
     </section>
     <Footer />
+
+    {/* Script para detectar intent de usuario */}
+    <script is:inline>
+      // Detectar si el usuario viene por emergencia basado en la URL o referrer
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname.toLowerCase();
+        const emergencyKeywords = ['water-damage', 'fire-damage', 'mold', 'emergency', 'flood', 'storm', 'restoration'];
+        const isEmergencyVisit = emergencyKeywords.some(keyword => currentPath.includes(keyword));
+        
+        if (isEmergencyVisit) {
+          // Tracking para visitas de emergencia
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'emergency_page_visit', {
+              'event_category': 'Emergency',
+              'event_label': currentPath
+            });
+          }
+        }
+      });
+    </script>
   </body>
 </html>

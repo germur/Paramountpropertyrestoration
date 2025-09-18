@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
+import LinkBuildingSection from "../components/linkBuilding.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.css";
 
@@ -22,268 +23,380 @@ try {
 ---
 
 <BaseLayout
-  title="General Contractors for Home Remodeling | 1GC Construction"
-  description="Licensed general contractors for home remodeling, repairs & renovations. Get a quote from 1GC."
+  title="Property Restoration & Remodeling Experts | Paramount Property Restoration Florida"
+  description="Florida's complete property partner: 24/7 emergency restoration (water, fire, mold, storm) + professional remodeling services. Licensed, insured, rapid response guaranteed."
 >
-  <!-- Hero Section -->
+  <!-- EMERGENCY ALERT BAR -->
+  <div class="emergency-alert-banner">
+    <div class="emergency-content">
+      <div class="emergency-icon">🚨</div>
+      <div class="emergency-text">
+        <strong>PROPERTY EMERGENCY?</strong> We respond 24/7 - Don't wait!
+      </div>
+      <a href="tel:+17866022217" class="emergency-btn-banner">
+        Call: (786) 602-2217
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section DUAL -->
   <section>
     <div class="hero-section">
       <div class="hero-overlay">
         <div class="hero-container">
           <div class="hero-content">
-            <h1 class="hero-title">Florida's Trusted Remodeling Contractor</h1>
-            <h2 class="hero-subtitle">Residential &amp; Commercial Experts</h2>
-            <a href="/contact" class="cta-button"> GET FOR MORE </a>
+            <h1 class="hero-title">Florida's Complete Property Partner</h1>
+            <h2 class="hero-subtitle">Emergency Restoration & Expert Remodeling</h2>
+            <p class="hero-description">24/7 Response Available</p>
+            
+            <!-- DUAL CTA BUTTONS -->
+            <div class="hero-cta-dual">
+              <a href="tel:+17866022217" class="cta-emergency">
+                <i class="fas fa-phone"></i>
+                <span>Emergency Help<br><strong>(786) 602-2217</strong></span>
+              </a>
+              <a href="/contact" class="cta-remodeling">
+                <i class="fas fa-calculator"></i>
+                <span>Free Estimate<br><strong>Get Quote</strong></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios Preview -->
-  <section>
-    <div class="cnt-acordeonFather">
-      <div>
-        <h2 class="subTittleService">
-          Top Residential & Commercial Remodeling Services in Florida
-        </h2>
-      </div>
-      <div class="parent">
-        <a href="/services/kitchen-remodeling" class="cnt-card-link">
-          <div class="cnt-card">
-            <h2 class="tittleCardServices">
-              <span class="NumCardService">01</span>Kitchen Remodeling
-            </h2>
-            <figure>
-              <img class="imgCardService" src="images/remoKitchenHome.jpg" />
-            </figure>
-            <div class="cnt-tag">
-              <p class="tagServices">Modern Kitchen Design</p>
-              <p class="tagServices">Kitchen Islands</p>
-              <p class="tagServices">Compact Kitchens</p>
-              <p class="tagServices">Luxury Upgrades</p>
-            </div>
+  <!-- DUAL SERVICES SECTION -->
+  <section class="services-dual-section">
+    <div class="container">
+      <!-- EMERGENCY RESTORATION SERVICES -->
+      <div class="services-category emergency-services">
+        <div class="category-header">
+          <div class="category-icon">🚨</div>
+          <div>
+            <h2 class="category-title">Emergency Restoration Services</h2>
+            <p class="category-subtitle">When disaster strikes - We respond immediately</p>
           </div>
-        </a>
-
-        <a href="/services/bathroom-remodeling" class="cnt-card-link">
-          <div class="cnt-card">
-            <h2 class="tittleCardServices">
-              <span class="NumCardService">02</span>Bathroom Remodeling
-            </h2>
-            <figure>
-              <img class="imgCardService" src="images/remoBathroomHome.jpg" />
-            </figure>
-            <div class="cnt-tag">
-              <p class="tagServices">Modern Bathroom Design</p>
-              <p class="tagServices">Shower Installation</p>
-              <p class="tagServices">Bathroom Renovation</p>
-              <p class="tagServices">Bathroom Waterproofing</p>
-            </div>
-          </div>
-        </a>
-
-        <a href="/services/home-additions" class="cnt-card-link">
-          <div class="cnt-card">
-            <h2 class="tittleCardServices">
-              <span class="NumCardService">03</span>Home Additions
-            </h2>
-            <figure>
-              <img class="imgCardService" src="images/remoHomeAdditions.jpg" />
-            </figure>
-            <div class="cnt-tag">
-              <p class="tagServices">Room Expansions</p>
-              <p class="tagServices">Multi-Story Projects</p>
-              <p class="tagServices">Energy Efficient Additions</p>
-              <p class="tagServices">Smart Home Integration</p>
-            </div>
-          </div>
-        </a>
-
-        <a href="/services/living-dining" class="cnt-card-link">
-          <div class="cnt-card">
-            <h2 class="tittleCardServices">
-              <span class="NumCardService">04</span>Living & Dining
-            </h2>
-            <figure>
-              <img class="imgCardService" src="images/remoLivingDining.jpg" />
-            </figure>
-            <div class="cnt-tag">
-              <p class="tagServices">Living Rooms</p>
-              <p class="tagServices">Dining Rooms</p>
-              <p class="tagServices">Luxury Upgrades</p>
-              <p class="tagServices">Smart Lighting</p>
-            </div>
-          </div>
-        </a>
-
-        <a href="/services/bedroom-remodeling" class="cnt-card-link">
-          <div class="cnt-card">
-            <h2 class="tittleCardServices">
-              <span class="NumCardService">05</span>Bedroom
-            </h2>
-            <figure>
-              <img class="imgCardService" src="images/remoBedroom.jpg" />
-            </figure>
-            <div class="cnt-tag">
-              <p class="tagServices">Master Bedrooms</p>
-              <p class="tagServices">Guest & Kids Rooms</p>
-              <p class="tagServices">Luxury Upgrades</p>
-              <p class="tagServices">Smart Home Integration</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Three -->
-
-  <section>
-    <div>
-      <h2 class="subTittleChoseUs">
-        Why Florida Trusts Us for Remodeling & Repairs
-      </h2>
-    </div>
-
-    <ul class="parent2">
-      <li class="cnt-card2">
-        <figure class="icon-container">
-          <i class="iconUs fas fa-cube"></i>
-        </figure>
-        <h3 class="tittleCard2">3D Project Preview</h3>
-        <p class="textcard2">See your remodel digitally before we start</p>
-      </li>
-
-      <li class="cnt-card2">
-        <figure class="icon-container">
-          <i class="iconUs fas fa-camera"></i>
-        </figure>
-        <h3 class="tittleCard2">Daily Photo Updates</h3>
-        <p class="textcard2">Track progress via our client portal</p>
-      </li>
-
-      <li class="cnt-card2">
-        <figure class="icon-container">
-          <i class="iconUs fas fa-wallet"></i>
-        </figure>
-        <h3 class="tittleCard2">Open-Book Pricing</h3>
-        <p class="textcard2">
-          Hourly labor rates + material costs disclosed upfront
-        </p>
-      </li>
-    </ul>
-
-    <div class="cntButton">
-      <a class="rutVideo" href="/contact">
-        <button class="btn-Hww btn-steps">
-          Schedule a Free Q&A Cal
-          <i class="arrowbtnHww fas fa-arrow-right"></i>
-        </button>
-      </a>
-    </div>
-  </section>
-
-  <!-- Section Four -->
-
-  <section>
-    <Steps />
-    <div class="cnt-btnStep">
-      <button class="btn-steps"
-        >Watch Our Process Video<i class="arrowbtnHww fas fa-arrow-right"></i>
-      </button>
-    </div>
-  </section>
-
-  <!-- Section Four -->
-
-  <section>
-    <div>
-      <h2 class="tittleResorces">Essential Resources for Florida Homeowners</h2>
-    </div>
-    <div class="cnt-fatherResorces">
-      <div class="cnt-cardResorces">
-        <h2 class="titlle-cardResorces">
-          <i class="iconrResorcesGuide fas fa-calculator"></i>2024 Remodeling
-          Cost Guide
-        </h2>
-        <p class="text-cardResorces">
-          Florida Pricing per Sq.Ft - Kitchen, Bath & More
-        </p>
-        <a href="/portfolio" class="btn-cardResorces">Download Free PDF</a>
-      </div>
-      <div class="cnt-cardResorces">
-        <h2 class="titlle-cardResorces">
-          <i class="iconrResorcesList fas fa-clipboard-check"></i>Contractor
-          Vetting Checklist
-        </h2>
-        <p class="text-cardResorces">50 Red Flags to Avoid When Hiring</p>
-        <a href="/portfolio" class="btn-cardResorces">Get Checklist</a>
-      </div>
-      <div class="cnt-cardResorces">
-        <h2 class="titlle-cardResorces">
-          <i class="iconrResorcesCalculate fas fa-chart-bar"></i>2024 Remodeling
-          Cost Guide
-        </h2>
-        <p class="text-cardResorces">Estimate Your Project's Value Increase</p>
-        <a href="/portfolio" class="btn-cardResorces">Calculate Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Six-->
-
-  <section>
-    <div>
-      <div>
-        <h2 class="tittleTotalServi">Explore Our Services</h2>
-        <p class="textTotalServi">
-          Residential, commercial, and industrial clients trust our expertise to
-          carry out construction and remodeling projects with exceptional
-          results. We have a team of highly skilled professionals and a wide
-          range of services to bring any project to life, from renovations to
-          large-scale constructions.
-        </p>
-      </div>
-      <div class="cnt-linkServices">
-        <div class="cnt-ul">
-          <ul class="cnt-ulLinkServices">
-            <li><a href="#">Architectural design and planning</a></li>
-            <li><a href="#">New construction projects</a></li>
-            <li><a href="#">Full home remodeling</a></li>
-            <li><a href="#">Additions and renovations</a></li>
-            <li><a href="#">Office and commercial space construction</a></li>
-            <li><a href="#">Facade remodeling</a></li>
-            <li><a href="#">Interior design and construction</a></li>
-            <li><a href="#">Electrical and plumbing installations</a></li>
-          </ul>
         </div>
-        <div class="cnt-ul">
-          <ul class="cnt-ulLinkServices">
-            <li><a href="#">Waterproofing and thermal insulation</a></li>
-            <li><a href="#">Pool and recreational area construction</a></li>
-            <li><a href="#">Flooring, finishes, and coatings</a></li>
-            <li><a href="#">Metal and concrete structures</a></li>
-            <li><a href="#">Custom carpentry and furniture</a></li>
-            <li>
-              <a href="#">Sustainable and energy-efficient construction</a>
-            </li>
-            <li><a href="#">Project management and supervision</a></li>
-            <li><a href="#">Construction consulting and advisory</a></li>
-          </ul>
+
+        <div class="services-grid emergency-grid">
+          <a href="/restoration/water-damage/" class="service-card emergency-card">
+            <div class="service-icon">💧</div>
+            <h3>Water Damage</h3>
+            <p>24/7 water extraction, drying & restoration</p>
+            <div class="service-urgency">Emergency Response</div>
+          </a>
+
+          <a href="/restoration/fire-damage/" class="service-card emergency-card">
+            <div class="service-icon">🔥</div>
+            <h3>Fire Damage</h3>
+            <p>Complete fire & smoke damage restoration</p>
+            <div class="service-urgency">Emergency Response</div>
+          </a>
+
+          <a href="/restoration/mold-remediation/" class="service-card emergency-card">
+            <div class="service-icon">🦠</div>
+            <h3>Mold Remediation</h3>
+            <p>Safe mold removal & air quality restoration</p>
+            <div class="service-urgency">Health Priority</div>
+          </a>
+
+          <a href="/restoration/storm-damage/" class="service-card emergency-card">
+            <div class="service-icon">🌪️</div>
+            <h3>Storm Damage</h3>
+            <p>Hurricane recovery & roof protection</p>
+            <div class="service-urgency">Emergency Response</div>
+          </a>
+        </div>
+
+        <div class="emergency-cta">
+          <a href="tel:+17866022217" class="btn-emergency-large">
+            <i class="fas fa-phone"></i>
+            Emergency Line: (786) 602-2217
+          </a>
+          <p class="response-time">⚡ 30-minute response time guaranteed</p>
         </div>
       </div>
+
+      <!-- CONSTRUCTION & REMODELING SERVICES -->
+      <div class="services-category remodeling-services">
+        <div class="category-header">
+          <div class="category-icon">🔨</div>
+          <div>
+            <h2 class="category-title">Construction & Remodeling Services</h2>
+            <p class="category-subtitle">Transform your space with professional remodeling</p>
+          </div>
+        </div>
+
+        <div class="services-grid remodeling-grid">
+          <a href="/services/kitchen-remodeling" class="service-card remodeling-card">
+            <div class="service-number">01</div>
+            <div class="service-image">
+              <img src="images/remoKitchenHome.jpg" alt="Kitchen Remodeling" loading="lazy" />
+            </div>
+            <h3>Kitchen Remodeling</h3>
+            <div class="service-tags">
+              <span>Modern Design</span>
+              <span>Kitchen Islands</span>
+              <span>Luxury Upgrades</span>
+            </div>
+          </a>
+
+          <a href="/services/bathroom-remodeling" class="service-card remodeling-card">
+            <div class="service-number">02</div>
+            <div class="service-image">
+              <img src="images/remoBathroomHome.jpg" alt="Bathroom Remodeling" loading="lazy" />
+            </div>
+            <h3>Bathroom Remodeling</h3>
+            <div class="service-tags">
+              <span>Modern Design</span>
+              <span>Shower Installation</span>
+              <span>Waterproofing</span>
+            </div>
+          </a>
+
+          <a href="/services/home-additions" class="service-card remodeling-card">
+            <div class="service-number">03</div>
+            <div class="service-image">
+              <img src="images/remoHomeAdditions.jpg" alt="Home Additions" loading="lazy" />
+            </div>
+            <h3>Home Additions</h3>
+            <div class="service-tags">
+              <span>Room Expansions</span>
+              <span>Multi-Story</span>
+              <span>Smart Integration</span>
+            </div>
+          </a>
+
+          <a href="/services/bedroom-remodeling" class="service-card remodeling-card">
+            <div class="service-number">04</div>
+            <div class="service-image">
+              <img src="images/remoBedroom.jpg" alt="Bedroom Remodeling" loading="lazy" />
+            </div>
+            <h3>Bedroom Remodeling</h3>
+            <div class="service-tags">
+              <span>Master Bedrooms</span>
+              <span>Kids Rooms</span>
+              <span>Luxury Upgrades</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="remodeling-cta">
+          <a href="/contact" class="btn-remodeling-large">
+            <i class="fas fa-calculator"></i>
+            Get Your Free Project Estimate
+          </a>
+          <p class="response-time">📅 Same-day quote response</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us - DUAL VERSION -->
+  <section class="why-choose-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="subTittleChoseUs">Why Florida Trusts PPR for Restoration & Remodeling</h2>
+      </div>
+
+      <!-- Emergency Features -->
+      <div class="features-category">
+        <h3 class="features-subtitle">🚨 Emergency Restoration Expertise</h3>
+        <ul class="features-grid">
+          <li class="feature-card emergency-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-clock"></i>
+            </div>
+            <h4 class="tittleCard2">24/7 Emergency Response</h4>
+            <p class="textcard2">Available when disaster strikes - every minute counts</p>
+          </li>
+
+          <li class="feature-card emergency-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-file-invoice-dollar"></i>
+            </div>
+            <h4 class="tittleCard2">Insurance Direct Billing</h4>
+            <p class="textcard2">We work directly with your insurance company</p>
+          </li>
+
+          <li class="feature-card emergency-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-certificate"></i>
+            </div>
+            <h4 class="tittleCard2">IICRC Certified</h4>
+            <p class="textcard2">Industry-standard restoration protocols</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Remodeling Features -->
+      <div class="features-category">
+        <h3 class="features-subtitle">🔨 Remodeling Excellence</h3>
+        <ul class="features-grid">
+          <li class="feature-card remodeling-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-cube"></i>
+            </div>
+            <h4 class="tittleCard2">3D Project Preview</h4>
+            <p class="textcard2">See your remodel digitally before we start</p>
+          </li>
+
+          <li class="feature-card remodeling-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-camera"></i>
+            </div>
+            <h4 class="tittleCard2">Daily Photo Updates</h4>
+            <p class="textcard2">Track progress via our client portal</p>
+          </li>
+
+          <li class="feature-card remodeling-feature">
+            <div class="icon-container">
+              <i class="iconUs fas fa-wallet"></i>
+            </div>
+            <h4 class="tittleCard2">Open-Book Pricing</h4>
+            <p class="textcard2">Hourly labor rates + material costs disclosed upfront</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dual-cta-buttons">
+        <a href="tel:+17866022217" class="btn-emergency">
+          Emergency Help Now
+        </a>
+        <a href="/contact" class="btn-remodeling">
+          Schedule Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work - DUAL PROCESS -->
+  <section class="process-section">
+    <div class="container">
+      <!-- Emergency Process -->
+      <div class="process-category emergency-process">
+        <h2 class="process-title">🚨 Your Emergency Restoration - Fast Response in 4 Steps</h2>
+        <div class="process-steps">
+          <div class="step emergency-step-card">
+            <div class="step-number emergency-step">1</div>
+            <div class="step-icon emergency-icon">🚨</div>
+            <h3>Emergency Call</h3>
+            <p>Immediate response within 30 minutes</p>
+            <div class="step-tags">
+              <span class="emergency-tag">#24/7Available</span>
+              <span class="emergency-tag">#NoDelay</span>
+            </div>
+          </div>
+          <div class="step emergency-step-card">
+            <div class="step-number emergency-step">2</div>
+            <div class="step-icon emergency-icon">📋</div>
+            <h3>Assessment</h3>
+            <p>Complete damage assessment & insurance documentation</p>
+            <div class="step-tags">
+              <span class="emergency-tag">#InsuranceDirect</span>
+              <span class="emergency-tag">#Documentation</span>
+            </div>
+          </div>
+          <div class="step emergency-step-card">
+            <div class="step-number emergency-step">3</div>
+            <div class="step-icon emergency-icon">🛠️</div>
+            <h3>Mitigation</h3>
+            <p>Immediate action to prevent further damage</p>
+            <div class="step-tags">
+              <span class="emergency-tag">#DamageControl</span>
+              <span class="emergency-tag">#QuickAction</span>
+            </div>
+          </div>
+          <div class="step emergency-step-card">
+            <div class="step-number emergency-step">4</div>
+            <div class="step-icon emergency-icon">✅</div>
+            <h3>Restoration</h3>
+            <p>Complete restoration to pre-loss condition</p>
+            <div class="step-tags">
+              <span class="emergency-tag">#LikeNew</span>
+              <span class="emergency-tag">#Guaranteed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Remodeling Process -->
+      <div class="process-category remodeling-process">
+        <h2 class="process-title">🔨 Your Remodeling Project - Simplified in 4 Steps</h2>
+        <div class="process-steps">
+          <div class="step remodeling-step-card">
+            <div class="step-number remodeling-step">1</div>
+            <div class="step-icon remodeling-icon">📝</div>
+            <h3>Free Consultation</h3>
+            <p>On-Site Assessment & Custom Proposal</p>
+            <div class="step-tags">
+              <span class="remodeling-tag">#FreeEstimate</span>
+              <span class="remodeling-tag">#CustomDesign</span>
+            </div>
+          </div>
+          <div class="step remodeling-step-card">
+            <div class="step-number remodeling-step">2</div>
+            <div class="step-icon remodeling-icon">🎨</div>
+            <h3>3D Design</h3>
+            <p>3D Renderings & Material Selection</p>
+            <div class="step-tags">
+              <span class="remodeling-tag">#3DVisualization</span>
+              <span class="remodeling-tag">#MaterialChoice</span>
+            </div>
+          </div>
+          <div class="step remodeling-step-card">
+            <div class="step-number remodeling-step">3</div>
+            <div class="step-icon remodeling-icon">🔨</div>
+            <h3>Construction</h3>
+            <p>Daily Updates via Email & Photo Portal</p>
+            <div class="step-tags">
+              <span class="remodeling-tag">#DailyUpdates</span>
+              <span class="remodeling-tag">#PhotoPortal</span>
+            </div>
+          </div>
+          <div class="step remodeling-step-card">
+            <div class="step-number remodeling-step">4</div>
+            <div class="step-icon remodeling-icon">🏠</div>
+            <h3>Final Walkthrough</h3>
+            <p>Quality Check & Warranty Handoff</p>
+            <div class="step-tags">
+              <span class="remodeling-tag">#QualityCheck</span>
+              <span class="remodeling-tag">#Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cnt-btnStep">
+        <a href="tel:+17866022217" class="btn-steps">
+          Call for Free Consultation<i class="arrowbtnHww fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="service-areas-section">
+    <div class="container">
+      <LinkBuildingSection 
+        client:load 
+        showTitle={true} 
+        showStats={false} 
+        compact={false} 
+        categories="all" 
+      />
     </div>
   </section>
 
   <!-- Blog Preview -->
   {
     featuredPosts.length > 0 && (
-      <section class="section section-bg">
+      <section class="section section-bg blog-section">
         <div class="container">
           <div class="text-center mb-12">
-            <h2>Featured Articles</h2>
-            <p>Stay up to date with our latest content</p>
+            <h2>Latest Property Tips & Insights</h2>
+            <p>Expert advice for Florida property owners</p>
           </div>
           <div class="blog-grid">
             {featuredPosts.map((post) => (
@@ -323,80 +436,1135 @@ try {
 </BaseLayout>
 
 <style>
+  /* ===== EMERGENCY ALERT BANNER ===== */
+  .emergency-alert-banner {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    padding: 0.8rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  }
+
+  .emergency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .emergency-icon {
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+  }
+
+  .emergency-btn-banner {
+    background: white;
+    color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .emergency-btn-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* ===== HERO SECTION DUAL ===== */
+  .hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/images/heroContact.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #cbd5e0;
+  }
+
+  .hero-cta-dual {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-emergency, .cta-remodeling {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 200px;
+  }
+
+  .cta-emergency {
+    background: #dc3545;
+    color: white;
+    border: 3px solid #dc3545;
+  }
+
+  .cta-remodeling {
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+  }
+
+  .cta-emergency:hover, .cta-remodeling:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .cta-emergency i, .cta-remodeling i {
+    font-size: 1.5rem;
+  }
+
+  /* ===== DUAL SERVICES SECTION ===== */
+  .services-dual-section {
+    padding: 4rem 0;
+    background: #f7fafc;
+  }
+
+  .services-category {
+    margin-bottom: 4rem;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .category-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .emergency-services .category-icon {
+    background: rgba(220, 53, 69, 0.1);
+  }
+
+  .remodeling-services .category-icon {
+    background: rgba(0, 123, 255, 0.1);
+  }
+
+  .category-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+  }
+
+  .services-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .emergency-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .remodeling-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .emergency-card {
+    border-top: 4px solid #dc3545;
+  }
+
+  .remodeling-card {
+    border-top: 4px solid #007bff;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+
+  .service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .service-urgency {
+    background: #dc3545;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .service-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .service-tags span {
+    background: #e2e8f0;
+    color: #4a5568;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+
+  /* CTA BUTTONS */
+  .emergency-cta, .remodeling-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-emergency-large, .btn-remodeling-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-emergency-large {
+    background: #dc3545;
+    color: white;
+  }
+
+  .btn-remodeling-large {
+    background: #007bff;
+    color: white;
+  }
+
+  .btn-emergency-large:hover, .btn-remodeling-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  .response-time {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .features-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2d3748;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .emergency-feature {
+    border-left: 4px solid #dc3545;
+  }
+
+  .remodeling-feature {
+    border-left: 4px solid #007bff;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .emergency-feature .icon-container {
+    background: rgba(220, 53, 69, 0.1);
+  }
+
+  .remodeling-feature .icon-container {
+    background: rgba(0, 123, 255, 0.1);
+  }
+
+  .iconUs {
+    font-size: 1.5rem;
+    color: #2d3748;
+  }
+
+  .tittleCard2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+
+  .textcard2 {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .dual-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-emergency, .btn-remodeling {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .btn-emergency {
+    background: #dc3545;
+    color: white;
+  }
+
+  .btn-remodeling {
+    background: #007bff;
+    color: white;
+  }
+
+  .btn-emergency:hover, .btn-remodeling:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  /* ===== PROCESS SECTION ===== */
+  .process-section {
+    padding: 4rem 0;
+    background: #f7fafc;
+  }
+
+  .process-category {
+    margin-bottom: 4rem;
+  }
+
+  .process-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2d3748;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .step {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .emergency-step-card {
+    border-left: 4px solid #dc3545;
+  }
+
+  .remodeling-step-card {
+    border-left: 4px solid #007bff;
+  }
+
+  .step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .emergency-icon {
+    color: #dc3545;
+  }
+
+  .remodeling-icon {
+    color: #007bff;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .emergency-step {
+    background: #dc3545;
+  }
+
+  .remodeling-step {
+    background: #007bff;
+  }
+
+  .step h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+
+  .step p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .emergency-tag, .remodeling-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    background: rgba(0,0,0,0.05);
+    color: #666;
+  }
+
+  .emergency-tag {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+  }
+
+  .remodeling-tag {
+    background: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+  }
+
+  .cnt-btnStep {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-steps {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .btn-steps:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  /* ESTANDARIZAR TODOS LOS BOTONES PRINCIPALES */
+  .btn-emergency-large, .btn-remodeling-large, .btn-emergency, .btn-remodeling, .btn-areas, .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-emergency-large, .btn-emergency {
+    background: #dc3545;
+    color: white;
+  }
+
+  .btn-remodeling-large, .btn-remodeling, .btn-areas, .btn {
+    background: #007bff;
+    color: white;
+  }
+
+  .btn-emergency-large:hover, .btn-emergency:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 53, 69, 0.3);
+  }
+
+  .btn-remodeling-large:hover, .btn-remodeling:hover, .btn-areas:hover, .btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
+  }
+
+  /* BOTONES DEL HERO */
+  .cta-emergency, .cta-remodeling {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+  }
+
+  .cta-emergency {
+    background: #dc3545;
+    color: white;
+    border: 3px solid #dc3545;
+  }
+
+  .cta-remodeling {
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+  }
+
+  .cta-emergency:hover, .cta-remodeling:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  .cta-remodeling:hover {
+    background: white;
+    color: #007bff;
+  }
+
+  /* BOTÓN DE EMERGENCIA DEL BANNER */
+  .emergency-btn-banner {
+    background: white;
+    color: #dc3545;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+
+  .emergency-btn-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .arrowbtnHww {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-steps:hover .arrowbtnHww {
+    transform: translateX(4px);
+  }
+
+  /* ===== RESOURCES SECTION ===== */
+  .resources-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .resources-category {
+    margin-bottom: 3rem;
+  }
+
+  .resources-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2d3748;
+  }
+
+  .cnt-fatherResorces {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .cnt-cardResorces {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .emergency-resource {
+    border-top: 4px solid #dc3545;
+  }
+
+  .remodeling-resource {
+    border-top: 4px solid #007bff;
+  }
+
+  .cnt-cardResorces:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+  .titlle-cardResorces {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .iconrResorcesGuide, .iconrResorcesList, .iconrResorcesCalculate {
+    font-size: 1.5rem;
+  }
+
+  .text-cardResorces {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-cardResorces {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .emergency-btn {
+    background: #dc3545;
+    color: white;
+  }
+
+  .remodeling-btn {
+    background: #007bff;
+    color: white;
+  }
+
+  .btn-cardResorces:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* ===== SERVICE AREAS SECTION ===== */
+  .service-areas-section {
+    padding: 4rem 0;
+    background: #f7fafc;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .tittleTotalServi {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+
+  .textTotalServi {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .area-region {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #007bff;
+  }
+
+  .area-region:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .region-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+  }
+
+  .region-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .area-region h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+  }
+
+  .region-description {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .area-region ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .city-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .city-info:hover {
+    background: #f7fafc;
+    transform: translateX(4px);
+  }
+
+  .city-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .area-region li a {
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+  }
+
+  .area-region li a:hover {
+    color: #007bff;
+  }
+
+  .city-feature {
+    font-size: 0.75rem;
+    background: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .coverage-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+  }
+
+  .service-area-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-areas {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .btn-areas:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+
+  /* ===== BLOG SECTION ===== */
+  .blog-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-8);
-    margin-bottom: var(--spacing-8);
+    gap: var(--spacing-8, 2rem);
+    margin-bottom: var(--spacing-8, 2rem);
   }
 
   .blog-card {
     background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
+    border-radius: var(--border-radius-lg, 12px);
+    box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.1));
     overflow: hidden;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-    border: 1px solid var(--color-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-primary, #007bff);
   }
 
   .blog-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.15));
   }
 
   .blog-card-content {
-    padding: var(--spacing-6);
+    padding: var(--spacing-6, 1.5rem);
   }
 
   .blog-card h3 {
-    margin-bottom: var(--spacing-3);
+    margin-bottom: var(--spacing-3, 1rem);
   }
 
   .blog-card h3 a {
-    color: var(--text-primary);
+    color: var(--text-primary, #2d3748);
     text-decoration: none;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg, 1.125rem);
   }
 
   .blog-card h3 a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary, #007bff);
   }
 
   .blog-card p {
-    color: var(--text-secondary);
+    color: var(--text-secondary, #4a5568);
     line-height: 1.6;
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-4, 1rem);
   }
 
   .blog-meta {
     display: flex;
     justify-content: space-between;
-    font-size: var(--font-size-sm);
-    color: var(--text-light);
-    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--text-light, #718096);
+    margin-bottom: var(--spacing-4, 1rem);
   }
 
   .read-more {
-    color: var(--color-primary);
+    color: var(--color-primary, #007bff);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
   }
 
   .read-more:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-dark, #0056b3);
   }
 
+  /* ===== RESPONSIVE DESIGN ===== */
   @media (max-width: 768px) {
+    .emergency-content {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .emergency-text {
+      font-size: 0.9rem;
+    }
+
+    .hero-cta-dual {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-emergency, .cta-remodeling {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .category-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .dual-cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+
     .blog-grid {
       grid-template-columns: 1fr;
     }
 
     .blog-meta {
       flex-direction: column;
-      gap: var(--spacing-1);
+      gap: var(--spacing-1, 0.25rem);
     }
   }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* ===== UTILITIES ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-bg {
+    background: #f7fafc;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track emergency vs remodeling intent
+    const emergencyButtons = document.querySelectorAll('a[href^="tel:"], .cta-emergency, .btn-emergency, .btn-emergency-large');
+    const remodelingButtons = document.querySelectorAll('.cta-remodeling, .btn-remodeling, .btn-remodeling-large');
+
+    emergencyButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        console.log('Emergency service clicked - Intent: Emergency');
+      });
+    });
+
+    remodelingButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        console.log('Remodeling service clicked - Intent: Remodeling');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>
