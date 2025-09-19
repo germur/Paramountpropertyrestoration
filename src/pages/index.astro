@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
+import WhyChooseUs from "../components/WhyChooseUs.jsx";
+import ServiceHighlights from "../components/ServiceHighlights.jsx"; 
+import CtaAll from "../components/CtaAll.jsx";
 import LinkBuildingSection from "../components/linkBuilding.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/index.css";
@@ -20,6 +23,36 @@ try {
 } catch (error) {
   console.log("No se pudieron cargar los posts del blog:", error);
 }
+
+// Datos para Why Choose Us - Emergency
+const emergencyFeatures = [
+  "24/7 Emergency Response - Available when disaster strikes",
+  "IICRC Certified Technicians - Industry-standard restoration protocols", 
+  "Insurance Direct Billing - We work directly with your insurance company",
+  "30-Minute Response Time - Every minute counts in emergencies",
+  "Advanced Moisture Detection - Thermal imaging & moisture mapping",
+  "EPA-Approved Antimicrobials - Safe for family & pets"
+];
+
+// Datos para Why Choose Us - Remodeling
+const remodelingFeatures = [
+  "3D Project Visualization - See your remodel before we start",
+  "Open-Book Pricing - Hourly rates + material costs disclosed upfront",
+  "Daily Photo Updates - Track progress via our client portal",
+  "Licensed & Insured Contractors - All trades properly certified",
+  "1-Year Craftsmanship Warranty - We stand behind our work",
+  "Smart Home Integration Ready - Future-proof technology planning"
+];
+
+// Service Highlights
+const highlights = [
+  "Serving all of Florida with rapid emergency response",
+  "Over 15 years of combined restoration & remodeling experience", 
+  "Certified by IICRC for water, fire, and mold restoration",
+  "A+ BBB Rating with hundreds of 5-star reviews",
+  "Direct insurance billing and claims assistance",
+  "24/7 customer support hotline"
+];
 ---
 
 <BaseLayout
@@ -193,71 +226,32 @@ try {
     </div>
   </section>
 
-  <!-- Why Choose Us - DUAL VERSION -->
+  <!-- Service Highlights - USANDO COMPONENTE EXISTENTE -->
+  <ServiceHighlights
+    title="Why Florida Trusts PPR for Restoration & Remodeling"
+    highlights={highlights}
+    client:load
+  />
+
+  <!-- Why Choose Us - DUAL VERSION CON COMPONENTE -->
   <section class="why-choose-section">
     <div class="container">
-      <div class="section-header">
-        <h2 class="subTittleChoseUs">Why Florida Trusts PPR for Restoration & Remodeling</h2>
-      </div>
-
       <!-- Emergency Features -->
       <div class="features-category">
-        <h3 class="features-subtitle">🚨 Emergency Restoration Expertise</h3>
-        <ul class="features-grid">
-          <li class="feature-card emergency-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-clock"></i>
-            </div>
-            <h4 class="tittleCard2">24/7 Emergency Response</h4>
-            <p class="textcard2">Available when disaster strikes - every minute counts</p>
-          </li>
-
-          <li class="feature-card emergency-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-file-invoice-dollar"></i>
-            </div>
-            <h4 class="tittleCard2">Insurance Direct Billing</h4>
-            <p class="textcard2">We work directly with your insurance company</p>
-          </li>
-
-          <li class="feature-card emergency-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-certificate"></i>
-            </div>
-            <h4 class="tittleCard2">IICRC Certified</h4>
-            <p class="textcard2">Industry-standard restoration protocols</p>
-          </li>
-        </ul>
+        <WhyChooseUs
+          title="🚨 Emergency Restoration Expertise"
+          items={emergencyFeatures}
+          client:load
+        />
       </div>
 
       <!-- Remodeling Features -->
       <div class="features-category">
-        <h3 class="features-subtitle">🔨 Remodeling Excellence</h3>
-        <ul class="features-grid">
-          <li class="feature-card remodeling-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-cube"></i>
-            </div>
-            <h4 class="tittleCard2">3D Project Preview</h4>
-            <p class="textcard2">See your remodel digitally before we start</p>
-          </li>
-
-          <li class="feature-card remodeling-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-camera"></i>
-            </div>
-            <h4 class="tittleCard2">Daily Photo Updates</h4>
-            <p class="textcard2">Track progress via our client portal</p>
-          </li>
-
-          <li class="feature-card remodeling-feature">
-            <div class="icon-container">
-              <i class="iconUs fas fa-wallet"></i>
-            </div>
-            <h4 class="tittleCard2">Open-Book Pricing</h4>
-            <p class="textcard2">Hourly labor rates + material costs disclosed upfront</p>
-          </li>
-        </ul>
+        <WhyChooseUs
+          title="🔨 Remodeling Excellence"
+          items={remodelingFeatures}
+          client:load
+        />
       </div>
 
       <div class="dual-cta-buttons">
@@ -271,112 +265,10 @@ try {
     </div>
   </section>
 
-  <!-- How We Work - DUAL PROCESS -->
-  <section class="process-section">
-    <div class="container">
-      <!-- Emergency Process -->
-      <div class="process-category emergency-process">
-        <h2 class="process-title">🚨 Your Emergency Restoration - Fast Response in 4 Steps</h2>
-        <div class="process-steps">
-          <div class="step emergency-step-card">
-            <div class="step-number emergency-step">1</div>
-            <div class="step-icon emergency-icon">🚨</div>
-            <h3>Emergency Call</h3>
-            <p>Immediate response within 30 minutes</p>
-            <div class="step-tags">
-              <span class="emergency-tag">#24/7Available</span>
-              <span class="emergency-tag">#NoDelay</span>
-            </div>
-          </div>
-          <div class="step emergency-step-card">
-            <div class="step-number emergency-step">2</div>
-            <div class="step-icon emergency-icon">📋</div>
-            <h3>Assessment</h3>
-            <p>Complete damage assessment & insurance documentation</p>
-            <div class="step-tags">
-              <span class="emergency-tag">#InsuranceDirect</span>
-              <span class="emergency-tag">#Documentation</span>
-            </div>
-          </div>
-          <div class="step emergency-step-card">
-            <div class="step-number emergency-step">3</div>
-            <div class="step-icon emergency-icon">🛠️</div>
-            <h3>Mitigation</h3>
-            <p>Immediate action to prevent further damage</p>
-            <div class="step-tags">
-              <span class="emergency-tag">#DamageControl</span>
-              <span class="emergency-tag">#QuickAction</span>
-            </div>
-          </div>
-          <div class="step emergency-step-card">
-            <div class="step-number emergency-step">4</div>
-            <div class="step-icon emergency-icon">✅</div>
-            <h3>Restoration</h3>
-            <p>Complete restoration to pre-loss condition</p>
-            <div class="step-tags">
-              <span class="emergency-tag">#LikeNew</span>
-              <span class="emergency-tag">#Guaranteed</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- How We Work - USANDO COMPONENTE Steps -->
+  <Steps client:load />
 
-      <!-- Remodeling Process -->
-      <div class="process-category remodeling-process">
-        <h2 class="process-title">🔨 Your Remodeling Project - Simplified in 4 Steps</h2>
-        <div class="process-steps">
-          <div class="step remodeling-step-card">
-            <div class="step-number remodeling-step">1</div>
-            <div class="step-icon remodeling-icon">📝</div>
-            <h3>Free Consultation</h3>
-            <p>On-Site Assessment & Custom Proposal</p>
-            <div class="step-tags">
-              <span class="remodeling-tag">#FreeEstimate</span>
-              <span class="remodeling-tag">#CustomDesign</span>
-            </div>
-          </div>
-          <div class="step remodeling-step-card">
-            <div class="step-number remodeling-step">2</div>
-            <div class="step-icon remodeling-icon">🎨</div>
-            <h3>3D Design</h3>
-            <p>3D Renderings & Material Selection</p>
-            <div class="step-tags">
-              <span class="remodeling-tag">#3DVisualization</span>
-              <span class="remodeling-tag">#MaterialChoice</span>
-            </div>
-          </div>
-          <div class="step remodeling-step-card">
-            <div class="step-number remodeling-step">3</div>
-            <div class="step-icon remodeling-icon">🔨</div>
-            <h3>Construction</h3>
-            <p>Daily Updates via Email & Photo Portal</p>
-            <div class="step-tags">
-              <span class="remodeling-tag">#DailyUpdates</span>
-              <span class="remodeling-tag">#PhotoPortal</span>
-            </div>
-          </div>
-          <div class="step remodeling-step-card">
-            <div class="step-number remodeling-step">4</div>
-            <div class="step-icon remodeling-icon">🏠</div>
-            <h3>Final Walkthrough</h3>
-            <p>Quality Check & Warranty Handoff</p>
-            <div class="step-tags">
-              <span class="remodeling-tag">#QualityCheck</span>
-              <span class="remodeling-tag">#Warranty</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cnt-btnStep">
-        <a href="tel:+17866022217" class="btn-steps">
-          Call for Free Consultation<i class="arrowbtnHww fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Areas -->
+  <!-- Service Areas - USANDO COMPONENTE EXISTENTE -->
   <section class="service-areas-section">
     <div class="container">
       <LinkBuildingSection 
@@ -388,6 +280,9 @@ try {
       />
     </div>
   </section>
+
+  <!-- CTA Final - USANDO COMPONENTE EXISTENTE -->
+  <CtaAll client:load />
 
   <!-- Blog Preview -->
   {
@@ -872,344 +767,26 @@ try {
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
   }
 
-  /* ===== PROCESS SECTION ===== */
-  .process-section {
+  /* ===== WHY CHOOSE SECTION ===== */
+  .why-choose-section {
     padding: 4rem 0;
     background: #f7fafc;
   }
 
-  .process-category {
-    margin-bottom: 4rem;
-  }
-
-  .process-title {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #2d3748;
-  }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .step {
-    text-align: center;
-    padding: 2rem;
+  .features-category {
+    margin-bottom: 3rem;
     background: white;
+    padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    position: relative;
-    transition: all 0.3s ease;
   }
 
-  .emergency-step-card {
+  .features-category:first-child {
     border-left: 4px solid #dc3545;
   }
 
-  .remodeling-step-card {
+  .features-category:last-child {
     border-left: 4px solid #007bff;
-  }
-
-  .step:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  }
-
-  .step-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .emergency-icon {
-    color: #dc3545;
-  }
-
-  .remodeling-icon {
-    color: #007bff;
-  }
-
-  .step-number {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-
-  .emergency-step {
-    background: #dc3545;
-  }
-
-  .remodeling-step {
-    background: #007bff;
-  }
-
-  .step h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2d3748;
-  }
-
-  .step p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .step-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-
-  .emergency-tag, .remodeling-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-weight: 500;
-    background: rgba(0,0,0,0.05);
-    color: #666;
-  }
-
-  .emergency-tag {
-    background: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-  }
-
-  .remodeling-tag {
-    background: rgba(0, 123, 255, 0.1);
-    color: #007bff;
-  }
-
-  .cnt-btnStep {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .btn-steps {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-  }
-
-  .btn-steps:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  }
-
-  /* ESTANDARIZAR TODOS LOS BOTONES PRINCIPALES */
-  .btn-emergency-large, .btn-remodeling-large, .btn-emergency, .btn-remodeling, .btn-areas, .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-emergency-large, .btn-emergency {
-    background: #dc3545;
-    color: white;
-  }
-
-  .btn-remodeling-large, .btn-remodeling, .btn-areas, .btn {
-    background: #007bff;
-    color: white;
-  }
-
-  .btn-emergency-large:hover, .btn-emergency:hover {
-    background: #c82333;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(220, 53, 69, 0.3);
-  }
-
-  .btn-remodeling-large:hover, .btn-remodeling:hover, .btn-areas:hover, .btn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
-  }
-
-  /* BOTONES DEL HERO */
-  .cta-emergency, .cta-remodeling {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    min-width: 200px;
-    justify-content: center;
-  }
-
-  .cta-emergency {
-    background: #dc3545;
-    color: white;
-    border: 3px solid #dc3545;
-  }
-
-  .cta-remodeling {
-    background: transparent;
-    color: white;
-    border: 3px solid white;
-  }
-
-  .cta-emergency:hover, .cta-remodeling:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
-
-  .cta-remodeling:hover {
-    background: white;
-    color: #007bff;
-  }
-
-  /* BOTÓN DE EMERGENCIA DEL BANNER */
-  .emergency-btn-banner {
-    background: white;
-    color: #dc3545;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    font-size: 1rem;
-  }
-
-  .emergency-btn-banner:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-
-  .arrowbtnHww {
-    transition: transform 0.3s ease;
-  }
-
-  .btn-steps:hover .arrowbtnHww {
-    transform: translateX(4px);
-  }
-
-  /* ===== RESOURCES SECTION ===== */
-  .resources-section {
-    padding: 4rem 0;
-    background: white;
-  }
-
-  .resources-category {
-    margin-bottom: 3rem;
-  }
-
-  .resources-subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #2d3748;
-  }
-
-  .cnt-fatherResorces {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .cnt-cardResorces {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .emergency-resource {
-    border-top: 4px solid #dc3545;
-  }
-
-  .remodeling-resource {
-    border-top: 4px solid #007bff;
-  }
-
-  .cnt-cardResorces:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  }
-
-  .titlle-cardResorces {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2d3748;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    justify-content: center;
-  }
-
-  .iconrResorcesGuide, .iconrResorcesList, .iconrResorcesCalculate {
-    font-size: 1.5rem;
-  }
-
-  .text-cardResorces {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .btn-cardResorces {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-
-  .emergency-btn {
-    background: #dc3545;
-    color: white;
-  }
-
-  .remodeling-btn {
-    background: #007bff;
-    color: white;
-  }
-
-  .btn-cardResorces:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
   /* ===== SERVICE AREAS SECTION ===== */
@@ -1223,144 +800,6 @@ try {
     margin-bottom: 3rem;
   }
 
-  .tittleTotalServi {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #2d3748;
-  }
-
-  .textTotalServi {
-    font-size: 1.25rem;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .areas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .area-region {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: all 0.3s ease;
-    border-top: 4px solid #007bff;
-  }
-
-  .area-region:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-
-  .region-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 1rem;
-  }
-
-  .region-icon {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  .area-region h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #2d3748;
-  }
-
-  .region-description {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin: 0;
-  }
-
-  .area-region ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .city-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .city-info:hover {
-    background: #f7fafc;
-    transform: translateX(4px);
-  }
-
-  .city-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .area-region li a {
-    color: #2d3748;
-    text-decoration: none;
-    font-weight: 500;
-    flex: 1;
-    text-align: left;
-  }
-
-  .area-region li a:hover {
-    color: #007bff;
-  }
-
-  .city-feature {
-    font-size: 0.75rem;
-    background: rgba(0, 123, 255, 0.1);
-    color: #007bff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .coverage-note {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
-  }
-
-  .service-area-cta {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .btn-areas {
-    background: #007bff;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-
-  .btn-areas:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-  }
-
   /* ===== BLOG SECTION ===== */
   .blog-section {
     padding: 4rem 0;
@@ -1370,65 +809,65 @@ try {
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-8, 2rem);
-    margin-bottom: var(--spacing-8, 2rem);
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   .blog-card {
     background: white;
-    border-radius: var(--border-radius-lg, 12px);
-    box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.1));
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-primary, #007bff);
+    border: 1px solid #007bff;
   }
 
   .blog-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.15));
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   }
 
   .blog-card-content {
-    padding: var(--spacing-6, 1.5rem);
+    padding: 1.5rem;
   }
 
   .blog-card h3 {
-    margin-bottom: var(--spacing-3, 1rem);
+    margin-bottom: 1rem;
   }
 
   .blog-card h3 a {
-    color: var(--text-primary, #2d3748);
+    color: #2d3748;
     text-decoration: none;
-    font-size: var(--font-size-lg, 1.125rem);
+    font-size: 1.125rem;
   }
 
   .blog-card h3 a:hover {
-    color: var(--color-primary, #007bff);
+    color: #007bff;
   }
 
   .blog-card p {
-    color: var(--text-secondary, #4a5568);
+    color: #4a5568;
     line-height: 1.6;
-    margin-bottom: var(--spacing-4, 1rem);
+    margin-bottom: 1rem;
   }
 
   .blog-meta {
     display: flex;
     justify-content: space-between;
-    font-size: var(--font-size-sm, 0.875rem);
-    color: var(--text-light, #718096);
-    margin-bottom: var(--spacing-4, 1rem);
+    font-size: 0.875rem;
+    color: #718096;
+    margin-bottom: 1rem;
   }
 
   .read-more {
-    color: var(--color-primary, #007bff);
+    color: #007bff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
   }
 
   .read-more:hover {
-    color: var(--color-primary-dark, #0056b3);
+    color: #0056b3;
   }
 
   /* ===== RESPONSIVE DESIGN ===== */
@@ -1465,17 +904,9 @@ try {
       grid-template-columns: 1fr;
     }
 
-    .process-steps {
-      grid-template-columns: 1fr;
-    }
-
     .dual-cta-buttons {
       flex-direction: column;
       align-items: center;
-    }
-
-    .areas-grid {
-      grid-template-columns: 1fr;
     }
 
     .blog-grid {
@@ -1484,7 +915,12 @@ try {
 
     .blog-meta {
       flex-direction: column;
-      gap: var(--spacing-1, 0.25rem);
+      gap: 0.25rem;
+    }
+
+    .features-category {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
   }
 
