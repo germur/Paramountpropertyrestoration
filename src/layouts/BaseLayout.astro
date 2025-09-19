@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import CtaAll from "../components/CtaAll";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
 import "../styles/global.css";
 
@@ -159,9 +158,6 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
       )}
       <slot />
     </main>
-    <section>
-      <CtaAll client:visible />
-    </section>
     <Footer />
 
     {/* Script para detectar intent de usuario */}

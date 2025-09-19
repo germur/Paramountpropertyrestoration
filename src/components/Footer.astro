@@ -4,19 +4,6 @@ const currentYear = new Date().getFullYear();
 
 <footer class="footer">
   <div class="container">
-    <!-- EMERGENCY BANNER EN FOOTER -->
-    <div class="footer-emergency-banner">
-      <div class="footer-emergency-content">
-        <div class="emergency-icon">🚨</div>
-        <div class="emergency-text">
-          <strong>24/7 Emergency Response</strong> - Property damage? We're here to help!
-        </div>
-        <a href="tel:+17866022217" class="footer-emergency-btn">
-          Call: (786) 602-2217
-        </a>
-      </div>
-    </div>
-
     <div class="footer-content">
       <!-- LOGO SECTION -->
       <div class="footer-section logo-section">
@@ -128,50 +115,6 @@ const currentYear = new Date().getFullYear();
     color: #2d3748;
     padding: 0;
     margin-top: auto;
-  }
-
-  /* EMERGENCY BANNER */
-  .footer-emergency-banner {
-    background: linear-gradient(45deg, #dc3545, #c82333);
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  .footer-emergency-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .emergency-icon {
-    font-size: 1.5rem;
-    animation: pulse 2s infinite;
-    color: white;
-  }
-
-  .emergency-text {
-    font-size: 1rem;
-    color: white;
-  }
-
-  .footer-emergency-btn {
-    background: white;
-    color: #dc3545;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .footer-emergency-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
   /* MAIN FOOTER CONTENT */
@@ -426,11 +369,6 @@ const currentYear = new Date().getFullYear();
   }
 
   @media (max-width: 768px) {
-    .footer-emergency-content {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
     .footer-content {
       grid-template-columns: 1fr;
       gap: 2rem;

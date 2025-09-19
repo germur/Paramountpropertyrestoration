@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { getAllCombos } from "../../../data/restoration.js";
+import { getAllCombinations } from "../../../data/restoration.js";
 
 import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
 import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
@@ -10,15 +10,29 @@ import MitigationTemplate from "../../../components/restoration/templates/Mitiga
 import GenericTemplate from "../../../components/restoration/templates/GenericTemplate.astro";
 
 export async function getStaticPaths() {
-    return getAllCombos();
+    const combinations = getAllCombinations();
+    
+    return combinations.map(({ serviceData, cityData }) => ({
+        params: {
+            group: serviceData.group || "restoration",
+            subservice: serviceData.slug
+        },
+        props: {
+            groupData: {
+                name: serviceData.groupName || "Restoration Services",
+                template: serviceData.template || "generic"
+            },
+            subData: serviceData
+        }
+    }));
 }
 
 const { groupData, subData } = Astro.props;
 
 const pageTitle =
     subData?.seo?.title ??
-    `${subData.title} | ${groupData.name} | 1GC Construction`;
-const pageDescription = subData?.seo?.description ?? groupData.description;
+    `${subData.title} | ${groupData.name} | Paramount Property Restoration`;
+const pageDescription = subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration`;
 
 const templates = {
     water: WaterTemplate,
