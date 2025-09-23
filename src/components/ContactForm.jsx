@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -13,17 +12,6 @@ export default function ContactForm() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-
-  // Initialize EmailJS when component mounts
-  useEffect(() => {
-    // Use Astro environment variables
-    const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
-    
-    if (publicKey) {
-      emailjs.init(publicKey);
-    } else {
-    }
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,34 +27,16 @@ export default function ContactForm() {
     setSubmitStatus('');
 
     try {
-      // Get environment variables
-      const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+      const form = e.target;
+      const formDataToSend = new FormData(form);
 
-      // Verify we have credentials
-      if (!serviceId || !templateId) {
-        throw new Error('EmailJS credentials not configured');
-      }
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend).toString()
+      });
 
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          address: formData.address,
-          subject: formData.subject,
-          message: formData.message,
-          // Additional fields you can use in your template
-          to_name: 'Your Company', // Recipient name (you)
-          from_name: formData.name, // Sender name
-          reply_to: formData.email, // Reply-to email
-        }
-      );
-
-      if (response.status === 200) {
+      if (response.ok) {
         setSubmitStatus('success');
         // Clear form
         setFormData({
@@ -78,17 +48,19 @@ export default function ContactForm() {
           message: ''
         });
         
-        // Optional: Clear success message after 5 seconds
+        // Clear success message after 5 seconds
         setTimeout(() => {
           setSubmitStatus('');
         }, 5000);
+      } else {
+        throw new Error('Form submission failed');
       }
       
     } catch (error) {
       console.error('Error sending form:', error);
       setSubmitStatus('error');
       
-      // Optional: Clear error message after 5 seconds
+      // Clear error message after 5 seconds
       setTimeout(() => {
         setSubmitStatus('');
       }, 5000);
@@ -99,7 +71,18 @@ export default function ContactForm() {
 
   return (
     <>
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form 
+        className="contact-form" 
+        onSubmit={handleSubmit}
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        {/* Hidden fields for Netlify */}
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
+
         <div className="form-group">
           <label htmlFor="name" className="form-label">
             Full Name *
@@ -150,7 +133,7 @@ export default function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="address" className="form-label">
-            Project Address
+            Property Address
           </label>
           <input
             type="text"
@@ -165,7 +148,7 @@ export default function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="subject" className="form-label">
-            Project Type *
+            Service Needed *
           </label>
           <select
             id="subject"
@@ -175,22 +158,41 @@ export default function ContactForm() {
             required
             className="form-select"
           >
-            <option value="">Select a project type</option>
-            <option value="kitchen">Kitchen</option>
-            <option value="bathroom">Bathroom</option>
-            <option value="home-additions">Home Additions</option>
-            <option value="living-dining">Living and Dining</option>
-            <option value="bedroom">Bedroom</option>
-            <option value="general-repair">General Repair</option>
-            <option value="new-construction">New Construction</option>
-            <option value="complete-remodel">Complete Remodel</option>
-            <option value="other">Other</option>
+            <option value="">Select a service</option>
+            
+            {/* Emergency Restoration Services */}
+            <optgroup label="🚨 Emergency Restoration Services">
+              <option value="water-damage">Water Damage Emergency</option>
+              <option value="fire-damage">Fire Damage Emergency</option>
+              <option value="mold-remediation">Mold Remediation</option>
+              <option value="storm-damage">Storm Damage Emergency</option>
+              <option value="flood-damage">Flood Damage</option>
+              <option value="emergency-restoration">24/7 Emergency Response</option>
+            </optgroup>
+
+            {/* Remodeling Services */}
+            <optgroup label="🏠 Remodeling & Construction">
+              <option value="kitchen-remodeling">Kitchen Remodeling</option>
+              <option value="bathroom-remodeling">Bathroom Remodeling</option>
+              <option value="home-additions">Home Additions</option>
+              <option value="living-dining-remodeling">Living & Dining Room</option>
+              <option value="bedroom-remodeling">Bedroom Remodeling</option>
+              <option value="complete-remodel">Complete Home Remodel</option>
+            </optgroup>
+
+            {/* General */}
+            <optgroup label="📋 Other Services">
+              <option value="insurance-claim">Insurance Claim Assistance</option>
+              <option value="free-estimate">Free Estimate Request</option>
+              <option value="consultation">Property Consultation</option>
+              <option value="other">Other Service</option>
+            </optgroup>
           </select>
         </div>
 
         <div className="form-group">
           <label htmlFor="message" className="form-label">
-            Project Description *
+            Project Details *
           </label>
           <textarea
             id="message"
@@ -200,7 +202,7 @@ export default function ContactForm() {
             required
             rows="6"
             className="form-textarea"
-            placeholder="Tell us about your project: What needs to be repaired, built, or remodeled? What are your ideas? Do you have a specific timeline?"
+            placeholder="Please describe your situation: Is this an emergency? What happened? What needs to be repaired or remodeled? Any specific timeline or concerns?"
           ></textarea>
         </div>
 
@@ -212,10 +214,10 @@ export default function ContactForm() {
           {isSubmitting ? (
             <>
               <span className="spinner"></span>
-              Sending...
+              Sending Request...
             </>
           ) : (
-            'Get Free Quote'
+            'Send Request - Get Response Within 1 Hour'
           )}
         </button>
 
@@ -225,7 +227,7 @@ export default function ContactForm() {
               <path d="M9 12l2 2 4-4"/>
               <circle cx="12" cy="12" r="10"/>
             </svg>
-            Thank you for your message! We'll contact you within 24 hours to discuss your project.
+            Thank you! We received your request and will respond within 1 hour. For emergencies, please call (786) 602-2217 immediately.
           </div>
         )}
 
@@ -236,9 +238,17 @@ export default function ContactForm() {
               <line x1="15" y1="9" x2="9" y2="15"/>
               <line x1="9" y1="9" x2="15" y2="15"/>
             </svg>
-            There was an error sending your message. Please try again or contact us directly by phone.
+            Error sending your request. For immediate help, please call us at (786) 602-2217
           </div>
         )}
+
+        <div className="emergency-notice">
+          <div className="emergency-icon">🚨</div>
+          <div className="emergency-text">
+            <strong>EMERGENCY?</strong> Don't wait - call us now for immediate response!
+            <a href="tel:+17866022217" className="emergency-phone">(786) 602-2217</a>
+          </div>
+        </div>
       </form>
 
       <style>{`
@@ -255,7 +265,7 @@ export default function ContactForm() {
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 500;
-          color: var(--text-primary);
+          color: var(--text-primary, #1e293b);
         }
 
         .form-input,
@@ -274,8 +284,8 @@ export default function ContactForm() {
         .form-select:focus,
         .form-textarea:focus {
           outline: none;
-          border-color: var(--color-primary);
-          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+          border-color: #f59e0b;
+          box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
         }
 
         .form-textarea {
@@ -283,10 +293,22 @@ export default function ContactForm() {
           min-height: 120px;
         }
 
+        .form-select optgroup {
+          font-weight: bold;
+          color: #374151;
+          background-color: #f9fafb;
+        }
+
+        .form-select option {
+          font-weight: normal;
+          color: #1f2937;
+          background-color: white;
+        }
+
         .form-submit {
           width: 100%;
           padding: 0.875rem 2rem;
-          background-color: var(--color-primary);
+          background-color: #f59e0b;
           color: white;
           border: none;
           border-radius: 0.5rem;
@@ -301,7 +323,7 @@ export default function ContactForm() {
         }
 
         .form-submit:hover:not(:disabled) {
-          background-color: var(--color-primary-dark);
+          background-color: #d97706;
           transform: translateY(-1px);
         }
 
@@ -311,7 +333,7 @@ export default function ContactForm() {
         }
 
         .form-submit.submitting {
-          background-color: var(--color-secondary);
+          background-color: #6b7280;
         }
 
         .spinner {
@@ -363,9 +385,49 @@ export default function ContactForm() {
           border: 1px solid #fecaca;
         }
 
+        .emergency-notice {
+          margin-top: 2rem;
+          padding: 1rem;
+          background-color: #fef3c7;
+          border: 2px solid #f59e0b;
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .emergency-icon {
+          font-size: 1.5rem;
+        }
+
+        .emergency-text {
+          flex: 1;
+          color: #92400e;
+          font-size: 0.875rem;
+        }
+
+        .emergency-phone {
+          display: block;
+          color: #f59e0b;
+          font-weight: bold;
+          font-size: 1rem;
+          text-decoration: none;
+          margin-top: 0.25rem;
+        }
+
+        .emergency-phone:hover {
+          color: #d97706;
+        }
+
         @media (max-width: 768px) {
           .contact-form {
             padding: 0 1rem;
+          }
+
+          .emergency-notice {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
           }
         }
       `}</style>
