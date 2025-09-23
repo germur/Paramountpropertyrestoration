@@ -1,9 +1,6 @@
-// src/data/restoration.js - CÓDIGO FINAL Y DEFINITIVO
+// src/data/restoration.js - CÓDIGO FINAL CORREGIDO
 
 export const restorationGroups = [
-  // ===========================
-  // WATER DAMAGE
-  // ===========================
   {
     slug: "water-damage",
     name: "Water Damage Restoration",
@@ -14,15 +11,11 @@ export const restorationGroups = [
         slug: "flood-damage",
         title: "Flood Damage",
         nombre: "Flood Damage",
-        categoria: "restoration",
-        seo: {
-          title: "Flood Damage Restoration Florida | 24/7 Emergency Response",
-          description: "Professional flood damage restoration in Florida. Emergency water extraction, drying, and cleanup services.",
-        }
+        categoria: "restoration"
       },
       {
         slug: "leak-repair",
-        title: "Leak Repair",
+        title: "Leak Repair", 
         nombre: "Leak Repair",
         categoria: "restoration"
       },
@@ -46,10 +39,6 @@ export const restorationGroups = [
       }
     ]
   },
-
-  // ===========================
-  // FIRE DAMAGE
-  // ===========================
   {
     slug: "fire-damage",
     name: "Fire Damage Restoration",
@@ -82,10 +71,6 @@ export const restorationGroups = [
       }
     ]
   },
-
-  // ===========================
-  // MOLD REMEDIATION
-  // ===========================
   {
     slug: "mold-remediation",
     name: "Mold Remediation",
@@ -107,7 +92,7 @@ export const restorationGroups = [
       {
         slug: "mold-prevention",
         title: "Mold Prevention",
-        nombre: "Mold Prevention",
+        nombre: "Mold Prevention", 
         categoria: "restoration"
       },
       {
@@ -118,10 +103,6 @@ export const restorationGroups = [
       }
     ]
   },
-
-  // ===========================
-  // STORM DAMAGE
-  // ===========================
   {
     slug: "storm-damage",
     name: "Storm Damage Restoration",
@@ -154,10 +135,6 @@ export const restorationGroups = [
       }
     ]
   },
-
-  // ===========================
-  // MITIGATION SERVICES
-  // ===========================
   {
     slug: "mitigation-services",
     name: "Mitigation Services",
@@ -192,29 +169,18 @@ export const restorationGroups = [
   }
 ];
 
-// ===========================
-// REMODELING SERVICES (SEPARADOS PARA /services/)
-// ===========================
 export const remodelingServices = [
   {
     slug: "kitchen-remodeling",
     title: "Kitchen Remodeling",
     nombre: "Kitchen Remodeling",
-    categoria: "remodeling",
-    seo: {
-      title: "Kitchen Remodeling Florida | Custom Kitchen Design",
-      description: "Professional kitchen remodeling services in Florida. Custom cabinets, countertops, and complete renovations.",
-    }
+    categoria: "remodeling"
   },
   {
     slug: "bathroom-remodeling",
     title: "Bathroom Remodeling",
     nombre: "Bathroom Remodeling",
-    categoria: "remodeling",
-    seo: {
-      title: "Bathroom Remodeling Florida | Bathroom Renovation",
-      description: "Complete bathroom remodeling services in Florida. Modern designs and quality fixtures.",
-    }
+    categoria: "remodeling"
   },
   {
     slug: "home-additions-remodeling",
@@ -236,9 +202,6 @@ export const remodelingServices = [
   }
 ];
 
-// ===========================
-// CITIES DATA
-// ===========================
 export const cities = [
   // Central Florida
   { slug: "orlando", name: "Orlando", nombre: "Orlando", county: "Orange County", region: "Central Florida" },
@@ -290,11 +253,7 @@ export const cities = [
   { slug: "hobe-sound", name: "Hobe Sound", nombre: "Hobe Sound", county: "Martin County", region: "Treasure Coast" }
 ];
 
-// ===========================
 // FUNCIONES PARA RUTAS DINÁMICAS
-// ===========================
-
-// Para /restoration/[service]/[subcategory]/[ciudad]/
 export function getAllRestorationCombinations() {
   const combinations = [];
   
@@ -316,7 +275,6 @@ export function getAllRestorationCombinations() {
   return combinations;
 }
 
-// Para /services/[servicio]/[ciudad]/
 export function getAllServicesCombinations() {
   const combinations = [];
   
@@ -334,7 +292,6 @@ export function getAllServicesCombinations() {
   return combinations;
 }
 
-// Para /restoration/[group]/[subservice]/
 export function getRestorationGroupCombinations() {
   const combinations = [];
   
@@ -350,19 +307,4 @@ export function getRestorationGroupCombinations() {
   });
   
   return combinations;
-}
-
-// Funciones de utilidad
-export function getCityBySlug(slug) {
-  return cities.find(city => city.slug === slug);
-}
-
-export function getServiceBySlug(slug) {
-  return remodelingServices.find(service => service.slug === slug);
-}
-
-export function getRestorationServiceBySlug(groupSlug, serviceSlug) {
-  const group = restorationGroups.find(g => g.slug === groupSlug);
-  if (!group) return null;
-  return group.subservices.find(s => s.slug === serviceSlug);
 }

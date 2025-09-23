@@ -1,6 +1,6 @@
 // src/components/RestorationLinks.jsx
 import React from 'react';
-import { restorationGroups, ciudades } from '../data/restoration.js';
+import { restorationGroups, cities } from '../data/restoration.js';
 
 const RestorationLinks = ({ 
   currentService = null, 
@@ -8,11 +8,9 @@ const RestorationLinks = ({
   showTitle = true,
   maxServices = 6,
   maxCities = 8,
-  groupFilter = null // "water-damage", "fire-damage", "mold-remediation", "storm-damage"
+  groupFilter = null
 }) => {
-  // Filtrar solo servicios de restoration (excluir remodeling)
   const restorationServices = restorationGroups
-    .filter(group => group.slug !== "remodeling-services")
     .filter(group => !groupFilter || group.slug === groupFilter)
     .flatMap(group => 
       group.subservices.map(service => ({
@@ -22,34 +20,30 @@ const RestorationLinks = ({
       }))
     );
 
-  // Obtener servicios aleatorios (excluyendo el actual)
   const getRandomServices = () => {
     const filtered = restorationServices.filter(s => s.slug !== currentService);
     const shuffled = [...filtered].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, maxServices);
   };
 
-  // Obtener ciudades aleatorias (excluyendo la actual)
   const getRandomCities = () => {
-    const filtered = ciudades.filter(c => c.slug !== currentCity);
+    const filtered = cities.filter(c => c.slug !== currentCity);
     const shuffled = [...filtered].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, maxCities);
   };
 
   const services = getRandomServices();
-  const cities = getRandomCities();
+  const citiesList = getRandomCities();
 
-  // Generar combinaciones service + city
   const generateLinks = () => {
     const links = [];
     
-    // Si hay servicio actual, mostrar ese servicio en otras ciudades
     if (currentService) {
       const currentServiceData = restorationServices.find(s => s.slug === currentService);
       if (currentServiceData) {
-        cities.forEach(city => {
+        citiesList.forEach(city => {
           links.push({
-            url: `/services/${currentService}/${city.slug}`,
+            url: `/restoration/${currentServiceData.groupSlug}/${currentService}/${city.slug}`,
             text: `${currentServiceData.title} in ${city.nombre}`,
             type: 'same-service'
           });
@@ -57,13 +51,12 @@ const RestorationLinks = ({
       }
     }
 
-    // Si hay ciudad actual, mostrar otros servicios en esa ciudad
     if (currentCity) {
-      const currentCityData = ciudades.find(c => c.slug === currentCity);
+      const currentCityData = cities.find(c => c.slug === currentCity);
       if (currentCityData) {
         services.forEach(service => {
           links.push({
-            url: `/services/${service.slug}/${currentCity}`,
+            url: `/restoration/${service.groupSlug}/${service.slug}/${currentCity}`,
             text: `${service.title} in ${currentCityData.nombre}`,
             type: 'same-city'
           });
@@ -71,12 +64,11 @@ const RestorationLinks = ({
       }
     }
 
-    // Si no hay contexto actual, generar combinaciones aleatorias
     if (!currentService && !currentCity) {
       services.slice(0, 3).forEach(service => {
-        cities.slice(0, 3).forEach(city => {
+        citiesList.slice(0, 3).forEach(city => {
           links.push({
-            url: `/services/${service.slug}/${city.slug}`,
+            url: `/restoration/${service.groupSlug}/${service.slug}/${city.slug}`,
             text: `${service.title} in ${city.nombre}`,
             type: 'random'
           });
@@ -126,7 +118,6 @@ const RestorationLinks = ({
   );
 };
 
-// Variantes específicas para diferentes grupos
 export const WaterDamageLinks = (props) => (
   <RestorationLinks {...props} groupFilter="water-damage" />
 );
@@ -143,12 +134,15 @@ export const StormDamageLinks = (props) => (
   <RestorationLinks {...props} groupFilter="storm-damage" />
 );
 
-// Componente para mostrar servicios por región
 export const RestorationByRegion = ({ region = "South Florida", maxServices = 4 }) => {
-  const regionCities = ciudades.filter(c => c.region === region);
+  const regionCities = cities.filter(c => c.region === region);
   const restorationServices = restorationGroups
-    .filter(group => group.slug !== "remodeling-services")
-    .flatMap(group => group.subservices)
+    .flatMap(group => 
+      group.subservices.map(service => ({
+        ...service,
+        groupSlug: group.slug
+      }))
+    )
     .slice(0, maxServices);
 
   return (
@@ -159,7 +153,7 @@ export const RestorationByRegion = ({ region = "South Florida", maxServices = 4 
           regionCities.slice(0, 2).map(city => (
             <a 
               key={`${service.slug}-${city.slug}`}
-              href={`/services/${service.slug}/${city.slug}`}
+              href={`/restoration/${service.groupSlug}/${service.slug}/${city.slug}`}
               className="region-link"
             >
               {service.title} in {city.nombre}
