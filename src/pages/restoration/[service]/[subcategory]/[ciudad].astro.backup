@@ -1,0 +1,183 @@
+---
+// src/pages/restoration/[service]/[subcategory]/[ciudad].astro
+import { getAllRestorationCombinations } from "../../../../data/restoration.js";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import "../../../../styles/pages/[ciudad].css";
+import "../../../../styles/pages/restoration-city.css";
+import RestorationCTA from "../../../../components/RestorationCTA.jsx";
+import FAQ from "../../../../components/AcordeonServices.jsx";
+
+export async function getStaticPaths() {
+  const combinations = getAllRestorationCombinations();
+
+  return combinations.map(
+    ({
+      service,
+      subcategory,
+      ciudad,
+      servicioData,
+      ciudadData,
+      groupData,
+    }) => ({
+      params: {
+        service,
+        subcategory,
+        ciudad,
+      },
+      props: {
+        servicioData,
+        ciudadData,
+        groupData,
+      },
+    })
+  );
+}
+
+const { service, subcategory, ciudad } = Astro.params;
+const { servicioData, ciudadData, groupData } = Astro.props;
+
+// Generate dynamic content for SEO
+const pageTitle = `${servicioData.title} in ${ciudadData.nombre} | 1GC Construction`;
+const pageDescription =
+  servicioData.seo?.description ||
+  `Professional ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 emergency response and certified restoration specialists.`;
+
+// Hero content from service data
+const heroContent = {
+  title: `${servicioData.title} in ${ciudadData.nombre}`,
+  subtitle: `Fast, affordable, and code-compliant restoration services in ${ciudadData.nombre}, ${ciudadData.region}.`,
+  ctaText: `Get a Free Quote in ${ciudadData.nombre}`,
+  bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
+  iconRow: servicioData.hero?.iconRow || [],
+};
+
+// Convert {q, a} (from data) or {question, answer} (fallback) to FAQ format
+const rawFaqs = servicioData?.faqs ?? [];
+const customQuestions = rawFaqs.map((faq, index) => ({
+  id: `custom-${index}`,
+  question: faq.q ?? faq.question ?? "",
+  answer: faq.a ?? faq.answer ?? "",
+}));
+
+const finalCta = {
+  title: `Start your ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
+  cta: `Request Your Free Estimate`,
+  href: servicioData.cta?.href ?? "/contact",
+};
+// Nearby service areas for copy
+const serviceAreaCities = [
+  "Weston",
+  "Pembroke Pines",
+  "Coral Gables",
+  "Aventura",
+  "Doral",
+  "Kendall",
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section
+    class="hero-section"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroContent.bgImage})`}
+  >
+    <div class="container">
+      <div class="hero-content">
+        <!-- Main heading -->
+        <h1 class="hero-title">
+          {heroContent.title}
+        </h1>
+
+        <!-- Hero subtitle/description -->
+        <p class="hero-subtitle">
+          {heroContent.subtitle}
+        </p>
+
+        <!-- Emergency badge if applicable -->
+        {
+          servicioData.hero?.badge && (
+            <div class="emergency-badge">{servicioData.hero.badge}</div>
+          )
+        }
+
+        <!-- CTA Button -->
+        <div class="hero-cta">
+          <a href="/contact" class="btn-primary btn-emergency">
+            {heroContent.ctaText}
+          </a>
+          {
+            servicioData.hero?.tagline && (
+              <p class="hero-tagline">{servicioData.hero.tagline}</p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview Section -->
+  <section class="section service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <h2>{servicioData.title} Services You Can Trust</h2>
+          <p class="overview-text">
+            We deliver full-service {servicioData.title.toLowerCase()} in {
+              ciudadData.nombre
+            }
+            with expert technicians, clean work practices, and results you can rely
+            on.
+          </p>
+
+          <ul class="service-features">
+            <li>
+              <span class="feature-icon">✓</span>
+              On-site inspection & custom restoration plan
+            </li>
+            <li>
+              <span class="feature-icon">✓</span>
+              Code-compliant materials & installation
+            </li>
+            <li>
+              <span class="feature-icon">✓</span>
+              Fast timelines and real-time updates
+            </li>
+            <li>
+              <span class="feature-icon">✓</span>
+              Satisfaction guarantee on every job
+            </li>
+          </ul>
+        </div>
+
+        <div class="overview-sidebar">
+          <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
+          <p>
+            We offer {servicioData.title.toLowerCase()} in {ciudadData.nombre} and
+            throughout
+            {ciudadData.region}, including neighborhoods like {
+              serviceAreaCities.slice(0, 3).join(", ")
+            }, and {serviceAreaCities[3]}.
+          </p>
+          <a href="/contact" class="btn-outline">
+            Check Availability in Your Neighborhood →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    category={groupData.template || "general"}
+    customQuestions={customQuestions}
+    title={`About ${servicioData.title} in ${ciudadData.nombre}`}
+    client:load
+  />
+
+  <RestorationCTA
+    title={finalCta.title}
+    subtitle={""}
+    buttonText={finalCta.cta}
+    buttonLink={finalCta.href}
+    client:load
+  />
+</BaseLayout>
