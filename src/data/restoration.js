@@ -26,24 +26,31 @@ export const restorationGroups = [
         }
       },
       {
-        slug: "water-extraction",
-        title: "Water Extraction",
+        slug: "leak-repair",
+        title: "Leak Repair",
         short: "Emergency water removal services",
-        nombre: "Water Extraction",
+        nombre: "Leak Repair",
         categoria: "restoration"
       },
       {
-        slug: "basement-flood-cleanup",
-        title: "Basement Flood Cleanup",
+        slug: "basement-flooding",
+        title: "Basement Flooding",
         short: "Basement flooding restoration",
-        nombre: "Basement Flood Cleanup",
+        nombre: "Basement Flooding",
         categoria: "restoration"
       },
       {
-        slug: "water-mitigation",
-        title: "Water Mitigation",
-        short: "Water damage mitigation services",
-        nombre: "Water Mitigation",
+        slug: "ceiling-water-damage",
+        title: "Ceiling Water Damage",
+        short: "Ceiling water damage repair",
+        nombre: "Ceiling Water Damage",
+        categoria: "restoration"
+      },
+      {
+        slug: "emergency-water-removal",
+        title: "Emergency Water Removal",
+        short: "Emergency water extraction services",
+        nombre: "Emergency Water Removal",
         categoria: "restoration"
       }
     ]
@@ -59,6 +66,20 @@ export const restorationGroups = [
     description: "Complete fire and smoke damage restoration services",
     subservices: [
       {
+        slug: "smoke-damage",
+        title: "Smoke Damage",
+        short: "Professional smoke removal",
+        nombre: "Smoke Damage",
+        categoria: "restoration"
+      },
+      {
+        slug: "soot-cleanup",
+        title: "Soot Cleanup",
+        short: "Soot cleanup and removal",
+        nombre: "Soot Cleanup",
+        categoria: "restoration"
+      },
+      {
         slug: "fire-damage-repair",
         title: "Fire Damage Repair",
         short: "Complete fire damage restoration",
@@ -70,17 +91,10 @@ export const restorationGroups = [
         }
       },
       {
-        slug: "smoke-damage-restoration",
-        title: "Smoke Damage Restoration",
-        short: "Professional smoke removal",
-        nombre: "Smoke Damage Restoration",
-        categoria: "restoration"
-      },
-      {
-        slug: "soot-removal",
-        title: "Soot Removal",
-        short: "Soot cleanup and removal",
-        nombre: "Soot Removal",
+        slug: "emergency-fire-response",
+        title: "Emergency Fire Response",
+        short: "24/7 emergency fire response",
+        nombre: "Emergency Fire Response",
         categoria: "restoration"
       }
     ]
@@ -107,17 +121,24 @@ export const restorationGroups = [
         }
       },
       {
-        slug: "mold-removal",
-        title: "Mold Removal",
-        short: "Safe mold removal services",
-        nombre: "Mold Removal",
-        categoria: "restoration"
-      },
-      {
         slug: "black-mold-removal",
         title: "Black Mold Removal",
         short: "Black mold remediation",
         nombre: "Black Mold Removal",
+        categoria: "restoration"
+      },
+      {
+        slug: "mold-prevention",
+        title: "Mold Prevention",
+        short: "Mold prevention services",
+        nombre: "Mold Prevention",
+        categoria: "restoration"
+      },
+      {
+        slug: "mold-testing",
+        title: "Mold Testing",
+        short: "Professional mold testing",
+        nombre: "Mold Testing",
         categoria: "restoration"
       }
     ]
@@ -134,9 +155,9 @@ export const restorationGroups = [
     subservices: [
       {
         slug: "hurricane-damage",
-        title: "Hurricane Damage Restoration",
+        title: "Hurricane Damage",
         short: "Hurricane damage repair",
-        nombre: "Hurricane Damage Restoration",
+        nombre: "Hurricane Damage",
         categoria: "restoration",
         seo: {
           title: "Hurricane Damage Restoration Florida | Emergency Storm Response",
@@ -144,114 +165,65 @@ export const restorationGroups = [
         }
       },
       {
-        slug: "storm-damage-restoration",
-        title: "Storm Damage Restoration",
-        short: "Complete storm damage repair",
-        nombre: "Storm Damage Restoration",
-        categoria: "restoration"
-      },
-      {
-        slug: "wind-damage-restoration",
-        title: "Wind Damage Restoration",
+        slug: "wind-damage",
+        title: "Wind Damage",
         short: "Wind damage repair services",
-        nombre: "Wind Damage Restoration",
+        nombre: "Wind Damage",
+        categoria: "restoration"
+      },
+      {
+        slug: "storm-debris-removal",
+        title: "Storm Debris Removal",
+        short: "Storm debris cleanup and removal",
+        nombre: "Storm Debris Removal",
+        categoria: "restoration"
+      },
+      {
+        slug: "emergency-storm-repair",
+        title: "Emergency Storm Repair",
+        short: "24/7 emergency storm response",
+        nombre: "Emergency Storm Repair",
         categoria: "restoration"
       }
     ]
   },
 
   // ===========================
-  // EMERGENCY SERVICES
+  // MITIGATION SERVICES
   // ===========================
   {
-    slug: "emergency-services",
-    name: "Emergency Mitigation Services",
-    template: "emergency",
-    description: "24/7 emergency property mitigation services",
+    slug: "mitigation-services",
+    name: "Mitigation Services",
+    template: "mitigation",
+    description: "Professional damage mitigation services",
     subservices: [
       {
-        slug: "emergency-restoration",
-        title: "Emergency Restoration",
-        short: "24/7 emergency response",
-        nombre: "Emergency Restoration",
+        slug: "water-mitigation",
+        title: "Water Mitigation",
+        short: "Water damage mitigation",
+        nombre: "Water Mitigation",
         categoria: "restoration"
       },
       {
-        slug: "emergency-mitigation",
-        title: "Emergency Mitigation",
-        short: "Emergency damage mitigation",
-        nombre: "Emergency Mitigation",
+        slug: "fire-mitigation",
+        title: "Fire Mitigation",
+        short: "Fire damage mitigation",
+        nombre: "Fire Mitigation",
         categoria: "restoration"
-      }
-    ]
-  },
-
-  // ===========================
-  // REMODELING SERVICES
-  // ===========================
-  {
-    slug: "remodeling-services",
-    name: "Professional Remodeling Services",
-    template: "remodeling",
-    description: "Complete home renovation and remodeling services throughout Florida",
-    subservices: [
-      {
-        slug: "kitchen-remodeling",
-        title: "Kitchen Remodeling",
-        short: "Custom kitchen design & professional installation",
-        nombre: "Kitchen Remodeling",
-        categoria: "remodeling",
-        seo: {
-          title: "Kitchen Remodeling Florida | Custom Kitchen Design & Installation",
-          description: "Professional kitchen remodeling services in Florida. Custom cabinets, countertops, flooring, and complete kitchen renovations. Licensed contractors.",
-        },
-        hero: {
-          title: "Kitchen Remodeling Services",
-          description: "Transform your kitchen with our professional remodeling services. Custom designs, quality materials, and expert craftsmanship.",
-        }
       },
       {
-        slug: "bathroom-remodeling",
-        title: "Bathroom Remodeling",
-        short: "Complete bathroom renovation services",
-        nombre: "Bathroom Remodeling",
-        categoria: "remodeling",
-        seo: {
-          title: "Bathroom Remodeling Florida | Bathroom Renovation Services",
-          description: "Professional bathroom remodeling in Florida. Complete bathroom renovations, modern designs, quality fixtures, and waterproofing.",
-        }
+        slug: "mold-mitigation",
+        title: "Mold Mitigation",
+        short: "Mold damage mitigation",
+        nombre: "Mold Mitigation",
+        categoria: "restoration"
       },
       {
-        slug: "home-additions",
-        title: "Home Additions",
-        short: "Home expansion and addition services",
-        nombre: "Home Additions",
-        categoria: "remodeling",
-        seo: {
-          title: "Home Additions Florida | Home Expansion Services",
-          description: "Professional home addition services in Florida. Room additions, second stories, and home expansions. Licensed contractors.",
-        }
-      },
-      {
-        slug: "bedroom-remodeling",
-        title: "Bedroom Remodeling",
-        short: "Bedroom renovation and design services",
-        nombre: "Bedroom Remodeling",
-        categoria: "remodeling"
-      },
-      {
-        slug: "living-dining-remodeling",
-        title: "Living & Dining Room Remodeling",
-        short: "Living and dining area renovation",
-        nombre: "Living & Dining Room Remodeling",
-        categoria: "remodeling"
-      },
-      {
-        slug: "office-remodeling",
-        title: "Office Remodeling",
-        short: "Home office design and renovation",
-        nombre: "Office Remodeling",
-        categoria: "remodeling"
+        slug: "storm-mitigation",
+        title: "Storm Mitigation",
+        short: "Storm damage mitigation",
+        nombre: "Storm Mitigation",
+        categoria: "restoration"
       }
     ]
   }
@@ -310,6 +282,22 @@ export const cities = [
   { slug: "deerfield-beach", name: "Deerfield Beach", nombre: "Deerfield Beach", county: "Broward County", region: "South Florida" },
   { slug: "boca-raton", name: "Boca Raton", nombre: "Boca Raton", county: "Palm Beach County", region: "South Florida" },
   { slug: "west-palm-beach", name: "West Palm Beach", nombre: "West Palm Beach", county: "Palm Beach County", region: "South Florida" },
+  { slug: "miramar", name: "Miramar", nombre: "Miramar", county: "Broward County", region: "South Florida" },
+  { slug: "pembroke-pines", name: "Pembroke Pines", nombre: "Pembroke Pines", county: "Broward County", region: "South Florida" },
+  { slug: "homestead", name: "Homestead", nombre: "Homestead", county: "Miami-Dade County", region: "South Florida" },
+
+  // Treasure Coast
+  { slug: "port-st-lucie", name: "Port St. Lucie", nombre: "Port St. Lucie", county: "St. Lucie County", region: "Treasure Coast" },
+  { slug: "fort-pierce", name: "Fort Pierce", nombre: "Fort Pierce", county: "St. Lucie County", region: "Treasure Coast" },
+  { slug: "stuart", name: "Stuart", nombre: "Stuart", county: "Martin County", region: "Treasure Coast" },
+  { slug: "jensen-beach", name: "Jensen Beach", nombre: "Jensen Beach", county: "Martin County", region: "Treasure Coast" },
+  { slug: "vero-beach", name: "Vero Beach", nombre: "Vero Beach", county: "Indian River County", region: "Treasure Coast" },
+  { slug: "jupiter", name: "Jupiter", nombre: "Jupiter", county: "Palm Beach County", region: "Treasure Coast" },
+  { slug: "palm-city", name: "Palm City", nombre: "Palm City", county: "Martin County", region: "Treasure Coast" },
+  { slug: "hobe-sound", name: "Hobe Sound", nombre: "Hobe Sound", county: "Martin County", region: "Treasure Coast" },
+
+  // Additional Southwest Florida
+  { slug: "marco-island", name: "Marco Island", nombre: "Marco Island", county: "Collier County", region: "Southwest Florida" },
 
   // Northeast Florida  
   { slug: "jacksonville", name: "Jacksonville", nombre: "Jacksonville", county: "Duval County", region: "Northeast Florida" },
@@ -362,22 +350,24 @@ export function getCityBySlug(slug) {
   return cities.find(city => city.slug === slug);
 }
 
-// Generate all service + city combinations for restoration services
+// FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
   const restorationServices = getRestorationServices();
   const combinations = [];
   
   restorationServices.forEach(group => {
-    group.subservices.forEach(service => {
+    group.subservices.forEach(subservice => {
       cities.forEach(city => {
         combinations.push({
-          service: service.slug,
-          city: city.slug,
-          serviceData: service,
-          cityData: city,
-          serviceName: service.title,
+          service: group.slug,          // water-damage, fire-damage, etc.
+          subcategory: subservice.slug, // flood-damage, fire-damage-repair, etc.
+          ciudad: city.slug,           // orlando, miami, etc.
+          servicioData: subservice,
+          ciudadData: city,
+          groupData: group,
+          serviceName: subservice.title,
           cityName: city.name,
-          path: `/services/${service.slug}/${city.slug}`
+          path: `/restoration/${group.slug}/${subservice.slug}/${city.slug}`
         });
       });
     });
