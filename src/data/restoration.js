@@ -352,10 +352,9 @@ export function getCityBySlug(slug) {
 
 // FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
-  const restorationServices = getRestorationServices();
   const combinations = [];
   
-  restorationServices.forEach(group => {
+  restorationGroups.forEach(group => { // ← USA DIRECTAMENTE restorationGroups
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
         combinations.push({
