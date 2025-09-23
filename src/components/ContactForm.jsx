@@ -76,8 +76,8 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         name="contact"
         method="POST"
-        netlify
-        netlify-honeypot="bot-field"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         {/* Hidden fields for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
@@ -158,35 +158,29 @@ export default function ContactForm() {
             required
             className="form-select"
           >
-            <option value="">Select a service</option>
+            <option value="">What do you need help with?</option>
             
-            {/* Emergency Restoration Services */}
-            <optgroup label="🚨 Emergency Restoration Services">
-              <option value="water-damage">Water Damage Emergency</option>
-              <option value="fire-damage">Fire Damage Emergency</option>
-              <option value="mold-remediation">Mold Remediation</option>
-              <option value="storm-damage">Storm Damage Emergency</option>
-              <option value="flood-damage">Flood Damage</option>
-              <option value="emergency-restoration">24/7 Emergency Response</option>
-            </optgroup>
-
-            {/* Remodeling Services */}
-            <optgroup label="🏠 Remodeling & Construction">
-              <option value="kitchen-remodeling">Kitchen Remodeling</option>
-              <option value="bathroom-remodeling">Bathroom Remodeling</option>
-              <option value="home-additions">Home Additions</option>
-              <option value="living-dining-remodeling">Living & Dining Room</option>
-              <option value="bedroom-remodeling">Bedroom Remodeling</option>
-              <option value="complete-remodel">Complete Home Remodel</option>
-            </optgroup>
-
-            {/* General */}
-            <optgroup label="📋 Other Services">
-              <option value="insurance-claim">Insurance Claim Assistance</option>
-              <option value="free-estimate">Free Estimate Request</option>
-              <option value="consultation">Property Consultation</option>
-              <option value="other">Other Service</option>
-            </optgroup>
+            {/* Emergency Services - Top Priority */}
+            <option value="water-damage-emergency">🚨 Water Damage Emergency</option>
+            <option value="fire-damage-emergency">🚨 Fire Damage Emergency</option>
+            <option value="storm-damage-emergency">🚨 Storm Damage Emergency</option>
+            <option value="emergency-restoration">🚨 Other Emergency</option>
+            
+            {/* Most Popular Services */}
+            <option value="kitchen-remodeling">Kitchen Remodeling</option>
+            <option value="bathroom-remodeling">Bathroom Remodeling</option>
+            <option value="water-damage">Water Damage Repair</option>
+            <option value="mold-remediation">Mold Inspection/Removal</option>
+            
+            {/* Other Services */}
+            <option value="home-additions">Home Additions</option>
+            <option value="fire-damage">Fire Damage Repair</option>
+            <option value="living-dining-remodeling">Living/Dining Remodel</option>
+            <option value="bedroom-remodeling">Bedroom Remodeling</option>
+            <option value="complete-remodel">Complete Home Remodel</option>
+            <option value="insurance-claim">Insurance Claim Help</option>
+            <option value="free-estimate">Free Estimate</option>
+            <option value="other">Other Service</option>
           </select>
         </div>
 
