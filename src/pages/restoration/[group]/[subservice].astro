@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { getAllCombinations } from "../../../data/restoration.js";
+import { restorationGroups } from "../../../data/restoration.js";
 
 import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
 import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
@@ -10,21 +10,35 @@ import MitigationTemplate from "../../../components/restoration/templates/Mitiga
 import GenericTemplate from "../../../components/restoration/templates/GenericTemplate.astro";
 
 export async function getStaticPaths() {
-    const combinations = getAllCombinations();
+    const combinations = [];
     
-    return combinations.map(({ serviceData, cityData }) => ({
-        params: {
-            group: serviceData.group || "restoration",
-            subservice: serviceData.slug
-        },
-        props: {
-            groupData: {
-                name: serviceData.groupName || "Restoration Services",
-                template: serviceData.template || "generic"
-            },
-            subData: serviceData
-        }
-    }));
+    // Solo servicios de restauración (sin ciudades)
+    restorationGroups.forEach(group => {
+        group.subservices.forEach(subservice => {
+            combinations.push({
+                params: {
+                    group: group.slug,
+                    subservice: subservice.slug
+                },
+                props: {
+                    groupData: {
+                        name: group.name,
+                        slug: group.slug,
+                        template: group.template || "generic",
+                        description: group.description
+                    },
+                    subData: {
+                        ...subservice,
+                        groupSlug: group.slug,
+                        groupName: group.name,
+                        template: group.template
+                    }
+                }
+            });
+        });
+    });
+    
+    return combinations;
 }
 
 const { groupData, subData } = Astro.props;
