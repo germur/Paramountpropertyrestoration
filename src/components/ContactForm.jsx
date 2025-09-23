@@ -148,7 +148,7 @@ export default function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="subject" className="form-label">
-            Service Needed *
+            Service Type *
           </label>
           <select
             id="subject"
@@ -158,29 +158,9 @@ export default function ContactForm() {
             required
             className="form-select"
           >
-            <option value="">What do you need help with?</option>
-            
-            {/* Emergency Services - Top Priority */}
-            <option value="water-damage-emergency">🚨 Water Damage Emergency</option>
-            <option value="fire-damage-emergency">🚨 Fire Damage Emergency</option>
-            <option value="storm-damage-emergency">🚨 Storm Damage Emergency</option>
-            <option value="emergency-restoration">🚨 Other Emergency</option>
-            
-            {/* Most Popular Services */}
-            <option value="kitchen-remodeling">Kitchen Remodeling</option>
-            <option value="bathroom-remodeling">Bathroom Remodeling</option>
-            <option value="water-damage">Water Damage Repair</option>
-            <option value="mold-remediation">Mold Inspection/Removal</option>
-            
-            {/* Other Services */}
-            <option value="home-additions">Home Additions</option>
-            <option value="fire-damage">Fire Damage Repair</option>
-            <option value="living-dining-remodeling">Living/Dining Remodel</option>
-            <option value="bedroom-remodeling">Bedroom Remodeling</option>
-            <option value="complete-remodel">Complete Home Remodel</option>
-            <option value="insurance-claim">Insurance Claim Help</option>
-            <option value="free-estimate">Free Estimate</option>
-            <option value="other">Other Service</option>
+            <option value="">Choose service type</option>
+            <option value="restoration">Emergency Restoration (Water, Fire, Mold, Storm)</option>
+            <option value="remodeling">Remodeling & Construction (Kitchen, Bathroom, Additions)</option>
           </select>
         </div>
 
