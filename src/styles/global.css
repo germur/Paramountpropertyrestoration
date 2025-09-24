@@ -1,198 +1,330 @@
-/* Reset y variables CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== PARAMOUNT PROPERTY RESTORATION - SISTEMA UNIFICADO ===== */
 
 :root {
-    /* Colores principales */
-    --color-primary: #0C4E6E;
-    --color-primary-dark: #03174f;
-    --color-secondary: #64748b;
-    --color-accent: #f59e0b;
+  /* ===== COLORES MARCA PRINCIPAL ===== */
+  --color-primary: #1E293B;        /* Navy principal - Headers, navegación */
+  --color-primary-dark: #0F172A;   /* Navy oscuro - hover states */
+  --color-secondary: #64748B;      /* Gris azulado - texto secundario */
+  --color-accent: #F59E0B;         /* Naranja - ÚNICO para CTAs y acciones */
+  --color-accent-hover: #D97706;   /* Naranja hover */
 
-    /* Colores de fondo */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-dark: #0f172a;
+  /* ===== NEUTROS SISTEMA ===== */
+  --color-navy: #1E293B;           /* Alias para primary */
+  --color-gray: #64748B;           /* Alias para secondary */
+  --color-orange: #F59E0B;         /* Alias para accent */
+  --color-white: #FFFFFF;
+  --color-light: #F8FAFC;          /* Fondos suaves */
+  --color-border: #E2E8F0;         /* Bordes sutiles */
 
-    /* Colores de texto */
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-light: #94a3b8;
-    --text-white: #ffffff;
+  /* ===== TEXTO JERARQUÍA ===== */
+  --text-primary: #1E293B;         /* Headings principales */
+  --text-secondary: #64748B;       /* Párrafos, descripciones */
+  --text-muted: #94A3B8;           /* Texto sutil */
+  --text-white: #FFFFFF;           /* Texto sobre fondos oscuros */
+  --text-dark: #0F172A;            /* Texto sobre fondos claros */
 
+  /* ===== FONDOS SISTEMA ===== */
+  --bg-primary: #FFFFFF;           /* Fondo principal */
+  --bg-secondary: #F8FAFC;         /* Secciones alternantes */
+  --bg-dark: #1E293B;              /* Secciones oscuras */
+  --bg-accent: #F59E0B;            /* Alertas, destacados */
 
-    /* Tipografía */
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+  /* ===== COLORES SEMÁNTICOS (SOLO ÍCONOS/CHIPS) ===== */
+  --service-water: #0EA5E9;        /* Azul agua */
+  --service-fire: #DC2626;         /* Rojo fuego */
+  --service-mold: #16A34A;         /* Verde moho */
+  --service-storm: #8B5CF6;        /* Púrpura tormenta */
 
-    /* Espaciado */
-    --spacing-1: 0.25rem;
-    --spacing-2: 0.5rem;
-    --spacing-3: 0.75rem;
-    --spacing-4: 1rem;
-    --spacing-6: 1.5rem;
-    --spacing-8: 2rem;
-    --spacing-12: 3rem;
-    --spacing-16: 4rem;
+  /* ===== ESTADOS SISTEMA ===== */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-info: #0EA5E9;
 
-    /* Bordes */
-    --border-radius: 0.5rem;
-    --border-radius-lg: 0.75rem;
+  /* ===== SOMBRAS Y EFECTOS ===== */
+  --shadow-sm: 0 4px 16px rgba(30, 41, 59, 0.08);
+  --shadow-md: 0 8px 24px rgba(30, 41, 59, 0.12);
+  --shadow-lg: 0 16px 32px rgba(30, 41, 59, 0.16);
+  
+  /* ===== DIMENSIONES ===== */
+  --radius: 8px;
+  --radius-lg: 12px;
+  --transition: all 0.2s ease;
 
-    /* Sombras */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* ===== TIPOGRAFÍA ===== */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* ===== ESPACIADO ===== */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
 }
 
-/* Estilos base */
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-    font-family: var(--font-family);
-    scroll-behavior: smooth;
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-main {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-/* Contenedor principal */
+/* ===== CONTENEDORES ===== */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-4);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
 }
 
-.container-sm {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-4);
+/* ===== BOTONES UNIFICADOS ===== */
+.btn,
+.btn-primary,
+.cta-button,
+.cta-action,
+.hero-cta-button,
+.emergency-btn-banner,
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--spacing-4) var(--spacing-8);
+  background: var(--color-accent);
+  color: var(--text-dark);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid var(--color-accent);
 }
 
-/* Botones */
-.btn {
-    display: inline-block;
-    padding: var(--spacing-3) var(--spacing-6);
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
+.btn:hover,
+.btn-primary:hover,
+.cta-button:hover,
+.cta-action:hover,
+.hero-cta-button:hover,
+.emergency-btn-banner:hover,
+.form-submit:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--text-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
-.btn:hover {
-    background-color: var(--color-accent);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
+.btn-outline,
+.btn-secondary,
+.cta-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+.btn-outline:hover,
+.btn-secondary:hover,
+.cta-secondary:hover {
+  background: var(--color-primary);
+  color: var(--text-white);
 }
 
-.btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: white;
+/* ===== TIPOGRAFÍA UNIFICADA ===== */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.category-title,
+.trust-main-title,
+.section-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
 }
 
-/* Secciones */
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+
+.hero-subtitle,
+.category-subtitle,
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-6);
+}
+
+p,
+.hero-description,
+.overview-text {
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+}
+
+/* ===== ENLACES ===== */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ===== CARDS UNIFICADAS ===== */
+.service-card,
+.bento-card,
+.gallery-item,
+.blog-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.service-card:hover,
+.bento-card:hover,
+.gallery-item:hover,
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== TAGS/CHIPS UNIFICADOS ===== */
+.service-tags span,
+.tagServices,
+.service-tag,
+.chip {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: 16px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.service-tags span:hover,
+.tagServices:hover,
+.service-tag:hover,
+.chip:hover {
+  background: var(--color-primary);
+  color: var(--text-white);
+}
+
+/* ===== SECCIONES UNIFICADAS ===== */
 .section {
-    padding: var(--spacing-16) 0;
+  padding: var(--spacing-16) 0;
 }
 
-.section-bg {
-    background-color: var(--bg-secondary);
+.services-dual-section,
+.minimal-services-section,
+.service-areas-section {
+  background: var(--bg-secondary);
 }
 
-/* Utilidades */
-.text-center {
-    text-align: center;
+.trust-bento-section {
+  background: var(--bg-dark);
+  color: var(--text-white);
 }
 
-.mb-8 {
-    margin-bottom: var(--spacing-8);
+.trust-bento-section h2,
+.trust-bento-section h3 {
+  color: var(--text-white);
 }
 
-.mb-12 {
-    margin-bottom: var(--spacing-12);
+/* ===== EMERGENCY/ALERT STYLES ===== */
+.emergency-alert-banner {
+  background: var(--color-accent);
+  color: var(--text-dark);
 }
 
-/* Estilos para las Migas de Pan (Breadcrumbs) */
+.emergency-badge {
+  background: var(--color-accent);
+  color: var(--text-dark);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: 16px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* ===== COLORES SEMÁNTICOS SERVICIOS ===== */
+.service-water .service-icon { color: var(--service-water); }
+.service-fire .service-icon { color: var(--service-fire); }
+.service-mold .service-icon { color: var(--service-mold); }
+.service-storm .service-icon { color: var(--service-storm); }
+
+/* ===== FORMULARIOS ===== */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+  background: var(--bg-primary);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ===== UTILIDADES ===== */
+.text-center { text-align: center; }
+.mb-8 { margin-bottom: var(--spacing-8); }
+.mb-12 { margin-bottom: var(--spacing-12); }
+
+/* ===== BREADCRUMBS ===== */
 .breadcrumb-nav {
-    padding: var(--spacing-4) 0;
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
-}
-
-.breadcrumb-nav ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    /* Para que se ajuste en pantallas pequeñas */
-    gap: var(--spacing-2);
-}
-
-.breadcrumb-nav li {
-    display: flex;
-    align-items: center;
-}
-
-/* Estilo del separador (>) */
-.breadcrumb-nav li:not(:last-child)::after {
-    content: '>';
-    margin: 0 var(--spacing-2);
-    color: var(--text-light);
+  padding: var(--spacing-4) 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
 }
 
 .breadcrumb-nav a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: text-decoration 0.2s ease;
+  color: var(--color-primary);
 }
 
-.breadcrumb-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para el elemento actual (la última miga de pan) */
-.breadcrumb-nav span[aria-current="page"] {
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    :root {
-        --font-size-4xl: 2rem;
-        --font-size-3xl: 1.5rem;
-        --spacing-16: 3rem;
-    }
+  :root {
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.5rem;
+    --spacing-16: 3rem;
+  }
 
-    .container {
-        padding: 0 var(--spacing-3);
-    }
+  .container {
+    padding: 0 var(--spacing-3);
+  }
 }
