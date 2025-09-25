@@ -161,7 +161,7 @@ header nav ul li ul li a:hover {
 
 /* ===== HERO SECTIONS ESPECÍFICOS ===== */
 
-/* Hero de Remodelación (CORRIGE EL PROBLEMA DEL TEXTO AZUL SOBRE AZUL) */
+/* Hero de Remodelación y Blog */
 .remodeling-hero,
 .hero-remodeling,
 .blog-hero,
@@ -176,20 +176,37 @@ header nav ul li ul li a:hover {
   color: var(--text-white) !important;
 }
 
+/* Hero de Contacto - Azul oscuro, NO rojo */
+.contact-hero,
+.hero-contact {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--color-primary-dark) 100%) !important;
+  position: relative;
+  padding: 6rem 0;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  color: var(--text-white) !important;
+}
+
 /* TODOS los elementos de texto en heroes oscuros deben ser blancos */
 .remodeling-hero *,
 .hero-remodeling *,
 .blog-hero *,
 .hero-blog *,
-.page-hero * {
+.page-hero *,
+.contact-hero *,
+.hero-contact * {
   color: var(--text-white) !important;
 }
 
+/* Títulos en heroes */
 .remodeling-hero h1,
 .hero-remodeling h1,
 .blog-hero h1,
 .hero-blog h1,
 .page-hero h1,
+.contact-hero h1,
+.hero-contact h1,
 .remodeling-title {
   color: var(--text-white) !important;
   font-size: var(--font-size-4xl);
@@ -198,11 +215,14 @@ header nav ul li ul li a:hover {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+/* Subtítulos */
 .remodeling-hero h2,
 .hero-remodeling h2,
 .blog-hero h2,
 .hero-blog h2,
 .page-hero h2,
+.contact-hero h2,
+.hero-contact h2,
 .remodeling-subtitle {
   color: var(--color-light) !important;
   font-size: var(--font-size-xl);
@@ -210,11 +230,14 @@ header nav ul li ul li a:hover {
   margin-bottom: 2rem;
 }
 
+/* Párrafos */
 .remodeling-hero p,
 .hero-remodeling p,
 .blog-hero p,
 .hero-blog p,
 .page-hero p,
+.contact-hero p,
+.hero-contact p,
 .remodeling-description {
   color: var(--color-border) !important;
   font-size: var(--font-size-lg);
@@ -228,14 +251,24 @@ header nav ul li ul li a:hover {
 .hero-remodeling a,
 .blog-hero a,
 .hero-blog a,
-.page-hero a {
+.page-hero a,
+.contact-hero a,
+.hero-contact a {
   color: var(--color-accent) !important;
 }
 
-/* Hero General / Emergency */
-.hero-section,
+/* Hero de Emergencia - Solo para páginas de emergencia */
+.hero-section.emergency,
 .emergency-hero {
-  background: linear-gradient(135deg, var(--color-error) 0%, #B91C1C 100%);
+  background: linear-gradient(135deg, var(--color-error) 0%, #B91C1C 100%) !important;
+  color: var(--text-white);
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Hero general sin clase específica - azul por defecto */
+.hero-section:not(.emergency) {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--color-primary-dark) 100%) !important;
   color: var(--text-white);
   padding: 6rem 0;
   position: relative;
@@ -492,20 +525,17 @@ a:hover {
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
 }
 
-/* ===== BREADCRUMBS - OCULTAR COMPLETAMENTE ===== */
-/* Eliminar TODOS los breadcrumbs problemáticos */
-main > .container:first-child {
+/* ===== BREADCRUMBS - OCULTAR SOLO LOS PROBLEMÁTICOS ===== */
+/* Ocultar SOLO el contenedor del breadcrumb problemático, no todos los containers */
+main > .container:first-child:has(ol),
+main > .container:first-child:has(.breadcrumb) {
   display: none !important;
 }
 
-ol[class*="breadcrumb"],
-.breadcrumb ol,
-nav ol,
-.container > div:has(> ol),
-.container > nav:has(> ol),
-[data-breadcrumb],
-.breadcrumb-component,
-#breadcrumb {
+/* Ocultar breadcrumbs mal formateados */
+ol.breadcrumb,
+.breadcrumb > ol,
+nav > ol:not(.services-list):not(.blog-list) {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
@@ -612,14 +642,32 @@ section .breadcrumb a:hover {
 .animate-pulse { animation: pulse 2s infinite; }
 .animate-fadeIn { animation: fadeIn 0.5s ease-out; }
 
-/* ===== FIXES NUCLEARES - FORZAR TEXTO BLANCO Y ELIMINAR BREADCRUMB ===== */
+/* ===== FIXES NUCLEARES - FORZAR TEXTO BLANCO Y HERO CORRECTO ===== */
+
+/* Eliminar franja azul vacía */
+main {
+  margin-top: 0 !important;
+}
+
+main > section:first-child,
+main > div:first-child:not(.container) {
+  margin-top: 0 !important;
+}
 
 /* FORZAR TEXTO BLANCO EN TODOS LOS HEROES */
-[class*="hero"] {
+[class*="hero"]:not(.hero-image):not(.image-hero) {
   background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
   color: white !important;
 }
 
+/* Excepción para hero de emergencia real */
+.emergency-hero,
+.hero-section.emergency,
+[class*="emergency"] .hero-section {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%) !important;
+}
+
+/* Texto blanco en todos los heroes */
 [class*="hero"] h1,
 [class*="hero"] h2,
 [class*="hero"] h3,
@@ -627,25 +675,48 @@ section .breadcrumb a:hover {
 [class*="hero"] h5,
 [class*="hero"] h6,
 [class*="hero"] p,
-[class*="hero"] span,
-[class*="hero"] div,
+[class*="hero"] span:not(.hero-image):not(.image),
+[class*="hero"] div:not(.hero-image):not(.image),
 [class*="hero"] li {
   color: white !important;
 }
 
-/* Específico para blog hero */
-.blog-hero *:not(a),
-.hero-blog *:not(a),
-[href*="/blog"] .hero-section *:not(a),
-[href*="/blog"] [class*="hero"] *:not(a),
-.blog-page [class*="hero"] *:not(a),
-body:has(.blog-content) [class*="hero"] *:not(a) {
+/* Específico para blog y contacto */
+.blog-hero *:not(a):not(img),
+.hero-blog *:not(a):not(img),
+.contact-hero *:not(a):not(img),
+.hero-contact *:not(a):not(img),
+[href*="/blog"] [class*="hero"] *:not(a):not(img),
+[href*="/contact"] [class*="hero"] *:not(a):not(img) {
   color: white !important;
 }
 
 /* Links en heroes mantienen naranja */
 [class*="hero"] a {
   color: #F59E0B !important;
+}
+
+/* Asegurar que las imágenes se vean */
+img,
+picture,
+.hero-image,
+.image,
+[class*="image"],
+[class*="img"],
+.gallery-item img,
+.service-card img,
+.blog-card img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+
+/* Contacto específicamente - azul, NO rojo */
+.contact-page .hero-section,
+[href*="/contact"] .hero-section,
+#contact .hero-section {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
 }
 
 /* Asegurar que el menú principal no tenga números */
