@@ -301,6 +301,13 @@ const finalCta = {
 
 <!-- JAVASCRIPT FOR TABS -->
 <script>
+// @ts-ignore - gtag is loaded by Google Analytics
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
@@ -324,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
         targetPanel.classList.add('active');
       }
       
-      // Analytics tracking (opcional)
+      // Analytics tracking (con tipos TypeScript correctos)
       try {
         if (window.gtag) {
           window.gtag('event', 'tab_interaction', {
@@ -401,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .process-number {
   width: 40px;
   height: 40px;
-  background: #F59E0B;
+  background: var(--color-accent);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -444,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .tab-btn.active {
-  background: #F59E0B;
+  background: var(--color-accent);
   color: white;
 }
 
@@ -453,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .tab-btn.active:hover {
-  background: #D97706;
+  background: #0EA5E9;
 }
 
 .tabs-content {
@@ -537,6 +544,19 @@ document.addEventListener('DOMContentLoaded', function() {
   border-left: 4px solid #16A34A;
 }
 
+/* Regions */
+.regions-compact {
+  display: grid;
+  gap: 1rem;
+}
+
+.region {
+  padding: 1rem;
+  background: #F0F9FF;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-accent);
+}
+
 /* FAQ compact */
 .faq-compact {
   display: grid;
@@ -578,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .proof-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #F59E0B;
+  color: var(--color-accent);
 }
 
 .proof-text {
