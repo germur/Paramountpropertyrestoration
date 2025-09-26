@@ -1,100 +1,82 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AreasServed from "../components/AreasServed";
-import LinkBuildingSection from "../components/linkBuilding";
-import "../styles/restoration.css";
+import AreasServed from "../components/AreasServed.jsx";
+import "../styles/services.css";
 ---
 
 <BaseLayout
     title="Restoration Services in Florida | Water, Fire, Mold & Storm"
     description="Certified restoration services for water, fire, mold, and storm damage. 24/7 emergency response. Licensed & insured."
 >
-    <section class="hero">
-        <div class="hero__inner">
-            <!-- Columna texto -->
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    Property Restoration Services Across Florida
-                </h1>
-                <p class="hero__subtitle">
-                    Need restoration help in Florida? We provide certified
-                    water, fire, mold, and storm damage restoration services for
-                    homes and businesses. Fast response, full cleanup, and
-                    rebuild—available 24/7.
-                </p>
-                <a href="/contact" class="btn btn--primary"
-                    >Explore Our Services</a
-                >
-            </div>
-
-            <!-- Columna imagen -->
-            <div class="hero__media">
-                <img
-                    src="/images/heroRestoration.jpeg"
-                    alt="Technician performing water extraction"
-                    loading="eager"
-                    width="720"
-                    height="520"
-                />
-            </div>
+    <section class="hero-section" style="background-image: url('/images/heroRestoration.jpeg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Restoration Services</h1>
+            <p class="hero-subtitle">
+                Restoring properties across Florida with certified expertise and 24/7 emergency response.
+            </p>
+            <a href="/contact" class="hero-cta-button">Get Emergency Help</a>
         </div>
     </section>
+
     <section>
         <div class="tabs-container">
             <div class="tabs-services">
                 <div class="cnt-iconsServices">
-                    <a href="/restoration/water-damage" class="tab-button"
-                        ><i class="fas fa-water"></i>Water</a
-                    >
+                    <a href="/restoration/water-damage" class="tab-button">
+                        <i class="fas fa-water"></i>Water
+                    </a>
                 </div>
 
                 <div class="cnt-iconsServices">
-                    <a href="/restoration/fire-damage" class="tab-button"
-                        ><i class="fas fa-fire"></i>Fire</a
-                    >
+                    <a href="/restoration/fire-damage" class="tab-button">
+                        <i class="fas fa-fire"></i>Fire
+                    </a>
                 </div>
 
                 <div class="cnt-iconsServices">
-                    <a href="/restoration/storm-damage" class="tab-button"
-                        ><i class="fas fa-cloud-bolt"></i>Storm</a
-                    >
+                    <a href="/restoration/storm-damage" class="tab-button">
+                        <i class="fas fa-cloud-bolt"></i>Storm
+                    </a>
                 </div>
 
                 <div class="cnt-iconsServices">
-                    <a href="/restoration/mold-remediation" class="tab-button"
-                        ><i class="fas fa-virus"></i>Mold</a
-                    >
+                    <a href="/restoration/mold-remediation" class="tab-button">
+                        <i class="fas fa-virus"></i>Mold
+                    </a>
                 </div>
 
                 <div class="cnt-iconsServices">
-                    <a href="/restoration/mitigation-services" class="tab-button"
-                        ><i class="fas fa-shield-halved"></i>Mitigation</a
-                    >
+                    <a href="/restoration/mitigation-services" class="tab-button">
+                        <i class="fas fa-shield-halved"></i>Mitigation
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="services-grid-container">
         <div class="services-grid">
             <div class="service-card">
                 <img
                     src="/images/waterDamage.jpg"
-                    alt="Remodelación de Cocina"
+                    alt="Water Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Water Damage</h2>
                     <div class="cnt-tagsServices">
-                        <span>Flood Damage</span>
-                        <span>Leak Repair</span>
-                        <span>Basement Flooding</span>
-                        <span>Ceiling Water Damage</span>
-                        <span>Emergency Water Removal</span>
+                        <a href="/restoration/flood-damage" class="service-tag">Flood Damage</a>
+                        <a href="/restoration/leak-repair" class="service-tag">Leak Repair</a>
+                        <a href="/restoration/basement-flooding" class="service-tag">Basement Flooding</a>
+                        <a href="/restoration/ceiling-water-damage" class="service-tag">Ceiling Water Damage</a>
+                        <a href="/restoration/emergency-water-removal" class="service-tag">Emergency Water Removal</a>
+                        <a href="/restoration/water-extraction" class="service-tag">Water Extraction</a>
                     </div>
                     <div>
-                        <a href="/restoration/water-damage" class="card-link"
-                            >Fix My Water Damage Now &rarr;</a
-                        >
+                        <a href="/restoration/water-damage" class="card-link">
+                            Fix My Water Damage Now →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -102,23 +84,23 @@ import "../styles/restoration.css";
             <div class="service-card">
                 <img
                     src="/images/fireDamage.jpg"
-                    alt="Renovación de Baño"
+                    alt="Fire Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Fire Damage</h2>
                     <div class="cnt-tagsServices">
-                        <span>Smoke Damage</span>
-                        <span>Soot Cleanup</span>
-                        <span>Fire Damage Repair</span>
-                        <span>Emergency Fire Response</span>
+                        <a href="/restoration/smoke-damage" class="service-tag">Smoke Damage</a>
+                        <a href="/restoration/soot-cleanup" class="service-tag">Soot Cleanup</a>
+                        <a href="/restoration/fire-damage-repair" class="service-tag">Fire Damage Repair</a>
+                        <a href="/restoration/emergency-fire-response" class="service-tag">Emergency Fire Response</a>
+                        <a href="/restoration/smoke-odor-removal" class="service-tag">Smoke Odor Removal</a>
+                        <a href="/restoration/fire-restoration" class="service-tag">Fire Restoration</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/fire-damage"
-                            class="card-link"
-                            >Clean Up After Fire &rarr;</a
-                        >
+                        <a href="/restoration/fire-damage" class="card-link">
+                            Clean Up After Fire →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -126,21 +108,22 @@ import "../styles/restoration.css";
             <div class="service-card">
                 <img
                     src="/images/stormDamage.jpg"
-                    alt="Diseño de Habitaciones"
+                    alt="Storm Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Storm Damage</h2>
                     <div class="cnt-tagsServices">
-                        <span>Hurricane Damage</span>
-                        <span>Wind Damage</span>
-                        <span>Storm Debris Removal</span>
-                        <span>Emergency Storm Repair</span>
+                        <a href="/restoration/hurricane-damage" class="service-tag">Hurricane Damage</a>
+                        <a href="/restoration/wind-damage" class="service-tag">Wind Damage</a>
+                        <a href="/restoration/storm-debris-removal" class="service-tag">Storm Debris Removal</a>
+                        <a href="/restoration/emergency-storm-repair" class="service-tag">Emergency Storm Repair</a>
+                        <a href="/restoration/roof-damage" class="service-tag">Roof Damage</a>
                     </div>
                     <div>
-                        <a href="/restoration/storm-damage" class="card-link"
-                            >Repair Storm Damage Today &rarr;</a
-                        >
+                        <a href="/restoration/storm-damage" class="card-link">
+                            Repair Storm Damage Today →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -148,21 +131,23 @@ import "../styles/restoration.css";
             <div class="service-card">
                 <img
                     src="/images/moldDamage.jpg"
-                    alt="Salas y Comedores"
+                    alt="Mold Remediation"
                     class="card-image"
                 />
                 <div class="card-content">
-                    <h2 class="card-title">Mold Remedia</h2>
+                    <h2 class="card-title">Mold Remediation</h2>
                     <div class="cnt-tagsServices">
-                        <span>Mold Inspection</span>
-                        <span>Black Mold Removal</span>
-                        <span>Mold Prevention</span>
-                        <span>Mold testing</span>
+                        <a href="/restoration/mold-inspection" class="service-tag">Mold Inspection</a>
+                        <a href="/restoration/black-mold-removal" class="service-tag">Black Mold Removal</a>
+                        <a href="/restoration/mold-prevention" class="service-tag">Mold Prevention</a>
+                        <a href="/restoration/mold-testing" class="service-tag">Mold Testing</a>
+                        <a href="/restoration/air-quality-testing" class="service-tag">Air Quality Testing</a>
+                        <a href="/restoration/mold-cleanup" class="service-tag">Mold Cleanup</a>
                     </div>
                     <div>
-                        <a href="/restoration/mold-remediation" class="card-link"
-                            >Remove Mold Fast &rarr;</a
-                        >
+                        <a href="/restoration/mold-remediation" class="card-link">
+                            Remove Mold Fast →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -170,30 +155,80 @@ import "../styles/restoration.css";
             <div class="service-card">
                 <img
                     src="/images/mitigation.jpg"
-                    alt="Adiciones al Hogar"
+                    alt="Mitigation Services"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Mitigation Services</h2>
                     <div class="cnt-tagsServices">
-                        <span>Water Mitigation</span>
-                        <span>Fire Mitigation</span>
-                        <span>Mold Mitigation</span>
-                        <span>Storm Mitigation</span>
+                        <a href="/restoration/water-mitigation" class="service-tag">Water Mitigation</a>
+                        <a href="/restoration/fire-mitigation" class="service-tag">Fire Mitigation</a>
+                        <a href="/restoration/mold-mitigation" class="service-tag">Mold Mitigation</a>
+                        <a href="/restoration/storm-mitigation" class="service-tag">Storm Mitigation</a>
+                        <a href="/restoration/emergency-response" class="service-tag">Emergency Response</a>
                     </div>
                     <div class="cnt-card-linkServices">
-                        <a href="/restoration/mitigation-services" class="card-link"
-                            >Prevent Further Damage &rarr;</a
-                        >
+                        <a href="/restoration/mitigation-services" class="card-link">
+                            Prevent Further Damage →
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="minimal-services-section">
+        <div class="container">
+            <div class="minimal-header">
+                <h2>Emergency Restoration Services Across Florida</h2>
+                <p>Fast response in major Florida cities</p>
+            </div>
+
+            <div class="regions-grid">
+                <div class="region-column">
+                    <h3 class="region-title">Central Florida</h3>
+                    <div class="city-links">
+                        <a href="/restoration/water-damage/flood-damage/orlando">Flood Damage Orlando</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/kissimmee">Fire Damage Kissimmee</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/lakeland">Mold Inspection Lakeland</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/winter-garden">Hurricane Damage Winter Garden</a>
+                    </div>
+                </div>
+
+                <div class="region-column">
+                    <h3 class="region-title">Tampa Bay Region</h3>
+                    <div class="city-links">
+                        <a href="/restoration/water-damage/flood-damage/tampa">Flood Damage Tampa</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg">Fire Damage St. Petersburg</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/clearwater">Mold Inspection Clearwater</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/sarasota">Hurricane Damage Sarasota</a>
+                    </div>
+                </div>
+
+                <div class="region-column">
+                    <h3 class="region-title">South Florida</h3>
+                    <div class="city-links">
+                        <a href="/restoration/water-damage/flood-damage/miami">Flood Damage Miami</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale">Fire Damage Fort Lauderdale</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/hollywood">Mold Inspection Hollywood</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/coral-gables">Hurricane Damage Coral Gables</a>
+                    </div>
+                </div>
+
+                <div class="region-column">
+                    <h3 class="region-title">Southwest Florida</h3>
+                    <div class="city-links">
+                        <a href="/restoration/water-damage/flood-damage/naples">Flood Damage Naples</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/cape-coral">Fire Damage Cape Coral</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/fort-myers">Mold Inspection Fort Myers</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/bonita-springs">Hurricane Damage Bonita Springs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
         <AreasServed client:load />
-    </section>
-    <section>
-        <LinkBuildingSection />
     </section>
 </BaseLayout>
