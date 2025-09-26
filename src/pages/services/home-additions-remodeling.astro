@@ -1,16 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../styles/pages/home-additions.css";
+import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
 ---
 
 <BaseLayout
-  title="Home Additions Contractors | 1GC Florida"
+  title="Home Additions Contractors | Paramount Property Restoration"
   description="Add square footage with garage conversions, extra rooms, or second-story additions."
+  data-page="home-additions"
 >
-  <!-- Section One -->
-  <section class="hero-sectionHomeAdditions">
+  <!-- Hero Section -->
+  <section class="hero-section" style="background-image: url('/images/home-additionsHero.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Home Additions in Florida: Expand Your Living Space</h1>
@@ -18,228 +19,233 @@ import FAQ from "../../components/AcordeonServices";
         Seamlessly integrate new rooms, second stories, or expanded areas.
         Custom designs for your growing needs in Orlando, Miami, Tampa & beyond.
       </p>
-      <a href="/contact" class="cta-button"
+      <a href="/contact" class="btn"
         >Get Your Free Home Addition Estimate →</a
       >
     </div>
   </section>
 
-  <!-- Section Two -->
-  <section>
-    <div class="services-grid">
-      <div class="service-item">
-        <i class="fas fa-home"></i>
-        <h3>Room Additions</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-door-open"></i>
-        <h3>Sunrooms & Enclosures</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-stairs"></i>
-        <h3>Second-Story Expansions</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-car"></i>
-        <h3>Garage Conversions</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-vector-square"></i>
-        <h3>Floor Plan Redesign</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-expand"></i>
-        <h3>Whole-House Expansion</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Three - Solutions Cards -->
-  <section class="solutions-section">
-    <h2 class="solutions-title">Custom Home Addition Solutions</h2>
-    <div class="solutions-grid">
-
-      <!-- Card 1 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img
-            src="/images/homeAddSolutionsOne.jpg"
-            alt="homeAddSolutionsOne"
-          />
-        </div>
-        <div class="card-content">
+  <!-- Services Grid Section -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-item">
+          <i class="fas fa-home"></i>
           <h3>Room Additions</h3>
-          <p>Add new bedrooms, living areas, or specialized rooms. Designed to blend seamlessly with your existing home's architecture and style.</p>
-          <a href="/contact" class="card-cta">View Room Addition Examples</a>
         </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img src="/images/homeAddSolutionsTwo.jpg" alt="homeAddSolutionsTwo" />
+        <div class="service-item">
+          <i class="fas fa-door-open"></i>
+          <h3>Sunrooms & Enclosures</h3>
         </div>
-        <div class="card-content">
-          <h3>Second Story Additions</h3>
-          <p>Maximize your property's footprint by adding a new level. Ideal for growing families or enhancing views. Expert structural planning.</p>
-          <a href="/contact" class="card-cta">Explore Second Story Projects</a>
-        </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img src="/images/homeAddSolutionsThree.jpg" alt="homeAddSolutionsThree" />
+        <div class="service-item">
+          <i class="fas fa-stairs"></i>
+          <h3>Second-Story Expansions</h3>
         </div>
-        <div class="card-content">
-          <h3>Sunrooms & Outdoor Living</h3>
-          <p>Bring the outdoors in with custom sunrooms, screened enclosures, or expansive patio additions. Perfect for enjoying Florida's climate.</p>
-          <a href="/contact" class="card-cta">See Outdoor Living Designs</a>
-        </div>
-      </div>
 
-      <!-- Card 4 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img src="/images/homeAddSolutionsFour.jpg" alt="homeAddSolutionsFour" />
+        <div class="service-item">
+          <i class="fas fa-car"></i>
+          <h3>Garage Conversions</h3>
         </div>
-        <div class="card-content">
-          <h3>Master Suites & In-Law Suites</h3>
-          <p>Create private retreats or comfortable guest accommodations. Includes custom bathrooms, walk-in closets, and independent living areas. Ask us about smart home integrations</p>
-          <a href="/contact" class="card-cta">View Details</a>
+
+        <div class="service-item">
+          <i class="fas fa-vector-square"></i>
+          <h3>Floor Plan Redesign</h3>
+        </div>
+
+        <div class="service-item">
+          <i class="fas fa-expand"></i>
+          <h3>Whole-House Expansion</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Steps -->
+  <!-- Solutions Cards Section -->
+  <section class="solutions-section">
+    <div class="container">
+      <h2 class="solutions-title">Custom Home Addition Solutions</h2>
+      <div class="solutions-grid">
+        <!-- Card 1 -->
+        <div class="solution-card">
+          <div class="card-image">
+            <img
+              src="/images/homeAddSolutionsOne.jpg"
+              alt="Room Additions"
+            />
+          </div>
+          <div class="card-content">
+            <h3>Room Additions</h3>
+            <p>Add new bedrooms, living areas, or specialized rooms. Designed to blend seamlessly with your existing home's architecture and style.</p>
+            <a href="/contact" class="btn">View Room Addition Examples</a>
+          </div>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="solution-card">
+          <div class="card-image">
+            <img src="/images/homeAddSolutionsTwo.jpg" alt="Second Story Additions" />
+          </div>
+          <div class="card-content">
+            <h3>Second Story Additions</h3>
+            <p>Maximize your property's footprint by adding a new level. Ideal for growing families or enhancing views. Expert structural planning.</p>
+            <a href="/contact" class="btn">Explore Second Story Projects</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="solution-card">
+          <div class="card-image">
+            <img src="/images/homeAddSolutionsThree.jpg" alt="Sunrooms & Outdoor Living" />
+          </div>
+          <div class="card-content">
+            <h3>Sunrooms & Outdoor Living</h3>
+            <p>Bring the outdoors in with custom sunrooms, screened enclosures, or expansive patio additions. Perfect for enjoying Florida's climate.</p>
+            <a href="/contact" class="btn">See Outdoor Living Designs</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="solution-card">
+          <div class="card-image">
+            <img src="/images/homeAddSolutionsFour.jpg" alt="Master Suites & In-Law Suites" />
+          </div>
+          <div class="card-content">
+            <h3>Master Suites & In-Law Suites</h3>
+            <p>Create private retreats or comfortable guest accommodations. Includes custom bathrooms, walk-in closets, and independent living areas. Ask us about smart home integrations</p>
+            <a href="/contact" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps Section -->
   <section class="steps-section">
-    <h2 class="steps-title">How It Works</h2>
-    <div class="steps-container">
-      <!-- Step 1 -->
-      <div class="step-item" data-step="1">
-        <div class="step-icon">
-          <i class="fas fa-phone-alt"></i>
+    <div class="container">
+      <h2 class="steps-title">How It Works</h2>
+      <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-item" data-step="1">
+          <div class="step-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Consultation</h3>
+          <p>Free 3D Design Session (Virtual or On Site)</p>
         </div>
-        <h3>Consultation</h3>
-        <p>Free 3D Design Session (Virtual or On Site)</p>
-      </div>
 
-      <!-- Step 2 -->
-      <div class="step-item" data-step="2">
-        <div class="step-icon">
-          <i class="fas fa-cube"></i>
+        <!-- Step 2 -->
+        <div class="step-item" data-step="2">
+          <div class="step-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h3>Design & Planning</h3>
+          <p>Architectural Plans & Permits</p>
         </div>
-        <h3>Material Selection</h3>
-        <p>Choose from 50+ Tile Designs & Fixtures</p>
-      </div>
 
-      <!-- Step 3 -->
-      <div class="step-item" data-step="3">
-        <div class="step-icon">
-          <i class="fas fa-tools"></i>
+        <!-- Step 3 -->
+        <div class="step-item" data-step="3">
+          <div class="step-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Construction</h3>
+          <p>Professional Build | Avg. Time: 4-8 Weeks</p>
         </div>
-        <h3>Installation</h3>
-        <p>Demolition, Process | Avg. Time: 2.5 Days</p>
-      </div>
 
-      <!-- Step 4 -->
-      <div class="step-item" data-step="4">
-        <div class="step-icon">
-          <i class="fas fa-check"></i>
+        <!-- Step 4 -->
+        <div class="step-item" data-step="4">
+          <div class="step-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <h3>Final Walkthrough</h3>
+          <p>Quality Check & Client Approval</p>
         </div>
-        <h3>Final Walkthrough</h3>
-        <p>Quality Check & Client Approval</p>
       </div>
     </div>
   </section>
 
-  <!-- Section Portfolio -->
-
+  <!-- Portfolio Section -->
   <section class="recent-remodels-section">
-    <h2 class="recent-remodels-title">Recent Bathroom Remodels</h2>
-    <div class="remodels-gallery">
-      <!-- Remodel 1 -->
-      <div class="remodel-item">
-        <div class="remodel-image">
-          <img src="/images/banoPortfolioOne.jpg" alt="Master Bathroom" />
+    <div class="container">
+      <h2 class="recent-remodels-title">Recent Home Addition Projects</h2>
+      <div class="remodels-gallery">
+        <!-- Remodel 1 -->
+        <div class="remodel-item">
+          <div class="remodel-image">
+            <img src="/images/banoPortfolioOne.jpg" alt="Second Story Addition" />
+          </div>
+          <h3>Second Story Addition</h3>
+          <p>Miami</p>
         </div>
-        <h3>Master Bathroom</h3>
-        <p>Miami</p>
+
+        <!-- Remodel 2 -->
+        <div class="remodel-item">
+          <div class="remodel-image">
+            <img src="/images/banoPortfolioTwo.jpg" alt="Master Suite Addition" />
+          </div>
+          <h3>Master Suite Addition</h3>
+          <p>Orlando</p>
+        </div>
+
+        <!-- Remodel 3 -->
+        <div class="remodel-item">
+          <div class="remodel-image">
+            <img src="/images/banoPortfolioThree.jpg" alt="Sunroom Extension" />
+          </div>
+          <h3>Sunroom Extension</h3>
+          <p>Tampa</p>
+        </div>
       </div>
 
-      <!-- Remodel 2 -->
-      <div class="remodel-item">
-        <div class="remodel-image">
-          <img src="/images/banoPortfolioTwo.jpg" alt="ADA Bathroom" />
-        </div>
-        <h3>ADA Bathroom</h3>
-        <p>Orlando</p>
+      <!-- Portfolio Tags -->
+      <div class="cnt-tagsPorfolio">
+        <span class="tag-itemPorfolio">Room Expansions</span>
+        <span class="tag-itemPorfolio">Multi-Story Projects</span>
+        <span class="tag-itemPorfolio">Outdoor Structures</span>
+        <span class="tag-itemPorfolio">Smart Home Integration</span>
+        <span class="tag-itemPorfolio">Energy Efficient Additions</span>
       </div>
-
-      <!-- Remodel 3 -->
-      <div class="remodel-item">
-        <div class="remodel-image">
-          <img src="/images/banoPortfolioThree.jpg" alt="Small Bathroom" />
-        </div>
-        <h3>Small Bathroom</h3>
-        <p>Tampa</p>
-      </div>
-    </div>
-
-    <!-- Tags-Portfolio -->
-
-    <div class="cnt-tagsPorfolio">
-      <span class="tag-itemPorfolio">Room Expansions</span>
-      <span class="tag-itemPorfolio">Multi-Story Projects</span>
-      <span class="tag-itemPorfolio">Outdoor Structures</span>
-      <span class="tag-itemPorfolio">Smart Home Integration</span>
-      <span class="tag-itemPorfolio">Energy Efficient Additions</span>
     </div>
   </section>
 
-  <!-- Blog Ba;os -->
-
+  <!-- Blog Section -->
   <section class="sectionBlogBathroom">
-    <div>
+    <div class="container">
       <div>
         <h2 class="tittleSection-cardBlogBathroo">
-          Bathroom Remodeling Guides
+          Home Addition Planning Guides
         </h2>
       </div>
       <div>
         <div class="cntFather-cardBlogBathroo">
           <div class="cnt-cardBlogBathroom">
-            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <h3 class="title-cardBlogBathroom">Planning Your Home Addition</h3>
             <p class="text-cardBlogBathroom">
-              Esta es la description para invitar a ver los blos sobre las cosas
-              de ba;o
+              Essential tips for planning a successful home addition, from budgeting and permits to design considerations and timeline expectations.
             </p>
             <a class="link-blogBathroom"
-              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+              >Read More <i class="flechaBlog fas fa-arrow-right"></i></a
             >
           </div>
           <div class="cnt-cardBlogBathroom">
-            <h3 class="title-cardBlogBathroom">Este es el Titulo de la card</h3>
+            <h3 class="title-cardBlogBathroom">Second Story vs. Ground Level</h3>
             <p class="text-cardBlogBathroom">
-              Esta es la description para invitar a ver los blos sobre las cosas
-              de ba;o
+              Compare the benefits of adding a second story versus expanding at ground level to help you make the best decision for your home.
             </p>
             <a class="link-blogBathroom"
-              >Leer Más <i class="flechaBlog fas fa-arrow-right"></i></a
+              >Read More <i class="flechaBlog fas fa-arrow-right"></i></a
             >
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section>
-    <FAQ client:load category="home-additions" title="FAQs" />
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <FAQ client:load category="home-additions" title="FAQs" />
+    </div>
   </section>
 </BaseLayout>
