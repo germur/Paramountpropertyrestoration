@@ -1,7 +1,6 @@
 ---
 /**
- * Template universal para subservicios - VERSIÓN ENRIQUECIDA
- * Genera contenido automáticamente basado en datos básicos usando contentEnricher
+ * Template universal para subservicios - VERSIÓN FINAL CON COMPONENTES REALES
  */
 import "../../../styles/components/GenericTemplate.css";
 import "../../../styles/components/Risks.css";
@@ -19,17 +18,29 @@ import StormDamages from "../../StormDamages.jsx";
 import WaterSigns from "../../WaterSigns.jsx";
 import ServiceCards from "../../ServiceCards.jsx";
 import EmergencyIncludes from "../../EmergencyIncludes.jsx";
-import { enrichSubserviceContent } from "../../../utils/contentEnricher.js";
 
 const { group, sub } = Astro.props;
 
-// ENRIQUECER CONTENIDO AUTOMÁTICAMENTE
-const enrichedSub = enrichSubserviceContent(sub, group);
+console.log("📊 DATOS RECIBIDOS:", { group: group?.slug, sub: sub?.slug });
+
+// IMPORTACIÓN Y EJECUCIÓN DEL ENRICHER
+let enrichedSub = sub;
+try {
+  const { enrichSubserviceContent } = await import("../../../utils/contentEnricher.js");
+  console.log("✅ ENRICHER IMPORTADO CORRECTAMENTE");
+  
+  enrichedSub = enrichSubserviceContent(sub, group);
+  console.log("✨ CONTENIDO ENRIQUECIDO:", enrichedSub?.hero?.title);
+} catch (error) {
+  console.error("❌ ERROR CON ENRICHER:", error);
+  // Usar contenido básico si falla
+  enrichedSub = sub;
+}
 
 // HERO ENRIQUECIDO
-const heroTitle = enrichedSub.hero.title;
-const heroDesc = enrichedSub.hero.description;
-const heroCTA = enrichedSub.hero.cta;
+const heroTitle = enrichedSub.hero?.title || `${sub.title} Services in Florida`;
+const heroDesc = enrichedSub.hero?.description || sub.short || `Professional ${sub.title.toLowerCase()} services in Florida.`;
+const heroCTA = enrichedSub.hero?.cta || "Get Help Now";
 
 // Fallbacks por template para imágenes de hero
 const defaultHeroByTemplate = {
@@ -40,55 +51,31 @@ const defaultHeroByTemplate = {
   mitigation: "/images/heromitigation.jpg",
 };
 const heroBg =
-  enrichedSub.hero.bg ??
+  enrichedSub.hero?.bg ??
   enrichedSub.images?.hero ??
   defaultHeroByTemplate[group.template] ??
   "/images/placeholder-hero.jpg";
 
-// LINK BUILDING (mantenemos la lógica original pero con datos del group completo)
-// Necesitamos reconstruir los links ya que no tenemos acceso directo a group.subservices
+// LINK BUILDING básico
 const links = [
-  // Links básicos para cada tipo de servicio
-  ...(group.template === 'water' ? [
-    { href: '/restoration/water-damage/flood-damage', label: 'Flood Damage' },
-    { href: '/restoration/water-damage/leak-repair', label: 'Leak Repair' },
-    { href: '/restoration/water-damage/basement-flooding', label: 'Basement Flooding' },
-    { href: '/restoration/water-damage/ceiling-water-damage', label: 'Ceiling Water Damage' }
-  ] : []),
-  ...(group.template === 'fire' ? [
-    { href: '/restoration/fire-damage/smoke-damage', label: 'Smoke Damage' },
-    { href: '/restoration/fire-damage/soot-cleanup', label: 'Soot Cleanup' },
-    { href: '/restoration/fire-damage/fire-damage-repair', label: 'Fire Damage Repair' }
-  ] : []),
-  ...(group.template === 'mold' ? [
-    { href: '/restoration/mold-remediation/black-mold-removal', label: 'Black Mold Removal' },
-    { href: '/restoration/mold-remediation/mold-prevention', label: 'Mold Prevention' },
-    { href: '/restoration/mold-remediation/mold-testing', label: 'Mold Testing' }
-  ] : []),
-  ...(group.template === 'storm' ? [
-    { href: '/restoration/storm-damage/hurricane-damage', label: 'Hurricane Damage' },
-    { href: '/restoration/storm-damage/wind-damage', label: 'Wind Damage' },
-    { href: '/restoration/storm-damage/storm-debris-removal', label: 'Storm Debris Removal' }
-  ] : []),
-  ...(group.template === 'mitigation' ? [
-    { href: '/restoration/mitigation-services/water-mitigation', label: 'Water Mitigation' },
-    { href: '/restoration/mitigation-services/fire-mitigation', label: 'Fire Mitigation' },
-    { href: '/restoration/mitigation-services/mold-mitigation', label: 'Mold Mitigation' }
-  ] : [])
-].filter(link => link.href !== `/restoration/${group.slug}/${enrichedSub.slug}`);
+  { href: '/restoration/water-damage', label: 'Water Damage' },
+  { href: '/restoration/fire-damage', label: 'Fire Damage' },
+  { href: '/restoration/mold-remediation', label: 'Mold Remediation' },
+  { href: '/restoration/storm-damage', label: 'Storm Damage' }
+].filter(link => !link.href.includes(group?.slug));
 
-// FAQ - Usar los generados automáticamente
-const customQuestions = enrichedSub.faqs.map((faq, index) => ({
+// FAQ para el componente
+const customQuestions = enrichedSub.faqs?.map((faq, index) => ({
   id: `custom-${index}`,
   question: faq.q,
   answer: faq.a,
-}));
+})) || [];
 
 const finalCta = {
-  title: enrichedSub?.cta?.headline ?? "Need Emergency Help?",
-  text: enrichedSub?.cta?.text ?? "Our certified technicians are ready to respond 24/7 to protect your Florida property.",
-  cta: enrichedSub?.cta?.button ?? "Get Help Now",
-  href: enrichedSub?.cta?.href ?? "/contact",
+  title: "Need Emergency Help?",
+  text: "Our certified technicians are ready to respond 24/7 to protect your Florida property.",
+  cta: "Get Help Now",
+  href: "/contact",
 };
 ---
 
@@ -101,87 +88,135 @@ const finalCta = {
     <a href="/contact" class="btn btn--primary">{heroCTA}</a>
     
     <!-- Hero Icon Row -->
-    <div class="hero__icon-row">
-      {enrichedSub.hero.iconRow.map((item) => (
-        <div class="hero__icon-item">
-          <span class="hero__icon">{item.icon}</span>
-          <span class="hero__icon-text">{item.text}</span>
-        </div>
-      ))}
-    </div>
+    {enrichedSub.hero?.iconRow && (
+      <div class="hero__icon-row">
+        {enrichedSub.hero.iconRow.map((item) => (
+          <div class="hero__icon-item">
+            <span class="hero__icon">{item.icon}</span>
+            <span class="hero__icon-text">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    )}
   </div>
 </section>
 
 <!-- WHY ESSENTIAL SECTION -->
-<WhyEssential whyEssential={enrichedSub.whyEssential} client:load />
+{enrichedSub.whyEssential && (
+  <WhyEssential whyEssential={enrichedSub.whyEssential} client:load />
+)}
 
 <!-- PROCESS SECTION -->
-<section class="steps container">
-  <h2 class="section__title">{enrichedSub.process.title}</h2>
-  <ol class="timeline">
-    {enrichedSub.process.steps.map((step) => (
-      <li class="timeline__step">
-        <div class="timeline__icon">
-          <i class={step.icon} />
-        </div>
-        <div class="timeline__content">
-          <h3 class="timeline__title">{step.title}</h3>
-          <p class="timeline__text">{step.text}</p>
-        </div>
-      </li>
-    ))}
-  </ol>
-</section>
+{enrichedSub.process && (
+  <section class="steps container">
+    <h2 class="section__title">{enrichedSub.process.title}</h2>
+    <ol class="timeline">
+      {enrichedSub.process.steps.map((step) => (
+        <li class="timeline__step">
+          <div class="timeline__icon">
+            <i class={step.icon} />
+          </div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">{step.title}</h3>
+            <p class="timeline__text">{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
 
 <!-- EMERGENCY SIGNS -->
-<EmergencySigns emergencySigns={enrichedSub.emergencySigns} client:load />
+{enrichedSub.emergencySigns && (
+  <EmergencySigns emergencySigns={enrichedSub.emergencySigns} client:load />
+)}
+
+<!-- WATER SIGNS (solo para water damage) -->
+{enrichedSub.waterSigns && (
+  <WaterSigns waterSigns={enrichedSub.waterSigns} client:load />
+)}
+
+<!-- STORM DAMAGES (solo para storm damage) -->
+{enrichedSub.stormDamages && (
+  <StormDamages stormDamages={enrichedSub.stormDamages} client:load />
+)}
+
+<!-- SERVICE CARDS -->
+{enrichedSub.serviceCards && (
+  <ServiceCards serviceCards={enrichedSub.serviceCards} client:load />
+)}
+
+<!-- WHY ACTING FAST -->
+{enrichedSub.whyActingFast && (
+  <WhyActingFast whyActingFast={enrichedSub.whyActingFast} client:load />
+)}
+
+<!-- EMERGENCY INCLUDES -->
+{enrichedSub.emergencyIncludes && (
+  <EmergencyIncludes emergencyIncludes={enrichedSub.emergencyIncludes} client:load />
+)}
 
 <!-- HIGHLIGHTS SECTION -->
-<section class="highlights container">
-  <h2 class="highlights__title">Service Highlights</h2>
-  <ul class="highlights__list">
-    {enrichedSub.highlights.map((highlight, index) => (
-      <li class="highlights__item">
-        <span class="highlights__icon">✓</span>
-        <span class="highlights__text">{highlight}</span>
-      </li>
-    ))}
-  </ul>
-</section>
-
-<!-- RISKS SECTION -->
-<section class="risks container">
-  <div class="risks__card">
-    <h2 class="risks__title">Risks of Delaying Action</h2>
-    <ul class="risks__list">
-      {enrichedSub.risks.map((risk, index) => (
-        <li class="risks__item">
-          <span class="risks__icon" aria-hidden="true">🚫</span>
-          <span class="risks__text">{risk}</span>
+{enrichedSub.highlights && (
+  <section class="highlights container">
+    <h2 class="highlights__title">Service Highlights</h2>
+    <ul class="highlights__list">
+      {enrichedSub.highlights.map((highlight, index) => (
+        <li class="highlights__item">
+          <span class="highlights__icon">✓</span>
+          <span class="highlights__text">{highlight}</span>
         </li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
+)}
+
+<!-- RISKS SECTION -->
+{enrichedSub.risks && (
+  <section class="risks container">
+    <div class="risks__card">
+      <h2 class="risks__title">Risks of Delaying Action</h2>
+      <ul class="risks__list">
+        {enrichedSub.risks.map((risk, index) => (
+          <li class="risks__item">
+            <span class="risks__icon" aria-hidden="true">🚫</span>
+            <span class="risks__text">{risk}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
 
 <!-- MICRO BENEFITS -->
-<MicroBenefits benefits={enrichedSub.microBenefits} client:load />
+{enrichedSub.microBenefits && (
+  <MicroBenefits benefits={enrichedSub.microBenefits} client:load />
+)}
 
 <!-- FLORIDA SCENARIOS -->
-<FloridaScenarios scenarios={enrichedSub.floridaScenarios} client:load />
+{enrichedSub.floridaScenarios && (
+  <FloridaScenarios scenarios={enrichedSub.floridaScenarios} client:load />
+)}
 
 <!-- WHY CHOOSE US -->
-<section class="why-choose-us container">
-  <h2 class="section__title">Why Choose Paramount Property Restoration</h2>
-  <ul class="why-choose-us__list">
-    {enrichedSub.whyChooseUs.map((point) => (
-      <li class="why-choose-us__item">
-        <span class="why-choose-us__icon">✓</span>
-        <span class="why-choose-us__text">{point}</span>
-      </li>
-    ))}
-  </ul>
-</section>
+{enrichedSub.whyChooseUs && (
+  <section class="why-choose-us container">
+    <h2 class="section__title">Why Choose Paramount Property Restoration</h2>
+    <ul class="why-choose-us__list">
+      {enrichedSub.whyChooseUs.map((point) => (
+        <li class="why-choose-us__item">
+          <span class="why-choose-us__icon">✓</span>
+          <span class="why-choose-us__text">{point}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<!-- WHAT NOT TO DO -->
+{enrichedSub.whatNotToDo && (
+  <WhatNotToDo items={enrichedSub.whatNotToDo} client:load />
+)}
 
 <!-- RELATED SERVICES -->
 <section class="links container">
@@ -207,12 +242,14 @@ const finalCta = {
 />
 
 <!-- FAQ -->
-<FAQ
-  category={group?.template || "general"}
-  customQuestions={customQuestions}
-  title="Frequently Asked Questions"
-  client:load
-/>
+{customQuestions.length > 0 && (
+  <FAQ
+    category={group?.template || "general"}
+    customQuestions={customQuestions}
+    title="Frequently Asked Questions"
+    client:load
+  />
+)}
 
 <!-- FINAL CTA -->
 <RestorationCTA

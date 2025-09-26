@@ -1,6 +1,5 @@
 // src/utils/contentEnricher.js
 
-// Genera contenido rico basado en el tipo de servicio y datos básicos
 export function enrichSubserviceContent(subData, groupData) {
   const enrichedContent = { ...subData };
   
@@ -44,9 +43,39 @@ export function enrichSubserviceContent(subData, groupData) {
     enrichedContent.whyChooseUs = generateWhyChooseUs(subData, groupData);
   }
   
-  // ===== EMERGENCY SIGNS =====
+  // ===== EMERGENCY SIGNS - Corregido para el componente real =====
   if (!enrichedContent.emergencySigns) {
     enrichedContent.emergencySigns = generateEmergencySigns(subData, groupData);
+  }
+  
+  // ===== EMERGENCY INCLUDES =====
+  if (!enrichedContent.emergencyIncludes) {
+    enrichedContent.emergencyIncludes = generateEmergencyIncludes(subData, groupData);
+  }
+  
+  // ===== WATER SIGNS =====
+  if (!enrichedContent.waterSigns && groupData.template === 'water') {
+    enrichedContent.waterSigns = generateWaterSigns(subData, groupData);
+  }
+  
+  // ===== STORM DAMAGES =====
+  if (!enrichedContent.stormDamages && groupData.template === 'storm') {
+    enrichedContent.stormDamages = generateStormDamages(subData, groupData);
+  }
+  
+  // ===== SERVICE CARDS =====
+  if (!enrichedContent.serviceCards) {
+    enrichedContent.serviceCards = generateServiceCards(subData, groupData);
+  }
+  
+  // ===== WHY ACTING FAST =====
+  if (!enrichedContent.whyActingFast) {
+    enrichedContent.whyActingFast = generateWhyActingFast(subData, groupData);
+  }
+  
+  // ===== WHAT NOT TO DO =====
+  if (!enrichedContent.whatNotToDo) {
+    enrichedContent.whatNotToDo = generateWhatNotToDo(subData, groupData);
   }
   
   // ===== FAQ =====
@@ -248,106 +277,47 @@ function generateProcess(subData, groupData) {
   return processTemplates[groupData.template] || processTemplates.water;
 }
 
+// WhyEssential.jsx espera: { title, steps: [] }
 function generateWhyEssential(subData, groupData) {
   const templates = {
     water: {
       title: "Why Fast Water Action is Critical",
-      items: [
-        {
-          icon: "⏰",
-          title: "24-48 Hour Window",
-          description: "Mold begins growing within 24-48 hours of water exposure."
-        },
-        {
-          icon: "🏠",
-          title: "Structural Damage",
-          description: "Water weakens building materials, causing expensive structural issues."
-        },
-        {
-          icon: "💰",
-          title: "Insurance Claims",
-          description: "Delays can complicate insurance coverage and reduce payouts."
-        }
+      steps: [
+        "Mold begins growing within 24-48 hours of water exposure",
+        "Water weakens building materials, causing expensive structural issues", 
+        "Delays can complicate insurance coverage and reduce payouts"
       ]
     },
     mold: {
       title: "Why Professional Mold Inspection Matters",
-      items: [
-        {
-          icon: "🏥",
-          title: "Health Protection",
-          description: "Hidden mold can cause serious respiratory issues and allergic reactions."
-        },
-        {
-          icon: "🔍",
-          title: "Hidden Detection",
-          description: "Professional equipment finds mold in walls, HVAC systems, and other hidden areas."
-        },
-        {
-          icon: "📋",
-          title: "Documentation",
-          description: "Official reports needed for remediation planning and insurance claims."
-        }
+      steps: [
+        "Hidden mold can cause serious respiratory issues and allergic reactions",
+        "Professional equipment finds mold in walls, HVAC systems, and other hidden areas",
+        "Official reports needed for remediation planning and insurance claims"
       ]
     },
     fire: {
       title: "Why Professional Fire Restoration is Essential",
-      items: [
-        {
-          icon: "☣️",
-          title: "Toxic Residues",
-          description: "Smoke and soot contain harmful chemicals that require professional removal."
-        },
-        {
-          icon: "🏠",
-          title: "Hidden Damage",
-          description: "Fire damage can affect areas not immediately visible to untrained eyes."
-        },
-        {
-          icon: "⏱️",
-          title: "Time-Sensitive",
-          description: "Smoke residue becomes permanent if not treated quickly and properly."
-        }
+      steps: [
+        "Smoke and soot contain harmful chemicals that require professional removal",
+        "Fire damage can affect areas not immediately visible to untrained eyes",
+        "Smoke residue becomes permanent if not treated quickly and properly"
       ]
     },
     storm: {
       title: "Why Immediate Storm Response Matters",
-      items: [
-        {
-          icon: "🌧️",
-          title: "Water Infiltration",
-          description: "Storm damage creates openings that allow water to cause additional damage."
-        },
-        {
-          icon: "🔐",
-          title: "Security Risks",
-          description: "Damaged doors and windows compromise your property's security."
-        },
-        {
-          icon: "📅",
-          title: "Insurance Deadlines",
-          description: "Most insurance policies have strict deadlines for reporting storm damage."
-        }
+      steps: [
+        "Storm damage creates openings that allow water to cause additional damage",
+        "Damaged doors and windows compromise your property's security",
+        "Most insurance policies have strict deadlines for reporting storm damage"
       ]
     },
     mitigation: {
       title: "Why Quick Mitigation Saves Money",
-      items: [
-        {
-          icon: "💸",
-          title: "Cost Prevention",
-          description: "Early mitigation prevents minor issues from becoming major expenses."
-        },
-        {
-          icon: "⚡",
-          title: "Rapid Escalation",
-          description: "Damage spreads quickly without professional intervention."
-        },
-        {
-          icon: "🎯",
-          title: "Targeted Action",
-          description: "Professional assessment identifies exactly what needs immediate attention."
-        }
+      steps: [
+        "Early mitigation prevents minor issues from becoming major expenses",
+        "Damage spreads quickly without professional intervention",
+        "Professional assessment identifies exactly what needs immediate attention"
       ]
     }
   };
@@ -449,70 +419,50 @@ function generateRisks(subData, groupData) {
   return riskTemplates[groupData.template] || riskTemplates.water;
 }
 
+// MicroBenefits.jsx espera: [{ icon, title, description }]
 function generateMicroBenefits(subData, groupData) {
-  return {
-    title: "What You Get",
-    benefits: [
-      {
-        icon: "🔍",
-        title: "Thorough Assessment",
-        description: "Complete evaluation of all affected areas"
-      },
-      {
-        icon: "📋",
-        title: "Detailed Documentation",
-        description: "Photos, measurements, and reports for insurance"
-      },
-      {
-        icon: "🛡️",
-        title: "Prevention Plan",
-        description: "Strategies to prevent future occurrences"
-      },
-      {
-        icon: "💰",
-        title: "Cost Transparency",
-        description: "Clear pricing with no hidden fees"
-      },
-      {
-        icon: "⚡",
-        title: "Fast Response",
-        description: "Quick action to minimize damage"
-      },
-      {
-        icon: "🤝",
-        title: "Insurance Help",
-        description: "We work directly with your insurance company"
-      }
-    ]
-  };
+  return [
+    {
+      icon: "🔍",
+      title: "Thorough Assessment",
+      description: "Complete evaluation of all affected areas"
+    },
+    {
+      icon: "📋",
+      title: "Detailed Documentation",
+      description: "Photos, measurements, and reports for insurance"
+    },
+    {
+      icon: "🛡️",
+      title: "Prevention Plan",
+      description: "Strategies to prevent future occurrences"
+    },
+    {
+      icon: "💰",
+      title: "Cost Transparency",
+      description: "Clear pricing with no hidden fees"
+    },
+    {
+      icon: "⚡",
+      title: "Fast Response",
+      description: "Quick action to minimize damage"
+    },
+    {
+      icon: "🤝",
+      title: "Insurance Help",
+      description: "We work directly with your insurance company"
+    }
+  ];
 }
 
+// FloridaScenarios.jsx espera: [] (array simple de strings)
 function generateFloridaScenarios(subData, groupData) {
-  return {
-    title: "Common Florida Situations",
-    scenarios: [
-      {
-        icon: "🌀",
-        title: "Hurricane Season",
-        description: `${subData.title} issues spike during Florida's hurricane season from June through November.`
-      },
-      {
-        icon: "☔",
-        title: "Rainy Season",
-        description: `Heavy summer rains create perfect conditions for ${subData.title.toLowerCase()} problems.`
-      },
-      {
-        icon: "🌡️",
-        title: "High Humidity",
-        description: `Florida's year-round humidity accelerates damage and requires specialized techniques.`
-      },
-      {
-        icon: "🏖️",
-        title: "Coastal Properties",
-        description: `Salt air and coastal weather create unique challenges for ${subData.title.toLowerCase()}.`
-      }
-    ]
-  };
+  return [
+    `${subData.title} issues spike during Florida's hurricane season from June through November`,
+    `Heavy summer rains create perfect conditions for ${subData.title.toLowerCase()} problems`,
+    `Florida's year-round humidity accelerates damage and requires specialized techniques`,
+    `Salt air and coastal weather create unique challenges for ${subData.title.toLowerCase()}`
+  ];
 }
 
 function generateWhyChooseUs(subData, groupData) {
@@ -528,136 +478,186 @@ function generateWhyChooseUs(subData, groupData) {
   ];
 }
 
+// EmergencySigns.jsx espera: { title, items: [{ icon, text }] }
 function generateEmergencySigns(subData, groupData) {
   const signTemplates = {
     water: {
       title: "Emergency Water Damage Signs",
-      signs: [
-        {
-          icon: "💧",
-          title: "Standing Water",
-          description: "Any amount of standing water in your property"
-        },
-        {
-          icon: "💨",
-          title: "Musty Odors",
-          description: "Smell of mold or mildew indicating hidden moisture"
-        },
-        {
-          icon: "🎨",
-          title: "Staining",
-          description: "Water stains on walls, ceilings, or floors"
-        },
-        {
-          icon: "🌊",
-          title: "Warping",
-          description: "Buckled floors, warped walls, or sagging ceilings"
-        }
+      items: [
+        { icon: "💧", text: "Any amount of standing water in your property" },
+        { icon: "💨", text: "Smell of mold or mildew indicating hidden moisture" },
+        { icon: "🎨", text: "Water stains on walls, ceilings, or floors" },
+        { icon: "🌊", text: "Buckled floors, warped walls, or sagging ceilings" }
       ]
     },
     fire: {
       title: "Fire Damage Warning Signs",
-      signs: [
-        {
-          icon: "💨",
-          title: "Smoke Odor",
-          description: "Persistent smoke smell throughout the property"
-        },
-        {
-          icon: "⚫",
-          title: "Soot Residue",
-          description: "Black residue on walls, furniture, or belongings"
-        },
-        {
-          icon: "🔥",
-          title: "Heat Damage",
-          description: "Warped materials, melted items, or discoloration"
-        },
-        {
-          icon: "💧",
-          title: "Water Damage",
-          description: "Secondary water damage from firefighting efforts"
-        }
+      items: [
+        { icon: "💨", text: "Persistent smoke smell throughout the property" },
+        { icon: "⚫", text: "Black residue on walls, furniture, or belongings" },
+        { icon: "🔥", text: "Warped materials, melted items, or discoloration" },
+        { icon: "💧", text: "Secondary water damage from firefighting efforts" }
       ]
     },
     mold: {
       title: "Mold Inspection Warning Signs",
-      signs: [
-        {
-          icon: "👁️",
-          title: "Visible Growth",
-          description: "Any visible mold growth, regardless of size"
-        },
-        {
-          icon: "🤧",
-          title: "Health Symptoms",
-          description: "Respiratory issues, allergies, or unexplained illness"
-        },
-        {
-          icon: "💦",
-          title: "Water History",
-          description: "Previous water damage, leaks, or flooding"
-        },
-        {
-          icon: "👃",
-          title: "Musty Smells",
-          description: "Persistent moldy or earthy odors"
-        }
+      items: [
+        { icon: "👁️", text: "Any visible mold growth, regardless of size" },
+        { icon: "🤧", text: "Respiratory issues, allergies, or unexplained illness" },
+        { icon: "💦", text: "Previous water damage, leaks, or flooding" },
+        { icon: "👃", text: "Persistent moldy or earthy odors" }
       ]
     },
     storm: {
       title: "Storm Damage Warning Signs",
-      signs: [
-        {
-          icon: "🏠",
-          title: "Roof Damage",
-          description: "Missing shingles, holes, or visible roof damage"
-        },
-        {
-          icon: "🪟",
-          title: "Broken Windows",
-          description: "Cracked or shattered windows and glass doors"
-        },
-        {
-          icon: "💧",
-          title: "Water Intrusion",
-          description: "Water entering through storm-damaged areas"
-        },
-        {
-          icon: "🌪️",
-          title: "Debris Impact",
-          description: "Damage from flying debris or fallen trees"
-        }
+      items: [
+        { icon: "🏠", text: "Missing shingles, holes, or visible roof damage" },
+        { icon: "🪟", text: "Cracked or shattered windows and glass doors" },
+        { icon: "💧", text: "Water entering through storm-damaged areas" },
+        { icon: "🌪️", text: "Damage from flying debris or fallen trees" }
       ]
     },
     mitigation: {
       title: "When You Need Mitigation",
-      signs: [
-        {
-          icon: "🚨",
-          title: "Fresh Damage",
-          description: "Any new damage that could worsen without intervention"
-        },
-        {
-          icon: "💧",
-          title: "Active Leaks",
-          description: "Ongoing water infiltration or moisture problems"
-        },
-        {
-          icon: "⚡",
-          title: "Electrical Issues",
-          description: "Water near electrical systems or damaged wiring"
-        },
-        {
-          icon: "🏗️",
-          title: "Structural Concerns",
-          description: "Compromised structural elements requiring stabilization"
-        }
+      items: [
+        { icon: "🚨", text: "Any new damage that could worsen without intervention" },
+        { icon: "💧", text: "Ongoing water infiltration or moisture problems" },
+        { icon: "⚡", text: "Water near electrical systems or damaged wiring" },
+        { icon: "🏗️", text: "Compromised structural elements requiring stabilization" }
       ]
     }
   };
   
   return signTemplates[groupData.template] || signTemplates.water;
+}
+
+// EmergencyIncludes.jsx espera: { title, items: [{ title, text }] }
+function generateEmergencyIncludes(subData, groupData) {
+  return {
+    title: "Emergency Response Includes",
+    items: [
+      {
+        title: "Immediate Assessment",
+        text: "Quick evaluation of damage and safety concerns"
+      },
+      {
+        title: "Emergency Mitigation",
+        text: "Immediate actions to prevent further damage"
+      },
+      {
+        title: "Insurance Documentation",
+        text: "Complete photo and written documentation for claims"
+      },
+      {
+        title: "24/7 Monitoring",
+        text: "Continuous monitoring during critical first 48 hours"
+      }
+    ]
+  };
+}
+
+// WaterSigns.jsx espera: { title, items: [{ icon, text }] }
+function generateWaterSigns(subData, groupData) {
+  return {
+    title: "Signs You Need Water Damage Help",
+    items: [
+      { icon: "💧", text: "Standing water anywhere in your property" },
+      { icon: "💨", text: "Musty odors indicating hidden moisture" },
+      { icon: "🎨", text: "Discoloration or staining on walls and ceilings" },
+      { icon: "🌊", text: "Warping, buckling, or soft spots in flooring" }
+    ]
+  };
+}
+
+// StormDamages.jsx espera: { title, items: [{ icon, text }] }
+function generateStormDamages(subData, groupData) {
+  return {
+    title: "Common Storm Damage Types",
+    items: [
+      { icon: "🏠", text: "Roof damage from wind and flying debris" },
+      { icon: "🪟", text: "Broken windows and compromised openings" },
+      { icon: "🌊", text: "Flooding from storm surge and heavy rains" },
+      { icon: "⚡", text: "Electrical damage from power surges and outages" }
+    ]
+  };
+}
+
+// ServiceCards.jsx espera: { title, items: [{ icon, title, text, cta: { text, href } }] }
+function generateServiceCards(subData, groupData) {
+  return {
+    title: "Our Services",
+    items: [
+      {
+        icon: "🔍",
+        title: "Professional Assessment",
+        text: "Detailed evaluation by certified experts",
+        cta: { text: "Learn More", href: "/services" }
+      },
+      {
+        icon: "⚡",
+        title: "Emergency Response",
+        text: "24/7 rapid response across Florida",
+        cta: { text: "Call Now", href: "/contact" }
+      },
+      {
+        icon: "🛡️",
+        title: "Insurance Assistance",
+        text: "Complete claims documentation and support",
+        cta: { text: "Get Help", href: "/contact" }
+      }
+    ]
+  };
+}
+
+// WhyActingFast.jsx espera: { title, points: [] }
+function generateWhyActingFast(subData, groupData) {
+  return {
+    title: "Why Acting Fast Matters",
+    points: [
+      "Damage spreads rapidly without immediate professional intervention",
+      "Insurance companies expect prompt action to mitigate losses",
+      "Early response saves thousands in additional repair costs",
+      "Health risks increase the longer problems go untreated"
+    ]
+  };
+}
+
+// WhatNotToDo.jsx espera: [] (array simple de strings)
+function generateWhatNotToDo(subData, groupData) {
+  const templates = {
+    water: [
+      "Don't wait - water damage spreads quickly",
+      "Don't use regular fans for drying - you need industrial equipment",
+      "Don't try to remove large amounts of water yourself",
+      "Don't ignore hidden moisture behind walls"
+    ],
+    fire: [
+      "Don't attempt to clean soot yourself - it can spread",
+      "Don't use household cleaners on smoke damage",
+      "Don't ignore smoke odors - they indicate deeper contamination",
+      "Don't re-enter damaged areas without professional clearance"
+    ],
+    mold: [
+      "Don't ignore visible mold growth - it will spread",
+      "Don't attempt DIY mold removal on large areas",
+      "Don't use bleach on mold - it's ineffective on porous surfaces",
+      "Don't disturb mold colonies - it can release dangerous spores"
+    ],
+    storm: [
+      "Don't delay emergency securing - more damage will occur",
+      "Don't ignore small leaks - they become big problems",
+      "Don't attempt major repairs yourself during storms",
+      "Don't delay insurance claims reporting"
+    ],
+    mitigation: [
+      "Don't wait to see if damage gets worse",
+      "Don't attempt complex mitigation without proper equipment",
+      "Don't ignore safety hazards while trying to minimize damage",
+      "Don't skip professional assessment to save money initially"
+    ]
+  };
+  
+  return templates[groupData.template] || templates.water;
 }
 
 function generateFAQs(subData, groupData) {
