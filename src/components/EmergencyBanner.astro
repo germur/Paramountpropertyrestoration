@@ -1,0 +1,170 @@
+---
+// src/components/EmergencyBanner.astro
+export interface Props {
+  position?: 'static' | 'sticky';
+  variant?: 'home' | 'contact';
+}
+
+const { position = 'static', variant = 'home' } = Astro.props;
+---
+
+<div 
+  class={`paramount-emergency-banner paramount-emergency-${variant} ${position === 'sticky' ? 'paramount-emergency-sticky' : ''}`}
+>
+  <div class="paramount-emergency-content">
+    <div class="paramount-emergency-icon">🚨</div>
+    <div class="paramount-emergency-text">
+      <strong>PROPERTY EMERGENCY?</strong> We respond 24/7 - Don't wait!
+    </div>
+    <a href="tel:+17866022217" class="paramount-emergency-button">
+      Call: (786) 602-2217
+    </a>
+  </div>
+</div>
+
+<style>
+  /* ===== BANNER AZUL UNIFICADO - SIN IMPORTANT ===== */
+  .paramount-emergency-banner {
+    background: linear-gradient(45deg, #3cbced, #2a9fd1);
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(60, 188, 237, 0.3);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    position: relative;
+    z-index: 100;
+  }
+
+  /* VARIANTE STICKY PARA CONTACT */
+  .paramount-emergency-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* CONTENEDOR DEL BANNER */
+  .paramount-emergency-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* TEXTO DEL BANNER */
+  .paramount-emergency-text {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .paramount-emergency-text strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* ICONO ANIMADO */
+  .paramount-emergency-icon {
+    font-size: 1.2rem;
+    color: #ffffff;
+    animation: paramount-pulse 2s infinite;
+  }
+
+  /* BOTÓN DEL BANNER */
+  .paramount-emergency-button {
+    background: #ffffff;
+    color: #3cbced;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+  }
+
+  .paramount-emergency-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #2a9fd1;
+    background: #f8f9fa;
+    text-decoration: none;
+  }
+
+  .paramount-emergency-button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  /* ANIMACIÓN */
+  @keyframes paramount-pulse {
+    0% { 
+      opacity: 1; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.7; 
+      transform: scale(1.05);
+    }
+    100% { 
+      opacity: 1; 
+      transform: scale(1);
+    }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .paramount-emergency-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .paramount-emergency-text {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .paramount-emergency-button {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .paramount-emergency-banner {
+      padding: 0.75rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .paramount-emergency-text strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    .paramount-emergency-button {
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+    }
+  }
+
+  /* ===== ACCESIBILIDAD ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .paramount-emergency-icon {
+      animation: none;
+    }
+    
+    .paramount-emergency-button {
+      transition: none;
+    }
+    
+    .paramount-emergency-button:hover {
+      transform: none;
+    }
+  }
+</style>

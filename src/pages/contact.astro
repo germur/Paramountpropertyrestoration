@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/ContactForm.jsx";
+import EmergencyBanner from "../components/EmergencyBanner.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../components/AcordeonServices";
 ---
@@ -9,20 +10,11 @@ import FAQ from "../components/AcordeonServices";
   title="Contact Paramount Property Restoration - Emergency Help & Free Quotes"
   description="Contact Florida's complete property partner for 24/7 emergency restoration or professional remodeling. Licensed, insured, rapid response guaranteed."
 >
-  <!-- EMERGENCY ALERT BAR -->
-  <div class="emergency-alert">
-    <div class="emergency-content">
-      <div class="emergency-icon">🚨</div>
-      <div class="emergency-text">
-        <strong>PROPERTY EMERGENCY?</strong> Don't wait - every minute counts!
-      </div>
-      <a href="tel:+17866022217" class="emergency-btn">
-        Call Now: (786) 602-2217
-      </a>
-    </div>
-  </div>
+  <EmergencyBanner position="sticky" variant="contact" />
 
-  <section class="contact-hero">
+  <!-- HERO SECTION CON FONDO -->
+  <section class="contact-hero-section">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Contact Paramount Property Restoration</h1>
       <p class="hero-description">
@@ -31,7 +23,8 @@ import FAQ from "../components/AcordeonServices";
     </div>
   </section>
 
-  <section class="section">
+  <!-- MAIN CONTENT SECTION -->
+  <section class="contact-main-section">
     <div class="container">
       <!-- DUAL CTA SECTION -->
       <div class="dual-cta-section">
@@ -60,6 +53,7 @@ import FAQ from "../components/AcordeonServices";
         </div>
       </div>
 
+      <!-- CONTACT LAYOUT -->
       <div class="contact-layout">
         <div class="contact-form-section" id="contact-form">
           <div class="form-header">
@@ -141,7 +135,8 @@ import FAQ from "../components/AcordeonServices";
     </div>
   </section>
 
-  <section class="section">
+  <!-- BOTTOM CTA SECTION -->
+  <section class="bottom-cta-section">
     <div class="container">
       <div class="cta-content">
         <h2>Ready to Restore or Remodel?</h2>
@@ -149,7 +144,7 @@ import FAQ from "../components/AcordeonServices";
           From emergency disasters to dream renovations, Paramount Property Restoration is Florida's complete property partner.
         </p>
         <div class="cta-buttons">
-          <a href="tel:+18557774357" class="btn btn-emergency">Emergency? Call Now</a>
+          <a href="tel:+17866022217" class="btn btn-emergency">Emergency? Call Now</a>
           <a href="#contact-form" class="btn btn-remodeling">Get Free Quote</a>
         </div>
       </div>
@@ -158,185 +153,61 @@ import FAQ from "../components/AcordeonServices";
 </BaseLayout>
 
 <style>
-  /* EMERGENCY ALERT BAR */
-  .emergency-alert {
-    background: linear-gradient(45deg, #dc3545, #c82333);
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  /* ===== VARIABLES LOCALES AZULES ===== */
+  .contact-hero-section,
+  .contact-main-section,
+  .bottom-cta-section {
+    --paramount-primary: #1E293B;
+    --paramount-secondary: #64748B;
+    --paramount-accent: #3cbced;        /* AZUL PRINCIPAL */
+    --paramount-accent-hover: #2a9fd1;  /* AZUL HOVER */
+    --paramount-white: #FFFFFF;
+    --paramount-light: #F8FAFC;
+    --paramount-emergency: #DC2626;
+    --paramount-shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
+    --paramount-shadow-lg: 0 8px 24px rgba(30, 41, 59, 0.12);
+    --paramount-radius: 8px;
+    --paramount-radius-lg: 12px;
+    --paramount-transition: all 0.2s ease;
+    --paramount-spacing-2: 0.5rem;
+    --paramount-spacing-3: 0.75rem;
+    --paramount-spacing-4: 1rem;
+    --paramount-spacing-6: 1.5rem;
+    --paramount-spacing-8: 2rem;
+    --paramount-spacing-12: 3rem;
+    --paramount-font-sm: 0.875rem;
+    --paramount-font-base: 1rem;
+    --paramount-font-lg: 1.125rem;
+    --paramount-font-xl: 1.25rem;
+    --paramount-font-2xl: 1.5rem;
+    --paramount-font-3xl: 1.875rem;
   }
 
-  .emergency-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .emergency-icon {
-    font-size: 1.2rem;
-    animation: pulse 2s infinite;
-  }
-
-  .emergency-btn {
-    background: white;
-    color: #dc3545;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    font-size: 0.9rem;
-  }
-
-  .emergency-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-
-  @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
-  }
-
-  /* DUAL CTA SECTION */
-  .dual-cta-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .emergency-cta, .remodeling-cta {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    border-top: 4px solid;
-  }
-
-  .emergency-cta {
-    border-top-color: #dc3545;
-  }
-
-  .remodeling-cta {
-    border-top-color: #007bff;
-  }
-
-  .cta-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .emergency-cta .cta-icon {
-    color: #dc3545;
-  }
-
-  .remodeling-cta .cta-icon {
-    color: #007bff;
-  }
-
-  .btn-emergency {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .btn-remodeling {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .btn-emergency:hover, .btn-remodeling:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  }
-
-  .response-time {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-
-  /* EMERGENCY CONTACT STYLING */
-  .emergency-contact {
-    background: rgba(220, 53, 69, 0.05);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 2px solid rgba(220, 53, 69, 0.2);
-  }
-
-  .emergency-icon {
-    background: #dc3545 !important;
-  }
-
-  .emergency-phone {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #dc3545 !important;
-  }
-
-  .emergency-note {
-    color: #dc3545;
-    font-weight: 500;
-    margin-top: 0.5rem;
-  }
-
-  /* EXISTING STYLES - UPDATED */
-  .iconPrueba {
-    color: black;
-  }
-
-  .contact-hero {
+  /* ===== HERO SECTION ===== */
+  .contact-hero-section {
     position: relative;
     width: 100%;
-    min-height: 50vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: var(--paramount-spacing-8);
     text-align: center;
-    color: white;
+    color: var(--paramount-white);
     background-image: url("/images/heroContact.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  .contact-hero::before {
-    content: "";
+  .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
     z-index: 1;
   }
 
@@ -348,12 +219,12 @@ import FAQ from "../components/AcordeonServices";
   }
 
   .hero-content h1 {
-    max-width: 700px;
     font-size: clamp(3.2rem, 5vw, 5rem);
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 1rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: var(--paramount-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .hero-description {
@@ -361,65 +232,189 @@ import FAQ from "../components/AcordeonServices";
     font-weight: 400;
     max-width: 600px;
     margin: 0 auto 2rem;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 1;
     padding: 0 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
   }
 
+  /* ===== MAIN CONTENT ===== */
+  .contact-main-section {
+    padding: var(--paramount-spacing-12) 0;
+    background: var(--paramount-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* ===== DUAL CTA SECTION CON BOTONES AZULES ===== */
+  .dual-cta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .emergency-cta, 
+  .remodeling-cta {
+    background: var(--paramount-white);
+    padding: 2rem;
+    border-radius: var(--paramount-radius-lg);
+    box-shadow: var(--paramount-shadow);
+    text-align: center;
+    border-top: 4px solid;
+    transition: var(--paramount-transition);
+  }
+
+  .emergency-cta:hover, 
+  .remodeling-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--paramount-shadow-lg);
+  }
+
+  .emergency-cta {
+    border-top-color: var(--paramount-emergency);
+  }
+
+  .remodeling-cta {
+    border-top-color: var(--paramount-accent);
+  }
+
+  .cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .emergency-cta .cta-icon {
+    color: var(--paramount-emergency);
+  }
+
+  .remodeling-cta .cta-icon {
+    color: var(--paramount-accent);
+  }
+
+  .emergency-cta h3, 
+  .remodeling-cta h3 {
+    color: var(--paramount-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .emergency-cta p, 
+  .remodeling-cta p {
+    color: var(--paramount-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  /* ===== BOTONES AZULES UNIFICADOS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--paramount-transition);
+    border: none;
+    cursor: pointer;
+    font-size: var(--paramount-font-base);
+  }
+
+  .btn-emergency,
+  .btn-remodeling {
+    background: var(--paramount-accent);
+    color: var(--paramount-white);
+  }
+
+  .btn:hover,
+  .btn-emergency:hover,
+  .btn-remodeling:hover {
+    background: var(--paramount-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(60, 188, 237, 0.3);
+    color: var(--paramount-white);
+    text-decoration: none;
+  }
+
+  .response-time {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--paramount-secondary);
+  }
+
+  /* ===== CONTACT LAYOUT ===== */
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 400px;
-    gap: var(--spacing-12, 3rem);
+    gap: var(--paramount-spacing-12);
     align-items: start;
   }
 
   .contact-form-section {
-    background: white;
-    padding: var(--spacing-4, 1.5rem);
-    border-radius: var(--border-radius-lg, 12px);
-    box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.1));
+    background: var(--paramount-white);
+    padding: var(--paramount-spacing-8);
+    border-radius: var(--paramount-radius-lg);
+    box-shadow: var(--paramount-shadow-lg);
   }
 
   .form-header {
     text-align: center;
-    margin-bottom: var(--spacing-8, 2rem);
+    margin-bottom: var(--paramount-spacing-8);
   }
 
   .form-header h2 {
-    color: var(--text-primary, #2d3748);
-    margin-bottom: var(--spacing-3, 1rem);
+    color: var(--paramount-primary);
+    margin-bottom: var(--paramount-spacing-3);
+    font-size: 2rem;
+    font-weight: 700;
   }
 
   .form-header p {
-    color: var(--text-secondary, #4a5568);
+    color: var(--paramount-secondary);
     margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
+  /* ===== CONTACT INFO ===== */
   .contact-info-section {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-6, 1.5rem);
+    gap: var(--paramount-spacing-6);
   }
 
   .info-card {
-    background: white;
-    padding: var(--spacing-6, 1.5rem);
-    border-radius: var(--border-radius-lg, 12px);
-    box-shadow: var(--shadow, 0 4px 8px rgba(0,0,0,0.1));
+    background: var(--paramount-white);
+    padding: var(--paramount-spacing-8);
+    border-radius: var(--paramount-radius-lg);
+    box-shadow: var(--paramount-shadow);
   }
 
   .info-card h3 {
-    color: var(--text-primary, #2d3748);
-    margin-bottom: var(--spacing-6, 1.5rem);
-    font-size: var(--font-size-xl, 1.25rem);
+    color: var(--paramount-primary);
+    margin-bottom: var(--paramount-spacing-6);
+    font-size: 1.5rem;
     text-align: center;
+    border-bottom: 2px solid var(--paramount-accent);
+    padding-bottom: 1rem;
+    font-weight: 700;
   }
 
   .contact-item {
     display: flex;
-    gap: var(--spacing-4, 1rem);
-    margin-bottom: var(--spacing-6, 1.5rem);
-    padding-bottom: var(--spacing-6, 1.5rem);
-    border-bottom: 1px solid #e2e8f0;
+    gap: var(--paramount-spacing-4);
+    margin-bottom: var(--paramount-spacing-6);
+    padding-bottom: var(--paramount-spacing-6);
+    border-bottom: 1px solid #E2E8F0;
   }
 
   .contact-item:last-child {
@@ -428,78 +423,122 @@ import FAQ from "../components/AcordeonServices";
     border-bottom: none;
   }
 
+  /* EMERGENCY CONTACT DESTACADO */
+  .emergency-contact {
+    background: rgba(220, 38, 38, 0.05);
+    padding: 1rem;
+    border-radius: var(--paramount-radius);
+    border: 2px solid rgba(220, 38, 38, 0.2);
+  }
+
   .contact-icon {
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    background: var(--color-primary, #007bff);
-    color: white;
+    background: var(--paramount-accent);
+    color: var(--paramount-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .emergency-icon {
+    background: var(--paramount-emergency);
   }
 
   .contact-details h4 {
-    color: var(--text-primary, #2d3748);
-    margin-bottom: var(--spacing-2, 0.5rem);
-    font-size: var(--font-size-lg, 1.125rem);
+    color: var(--paramount-primary);
+    margin-bottom: var(--paramount-spacing-2);
+    font-size: 1.1rem;
+    font-weight: 600;
   }
 
   .contact-details a {
-    color: var(--color-primary, #007bff);
+    color: var(--paramount-accent);
     text-decoration: none;
     display: block;
-    margin-bottom: var(--spacing-1, 0.25rem);
-    word-break: break-all;
-    font-size: 0.9rem;
+    margin-bottom: var(--paramount-spacing-2);
+    font-size: 1rem;
+    transition: var(--paramount-transition);
+  }
+
+  .emergency-phone {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--paramount-emergency);
   }
 
   .contact-details a:hover {
     text-decoration: underline;
+    color: var(--paramount-accent-hover);
   }
 
   .contact-details p {
-    color: var(--text-secondary, #4a5568);
+    color: var(--paramount-secondary);
     line-height: 1.5;
     margin: 0;
   }
 
+  .emergency-note {
+    color: var(--paramount-emergency);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  /* ===== BOTTOM CTA AZUL ===== */
+  .bottom-cta-section {
+    padding: var(--paramount-spacing-12) 0;
+    background: var(--paramount-primary);
+    color: var(--paramount-white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
   .cta-content {
     text-align: center;
-    background: var(--bg-secondary, #f7fafc);
-    padding: var(--spacing-12, 3rem);
-    border-radius: var(--border-radius-lg, 12px);
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .cta-content h2 {
-    margin-bottom: var(--spacing-4, 1rem);
+    margin-bottom: var(--paramount-spacing-4);
+    color: var(--paramount-white);
+    font-size: 2.5rem;
+    font-weight: 700;
   }
 
   .cta-content p {
-    margin-bottom: var(--spacing-6, 1.5rem);
-    font-size: var(--font-size-lg, 1.125rem);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: var(--paramount-spacing-6);
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
   }
 
   .cta-buttons {
     display: flex;
-    gap: var(--spacing-4, 1rem);
+    gap: var(--paramount-spacing-4);
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .emergency-content {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  .cta-buttons .btn {
+    background: var(--paramount-accent);
+    color: var(--paramount-white);
+    padding: 1rem 2rem;
+  }
 
+  .cta-buttons .btn:hover {
+    background: var(--paramount-accent-hover);
+    transform: translateY(-2px);
+    color: var(--paramount-white);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
     .dual-cta-section {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     .contact-layout {
@@ -511,15 +550,55 @@ import FAQ from "../components/AcordeonServices";
       flex-direction: column;
       align-items: center;
     }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    .contact-form-section,
+    .info-card {
+      padding: var(--paramount-spacing-6);
+    }
+
+    .contact-main-section {
+      padding: var(--paramount-spacing-8) 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-icon {
+      font-size: 2.5rem;
+    }
+    
+    .emergency-cta, 
+    .remodeling-cta {
+      padding: 1.5rem;
+    }
+
+    .contact-main-section {
+      padding: var(--paramount-spacing-6) 0;
+    }
+
+    .bottom-cta-section {
+      padding: var(--paramount-spacing-8) 0;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
   }
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function() {
     // Smooth scroll to contact form
     const contactFormLinks = document.querySelectorAll('a[href="#contact-form"]');
-    contactFormLinks.forEach(link => {
-      link.addEventListener("click", (e: Event) => {
+    contactFormLinks.forEach(function(link) {
+      link.addEventListener("click", function(e) {
         e.preventDefault();
         const formSection = document.querySelector(".contact-form-section");
         if (formSection) {
@@ -531,12 +610,36 @@ import FAQ from "../components/AcordeonServices";
       });
     });
 
-    // Emergency phone number tracking
+    // Emergency phone tracking
     const emergencyButtons = document.querySelectorAll('a[href^="tel:+17866022217"]');
-    emergencyButtons.forEach(button => {
-      button.addEventListener('click', () => {
+    emergencyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
         console.log('Emergency call initiated');
+        
+        // Google Analytics tracking si está disponible
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'emergency_call', {
+            'event_category': 'Contact',
+            'event_label': 'Emergency Phone'
+          });
+        }
       });
     });
+
+    // Form validation enhancement
+    const contactForm = document.querySelector('#contact-form form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        console.log('Contact form submitted');
+        
+        // Analytics tracking - JavaScript puro
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'form_submit', {
+            'event_category': 'Contact',
+            'event_label': 'Contact Form'
+          });
+        }
+      });
+    }
   });
 </script>

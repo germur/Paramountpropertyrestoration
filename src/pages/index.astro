@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
 import LinkBuildingSection from "../components/linkBuilding.jsx";
+import EmergencyBanner from "../components/EmergencyBanner.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Obtener posts destacados del blog
@@ -24,17 +25,8 @@ try {
   title="Property Restoration & Remodeling Experts | Paramount Property Restoration Florida"
   description="Florida's complete property partner: 24/7 emergency restoration (water, fire, mold, storm) + professional remodeling services. Licensed, insured, rapid response guaranteed."
 >
-  <div class="emergency-alert-banner">
-    <div class="emergency-content">
-      <div class="emergency-icon">🚨</div>
-      <div class="emergency-text">
-        <strong>PROPERTY EMERGENCY?</strong> We respond 24/7 - Don't wait!
-      </div>
-      <a href="tel:+17866022217" class="emergency-btn-banner">
-        Call: (786) 602-2217
-      </a>
-    </div>
-  </div>
+  <!-- BANNER AZUL COMPARTIDO -->
+  <EmergencyBanner position="static" variant="home" />
 
   <section class="hero-section">
     <div class="hero-overlay">
@@ -98,7 +90,7 @@ try {
         </div>
 
         <div class="cta-container">
-          <a href="tel:+17866022217" class="btn">
+          <a href="tel:+17866022217" class="btn btn-blue">
             <i class="fas fa-phone"></i>
             Call Emergency Line: (786) 602-2217
           </a>
@@ -167,7 +159,7 @@ try {
         </div>
 
         <div class="cta-container">
-          <a href="/contact" class="btn">
+          <a href="/contact" class="btn btn-blue">
             <i class="fas fa-calculator"></i>
             Get Your Free Project Estimate
           </a>
@@ -280,7 +272,7 @@ try {
             ))}
           </div>
           <div class="text-center">
-            <a href="/blog" class="btn">
+            <a href="/blog" class="btn btn-blue">
               View All Articles
             </a>
           </div>
@@ -291,11 +283,12 @@ try {
 </BaseLayout>
 
 <style>
-  /* SISTEMA MINIMALISTA - SOLO 3 COLORES */
+  /* SISTEMA UNIFICADO AZUL PARAMOUNT */
   :root {
     --color-navy: #1E293B;
     --color-gray: #64748B;
-    --color-orange: #F59E0B;
+    --color-blue: #3cbced;          /* AZUL PRINCIPAL */
+    --color-blue-hover: #2a9fd1;    /* AZUL HOVER */
     --color-white: #FFFFFF;
     --color-light: #F8FAFC;
     --color-border: #E2E8F0;
@@ -336,13 +329,13 @@ try {
     margin: 0 0 1rem 0;
   }
 
-  /* BOTONES UNIFICADOS */
+  /* BOTONES UNIFICADOS AZULES */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background: var(--color-orange);
+    background: var(--color-blue);
     color: white;
     text-decoration: none;
     border: none;
@@ -353,10 +346,17 @@ try {
     transition: var(--transition);
   }
 
-  .btn:hover {
-    background: #E99307;
+  .btn:hover,
+  .btn-blue:hover {
+    background: var(--color-blue-hover);
     transform: translateY(-1px);
     box-shadow: var(--shadow);
+    color: white;
+    text-decoration: none;
+  }
+
+  .btn-blue {
+    background: var(--color-blue);
     color: white;
   }
 
@@ -369,36 +369,6 @@ try {
   .btn-outline:hover {
     background: var(--color-navy);
     color: white;
-  }
-
-  /* EMERGENCY ALERT */
-  .emergency-alert-banner {
-    background: var(--color-orange);
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  .emergency-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .emergency-btn-banner {
-    background: white;
-    color: var(--color-orange);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-  }
-
-  .emergency-btn-banner:hover {
-    background: var(--color-light);
   }
 
   /* HERO */
@@ -467,12 +437,12 @@ try {
   }
 
   .cta-action {
-    background: var(--color-orange);
+    background: var(--color-blue);
     color: white;
   }
 
   .cta-action:hover {
-    background: #E99307;
+    background: var(--color-blue-hover);
     transform: translateY(-2px);
     color: white;
   }
@@ -501,16 +471,22 @@ try {
   .category-header {
     text-align: center;
     margin-bottom: 3rem;
+    display: block;
   }
 
   .category-title {
     color: var(--color-navy);
     margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
   }
 
   .category-subtitle {
     color: var(--color-gray);
     font-size: 1.125rem;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 
   .services-grid {
@@ -559,7 +535,7 @@ try {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: var(--color-orange);
+    background: var(--color-blue);
     color: white;
     width: 32px;
     height: 32px;
@@ -605,7 +581,7 @@ try {
   }
 
   .service-tag {
-    background: var(--color-orange);
+    background: var(--color-blue);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 16px;
@@ -651,7 +627,7 @@ try {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-orange);
+    border-bottom: 2px solid var(--color-blue);
   }
 
   .city-links {
@@ -670,7 +646,7 @@ try {
 
   .city-links a:hover {
     background: white;
-    color: var(--color-orange);
+    color: var(--color-blue);
     transform: translateX(4px);
   }
 
@@ -683,71 +659,9 @@ try {
   }
 
   .emergency-phone {
-    color: var(--color-orange);
+    color: var(--color-blue);
     font-weight: 600;
     text-decoration: none;
-  }
-
-  /* TRUST SECTION */
-  .trust-bento-section {
-    padding: 4rem 0;
-    background: var(--color-navy);
-    color: white;
-  }
-
-  .trust-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .trust-main-title {
-    color: white;
-    font-size: 2.5rem;
-  }
-
-  .trust-subtitle {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .trust-bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .bento-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: var(--radius);
-    backdrop-filter: blur(8px);
-    transition: var(--transition);
-  }
-
-  .bento-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-  }
-
-  .large-card {
-    grid-column: span 2;
-  }
-
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--color-orange);
-    margin-bottom: 0.5rem;
-  }
-
-  .card-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .stars {
-    color: var(--color-orange);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
   }
 
   /* SERVICE AREAS */
@@ -791,7 +705,7 @@ try {
   }
 
   .blog-card h3 a:hover {
-    color: var(--color-orange);
+    color: var(--color-blue);
   }
 
   .blog-meta {
@@ -803,13 +717,13 @@ try {
   }
 
   .read-more {
-    color: var(--color-orange);
+    color: var(--color-blue);
     text-decoration: none;
     font-weight: 600;
   }
 
   .read-more:hover {
-    color: #E99307;
+    color: var(--color-blue-hover);
   }
 
   /* UTILIDADES */

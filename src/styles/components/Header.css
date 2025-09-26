@@ -152,7 +152,7 @@
 }
 
 /* ========================
-   MEGA MENÚ (desktop)
+   MEGA MENÚ (desktop) - CORREGIDO
    ======================== */
 .mega {
     position: relative;
@@ -160,7 +160,8 @@
 
 .mega-panel {
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 100%;
     margin-top: .5rem;
     background: #fff;
@@ -169,7 +170,7 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
     padding: 1rem 1.25rem;
     display: none;
-    min-width: 500px;
+    min-width: 600px;
     max-width: 1000px;
     z-index: 60;
     max-height: 70vh;
@@ -183,7 +184,7 @@
 .mega-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .mega-col {
@@ -347,9 +348,8 @@
    Responsivo
    ======================== */
 @media (max-width: 1024px) {
-
     .mega-panel {
-        min-width: calc(70vw - 2rem);
+        min-width: calc(90vw - 2rem);
         left: 50%;
         transform: translateX(-50%);
     }
@@ -387,10 +387,13 @@
     .mobile-nav.show {
         display: block;
     }
+    
+    .mega-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (min-width: 768px) {
-
     .dropdown-trigger {
         display: flex;
     }
@@ -404,7 +407,6 @@
         height: 200px;
         width: 200px;
     }
-
 }
 
 @media (min-width: 1440px) {
