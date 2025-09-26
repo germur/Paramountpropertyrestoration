@@ -1,23 +1,14 @@
 ---
 /**
- * Template universal para subservicios - VERSIÓN FINAL CON COMPONENTES REALES
+ * Template universal para subservicios - VERSIÓN UX OPTIMIZADA
+ * Reduce scroll infinito con sistema de tabs interactivos
  */
 import "../../../styles/components/GenericTemplate.css";
 import "../../../styles/components/Risks.css";
 import "../../../styles/components/Highlights.css";
 import FAQ from "../../AcordeonServices.jsx";
-import FloridaScenarios from "../../FloridaScenarios.jsx";
-import MicroBenefits from "../../MicroBenefits.jsx";
 import RegionalCoverage from "../../RegionalCoverage";
 import RestorationCTA from "../../RestorationCTA.jsx";
-import WhatNotToDo from "../../WhatNotToDo.jsx";
-import WhyActingFast from "../../WhyActingFast.jsx";
-import WhyEssential from "../../WhyEssential.jsx";
-import EmergencySigns from "../../EmergencySigns.jsx";
-import StormDamages from "../../StormDamages.jsx";
-import WaterSigns from "../../WaterSigns.jsx";
-import ServiceCards from "../../ServiceCards.jsx";
-import EmergencyIncludes from "../../EmergencyIncludes.jsx";
 
 const { group, sub } = Astro.props;
 
@@ -33,7 +24,6 @@ try {
   console.log("✨ CONTENIDO ENRIQUECIDO:", enrichedSub?.hero?.title);
 } catch (error) {
   console.error("❌ ERROR CON ENRICHER:", error);
-  // Usar contenido básico si falla
   enrichedSub = sub;
 }
 
@@ -50,22 +40,10 @@ const defaultHeroByTemplate = {
   mold: "/images/heromold.jpg",
   mitigation: "/images/heromitigation.jpg",
 };
-const heroBg =
-  enrichedSub.hero?.bg ??
-  enrichedSub.images?.hero ??
-  defaultHeroByTemplate[group.template] ??
-  "/images/placeholder-hero.jpg";
+const heroBg = defaultHeroByTemplate[group.template] || "/images/placeholder-hero.jpg";
 
-// LINK BUILDING básico
-const links = [
-  { href: '/restoration/water-damage', label: 'Water Damage' },
-  { href: '/restoration/fire-damage', label: 'Fire Damage' },
-  { href: '/restoration/mold-remediation', label: 'Mold Remediation' },
-  { href: '/restoration/storm-damage', label: 'Storm Damage' }
-].filter(link => !link.href.includes(group?.slug));
-
-// FAQ para el componente
-const customQuestions = enrichedSub.faqs?.map((faq, index) => ({
+// FAQ para el componente (solo top 4)
+const customQuestions = enrichedSub.faqs?.slice(0, 4).map((faq, index) => ({
   id: `custom-${index}`,
   question: faq.q,
   answer: faq.a,
@@ -79,177 +57,238 @@ const finalCta = {
 };
 ---
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION CON TRUST SIGNALS -->
 <section class="hero" style={`--hero-bg: url('${heroBg}')`}>
   <div class="hero__overlay"></div>
   <div class="container hero__inner">
     <h1 class="hero__title">{heroTitle}</h1>
     <p class="hero__desc">{heroDesc}</p>
-    <a href="/contact" class="btn btn--primary">{heroCTA}</a>
-    
-    <!-- Hero Icon Row -->
-    {enrichedSub.hero?.iconRow && (
-      <div class="hero__icon-row">
-        {enrichedSub.hero.iconRow.map((item) => (
-          <div class="hero__icon-item">
-            <span class="hero__icon">{item.icon}</span>
-            <span class="hero__icon-text">{item.text}</span>
-          </div>
-        ))}
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn--primary btn--large">{heroCTA}</a>
+      <div class="trust-indicators">
+        <span class="trust-badge">📞 24/7 Response</span>
+        <span class="trust-badge">🛡️ Licensed & Insured</span>
+        <span class="trust-badge">⭐ 10+ Years Florida</span>
       </div>
-    )}
+    </div>
   </div>
 </section>
 
-<!-- WHY ESSENTIAL SECTION -->
-{enrichedSub.whyEssential && (
-  <WhyEssential whyEssential={enrichedSub.whyEssential} client:load />
-)}
-
-<!-- PROCESS SECTION -->
-{enrichedSub.process && (
-  <section class="steps container">
-    <h2 class="section__title">{enrichedSub.process.title}</h2>
-    <ol class="timeline">
-      {enrichedSub.process.steps.map((step) => (
-        <li class="timeline__step">
-          <div class="timeline__icon">
-            <i class={step.icon} />
-          </div>
-          <div class="timeline__content">
-            <h3 class="timeline__title">{step.title}</h3>
-            <p class="timeline__text">{step.text}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
-  </section>
-)}
-
-<!-- EMERGENCY SIGNS -->
-{enrichedSub.emergencySigns && (
-  <EmergencySigns emergencySigns={enrichedSub.emergencySigns} client:load />
-)}
-
-<!-- WATER SIGNS (solo para water damage) -->
-{enrichedSub.waterSigns && (
-  <WaterSigns waterSigns={enrichedSub.waterSigns} client:load />
-)}
-
-<!-- STORM DAMAGES (solo para storm damage) -->
-{enrichedSub.stormDamages && (
-  <StormDamages stormDamages={enrichedSub.stormDamages} client:load />
-)}
-
-<!-- SERVICE CARDS -->
-{enrichedSub.serviceCards && (
-  <ServiceCards serviceCards={enrichedSub.serviceCards} client:load />
-)}
-
-<!-- WHY ACTING FAST -->
-{enrichedSub.whyActingFast && (
-  <WhyActingFast whyActingFast={enrichedSub.whyActingFast} client:load />
-)}
-
-<!-- EMERGENCY INCLUDES -->
-{enrichedSub.emergencyIncludes && (
-  <EmergencyIncludes emergencyIncludes={enrichedSub.emergencyIncludes} client:load />
-)}
-
-<!-- HIGHLIGHTS SECTION -->
-{enrichedSub.highlights && (
-  <section class="highlights container">
-    <h2 class="highlights__title">Service Highlights</h2>
-    <ul class="highlights__list">
-      {enrichedSub.highlights.map((highlight, index) => (
-        <li class="highlights__item">
-          <span class="highlights__icon">✓</span>
-          <span class="highlights__text">{highlight}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
-)}
-
-<!-- RISKS SECTION -->
-{enrichedSub.risks && (
-  <section class="risks container">
-    <div class="risks__card">
-      <h2 class="risks__title">Risks of Delaying Action</h2>
-      <ul class="risks__list">
-        {enrichedSub.risks.map((risk, index) => (
-          <li class="risks__item">
-            <span class="risks__icon" aria-hidden="true">🚫</span>
-            <span class="risks__text">{risk}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-)}
-
-<!-- MICRO BENEFITS -->
-{enrichedSub.microBenefits && (
-  <MicroBenefits benefits={enrichedSub.microBenefits} client:load />
-)}
-
-<!-- FLORIDA SCENARIOS -->
-{enrichedSub.floridaScenarios && (
-  <FloridaScenarios scenarios={enrichedSub.floridaScenarios} client:load />
-)}
-
-<!-- WHY CHOOSE US -->
-{enrichedSub.whyChooseUs && (
-  <section class="why-choose-us container">
-    <h2 class="section__title">Why Choose Paramount Property Restoration</h2>
-    <ul class="why-choose-us__list">
-      {enrichedSub.whyChooseUs.map((point) => (
-        <li class="why-choose-us__item">
-          <span class="why-choose-us__icon">✓</span>
-          <span class="why-choose-us__text">{point}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
-)}
-
-<!-- WHAT NOT TO DO -->
-{enrichedSub.whatNotToDo && (
-  <WhatNotToDo items={enrichedSub.whatNotToDo} client:load />
-)}
-
-<!-- RELATED SERVICES -->
-<section class="links container">
-  <h2 class="section__title">Related Services</h2>
-  <ul class="links__grid">
-    {links.map((l) => (
-      <li>
-        <a class="link" href={l.href}>
-          {l.label}
-        </a>
-      </li>
+<!-- PROCESS OVERVIEW (ALWAYS VISIBLE) -->
+<section class="process-overview container">
+  <h2 class="section__title">How We Help You</h2>
+  <div class="process-grid">
+    {enrichedSub.process?.steps?.slice(0, 4).map((step, index) => (
+      <div class="process-step">
+        <div class="process-number">{index + 1}</div>
+        <h3 class="process-title">{step.title}</h3>
+        <p class="process-text">{step.text}</p>
+      </div>
     ))}
-  </ul>
+  </div>
+  <div class="process-cta">
+    <p><strong>Timeline:</strong> Most inspections completed within 24-48 hours</p>
+    <a href="/contact" class="btn btn--secondary">Get Started Today</a>
+  </div>
 </section>
 
-<!-- REGIONAL COVERAGE -->
-<RegionalCoverage
-  client:load
-  title="We Serve All of Florida"
-  internalLinks={[]}
-  service={group?.slug}
-  subcategory={enrichedSub?.slug}
-/>
+<!-- INTERACTIVE CONTENT HUB -->
+<section class="content-hub container">
+  <h2 class="section__title">Everything You Need to Know</h2>
+  
+  <div class="tabs-system">
+    <!-- Tab Navigation -->
+    <div class="tabs-nav" role="tablist">
+      <button class="tab-btn active" data-tab="why-need" role="tab" aria-selected="true">
+        🚨 Why You Need This
+      </button>
+      <button class="tab-btn" data-tab="what-included" role="tab">
+        ✅ What's Included  
+      </button>
+      <button class="tab-btn" data-tab="florida-specific" role="tab">
+        🌴 Florida Specific
+      </button>
+      <button class="tab-btn" data-tab="common-concerns" role="tab">
+        ❓ Common Concerns
+      </button>
+    </div>
 
-<!-- FAQ -->
-{customQuestions.length > 0 && (
-  <FAQ
-    category={group?.template || "general"}
-    customQuestions={customQuestions}
-    title="Frequently Asked Questions"
-    client:load
-  />
-)}
+    <!-- Tab Content -->
+    <div class="tabs-content">
+      
+      <!-- TAB 1: Why You Need This -->
+      <div class="tab-panel active" id="why-need" role="tabpanel">
+        <div class="tab-grid">
+          <div class="tab-section">
+            <h3>Why Professional Service is Essential</h3>
+            <ul class="essential-list">
+              {enrichedSub.whyEssential?.steps?.slice(0, 3).map((step) => (
+                <li class="essential-item">
+                  <span class="essential-icon">⚠️</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="tab-section">
+            <h3>Warning Signs You Should Act Now</h3>
+            <div class="signs-grid">
+              {enrichedSub.emergencySigns?.items?.slice(0, 4).map((sign) => (
+                <div class="sign-item">
+                  <span class="sign-icon">{sign.icon}</span>
+                  <span class="sign-text">{sign.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: What's Included -->
+      <div class="tab-panel" id="what-included" role="tabpanel">
+        <div class="tab-grid">
+          <div class="tab-section">
+            <h3>Service Highlights</h3>
+            <ul class="highlights-compact">
+              {enrichedSub.highlights?.slice(0, 6).map((highlight) => (
+                <li class="highlight-item">
+                  <span class="highlight-check">✓</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="tab-section">
+            <h3>Emergency Response Includes</h3>
+            <div class="includes-grid">
+              {enrichedSub.emergencyIncludes?.items?.map((item) => (
+                <div class="include-item">
+                  <div class="include-icon">⚡</div>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Florida Specific -->
+      <div class="tab-panel" id="florida-specific" role="tabpanel">
+        <div class="tab-grid">
+          <div class="tab-section">
+            <h3>Why Florida is Different</h3>
+            <ul class="florida-scenarios">
+              {enrichedSub.floridaScenarios?.slice(0, 4).map((scenario) => (
+                <li class="scenario-item">
+                  <span class="scenario-icon">🌴</span>
+                  <span>{scenario}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="tab-section">
+            <h3>We Serve All of Florida</h3>
+            <div class="regions-compact">
+              <div class="region">
+                <strong>Central Florida:</strong> Orlando, Tampa, Lakeland
+              </div>
+              <div class="region">
+                <strong>South Florida:</strong> Miami, Fort Lauderdale, Boca Raton
+              </div>
+              <div class="region">
+                <strong>Southwest Florida:</strong> Naples, Fort Myers, Sarasota
+              </div>
+              <div class="region">
+                <strong>+ 50+ more cities</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Common Concerns -->
+      <div class="tab-panel" id="common-concerns" role="tabpanel">
+        <div class="tab-grid">
+          <div class="tab-section">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-compact">
+              {customQuestions.map((faq) => (
+                <details class="faq-item">
+                  <summary class="faq-question">{faq.question}</summary>
+                  <div class="faq-answer">{faq.answer}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+          
+          <div class="tab-section">
+            <h3>What NOT to Do</h3>
+            <ul class="dont-list">
+              {enrichedSub.whatNotToDo?.slice(0, 4).map((item) => (
+                <li class="dont-item">
+                  <span class="dont-icon">❌</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF COMPACTA -->
+<section class="social-proof">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-item">
+        <div class="proof-number">10+</div>
+        <div class="proof-text">Years Serving Florida</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">24/7</div>
+        <div class="proof-text">Emergency Response</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">100%</div>
+        <div class="proof-text">Licensed & Insured</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">1000+</div>
+        <div class="proof-text">Properties Restored</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY SECTION (CONDENSED) -->
+<section class="urgency-section">
+  <div class="container">
+    <div class="urgency-content">
+      <h2 class="urgency-title">⏰ Cost of Waiting</h2>
+      <div class="risks-compact">
+        {enrichedSub.risks?.slice(0, 3).map((risk) => (
+          <div class="risk-item">
+            <span class="risk-icon">🚫</span>
+            <span class="risk-text">{risk}</span>
+          </div>
+        ))}
+      </div>
+      <div class="urgency-cta">
+        <a href="/contact" class="btn btn--emergency">Get Help Now - Don't Wait</a>
+        <p class="urgency-note">Every minute counts. Call now for immediate response.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FINAL CTA -->
 <RestorationCTA
@@ -259,3 +298,371 @@ const finalCta = {
   buttonLink={finalCta.href}
   client:load
 />
+
+<!-- JAVASCRIPT FOR TABS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      
+      // Add active to clicked
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      
+      const tabId = btn.getAttribute('data-tab');
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+      
+      // Analytics tracking (opcional)
+      try {
+        if (window.gtag) {
+          window.gtag('event', 'tab_interaction', {
+            'event_category': 'engagement',
+            'event_label': tabId
+          });
+        }
+      } catch (e) {
+        // Analytics no disponible, continuar normalmente
+      }
+    });
+  });
+});
+</script>
+
+<!-- CSS STYLES -->
+<style>
+/* Hero optimizado */
+.hero__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+.btn--large {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.trust-badge {
+  background: rgba(255,255,255,0.9);
+  color: #1E293B;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Process Overview */
+.process-overview {
+  padding: 4rem 1rem;
+  background: #F8FAFC;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.process-step {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.process-number {
+  width: 40px;
+  height: 40px;
+  background: #F59E0B;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.process-cta {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+}
+
+/* Tabs System */
+.content-hub {
+  padding: 4rem 1rem;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: #E2E8F0;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: #F59E0B;
+  color: white;
+}
+
+.tab-btn:hover {
+  background: #CBD5E1;
+}
+
+.tab-btn.active:hover {
+  background: #D97706;
+}
+
+.tabs-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.tab-panel {
+  display: none;
+  padding: 2rem;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tab-section h3 {
+  color: #1E293B;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* Lista styles */
+.essential-list, .highlights-compact, .florida-scenarios, .dont-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.essential-item, .highlight-item, .scenario-item, .dont-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.essential-item:last-child, .highlight-item:last-child, .scenario-item:last-child, .dont-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Signs grid */
+.signs-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.sign-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #FEF2F2;
+  border-radius: 8px;
+  border-left: 4px solid #DC2626;
+}
+
+/* Includes grid */
+.includes-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.include-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #F0FDF4;
+  border-radius: 8px;
+  border-left: 4px solid #16A34A;
+}
+
+/* FAQ compact */
+.faq-compact {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1rem;
+  background: #F8FAFC;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-answer {
+  padding: 1rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* Social Proof */
+.social-proof {
+  background: #1E293B;
+  color: white;
+  padding: 3rem 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.proof-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F59E0B;
+}
+
+.proof-text {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Urgency Section */
+.urgency-section {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%);
+  padding: 3rem 0;
+}
+
+.urgency-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.urgency-title {
+  color: #DC2626;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.risks-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.risk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.btn--emergency {
+  background: #DC2626;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.btn--emergency:hover {
+  background: #B91C1C;
+}
+
+.urgency-note {
+  color: #7F1D1D;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tab-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabs-nav {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    text-align: center;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .risks-compact {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
