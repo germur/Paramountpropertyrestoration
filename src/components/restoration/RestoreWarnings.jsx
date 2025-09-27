@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/RestoreWarnings.css';
+import '../../styles/components/RestoreWarnings.css';
 
 const RestoreWarnings = ({ 
   title = "Warning Signs",

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/RestoreServices.css';
+import '../../styles/components/RestoreServices.css';
 
 const RestoreServices = ({ 
   title = "Our Services",

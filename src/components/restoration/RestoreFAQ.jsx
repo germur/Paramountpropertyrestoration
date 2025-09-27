@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/components/RestoreFAQ.css';
+import '../../styles/components/RestoreFAQ.css';
 
 const RestoreFAQ = ({ 
   title = "Frequently Asked Questions",

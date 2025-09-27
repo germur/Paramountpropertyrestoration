@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/RestoreFeatures.css';
+import '../../styles/components/RestoreFeatures.css';
 
 const RestoreFeatures = ({ 
   title = "Why Choose Us",
