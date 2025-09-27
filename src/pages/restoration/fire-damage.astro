@@ -2,8 +2,8 @@
 import { restorationGroups } from "../../data/restoration.js";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-// Find the fire group object
-const group = restorationGroups.find(g => g.slug === "fire");
+// Find the fire group object by template
+const group = restorationGroups.find(g => g.template === "fire");
 
 // Create sub object with fire-damage properties
 const sub = {

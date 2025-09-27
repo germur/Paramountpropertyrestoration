@@ -2,8 +2,8 @@
 import { restorationGroups } from "../../data/restoration.js";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-// Find the storm group object
-const group = restorationGroups.find(g => g.slug === "storm");
+// Find the storm group object by template
+const group = restorationGroups.find(g => g.template === "storm");
 
 // Create sub object with storm-damage properties
 const sub = {
