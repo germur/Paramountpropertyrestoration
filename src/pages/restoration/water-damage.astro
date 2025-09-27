@@ -1,23 +1,38 @@
 ---
-import { restorationGroups } from "../../data/restoration.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-// Find the water group object by template
-const group = restorationGroups.find(g => g.template === "water");
+// Datos estáticos para water damage - SIN DEPENDENCIAS EXTERNAS
+const group = {
+  slug: "water-damage",
+  name: "Water Damage Restoration", 
+  template: "water",
+  description: "Emergency water damage restoration and cleanup services"
+};
 
-// Create sub object with water-damage properties
 const sub = {
   slug: "water-damage",
-  title: group?.title || "Water Damage Restoration",
-  nombre: group?.nombre || "Water Damage",
-  template: group?.template || "water",
+  title: "Water Damage Restoration",
+  nombre: "Water Damage",
+  template: "water",
+  short: "Emergency water damage restoration and cleanup services",
   hero: {
-    title: "Water Damage Restoration Services in Florida",
-    description: "Expert water damage restoration and cleanup services. We handle flooding, leaks, and water extraction with fast emergency response and complete restoration.",
-    cta: "Get Emergency Water Restoration",
-    icons: ["💧", "🚨", "🛠️"]
+    title: "Water Damage? We Remove, Dry & Restore",
+    description: "Fast water extraction, moisture control, and structural drying to prevent mold and further damage. Serving Orlando, Miami, Tampa & beyond.",
+    cta: "Free Water Damage Assessment",
+    iconRow: [
+      { icon: "💧", text: "Water Extraction" },
+      { icon: "🌬️", text: "Drying" },
+      { icon: "🛡️", text: "Mold Prevention" },
+      { icon: "🛠️", text: "Restoration" }
+    ]
   }
 };
 ---
 
-<UnifiedTemplate group={group} sub={sub} />
+<BaseLayout
+  title="Water Damage Restoration in Florida | 24/7 Emergency Service"
+  description="Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments."
+>
+  <UnifiedTemplate group={group} sub={sub} />
+</BaseLayout>

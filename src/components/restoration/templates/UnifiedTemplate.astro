@@ -13,35 +13,34 @@ import RestorationCTA from "../../RestorationCTA.jsx";
 
 const { group, sub } = Astro.props;
 
-// Importar y ejecutar el enricher
-let enrichedSub = sub;
-try {
-  const { enrichSubserviceContent } = await import("../../../utils/contentEnricher.js");
-  enrichedSub = enrichSubserviceContent(sub, group);
-} catch (error) {
-  console.error("Error with content enricher:", error);
-  enrichedSub = sub;
+// VERIFICACIÓN CRÍTICA: Asegurar que group y sub existen
+if (!group || !sub) {
+  console.error("UnifiedTemplate: Missing group or sub data", { group, sub });
+  throw new Error("UnifiedTemplate requires both group and sub props");
 }
 
-// Configuración del hero
+// Usar datos directos sin enricher para evitar errores
+const enrichedSub = sub;
+
+// Configuración del hero - USAR DATOS DIRECTOS
 const heroConfig = {
-  title: enrichedSub.hero?.title || `${sub.title} Services in Florida`,
-  description: enrichedSub.hero?.description || sub.short || `Professional ${sub.title.toLowerCase()} services in Florida.`,
+  title: enrichedSub.hero?.title || `${sub.title || 'Restoration'} Services in Florida`,
+  description: enrichedSub.hero?.description || sub.short || `Professional ${(sub.title || 'restoration').toLowerCase()} services in Florida.`,
   ctaText: enrichedSub.hero?.cta || "Get Help Now",
   ctaLink: "/contact",
-  backgroundImage: `/images/hero${group.template}.jpg`,
+  backgroundImage: `/images/hero${group.template || 'water'}.jpg`,
   badges: enrichedSub.hero?.iconRow || [
     { icon: "🚨", text: "24/7 Response" },
     { icon: "🛡️", text: "Licensed & Insured" },
     { icon: "⭐", text: "10+ Years Florida" }
   ],
-  showEmergencyBadge: group.template !== 'mitigation'
+  showEmergencyBadge: (group.template || 'water') !== 'mitigation'
 };
 
-// Configuración del proceso
+// Configuración del proceso - DATOS ESTÁTICOS SEGUROS
 const processConfig = {
   title: "How We Help You",
-  steps: enrichedSub.process?.steps || [
+  steps: [
     { title: "Assessment", text: "Complete evaluation of damage", icon: "fas fa-search" },
     { title: "Action", text: "Immediate response to prevent further damage", icon: "fas fa-bolt" },
     { title: "Restoration", text: "Professional repair and cleanup", icon: "fas fa-tools" },
@@ -50,23 +49,39 @@ const processConfig = {
   timeline: "Most inspections completed within 24-48 hours"
 };
 
-// Configuración de servicios
+// Configuración de servicios - DATOS ESTÁTICOS
 const servicesConfig = {
   title: "What's Included",
-  services: enrichedSub.emergencyIncludes?.items?.map(item => ({
-    icon: "⚡",
-    title: item.title,
-    description: item.text,
-    ctaText: "Learn More",
-    ctaLink: "/contact"
-  })) || [],
+  services: [
+    {
+      icon: "⚡",
+      title: "Emergency Response",
+      description: "24/7 immediate response to your emergency",
+      ctaText: "Learn More",
+      ctaLink: "/contact"
+    },
+    {
+      icon: "🔍",
+      title: "Professional Assessment",
+      description: "Complete evaluation and damage documentation",
+      ctaText: "Learn More", 
+      ctaLink: "/contact"
+    },
+    {
+      icon: "🛠️",
+      title: "Expert Restoration",
+      description: "Professional repair and restoration services",
+      ctaText: "Learn More",
+      ctaLink: "/contact"
+    }
+  ],
   layout: "cards"
 };
 
-// Configuración de advertencias
+// Configuración de advertencias - DATOS ESTÁTICOS
 const warningsConfig = {
   title: "Warning Signs You Need Help",
-  warnings: enrichedSub.emergencySigns?.items || [
+  warnings: [
     { icon: "⚠️", text: "Visible damage or contamination" },
     { icon: "🏠", text: "Structural concerns or safety risks" },
     { icon: "💧", text: "Moisture or water intrusion" },
@@ -76,12 +91,12 @@ const warningsConfig = {
   urgencyMessage: "Don't wait - damage spreads quickly and costs increase over time"
 };
 
-// Configuración de características
+// Configuración de características - DATOS ESTÁTICOS
 const featuresConfig = {
   title: "Why Choose Us",
-  features: enrichedSub.whyChooseUs || [
+  features: [
     "24/7 emergency response across Florida",
-    "Licensed and certified technicians",
+    "Licensed and certified technicians", 
     "Advanced equipment and techniques",
     "Direct insurance billing available",
     "Comprehensive warranty on all work",
@@ -90,10 +105,10 @@ const featuresConfig = {
   layout: "list"
 };
 
-// Configuración de FAQ
+// Configuración de FAQ - DATOS ESTÁTICOS
 const faqConfig = {
-  title: `${sub.title} FAQs`,
-  faqs: enrichedSub.faqs || [
+  title: `${sub.title || 'Restoration'} FAQs`,
+  faqs: [
     { q: "How quickly can you respond?", a: "We provide 24/7 emergency response and typically arrive within 60-90 minutes." },
     { q: "Do you work with insurance?", a: "Yes, we work directly with all major insurance companies and can help with your claim." },
     { q: "Are you licensed and insured?", a: "Yes, we are fully licensed, certified, and insured for your protection." }
@@ -123,12 +138,10 @@ const finalCta = {
 />
 
 <!-- Services/What's Included -->
-{servicesConfig.services.length > 0 && (
-  <RestoreServices 
-    {...servicesConfig}
-    client:load 
-  />
-)}
+<RestoreServices 
+  {...servicesConfig}
+  client:load 
+/>
 
 <!-- Warning Signs -->
 <RestoreWarnings 

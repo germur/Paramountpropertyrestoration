@@ -1,23 +1,38 @@
 ---
-import { restorationGroups } from "../../data/restoration.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-// Find the storm group object by template
-const group = restorationGroups.find(g => g.template === "storm");
+// Datos estáticos para storm damage - SIN DEPENDENCIAS EXTERNAS
+const group = {
+  slug: "storm-damage",
+  name: "Storm Damage Restoration",
+  template: "storm", 
+  description: "Hurricane and storm damage restoration services"
+};
 
-// Create sub object with storm-damage properties
 const sub = {
   slug: "storm-damage",
-  title: group?.title || "Storm Damage Restoration",
-  nombre: group?.nombre || "Storm Damage",
-  template: group?.template || "storm",
+  title: "Storm Damage Restoration",
+  nombre: "Storm Damage",
+  template: "storm",
+  short: "Hurricane and storm damage restoration services",
   hero: {
     title: "Storm Damage Restoration Services in Florida",
-    description: "Professional storm damage restoration and repair services. We handle hurricane damage, wind damage, and storm cleanup with emergency response throughout Florida.",
-    cta: "Get Emergency Storm Restoration",
-    icons: ["⛈️", "🚨", "🛠️"]
+    description: "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
+    cta: "Repair Storm Damage Today",
+    iconRow: [
+      { icon: "🌪️", text: "Hurricane Damage" },
+      { icon: "🏚️", text: "Roof Repair" },
+      { icon: "🌊", text: "Flood Cleanup" },
+      { icon: "🧹", text: "Debris Removal" }
+    ]
   }
 };
 ---
 
-<UnifiedTemplate group={group} sub={sub} />
+<BaseLayout
+  title="Storm Damage Restoration in Florida | Hurricane & Roof Repair"
+  description="Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7."
+>
+  <UnifiedTemplate group={group} sub={sub} />
+</BaseLayout>
