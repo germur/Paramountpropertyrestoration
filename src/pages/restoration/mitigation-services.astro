@@ -1,208 +1,28 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import FAQ from "../../components/AcordeonServices";
-import RestorationCTA from "../../components/RestorationCTA";
-import WhyChooseUs from "../../components/WhyChooseUs";
-import ServiceHighlights from "../../components/ServiceHighlights";
+import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
+import { restorationGroups } from "../../data/restoration.js";
+
+// Encontrar el grupo de mitigation-services
+const group = restorationGroups.find(g => g.slug === "mitigation-services");
+
+// Crear un subservicio genérico para la página principal del grupo
+const sub = {
+  slug: "mitigation-services",
+  title: "Mitigation Services",
+  short: "Professional damage mitigation services",
+  nombre: "Mitigation Services",
+  categoria: "restoration",
+  seo: {
+    title: "Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention",
+    description: "Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
+  }
+};
 ---
 
 <BaseLayout
-  title="Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention"
-  description="Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
+  title={sub.seo.title}
+  description={sub.seo.description}
 >
-  <!-- Hero -->
-  <section class="hero-section" style="background-image: url('/images/mitigation.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Mitigation Services in Florida – Protect Before It Gets Worse</h1>
-      <p>
-        Our mitigation services across Florida focus on limiting property loss
-        from water, fire, mold, and storms. By acting fast, we reduce risks,
-        control costs, and keep your home or business safe.
-      </p>
-      <a href="/contact" class="btn btn-primary">Prevent Further Damage</a>
-    </div>
-  </section>
-
-  <!-- Service Icons -->
-  <section class="section">
-    <div class="container">
-      <div class="services-grid">
-        <div class="service-item">
-          <i class="fas fa-water"></i>
-          <h3>Water Mitigation</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-fire"></i>
-          <h3>Fire Mitigation</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-biohazard"></i>
-          <h3>Mold Mitigation</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-wind"></i>
-          <h3>Storm Mitigation</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions Cards -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Comprehensive Mitigation Services</h2>
-      <div class="solutions-grid">
-        <!-- Card 1 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img
-              src="/images/EmergencyWaterRemoval.jpg"
-              alt="Water mitigation and extraction equipment"
-            />
-          </div>
-          <div class="card-content">
-            <h3>Water Mitigation</h3>
-            <p>
-              Emergency extraction, dehumidification, and moisture control to
-              prevent structural damage and mold growth.
-            </p>
-            <a href="/contact" class="card-link">Start Water Mitigation</a>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img
-              src="/images/EmergencyFireResponse.jpg"
-              alt="Emergency fire mitigation and board-up services"
-            />
-          </div>
-          <div class="card-content">
-            <h3>Fire Mitigation</h3>
-            <p>
-              Board-ups, smoke containment, and ventilation strategies to limit
-              secondary damage after a fire.
-            </p>
-            <a href="/contact" class="card-link">Secure My Property</a>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img
-              src="/images/MoldPrevention.jpg"
-              alt="Mold mitigation and containment equipment"
-            />
-          </div>
-          <div class="card-content">
-            <h3>Mold Mitigation</h3>
-            <p>
-              Moisture control, air filtration, and antimicrobial treatments to
-              prevent mold from spreading.
-            </p>
-            <a href="/contact" class="card-link">Stop Mold Spread</a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img
-              src="/images/EmergencyStormRepair.jpg"
-              alt="Storm mitigation with tarping and boarding services"
-            />
-          </div>
-          <div class="card-content">
-            <h3>Storm Mitigation</h3>
-            <p>
-              Roof tarping, window boarding, and debris removal to secure
-              properties before and after severe weather.
-            </p>
-            <a href="/contact" class="card-link">Request Storm Mitigation</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Steps -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <div class="steps-container">
-        <div class="step-item" data-step="1">
-          <div class="step-icon"><i class="fas fa-search"></i></div>
-          <h3>Inspection & Risk Assessment</h3>
-          <p>Identify threats from water, fire, mold, or storms</p>
-        </div>
-
-        <div class="step-item" data-step="2">
-          <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Containment & Control</h3>
-          <p>Limit exposure and stop further property loss</p>
-        </div>
-
-        <div class="step-item" data-step="3">
-          <div class="step-icon"><i class="fas fa-fan"></i></div>
-          <h3>Moisture & Air Quality Management</h3>
-          <p>Use drying, filtration, and antimicrobial methods</p>
-        </div>
-
-        <div class="step-item" data-step="4">
-          <div class="step-icon"><i class="fas fa-tools"></i></div>
-          <h3>Temporary Protection</h3>
-          <p>Board-ups, tarps, and barriers until full restoration begins</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs
-    client:load
-    title="Why Choose Us"
-    items={[
-      "Mitigation-first approach to reduce repair costs",
-      "Fast response teams across Florida",
-      "Secure, stabilize, and prevent further loss",
-      "Support for both homeowners & businesses",
-      "Bridge between emergency response and full restoration",
-    ]}
-  />
-
-  <!-- Service Highlights -->
-  <ServiceHighlights
-    client:load
-    title="Service Highlights"
-    highlights={[
-      "Water mitigation (extraction & drying)",
-      "Fire mitigation (board-up & smoke control)",
-      "Mold mitigation (containment & prevention)",
-      "Storm mitigation (tarping & debris control)",
-      "Insurance claim support for mitigation costs",
-    ]}
-  />
-
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <FAQ client:load category="mitigation" title="Mitigation Services FAQs" />
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <RestorationCTA
-    client:load
-    title="Don't wait for damage to escalate."
-    subtitle="Protect your property now with professional mitigation services."
-    buttonText="Prevent Further Damage"
-    buttonLink="/contact"
-  />
+  <UnifiedTemplate group={group} sub={sub} />
 </BaseLayout>
