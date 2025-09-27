@@ -27,6 +27,30 @@ const sub = {
   title="Storm Damage Restoration in Florida | Hurricane & Roof Repair"
   description="Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7."
 >
+  <!-- Schema.org for Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Storm Damage Restoration in Florida",
+      "description": "24/7 emergency storm damage restoration services across Florida. Hurricane recovery, roof repair and debris removal.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      },
+      "serviceType": "Emergency Storm Damage Restoration",
+      "url": "https://paramountpropertyrestoration.com/restoration/storm-damage"
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/storm-damage" slot="head" />
+  
   <div class="container">
     <Breadcrumbs client:load crumbs={[
       { label: 'Home', href: '/' },

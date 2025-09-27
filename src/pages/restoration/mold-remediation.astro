@@ -27,6 +27,30 @@ const sub = {
   title="Mold Remediation in Florida | Black Mold Removal & Testing"
   description="Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today."
 >
+  <!-- Schema.org for Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Mold Remediation in Florida",
+      "description": "Professional mold remediation and black mold removal services across Florida. Testing, treatment and prevention.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      },
+      "serviceType": "Mold Remediation and Testing",
+      "url": "https://paramountpropertyrestoration.com/restoration/mold-remediation"
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/mold-remediation" slot="head" />
+  
   <div class="container">
     <Breadcrumbs client:load crumbs={[
       { label: 'Home', href: '/' },

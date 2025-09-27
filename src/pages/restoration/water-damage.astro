@@ -27,6 +27,30 @@ const sub = {
   title="Water Damage Restoration in Florida | 24/7 Emergency Service"
   description="Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments."
 >
+  <!-- Schema.org for Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Water Damage Restoration in Florida",
+      "description": "24/7 emergency water damage restoration services across Florida. Fast extraction, drying, and repairs.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      },
+      "serviceType": "Emergency Water Damage Restoration",
+      "url": "https://paramountpropertyrestoration.com/restoration/water-damage"
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/water-damage" slot="head" />
+  
   <div class="container">
     <Breadcrumbs client:load crumbs={[
       { label: 'Home', href: '/' },

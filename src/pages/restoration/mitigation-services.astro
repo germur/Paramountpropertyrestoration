@@ -26,6 +26,30 @@ const sub = {
   title="Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention"
   description="Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
 >
+  <!-- Schema.org for Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Mitigation Services in Florida",
+      "description": "Professional damage mitigation services across Florida. Water, fire, mold and storm damage prevention.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      },
+      "serviceType": "Property Damage Mitigation",
+      "url": "https://paramountpropertyrestoration.com/restoration/mitigation-services"
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/mitigation-services" slot="head" />
+  
   <div class="container">
     <Breadcrumbs client:load crumbs={[
       { label: 'Home', href: '/' },

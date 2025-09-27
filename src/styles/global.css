@@ -855,11 +855,55 @@ a:hover {
 }
 
 /* ===== BREADCRUMBS - OCULTAR ===== */
-main > .container:first-child:has(ol),
-main > .container:first-child:has(.breadcrumb),
-ol.breadcrumb,
-nav > ol {
-  display: none !important;
+/* Breadcrumbs styles */
+.breadcrumb-nav {
+  padding: 1rem 0;
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.breadcrumb-nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-nav li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-nav li:not(:last-child)::after {
+  content: '›';
+  color: rgba(100, 116, 139, 0.6);
+  font-weight: 500;
+}
+
+.breadcrumb-nav a {
+  color: #35c3e9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.breadcrumb-nav a:hover {
+  color: #2a9fd1;
+  background: rgba(53, 195, 233, 0.1);
+  text-decoration: none;
+}
+
+.breadcrumb-nav span[aria-current="page"] {
+  color: #64748B;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
 }
 
 /* ===== GRIDS GENÉRICOS ===== */

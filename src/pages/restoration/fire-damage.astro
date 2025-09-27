@@ -27,6 +27,30 @@ const sub = {
   title="Fire Damage Restoration in Florida | Smoke & Soot Cleanup"
   description="Florida fire damage restoration experts. 24/7 cleanup for smoke, soot, and structural repair. Serving Orlando, Miami, Tampa & more. Request a free inspection today."
 >
+  <!-- Schema.org for Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fire Damage Restoration in Florida",
+      "description": "24/7 emergency fire damage restoration services across Florida. Smoke, soot cleanup and structural repairs.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      },
+      "serviceType": "Emergency Fire Damage Restoration",
+      "url": "https://paramountpropertyrestoration.com/restoration/fire-damage"
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/fire-damage" slot="head" />
+  
   <div class="container">
     <Breadcrumbs client:load crumbs={[
       { label: 'Home', href: '/' },
