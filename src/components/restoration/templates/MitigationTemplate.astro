@@ -92,7 +92,7 @@ const getMitigationContent = (subSlug) => {
   return stormContent[subSlug] || stormContent["hurricane-damage"];
 };
 
-const content = getStormContent(sub.slug);
+const content = getMitigationContent(sub.slug);
 ---
 
 <!-- Hero Section -->
