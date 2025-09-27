@@ -195,10 +195,10 @@ const faqCategory = `water-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <a href={`/restoration/water-damage/${service.slug}`} class="service-item">
+      <div class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </a>
+      </div>
     ))}
   </div>
 </section>
@@ -215,7 +215,7 @@ const faqCategory = `water-${sub.slug}`;
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href={`/restoration/water-damage/${service.slug}`} class="btn">Learn More</a>
+          <a href={`/restoration/water-damage/${service.slug}`} class="btn">Get Emergency Water Help →</a>
         </div>
       </div>
     ))}
@@ -235,6 +235,62 @@ const faqCategory = `water-${sub.slug}`;
         <p>{step.text}</p>
       </div>
     ))}
+  </div>
+</section>
+
+<!-- Regional Coverage Section -->
+<section class="minimal-services-section">
+  <div class="container">
+    <div class="minimal-header">
+      <h2>Emergency Water Damage Services Across Florida</h2>
+      <p>Fast response in major Florida cities</p>
+    </div>
+
+    <div class="regions-grid">
+      <div class="region-column">
+        <h3 class="region-title">Central Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/orlando">Flood Damage Orlando</a>
+          <a href="/restoration/water-damage/leak-repair/kissimmee">Leak Repair Kissimmee</a>
+          <a href="/restoration/water-damage/basement-flooding/lakeland">Basement Flooding Lakeland</a>
+          <a href="/restoration/water-damage/emergency-water-removal/winter-garden">Emergency Water Removal Winter Garden</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Tampa Bay Region</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/tampa">Flood Damage Tampa</a>
+          <a href="/restoration/water-damage/leak-repair/st-petersburg">Leak Repair St. Petersburg</a>
+          <a href="/restoration/water-damage/basement-flooding/clearwater">Basement Flooding Clearwater</a>
+          <a href="/restoration/water-damage/emergency-water-removal/sarasota">Emergency Water Removal Sarasota</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">South Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/miami">Flood Damage Miami</a>
+          <a href="/restoration/water-damage/leak-repair/fort-lauderdale">Leak Repair Fort Lauderdale</a>
+          <a href="/restoration/water-damage/basement-flooding/hollywood">Basement Flooding Hollywood</a>
+          <a href="/restoration/water-damage/emergency-water-removal/coral-gables">Emergency Water Removal Coral Gables</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Southwest Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/naples">Flood Damage Naples</a>
+          <a href="/restoration/water-damage/leak-repair/cape-coral">Leak Repair Cape Coral</a>
+          <a href="/restoration/water-damage/basement-flooding/fort-myers">Basement Flooding Fort Myers</a>
+          <a href="/restoration/water-damage/emergency-water-removal/bonita-springs">Emergency Water Removal Bonita Springs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="emergency-footer">
+      <p>Need immediate help? <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217</a></p>
+    </div>
   </div>
 </section>
 
