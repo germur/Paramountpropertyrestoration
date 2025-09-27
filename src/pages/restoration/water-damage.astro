@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WaterTemplate from "../../components/restoration/templates/WaterTemplate.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -26,5 +27,12 @@ const sub = {
   title="Water Damage Restoration in Florida | 24/7 Emergency Service"
   description="Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments."
 >
+  <div class="container">
+    <Breadcrumbs client:load crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Restoration', href: '/restoration' },
+      { label: 'Water Damage', href: '/restoration/water-damage' }
+    ]} />
+  </div>
   <WaterTemplate group={group} sub={sub} />
 </BaseLayout>

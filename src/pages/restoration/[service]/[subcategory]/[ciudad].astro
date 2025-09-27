@@ -5,6 +5,7 @@ import { getEnrichedSubserviceContent } from "../../../../data/subservice-conten
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import "../../../../styles/pages/[ciudad].css";
 import "../../../../styles/pages/restoration-city.css";
+import Breadcrumbs from "../../../../components/Breadcrumbs.jsx";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
 
@@ -37,14 +38,26 @@ export async function getStaticPaths() {
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
 
+// Generate canonical URL
+const canonicalURL = `/restoration/${service}/${subcategory}/${ciudad}`;
+
 // Obtener contenido específico del subservicio
 const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
 
 // Generate dynamic content for SEO
-const pageTitle = `${servicioData.title} in ${ciudadData.nombre} | Paramount Property Restoration`;
+const pageTitle = `${servicioData.title} in ${ciudadData.nombre}, FL | 24/7 Emergency Response`;
 const pageDescription =
   servicioData.seo?.description ||
-  `Professional ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 emergency response and certified restoration specialists.`;
+  `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`;
+
+// Generate breadcrumbs
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Restoration', href: '/restoration' },
+  { label: groupData.name, href: `/restoration/${service}` },
+  { label: servicioData.title, href: `/restoration/${service}/${subcategory}` },
+  { label: ciudadData.nombre, href: canonicalURL }
+];
 
 // Hero content from subservice-specific data or fallback
 const heroContent = {
@@ -90,6 +103,39 @@ const serviceAreaCities = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Schema.org for Local Service -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `${servicioData.title} in ${ciudadData.nombre}`,
+      "description": pageDescription,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paramount Property Restoration",
+        "telephone": "+1-786-602-2217",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Florida",
+          "addressCountry": "US"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": `${ciudadData.nombre}, Florida`
+      },
+      "serviceType": "Emergency Property Restoration",
+      "url": `https://paramountpropertyrestoration.com${canonicalURL}`
+    }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={`https://paramountpropertyrestoration.com${canonicalURL}`} slot="head" />
+  
+  <div class="container">
+    <Breadcrumbs client:load crumbs={breadcrumbs} />
+  </div>
+  
   <!-- Hero Section -->
   <section
     class="hero-section"

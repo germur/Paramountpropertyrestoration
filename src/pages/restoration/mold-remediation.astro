@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MoldTemplate from "../../components/restoration/templates/MoldTemplate.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -26,5 +27,12 @@ const sub = {
   title="Mold Remediation in Florida | Black Mold Removal & Testing"
   description="Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today."
 >
+  <div class="container">
+    <Breadcrumbs client:load crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Restoration', href: '/restoration' },
+      { label: 'Mold Remediation', href: '/restoration/mold-remediation' }
+    ]} />
+  </div>
   <MoldTemplate group={group} sub={sub} />
 </BaseLayout>

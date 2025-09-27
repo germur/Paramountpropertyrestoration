@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MitigationTemplate from "../../components/restoration/templates/MitigationTemplate.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Datos para la página principal de mitigation services
@@ -25,5 +26,12 @@ const sub = {
   title="Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention"
   description="Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
 >
+  <div class="container">
+    <Breadcrumbs client:load crumbs={[
+      { label: 'Home', href: '/' },
+      { label: 'Restoration', href: '/restoration' },
+      { label: 'Mitigation Services', href: '/restoration/mitigation-services' }
+    ]} />
+  </div>
   <MitigationTemplate group={group} sub={sub} />
 </BaseLayout>
