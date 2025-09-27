@@ -1,8 +1,17 @@
 ---
+import { restorationGroups } from "../../data/restoration.js";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-const group = "water";
-const sub = "water-damage";
+// Find the water group object
+const group = restorationGroups.find(g => g.slug === "water");
+
+// Create sub object with water-damage properties
+const sub = {
+  slug: "water-damage",
+  title: group?.title || "Water Damage Restoration",
+  nombre: group?.nombre || "Water Damage",
+  template: group?.template || "water"
+};
 ---
 
 <UnifiedTemplate group={group} sub={sub} />

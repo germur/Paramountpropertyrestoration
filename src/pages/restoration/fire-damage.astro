@@ -1,8 +1,17 @@
 ---
+import { restorationGroups } from "../../data/restoration.js";
 import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 
-const group = "fire";
-const sub = "fire-damage";
+// Find the fire group object
+const group = restorationGroups.find(g => g.slug === "fire");
+
+// Create sub object with fire-damage properties
+const sub = {
+  slug: "fire-damage",
+  title: group?.title || "Fire Damage Restoration",
+  nombre: group?.nombre || "Fire Damage",
+  template: group?.template || "fire"
+};
 ---
 
 <UnifiedTemplate group={group} sub={sub} />
