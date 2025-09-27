@@ -1,5 +1,189 @@
 ---
-import UnifiedTemplate from "./UnifiedTemplate.astro";
-const props = Astro.props;
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/pages/water-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
+
+const { group, sub } = Astro.props;
+
+// Contenido específico para water damage basado en el subservicio
+const getWaterContent = (subSlug) => {
+  const waterContent = {
+    "flood-damage": {
+      hero: {
+        title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
+        description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
+        cta: "Start Flood Extraction Now"
+      },
+      services: [
+        { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly." },
+        { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities." },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold." },
+        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Support for weakened ceilings, floors, and framing." }
+      ],
+      steps: [
+        { title: "Inspection & Moisture Mapping", text: "Identify visible and hidden flood damage", icon: "fas fa-search" },
+        { title: "Rapid Water Extraction", text: "Remove standing floodwater using high-capacity pumps", icon: "fas fa-tint" },
+        { title: "Drying & Dehumidification", text: "Stabilize humidity with industrial air movers", icon: "fas fa-wind" },
+        { title: "Antimicrobial Treatment", text: "Protect walls, flooring, and furniture against mold", icon: "fas fa-shield-alt" },
+        { title: "Ongoing Monitoring", text: "Daily moisture checks until drying is complete", icon: "fas fa-chart-line" }
+      ]
+    },
+    "leak-repair": {
+      hero: {
+        title: "Stop Leaks Before They Cause Bigger Damage",
+        description: "Whether it's a burst pipe, ceiling leak, or hidden water damage inside your walls, our Florida leak repair specialists act fast to protect your home or business. With 24/7 emergency response and advanced detection tools, we fix leaks before they become costly disasters.",
+        cta: "Fix My Leak Now"
+      },
+      services: [
+        { icon: "fas fa-home", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation." },
+        { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety." },
+        { icon: "fas fa-search", title: "Hidden Leak Detection", description: "Advanced tools locate leaks inside walls, floors, or basements." }
+      ],
+      steps: [
+        { title: "Inspection & Leak Detection", text: "Thermal imaging & moisture meters find the source", icon: "fas fa-search" },
+        { title: "Emergency Containment", text: "Stop water flow, prevent further damage", icon: "fas fa-stop" },
+        { title: "Drying & Dehumidification", text: "Industrial air movers, dehumidifiers", icon: "fas fa-wind" },
+        { title: "Repair & Restoration", text: "Pipes, drywall, ceilings, and flooring fixed", icon: "fas fa-tools" },
+        { title: "Mold Prevention & Quality Check", text: "Antimicrobial treatment + testing", icon: "fas fa-check-circle" }
+      ]
+    },
+    "basement-flooding": {
+      hero: {
+        title: "Basement Flooding? We Pump Out Water & Protect Your Foundation",
+        description: "Is your basement underwater? Our Florida team provides 24/7 basement flooding cleanup, including pump-out, cavity drying, and mold prevention. We remove water fast, protect your foundation, and restore your property safely.",
+        cta: "Protect Against Mold"
+      },
+      services: [
+        { icon: "fas fa-pump-soap", title: "Basement Pump-Out", description: "Rapid water evacuation with high-volume pumps." },
+        { icon: "fas fa-home", title: "Structural Drying", description: "Dry walls, subfloors, and insulation to protect the foundation." },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Apply treatments and humidity control to stop mold growth." },
+        { icon: "fas fa-chart-bar", title: "Moisture Monitoring", description: "Track safe drying progress with daily readings." }
+      ],
+      steps: [
+        { title: "Safety & Assessment", text: "Check for electrical hazards and structural risks before entry", icon: "fas fa-hard-hat" },
+        { title: "Pump-Out & Water Removal", text: "High-capacity pumps quickly clear standing basement water", icon: "fas fa-pump-soap" },
+        { title: "Cavity Drying", text: "Industrial dehumidifiers and air movers dry walls, flooring, and crawlspaces", icon: "fas fa-wind" },
+        { title: "Humidity Control", text: "Stabilize indoor moisture levels to safe conditions", icon: "fas fa-thermometer-half" },
+        { title: "Antimicrobial Treatment", text: "Apply disinfectants to prevent mold and bacteria growth", icon: "fas fa-spray-can" }
+      ]
+    },
+    "ceiling-water-damage": {
+      hero: {
+        title: "Ceiling Leak or Water Stains? We Fix It Fast.",
+        description: "From small leaks to major ceiling collapses, our Florida ceiling repair teams restore drywall, insulation, and finishes—stopping hidden mold before it spreads. With 24/7 emergency response and licensed specialists, we protect your home or business from water damage and ceiling collapse.",
+        cta: "Schedule Ceiling Repair"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Leak Source Repair", description: "Fix pipes, roof leaks, or AC condensation." },
+        { icon: "fas fa-hammer", title: "Drywall & Ceiling Replacement", description: "Remove & replace water-damaged sections." },
+        { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces." },
+        { icon: "fas fa-shield-alt", title: "Mold Remediation", description: "Long-term protection against hidden growth." }
+      ],
+      steps: [
+        { title: "Inspection & Moisture Detection", text: "Thermal cameras to locate leaks", icon: "fas fa-camera" },
+        { title: "Containment & Drying", text: "Industrial dehumidifiers & air movers", icon: "fas fa-wind" },
+        { title: "Drywall & Insulation Replacement", text: "Remove damaged materials", icon: "fas fa-hammer" },
+        { title: "Mold Prevention", text: "Antimicrobial treatments applied", icon: "fas fa-shield-alt" },
+        { title: "Finish Restoration", text: "Paint, texture & restore ceiling", icon: "fas fa-paint-roller" }
+      ]
+    },
+    "emergency-water-removal": {
+      hero: {
+        title: "Rapid Emergency Water Removal When Every Minute Counts",
+        description: "Flooding, burst pipes, or storm intrusion can overwhelm your home or business in minutes. Our Florida emergency water removal teams respond 24/7 with industrial pumps, vacuums, and drying systems—eliminating standing water before it spreads.",
+        cta: "Request Water Removal Now"
+      },
+      services: [
+        { icon: "fas fa-water", title: "Flooded Living Rooms & Basements", description: "Water extraction before it seeps into walls, flooring, and insulation." },
+        { icon: "fas fa-wrench", title: "Burst Pipes or Plumbing Failures", description: "Rapid mitigation to stop spreading leaks." },
+        { icon: "fas fa-cloud-rain", title: "Storm or Hurricane Flooding", description: "High-capacity pumps handle heavy stormwater intrusion." },
+        { icon: "fas fa-building", title: "Commercial Water Emergencies", description: "Fast removal to minimize downtime and inventory loss." }
+      ],
+      steps: [
+        { title: "Inspection & Safety Check", text: "Identify hazards, source of water", icon: "fas fa-hard-hat" },
+        { title: "Water Extraction", text: "Industrial pumps + vacuums remove standing water", icon: "fas fa-tint" },
+        { title: "Drying & Dehumidification", text: "Air movers + dehumidifiers stabilize humidity", icon: "fas fa-wind" },
+        { title: "Antimicrobial Treatment", text: "Stop mold & bacteria growth", icon: "fas fa-spray-can" },
+        { title: "Damage Assessment & Restoration Plan", text: "Full documentation for insurance", icon: "fas fa-clipboard-list" }
+      ]
+    }
+  };
+
+  return waterContent[subSlug] || waterContent["flood-damage"];
+};
+
+const content = getWaterContent(sub.slug);
 ---
-<UnifiedTemplate {...props} />
+
+<!-- Hero Section -->
+<section class="hero-sectionKitchen">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{content.hero.title}</h1>
+    <p>{content.hero.description}</p>
+    <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+  <div class="services-grid">
+    {content.services.map((service) => (
+      <div class="service-item">
+        <i class={service.icon}></i>
+        <h3>{service.title}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <h2 class="solutions-title">Comprehensive Water Damage Solutions</h2>
+  <div class="solutions-grid">
+    {content.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src={`/images/${sub.slug.charAt(0).toUpperCase() + sub.slug.slice(1).replace('-', '')}.jpg`} alt={service.title} />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <a href="/contact" class="card-cta">Get Help Now</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+  <h2 class="steps-title">How It Works</h2>
+  <div class="steps-container">
+    {content.steps.map((step, index) => (
+      <div class="step-item" data-step={index + 1}>
+        <div class="step-icon">
+          <i class={step.icon}></i>
+        </div>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <FAQ client:load category="water" title="FAQs" />
+</section>
+
+<!-- Final CTA -->
+<RestorationCTA
+  client:load
+  title="Don't let water damage linger."
+  subtitle="Schedule your free assessment now—restoration starts immediately."
+  buttonText="Free Water Damage Assessment"
+  buttonLink="/contact"
+/>

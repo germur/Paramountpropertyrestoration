@@ -1,9 +1,13 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { restorationGroups } from "../../../data/restoration.js";
-import { getSubserviceContent } from "../../../data/subservice-content.js";
 
-import UnifiedTemplate from "../../../components/restoration/templates/UnifiedTemplate.astro";
+import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
+import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
+import StormTemplate from "../../../components/restoration/templates/StormTemplate.astro";
+import MoldTemplate from "../../../components/restoration/templates/MoldTemplate.astro";
+import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
+import GenericTemplate from "../../../components/restoration/templates/GenericTemplate.astro";
 
 export async function getStaticPaths() {
     const combinations = [];
@@ -39,26 +43,21 @@ export async function getStaticPaths() {
 
 const { groupData, subData } = Astro.props;
 
-// Obtener contenido específico del subservicio
-const specificContent = getSubserviceContent(subData.slug);
-
-// Si hay contenido específico, usarlo; si no, usar el genérico
-const finalSubData = specificContent ? {
-  ...subData,
-  hero: specificContent.hero,
-  process: specificContent.process,
-  services: specificContent.services,
-  features: specificContent.features,
-  faqs: specificContent.faqs
-} : subData;
-
 const pageTitle =
-    finalSubData?.seo?.title ??
-    `${finalSubData.title} | ${groupData.name} | Paramount Property Restoration`;
-const pageDescription = finalSubData?.seo?.description ?? `Professional ${finalSubData.title} services in Florida by Paramount Property Restoration`;
+    subData?.seo?.title ??
+    `${subData.title} | ${groupData.name} | Paramount Property Restoration`;
+const pageDescription = subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration`;
 
+const templates = {
+    water: WaterTemplate,
+    fire: FireTemplate,
+    storm: StormTemplate,
+    mold: MoldTemplate,
+    mitigation: MitigationTemplate,
+};
+const Template = templates[groupData.template] ?? GenericTemplate;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-    <UnifiedTemplate group={groupData} sub={finalSubData} />
+    <Template group={groupData} sub={subData} />
 </BaseLayout>

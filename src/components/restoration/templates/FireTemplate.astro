@@ -1,6 +1,167 @@
 ---
-import UnifiedTemplate from "./UnifiedTemplate.astro";
-const props = Astro.props;
----
-<UnifiedTemplate {...props} />
+import "../../../styles/pages/fire-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
 
+const { group, sub } = Astro.props;
+
+// Contenido específico para fire damage basado en el subservicio
+const getFireContent = (subSlug) => {
+  const fireContent = {
+    "smoke-damage": {
+      hero: {
+        title: "Breathe Easy Again After Smoke Damage",
+        description: "When smoke invades your property, the damage goes beyond stains and odors—it impacts your health and safety. Our certified Florida restoration teams provide 24/7 smoke cleanup, soot removal, odor elimination, and surface repairs.",
+        cta: "Request Smoke Damage Help Now"
+      },
+      services: [
+        { icon: "fas fa-broom", title: "Soot & Residue Removal", description: "Remove acidic soot before it corrodes surfaces" },
+        { icon: "fas fa-air-freshener", title: "Odor Elimination", description: "Advanced deodorization with ozone & hydroxyl machines" },
+        { icon: "fas fa-couch", title: "Furniture & Fabric Restoration", description: "Upholstery, carpets & curtains saved from smoke absorption" },
+        { icon: "fas fa-home", title: "Structural Cleaning", description: "Ceilings, walls & HVAC fully decontaminated" }
+      ],
+      steps: [
+        { title: "Assessment & Air Quality Testing", text: "Identify contamination and affected zones", icon: "fas fa-vial" },
+        { title: "Emergency Soot & Debris Removal", text: "Prevent permanent staining and corrosion", icon: "fas fa-broom" },
+        { title: "Odor Neutralization", text: "HEPA filters, ozone & hydroxyl treatments", icon: "fas fa-air-freshener" },
+        { title: "Deep Cleaning & Sanitization", text: "Walls, furniture, fabrics fully restored", icon: "fas fa-spray-can" },
+        { title: "Final Repairs & Quality Check", text: "Structural fixes + guaranteed clean air", icon: "fas fa-check-circle" }
+      ]
+    },
+    "soot-cleanup": {
+      hero: {
+        title: "Soot Cleanup Services Across Florida",
+        description: "After a fire, soot and smoke residue can spread fast—coating walls, ceilings, furniture, and even air ducts. Our Florida soot cleanup teams respond 24/7 to remove hazardous particles, neutralize odors, and restore your property safely.",
+        cta: "Request Soot Cleanup Now"
+      },
+      services: [
+        { icon: "fas fa-home", title: "Wall & Ceiling Soot Removal", description: "Clean stains safely without damaging paint or drywall." },
+        { icon: "fas fa-couch", title: "Furniture & Upholstery Cleanup", description: "Restore salvageable sofas, chairs & fabrics." },
+        { icon: "fas fa-wind", title: "Air Duct & Vent Cleaning", description: "Remove hidden soot and restore safe indoor air." },
+        { icon: "fas fa-spray-can", title: "Odor Control Solutions", description: "Advanced ozone & hydroxyl treatments to neutralize smells." }
+      ],
+      steps: [
+        { title: "Inspection & Assessment", text: "Identify soot-affected areas and damage levels", icon: "fas fa-search" },
+        { title: "Containment & Safety", text: "Seal clean areas to stop residue from spreading", icon: "fas fa-shield-alt" },
+        { title: "Deep Cleaning & Removal", text: "HEPA vacuums, dry sponges & chemical cleaners for surfaces", icon: "fas fa-broom" },
+        { title: "Odor Neutralization", text: "Ozone treatment & thermal fogging to remove smoke smells", icon: "fas fa-air-freshener" },
+        { title: "Final Restoration", text: "Refinish walls, ceilings, and furniture back to pre-fire condition", icon: "fas fa-paint-roller" }
+      ]
+    },
+    "fire-damage-repair": {
+      hero: {
+        title: "Fire Damage Restoration Services in Florida",
+        description: "We provide 24/7 fire and smoke damage restoration across Florida. From emergency board-up to soot removal and full repairs, our team restores homes and businesses to safe, pre-loss condition.",
+        cta: "Clean Up After Fire"
+      },
+      services: [
+        { icon: "fas fa-smog", title: "Smoke Damage Cleanup", description: "Remove smoke particles and odors from walls, ceilings, and furniture with professional cleaning and deodorizing methods." },
+        { icon: "fas fa-broom", title: "Soot Removal", description: "Safe cleanup of soot from surfaces, HVAC systems, and personal belongings to prevent long-term damage." },
+        { icon: "fas fa-tools", title: "Fire Structural Repair", description: "Repair and replace fire-damaged drywall, insulation, flooring, and framing to restore property integrity." },
+        { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Secure broken windows, doors, and openings after a fire to prevent further damage or theft." }
+      ],
+      steps: [
+        { title: "Emergency Response & Board-Up", text: "Secure the property immediately after the fire", icon: "fas fa-shield-alt" },
+        { title: "Soot & Smoke Removal", text: "Clean affected areas with advanced tools and techniques", icon: "fas fa-broom" },
+        { title: "Odor Treatment", text: "Deodorize air, walls, and belongings for a safe living space", icon: "fas fa-air-freshener" },
+        { title: "Repairs & Restoration", text: "Rebuild damaged structures and restore finishes", icon: "fas fa-hammer" }
+      ]
+    },
+    "emergency-fire-response": {
+      hero: {
+        title: "24/7 Emergency Fire Response in Florida",
+        description: "When fire strikes, every second counts. Our emergency fire response teams provide immediate board-up, smoke containment, and damage assessment to protect your property and begin the restoration process.",
+        cta: "Get Emergency Fire Help"
+      },
+      services: [
+        { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Immediate securing of windows, doors, and openings." },
+        { icon: "fas fa-wind", title: "Smoke Containment", description: "Prevent smoke from spreading to unaffected areas." },
+        { icon: "fas fa-clipboard-check", title: "Damage Assessment", description: "Complete evaluation for insurance and restoration planning." },
+        { icon: "fas fa-phone", title: "24/7 Response Team", description: "Always available for immediate emergency response." }
+      ],
+      steps: [
+        { title: "Emergency Call Response", text: "Immediate dispatch of certified fire response team", icon: "fas fa-phone" },
+        { title: "Property Securing", text: "Board-up and tarping to prevent further damage", icon: "fas fa-shield-alt" },
+        { title: "Safety Assessment", text: "Evaluate structural integrity and safety hazards", icon: "fas fa-hard-hat" },
+        { title: "Restoration Planning", text: "Develop comprehensive restoration plan", icon: "fas fa-clipboard-list" }
+      ]
+    }
+  };
+
+  return fireContent[subSlug] || fireContent["fire-damage-repair"];
+};
+
+const content = getFireContent(sub.slug);
+---
+
+<!-- Hero Section -->
+<section class="hero-sectionKitchen">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{content.hero.title}</h1>
+    <p>{content.hero.description}</p>
+    <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+  <div class="services-grid">
+    {content.services.map((service) => (
+      <div class="service-item">
+        <i class={service.icon}></i>
+        <h3>{service.title}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <h2 class="solutions-title">Comprehensive Fire Damage Solutions</h2>
+  <div class="solutions-grid">
+    {content.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <a href="/contact" class="card-cta">Get Help Now</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+  <h2 class="steps-title">How It Works</h2>
+  <div class="steps-container">
+    {content.steps.map((step, index) => (
+      <div class="step-item" data-step={index + 1}>
+        <div class="step-icon">
+          <i class={step.icon}></i>
+        </div>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <FAQ client:load category="fire" title="FAQs" />
+</section>
+
+<!-- Final CTA -->
+<RestorationCTA
+  client:load
+  title="Don't wait after a fire—damage spreads quickly."
+  subtitle="Call now for 24/7 fire damage restoration in Florida."
+  buttonText="Clean Up After Fire"
+  buttonLink="/contact"
+/>

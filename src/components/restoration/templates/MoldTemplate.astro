@@ -1,5 +1,166 @@
 ---
-import UnifiedTemplate from "./UnifiedTemplate.astro";
-const props = Astro.props;
+import "../../../styles/pages/mold-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
+
+const { group, sub } = Astro.props;
+
+// Contenido específico para mold remediation basado en el subservicio
+const getMoldContent = (subSlug) => {
+  const moldContent = {
+    "mold-inspection": {
+      hero: {
+        title: "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
+        description: "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
+        cta: "Schedule My Mold Test Today"
+      },
+      services: [
+        { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues." },
+        { icon: "fas fa-vial", title: "Testing & Sampling", description: "Air and surface samples are collected for laboratory analysis." },
+        { icon: "fas fa-microscope", title: "Lab Analysis", description: "Professional laboratory testing identifies mold types and concentration levels." },
+        { icon: "fas fa-file-alt", title: "Detailed Report", description: "You receive a comprehensive report with findings and recommendations." }
+      ],
+      steps: [
+        { title: "Initial Walkthrough", text: "Spot visible mold + moisture risks", icon: "fas fa-eye" },
+        { title: "Air Sampling", text: "Lab-grade pumps detect invisible mold spores", icon: "fas fa-wind" },
+        { title: "Surface Testing", text: "Swabs confirm mold type on walls, vents, furniture", icon: "fas fa-microscope" },
+        { title: "Lab Analysis", text: "Certified labs identify strain + spore levels", icon: "fas fa-flask" },
+        { title: "Clear Report", text: "Easy-to-read results + photos + action plan", icon: "fas fa-file-alt" }
+      ]
+    },
+    "black-mold-removal": {
+      hero: {
+        title: "Black Mold is Toxic—We Remove It Safely",
+        description: "Our certified Florida teams eliminate dangerous black mold, clean the air, and protect your family's health with proven remediation methods.",
+        cta: "Get Black Mold Removal Now"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels." },
+        { icon: "fas fa-shield-alt", title: "Containment & Safety Setup", description: "Seal affected areas to prevent further spread." },
+        { icon: "fas fa-wind", title: "Removal & Air Scrubbing", description: "HEPA filtration, safe disposal, and eco-friendly cleaning." },
+        { icon: "fas fa-tint", title: "Moisture Control & Prevention", description: "Fix leaks, humidity, and future mold risks." }
+      ],
+      steps: [
+        { title: "Inspection & Testing", text: "Detect mold spread and measure spore levels", icon: "fas fa-search" },
+        { title: "Containment & Safety Setup", text: "Seal affected areas to prevent further spread", icon: "fas fa-shield-alt" },
+        { title: "Removal & Air Scrubbing", text: "HEPA filtration, safe disposal, and eco-friendly cleaning", icon: "fas fa-wind" },
+        { title: "Moisture Control & Prevention", text: "Fix leaks, humidity, and future mold risks", icon: "fas fa-tint" }
+      ]
+    },
+    "mold-prevention": {
+      hero: {
+        title: "Stop Mold Before It Starts",
+        description: "Our certified Florida specialists protect your property with proven prevention strategies—moisture control, air treatment, and protective barriers.",
+        cta: "Protect My Home From Mold"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks." },
+        { icon: "fas fa-wind", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores." },
+        { icon: "fas fa-shield-alt", title: "Protective Barriers & Treatments", description: "Apply safe coatings to walls, attics & crawlspaces." },
+        { icon: "fas fa-check", title: "Ongoing Prevention Plan", description: "Recommendations for dehumidifiers, HVAC care & seasonal checks." }
+      ],
+      steps: [
+        { title: "Moisture Assessment", text: "Identify leaks, humidity levels & hidden risks", icon: "fas fa-search" },
+        { title: "Air Quality & Ventilation Check", text: "Ensure airflow prevents condensation & spores", icon: "fas fa-wind" },
+        { title: "Protective Barriers & Treatments", text: "Apply safe coatings to walls, attics & crawlspaces", icon: "fas fa-shield-alt" },
+        { title: "Ongoing Prevention Plan", text: "Recommendations for dehumidifiers, HVAC care & seasonal checks", icon: "fas fa-check" }
+      ]
+    },
+    "mold-testing": {
+      hero: {
+        title: "Know What's in Your Air—Protect Your Health & Property",
+        description: "Professional mold testing in Florida. Certified inspectors use advanced air & surface sampling to detect hidden mold. Fast results, clear reports, peace of mind.",
+        cta: "Book Certified Mold Testing Now"
+      },
+      services: [
+        { icon: "fas fa-vial", title: "Air Testing", description: "Lab-grade air sampling to detect invisible mold spores." },
+        { icon: "fas fa-microscope", title: "Surface Testing", description: "Swab testing to confirm mold type on surfaces." },
+        { icon: "fas fa-file-alt", title: "Lab Reports", description: "Certified laboratory analysis with detailed findings." },
+        { icon: "fas fa-shield-alt", title: "Prevention Plan", description: "Recommendations to prevent future mold growth." }
+      ],
+      steps: [
+        { title: "Visual Scan & Hotspot Check", text: "Identify stains, discoloration, or early mold growth", icon: "fas fa-eye" },
+        { title: "Infrared + Air Testing", text: "Detect hidden moisture and analyze indoor air quality", icon: "fas fa-camera" },
+        { title: "Photo & Lab Report", text: "Clear evidence and certified results for insurance or repairs", icon: "fas fa-file-alt" },
+        { title: "Clear Action Plan", text: "Step-by-step guidance to fix and prevent mold", icon: "fas fa-check" }
+      ]
+    }
+  };
+
+  return moldContent[subSlug] || moldContent["mold-inspection"];
+};
+
+const content = getMoldContent(sub.slug);
 ---
-<UnifiedTemplate {...props} />
+
+<!-- Hero Section -->
+<section class="hero-sectionKitchen">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{content.hero.title}</h1>
+    <p>{content.hero.description}</p>
+    <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+  <div class="services-grid">
+    {content.services.map((service) => (
+      <div class="service-item">
+        <i class={service.icon}></i>
+        <h3>{service.title}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <h2 class="solutions-title">Comprehensive Mold Solutions</h2>
+  <div class="solutions-grid">
+    {content.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <a href="/contact" class="card-cta">Get Help Now</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+  <h2 class="steps-title">How It Works</h2>
+  <div class="steps-container">
+    {content.steps.map((step, index) => (
+      <div class="step-item" data-step={index + 1}>
+        <div class="step-icon">
+          <i class={step.icon}></i>
+        </div>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <FAQ client:load category="mold" title="FAQs" />
+</section>
+
+<!-- Final CTA -->
+<RestorationCTA
+  client:load
+  title="Protect your home and health from mold."
+  subtitle="Schedule your inspection today and get professional mold remediation in Florida."
+  buttonText="Remove Mold Fast"
+  buttonLink="/contact"
+/>
