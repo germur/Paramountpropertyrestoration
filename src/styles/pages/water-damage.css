@@ -192,7 +192,7 @@
     line-height: 1.5;
 }
 
-.card-cta {
+.btn {
     display: inline-block;
     background: #35c3e9;
     color: #ffffff;
@@ -204,7 +204,7 @@
     transition: all 0.3s ease;
 }
 
-.card-cta:hover {
+.btn:hover {
     background: #2a9fd1;
     transform: translateY(-2px);
     color: #ffffff;
