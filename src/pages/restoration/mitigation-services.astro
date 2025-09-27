@@ -1,34 +1,29 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
-import { restorationGroups } from "../../data/restoration.js";
+import MitigationTemplate from "../../components/restoration/templates/MitigationTemplate.astro";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Encontrar el grupo de mitigation-services
-const group = restorationGroups.find(g => g.slug === "mitigation-services");
-
-// Crear un subservicio genérico para la página principal del grupo
+// Datos para la página principal de mitigation services
+const group = {
+  slug: "mitigation-services",
+  name: "Mitigation Services",
+  template: "mitigation",
+  description: "Professional damage mitigation services"
+};
+ 
 const sub = {
   slug: "mitigation-services",
   title: "Mitigation Services",
-  short: "Professional damage mitigation services",
   nombre: "Mitigation Services",
-  categoria: "restoration",
-  hero: {
-    title: "Professional Mitigation Services in Florida",
-    description: "Comprehensive damage mitigation services to prevent and minimize property damage from water, fire, mold, and storms. Fast response and expert prevention solutions.",
-    cta: "Get Mitigation Services",
-    icons: ["🛡️", "🚨", "🛠️"]
-  },
-  seo: {
-    title: "Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention",
-    description: "Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
-  }
+  template: "mitigation",
+  short: "Professional damage mitigation services",
+  categoria: "restoration"
 };
 ---
 
 <BaseLayout
-  title={sub.seo.title}
-  description={sub.seo.description}
+  title="Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention"
+  description="Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection."
 >
-  <UnifiedTemplate group={group} sub={sub} />
+  <MitigationTemplate group={group} sub={sub} />
 </BaseLayout>

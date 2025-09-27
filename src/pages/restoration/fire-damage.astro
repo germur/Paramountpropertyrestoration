@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
+import FireTemplate from "../../components/restoration/templates/FireTemplate.astro";
+import "../../styles/pages/fire-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos estáticos para fire damage - SIN DEPENDENCIAS EXTERNAS
+// Datos para la página principal de fire damage
 const group = {
   slug: "fire-damage",
   name: "Fire Damage Restoration",
@@ -16,17 +18,7 @@ const sub = {
   nombre: "Fire Damage",
   template: "fire",
   short: "Complete fire and smoke damage restoration services",
-  hero: {
-    title: "Fire Damage Restoration Services in Florida",
-    description: "We provide 24/7 fire and smoke damage restoration across Florida. From emergency board-up to soot removal and full repairs, our team restores homes and businesses to safe, pre-loss condition.",
-    cta: "Clean Up After Fire",
-    iconRow: [
-      { icon: "🔥", text: "Smoke Cleanup" },
-      { icon: "🏠", text: "Odor Removal" },
-      { icon: "🧹", text: "Soot Cleanup" },
-      { icon: "🛠️", text: "Structural Repair" }
-    ]
-  }
+  categoria: "restoration"
 };
 ---
 
@@ -34,5 +26,5 @@ const sub = {
   title="Fire Damage Restoration in Florida | Smoke & Soot Cleanup"
   description="Florida fire damage restoration experts. 24/7 cleanup for smoke, soot, and structural repair. Serving Orlando, Miami, Tampa & more. Request a free inspection today."
 >
-  <UnifiedTemplate group={group} sub={sub} />
+  <FireTemplate group={group} sub={sub} />
 </BaseLayout>

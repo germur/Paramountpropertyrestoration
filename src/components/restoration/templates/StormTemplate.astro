@@ -10,6 +10,31 @@ const { group, sub } = Astro.props;
 // Contenido específico para storm damage basado en el subservicio
 const getStormContent = (subSlug) => {
   const stormContent = {
+    "storm-damage": {
+      hero: {
+        title: "Storm Damage Restoration Services in Florida",
+        description: "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
+        cta: "Repair Storm Damage Today"
+      },
+      services: [
+        { icon: "fas fa-home", title: "Hurricane Damage", description: "Immediate response to wind and water damage after hurricanes, including board-ups, tarping, and emergency repairs." },
+        { icon: "fas fa-hammer", title: "Roof Damage", description: "Repair or replace damaged shingles, flashing, and underlayment caused by high winds, hail, or falling debris." },
+        { icon: "fas fa-tint", title: "Flood & Water Intrusion", description: "Extraction and drying of water intrusion caused by heavy rains or storm surges to prevent mold and structural damage." },
+        { icon: "fas fa-tree", title: "Debris Removal", description: "Safe cleanup of fallen trees, branches, and structural debris blocking driveways or damaging property." }
+      ],
+      faqs: [
+        { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
+        { q: "How to fix storm damage?", a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely." },
+        { q: "What is the most common storm damage?", a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage." },
+        { q: "How to recover from hurricane damage?", a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process." }
+      ],
+      steps: [
+        { title: "Emergency Response", text: "Tarping, boarding, and securing property after storm impact", icon: "fas fa-shield-alt" },
+        { title: "Damage Assessment", text: "Roofs, interiors, and structural inspections", icon: "fas fa-search" },
+        { title: "Cleanup & Water Extraction", text: "Remove debris, water, and damaged materials", icon: "fas fa-broom" },
+        { title: "Repairs & Restoration", text: "Roof replacement, structural repairs, and finish restoration", icon: "fas fa-hammer" }
+      ]
+    },
     "hurricane-damage": {
       hero: {
         title: "Hurricane Damage? We Restore Homes & Businesses Across Florida",

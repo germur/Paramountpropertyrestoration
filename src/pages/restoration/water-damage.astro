@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
+import WaterTemplate from "../../components/restoration/templates/WaterTemplate.astro";
+import "../../styles/pages/water-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos estáticos para water damage - SIN DEPENDENCIAS EXTERNAS
+// Datos para la página principal de water damage
 const group = {
   slug: "water-damage",
   name: "Water Damage Restoration", 
@@ -16,17 +18,7 @@ const sub = {
   nombre: "Water Damage",
   template: "water",
   short: "Emergency water damage restoration and cleanup services",
-  hero: {
-    title: "Water Damage? We Remove, Dry & Restore",
-    description: "Fast water extraction, moisture control, and structural drying to prevent mold and further damage. Serving Orlando, Miami, Tampa & beyond.",
-    cta: "Free Water Damage Assessment",
-    iconRow: [
-      { icon: "💧", text: "Water Extraction" },
-      { icon: "🌬️", text: "Drying" },
-      { icon: "🛡️", text: "Mold Prevention" },
-      { icon: "🛠️", text: "Restoration" }
-    ]
-  }
+  categoria: "restoration"
 };
 ---
 
@@ -34,5 +26,5 @@ const sub = {
   title="Water Damage Restoration in Florida | 24/7 Emergency Service"
   description="Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments."
 >
-  <UnifiedTemplate group={group} sub={sub} />
+  <WaterTemplate group={group} sub={sub} />
 </BaseLayout>

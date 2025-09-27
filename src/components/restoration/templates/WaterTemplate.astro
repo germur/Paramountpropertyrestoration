@@ -11,6 +11,31 @@ const { group, sub } = Astro.props;
 // Contenido específico para water damage basado en el subservicio
 const getWaterContent = (subSlug) => {
   const waterContent = {
+    "water-damage": {
+      hero: {
+        title: "Water Damage? We Remove, Dry & Restore",
+        description: "Fast water extraction, moisture control, and structural drying to prevent mold and further damage. Serving Orlando, Miami, Tampa & beyond.",
+        cta: "Free Water Damage Assessment"
+      },
+      services: [
+        { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly." },
+        { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities." },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold." },
+        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Support for weakened ceilings, floors, and framing." }
+      ],
+      faqs: [
+        { q: "What is water damage restoration?", a: "Water damage restoration is the process of cleaning, drying, and repairing property after water intrusion from floods, leaks, or storms." },
+        { q: "How quickly should water damage restoration start?", a: "Ideally within 24 hours. Early extraction and drying reduce structural damage and the risk of mold growth." },
+        { q: "What does the water damage process include?", a: "Our process includes: emergency inspection & moisture mapping, water extraction, cleaning & sanitizing, odor control, repairs, and finish restoration." },
+        { q: "Do you handle floods, leaks, and burst pipes?", a: "Yes. We respond to storm flooding, appliance failures, roof leaks, slab leaks, and burst supply lines." }
+      ],
+      steps: [
+        { title: "Emergency Call", text: "Free on-site inspection & moisture assessment", icon: "fas fa-phone" },
+        { title: "Water Extraction", text: "Pumps & vacuums remove standing water", icon: "fas fa-tint" },
+        { title: "Drying & Dehumidifying", text: "Air movers, dehumidifiers & moisture readings", icon: "fas fa-wind" },
+        { title: "Cleaning & Repairs", text: "Sanitize, deodorize, and restore materials", icon: "fas fa-tools" }
+      ]
+    },
     "flood-damage": {
       hero: {
         title: "Flood Damage? We Extract Water & Restore Homes Across Florida",

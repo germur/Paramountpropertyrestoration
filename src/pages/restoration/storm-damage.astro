@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
+import StormTemplate from "../../components/restoration/templates/StormTemplate.astro";
+import "../../styles/pages/storm-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos estáticos para storm damage - SIN DEPENDENCIAS EXTERNAS
+// Datos para la página principal de storm damage
 const group = {
   slug: "storm-damage",
   name: "Storm Damage Restoration",
@@ -16,17 +18,7 @@ const sub = {
   nombre: "Storm Damage",
   template: "storm",
   short: "Hurricane and storm damage restoration services",
-  hero: {
-    title: "Storm Damage Restoration Services in Florida",
-    description: "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
-    cta: "Repair Storm Damage Today",
-    iconRow: [
-      { icon: "🌪️", text: "Hurricane Damage" },
-      { icon: "🏚️", text: "Roof Repair" },
-      { icon: "🌊", text: "Flood Cleanup" },
-      { icon: "🧹", text: "Debris Removal" }
-    ]
-  }
+  categoria: "restoration"
 };
 ---
 
@@ -34,5 +26,5 @@ const sub = {
   title="Storm Damage Restoration in Florida | Hurricane & Roof Repair"
   description="Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7."
 >
-  <UnifiedTemplate group={group} sub={sub} />
+  <StormTemplate group={group} sub={sub} />
 </BaseLayout>

@@ -9,6 +9,31 @@ const { group, sub } = Astro.props;
 // Contenido específico para mitigation services basado en el subservicio
 const getMitigationContent = (subSlug) => {
   const mitigationContent = {
+    "mitigation-services": {
+      hero: {
+        title: "Mitigation Services in Florida – Protect Before It Gets Worse",
+        description: "Our mitigation services across Florida focus on limiting property loss from water, fire, mold, and storms. By acting fast, we reduce risks, control costs, and keep your home or business safe.",
+        cta: "Prevent Further Damage"
+      },
+      services: [
+        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency extraction, dehumidification, and moisture control to prevent structural damage and mold growth." },
+        { icon: "fas fa-fire", title: "Fire Mitigation", description: "Board-ups, smoke containment, and ventilation strategies to limit secondary damage after a fire." },
+        { icon: "fas fa-seedling", title: "Mold Mitigation", description: "Moisture control, air filtration, and antimicrobial treatments to prevent mold from spreading." },
+        { icon: "fas fa-cloud-bolt", title: "Storm Mitigation", description: "Roof tarping, window boarding, and debris removal to secure properties before and after severe weather." }
+      ],
+      faqs: [
+        { q: "What are mitigation services?", a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss." },
+        { q: "What is the difference between mitigation and restoration?", a: "Mitigation reduces the impact of damage immediately—like drying water or boarding windows—while restoration repairs and rebuilds the property to pre-loss condition." },
+        { q: "Why is mitigation important?", a: "Acting fast with mitigation saves money, reduces risks, and prevents small problems (like leaks or smoke) from becoming major structural issues." },
+        { q: "Does insurance cover mitigation?", a: "Most policies cover mitigation services as part of property loss claims, since they are critical to reducing overall damage." }
+      ],
+      steps: [
+        { title: "Inspection & Risk Assessment", text: "Identify threats from water, fire, mold, or storms", icon: "fas fa-search" },
+        { title: "Containment & Control", text: "Limit exposure and stop further property loss", icon: "fas fa-shield-alt" },
+        { title: "Moisture & Air Quality Management", text: "Use drying, filtration, and antimicrobial methods", icon: "fas fa-wind" },
+        { title: "Temporary Protection", text: "Board-ups, tarps, and barriers until full restoration begins", icon: "fas fa-tools" }
+      ]
+    },
     "water-mitigation": {
       hero: {
         title: "Water Damage Mitigation Services in Florida",

@@ -10,6 +10,32 @@ const { group, sub } = Astro.props;
 // Contenido específico para mold remediation basado en el subservicio
 const getMoldContent = (subSlug) => {
   const moldContent = {
+    "mold-remediation": {
+      hero: {
+        title: "Mold Remediation & Removal Services in Florida",
+        description: "Our Florida teams provide 24/7 mold remediation to protect your home, office, and health. From black mold testing to full remediation and prevention, we deliver safe, lasting results.",
+        cta: "Remove Mold Fast"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Black Mold Removal", description: "Safe removal of black mold colonies from walls, ceilings, and hidden spaces with industry-grade equipment." },
+        { icon: "fas fa-vial", title: "Mold Testing & Inspection", description: "Professional air and surface testing to identify mold species and hidden contamination." },
+        { icon: "fas fa-spray-can", title: "Antimicrobial Treatment", description: "Application of antimicrobial agents to prevent mold regrowth and ensure long-term protection." },
+        { icon: "fas fa-tint", title: "Moisture & Humidity Control", description: "Dehumidifiers and ventilation solutions to eliminate the root cause of mold growth." }
+      ],
+      faqs: [
+        { q: "What is mold remediation?", a: "Mold remediation is the process of identifying, containing, and safely removing mold, followed by cleaning and moisture control to prevent regrowth." },
+        { q: "How dangerous is black mold?", a: "Black mold can trigger respiratory issues, allergies, and health risks—especially for children, elderly, and those with asthma. Professional removal is strongly recommended." },
+        { q: "Can mold come back after remediation?", a: "Yes, if the source of moisture isn't resolved. That's why remediation always includes humidity control and prevention strategies." },
+        { q: "How long does mold remediation take?", a: "Most projects take 1–5 days, depending on the extent of contamination and drying requirements." }
+      ],
+      steps: [
+        { title: "Inspection & Testing", text: "Identify mold type, spread, and source", icon: "fas fa-search" },
+        { title: "Containment & Protection", text: "Isolate affected areas to stop cross-contamination", icon: "fas fa-shield-alt" },
+        { title: "Mold Removal", text: "Safely clean and remove mold colonies", icon: "fas fa-broom" },
+        { title: "Air Filtration & Treatment", text: "HEPA filters, antimicrobial agents, and deodorizing", icon: "fas fa-wind" },
+        { title: "Prevention & Verification", text: "Moisture control and final clearance testing", icon: "fas fa-check" }
+      ]
+    },
     "mold-inspection": {
       hero: {
         title: "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
