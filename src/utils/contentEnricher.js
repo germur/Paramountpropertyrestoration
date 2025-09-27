@@ -49,10 +49,13 @@ export function enrichSubserviceContent(subData, groupData) {
 // ===== GENERADORES ESPECÍFICOS =====
 
 function generateHero(subData, groupData) {
+  // Safely get title, fallback to empty string if undefined
+  const effectiveTitle = subData.title || subData.nombre || '';
+  
   const heroTemplates = {
     water: {
-      title: `${subData.title}? We Extract Water & Restore Homes Fast`,
-      description: `Emergency ${subData.title.toLowerCase()} services in Florida. 24/7 response, certified technicians, and complete restoration to prevent further damage.`,
+      title: `${effectiveTitle}? We Extract Water & Restore Homes Fast`,
+      description: `Emergency ${effectiveTitle.toLowerCase()} services in Florida. 24/7 response, certified technicians, and complete restoration to prevent further damage.`,
       cta: "Get Emergency Help",
       iconRow: [
         { icon: "🚨", text: "24/7 Response" },
@@ -61,8 +64,8 @@ function generateHero(subData, groupData) {
       ]
     },
     fire: {
-      title: `${subData.title} Restoration - Complete Recovery`,
-      description: `Professional ${subData.title.toLowerCase()} cleanup and restoration. Smoke odor removal, soot cleanup, and structural restoration across Florida.`,
+      title: `${effectiveTitle} Restoration - Complete Recovery`,
+      description: `Professional ${effectiveTitle.toLowerCase()} cleanup and restoration. Smoke odor removal, soot cleanup, and structural restoration across Florida.`,
       cta: "Start Recovery Now",
       iconRow: [
         { icon: "🔥", text: "Fire Certified" },
@@ -71,8 +74,8 @@ function generateHero(subData, groupData) {
       ]
     },
     mold: {
-      title: `Professional ${subData.title} Services in Florida`,
-      description: `Certified ${subData.title.toLowerCase()} using advanced detection methods. Protect your family's health with thorough mold assessment and safe remediation.`,
+      title: `Professional ${effectiveTitle} Services in Florida`,
+      description: `Certified ${effectiveTitle.toLowerCase()} using advanced detection methods. Protect your family's health with thorough mold assessment and safe remediation.`,
       cta: "Schedule Inspection",
       iconRow: [
         { icon: "🔬", text: "Certified Inspectors" },
@@ -81,8 +84,8 @@ function generateHero(subData, groupData) {
       ]
     },
     storm: {
-      title: `${subData.title} - Emergency Storm Response`,
-      description: `Rapid ${subData.title.toLowerCase()} across Florida. From roof tarping to complete reconstruction, we restore your property after severe weather.`,
+      title: `${effectiveTitle} - Emergency Storm Response`,
+      description: `Rapid ${effectiveTitle.toLowerCase()} across Florida. From roof tarping to complete reconstruction, we restore your property after severe weather.`,
       cta: "Get Storm Help",
       iconRow: [
         { icon: "🌪️", text: "Storm Specialists" },
@@ -91,8 +94,8 @@ function generateHero(subData, groupData) {
       ]
     },
     mitigation: {
-      title: `Professional ${subData.title} Services`,
-      description: `Expert ${subData.title.toLowerCase()} to minimize property damage. Quick response and proven techniques to protect your Florida property.`,
+      title: `Professional ${effectiveTitle} Services`,
+      description: `Expert ${effectiveTitle.toLowerCase()} to minimize property damage. Quick response and proven techniques to protect your Florida property.`,
       cta: "Get Protection Now",
       iconRow: [
         { icon: "🛡️", text: "Damage Prevention" },
@@ -238,6 +241,8 @@ function generateProcess(subData, groupData) {
 }
 
 function generateWhyEssential(subData, groupData) {
+  const effectiveTitle = subData.title || subData.nombre || 'damage';
+  
   const templates = {
     water: {
       title: "Why Fast Water Action is Critical",
@@ -274,9 +279,9 @@ function generateWhyEssential(subData, groupData) {
     mitigation: {
       title: "Why Quick Mitigation Saves Money",
       steps: [
-        "Early mitigation prevents minor issues from becoming major expenses",
-        "Damage spreads quickly without professional intervention",
-        "Professional assessment identifies exactly what needs immediate attention"
+        `Early mitigation prevents minor ${effectiveTitle.toLowerCase()} issues from becoming major expenses`,
+        `${effectiveTitle} damage spreads quickly without professional intervention`,
+        `Professional assessment identifies exactly what ${effectiveTitle.toLowerCase()} needs immediate attention`
       ]
     }
   };
@@ -285,11 +290,13 @@ function generateWhyEssential(subData, groupData) {
 }
 
 function generateFloridaScenarios(subData, groupData) {
+  const effectiveTitle = subData.title || subData.nombre || 'restoration';
+  
   return [
-    `${subData.title} issues spike during Florida's hurricane season from June through November`,
-    `Heavy summer rains create perfect conditions for ${subData.title.toLowerCase()} problems`,
+    `${effectiveTitle} issues spike during Florida's hurricane season from June through November`,
+    `Heavy summer rains create perfect conditions for ${effectiveTitle.toLowerCase()} problems`,
     `Florida's year-round humidity accelerates damage and requires specialized techniques`,
-    `Salt air and coastal weather create unique challenges for ${subData.title.toLowerCase()}`
+    `Salt air and coastal weather create unique challenges for ${effectiveTitle.toLowerCase()}`
   ];
 }
 
