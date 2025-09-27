@@ -86,14 +86,15 @@
     padding: 1rem;
     border-radius: 8px;
     transition: transform 0.3s ease;
-    text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
 }
 
 .service-item:hover {
     transform: translateY(-5px);
-    text-decoration: none;
     color: inherit;
 }
 
