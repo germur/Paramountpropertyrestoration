@@ -3,6 +3,7 @@ import "../../../styles/pages/fire-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
 
 const { group, sub } = Astro.props;
 
@@ -20,6 +21,12 @@ const getFireContent = (subSlug) => {
         { icon: "fas fa-air-freshener", title: "Odor Elimination", description: "Advanced deodorization with ozone & hydroxyl machines" },
         { icon: "fas fa-couch", title: "Furniture & Fabric Restoration", description: "Upholstery, carpets & curtains saved from smoke absorption" },
         { icon: "fas fa-home", title: "Structural Cleaning", description: "Ceilings, walls & HVAC fully decontaminated" }
+      ],
+      faqs: [
+        { q: "Can smoke damage be fully removed?", a: "Yes. With professional cleaning and deodorization, odors and particles can be eliminated." },
+        { q: "How long does it take to clean smoke damage?", a: "Minor jobs: 1–2 days. Severe smoke with deep odors: up to a week." },
+        { q: "Is smoke damage dangerous?", a: "Yes. Smoke contains toxic particles that may trigger allergies, asthma, and respiratory issues." },
+        { q: "Does insurance cover smoke damage?", a: "Most Florida homeowners' policies cover it. We provide full documentation for claims." }
       ],
       steps: [
         { title: "Assessment & Air Quality Testing", text: "Identify contamination and affected zones", icon: "fas fa-vial" },
@@ -41,6 +48,12 @@ const getFireContent = (subSlug) => {
         { icon: "fas fa-wind", title: "Air Duct & Vent Cleaning", description: "Remove hidden soot and restore safe indoor air." },
         { icon: "fas fa-spray-can", title: "Odor Control Solutions", description: "Advanced ozone & hydroxyl treatments to neutralize smells." }
       ],
+      faqs: [
+        { q: "What is soot cleanup?", a: "It's the removal of smoke residue after a fire, including cleaning, deodorizing, and restoring surfaces." },
+        { q: "Can I clean soot myself?", a: "Small spots can be wiped, but DIY often spreads residue. Professionals ensure full and safe removal." },
+        { q: "Is soot dangerous?", a: "Yes. Soot contains toxic particles that irritate lungs and corrode surfaces if untreated." },
+        { q: "How fast should soot be cleaned?", a: "Immediately. Delays cause permanent staining and higher repair costs." }
+      ],
       steps: [
         { title: "Inspection & Assessment", text: "Identify soot-affected areas and damage levels", icon: "fas fa-search" },
         { title: "Containment & Safety", text: "Seal clean areas to stop residue from spreading", icon: "fas fa-shield-alt" },
@@ -61,6 +74,12 @@ const getFireContent = (subSlug) => {
         { icon: "fas fa-tools", title: "Fire Structural Repair", description: "Repair and replace fire-damaged drywall, insulation, flooring, and framing to restore property integrity." },
         { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Secure broken windows, doors, and openings after a fire to prevent further damage or theft." }
       ],
+      faqs: [
+        { q: "How to restore fire damage?", a: "Fire damage restoration involves soot cleanup, smoke odor removal, and structural repairs. Professionals handle debris removal, deep cleaning, and rebuilding to return the property to pre-loss condition." },
+        { q: "What is the meaning of fire damage restoration?", a: "It's the process of cleaning, repairing, and restoring a property after fire or smoke damage, ensuring safety and habitability." },
+        { q: "How to remove soot and smoke damage?", a: "Professionals use HEPA vacuums, chemical sponges, and deodorizing treatments to safely remove soot and smoke particles from surfaces and air systems." },
+        { q: "Can you paint over smoke or soot?", a: "Painting over soot is not recommended. Proper cleaning and sealing are required first to prevent stains and odors from returning." }
+      ],
       steps: [
         { title: "Emergency Response & Board-Up", text: "Secure the property immediately after the fire", icon: "fas fa-shield-alt" },
         { title: "Soot & Smoke Removal", text: "Clean affected areas with advanced tools and techniques", icon: "fas fa-broom" },
@@ -80,6 +99,12 @@ const getFireContent = (subSlug) => {
         { icon: "fas fa-clipboard-check", title: "Damage Assessment", description: "Complete evaluation for insurance and restoration planning." },
         { icon: "fas fa-phone", title: "24/7 Response Team", description: "Always available for immediate emergency response." }
       ],
+      faqs: [
+        { q: "What is emergency fire response?", a: "It's immediate action after a fire to secure the property, assess damage, and begin the restoration process." },
+        { q: "How fast can emergency fire teams respond?", a: "Our teams mobilize within hours, available 24/7 across Florida." },
+        { q: "What should I do while waiting for emergency fire response?", a: "Stay safe, avoid entering damaged areas, and document damages for your insurance claim." },
+        { q: "Does insurance cover emergency fire response?", a: "Yes, most policies cover emergency services like board-up and damage assessment after a fire." }
+      ],
       steps: [
         { title: "Emergency Call Response", text: "Immediate dispatch of certified fire response team", icon: "fas fa-phone" },
         { title: "Property Securing", text: "Board-up and tarping to prevent further damage", icon: "fas fa-shield-alt" },
@@ -93,10 +118,11 @@ const getFireContent = (subSlug) => {
 };
 
 const content = getFireContent(sub.slug);
+const faqCategory = `fire-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-sectionKitchen">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -124,12 +150,12 @@ const content = getFireContent(sub.slug);
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+          <img src="/images/fireDamage.jpg" alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="card-cta">Get Help Now</a>
+          <a href="/contact" class="btn">Get Help Now</a>
         </div>
       </div>
     ))}
@@ -154,7 +180,11 @@ const content = getFireContent(sub.slug);
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category="fire" title="FAQs" />
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
 </section>
 
 <!-- Final CTA -->

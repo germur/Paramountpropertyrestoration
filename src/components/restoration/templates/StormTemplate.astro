@@ -3,6 +3,7 @@ import "../../../styles/pages/storm-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
 
 const { group, sub } = Astro.props;
 
@@ -20,6 +21,12 @@ const getStormContent = (subSlug) => {
         { icon: "fas fa-tint", title: "Flooding & Water Intrusion", description: "Standing water weakens foundations & walls." },
         { icon: "fas fa-tree", title: "Fallen Trees & Debris", description: "Storm-force winds scatter debris across property." },
         { icon: "fas fa-bolt", title: "Power & Utility Hazards", description: "Downed lines and outages create safety risks." }
+      ],
+      faqs: [
+        { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
+        { q: "How to fix storm damage?", a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely." },
+        { q: "What is the most common storm damage?", a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage." },
+        { q: "How to recover from hurricane damage?", a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process." }
       ],
       steps: [
         { title: "Emergency Board-Up & Roof Tarping", text: "Protect interiors from wind & rain", icon: "fas fa-shield-alt" },
@@ -41,6 +48,12 @@ const getStormContent = (subSlug) => {
         { icon: "fas fa-tree", title: "Fallen Branches & Debris", description: "Impacts puncture roofs and siding." },
         { icon: "fas fa-home", title: "Siding & Gutter Damage", description: "High winds loosen or rip away exterior materials." }
       ],
+      faqs: [
+        { q: "What is wind damage restoration?", a: "It's the process of repairing roofs, siding, windows, and interiors after wind-related destruction." },
+        { q: "How do you know if your roof has wind damage?", a: "Look for missing shingles, leaks, or visible debris impacts." },
+        { q: "Does insurance cover wind damage in Florida?", a: "Yes—most policies include windstorm coverage. We assist with claim documentation." },
+        { q: "Can you repair broken windows after wind damage?", a: "Absolutely—we provide emergency board-up and window replacement." }
+      ],
       steps: [
         { title: "Emergency Tarping & Board-Up", text: "Prevent rain and debris from entering", icon: "fas fa-shield-alt" },
         { title: "Roof & Siding Repair", text: "Replace missing shingles, siding, or panels", icon: "fas fa-hammer" },
@@ -59,6 +72,12 @@ const getStormContent = (subSlug) => {
         { icon: "fas fa-cube", title: "Debris Collection", description: "Remove scattered siding, shingles, and rubble." },
         { icon: "fas fa-truck", title: "Safe Disposal", description: "Transport debris for eco-friendly disposal." },
         { icon: "fas fa-tools", title: "Site Restoration", description: "Prepare property for repair and safe use." }
+      ],
+      faqs: [
+        { q: "What is storm debris removal?", a: "It's the process of clearing and safely disposing of trees, branches, and construction debris left after a storm." },
+        { q: "Can you remove large fallen trees?", a: "Yes. Our crews use heavy equipment to cut and haul away even the largest trees." },
+        { q: "Do you also haul away construction debris after storms?", a: "Absolutely. We clear siding, roofing, drywall, and other structural debris." },
+        { q: "Is storm debris removal covered by insurance?", a: "In most cases, yes. We document everything for smooth claim approval." }
       ],
       steps: [
         { title: "Tree & Branch Removal", text: "Cut, clear, and haul away fallen trees", icon: "fas fa-tree" },
@@ -79,6 +98,12 @@ const getStormContent = (subSlug) => {
         { icon: "fas fa-tree", title: "Debris & Hazard Cleanup", description: "Safe removal of fallen trees, branches, and shattered materials." },
         { icon: "fas fa-hammer", title: "Structural & Interior Repairs", description: "Restore roofing, walls, insulation & finishes." }
       ],
+      faqs: [
+        { q: "What is emergency storm repair?", a: "It's immediate action after severe storm damage to secure, stabilize, and begin property restoration." },
+        { q: "How fast can storm repair teams respond?", a: "Our teams mobilize within hours, available 24/7 across Florida." },
+        { q: "Does insurance cover emergency storm repairs?", a: "Yes, most policies cover emergency tarping, water removal, and repairs after a storm." },
+        { q: "What should I do while waiting for emergency storm repair?", a: "Stay safe, avoid hazards like live wires, and document damages for your insurance claim." }
+      ],
       steps: [
         { title: "Immediate Roof Tarping & Board-Up", text: "Protect from rain, wind & further damage", icon: "fas fa-home" },
         { title: "Water Extraction & Drying", text: "Industrial pumps & dehumidifiers stop mold and structural weakening", icon: "fas fa-tint" },
@@ -92,10 +117,11 @@ const getStormContent = (subSlug) => {
 };
 
 const content = getStormContent(sub.slug);
+const faqCategory = `storm-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-sectionKitchen">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -123,12 +149,12 @@ const content = getStormContent(sub.slug);
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+          <img src="/images/stormDamage.jpg" alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="card-cta">Get Help Now</a>
+          <a href="/contact" class="btn">Get Help Now</a>
         </div>
       </div>
     ))}
@@ -153,7 +179,11 @@ const content = getStormContent(sub.slug);
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category="storm" title="FAQs" />
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
 </section>
 
 <!-- Final CTA -->

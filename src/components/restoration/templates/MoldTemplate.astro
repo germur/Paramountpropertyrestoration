@@ -3,6 +3,7 @@ import "../../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
 
 const { group, sub } = Astro.props;
 
@@ -20,6 +21,12 @@ const getMoldContent = (subSlug) => {
         { icon: "fas fa-vial", title: "Testing & Sampling", description: "Air and surface samples are collected for laboratory analysis." },
         { icon: "fas fa-microscope", title: "Lab Analysis", description: "Professional laboratory testing identifies mold types and concentration levels." },
         { icon: "fas fa-file-alt", title: "Detailed Report", description: "You receive a comprehensive report with findings and recommendations." }
+      ],
+      faqs: [
+        { q: "What's the difference between inspection and testing?", a: "Inspection = visual & moisture scan. Testing = lab-confirmed type & spore count." },
+        { q: "How accurate are mold tests?", a: "Lab-certified results with 99% accuracy." },
+        { q: "Is mold testing required before removal?", a: "Yes—testing confirms the strain & guides safe remediation." },
+        { q: "How long until I get results?", a: "Most reports delivered in 24–48 hours." }
       ],
       steps: [
         { title: "Initial Walkthrough", text: "Spot visible mold + moisture risks", icon: "fas fa-eye" },
@@ -41,6 +48,12 @@ const getMoldContent = (subSlug) => {
         { icon: "fas fa-wind", title: "Removal & Air Scrubbing", description: "HEPA filtration, safe disposal, and eco-friendly cleaning." },
         { icon: "fas fa-tint", title: "Moisture Control & Prevention", description: "Fix leaks, humidity, and future mold risks." }
       ],
+      faqs: [
+        { q: "How dangerous is black mold?", a: "Black mold can trigger respiratory issues, allergies, and health risks—especially for children, elderly, and those with asthma. Professional removal is strongly recommended." },
+        { q: "Can I remove black mold myself?", a: "Not safely. DIY cleaning often spreads spores further—professional removal is essential." },
+        { q: "How long does black mold removal take?", a: "Small jobs: 1–2 days. Severe infestations: up to a week." },
+        { q: "Does insurance cover black mold removal?", a: "Often yes, if caused by a covered water damage event." }
+      ],
       steps: [
         { title: "Inspection & Testing", text: "Detect mold spread and measure spore levels", icon: "fas fa-search" },
         { title: "Containment & Safety Setup", text: "Seal affected areas to prevent further spread", icon: "fas fa-shield-alt" },
@@ -59,6 +72,12 @@ const getMoldContent = (subSlug) => {
         { icon: "fas fa-wind", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores." },
         { icon: "fas fa-shield-alt", title: "Protective Barriers & Treatments", description: "Apply safe coatings to walls, attics & crawlspaces." },
         { icon: "fas fa-check", title: "Ongoing Prevention Plan", description: "Recommendations for dehumidifiers, HVAC care & seasonal checks." }
+      ],
+      faqs: [
+        { q: "How can I prevent mold in Florida homes?", a: "By controlling humidity, fixing leaks, and applying preventive coatings." },
+        { q: "Does mold prevention really work?", a: "Yes. Professional prevention reduces risk of infestation by controlling conditions mold needs." },
+        { q: "What's the difference between mold prevention and mold removal?", a: "Prevention stops growth before it starts, while removal handles active infestations." },
+        { q: "Is mold prevention covered by insurance?", a: "Usually no—insurance covers damage, not prevention. But prevention lowers long-term costs." }
       ],
       steps: [
         { title: "Moisture Assessment", text: "Identify leaks, humidity levels & hidden risks", icon: "fas fa-search" },
@@ -79,6 +98,12 @@ const getMoldContent = (subSlug) => {
         { icon: "fas fa-file-alt", title: "Lab Reports", description: "Certified laboratory analysis with detailed findings." },
         { icon: "fas fa-shield-alt", title: "Prevention Plan", description: "Recommendations to prevent future mold growth." }
       ],
+      faqs: [
+        { q: "What is mold testing?", a: "Professional air and surface testing to identify mold species and hidden contamination." },
+        { q: "How long does mold testing take?", a: "Most homes: 1–2 hours, with a full report the same day." },
+        { q: "Does testing include air quality analysis?", a: "Absolutely. We test air and surfaces to identify mold type and levels." },
+        { q: "Is testing required before mold removal?", a: "Yes—testing confirms the strain & guides safe remediation." }
+      ],
       steps: [
         { title: "Visual Scan & Hotspot Check", text: "Identify stains, discoloration, or early mold growth", icon: "fas fa-eye" },
         { title: "Infrared + Air Testing", text: "Detect hidden moisture and analyze indoor air quality", icon: "fas fa-camera" },
@@ -92,10 +117,11 @@ const getMoldContent = (subSlug) => {
 };
 
 const content = getMoldContent(sub.slug);
+const faqCategory = `mold-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-sectionKitchen">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -123,12 +149,12 @@ const content = getMoldContent(sub.slug);
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+          <img src="/images/moldDamage.jpg" alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="card-cta">Get Help Now</a>
+          <a href="/contact" class="btn">Get Help Now</a>
         </div>
       </div>
     ))}
@@ -153,7 +179,11 @@ const content = getMoldContent(sub.slug);
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category="mold" title="FAQs" />
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
 </section>
 
 <!-- Final CTA -->

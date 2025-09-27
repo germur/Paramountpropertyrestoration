@@ -4,6 +4,7 @@ import "../../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
 
 const { group, sub } = Astro.props;
 
@@ -21,6 +22,12 @@ const getWaterContent = (subSlug) => {
         { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities." },
         { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold." },
         { icon: "fas fa-tools", title: "Structural Stabilization", description: "Support for weakened ceilings, floors, and framing." }
+      ],
+      faqs: [
+        { q: "How long does flood cleanup take?", a: "Most properties dry within 2–5 days depending on water levels and building materials. Continuous monitoring ensures safe humidity levels before restoration begins." },
+        { q: "Does insurance cover flood damage?", a: "Coverage varies—flooding from storms often requires separate flood insurance. Most policies cover sudden water events. We assist with documentation for your claim." },
+        { q: "Can a flooded home be saved?", a: "Yes. With rapid extraction and drying, most structures can be stabilized and restored. Delays increase risks of mold and structural loss." },
+        { q: "What should I do first after a flood?", a: "Stay safe, shut off electricity if needed, and call for emergency water removal. Avoid entering rooms with standing water." }
       ],
       steps: [
         { title: "Inspection & Moisture Mapping", text: "Identify visible and hidden flood damage", icon: "fas fa-search" },
@@ -40,6 +47,12 @@ const getWaterContent = (subSlug) => {
         { icon: "fas fa-home", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation." },
         { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety." },
         { icon: "fas fa-search", title: "Hidden Leak Detection", description: "Advanced tools locate leaks inside walls, floors, or basements." }
+      ],
+      faqs: [
+        { q: "How do I know if I have a hidden water leak?", a: "Signs include moldy odors, warped walls, and unexplained water bills. We use specialized tools to detect hidden leaks." },
+        { q: "Can a ceiling leak cause mold?", a: "Yes. Within 24–48 hours, mold may develop on damp ceilings. Fast drying and repairs are essential." },
+        { q: "Can leaking pipes be fixed without replacing everything?", a: "Often yes. We patch, seal, or replace sections of pipe depending on severity." },
+        { q: "How long does leak repair take?", a: "Small leaks may be fixed same-day; larger or hidden leaks may take 2–3 days including drying and restoration." }
       ],
       steps: [
         { title: "Inspection & Leak Detection", text: "Thermal imaging & moisture meters find the source", icon: "fas fa-search" },
@@ -61,6 +74,12 @@ const getWaterContent = (subSlug) => {
         { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Apply treatments and humidity control to stop mold growth." },
         { icon: "fas fa-chart-bar", title: "Moisture Monitoring", description: "Track safe drying progress with daily readings." }
       ],
+      faqs: [
+        { q: "What causes basement flooding?", a: "Common causes include heavy rains, poor drainage, foundation cracks, burst pipes, or failed sump pumps." },
+        { q: "Can a flooded basement be saved?", a: "Yes. With fast pump-out and drying, most basements can be restored. Delays increase risks of mold and foundation damage." },
+        { q: "Do I need a sump pump installed?", a: "For flood-prone basements, a sump system with backup power is strongly recommended to prevent future flooding." },
+        { q: "How long does basement drying take?", a: "Typically 2–5 days depending on water volume and humidity levels. Continuous monitoring ensures safe results." }
+      ],
       steps: [
         { title: "Safety & Assessment", text: "Check for electrical hazards and structural risks before entry", icon: "fas fa-hard-hat" },
         { title: "Pump-Out & Water Removal", text: "High-capacity pumps quickly clear standing basement water", icon: "fas fa-pump-soap" },
@@ -80,6 +99,12 @@ const getWaterContent = (subSlug) => {
         { icon: "fas fa-hammer", title: "Drywall & Ceiling Replacement", description: "Remove & replace water-damaged sections." },
         { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces." },
         { icon: "fas fa-shield-alt", title: "Mold Remediation", description: "Long-term protection against hidden growth." }
+      ],
+      faqs: [
+        { q: "How do I know if ceiling water damage is serious?", a: "Look for sagging, discoloration, musty odors, or peeling paint. These signal hidden water issues." },
+        { q: "Can I just paint over ceiling stains?", a: "No. Without fixing the leak source, stains and mold will return." },
+        { q: "How long does it take to repair ceiling water damage?", a: "Small repairs: 1–2 days. Major restoration: up to a week." },
+        { q: "Can water-damaged ceilings collapse?", a: "Yes. Untreated damage weakens drywall & beams, raising collapse risk." }
       ],
       steps: [
         { title: "Inspection & Moisture Detection", text: "Thermal cameras to locate leaks", icon: "fas fa-camera" },
@@ -101,6 +126,12 @@ const getWaterContent = (subSlug) => {
         { icon: "fas fa-cloud-rain", title: "Storm or Hurricane Flooding", description: "High-capacity pumps handle heavy stormwater intrusion." },
         { icon: "fas fa-building", title: "Commercial Water Emergencies", description: "Fast removal to minimize downtime and inventory loss." }
       ],
+      faqs: [
+        { q: "Can water be removed immediately after a flood?", a: "Yes. With industrial pumps, most water is extracted within hours. Acting quickly prevents mold and structural damage." },
+        { q: "What happens if water isn't removed right away?", a: "It seeps into drywall, flooring, insulation—leading to mold, odor, and weakened structures." },
+        { q: "Is emergency water removal different from drying?", a: "Yes. Removal extracts large volumes fast; drying stabilizes hidden moisture after." },
+        { q: "Do you handle commercial water emergencies?", a: "Absolutely. We service offices, warehouses, and retail spaces with minimal downtime." }
+      ],
       steps: [
         { title: "Inspection & Safety Check", text: "Identify hazards, source of water", icon: "fas fa-hard-hat" },
         { title: "Water Extraction", text: "Industrial pumps + vacuums remove standing water", icon: "fas fa-tint" },
@@ -115,10 +146,11 @@ const getWaterContent = (subSlug) => {
 };
 
 const content = getWaterContent(sub.slug);
+const faqCategory = `water-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-sectionKitchen">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -146,12 +178,12 @@ const content = getWaterContent(sub.slug);
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={`/images/${sub.slug.charAt(0).toUpperCase() + sub.slug.slice(1).replace('-', '')}.jpg`} alt={service.title} />
+          <img src="/images/waterDamage.jpg" alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="card-cta">Get Help Now</a>
+          <a href="/contact" class="btn">Get Help Now</a>
         </div>
       </div>
     ))}
@@ -176,7 +208,11 @@ const content = getWaterContent(sub.slug);
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category="water" title="FAQs" />
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
 </section>
 
 <!-- Final CTA -->

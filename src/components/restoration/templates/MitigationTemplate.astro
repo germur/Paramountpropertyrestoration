@@ -2,6 +2,7 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
 
 const { group, sub } = Astro.props;
 
@@ -19,6 +20,12 @@ const getMitigationContent = (subSlug) => {
         { icon: "fas fa-tint", title: "Rapid Water Extraction", description: "Pumps & wet vacs remove standing water fast." },
         { icon: "fas fa-wind", title: "Industrial Drying & Dehumidification", description: "Stabilize humidity with pro gear." },
         { icon: "fas fa-spray-can", title: "Antimicrobial Treatment", description: "Stop mold & bacteria before they spread." }
+      ],
+      faqs: [
+        { q: "What is water damage mitigation vs restoration?", a: "Mitigation = stop further damage (extraction, drying, stabilization). Restoration = repairs & rebuild. Both are essential." },
+        { q: "Can I do water mitigation myself?", a: "Minor spills = yes. Floods, roof leaks, or burst pipes = need industrial drying to avoid mold & structural weakening." },
+        { q: "How long does water mitigation take?", a: "Usually 1–3 days, depending on severity. Large floods may require longer with daily monitoring." },
+        { q: "Does insurance cover water mitigation?", a: "Yes—most policies cover mitigation since it reduces total claim costs. We provide full documentation for insurers." }
       ],
       steps: [
         { title: "Emergency Inspection & Moisture Mapping", text: "Detect visible + hidden water", icon: "fas fa-search" },
@@ -40,6 +47,12 @@ const getMitigationContent = (subSlug) => {
         { icon: "fas fa-air-freshener", title: "Ventilation & Air Scrubbing", description: "HEPA filters + negative air machines." },
         { icon: "fas fa-box", title: "Protection of Belongings", description: "Salvage & store safe items." }
       ],
+      faqs: [
+        { q: "What is fire damage mitigation?", a: "It's the process of securing & stabilizing a property after a fire—board-ups, smoke containment, ventilation." },
+        { q: "Why is fire mitigation important?", a: "Without mitigation, soot spreads, odors become permanent, and structures weaken—making restoration harder & costlier." },
+        { q: "What's the difference between fire mitigation and restoration?", a: "Mitigation = prevention of further damage. Restoration = rebuild to pre-loss condition." },
+        { q: "How fast should fire mitigation start?", a: "Immediately. The first 24 hours are critical." }
+      ],
       steps: [
         { title: "Emergency Board-Up & Tarping", text: "Secure windows, doors, roofs", icon: "fas fa-hammer" },
         { title: "Smoke & Soot Containment", text: "Isolate affected areas to stop spread", icon: "fas fa-shield-alt" },
@@ -59,6 +72,12 @@ const getMitigationContent = (subSlug) => {
         { icon: "fas fa-shield-alt", title: "Containment of Affected Areas", description: "Plastic barriers + negative air pressure." },
         { icon: "fas fa-wind", title: "HEPA Air Filtration", description: "Capture airborne spores with high-efficiency systems." },
         { icon: "fas fa-spray-can", title: "Antimicrobial & Preventive Treatment", description: "Apply eco-safe treatments to surfaces." }
+      ],
+      faqs: [
+        { q: "What is mold mitigation?", a: "It's the process of containing mold, improving air quality, and controlling moisture before remediation begins." },
+        { q: "Does mold mitigation remove mold?", a: "No—mitigation prevents spread, but remediation removes colonies permanently." },
+        { q: "Why is mold mitigation important?", a: "It protects health, limits property damage, and reduces remediation costs." },
+        { q: "How long does mitigation take?", a: "Usually 1–3 days, depending on moisture and area size." }
       ],
       steps: [
         { title: "Inspection & Moisture Assessment", text: "Detect leaks, water damage & humidity", icon: "fas fa-search" },
@@ -80,6 +99,12 @@ const getMitigationContent = (subSlug) => {
         { icon: "fas fa-tint", title: "Water Intrusion Control", description: "Extract standing water, dry interiors, apply antimicrobials." },
         { icon: "fas fa-tools", title: "Structural Stabilization", description: "Shore up walls, ceilings, and framing until restoration starts." }
       ],
+      faqs: [
+        { q: "What is storm damage mitigation?", a: "It's securing & stabilizing a property after a storm—tarping roofs, boarding windows, removing debris." },
+        { q: "Why is storm mitigation important?", a: "Without it, rain, debris & humidity cause higher repair costs & safety risks." },
+        { q: "What's the difference between storm mitigation & restoration?", a: "Mitigation = prevent more damage. Restoration = repair & rebuild." },
+        { q: "How fast should storm mitigation start?", a: "Immediately after the storm clears. The sooner it's secured, the less secondary damage occurs." }
+      ],
       steps: [
         { title: "Emergency Board-Up & Roof Tarping", text: "Seal windows, doors & roofs against further water", icon: "fas fa-window-maximize" },
         { title: "Debris & Tree Removal", text: "Clear dangerous debris, fallen trees, and damaged structures", icon: "fas fa-tree" },
@@ -93,11 +118,12 @@ const getMitigationContent = (subSlug) => {
 };
 
 const content = getMitigationContent(sub.slug);
+const faqCategory = `mitigation-${sub.slug}`;
 
 ---
 
 <!-- Hero Section -->
-<section class="hero-sectionKitchen">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -125,12 +151,12 @@ const content = getMitigationContent(sub.slug);
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+          <img src="/images/mitigation.jpg" alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="card-cta">Get Help Now</a>
+          <a href="/contact" class="btn">Get Help Now</a>
         </div>
       </div>
     ))}
@@ -155,7 +181,11 @@ const content = getMitigationContent(sub.slug);
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category="storm" title="FAQs" />
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
 </section>
 
 <!-- Final CTA -->
