@@ -39,14 +39,21 @@ if (!serviceContent) {
       steps: []
     },
     services: sub.services || [],
-    features: sub.features || [],
-    faqs: sub.faqs || []
+    features: sub.whyChooseUs || sub.features || [],
+    faqs: sub.faqs || [],
+    warnings: sub.warnings || []
   };
   
   // Usar el contenido por defecto
   var finalServiceContent = defaultContent;
 } else {
-  var finalServiceContent = serviceContent;
+  var finalServiceContent = {
+    ...serviceContent,
+    features: serviceContent.features || [],
+    warnings: serviceContent.warnings || [],
+    services: serviceContent.services || [],
+    faqs: serviceContent.faqs || []
+  };
 }
 
 // Configuración del hero usando contenido específico
