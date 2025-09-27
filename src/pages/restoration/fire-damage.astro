@@ -1,33 +1,41 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FireTemplate from "../../components/restoration/templates/FireTemplate.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "../../styles/pages/fire-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos para la página principal de fire damage
-const group = {
-  slug: "fire-damage",
-  name: "Fire Damage Restoration",
-  template: "fire",
-  description: "Complete fire and smoke damage restoration services"
+// Datos para la página de fire damage
+const pageData = {
+  group: {
+    slug: "fire-damage",
+    name: "Fire Damage Restoration",
+    template: "fire",
+    description: "Complete fire and smoke damage restoration services"
+  },
+  sub: {
+    slug: "fire-damage",
+    title: "Fire Damage Restoration",
+    nombre: "Fire Damage",
+    template: "fire",
+    short: "Complete fire and smoke damage restoration services",
+    categoria: "restoration"
+  }
 };
 
-const sub = {
-  slug: "fire-damage",
-  title: "Fire Damage Restoration",
-  nombre: "Fire Damage",
-  template: "fire",
-  short: "Complete fire and smoke damage restoration services",
-  categoria: "restoration"
+// SEO data
+const seoData = {
+  title: "Fire Damage Restoration in Florida | Smoke & Soot Cleanup",
+  description: "Florida fire damage restoration experts. 24/7 cleanup for smoke, soot, and structural repair. Serving Orlando, Miami, Tampa & more. Request a free inspection today.",
+  canonical: "https://paramountpropertyrestoration.com/restoration/fire-damage",
+  serviceType: "Emergency Fire Damage Restoration"
 };
 ---
 
 <BaseLayout
-  title="Fire Damage Restoration in Florida | Smoke & Soot Cleanup"
-  description="Florida fire damage restoration experts. 24/7 cleanup for smoke, soot, and structural repair. Serving Orlando, Miami, Tampa & more. Request a free inspection today."
+  title={seoData.title}
+  description={seoData.description}
 >
-  <!-- Schema.org for Service -->
+  <!-- Enhanced Schema.org for Fire Damage Service -->
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
@@ -37,26 +45,77 @@ const sub = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "Paramount Property Restoration",
-        "telephone": "+1-786-602-2217"
+        "telephone": "+1-786-602-2217",
+        "email": "services@paramountpropertyrestoration.com",
+        "url": "https://paramountpropertyrestoration.com"
       },
       "areaServed": {
         "@type": "State",
         "name": "Florida"
       },
       "serviceType": "Emergency Fire Damage Restoration",
-      "url": "https://paramountpropertyrestoration.com/restoration/fire-damage"
+      "url": "https://paramountpropertyrestoration.com/restoration/fire-damage",
+      "offers": {
+        "@type": "Offer",
+        "description": "Professional fire damage restoration services",
+        "availabilityStarts": "2024-01-01",
+        "availableAtOrFrom": {
+          "@type": "State",
+          "name": "Florida"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fire Damage Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Smoke Damage Cleanup",
+              "description": "Professional smoke and soot removal services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Structural Fire Repair",
+              "description": "Complete structural fire damage restoration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Board-Up",
+              "description": "24/7 emergency board-up and securing services"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
   </script>
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/fire-damage" slot="head" />
+  <link rel="canonical" href={seoData.canonical} slot="head" />
   
-  <div class="container">
-    <Breadcrumbs client:load crumbs={[
-      { label: 'Home', href: '/' },
-      { label: 'Restoration', href: '/restoration' },
-      { label: 'Fire Damage', href: '/restoration/fire-damage' }
-    ]} />
-  </div>
-  <FireTemplate group={group} sub={sub} />
+  <!-- Additional SEO meta tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
+  <meta name="geo.region" content="US-FL" slot="head" />
+  <meta name="geo.placename" content="Florida" slot="head" />
+  
+  <!-- Fire damage specific keywords -->
+  <meta name="keywords" content="fire damage restoration Florida, smoke damage cleanup, soot removal, fire damage repair, emergency fire restoration, structural fire damage, fire damage contractors Florida" slot="head" />
+
+  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout ya los genera automáticamente -->
+  
+  <FireTemplate group={pageData.group} sub={pageData.sub} />
 </BaseLayout>

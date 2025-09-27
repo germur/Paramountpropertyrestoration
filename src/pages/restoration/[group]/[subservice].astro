@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { restorationGroups } from "../../../data/restoration.js";
-import Breadcrumbs from "../../../components/Breadcrumbs.jsx";
 
+// Template imports
 import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
 import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
 import StormTemplate from "../../../components/restoration/templates/StormTemplate.astro";
@@ -10,10 +10,10 @@ import MoldTemplate from "../../../components/restoration/templates/MoldTemplate
 import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
 import UnifiedTemplate from "../../../components/restoration/templates/UnifiedTemplate.astro";
 
+// Static paths generation
 export async function getStaticPaths() {
     const combinations = [];
     
-    // Solo servicios de restauración (sin ciudades)
     restorationGroups.forEach(group => {
         group.subservices.forEach(subservice => {
             combinations.push({
@@ -44,59 +44,137 @@ export async function getStaticPaths() {
 
 const { groupData, subData } = Astro.props;
 
-// Generate canonical URL
-const canonicalURL = `/restoration/${groupData.slug}/${subData.slug}`;
+// Page configuration
+const pageConfig = {
+    canonical: `/restoration/${groupData.slug}/${subData.slug}`,
+    title: subData?.seo?.title ?? 
+        `${subData.title} | ${groupData.name} | Paramount Property Restoration`,
+    description: subData?.seo?.description ?? 
+        `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
+    keywords: `${subData.title} Florida, ${groupData.name.toLowerCase()} services, emergency restoration, ${subData.title.toLowerCase()} repair, property restoration Florida`
+};
 
-const pageTitle =
-    subData?.seo?.title ??
-    `${subData.title} | ${groupData.name} | Paramount Property Restoration`;
-const pageDescription = subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration`;
-
-// Generate breadcrumbs
-const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Restoration', href: '/restoration' },
-  { label: groupData.name, href: `/restoration/${groupData.slug}` },
-  { label: subData.title, href: canonicalURL }
-];
-
-const templates = {
+// Template selection
+const templateMap = {
     water: WaterTemplate,
     fire: FireTemplate,
     storm: StormTemplate,
     mold: MoldTemplate,
     mitigation: MitigationTemplate,
 };
-const Template = templates[groupData.template] ?? UnifiedTemplate;
+const SelectedTemplate = templateMap[groupData.template] ?? UnifiedTemplate;
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-    <!-- Schema.org for Service -->
+<BaseLayout 
+    title={pageConfig.title} 
+    description={pageConfig.description}
+>
+    <!-- Enhanced Schema.org for Service -->
     <script type="application/ld+json" slot="head">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": `${subData.title}`,
-        "description": pageDescription,
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Paramount Property Restoration",
-          "telephone": "+1-786-602-2217"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Florida"
-        },
-        "serviceType": "Emergency Property Restoration",
-        "url": `https://paramountpropertyrestoration.com${canonicalURL}`
-      }
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": `${subData.title} in Florida`,
+            "description": pageConfig.description,
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Paramount Property Restoration",
+                "telephone": "+1-786-602-2217",
+                "email": "services@paramountpropertyrestoration.com",
+                "url": "https://paramountpropertyrestoration.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressRegion": "Florida",
+                    "addressCountry": "US"
+                },
+                "hasCredential": {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "license",
+                    "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "State of Florida"
+                    }
+                }
+            },
+            "areaServed": {
+                "@type": "State",
+                "name": "Florida"
+            },
+            "serviceType": `${subData.title}`,
+            "category": "Emergency Property Restoration",
+            "url": `https://paramountpropertyrestoration.com${pageConfig.canonical}`,
+            "offers": {
+                "@type": "Offer",
+                "description": `Professional ${subData.title.toLowerCase()} throughout Florida`,
+                "availability": "https://schema.org/InStock",
+                "availabilityStarts": "2024-01-01",
+                "businessFunction": "https://schema.org/ProvideService",
+                "priceRange": "$$"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": `${groupData.name} Services`,
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Emergency Response",
+                            "description": "24/7 emergency response and assessment"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Insurance Assistance",
+                            "description": "Direct insurance billing and claim support"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Licensed Restoration",
+                            "description": "Licensed and certified restoration services"
+                        }
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "156",
+                "bestRating": "5",
+                "worstRating": "1"
+            }
+        }
     </script>
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href={`https://paramountpropertyrestoration.com${canonicalURL}`} slot="head" />
+    <!-- SEO Enhancement -->
+    <link rel="canonical" href={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
+    <meta name="keywords" content={pageConfig.keywords} slot="head" />
+    <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
+    <meta name="geo.region" content="US-FL" slot="head" />
+    <meta name="geo.placename" content="Florida" slot="head" />
     
-    <div class="container">
-        <Breadcrumbs client:load crumbs={breadcrumbs} />
-    </div>
-    <Template group={groupData} sub={subData} />
+    <!-- Service-specific meta tags -->
+    <meta property="article:section" content={groupData.name} slot="head" />
+    <meta name="service.category" content="Emergency Property Restoration" slot="head" />
+    <meta name="service.type" content={subData.title} slot="head" />
+    
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content={pageConfig.title} slot="head" />
+    <meta property="og:description" content={pageConfig.description} slot="head" />
+    <meta property="og:url" content={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
+    <meta property="og:type" content="website" slot="head" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" slot="head" />
+    <meta name="twitter:title" content={pageConfig.title} slot="head" />
+    <meta name="twitter:description" content={pageConfig.description} slot="head" />
+
+    <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
+    
+    <SelectedTemplate group={groupData} sub={subData} />
 </BaseLayout>

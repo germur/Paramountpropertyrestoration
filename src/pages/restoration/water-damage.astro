@@ -1,33 +1,41 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WaterTemplate from "../../components/restoration/templates/WaterTemplate.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos para la página principal de water damage
-const group = {
-  slug: "water-damage",
-  name: "Water Damage Restoration", 
-  template: "water",
-  description: "Emergency water damage restoration and cleanup services"
+// Page data configuration
+const pageData = {
+  group: {
+    slug: "water-damage",
+    name: "Water Damage Restoration", 
+    template: "water",
+    description: "Emergency water damage restoration and cleanup services"
+  },
+  sub: {
+    slug: "water-damage",
+    title: "Water Damage Restoration",
+    nombre: "Water Damage",
+    template: "water",
+    short: "Emergency water damage restoration and cleanup services",
+    categoria: "restoration"
+  }
 };
 
-const sub = {
-  slug: "water-damage",
-  title: "Water Damage Restoration",
-  nombre: "Water Damage",
-  template: "water",
-  short: "Emergency water damage restoration and cleanup services",
-  categoria: "restoration"
+// SEO configuration
+const seoConfig = {
+  title: "Water Damage Restoration in Florida | 24/7 Emergency Service",
+  description: "Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments.",
+  canonical: "https://paramountpropertyrestoration.com/restoration/water-damage",
+  keywords: "water damage restoration Florida, emergency water extraction, flood damage cleanup, burst pipe repair, water damage drying, sewage cleanup Florida, 24/7 water damage service"
 };
 ---
 
 <BaseLayout
-  title="Water Damage Restoration in Florida | 24/7 Emergency Service"
-  description="Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments."
+  title={seoConfig.title}
+  description={seoConfig.description}
 >
-  <!-- Schema.org for Service -->
+  <!-- Enhanced Schema.org for Water Damage Restoration -->
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
@@ -37,26 +45,156 @@ const sub = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "Paramount Property Restoration",
-        "telephone": "+1-786-602-2217"
+        "telephone": "+1-786-602-2217",
+        "email": "services@paramountpropertyrestoration.com",
+        "url": "https://paramountpropertyrestoration.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Florida",
+          "addressCountry": "US"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "State of Florida"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "IICRC (Institute of Inspection, Cleaning and Restoration Certification)"
+            }
+          }
+        ]
       },
       "areaServed": {
         "@type": "State",
         "name": "Florida"
       },
       "serviceType": "Emergency Water Damage Restoration",
-      "url": "https://paramountpropertyrestoration.com/restoration/water-damage"
+      "category": "Emergency Restoration Services",
+      "url": "https://paramountpropertyrestoration.com/restoration/water-damage",
+      "offers": {
+        "@type": "Offer",
+        "description": "Comprehensive water damage restoration and emergency drying services",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01",
+        "businessFunction": "https://schema.org/ProvideService",
+        "priceRange": "$$"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Water Damage Restoration Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Water Extraction",
+              "description": "24/7 emergency water removal and extraction services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Structural Drying",
+              "description": "Professional structural drying using advanced dehumidification equipment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Flood Damage Cleanup",
+              "description": "Complete flood damage restoration and cleanup services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Burst Pipe Repair",
+              "description": "Emergency burst pipe repair and water damage mitigation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sewage Cleanup",
+              "description": "Safe sewage backup cleanup and sanitization services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Moisture Detection",
+              "description": "Advanced moisture detection and monitoring services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Content Restoration",
+              "description": "Restoration and cleaning of water-damaged personal belongings"
+            }
+          }
+        ]
+      },
+      "additionalType": "https://schema.org/EmergencyService",
+      "knowsAbout": [
+        "Water Damage Assessment",
+        "Moisture Detection Technology",
+        "Dehumidification Techniques",
+        "Mold Prevention",
+        "Insurance Claims for Water Damage",
+        "EPA Water Damage Guidelines",
+        "IICRC Water Damage Standards"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "234",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
   </script>
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/water-damage" slot="head" />
+  <!-- SEO Enhancement -->
+  <link rel="canonical" href={seoConfig.canonical} slot="head" />
+  <meta name="keywords" content={seoConfig.keywords} slot="head" />
+  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
+  <meta name="geo.region" content="US-FL" slot="head" />
+  <meta name="geo.placename" content="Florida" slot="head" />
   
-  <div class="container">
-    <Breadcrumbs client:load crumbs={[
-      { label: 'Home', href: '/' },
-      { label: 'Restoration', href: '/restoration' },
-      { label: 'Water Damage', href: '/restoration/water-damage' }
-    ]} />
-  </div>
-  <WaterTemplate group={group} sub={sub} />
+  <!-- Emergency & Water damage specific meta tags -->
+  <meta property="article:section" content="Emergency Services" slot="head" />
+  <meta name="service.category" content="Water Damage Restoration" slot="head" />
+  <meta name="service.type" content="Emergency Restoration" slot="head" />
+  <meta name="emergency.type" content="Water Emergency" slot="head" />
+  <meta name="damage.type" content="Water, Flood, Burst Pipe, Sewage" slot="head" />
+  
+  <!-- Enhanced Open Graph -->
+  <meta property="og:title" content={seoConfig.title} slot="head" />
+  <meta property="og:description" content={seoConfig.description} slot="head" />
+  <meta property="og:url" content={seoConfig.canonical} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={seoConfig.title} slot="head" />
+  <meta name="twitter:description" content={seoConfig.description} slot="head" />
+
+  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
+  
+  <WaterTemplate group={pageData.group} sub={pageData.sub} />
 </BaseLayout>

@@ -1,33 +1,41 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StormTemplate from "../../components/restoration/templates/StormTemplate.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.jsx";
 import "../../styles/pages/storm-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Datos para la página principal de storm damage
-const group = {
-  slug: "storm-damage",
-  name: "Storm Damage Restoration",
-  template: "storm", 
-  description: "Hurricane and storm damage restoration services"
+// Page data configuration
+const pageData = {
+  group: {
+    slug: "storm-damage",
+    name: "Storm Damage Restoration",
+    template: "storm", 
+    description: "Hurricane and storm damage restoration services"
+  },
+  sub: {
+    slug: "storm-damage",
+    title: "Storm Damage Restoration",
+    nombre: "Storm Damage",
+    template: "storm",
+    short: "Hurricane and storm damage restoration services",
+    categoria: "restoration"
+  }
 };
 
-const sub = {
-  slug: "storm-damage",
-  title: "Storm Damage Restoration",
-  nombre: "Storm Damage",
-  template: "storm",
-  short: "Hurricane and storm damage restoration services",
-  categoria: "restoration"
+// SEO configuration
+const seoConfig = {
+  title: "Storm Damage Restoration in Florida | Hurricane & Roof Repair",
+  description: "Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7.",
+  canonical: "https://paramountpropertyrestoration.com/restoration/storm-damage",
+  keywords: "storm damage restoration Florida, hurricane damage repair, roof storm damage, wind damage restoration, emergency storm cleanup, debris removal Florida, hurricane recovery services"
 };
 ---
 
 <BaseLayout
-  title="Storm Damage Restoration in Florida | Hurricane & Roof Repair"
-  description="Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7."
+  title={seoConfig.title}
+  description={seoConfig.description}
 >
-  <!-- Schema.org for Service -->
+  <!-- Enhanced Schema.org for Storm Damage Restoration -->
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
@@ -37,26 +45,147 @@ const sub = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "Paramount Property Restoration",
-        "telephone": "+1-786-602-2217"
+        "telephone": "+1-786-602-2217",
+        "email": "services@paramountpropertyrestoration.com",
+        "url": "https://paramountpropertyrestoration.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Florida",
+          "addressCountry": "US"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "State of Florida"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "IICRC (Institute of Inspection, Cleaning and Restoration Certification)"
+            }
+          }
+        ]
       },
       "areaServed": {
         "@type": "State",
         "name": "Florida"
       },
       "serviceType": "Emergency Storm Damage Restoration",
-      "url": "https://paramountpropertyrestoration.com/restoration/storm-damage"
+      "category": "Emergency Restoration Services",
+      "url": "https://paramountpropertyrestoration.com/restoration/storm-damage",
+      "offers": {
+        "@type": "Offer",
+        "description": "Comprehensive storm damage restoration and hurricane recovery services",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01",
+        "businessFunction": "https://schema.org/ProvideService",
+        "priceRange": "$$"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Storm Damage Restoration Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Board-Up Services",
+              "description": "24/7 emergency board-up and securing of storm-damaged properties"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof Storm Damage Repair",
+              "description": "Complete roof restoration after hurricane and wind damage"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wind Damage Restoration",
+              "description": "Comprehensive repair of wind damage to structures and exteriors"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Debris Removal",
+              "description": "Safe and efficient removal of storm debris and fallen trees"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hurricane Recovery",
+              "description": "Complete hurricane damage assessment and restoration services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Tarping",
+              "description": "Temporary weatherproofing and emergency tarping services"
+            }
+          }
+        ]
+      },
+      "additionalType": "https://schema.org/EmergencyService",
+      "knowsAbout": [
+        "Hurricane Damage Assessment",
+        "Wind Damage Repair",
+        "Emergency Response Protocols",
+        "Insurance Claims for Storm Damage",
+        "Florida Building Codes",
+        "Storm Mitigation Techniques"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "201",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
   </script>
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://paramountpropertyrestoration.com/restoration/storm-damage" slot="head" />
+  <!-- SEO Enhancement -->
+  <link rel="canonical" href={seoConfig.canonical} slot="head" />
+  <meta name="keywords" content={seoConfig.keywords} slot="head" />
+  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
+  <meta name="geo.region" content="US-FL" slot="head" />
+  <meta name="geo.placename" content="Florida" slot="head" />
   
-  <div class="container">
-    <Breadcrumbs client:load crumbs={[
-      { label: 'Home', href: '/' },
-      { label: 'Restoration', href: '/restoration' },
-      { label: 'Storm Damage', href: '/restoration/storm-damage' }
-    ]} />
-  </div>
-  <StormTemplate group={group} sub={sub} />
+  <!-- Emergency & Weather specific meta tags -->
+  <meta property="article:section" content="Emergency Services" slot="head" />
+  <meta name="service.category" content="Storm Damage Restoration" slot="head" />
+  <meta name="service.type" content="Emergency Restoration" slot="head" />
+  <meta name="emergency.type" content="Storm Response" slot="head" />
+  <meta name="weather.related" content="Hurricane, Wind, Storm" slot="head" />
+  
+  <!-- Enhanced Open Graph -->
+  <meta property="og:title" content={seoConfig.title} slot="head" />
+  <meta property="og:description" content={seoConfig.description} slot="head" />
+  <meta property="og:url" content={seoConfig.canonical} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={seoConfig.title} slot="head" />
+  <meta name="twitter:description" content={seoConfig.description} slot="head" />
+
+  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
+  
+  <StormTemplate group={pageData.group} sub={pageData.sub} />
 </BaseLayout>

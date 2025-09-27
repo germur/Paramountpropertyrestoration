@@ -3,13 +3,15 @@
 export interface Props {
   position?: 'static' | 'sticky';
   variant?: 'home' | 'contact';
+  dismissible?: boolean;
 }
 
-const { position = 'static', variant = 'home' } = Astro.props;
+const { position = 'static', variant = 'home', dismissible = false } = Astro.props;
 ---
 
 <div 
-  class={`paramount-emergency-banner paramount-emergency-${variant} ${position === 'sticky' ? 'paramount-emergency-sticky' : ''}`}
+  class={`paramount-emergency-banner paramount-emergency-${variant} ${position === 'sticky' ? 'paramount-emergency-sticky' : ''} ${dismissible ? 'paramount-emergency-dismissible' : ''}`}
+  id="emergency-banner"
 >
   <div class="paramount-emergency-content">
     <div class="paramount-emergency-icon">🚨</div>
@@ -19,28 +21,39 @@ const { position = 'static', variant = 'home' } = Astro.props;
     <a href="tel:+17866022217" class="paramount-emergency-button">
       Call: (786) 602-2217
     </a>
+    {dismissible && (
+      <button class="paramount-emergency-close" onclick="document.getElementById('emergency-banner').classList.add('hidden'); localStorage.setItem('emergency-banner-dismissed', 'true');">
+        <span>×</span>
+      </button>
+    )}
   </div>
 </div>
 
 <style>
-  /* ===== BANNER AZUL UNIFICADO - SIN IMPORTANT ===== */
+  /* ===== BANNER AZUL OPTIMIZADO - MENOS INVASIVO ===== */
   .paramount-emergency-banner {
     background: linear-gradient(45deg, #3cbced, #2a9fd1);
     color: #ffffff;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     text-align: center;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(60, 188, 237, 0.3);
+    box-shadow: 0 2px 8px rgba(60, 188, 237, 0.2);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     position: relative;
-    z-index: 100;
+    z-index: 50; /* Reducido de 100 para no interferir con menús */
+    transition: all 0.3s ease;
   }
 
-  /* VARIANTE STICKY PARA CONTACT */
+  /* VARIANTE STICKY OPTIMIZADA */
   .paramount-emergency-sticky {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 800; /* Menor que menús típicos (900-1000) pero mayor que contenido */
+  }
+
+  /* BANNER DISMISSIBLE */
+  .paramount-emergency-dismissible {
+    position: relative;
   }
 
   /* CONTENEDOR DEL BANNER */
@@ -53,13 +66,14 @@ const { position = 'static', variant = 'home' } = Astro.props;
     margin: 0 auto;
     padding: 0 1rem;
     flex-wrap: wrap;
+    position: relative;
   }
 
   /* TEXTO DEL BANNER */
   .paramount-emergency-text {
     color: #ffffff;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Ligeramente más pequeño */
   }
 
   .paramount-emergency-text strong {
@@ -67,30 +81,31 @@ const { position = 'static', variant = 'home' } = Astro.props;
     font-weight: 700;
   }
 
-  /* ICONO ANIMADO */
+  /* ICONO MENOS LLAMATIVO */
   .paramount-emergency-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Reducido */
     color: #ffffff;
-    animation: paramount-pulse 2s infinite;
+    animation: paramount-subtle-pulse 3s infinite; /* Animación más sutil */
   }
 
-  /* BOTÓN DEL BANNER */
+  /* BOTÓN DEL BANNER OPTIMIZADO */
   .paramount-emergency-button {
     background: #ffffff;
     color: #3cbced;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 20px; /* Menos redondeado */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600; /* Reducido de bold */
     transition: all 0.2s ease;
     white-space: nowrap;
     font-size: 0.9rem;
     border: 2px solid transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .paramount-emergency-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px); /* Movimiento más sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     color: #2a9fd1;
     background: #f8f9fa;
     text-decoration: none;
@@ -101,15 +116,46 @@ const { position = 'static', variant = 'home' } = Astro.props;
     outline-offset: 2px;
   }
 
-  /* ANIMACIÓN */
-  @keyframes paramount-pulse {
+  /* BOTÓN DE CERRAR */
+  .paramount-emergency-close {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .paramount-emergency-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .paramount-emergency-close:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  /* ANIMACIÓN MÁS SUTIL */
+  @keyframes paramount-subtle-pulse {
     0% { 
       opacity: 1; 
       transform: scale(1);
     }
     50% { 
-      opacity: 0.7; 
-      transform: scale(1.05);
+      opacity: 0.8; 
+      transform: scale(1.02); /* Mucho más sutil */
     }
     100% { 
       opacity: 1; 
@@ -117,39 +163,68 @@ const { position = 'static', variant = 'home' } = Astro.props;
     }
   }
 
-  /* ===== RESPONSIVE ===== */
+  /* ESTADO OCULTO */
+  .paramount-emergency-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ===== RESPONSIVE MEJORADO ===== */
   @media (max-width: 768px) {
+    .paramount-emergency-banner {
+      padding: 0.6rem 0;
+    }
+
     .paramount-emergency-content {
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0 0.5rem;
+      gap: 0.75rem;
+      padding: 0 3rem 0 1rem; /* Espacio para botón cerrar */
     }
 
     .paramount-emergency-text {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-align: center;
     }
 
     .paramount-emergency-button {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       padding: 0.4rem 0.8rem;
     }
 
-    .paramount-emergency-banner {
-      padding: 0.75rem 0;
+    .paramount-emergency-close {
+      right: 0.5rem;
+      font-size: 1.3rem;
+      width: 26px;
+      height: 26px;
     }
   }
 
   @media (max-width: 480px) {
+    .paramount-emergency-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 2rem 0 1rem;
+    }
+
+    .paramount-emergency-text {
+      font-size: 0.8rem;
+    }
+
     .paramount-emergency-text strong {
       display: block;
       margin-bottom: 0.25rem;
     }
     
     .paramount-emergency-button {
-      width: 100%;
-      max-width: 200px;
+      width: auto;
+      min-width: 180px;
       text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .paramount-emergency-close {
+      top: 0.5rem;
+      transform: none;
     }
   }
 
@@ -159,12 +234,47 @@ const { position = 'static', variant = 'home' } = Astro.props;
       animation: none;
     }
     
-    .paramount-emergency-button {
+    .paramount-emergency-button,
+    .paramount-emergency-close {
       transition: none;
     }
     
-    .paramount-emergency-button:hover {
+    .paramount-emergency-button:hover,
+    .paramount-emergency-close:hover {
+      transform: none;
+    }
+
+    .paramount-emergency-sticky .paramount-emergency-close:hover {
       transform: none;
     }
   }
+
+  /* ===== VARIANTE PARA CONTACT (menos prominente) ===== */
+  .paramount-emergency-contact {
+    background: linear-gradient(45deg, #64748b, #475569);
+    padding: 0.5rem 0;
+  }
+
+  .paramount-emergency-contact .paramount-emergency-text {
+    font-size: 0.85rem;
+  }
+
+  .paramount-emergency-contact .paramount-emergency-button {
+    background: rgba(255, 255, 255, 0.95);
+    color: #64748b;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
 </style>
+
+<script is:inline>
+  // Verificar si el banner fue previamente cerrado
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('emergency-banner');
+    const wasDismissed = localStorage.getItem('emergency-banner-dismissed');
+    
+    if (banner && wasDismissed === 'true' && banner.classList.contains('paramount-emergency-dismissible')) {
+      banner.classList.add('hidden');
+    }
+  });
+</script>

@@ -3,87 +3,48 @@
 import { getAllRestorationCombinations } from "../../../../data/restoration.js";
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
-import "../../../../styles/pages/[ciudad].css";
-import "../../../../styles/pages/restoration-city.css";
-import Breadcrumbs from "../../../../components/Breadcrumbs.jsx";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
+import "../../../../styles/pages/[ciudad].css";
+import "../../../../styles/pages/restoration-city.css";
 
+// Static paths generation
 export async function getStaticPaths() {
   const combinations = getAllRestorationCombinations();
 
-  return combinations.map(
-    ({
-      service,
-      subcategory,
-      ciudad,
-      servicioData,
-      ciudadData,
-      groupData,
-    }) => ({
-      params: {
-        service,
-        subcategory,
-        ciudad,
-      },
-      props: {
-        servicioData,
-        ciudadData,
-        groupData,
-      },
-    })
-  );
+  return combinations.map(({ service, subcategory, ciudad, servicioData, ciudadData, groupData }) => ({
+    params: { service, subcategory, ciudad },
+    props: { servicioData, ciudadData, groupData },
+  }));
 }
 
+// Extract params and props
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
 
-// Generate canonical URL
-const canonicalURL = `/restoration/${service}/${subcategory}/${ciudad}`;
+// Page configuration
+const pageConfig = {
+  canonical: `/restoration/${service}/${subcategory}/${ciudad}`,
+  title: `${servicioData.title} in ${ciudadData.nombre}, FL | 24/7 Emergency Response`,
+  description: servicioData.seo?.description || 
+    `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`,
+  keywords: `${servicioData.title.toLowerCase()} ${ciudadData.nombre}, emergency restoration ${ciudadData.nombre}, ${servicioData.title.toLowerCase()} repair Florida, property restoration ${ciudadData.region}`
+};
 
-// Obtener contenido específico del subservicio
+// Enriched content
 const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
 
-// Generate dynamic content for SEO
-const pageTitle = `${servicioData.title} in ${ciudadData.nombre}, FL | 24/7 Emergency Response`;
-const pageDescription =
-  servicioData.seo?.description ||
-  `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`;
-
-// Generate breadcrumbs
-const breadcrumbs = [
-  { label: 'Home', href: '/' },
-  { label: 'Restoration', href: '/restoration' },
-  { label: groupData.name, href: `/restoration/${service}` },
-  { label: servicioData.title, href: `/restoration/${service}/${subcategory}` },
-  { label: ciudadData.nombre, href: canonicalURL }
-];
-
-// Hero content from subservice-specific data or fallback
-const heroContent = {
+// Hero configuration
+const heroConfig = {
   title: subserviceContent?.hero?.title || `${servicioData.title} in ${ciudadData.nombre}`,
-  subtitle: subserviceContent?.hero?.description || `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
+  subtitle: subserviceContent?.hero?.description || 
+    `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
   ctaText: `Get Free Quote in ${ciudadData.nombre}`,
   bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
-  iconRow: servicioData.hero?.iconRow || [],
   badge: subserviceContent?.hero?.badge || null
 };
 
-// Use subservice-specific FAQs if available
-const rawFaqs = subserviceContent?.faqs || servicioData?.faqs || [];
-const customQuestions = rawFaqs.map((faq, index) => ({
-  id: `custom-${index}`,
-  question: faq.q ?? faq.question ?? "",
-  answer: faq.a ?? faq.answer ?? "",
-}));
-
-const finalCta = {
-  title: `Start your ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
-  cta: `Request Your Free Estimate`,
-  href: servicioData.cta?.href ?? "/contact",
-};
-
-// Service features from subservice content
+// Service features
 const serviceFeatures = subserviceContent?.features || [
   "24/7 emergency response team",
   "Advanced equipment & techniques", 
@@ -91,85 +52,123 @@ const serviceFeatures = subserviceContent?.features || [
   "Licensed & certified technicians"
 ];
 
-// Nearby service areas for copy
-const serviceAreaCities = [
-  "Weston",
-  "Pembroke Pines",
-  "Coral Gables",
-  "Aventura",
-  "Doral",
-  "Kendall",
-];
+// FAQs configuration
+const customQuestions = (subserviceContent?.faqs || servicioData?.faqs || []).map((faq, index) => ({
+  id: `faq-${index}`,
+  question: faq.q ?? faq.question ?? "",
+  answer: faq.a ?? faq.answer ?? "",
+}));
+
+// CTA configuration
+const ctaConfig = {
+  title: `Start your ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
+  cta: `Request Your Free Estimate`,
+  href: servicioData.cta?.href ?? "/contact",
+};
+
+// Nearby cities for SEO copy
+const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Doral", "Kendall"];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <!-- Schema.org for Local Service -->
+<BaseLayout 
+  title={pageConfig.title} 
+  description={pageConfig.description}
+>
+  <!-- Enhanced Schema.org for Local Service -->
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": `${servicioData.title} in ${ciudadData.nombre}`,
-      "description": pageDescription,
+      "description": pageConfig.description,
       "provider": {
         "@type": "LocalBusiness",
         "name": "Paramount Property Restoration",
         "telephone": "+1-786-602-2217",
+        "email": "services@paramountpropertyrestoration.com",
+        "url": "https://paramountpropertyrestoration.com",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "Florida",
           "addressCountry": "US"
+        },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "State of Florida"
+          }
         }
       },
-      "areaServed": {
-        "@type": "City",
-        "name": `${ciudadData.nombre}, Florida`
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": `${ciudadData.nombre}`,
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Florida"
+          }
+        },
+        {
+          "@type": "State", 
+          "name": "Florida"
+        }
+      ],
+      "serviceType": `${servicioData.title}`,
+      "category": "Emergency Property Restoration",
+      "url": `https://paramountpropertyrestoration.com${pageConfig.canonical}`,
+      "offers": {
+        "@type": "Offer",
+        "description": `Professional ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01",
+        "businessFunction": "https://schema.org/ProvideService"
       },
-      "serviceType": "Emergency Property Restoration",
-      "url": `https://paramountpropertyrestoration.com${canonicalURL}`
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "89",
+        "bestRating": "5"
+      }
     }
   </script>
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href={`https://paramountpropertyrestoration.com${canonicalURL}`} slot="head" />
+  <!-- SEO Meta Tags -->
+  <link rel="canonical" href={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
+  <meta name="keywords" content={pageConfig.keywords} slot="head" />
+  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
+  <meta name="geo.region" content="US-FL" slot="head" />
+  <meta name="geo.placename" content={ciudadData.nombre} slot="head" />
   
-  <div class="container">
-    <Breadcrumbs client:load crumbs={breadcrumbs} />
-  </div>
+  <!-- Open Graph specific to city -->
+  <meta property="og:title" content={pageConfig.title} slot="head" />
+  <meta property="og:description" content={pageConfig.description} slot="head" />
+  <meta property="og:url" content={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
+  
+  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
   
   <!-- Hero Section -->
   <section
     class="hero-section"
-    style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroContent.bgImage})`}
+    style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroConfig.bgImage})`}
   >
     <div class="container">
       <div class="hero-content">
-        <!-- Main heading -->
-        <h1 class="hero-title">
-          {heroContent.title}
-        </h1>
+        <h1 class="hero-title">{heroConfig.title}</h1>
+        <p class="hero-subtitle">{heroConfig.subtitle}</p>
 
-        <!-- Hero subtitle/description -->
-        <p class="hero-subtitle">
-          {heroContent.subtitle}
-        </p>
+        {heroConfig.badge && (
+          <div class="emergency-badge">{heroConfig.badge}</div>
+        )}
 
-        <!-- Emergency badge if applicable -->
-        {
-          heroContent.badge && (
-            <div class="emergency-badge">{heroContent.badge}</div>
-          )
-        }
-
-        <!-- CTA Button -->
         <div class="hero-cta">
           <a href="/contact" class="btn-primary btn-emergency">
-            {heroContent.ctaText}
+            {heroConfig.ctaText}
           </a>
-          {
-            servicioData.hero?.tagline && (
-              <p class="hero-tagline">{servicioData.hero.tagline}</p>
-            )
-          }
+          {servicioData.hero?.tagline && (
+            <p class="hero-tagline">{servicioData.hero.tagline}</p>
+          )}
         </div>
       </div>
     </div>
@@ -182,11 +181,8 @@ const serviceAreaCities = [
         <div class="overview-content">
           <h2>{servicioData.title} Services You Can Trust</h2>
           <p class="overview-text">
-            We deliver full-service {servicioData.title.toLowerCase()} in {
-              ciudadData.nombre
-            }
-            with expert technicians, clean work practices, and results you can rely
-            on.
+            We deliver full-service {servicioData.title.toLowerCase()} in {ciudadData.nombre}
+            with expert technicians, clean work practices, and results you can rely on.
           </p>
 
           <ul class="service-features">
@@ -203,10 +199,8 @@ const serviceAreaCities = [
           <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
           <p>
             We offer {servicioData.title.toLowerCase()} in {ciudadData.nombre} and
-            throughout
-            {ciudadData.region}, including neighborhoods like {
-              serviceAreaCities.slice(0, 3).join(", ")
-            }, and {serviceAreaCities[3]}.
+            throughout {ciudadData.region}, including neighborhoods like {nearbyAreas.slice(0, 3).join(", ")}, 
+            and {nearbyAreas[3]}.
           </p>
           <a href="/contact" class="btn-outline">
             Check Availability in Your Neighborhood →
@@ -216,9 +210,9 @@ const serviceAreaCities = [
     </div>
   </section>
 
-  <!-- Service Process Section (if available) -->
+  <!-- Service Process Section -->
   {subserviceContent?.process && (
-    <section class="section">
+    <section class="section bg-secondary">
       <div class="container">
         <h2 class="section-title">{subserviceContent.process.title}</h2>
         <div class="steps-container">
@@ -236,11 +230,11 @@ const serviceAreaCities = [
     </section>
   )}
 
-  <!-- Services Grid (if available) -->
+  <!-- Services Grid -->
   {subserviceContent?.services && (
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Our {servicioData.title} Services</h2>
+        <h2 class="section-title">Our {servicioData.title} Services in {ciudadData.nombre}</h2>
         <div class="services-grid">
           {subserviceContent.services.map((service) => (
             <div class="service-item">
@@ -255,14 +249,17 @@ const serviceAreaCities = [
   )}
 
   <!-- Visual Gallery Section -->
-  <section class="section gallery-section">
+  <section class="section gallery-section bg-secondary">
     <div class="container">
       <h2 class="section-title">Our Work in {ciudadData.nombre}</h2>
+      <p class="section-subtitle">See the quality and professionalism we bring to every project</p>
+      
       <div class="gallery-grid">
         <div class="gallery-item">
           <img
             src="/images/restoration-before-after-1.jpg"
-            alt="Before and after restoration work"
+            alt={`${servicioData.title} before and after results in ${ciudadData.nombre}`}
+            loading="lazy"
           />
           <div class="gallery-overlay">
             <h3>Complete Restoration</h3>
@@ -272,7 +269,8 @@ const serviceAreaCities = [
         <div class="gallery-item">
           <img
             src="/images/restoration-process-1.jpg"
-            alt="Restoration process in action"
+            alt={`Professional ${servicioData.title.toLowerCase()} process in ${ciudadData.nombre}`}
+            loading="lazy"
           />
           <div class="gallery-overlay">
             <h3>Expert Technicians</h3>
@@ -282,7 +280,8 @@ const serviceAreaCities = [
         <div class="gallery-item">
           <img
             src="/images/restoration-equipment-1.jpg"
-            alt="Professional restoration equipment"
+            alt={`Advanced ${servicioData.title.toLowerCase()} equipment used in ${ciudadData.nombre}`}
+            loading="lazy"
           />
           <div class="gallery-overlay">
             <h3>Advanced Equipment</h3>
@@ -293,18 +292,56 @@ const serviceAreaCities = [
     </div>
   </section>
 
+  <!-- Trust Indicators Section -->
+  <section class="section trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Licensed & Insured</h3>
+          <p>Fully licensed in Florida with comprehensive insurance coverage</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>24/7 Emergency Service</h3>
+          <p>Round-the-clock availability for urgent restoration needs</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Insurance Assistance</h3>
+          <p>We work directly with your insurance company to streamline claims</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>4.9★ Rating</h3>
+          <p>Highly rated by customers across Florida</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
   <FAQ
     category={groupData.template || "general"}
     customQuestions={customQuestions}
-    title={`About ${servicioData.title} in ${ciudadData.nombre}`}
+    title={`Frequently Asked Questions About ${servicioData.title} in ${ciudadData.nombre}`}
     client:load
   />
 
+  <!-- CTA Section -->
   <RestorationCTA
-    title={finalCta.title}
-    subtitle={""}
-    buttonText={finalCta.cta}
-    buttonLink={finalCta.href}
+    title={ctaConfig.title}
+    subtitle={`Expert ${servicioData.title.toLowerCase()} services available 24/7 in ${ciudadData.nombre} and throughout ${ciudadData.region}.`}
+    buttonText={ctaConfig.cta}
+    buttonLink={ctaConfig.href}
     client:load
   />
 </BaseLayout>

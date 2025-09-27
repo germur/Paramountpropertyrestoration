@@ -12,7 +12,8 @@ const defaultContent = {
     {
       icon: "fas fa-tools",
       title: sub.title,
-      description: `Professional ${sub.title.toLowerCase()} services`
+      description: `Professional ${sub.title.toLowerCase()} services`,
+      link: "/contact"
     }
   ],
   process: [
@@ -67,6 +68,34 @@ const defaultContent = {
         <h3>{service.title}</h3>
       </div>
     ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <div class="container">
+  <h2 class="solutions-title">Comprehensive Restoration Solutions</h2>
+  <div class="solutions-grid">
+    {defaultContent.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src="/images/restoration-default.jpg" alt={`Professional ${service.title.toLowerCase()} services in Florida`} loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <div class="service-description">
+            <p>{service.description}</p>
+            <div class="service-features">
+              <span class="feature-tag">⚡ Fast Response</span>
+              <span class="feature-tag">🛡️ Professional</span>
+              <span class="feature-tag">📞 24/7 Available</span>
+            </div>
+          </div>
+          <a href={service.link || "/contact"} class="btn">Get Help Now →</a>
+        </div>
+      </div>
+    ))}
+  </div>
   </div>
 </section>
 
