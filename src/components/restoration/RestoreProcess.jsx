@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/RestoreProcess.css';
+import '../../styles/components/RestoreProcess.css';
 
 const RestoreProcess = ({ 
   title = "How We Help You",
