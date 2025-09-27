@@ -97,18 +97,20 @@ const finalCta = {
   client:load 
 />
 
-<!-- Warning Signs -->
-<RestoreFeatures 
-  {...featuresConfig}
-  client:load 
-/>
+<!-- Why Choose Us Features -->
+{enrichedContent.features && (
+  <RestoreFeatures 
+    title="Why Choose Us"
+    features={enrichedContent.features}
+    layout="list"
+    client:load 
+  />
+)}
 
 <!-- FAQ Section -->
 <RestoreFAQ 
   {...faqConfig}
   client:load 
-/>
-
 <!-- Final CTA -->
 <RestorationCTA
   title={finalCta.title}
