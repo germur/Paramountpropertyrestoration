@@ -7,14 +7,59 @@
     padding: 60px 0 120px;
 }
 
+/* Header del FAQ con búsqueda */
+.faqHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 /* Título del FAQ */
 .faqTitle {
     font-size: 35px;
     font-weight: 600;
     line-height: 1.2;
-    padding: 40px 10px 30px;
-    text-align: center;
+    margin-bottom: 1.5rem;
     color: #333;
+}
+
+/* Búsqueda de FAQ */
+.faqSearch {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.faqSearchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.faqSearchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.faqSearchInput:focus {
+    outline: none;
+    border-color: #35c3e9;
+    box-shadow: 0 0 0 3px rgba(53, 195, 233, 0.1);
+}
+
+/* No results message */
+.noResults {
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+    font-style: italic;
 }
 
 /* Wrapper del accordion */
@@ -27,6 +72,12 @@
 .accordionItem {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.accordionItem--open {
+    background: rgba(53, 195, 233, 0.02);
+    border-radius: 12px;
 }
 
 .accordionItem:last-child {
@@ -94,7 +145,68 @@
     font-size: 1rem;
     line-height: 1.6;
     padding: 0;
-    white-space: pre-line;
+}
+
+/* Párrafos de respuesta */
+.answerParagraph {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.answerParagraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Contacto de emergencia */
+.emergencyContact {
+    margin-top: 3rem;
+    padding: 0 10px;
+}
+
+.emergencyBanner {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.2);
+}
+
+.emergencyIcon {
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
+.emergencyInfo h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.emergencyInfo p {
+    margin: 0 0 0.5rem 0;
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+.emergencyPhone {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.emergencyPhone:hover {
+    color: #fef2f2;
+    text-decoration: underline;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 /* Grid layout para pantallas grandes */
@@ -115,7 +227,7 @@
 
     .faqTitle {
         font-size: 30px;
-        padding: 30px 10px 20px;
+        margin-bottom: 1rem;
     }
 
     .accordionButton {
@@ -134,12 +246,21 @@
     .accordionIcon {
         font-size: 14px;
     }
+
+    .emergencyBanner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .emergencyIcon {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
     .faqTitle {
         font-size: 26px;
-        padding: 20px 10px 15px;
     }
 
     .accordionButton {
@@ -157,6 +278,10 @@
 
     .accordionItem {
         padding: 8px;
+    }
+
+    .faqSearch {
+        margin: 0 1rem;
     }
 }
 
