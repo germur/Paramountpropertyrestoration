@@ -38,7 +38,7 @@ export const restorationContent = {
         icon: "🔧",
         title: "Leak Repair",
         description: "Industrial dehumidifiers and air movers dry walls, floors, and cavities with moisture monitoring.",
-        ctaText: "Schedule Drying Service",
+        ctaText: "Schedule Drying Service", 
         ctaLink: "/restoration/water-damage/leak-repair"
       },
       {
@@ -62,12 +62,6 @@ export const restorationContent = {
         ctaText: "Request Water Removal",
         ctaLink: "/restoration/water-damage/emergency-water-removal"
       }
-    ],
-    warnings: [
-      { icon: "💧", text: "Any amount of standing water in your property" },
-      { icon: "💨", text: "Smell of mold or mildew indicating hidden moisture" },
-      { icon: "🎨", text: "Water stains on walls, ceilings, or floors" },
-      { icon: "🌊", text: "Buckled floors, warped walls, or sagging ceilings" }
     ],
     features: [
       "24/7 water damage restoration in Florida",
@@ -139,12 +133,6 @@ export const restorationContent = {
         ctaText: "Request Emergency Board-Up",
         ctaLink: "/restoration/fire-damage/emergency-fire-response"
       }
-    ],
-    warnings: [
-      { icon: "💨", text: "Persistent smoke smell throughout the property" },
-      { icon: "⚫", text: "Black residue on walls, furniture, or belongings" },
-      { icon: "🔥", text: "Warped materials, melted items, or discoloration" },
-      { icon: "💧", text: "Secondary water damage from firefighting efforts" }
     ],
     features: [
       "24/7 fire and smoke restoration in Florida",
@@ -293,12 +281,6 @@ export const restorationContent = {
         ctaLink: "/restoration/storm-damage/emergency-storm-repair"
       }
     ],
-    warnings: [
-      { icon: "🏠", text: "Missing shingles, holes, or visible roof damage" },
-      { icon: "🪟", text: "Cracked or shattered windows and glass doors" },
-      { icon: "💧", text: "Water entering through storm-damaged areas" },
-      { icon: "🌪️", text: "Damage from flying debris or fallen trees" }
-    ],
     features: [
       "24/7 storm response teams across Florida",
       "Emergency tarping, board-up, and roof repair",
@@ -368,12 +350,6 @@ export const restorationContent = {
         ctaText: "Request Storm Mitigation",
         ctaLink: "/restoration/mitigation-services/storm-mitigation"
       }
-    ],
-    warnings: [
-      { icon: "🚨", text: "Any new damage that could worsen without intervention" },
-      { icon: "💧", text: "Ongoing water infiltration or moisture problems" },
-      { icon: "⚡", text: "Water near electrical systems or damaged wiring" },
-      { icon: "🏗️", text: "Compromised structural elements requiring stabilization" }
     ],
     features: [
       "Mitigation-first approach to reduce repair costs",
