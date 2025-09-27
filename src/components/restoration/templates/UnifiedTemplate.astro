@@ -10,7 +10,7 @@ import RestoreWarnings from "../RestoreWarnings.jsx";
 import RestoreFeatures from "../RestoreFeatures.jsx";
 import RestoreFAQ from "../RestoreFAQ.jsx";
 import RestorationCTA from "../../RestorationCTA.jsx";
-import { getRestorationContent } from "../../../data/restoration-content.js";
+import { getSubserviceContent } from "../../../data/subservice-content.js";
 
 const { group, sub } = Astro.props;
 
@@ -20,38 +20,64 @@ if (!group || !sub) {
   throw new Error("UnifiedTemplate requires both group and sub props");
 }
 
-// Obtener contenido específico del servicio
-const serviceContent = getRestorationContent(group.slug);
+// Obtener contenido específico del subservicio
+const serviceContent = getSubserviceContent(sub.slug);
+
+// Si no hay contenido específico, usar contenido por defecto
+if (!serviceContent) {
+  console.warn(`No specific content found for subservice: ${sub.slug}`);
+  // Usar contenido básico del sub
+  const defaultContent = {
+    hero: sub.hero || {
+      title: sub.title || "Restoration Services",
+      description: sub.short || "Professional restoration services in Florida",
+      cta: "Get Help Now",
+      badges: []
+    },
+    process: sub.process || {
+      title: "How We Help",
+      steps: []
+    },
+    services: sub.services || [],
+    features: sub.features || [],
+    faqs: sub.faqs || []
+  };
+  
+  // Usar el contenido por defecto
+  var finalServiceContent = defaultContent;
+} else {
+  var finalServiceContent = serviceContent;
+}
 
 // Configuración del hero usando contenido específico
 const heroConfig = {
-  title: serviceContent.hero.title,
-  description: serviceContent.hero.description,
-  ctaText: serviceContent.hero.cta,
+  title: finalServiceContent.hero.title,
+  description: finalServiceContent.hero.description,
+  ctaText: finalServiceContent.hero.cta,
   ctaLink: "/contact",
   backgroundImage: `/images/hero${group.template || 'water'}.jpg`,
-  badges: serviceContent.hero.badges,
+  badges: finalServiceContent.hero.badges,
   showEmergencyBadge: (group.template || 'water') !== 'mitigation'
 };
 
 // Configuración del proceso usando contenido específico
 const processConfig = {
-  title: serviceContent.process.title,
-  steps: serviceContent.process.steps,
+  title: finalServiceContent.process.title,
+  steps: finalServiceContent.process.steps,
   timeline: "Most inspections completed within 24-48 hours"
 };
 
 // Configuración de servicios usando contenido específico
 const servicesConfig = {
   title: "What's Included",
-  services: serviceContent.services,
+  services: finalServiceContent.services,
   layout: "cards"
 };
 
 // Configuración de advertencias usando contenido específico
 const warningsConfig = {
   title: "Warning Signs You Need Help",
-  warnings: serviceContent.warnings,
+  warnings: finalServiceContent.warnings || [],
   variant: "warning",
   urgencyMessage: "Don't wait - damage spreads quickly and costs increase over time"
 };
@@ -59,14 +85,14 @@ const warningsConfig = {
 // Configuración de características usando contenido específico
 const featuresConfig = {
   title: "Why Choose Us",
-  features: serviceContent.features,
+  features: finalServiceContent.features,
   layout: "list"
 };
 
 // Configuración de FAQ usando contenido específico
 const faqConfig = {
   title: `${sub.title || 'Restoration'} FAQs`,
-  faqs: serviceContent.faqs,
+  faqs: finalServiceContent.faqs,
   maxVisible: 6
 };
 
