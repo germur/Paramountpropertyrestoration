@@ -89,7 +89,7 @@ const getMitigationContent = (subSlug) => {
     }
   };
 
-  return stormContent[subSlug] || stormContent["hurricane-damage"];
+  return mitigationContent[subSlug] || mitigationContent["water-mitigation"];
 };
 
 const content = getMitigationContent(sub.slug);
