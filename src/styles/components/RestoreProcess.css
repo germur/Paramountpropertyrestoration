@@ -1,0 +1,138 @@
+/* RestoreProcess Component Styles */
+.restore-process {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.restore-process__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.restore-process__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 3rem;
+}
+
+.restore-process__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.restore-process__step {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.restore-process__step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.12);
+}
+
+.restore-process__number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #35c3e9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.restore-process__icon {
+  width: 80px;
+  height: 80px;
+  background: #f8fafc;
+  border: 3px solid #35c3e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto 1rem;
+}
+
+.restore-process__icon i {
+  font-size: 2rem;
+  color: #35c3e9;
+}
+
+.restore-process__step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.restore-process__step-text {
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.restore-process__footer {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
+}
+
+.restore-process__timeline {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.restore-process__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1e293b;
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.restore-process__cta:hover {
+  background: #35c3e9;
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .restore-process {
+    padding: 3rem 0;
+  }
+  
+  .restore-process__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .restore-process__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

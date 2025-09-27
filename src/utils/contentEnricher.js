@@ -18,21 +18,6 @@ export function enrichSubserviceContent(subData, groupData) {
     enrichedContent.whyEssential = generateWhyEssential(subData, groupData);
   }
   
-  // ===== HIGHLIGHTS =====
-  if (!enrichedContent.highlights) {
-    enrichedContent.highlights = generateHighlights(subData, groupData);
-  }
-  
-  // ===== RISKS =====
-  if (!enrichedContent.risks) {
-    enrichedContent.risks = generateRisks(subData, groupData);
-  }
-  
-  // ===== MICRO BENEFITS =====
-  if (!enrichedContent.microBenefits) {
-    enrichedContent.microBenefits = generateMicroBenefits(subData, groupData);
-  }
-  
   // ===== FLORIDA SCENARIOS =====
   if (!enrichedContent.floridaScenarios) {
     enrichedContent.floridaScenarios = generateFloridaScenarios(subData, groupData);
@@ -43,7 +28,7 @@ export function enrichSubserviceContent(subData, groupData) {
     enrichedContent.whyChooseUs = generateWhyChooseUs(subData, groupData);
   }
   
-  // ===== EMERGENCY SIGNS - Corregido para el componente real =====
+  // ===== EMERGENCY SIGNS =====
   if (!enrichedContent.emergencySigns) {
     enrichedContent.emergencySigns = generateEmergencySigns(subData, groupData);
   }
@@ -51,31 +36,6 @@ export function enrichSubserviceContent(subData, groupData) {
   // ===== EMERGENCY INCLUDES =====
   if (!enrichedContent.emergencyIncludes) {
     enrichedContent.emergencyIncludes = generateEmergencyIncludes(subData, groupData);
-  }
-  
-  // ===== WATER SIGNS =====
-  if (!enrichedContent.waterSigns && groupData.template === 'water') {
-    enrichedContent.waterSigns = generateWaterSigns(subData, groupData);
-  }
-  
-  // ===== STORM DAMAGES =====
-  if (!enrichedContent.stormDamages && groupData.template === 'storm') {
-    enrichedContent.stormDamages = generateStormDamages(subData, groupData);
-  }
-  
-  // ===== SERVICE CARDS =====
-  if (!enrichedContent.serviceCards) {
-    enrichedContent.serviceCards = generateServiceCards(subData, groupData);
-  }
-  
-  // ===== WHY ACTING FAST =====
-  if (!enrichedContent.whyActingFast) {
-    enrichedContent.whyActingFast = generateWhyActingFast(subData, groupData);
-  }
-  
-  // ===== WHAT NOT TO DO =====
-  if (!enrichedContent.whatNotToDo) {
-    enrichedContent.whatNotToDo = generateWhatNotToDo(subData, groupData);
   }
   
   // ===== FAQ =====
@@ -277,7 +237,6 @@ function generateProcess(subData, groupData) {
   return processTemplates[groupData.template] || processTemplates.water;
 }
 
-// WhyEssential.jsx espera: { title, steps: [] }
 function generateWhyEssential(subData, groupData) {
   const templates = {
     water: {
@@ -325,137 +284,6 @@ function generateWhyEssential(subData, groupData) {
   return templates[groupData.template] || templates.water;
 }
 
-function generateHighlights(subData, groupData) {
-  const baseHighlights = [
-    "Licensed & insured professionals",
-    "24/7 emergency response available",
-    "Advanced equipment & techniques",
-    "Direct insurance billing",
-    "Florida-certified technicians",
-    "Comprehensive damage assessment",
-    "Free initial consultation",
-    "Guaranteed workmanship"
-  ];
-  
-  const serviceSpecific = {
-    water: [
-      "Industrial-grade water extraction",
-      "Moisture detection technology",
-      "Mold prevention protocols"
-    ],
-    fire: [
-      "Smoke odor elimination",
-      "Soot removal specialists",
-      "Contents cleaning & restoration"
-    ],
-    mold: [
-      "EPA-approved testing methods",
-      "Detailed laboratory analysis",
-      "Health-focused approach"
-    ],
-    storm: [
-      "Emergency roof tarping",
-      "Storm damage specialists",
-      "Complete reconstruction services"
-    ],
-    mitigation: [
-      "Rapid damage containment",
-      "Prevention-focused approach",
-      "Cost-effective solutions"
-    ]
-  };
-  
-  return [
-    ...baseHighlights.slice(0, 5),
-    ...(serviceSpecific[groupData.template] || []),
-    ...baseHighlights.slice(5)
-  ];
-}
-
-function generateRisks(subData, groupData) {
-  const riskTemplates = {
-    water: [
-      "Mold growth within 24-48 hours",
-      "Structural damage to floors, walls, and foundation",
-      "Electrical hazards from water infiltration",
-      "Contamination from sewage or flood water",
-      "Permanent staining and odors",
-      "Insurance claim complications"
-    ],
-    fire: [
-      "Smoke odor becoming permanent",
-      "Soot damage spreading to unaffected areas",
-      "Corrosion of metals and electronics",
-      "Health risks from toxic residues",
-      "Secondary water damage from firefighting",
-      "Loss of valuable contents"
-    ],
-    mold: [
-      "Respiratory health problems",
-      "Allergic reactions and sensitivities",
-      "Structural damage from prolonged growth",
-      "Spread to HVAC system contaminating entire property",
-      "Decreased property value",
-      "Legal liability for tenant health issues"
-    ],
-    storm: [
-      "Water infiltration leading to mold",
-      "Further structural damage from weather exposure",
-      "Security risks from damaged openings",
-      "Utility disruptions and safety hazards",
-      "Complete loss if not secured quickly",
-      "Insurance claim time limits"
-    ],
-    mitigation: [
-      "Minor damage becoming major repairs",
-      "Exponential cost increases over time",
-      "Health hazards from prolonged exposure",
-      "Property value depreciation",
-      "Insurance coverage complications",
-      "Business or living disruption extending indefinitely"
-    ]
-  };
-  
-  return riskTemplates[groupData.template] || riskTemplates.water;
-}
-
-// MicroBenefits.jsx espera: [{ icon, title, description }]
-function generateMicroBenefits(subData, groupData) {
-  return [
-    {
-      icon: "🔍",
-      title: "Thorough Assessment",
-      description: "Complete evaluation of all affected areas"
-    },
-    {
-      icon: "📋",
-      title: "Detailed Documentation",
-      description: "Photos, measurements, and reports for insurance"
-    },
-    {
-      icon: "🛡️",
-      title: "Prevention Plan",
-      description: "Strategies to prevent future occurrences"
-    },
-    {
-      icon: "💰",
-      title: "Cost Transparency",
-      description: "Clear pricing with no hidden fees"
-    },
-    {
-      icon: "⚡",
-      title: "Fast Response",
-      description: "Quick action to minimize damage"
-    },
-    {
-      icon: "🤝",
-      title: "Insurance Help",
-      description: "We work directly with your insurance company"
-    }
-  ];
-}
-
-// FloridaScenarios.jsx espera: [] (array simple de strings)
 function generateFloridaScenarios(subData, groupData) {
   return [
     `${subData.title} issues spike during Florida's hurricane season from June through November`,
@@ -478,7 +306,6 @@ function generateWhyChooseUs(subData, groupData) {
   ];
 }
 
-// EmergencySigns.jsx espera: { title, items: [{ icon, text }] }
 function generateEmergencySigns(subData, groupData) {
   const signTemplates = {
     water: {
@@ -531,7 +358,6 @@ function generateEmergencySigns(subData, groupData) {
   return signTemplates[groupData.template] || signTemplates.water;
 }
 
-// EmergencyIncludes.jsx espera: { title, items: [{ title, text }] }
 function generateEmergencyIncludes(subData, groupData) {
   return {
     title: "Emergency Response Includes",
@@ -554,110 +380,6 @@ function generateEmergencyIncludes(subData, groupData) {
       }
     ]
   };
-}
-
-// WaterSigns.jsx espera: { title, items: [{ icon, text }] }
-function generateWaterSigns(subData, groupData) {
-  return {
-    title: "Signs You Need Water Damage Help",
-    items: [
-      { icon: "💧", text: "Standing water anywhere in your property" },
-      { icon: "💨", text: "Musty odors indicating hidden moisture" },
-      { icon: "🎨", text: "Discoloration or staining on walls and ceilings" },
-      { icon: "🌊", text: "Warping, buckling, or soft spots in flooring" }
-    ]
-  };
-}
-
-// StormDamages.jsx espera: { title, items: [{ icon, text }] }
-function generateStormDamages(subData, groupData) {
-  return {
-    title: "Common Storm Damage Types",
-    items: [
-      { icon: "🏠", text: "Roof damage from wind and flying debris" },
-      { icon: "🪟", text: "Broken windows and compromised openings" },
-      { icon: "🌊", text: "Flooding from storm surge and heavy rains" },
-      { icon: "⚡", text: "Electrical damage from power surges and outages" }
-    ]
-  };
-}
-
-// ServiceCards.jsx espera: { title, items: [{ icon, title, text, cta: { text, href } }] }
-function generateServiceCards(subData, groupData) {
-  return {
-    title: "Our Services",
-    items: [
-      {
-        icon: "🔍",
-        title: "Professional Assessment",
-        text: "Detailed evaluation by certified experts",
-        cta: { text: "Learn More", href: "/services" }
-      },
-      {
-        icon: "⚡",
-        title: "Emergency Response",
-        text: "24/7 rapid response across Florida",
-        cta: { text: "Call Now", href: "/contact" }
-      },
-      {
-        icon: "🛡️",
-        title: "Insurance Assistance",
-        text: "Complete claims documentation and support",
-        cta: { text: "Get Help", href: "/contact" }
-      }
-    ]
-  };
-}
-
-// WhyActingFast.jsx espera: { title, points: [] }
-function generateWhyActingFast(subData, groupData) {
-  return {
-    title: "Why Acting Fast Matters",
-    points: [
-      "Damage spreads rapidly without immediate professional intervention",
-      "Insurance companies expect prompt action to mitigate losses",
-      "Early response saves thousands in additional repair costs",
-      "Health risks increase the longer problems go untreated"
-    ]
-  };
-}
-
-// WhatNotToDo.jsx espera: [] (array simple de strings)
-function generateWhatNotToDo(subData, groupData) {
-  const templates = {
-    water: [
-      "Don't wait - water damage spreads quickly",
-      "Don't use regular fans for drying - you need industrial equipment",
-      "Don't try to remove large amounts of water yourself",
-      "Don't ignore hidden moisture behind walls"
-    ],
-    fire: [
-      "Don't attempt to clean soot yourself - it can spread",
-      "Don't use household cleaners on smoke damage",
-      "Don't ignore smoke odors - they indicate deeper contamination",
-      "Don't re-enter damaged areas without professional clearance"
-    ],
-    mold: [
-      "Don't ignore visible mold growth - it will spread",
-      "Don't attempt DIY mold removal on large areas",
-      "Don't use bleach on mold - it's ineffective on porous surfaces",
-      "Don't disturb mold colonies - it can release dangerous spores"
-    ],
-    storm: [
-      "Don't delay emergency securing - more damage will occur",
-      "Don't ignore small leaks - they become big problems",
-      "Don't attempt major repairs yourself during storms",
-      "Don't delay insurance claims reporting"
-    ],
-    mitigation: [
-      "Don't wait to see if damage gets worse",
-      "Don't attempt complex mitigation without proper equipment",
-      "Don't ignore safety hazards while trying to minimize damage",
-      "Don't skip professional assessment to save money initially"
-    ]
-  };
-  
-  return templates[groupData.template] || templates.water;
 }
 
 function generateFAQs(subData, groupData) {

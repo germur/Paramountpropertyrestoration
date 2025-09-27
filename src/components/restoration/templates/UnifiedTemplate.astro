@@ -1,0 +1,158 @@
+---
+/**
+ * Template unificado para todos los servicios de restoration
+ * Reemplaza todos los templates específicos con un sistema modular
+ */
+import RestoreHero from "../RestoreHero.jsx";
+import RestoreProcess from "../RestoreProcess.jsx";
+import RestoreServices from "../RestoreServices.jsx";
+import RestoreWarnings from "../RestoreWarnings.jsx";
+import RestoreFeatures from "../RestoreFeatures.jsx";
+import RestoreFAQ from "../RestoreFAQ.jsx";
+import RestorationCTA from "../../RestorationCTA.jsx";
+
+const { group, sub } = Astro.props;
+
+// Importar y ejecutar el enricher
+let enrichedSub = sub;
+try {
+  const { enrichSubserviceContent } = await import("../../../utils/contentEnricher.js");
+  enrichedSub = enrichSubserviceContent(sub, group);
+} catch (error) {
+  console.error("Error with content enricher:", error);
+  enrichedSub = sub;
+}
+
+// Configuración del hero
+const heroConfig = {
+  title: enrichedSub.hero?.title || `${sub.title} Services in Florida`,
+  description: enrichedSub.hero?.description || sub.short || `Professional ${sub.title.toLowerCase()} services in Florida.`,
+  ctaText: enrichedSub.hero?.cta || "Get Help Now",
+  ctaLink: "/contact",
+  backgroundImage: `/images/hero${group.template}.jpg`,
+  badges: enrichedSub.hero?.iconRow || [
+    { icon: "🚨", text: "24/7 Response" },
+    { icon: "🛡️", text: "Licensed & Insured" },
+    { icon: "⭐", text: "10+ Years Florida" }
+  ],
+  showEmergencyBadge: group.template !== 'mitigation'
+};
+
+// Configuración del proceso
+const processConfig = {
+  title: "How We Help You",
+  steps: enrichedSub.process?.steps || [
+    { title: "Assessment", text: "Complete evaluation of damage", icon: "fas fa-search" },
+    { title: "Action", text: "Immediate response to prevent further damage", icon: "fas fa-bolt" },
+    { title: "Restoration", text: "Professional repair and cleanup", icon: "fas fa-tools" },
+    { title: "Prevention", text: "Protect against future issues", icon: "fas fa-shield-alt" }
+  ],
+  timeline: "Most inspections completed within 24-48 hours"
+};
+
+// Configuración de servicios
+const servicesConfig = {
+  title: "What's Included",
+  services: enrichedSub.emergencyIncludes?.items?.map(item => ({
+    icon: "⚡",
+    title: item.title,
+    description: item.text,
+    ctaText: "Learn More",
+    ctaLink: "/contact"
+  })) || [],
+  layout: "cards"
+};
+
+// Configuración de advertencias
+const warningsConfig = {
+  title: "Warning Signs You Need Help",
+  warnings: enrichedSub.emergencySigns?.items || [
+    { icon: "⚠️", text: "Visible damage or contamination" },
+    { icon: "🏠", text: "Structural concerns or safety risks" },
+    { icon: "💧", text: "Moisture or water intrusion" },
+    { icon: "🤧", text: "Health symptoms or air quality issues" }
+  ],
+  variant: "warning",
+  urgencyMessage: "Don't wait - damage spreads quickly and costs increase over time"
+};
+
+// Configuración de características
+const featuresConfig = {
+  title: "Why Choose Us",
+  features: enrichedSub.whyChooseUs || [
+    "24/7 emergency response across Florida",
+    "Licensed and certified technicians",
+    "Advanced equipment and techniques",
+    "Direct insurance billing available",
+    "Comprehensive warranty on all work",
+    "Local Florida expertise and knowledge"
+  ],
+  layout: "list"
+};
+
+// Configuración de FAQ
+const faqConfig = {
+  title: `${sub.title} FAQs`,
+  faqs: enrichedSub.faqs || [
+    { q: "How quickly can you respond?", a: "We provide 24/7 emergency response and typically arrive within 60-90 minutes." },
+    { q: "Do you work with insurance?", a: "Yes, we work directly with all major insurance companies and can help with your claim." },
+    { q: "Are you licensed and insured?", a: "Yes, we are fully licensed, certified, and insured for your protection." }
+  ],
+  maxVisible: 6
+};
+
+// CTA final
+const finalCta = {
+  title: "Need Help Now?",
+  subtitle: "Our certified technicians are ready to respond 24/7 to protect your Florida property.",
+  buttonText: "Get Help Now",
+  buttonLink: "/contact"
+};
+---
+
+<!-- Hero Section -->
+<RestoreHero 
+  {...heroConfig}
+  client:load 
+/>
+
+<!-- Process Overview -->
+<RestoreProcess 
+  {...processConfig}
+  client:load 
+/>
+
+<!-- Services/What's Included -->
+{servicesConfig.services.length > 0 && (
+  <RestoreServices 
+    {...servicesConfig}
+    client:load 
+  />
+)}
+
+<!-- Warning Signs -->
+<RestoreWarnings 
+  {...warningsConfig}
+  client:load 
+/>
+
+<!-- Why Choose Us -->
+<RestoreFeatures 
+  {...featuresConfig}
+  client:load 
+/>
+
+<!-- FAQ Section -->
+<RestoreFAQ 
+  {...faqConfig}
+  client:load 
+/>
+
+<!-- Final CTA -->
+<RestorationCTA
+  title={finalCta.title}
+  subtitle={finalCta.subtitle}
+  buttonText={finalCta.buttonText}
+  buttonLink={finalCta.buttonLink}
+  client:load
+/>
