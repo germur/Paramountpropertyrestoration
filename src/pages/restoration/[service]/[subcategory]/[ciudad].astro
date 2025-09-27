@@ -1,6 +1,7 @@
 ---
 // src/pages/restoration/[service]/[subcategory]/[ciudad].astro
 import { getAllRestorationCombinations } from "../../../../data/restoration.js";
+import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import "../../../../styles/pages/[ciudad].css";
 import "../../../../styles/pages/restoration-city.css";
@@ -36,23 +37,27 @@ export async function getStaticPaths() {
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
 
+// Obtener contenido específico del subservicio
+const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
+
 // Generate dynamic content for SEO
-const pageTitle = `${servicioData.title} in ${ciudadData.nombre} | 1GC Construction`;
+const pageTitle = `${servicioData.title} in ${ciudadData.nombre} | Paramount Property Restoration`;
 const pageDescription =
   servicioData.seo?.description ||
   `Professional ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 emergency response and certified restoration specialists.`;
 
-// Hero content from service data
+// Hero content from subservice-specific data or fallback
 const heroContent = {
-  title: `${servicioData.title} in ${ciudadData.nombre}`,
-  subtitle: `Fast, affordable, and code-compliant restoration services in ${ciudadData.nombre}, ${ciudadData.region}.`,
-  ctaText: `Get a Free Quote in ${ciudadData.nombre}`,
+  title: subserviceContent?.hero?.title || `${servicioData.title} in ${ciudadData.nombre}`,
+  subtitle: subserviceContent?.hero?.description || `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
+  ctaText: `Get Free Quote in ${ciudadData.nombre}`,
   bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
   iconRow: servicioData.hero?.iconRow || [],
+  badge: subserviceContent?.hero?.badge || null
 };
 
-// Convert {q, a} (from data) or {question, answer} (fallback) to FAQ format
-const rawFaqs = servicioData?.faqs ?? [];
+// Use subservice-specific FAQs if available
+const rawFaqs = subserviceContent?.faqs || servicioData?.faqs || [];
 const customQuestions = rawFaqs.map((faq, index) => ({
   id: `custom-${index}`,
   question: faq.q ?? faq.question ?? "",
@@ -64,6 +69,15 @@ const finalCta = {
   cta: `Request Your Free Estimate`,
   href: servicioData.cta?.href ?? "/contact",
 };
+
+// Service features from subservice content
+const serviceFeatures = subserviceContent?.features || [
+  "24/7 emergency response team",
+  "Advanced equipment & techniques", 
+  "Insurance claim assistance",
+  "Licensed & certified technicians"
+];
+
 // Nearby service areas for copy
 const serviceAreaCities = [
   "Weston",
@@ -95,8 +109,8 @@ const serviceAreaCities = [
 
         <!-- Emergency badge if applicable -->
         {
-          servicioData.hero?.badge && (
-            <div class="emergency-badge">{servicioData.hero.badge}</div>
+          heroContent.badge && (
+            <div class="emergency-badge">{heroContent.badge}</div>
           )
         }
 
@@ -130,22 +144,12 @@ const serviceAreaCities = [
           </p>
 
           <ul class="service-features">
-            <li>
-              <span class="feature-icon">✓</span>
-              On-site inspection & custom restoration plan
-            </li>
-            <li>
-              <span class="feature-icon">✓</span>
-              Code-compliant materials & installation
-            </li>
-            <li>
-              <span class="feature-icon">✓</span>
-              Fast timelines and real-time updates
-            </li>
-            <li>
-              <span class="feature-icon">✓</span>
-              Satisfaction guarantee on every job
-            </li>
+            {serviceFeatures.map((feature) => (
+              <li>
+                <span class="feature-icon">✓</span>
+                {feature}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -161,6 +165,83 @@ const serviceAreaCities = [
           <a href="/contact" class="btn-outline">
             Check Availability in Your Neighborhood →
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process Section (if available) -->
+  {subserviceContent?.process && (
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">{subserviceContent.process.title}</h2>
+        <div class="steps-container">
+          {subserviceContent.process.steps.map((step, index) => (
+            <div class="step-item" data-step={index + 1}>
+              <div class="step-icon">
+                <i class={step.icon}></i>
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Services Grid (if available) -->
+  {subserviceContent?.services && (
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our {servicioData.title} Services</h2>
+        <div class="services-grid">
+          {subserviceContent.services.map((service) => (
+            <div class="service-item">
+              <i class={service.icon}></i>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Visual Gallery Section -->
+  <section class="section gallery-section">
+    <div class="container">
+      <h2 class="section-title">Our Work in {ciudadData.nombre}</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            src="/images/restoration-before-after-1.jpg"
+            alt="Before and after restoration work"
+          />
+          <div class="gallery-overlay">
+            <h3>Complete Restoration</h3>
+            <p>Professional results you can see</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="/images/restoration-process-1.jpg"
+            alt="Restoration process in action"
+          />
+          <div class="gallery-overlay">
+            <h3>Expert Technicians</h3>
+            <p>Skilled professionals at work</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="/images/restoration-equipment-1.jpg"
+            alt="Professional restoration equipment"
+          />
+          <div class="gallery-overlay">
+            <h3>Advanced Equipment</h3>
+            <p>State-of-the-art tools and technology</p>
+          </div>
         </div>
       </div>
     </div>
