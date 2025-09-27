@@ -1,5 +1,167 @@
 ---
-import UnifiedTemplate from "./UnifiedTemplate.astro";
-const props = Astro.props;
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
+
+const { group, sub } = Astro.props;
+
+// Contenido específico para mitigation services basado en el subservicio
+const getMitigationContent = (subSlug) => {
+  const mitigationContent = {
+    "water-mitigation": {
+      hero: {
+        title: "Water Damage Mitigation Services in Florida",
+        description: "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
+        cta: "Start Water Mitigation Now"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Emergency Inspection & Moisture Mapping", description: "Detect visible + hidden water." },
+        { icon: "fas fa-tint", title: "Rapid Water Extraction", description: "Pumps & wet vacs remove standing water fast." },
+        { icon: "fas fa-wind", title: "Industrial Drying & Dehumidification", description: "Stabilize humidity with pro gear." },
+        { icon: "fas fa-spray-can", title: "Antimicrobial Treatment", description: "Stop mold & bacteria before they spread." }
+      ],
+      steps: [
+        { title: "Emergency Inspection & Moisture Mapping", text: "Detect visible + hidden water", icon: "fas fa-search" },
+        { title: "Rapid Water Extraction", text: "Pumps & wet vacs remove standing water fast", icon: "fas fa-tint" },
+        { title: "Industrial Drying & Dehumidification", text: "Stabilize humidity with pro gear", icon: "fas fa-wind" },
+        { title: "Antimicrobial Treatment", text: "Stop mold & bacteria before they spread", icon: "fas fa-spray-can" },
+        { title: "Ongoing Monitoring", text: "Daily checks until property is fully dry", icon: "fas fa-chart-line" }
+      ]
+    },
+    "fire-mitigation": {
+      hero: {
+        title: "Fire Damage Mitigation Services in Florida",
+        description: "After a fire, the damage doesn't end when the flames are out. Smoke, soot, and structural instability keep spreading harm. Fire damage mitigation focuses on securing, containing, and stabilizing your property to prevent further loss—while restoration repairs and rebuilds later.",
+        cta: "Secure My Property Now"
+      },
+      services: [
+        { icon: "fas fa-window-maximize", title: "Emergency Board-Up & Tarping", description: "Seal windows, doors & roofs against further water." },
+        { icon: "fas fa-wind", title: "Smoke & Soot Containment", description: "Isolate affected areas to stop spread." },
+        { icon: "fas fa-air-freshener", title: "Ventilation & Air Scrubbing", description: "HEPA filters + negative air machines." },
+        { icon: "fas fa-box", title: "Protection of Belongings", description: "Salvage & store safe items." }
+      ],
+      steps: [
+        { title: "Emergency Board-Up & Tarping", text: "Secure windows, doors, roofs", icon: "fas fa-hammer" },
+        { title: "Smoke & Soot Containment", text: "Isolate affected areas to stop spread", icon: "fas fa-shield-alt" },
+        { title: "Ventilation & Air Scrubbing", text: "HEPA filters + negative air machines", icon: "fas fa-wind" },
+        { title: "Protection of Belongings", text: "Salvage & store safe items", icon: "fas fa-box" },
+        { title: "Moisture Control from Firefighting", text: "Drying to prevent mold", icon: "fas fa-tint" }
+      ]
+    },
+    "mold-mitigation": {
+      hero: {
+        title: "Mold Mitigation Services in Florida",
+        description: "Mold mitigation is about prevention and containment—stopping mold from spreading, controlling humidity, and protecting your property until full remediation can safely remove it. Unlike remediation, which eliminates colonies, mitigation is the first line of defense against contamination and health risks.",
+        cta: "Stop Mold Spread Today"
+      },
+      services: [
+        { icon: "fas fa-search", title: "Inspection & Moisture Assessment", description: "Detect leaks, water damage & humidity." },
+        { icon: "fas fa-shield-alt", title: "Containment of Affected Areas", description: "Plastic barriers + negative air pressure." },
+        { icon: "fas fa-wind", title: "HEPA Air Filtration", description: "Capture airborne spores with high-efficiency systems." },
+        { icon: "fas fa-spray-can", title: "Antimicrobial & Preventive Treatment", description: "Apply eco-safe treatments to surfaces." }
+      ],
+      steps: [
+        { title: "Inspection & Moisture Assessment", text: "Detect leaks, water damage & humidity", icon: "fas fa-search" },
+        { title: "Containment of Affected Areas", text: "Plastic barriers + negative air pressure", icon: "fas fa-shield-alt" },
+        { title: "HEPA Air Filtration", text: "Capture airborne spores with high-efficiency systems", icon: "fas fa-wind" },
+        { title: "Antimicrobial & Preventive Treatment", text: "Apply eco-safe treatments to surfaces", icon: "fas fa-spray-can" },
+        { title: "Moisture Control & Monitoring", text: "Industrial dehumidifiers + continuous checks", icon: "fas fa-tint" }
+      ]
+    },
+    "storm-mitigation": {
+      hero: {
+        title: "Storm Damage Mitigation Services in Florida",
+        description: "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact.",
+        cta: "Request Storm Mitigation Now"
+      },
+      services: [
+        { icon: "fas fa-window-maximize", title: "Emergency Board-Up & Roof Tarping", description: "Seal windows, doors & roofs against further water." },
+        { icon: "fas fa-tree", title: "Debris & Tree Removal", description: "Clear dangerous debris, fallen trees, and damaged structures." },
+        { icon: "fas fa-tint", title: "Water Intrusion Control", description: "Extract standing water, dry interiors, apply antimicrobials." },
+        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Shore up walls, ceilings, and framing until restoration starts." }
+      ],
+      steps: [
+        { title: "Emergency Board-Up & Roof Tarping", text: "Seal windows, doors & roofs against further water", icon: "fas fa-window-maximize" },
+        { title: "Debris & Tree Removal", text: "Clear dangerous debris, fallen trees, and damaged structures", icon: "fas fa-tree" },
+        { title: "Water Intrusion Control", text: "Extract standing water, dry interiors, apply antimicrobials", icon: "fas fa-tint" },
+        { title: "Structural Stabilization", text: "Shore up walls, ceilings, and framing until restoration starts", icon: "fas fa-tools" }
+      ]
+    }
+  };
+
+  return stormContent[subSlug] || stormContent["hurricane-damage"];
+};
+
+const content = getStormContent(sub.slug);
 ---
-<UnifiedTemplate {...props} />
+
+<!-- Hero Section -->
+<section class="hero-sectionKitchen">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{content.hero.title}</h1>
+    <p>{content.hero.description}</p>
+    <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+  <div class="services-grid">
+    {content.services.map((service) => (
+      <div class="service-item">
+        <i class={service.icon}></i>
+        <h3>{service.title}</h3>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
+  <div class="solutions-grid">
+    {content.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src={`/images/${service.title.replace(/[^a-zA-Z]/g, '')}.jpg`} alt={service.title} />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <a href="/contact" class="card-cta">Get Help Now</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+  <h2 class="steps-title">How It Works</h2>
+  <div class="steps-container">
+    {content.steps.map((step, index) => (
+      <div class="step-item" data-step={index + 1}>
+        <div class="step-icon">
+          <i class={step.icon}></i>
+        </div>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <FAQ client:load category="storm" title="FAQs" />
+</section>
+
+<!-- Final CTA -->
+<RestorationCTA
+  client:load
+  title="Don't leave your home exposed after a storm."
+  subtitle="Call now for 24/7 storm mitigation services in Florida."
+  buttonText="Repair Storm Damage Today"
+  buttonLink="/contact"
+/>
