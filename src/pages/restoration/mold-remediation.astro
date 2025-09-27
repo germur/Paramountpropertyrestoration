@@ -1,201 +1,78 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import UnifiedTemplate from "../../components/restoration/templates/UnifiedTemplate.astro";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import FAQ from "../../components/AcordeonServices";
-import RestorationCTA from "../../components/RestorationCTA";
-import WhyChooseUs from "../../components/WhyChooseUs";
-import ServiceHighlights from "../../components/ServiceHighlights";
+
+// Configuración del grupo mold
+const group = {
+  template: 'mold',
+  title: 'Mold Services',
+  slug: 'mold-remediation'
+};
+
+// Configuración del subservicio con contenido específico
+const sub = {
+  title: 'Mold Remediation',
+  short: 'Professional mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention.',
+  hero: {
+    title: 'Mold Remediation & Removal Services in Florida',
+    description: 'Our Florida teams provide 24/7 mold remediation to protect your home, office, and health. From black mold testing to full remediation and prevention, we deliver safe, lasting results.',
+    cta: 'Remove Mold Fast',
+    iconRow: [
+      { icon: '🔬', text: 'Certified Inspectors' },
+      { icon: '🏥', text: 'Health-Safe Methods' },
+      { icon: '📋', text: 'Detailed Reports' }
+    ]
+  },
+  process: {
+    title: 'How We Help You',
+    steps: [
+      { title: 'Inspect & Test', text: 'Assessment, moisture mapping & air/surface sampling', icon: 'fas fa-search' },
+      { title: 'Contain & Filter', text: 'Isolation barriers & HEPA air filtration', icon: 'fas fa-wind' },
+      { title: 'Remove & Clean', text: 'Material removal, HEPA vacuuming & antimicrobial treatment', icon: 'fas fa-broom' },
+      { title: 'Verify & Prevent', text: 'Clearance testing & long-term moisture control plan', icon: 'fas fa-shield-alt' }
+    ]
+  },
+  emergencyIncludes: {
+    title: "What's Included",
+    items: [
+      { title: 'Mold Inspection', text: 'Visual assessment, moisture mapping, and infrared scanning to locate hidden mold and sources of humidity.' },
+      { title: 'Black Mold Removal', text: 'Safe containment, HEPA filtration, and PPE protocols to remove toxic mold and protect occupants.' },
+      { title: 'Mold Prevention', text: 'Source correction, material removal, HEPA vacuuming, and antimicrobial cleaning per IICRC best practices.' },
+      { title: 'Mold Testing', text: 'Dehumidification, ventilation upgrades, and moisture control plans to stop mold from returning.' }
+    ]
+  },
+  emergencySigns: {
+    title: 'Mold Inspection Warning Signs',
+    items: [
+      { icon: '👁️', text: 'Any visible mold growth, regardless of size' },
+      { icon: '🤧', text: 'Respiratory issues, allergies, or unexplained illness' },
+      { icon: '💦', text: 'Previous water damage, leaks, or flooding' },
+      { icon: '👃', text: 'Persistent moldy or earthy odors' }
+    ]
+  },
+  whyChooseUs: [
+    'Safe mold removal for homes & businesses',
+    'Black mold experts with advanced equipment',
+    'Focus on health & indoor air quality',
+    'Moisture control to prevent regrowth',
+    'Local Florida response—fast and reliable'
+  ],
+  faqs: [
+    { q: 'How do I know if I have mold in my Florida home?', a: 'Common signs include musty odors, visible black/green spots on walls or ceilings, increased humidity, and allergy-like symptoms (sneezing, headaches). Professional inspection with moisture mapping and lab testing confirms presence, type, and concentration levels.' },
+    { q: 'Is black mold dangerous to my family?', a: 'Certain mold species (like Stachybotrys) can trigger respiratory issues, allergies, and other health problems, especially in children and sensitive individuals. We use strict PPE protocols, containment barriers, and HEPA filtration to remove it safely.' },
+    { q: 'What does professional mold remediation include?', a: 'Our comprehensive process includes: (1) Thorough inspection, moisture mapping & lab testing, (2) Containment barriers & negative air pressure with HEPA filtration, (3) Safe removal of contaminated materials & deep cleaning, (4) Antimicrobial treatment & moisture source correction, (5) Final clearance testing.' },
+    { q: 'Do you test for mold before and after remediation?', a: 'Yes, absolutely. Pre-remediation testing identifies mold types and concentrations to determine scope of work. Post-remediation clearance testing by an independent lab verifies successful removal and confirms safe indoor air quality levels.' },
+    { q: 'How long does mold remediation take in Florida?', a: 'Most residential projects take 2-5 days depending on affected area size, materials involved, and humidity levels. Large commercial projects or extensive contamination may take 1-2 weeks. Florida\'s climate requires extra drying time.' },
+    { q: 'Will mold come back after remediation?', a: 'Not if the underlying moisture source is properly fixed. We address root causes like leaks, poor ventilation, or humidity issues. We also recommend maintaining indoor humidity below 60% and provide ongoing prevention strategies specific to Florida homes.' }
+  ]
+};
 ---
 
 <BaseLayout
   title="Mold Remediation in Florida | Black Mold Removal & Testing"
   description="Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today."
 >
-  <!-- Hero -->
-  <section class="hero-sectionKitchen">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Mold Remediation & Removal Services in Florida</h1>
-      <p>
-        Our Florida teams provide 24/7 mold remediation to protect your home,
-        office, and health. From black mold testing to full remediation and
-        prevention, we deliver safe, lasting results.
-      </p>
-      <a href="/contact" class="cta-button">Remove Mold Fast →</a>
-    </div>
-  </section>
-
-  <!-- Service Icons -->
-  <section>
-    <div class="services-grid">
-      <div class="service-item">
-        <i class="fas fa-search"></i>
-        <h3>Mold Inspection</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-biohazard"></i>
-        <h3>Black Mold Removal</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Mold Prevention</h3>
-      </div>
-
-      <div class="service-item">
-        <i class="fas fa-vials"></i>
-        <h3>Mold Testing</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions Cards -->
-  <section class="solutions-section">
-    <h2 class="solutions-title">Comprehensive Mold Damage Solutions</h2>
-    <div class="solutions-grid">
-      <!-- Card 1 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img
-            src="/images/MoldInspection.jpg"
-            alt="Technician inspecting wall for mold with moisture meter"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Mold Inspection</h3>
-          <p>
-            Visual assessment, moisture mapping, and infrared scanning to locate
-            hidden mold and sources of humidity.
-          </p>
-          <a href="/contact" class="card-cta">Book Inspection</a>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img
-            src="/images/BlackMoldRemoval.jpg"
-            alt="Technician removing black mold with PPE and containment"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Black Mold Removal</h3>
-          <p>
-            Safe containment, HEPA filtration, and PPE protocols to remove toxic
-            mold and protect occupants.
-          </p>
-          <a href="/contact" class="card-cta">Remove Black Mold</a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img
-            src="/images/MoldPrevention.jpg"
-            alt="Cleaning and disinfecting affected materials with HEPA vacuums"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Mold Prevention</h3>
-          <p>
-            Source correction, material removal, HEPA vacuuming, and
-            antimicrobial cleaning per IICRC best practices.
-          </p>
-          <a href="/contact" class="card-cta">Start Remediation</a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="solution-card">
-        <div class="card-image">
-          <img
-            src="/images/Moldtesting.jpg"
-            alt="Dehumidifier and ventilation solutions to prevent future mold"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Mold testing</h3>
-          <p>
-            Dehumidification, ventilation upgrades, and moisture control plans
-            to stop mold from returning.
-          </p>
-          <a href="/contact" class="card-cta">Prevent Future Mold</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Steps -->
-  <section class="steps-section">
-    <h2 class="steps-title">How It Works</h2>
-    <div class="steps-container">
-      <div class="step-item" data-step="1">
-        <div class="step-icon"><i class="fas fa-search"></i></div>
-        <h3>Inspect & Test</h3>
-        <p>Assessment, moisture mapping & air/surface sampling</p>
-      </div>
-
-      <div class="step-item" data-step="2">
-        <div class="step-icon"><i class="fas fa-wind"></i></div>
-        <h3>Contain & Filter</h3>
-        <p>Isolation barriers & HEPA air filtration</p>
-      </div>
-
-      <div class="step-item" data-step="3">
-        <div class="step-icon"><i class="fas fa-broom"></i></div>
-        <h3>Remove & Clean</h3>
-        <p>Material removal, HEPA vacuuming & antimicrobial treatment</p>
-      </div>
-
-      <div class="step-item" data-step="4">
-        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Verify & Prevent</h3>
-        <p>Clearance testing & long-term moisture control plan</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs
-    client:load
-    title="Why Choose Us"
-    items={[
-      "Safe mold removal for homes & businesses",
-      "Black mold experts with advanced equipment",
-      "Focus on health & indoor air quality",
-      "Moisture control to prevent regrowth",
-      "Local Florida response—fast and reliable",
-    ]}
-  />
-
-  <!-- Service Highlights -->
-  <ServiceHighlights
-    client:load
-    title="Service Highlights"
-    highlights={[
-      "Black mold inspection & removal",
-      "Hidden mold detection in walls & HVAC systems",
-      "Antimicrobial cleaning & sealing",
-      "Dehumidification & moisture monitoring",
-      "Post-remediation air quality testing",
-    ]}
-  />
-
-  <!-- FAQ -->
-  <section>
-    <FAQ client:load category="mold" title="Mold Remediation FAQs" />
-  </section>
-
-  <!-- Final CTA -->
-  <RestorationCTA
-    client:load
-    title="Protect your home and health from mold."
-    subtitle="Schedule your inspection today and get professional mold remediation in Florida."
-    buttonText="Remove Mold Fast"
-    buttonLink="/contact"
-  />
+  <UnifiedTemplate group={group} sub={sub} />
 </BaseLayout>
