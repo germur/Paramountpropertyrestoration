@@ -14,13 +14,14 @@ const getStormContent = (subSlug) => {
       hero: {
         title: "Storm Damage Restoration Services in Florida",
         description: "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
-        cta: "Repair Storm Damage Today"
+        cta: "Repair Storm Damage Today",
+        bgImage: "/images/heroStorm.jpg"
       },
       services: [
-        { icon: "fas fa-home", title: "Hurricane Damage", description: "Immediate response to wind and water damage after hurricanes, including board-ups, tarping, and emergency repairs." },
-        { icon: "fas fa-hammer", title: "Roof Damage", description: "Repair or replace damaged shingles, flashing, and underlayment caused by high winds, hail, or falling debris." },
-        { icon: "fas fa-tint", title: "Flood & Water Intrusion", description: "Extraction and drying of water intrusion caused by heavy rains or storm surges to prevent mold and structural damage." },
-        { icon: "fas fa-tree", title: "Debris Removal", description: "Safe cleanup of fallen trees, branches, and structural debris blocking driveways or damaging property." }
+        { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Complete hurricane damage restoration", slug: "hurricane-damage", image: "/images/HurricaneDamage.jpg" },
+        { icon: "fas fa-wind", title: "Wind Damage", description: "Roof and siding wind damage repair", slug: "wind-damage", image: "/images/WindDamage.jpg" },
+        { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/StormDebrisRemoval.jpg" },
+        { icon: "fas fa-tools", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg" }
       ],
       faqs: [
         { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
@@ -39,7 +40,8 @@ const getStormContent = (subSlug) => {
       hero: {
         title: "Hurricane Damage? We Restore Homes & Businesses Across Florida",
         description: "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
-        cta: "Restore After Hurricane Now"
+        cta: "Restore After Hurricane Now",
+        bgImage: "/images/HurricaneDamage.jpg"
       },
       services: [
         { icon: "fas fa-home", title: "Roof Leaks & Collapse Risks", description: "Wind and flying debris cause hidden roof damage." },
@@ -65,7 +67,8 @@ const getStormContent = (subSlug) => {
       hero: {
         title: "Wind Damage? We Repair Roofs, Siding & Structures Across Florida",
         description: "Strong winds can tear shingles, break windows, and damage property. Our 24/7 emergency response team restores safety and structure fast.",
-        cta: "Request Wind Damage Repair Now"
+        cta: "Request Wind Damage Repair Now",
+        bgImage: "/images/WindDamage.jpg"
       },
       services: [
         { icon: "fas fa-home", title: "Roof Shingle Loss", description: "Exposed underlayment leads to leaks." },
@@ -90,7 +93,8 @@ const getStormContent = (subSlug) => {
       hero: {
         title: "Safe and fast cleanup of fallen trees, branches, and storm debris.",
         description: "Fast storm debris removal in Florida. Safe cleanup of fallen trees, branches, siding & roofing debris. 24/7 emergency crews with heavy equipment.",
-        cta: "Request Debris Cleanup Now"
+        cta: "Request Debris Cleanup Now",
+        bgImage: "/images/StormDebrisRemoval.jpg"
       },
       services: [
         { icon: "fas fa-tree", title: "Tree & Branch Removal", description: "Cut, clear, and haul away fallen trees." },
@@ -115,7 +119,8 @@ const getStormContent = (subSlug) => {
       hero: {
         title: "Florida Storm Damage? Get Emergency Repairs 24/7",
         description: "When storms strike, every minute matters. Our emergency crews secure, repair, and restore homes and businesses across Central, Tampa Bay & South Florida.",
-        cta: "Request Emergency Storm Repair"
+        cta: "Request Emergency Storm Repair",
+        bgImage: "/images/EmergencyStormRepair.jpg"
       },
       services: [
         { icon: "fas fa-home", title: "Immediate Roof Tarping & Board-Up", description: "Protect from rain, wind & further damage." },
@@ -146,7 +151,7 @@ const faqCategory = `storm-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -159,10 +164,10 @@ const faqCategory = `storm-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <a href={`/restoration/storm-damage/${service.slug}`} class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </div>
+      </a>
     ))}
   </div>
 </section>
@@ -174,12 +179,12 @@ const faqCategory = `storm-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/stormDamage.jpg" alt={service.title} />
+          <img src={service.image} alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="btn">Get Help Now</a>
+          <a href={`/restoration/storm-damage/${service.slug}`} class="btn">Learn More</a>
         </div>
       </div>
     ))}

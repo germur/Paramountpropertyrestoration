@@ -13,13 +13,14 @@ const getMitigationContent = (subSlug) => {
       hero: {
         title: "Mitigation Services in Florida – Protect Before It Gets Worse",
         description: "Our mitigation services across Florida focus on limiting property loss from water, fire, mold, and storms. By acting fast, we reduce risks, control costs, and keep your home or business safe.",
-        cta: "Prevent Further Damage"
+        cta: "Prevent Further Damage",
+        bgImage: "/images/mitigation.jpg"
       },
       services: [
-        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency extraction, dehumidification, and moisture control to prevent structural damage and mold growth." },
-        { icon: "fas fa-fire", title: "Fire Mitigation", description: "Board-ups, smoke containment, and ventilation strategies to limit secondary damage after a fire." },
-        { icon: "fas fa-seedling", title: "Mold Mitigation", description: "Moisture control, air filtration, and antimicrobial treatments to prevent mold from spreading." },
-        { icon: "fas fa-cloud-bolt", title: "Storm Mitigation", description: "Roof tarping, window boarding, and debris removal to secure properties before and after severe weather." }
+        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water damage mitigation", slug: "water-mitigation", image: "/images/waterDamage.jpg" },
+        { icon: "fas fa-fire", title: "Fire Mitigation", description: "Fire damage containment and mitigation", slug: "fire-mitigation", image: "/images/fireDamage.jpg" },
+        { icon: "fas fa-seedling", title: "Mold Mitigation", description: "Mold containment and prevention", slug: "mold-mitigation", image: "/images/moldDamage.jpg" },
+        { icon: "fas fa-cloud-bolt", title: "Storm Mitigation", description: "Storm damage prevention and securing", slug: "storm-mitigation", image: "/images/stormDamage.jpg" }
       ],
       faqs: [
         { q: "What are mitigation services?", a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss." },
@@ -38,7 +39,8 @@ const getMitigationContent = (subSlug) => {
       hero: {
         title: "Water Damage Mitigation Services in Florida",
         description: "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
-        cta: "Start Water Mitigation Now"
+        cta: "Start Water Mitigation Now",
+        bgImage: "/images/waterDamage.jpg"
       },
       services: [
         { icon: "fas fa-search", title: "Emergency Inspection & Moisture Mapping", description: "Detect visible + hidden water." },
@@ -64,7 +66,8 @@ const getMitigationContent = (subSlug) => {
       hero: {
         title: "Fire Damage Mitigation Services in Florida",
         description: "After a fire, the damage doesn't end when the flames are out. Smoke, soot, and structural instability keep spreading harm. Fire damage mitigation focuses on securing, containing, and stabilizing your property to prevent further loss—while restoration repairs and rebuilds later.",
-        cta: "Secure My Property Now"
+        cta: "Secure My Property Now",
+        bgImage: "/images/fireDamage.jpg"
       },
       services: [
         { icon: "fas fa-window-maximize", title: "Emergency Board-Up & Tarping", description: "Seal windows, doors & roofs against further water." },
@@ -90,7 +93,8 @@ const getMitigationContent = (subSlug) => {
       hero: {
         title: "Mold Mitigation Services in Florida",
         description: "Mold mitigation is about prevention and containment—stopping mold from spreading, controlling humidity, and protecting your property until full remediation can safely remove it. Unlike remediation, which eliminates colonies, mitigation is the first line of defense against contamination and health risks.",
-        cta: "Stop Mold Spread Today"
+        cta: "Stop Mold Spread Today",
+        bgImage: "/images/moldDamage.jpg"
       },
       services: [
         { icon: "fas fa-search", title: "Inspection & Moisture Assessment", description: "Detect leaks, water damage & humidity." },
@@ -116,7 +120,8 @@ const getMitigationContent = (subSlug) => {
       hero: {
         title: "Storm Damage Mitigation Services in Florida",
         description: "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact.",
-        cta: "Request Storm Mitigation Now"
+        cta: "Request Storm Mitigation Now",
+        bgImage: "/images/stormDamage.jpg"
       },
       services: [
         { icon: "fas fa-window-maximize", title: "Emergency Board-Up & Roof Tarping", description: "Seal windows, doors & roofs against further water." },
@@ -148,7 +153,7 @@ const faqCategory = `mitigation-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -161,27 +166,27 @@ const faqCategory = `mitigation-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <a href={`/restoration/mitigation-services/${service.slug}`} class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </div>
+      </a>
     ))}
   </div>
 </section>
 
 <!-- Solutions Cards -->
 <section class="solutions-section">
-  <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
+  <h2 class="solutions-title">Comprehensive Mitigation Solutions</h2>
   <div class="solutions-grid">
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/mitigation.jpg" alt={service.title} />
+          <img src={service.image} alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="btn">Get Help Now</a>
+          <a href={`/restoration/mitigation-services/${service.slug}`} class="btn">Learn More</a>
         </div>
       </div>
     ))}

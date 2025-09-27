@@ -51,7 +51,7 @@
 
 .cta-button {
     display: inline-block;
-    background: var(--color-accent);
+    background: #35c3e9;
     color: #ffffff;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -63,9 +63,11 @@
 }
 
 .cta-button:hover {
-    background: var(--color-accent-hover);
+    background: #2a9fd1;
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(53, 195, 233, 0.4);
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* =====================
@@ -84,10 +86,15 @@
     padding: 1rem;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .service-item:hover {
     transform: translateY(-5px);
+    text-decoration: none;
+    color: inherit;
 }
 
 .service-item i {
@@ -98,7 +105,7 @@
 }
 
 .service-item:hover i {
-    color: var(--color-accent);
+    color: #35c3e9;
 }
 
 .service-item h3 {
@@ -106,6 +113,10 @@
     margin: 0;
     color: #333;
     font-weight: 500;
+}
+
+.service-item:hover h3 {
+    color: #35c3e9;
 }
 
 /* =====================
@@ -180,7 +191,7 @@
 
 .card-cta {
     display: inline-block;
-    background: var(--color-accent);
+    background: #35c3e9;
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
@@ -191,8 +202,10 @@
 }
 
 .card-cta:hover {
-    background: var(--color-accent-hover);
+    background: #2a9fd1;
     transform: translateY(-2px);
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* =====================

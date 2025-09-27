@@ -14,13 +14,14 @@ const getMoldContent = (subSlug) => {
       hero: {
         title: "Mold Remediation & Removal Services in Florida",
         description: "Our Florida teams provide 24/7 mold remediation to protect your home, office, and health. From black mold testing to full remediation and prevention, we deliver safe, lasting results.",
-        cta: "Remove Mold Fast"
+        cta: "Remove Mold Fast",
+        bgImage: "/images/heroMold.jpg"
       },
       services: [
-        { icon: "fas fa-search", title: "Black Mold Removal", description: "Safe removal of black mold colonies from walls, ceilings, and hidden spaces with industry-grade equipment." },
-        { icon: "fas fa-vial", title: "Mold Testing & Inspection", description: "Professional air and surface testing to identify mold species and hidden contamination." },
-        { icon: "fas fa-spray-can", title: "Antimicrobial Treatment", description: "Application of antimicrobial agents to prevent mold regrowth and ensure long-term protection." },
-        { icon: "fas fa-tint", title: "Moisture & Humidity Control", description: "Dehumidifiers and ventilation solutions to eliminate the root cause of mold growth." }
+        { icon: "fas fa-search", title: "Mold Inspection", description: "Professional mold testing and inspection", slug: "mold-inspection", image: "/images/MoldInspection.jpg" },
+        { icon: "fas fa-virus", title: "Black Mold Removal", description: "Safe removal of toxic black mold", slug: "black-mold-removal", image: "/images/BlackMoldRemoval.jpg" },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Prevent future mold growth", slug: "mold-prevention", image: "/images/MoldPrevention.jpg" },
+        { icon: "fas fa-vial", title: "Mold Testing", description: "Certified mold testing services", slug: "mold-testing", image: "/images/Moldtesting.jpg" }
       ],
       faqs: [
         { q: "What is mold remediation?", a: "Mold remediation is the process of identifying, containing, and safely removing mold, followed by cleaning and moisture control to prevent regrowth." },
@@ -40,7 +41,8 @@ const getMoldContent = (subSlug) => {
       hero: {
         title: "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
         description: "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
-        cta: "Schedule My Mold Test Today"
+        cta: "Schedule My Mold Test Today",
+        bgImage: "/images/MoldInspection.jpg"
       },
       services: [
         { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues." },
@@ -66,7 +68,8 @@ const getMoldContent = (subSlug) => {
       hero: {
         title: "Black Mold is Toxic—We Remove It Safely",
         description: "Our certified Florida teams eliminate dangerous black mold, clean the air, and protect your family's health with proven remediation methods.",
-        cta: "Get Black Mold Removal Now"
+        cta: "Get Black Mold Removal Now",
+        bgImage: "/images/BlackMoldRemoval.jpg"
       },
       services: [
         { icon: "fas fa-search", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels." },
@@ -91,7 +94,8 @@ const getMoldContent = (subSlug) => {
       hero: {
         title: "Stop Mold Before It Starts",
         description: "Our certified Florida specialists protect your property with proven prevention strategies—moisture control, air treatment, and protective barriers.",
-        cta: "Protect My Home From Mold"
+        cta: "Protect My Home From Mold",
+        bgImage: "/images/MoldPrevention.jpg"
       },
       services: [
         { icon: "fas fa-search", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks." },
@@ -116,7 +120,8 @@ const getMoldContent = (subSlug) => {
       hero: {
         title: "Know What's in Your Air—Protect Your Health & Property",
         description: "Professional mold testing in Florida. Certified inspectors use advanced air & surface sampling to detect hidden mold. Fast results, clear reports, peace of mind.",
-        cta: "Book Certified Mold Testing Now"
+        cta: "Book Certified Mold Testing Now",
+        bgImage: "/images/Moldtesting.jpg"
       },
       services: [
         { icon: "fas fa-vial", title: "Air Testing", description: "Lab-grade air sampling to detect invisible mold spores." },
@@ -147,7 +152,7 @@ const faqCategory = `mold-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -160,10 +165,10 @@ const faqCategory = `mold-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <a href={`/restoration/mold-remediation/${service.slug}`} class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </div>
+      </a>
     ))}
   </div>
 </section>
@@ -175,12 +180,12 @@ const faqCategory = `mold-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/moldDamage.jpg" alt={service.title} />
+          <img src={service.image} alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="btn">Get Help Now</a>
+          <a href={`/restoration/mold-remediation/${service.slug}`} class="btn">Learn More</a>
         </div>
       </div>
     ))}

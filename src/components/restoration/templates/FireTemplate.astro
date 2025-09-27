@@ -14,13 +14,14 @@ const getFireContent = (subSlug) => {
       hero: {
         title: "Fire Damage Restoration Services in Florida",
         description: "We provide 24/7 fire and smoke damage restoration across Florida. From emergency board-up to soot removal and full repairs, our team restores homes and businesses to safe, pre-loss condition.",
-        cta: "Clean Up After Fire"
+        cta: "Clean Up After Fire",
+        bgImage: "/images/herofire.jpg"
       },
       services: [
-        { icon: "fas fa-smog", title: "Smoke Damage Cleanup", description: "Remove smoke particles and odors from walls, ceilings, and furniture with professional cleaning and deodorizing methods." },
-        { icon: "fas fa-broom", title: "Soot Removal", description: "Safe cleanup of soot from surfaces, HVAC systems, and personal belongings to prevent long-term damage." },
-        { icon: "fas fa-tools", title: "Fire Structural Repair", description: "Repair and replace fire-damaged drywall, insulation, flooring, and framing to restore property integrity." },
-        { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Secure broken windows, doors, and openings after a fire to prevent further damage or theft." }
+        { icon: "fas fa-smog", title: "Smoke Damage", description: "Professional smoke removal and odor elimination", slug: "smoke-damage", image: "/images/SmokeDamage.jpg" },
+        { icon: "fas fa-broom", title: "Soot Cleanup", description: "Safe soot removal from all surfaces", slug: "soot-cleanup", image: "/images/SootCleanup.jpg" },
+        { icon: "fas fa-hammer", title: "Fire Damage Repair", description: "Complete fire damage restoration", slug: "fire-damage-repair", image: "/images/FireDamageRepair.jpg" },
+        { icon: "fas fa-phone", title: "Emergency Fire Response", description: "24/7 emergency fire response", slug: "emergency-fire-response", image: "/images/EmergencyFireResponse.jpg" }
       ],
       faqs: [
         { q: "How to restore fire damage?", a: "Fire damage restoration involves soot cleanup, smoke odor removal, and structural repairs. Professionals handle debris removal, deep cleaning, and rebuilding to return the property to pre-loss condition." },
@@ -39,7 +40,8 @@ const getFireContent = (subSlug) => {
       hero: {
         title: "Breathe Easy Again After Smoke Damage",
         description: "When smoke invades your property, the damage goes beyond stains and odors—it impacts your health and safety. Our certified Florida restoration teams provide 24/7 smoke cleanup, soot removal, odor elimination, and surface repairs.",
-        cta: "Request Smoke Damage Help Now"
+        cta: "Request Smoke Damage Help Now",
+        bgImage: "/images/SmokeDamage.jpg"
       },
       services: [
         { icon: "fas fa-broom", title: "Soot & Residue Removal", description: "Remove acidic soot before it corrodes surfaces" },
@@ -65,7 +67,8 @@ const getFireContent = (subSlug) => {
       hero: {
         title: "Soot Cleanup Services Across Florida",
         description: "After a fire, soot and smoke residue can spread fast—coating walls, ceilings, furniture, and even air ducts. Our Florida soot cleanup teams respond 24/7 to remove hazardous particles, neutralize odors, and restore your property safely.",
-        cta: "Request Soot Cleanup Now"
+        cta: "Request Soot Cleanup Now",
+        bgImage: "/images/SootCleanup.jpg"
       },
       services: [
         { icon: "fas fa-home", title: "Wall & Ceiling Soot Removal", description: "Clean stains safely without damaging paint or drywall." },
@@ -91,7 +94,8 @@ const getFireContent = (subSlug) => {
       hero: {
         title: "Fire Damage Restoration Services in Florida",
         description: "We provide 24/7 fire and smoke damage restoration across Florida. From emergency board-up to soot removal and full repairs, our team restores homes and businesses to safe, pre-loss condition.",
-        cta: "Clean Up After Fire"
+        cta: "Clean Up After Fire",
+        bgImage: "/images/FireDamageRepair.jpg"
       },
       services: [
         { icon: "fas fa-smog", title: "Smoke Damage Cleanup", description: "Remove smoke particles and odors from walls, ceilings, and furniture with professional cleaning and deodorizing methods." },
@@ -116,7 +120,8 @@ const getFireContent = (subSlug) => {
       hero: {
         title: "24/7 Emergency Fire Response in Florida",
         description: "When fire strikes, every second counts. Our emergency fire response teams provide immediate board-up, smoke containment, and damage assessment to protect your property and begin the restoration process.",
-        cta: "Get Emergency Fire Help"
+        cta: "Get Emergency Fire Help",
+        bgImage: "/images/EmergencyFireResponse.jpg"
       },
       services: [
         { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Immediate securing of windows, doors, and openings." },
@@ -147,7 +152,7 @@ const faqCategory = `fire-${sub.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -160,10 +165,10 @@ const faqCategory = `fire-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <a href={`/restoration/fire-damage/${service.slug}`} class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </div>
+      </a>
     ))}
   </div>
 </section>
@@ -175,12 +180,12 @@ const faqCategory = `fire-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/fireDamage.jpg" alt={service.title} />
+          <img src={service.image} alt={service.title} />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href="/contact" class="btn">Get Help Now</a>
+          <a href={`/restoration/fire-damage/${service.slug}`} class="btn">Learn More</a>
         </div>
       </div>
     ))}
