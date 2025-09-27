@@ -164,7 +164,7 @@ const faqCategory = `storm-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <div class="service-item-static">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
       </div>
@@ -180,12 +180,19 @@ const faqCategory = `storm-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={service.image} alt={`${service.title} - Professional storm damage restoration services in Florida`} loading="lazy" />
+          <img src="/images/stormDamage.jpg" alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - hurricane and storm recovery`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
-          <p>{service.description}</p>
-          <a href={`/restoration/storm-damage/${service.slug}`} class="btn">Secure My Property →</a>
+          <div class="service-description">
+            <p>{service.description}</p>
+            <div class="service-features">
+              <span class="feature-tag">🌪️ Storm Ready</span>
+              <span class="feature-tag">🏚️ Roof Experts</span>
+              <span class="feature-tag">⚡ Fast Response</span>
+            </div>
+          </div>
+          <a href="/contact" class="btn">Get Storm Help Now →</a>
         </div>
       </div>
     ))}
@@ -210,52 +217,62 @@ const faqCategory = `storm-${sub.slug}`;
 </section>
 
 <!-- Regional Coverage Section -->
-<section class="minimal-services-section">
+<section class="restoration-coverage-section">
   <div class="container">
-    <div class="minimal-header">
+    <div class="coverage-header">
       <h2>Storm Damage Services Across Florida</h2>
       <p>Emergency storm response in major Florida cities</p>
     </div>
 
-    <div class="regions-grid">
+    <div class="restoration-regions-grid">
       <div class="region-column">
         <h3 class="region-title">Central Florida</h3>
         <div class="city-links">
-          <a href="/restoration/storm-damage/hurricane-damage/orlando">Hurricane Damage Orlando</a>
-          <a href="/restoration/storm-damage/wind-damage/kissimmee">Wind Damage Kissimmee</a>
-          <a href="/restoration/storm-damage/storm-debris-removal/lakeland">Storm Debris Removal Lakeland</a>
-          <a href="/restoration/storm-damage/emergency-storm-repair/winter-garden">Emergency Storm Repair Winter Garden</a>
+          <a href="/contact">Storm Damage Orlando</a>
+          <a href="/contact">Storm Damage Kissimmee</a>
+          <a href="/contact">Storm Damage Lakeland</a>
+          <a href="/contact">Storm Damage Winter Garden</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">Tampa Bay Region</h3>
         <div class="city-links">
-          <a href="/restoration/storm-damage/hurricane-damage/tampa">Hurricane Damage Tampa</a>
-          <a href="/restoration/storm-damage/wind-damage/st-petersburg">Wind Damage St. Petersburg</a>
-          <a href="/restoration/storm-damage/storm-debris-removal/clearwater">Storm Debris Removal Clearwater</a>
-          <a href="/restoration/storm-damage/emergency-storm-repair/sarasota">Emergency Storm Repair Sarasota</a>
+          <a href="/contact">Storm Damage Tampa</a>
+          <a href="/contact">Storm Damage St. Petersburg</a>
+          <a href="/contact">Storm Damage Clearwater</a>
+          <a href="/contact">Storm Damage Sarasota</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">South Florida</h3>
         <div class="city-links">
-          <a href="/restoration/storm-damage/hurricane-damage/miami">Hurricane Damage Miami</a>
-          <a href="/restoration/storm-damage/wind-damage/fort-lauderdale">Wind Damage Fort Lauderdale</a>
-          <a href="/restoration/storm-damage/storm-debris-removal/hollywood">Storm Debris Removal Hollywood</a>
-          <a href="/restoration/storm-damage/emergency-storm-repair/coral-gables">Emergency Storm Repair Coral Gables</a>
+          <a href="/contact">Storm Damage Miami</a>
+          <a href="/contact">Storm Damage Fort Lauderdale</a>
+          <a href="/contact">Storm Damage Hollywood</a>
+          <a href="/contact">Storm Damage Coral Gables</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">Southwest Florida</h3>
         <div class="city-links">
-          <a href="/restoration/storm-damage/hurricane-damage/naples">Hurricane Damage Naples</a>
-          <a href="/restoration/storm-damage/wind-damage/cape-coral">Wind Damage Cape Coral</a>
-          <a href="/restoration/storm-damage/storm-debris-removal/fort-myers">Storm Debris Removal Fort Myers</a>
-          <a href="/restoration/storm-damage/emergency-storm-repair/bonita-springs">Emergency Storm Repair Bonita Springs</a>
+          <a href="/contact">Storm Damage Naples</a>
+          <a href="/contact">Storm Damage Cape Coral</a>
+          <a href="/contact">Storm Damage Fort Myers</a>
+          <a href="/contact">Storm Damage Bonita Springs</a>
         </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Treasure Coast</h3>
+        <div class="city-links">
+          <a href="/contact">Storm Damage Port St. Lucie</a>
+          <a href="/contact">Storm Damage Stuart</a>
+          <a href="/contact">Storm Damage Vero Beach</a>
+          <a href="/contact">Storm Damage Jupiter</a>
+        <a href="/contact" class="btn">Get Storm Help Now →</a>
       </div>
     </div>
 

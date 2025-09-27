@@ -165,7 +165,7 @@ const faqCategory = `mold-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item">
+      <div class="service-item-static">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
       </div>
@@ -181,12 +181,19 @@ const faqCategory = `mold-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={service.image} alt={`${service.title} - Professional mold remediation services in Florida`} loading="lazy" />
+          <img src="/images/moldDamage.jpg" alt={`Professional ${service.title.toLowerCase()} services in Florida - certified mold specialists`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
-          <p>{service.description}</p>
-          <a href={`/restoration/mold-remediation/${service.slug}`} class="btn">Protect Your Health →</a>
+          <div class="service-description">
+            <p>{service.description}</p>
+            <div class="service-features">
+              <span class="feature-tag">🧪 Lab Testing</span>
+              <span class="feature-tag">🫁 Health Safe</span>
+              <span class="feature-tag">🛡️ Prevention</span>
+            </div>
+          </div>
+          <a href="/contact" class="btn">Remove Mold Safely Now →</a>
         </div>
       </div>
     ))}
@@ -211,52 +218,62 @@ const faqCategory = `mold-${sub.slug}`;
 </section>
 
 <!-- Regional Coverage Section -->
-<section class="minimal-services-section">
+<section class="restoration-coverage-section">
   <div class="container">
-    <div class="minimal-header">
+    <div class="coverage-header">
       <h2>Mold Remediation Services Across Florida</h2>
       <p>Safe mold removal in major Florida cities</p>
     </div>
 
-    <div class="regions-grid">
+    <div class="restoration-regions-grid">
       <div class="region-column">
         <h3 class="region-title">Central Florida</h3>
         <div class="city-links">
-          <a href="/restoration/mold-remediation/mold-inspection/orlando">Mold Inspection Orlando</a>
-          <a href="/restoration/mold-remediation/black-mold-removal/kissimmee">Black Mold Removal Kissimmee</a>
-          <a href="/restoration/mold-remediation/mold-prevention/lakeland">Mold Prevention Lakeland</a>
-          <a href="/restoration/mold-remediation/mold-testing/winter-garden">Mold Testing Winter Garden</a>
+          <a href="/contact">Mold Remediation Orlando</a>
+          <a href="/contact">Mold Remediation Kissimmee</a>
+          <a href="/contact">Mold Remediation Lakeland</a>
+          <a href="/contact">Mold Remediation Winter Garden</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">Tampa Bay Region</h3>
         <div class="city-links">
-          <a href="/restoration/mold-remediation/mold-inspection/tampa">Mold Inspection Tampa</a>
-          <a href="/restoration/mold-remediation/black-mold-removal/st-petersburg">Black Mold Removal St. Petersburg</a>
-          <a href="/restoration/mold-remediation/mold-prevention/clearwater">Mold Prevention Clearwater</a>
-          <a href="/restoration/mold-remediation/mold-testing/sarasota">Mold Testing Sarasota</a>
+          <a href="/contact">Mold Remediation Tampa</a>
+          <a href="/contact">Mold Remediation St. Petersburg</a>
+          <a href="/contact">Mold Remediation Clearwater</a>
+          <a href="/contact">Mold Remediation Sarasota</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">South Florida</h3>
         <div class="city-links">
-          <a href="/restoration/mold-remediation/mold-inspection/miami">Mold Inspection Miami</a>
-          <a href="/restoration/mold-remediation/black-mold-removal/fort-lauderdale">Black Mold Removal Fort Lauderdale</a>
-          <a href="/restoration/mold-remediation/mold-prevention/hollywood">Mold Prevention Hollywood</a>
-          <a href="/restoration/mold-remediation/mold-testing/coral-gables">Mold Testing Coral Gables</a>
+          <a href="/contact">Mold Remediation Miami</a>
+          <a href="/contact">Mold Remediation Fort Lauderdale</a>
+          <a href="/contact">Mold Remediation Hollywood</a>
+          <a href="/contact">Mold Remediation Coral Gables</a>
         </div>
       </div>
 
       <div class="region-column">
         <h3 class="region-title">Southwest Florida</h3>
         <div class="city-links">
-          <a href="/restoration/mold-remediation/mold-inspection/naples">Mold Inspection Naples</a>
-          <a href="/restoration/mold-remediation/black-mold-removal/cape-coral">Black Mold Removal Cape Coral</a>
-          <a href="/restoration/mold-remediation/mold-prevention/fort-myers">Mold Prevention Fort Myers</a>
-          <a href="/restoration/mold-remediation/mold-testing/bonita-springs">Mold Testing Bonita Springs</a>
+          <a href="/contact">Mold Remediation Naples</a>
+          <a href="/contact">Mold Remediation Cape Coral</a>
+          <a href="/contact">Mold Remediation Fort Myers</a>
+          <a href="/contact">Mold Remediation Bonita Springs</a>
         </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Treasure Coast</h3>
+        <div class="city-links">
+          <a href="/contact">Mold Remediation Port St. Lucie</a>
+          <a href="/contact">Mold Remediation Stuart</a>
+          <a href="/contact">Mold Remediation Vero Beach</a>
+          <a href="/contact">Mold Remediation Jupiter</a>
+        <a href="/contact" class="btn">Remove Mold Safely Now →</a>
       </div>
     </div>
 
