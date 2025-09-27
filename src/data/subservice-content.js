@@ -139,38 +139,38 @@ export const subserviceContent = {
 
   "leak-repair": {
     hero: {
-      title: "Stop Leaks Before They Cause Bigger Damage",
-      description: "Whether it's a burst pipe, ceiling leak, or hidden water damage inside your walls, our Florida leak repair specialists act fast to protect your home or business. With 24/7 emergency response and advanced detection tools, we fix leaks before they become costly disasters.",
+      title: "Leak Repair Services in Florida",
+      description: "Fast, professional leak repair in Florida. Detect hidden leaks, fix ceiling or pipe damage, and prevent mold growth. 24/7 emergency service.",
       cta: "Fix My Leak Now",
       badges: [
-        { icon: "💧", text: "Ceilings" },
+        { icon: "🔍", text: "Detection" },
         { icon: "🚰", text: "Pipes" },
-        { icon: "🏚️", text: "Walls" },
+        { icon: "🏚️", text: "Ceilings" },
         { icon: "🦠", text: "Mold Prevention" }
       ]
     },
     process: {
-      title: "Our Leak Repair Process",
+      title: "How It Works",
       steps: [
-        { title: "Inspection & Leak Detection", text: "Thermal imaging & moisture meters find the source", icon: "fas fa-search" },
-        { title: "Emergency Containment", text: "Stop water flow, prevent further damage", icon: "fas fa-stop" },
-        { title: "Drying & Dehumidification", text: "Industrial air movers, dehumidifiers", icon: "fas fa-wind" },
-        { title: "Repair & Restoration", text: "Pipes, drywall, ceilings, and flooring fixed", icon: "fas fa-tools" },
-        { title: "Mold Prevention & Quality Check", text: "Antimicrobial treatment + testing", icon: "fas fa-check-circle" }
+        { title: "Inspection & Leak Detection", text: "Thermal imaging & moisture meters find the source.", icon: "fas fa-search" },
+        { title: "Emergency Containment", text: "Stop water flow, prevent further damage.", icon: "fas fa-stop" },
+        { title: "Drying & Dehumidification", text: "Industrial air movers, dehumidifiers.", icon: "fas fa-wind" },
+        { title: "Repair & Restoration", text: "Pipes, drywall, ceilings, and flooring fixed.", icon: "fas fa-tools" },
+        { title: "Mold Prevention & Quality Check", text: "Antimicrobial treatment + testing.", icon: "fas fa-check-circle" }
       ]
     },
     services: [
       {
-        icon: "🛠️",
+        icon: "🏚️",
         title: "Ceiling Leak Repair",
-        description: "Repair water-damaged ceilings, replace drywall & insulation.",
+        description: "Repair water-damaged ceilings, replace drywall & insulation to restore safety.",
         ctaText: "Schedule Ceiling Repair",
         ctaLink: "/contact"
       },
       {
         icon: "🚰",
         title: "Pipe Leak Repair",
-        description: "Fix burst, corroded, or leaking pipes to restore flow & safety.",
+        description: "Fix burst, corroded, or leaking pipes to restore proper water flow & safety.",
         ctaText: "Request Pipe Repair",
         ctaLink: "/contact"
       },
@@ -180,7 +180,21 @@ export const subserviceContent = {
         description: "Advanced tools locate leaks inside walls, floors, or basements.",
         ctaText: "Find My Leak",
         ctaLink: "/contact"
+      },
+      {
+        icon: "🔍",
+        title: "Hidden Leak Detection",
+        description: "Advanced tools locate leaks inside walls, floors, or basements.",
+        ctaText: "Find My Leak",
+        ctaLink: "/contact"
       }
+    ],
+    warnings: [
+      { icon: "💧", text: "Water stains on ceilings or walls" },
+      { icon: "🪞", text: "Bubbling paint or warped drywall" },
+      { icon: "🦠", text: "Musty smell or early mold growth" },
+      { icon: "📉", text: "Unexpected spike in your water bill" },
+      { icon: "🚰", text: "Low water pressure in sinks or showers" }
     ],
     features: [
       "Local Florida teams for faster dispatch",
