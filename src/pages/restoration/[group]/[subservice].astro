@@ -7,7 +7,7 @@ import FireTemplate from "../../../components/restoration/templates/FireTemplate
 import StormTemplate from "../../../components/restoration/templates/StormTemplate.astro";
 import MoldTemplate from "../../../components/restoration/templates/MoldTemplate.astro";
 import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
-import GenericTemplate from "../../../components/restoration/templates/GenericTemplate.astro";
+import UnifiedTemplate from "../../../components/restoration/templates/UnifiedTemplate.astro";
 
 export async function getStaticPaths() {
     const combinations = [];
@@ -55,7 +55,7 @@ const templates = {
     mold: MoldTemplate,
     mitigation: MitigationTemplate,
 };
-const Template = templates[groupData.template] ?? GenericTemplate;
+const Template = templates[groupData.template] ?? UnifiedTemplate;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
