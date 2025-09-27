@@ -165,10 +165,10 @@ const faqCategory = `mold-${sub.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <a href={`/restoration/mold-remediation/${service.slug}`} class="service-item">
+      <div class="service-item">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </a>
+      </div>
     ))}
   </div>
 </section>
@@ -180,12 +180,12 @@ const faqCategory = `mold-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src={service.image} alt={service.title} />
+          <img src={service.image} alt={`${service.title} services in Florida - professional mold remediation`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <a href={`/restoration/mold-remediation/${service.slug}`} class="btn">Learn More</a>
+          <a href={`/restoration/mold-remediation/${service.slug}`} class="btn">Remove Mold Safely Now →</a>
         </div>
       </div>
     ))}
@@ -205,6 +205,62 @@ const faqCategory = `mold-${sub.slug}`;
         <p>{step.text}</p>
       </div>
     ))}
+  </div>
+</section>
+
+<!-- Regional Coverage Section -->
+<section class="minimal-services-section">
+  <div class="container">
+    <div class="minimal-header">
+      <h2>Mold Remediation Services Across Florida</h2>
+      <p>Safe mold removal in major Florida cities</p>
+    </div>
+
+    <div class="regions-grid">
+      <div class="region-column">
+        <h3 class="region-title">Central Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/mold-remediation/mold-inspection/orlando">Mold Inspection Orlando</a>
+          <a href="/restoration/mold-remediation/black-mold-removal/kissimmee">Black Mold Removal Kissimmee</a>
+          <a href="/restoration/mold-remediation/mold-prevention/lakeland">Mold Prevention Lakeland</a>
+          <a href="/restoration/mold-remediation/mold-testing/winter-garden">Mold Testing Winter Garden</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Tampa Bay Region</h3>
+        <div class="city-links">
+          <a href="/restoration/mold-remediation/mold-inspection/tampa">Mold Inspection Tampa</a>
+          <a href="/restoration/mold-remediation/black-mold-removal/st-petersburg">Black Mold Removal St. Petersburg</a>
+          <a href="/restoration/mold-remediation/mold-prevention/clearwater">Mold Prevention Clearwater</a>
+          <a href="/restoration/mold-remediation/mold-testing/sarasota">Mold Testing Sarasota</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">South Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/mold-remediation/mold-inspection/miami">Mold Inspection Miami</a>
+          <a href="/restoration/mold-remediation/black-mold-removal/fort-lauderdale">Black Mold Removal Fort Lauderdale</a>
+          <a href="/restoration/mold-remediation/mold-prevention/hollywood">Mold Prevention Hollywood</a>
+          <a href="/restoration/mold-remediation/mold-testing/coral-gables">Mold Testing Coral Gables</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Southwest Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/mold-remediation/mold-inspection/naples">Mold Inspection Naples</a>
+          <a href="/restoration/mold-remediation/black-mold-removal/cape-coral">Black Mold Removal Cape Coral</a>
+          <a href="/restoration/mold-remediation/mold-prevention/fort-myers">Mold Prevention Fort Myers</a>
+          <a href="/restoration/mold-remediation/mold-testing/bonita-springs">Mold Testing Bonita Springs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="emergency-footer">
+      <p>Need immediate help? <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217</a></p>
+    </div>
   </div>
 </section>
 
