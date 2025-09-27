@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/RestoreHero.css';
+import '../../styles/components/RestoreHero.css';
 
 const RestoreHero = ({ 
   title, 
