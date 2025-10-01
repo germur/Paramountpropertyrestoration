@@ -226,6 +226,73 @@ export const restorationGroups = [
         categoria: "restoration"
       }
     ]
+  },
+
+  // ===========================
+  // REMODELING SERVICES
+  // ===========================
+  {
+    slug: "remodeling-services",
+    name: "Remodeling Services",
+    template: "remodeling",
+    description: "Professional home remodeling and renovation services",
+    subservices: [
+      {
+        slug: "kitchen-remodeling",
+        title: "Kitchen Remodeling",
+        short: "Complete kitchen renovation",
+        nombre: "Kitchen Remodeling",
+        categoria: "remodeling",
+        seo: {
+          title: "Kitchen Remodeling Florida | Custom Kitchen Renovation",
+          description: "Professional kitchen remodeling services in Florida. Custom cabinets, countertops, and complete kitchen renovations.",
+        }
+      },
+      {
+        slug: "bathroom-remodeling",
+        title: "Bathroom Remodeling",
+        short: "Complete bathroom renovation",
+        nombre: "Bathroom Remodeling",
+        categoria: "remodeling",
+        seo: {
+          title: "Bathroom Remodeling Florida | Professional Renovation Services",
+          description: "Expert bathroom remodeling services in Florida. Custom designs, quality materials, and professional installation.",
+        }
+      },
+      {
+        slug: "bedroom-remodeling",
+        title: "Bedroom Remodeling",
+        short: "Bedroom renovation and updates",
+        nombre: "Bedroom Remodeling",
+        categoria: "remodeling",
+        seo: {
+          title: "Bedroom Remodeling Florida | Custom Bedroom Renovation",
+          description: "Transform your bedroom with professional remodeling services in Florida. Custom designs and quality craftsmanship.",
+        }
+      },
+      {
+        slug: "living-dining-remodeling",
+        title: "Living & Dining Remodeling",
+        short: "Living and dining room renovation",
+        nombre: "Living & Dining Remodeling",
+        categoria: "remodeling",
+        seo: {
+          title: "Living & Dining Remodeling Florida | Open Concept Renovation",
+          description: "Professional living and dining room remodeling in Florida. Create open, modern spaces for entertaining.",
+        }
+      },
+      {
+        slug: "home-additions-remodeling",
+        title: "Home Additions Remodeling",
+        short: "Home additions and expansions",
+        nombre: "Home Additions Remodeling",
+        categoria: "remodeling",
+        seo: {
+          title: "Home Additions Florida | Room Additions & Expansions",
+          description: "Expert home additions and expansion services in Florida. Add space and value to your home.",
+        }
+      }
+    ]
   }
 ];
 
@@ -354,13 +421,13 @@ export function getCityBySlug(slug) {
 export function getAllRestorationCombinations() {
   const combinations = [];
   
-  restorationGroups.forEach(group => { // ← USA DIRECTAMENTE restorationGroups
+  restorationGroups.forEach(group => {
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
         combinations.push({
-          service: group.slug,          // water-damage, fire-damage, etc.
-          subcategory: subservice.slug, // flood-damage, fire-damage-repair, etc.
-          ciudad: city.slug,           // orlando, miami, etc.
+          service: group.slug,
+          subcategory: subservice.slug,
+          ciudad: city.slug,
           servicioData: subservice,
           ciudadData: city,
           groupData: group,
