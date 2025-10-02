@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 12px;
 }
 
 .step {
@@ -20,9 +22,9 @@
     justify-content: center;
     width: 60px;
     height: 60px;
-    border-radius: 20%;
-    background-color: white;
-    color: #0C4E6E;
+    border-radius: 50%;
+    background-color: #0C4E6E;
+    color: #ffffff;
     font-size: 25px;
     font-weight: bold;
     flex-shrink: 0;
@@ -41,10 +43,10 @@
     background-color: rgba(16, 24, 40, 0.05);
 }
 
-.step-content .step-tittle {
+.step-content .step-title {
     font-size: 20px;
-    font-weight:400;
-    color: #333;
+    font-weight: 500;
+    color: #0C4E6E;
     line-height: 1.2;
 }
 
@@ -52,12 +54,13 @@
     margin: 8px 0 0;
     font-size: 16px;
     color: #6F6F6F;
-    line-height: 1.2;
+    line-height: 1.5;
 }
-.step-tiitlePrinci{
+.step-title-main{
     text-align: center;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 15px 20px 30px;
     line-height: 1.2;
+    color: #0C4E6E;
 }

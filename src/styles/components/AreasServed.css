@@ -4,7 +4,7 @@
 }
 
 .areas-served h3 {
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 600;
     line-height: 1.2;
     padding: 40px 10px 30px;
@@ -22,9 +22,10 @@
 }
 
 .area-card {
-    background: white;
+    background: var(--card-bg, #ffffff);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
     padding: 10px;
     transition: transform 0.3s ease;
     max-width: 350px;
@@ -32,6 +33,7 @@
 
 .area-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 
 .area-card img {
@@ -44,7 +46,7 @@
 }
 
 .area-card p {
-    margin: 20px 0 20px;
+    margin: 15px 0 10px;
     font-weight: 700;
-    color: #333;
+    color: #222;
 }

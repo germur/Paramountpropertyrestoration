@@ -1,303 +1,254 @@
-/* AcordeonServices.css */
+/* AcordeonServices.css — refreshed, accessible, tokenized */
+
+:root {
+  /* fallbacks if tokens aren't defined globally */
+  --as-color-primary: var(--color-primary, #0C4E6E);
+  --as-color-accent: var(--color-accent, #35c3e9);
+  --as-text-primary: var(--text-primary, #111827);
+  --as-text-secondary: var(--text-secondary, #4b5563);
+  --as-border-subtle: var(--border-subtle, #e5e7eb);
+  --as-card-bg: var(--card-bg, #ffffff);
+  --as-bg-soft: var(--bg-soft, #f9fafb);
+  --as-radius-md: var(--radius-md, 8px);
+  --as-radius-lg: var(--radius-lg, 12px);
+  --as-shadow-sm: var(--shadow-sm, 0 2px 8px rgba(0,0,0,.06));
+  --as-shadow-md: var(--shadow-md, 0 6px 20px rgba(0,0,0,.12));
+  --as-spacing-1: var(--spacing-1, .25rem);
+  --as-spacing-2: var(--spacing-2, .5rem);
+  --as-spacing-3: var(--spacing-3, .75rem);
+  --as-spacing-4: var(--spacing-4, 1rem);
+  --as-spacing-5: var(--spacing-5, 1.25rem);
+  --as-spacing-6: var(--spacing-6, 1.5rem);
+  --as-spacing-8: var(--spacing-8, 2rem);
+  --as-spacing-10: var(--spacing-10, 2.5rem);
+}
 
 /* Container principal */
 .faqContainer {
-    margin: 10px;
-    border-radius: 8px;
-    padding: 60px 0 120px;
+  margin: var(--as-spacing-2);
+  border-radius: var(--as-radius-md);
+  padding: var(--as-spacing-8) 0 calc(var(--as-spacing-10) * 2);
 }
 
 /* Header del FAQ con búsqueda */
 .faqHeader {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: var(--as-spacing-8);
 }
 
 /* Título del FAQ */
 .faqTitle {
-    font-size: 35px;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: #333;
+  font-size: clamp(1.625rem, 2.5vw, 2.25rem); /* 26–36px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--as-spacing-6);
+  color: var(--as-text-primary);
+  letter-spacing: -.01em;
 }
 
 /* Búsqueda de FAQ */
 .faqSearch {
-    position: relative;
-    max-width: 400px;
-    margin: 0 auto;
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .faqSearchIcon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-    font-size: 0.875rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: .875rem;
+  pointer-events: none;
 }
 
 .faqSearchInput {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 25px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    background: white;
+  width: 100%;
+  padding: .75rem 1rem .75rem 2.5rem;
+  border: 1px solid var(--as-border-subtle);
+  border-radius: 999px;
+  font-size: 1rem;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  background: var(--as-card-bg);
 }
 
-.faqSearchInput:focus {
-    outline: none;
-    border-color: #35c3e9;
-    box-shadow: 0 0 0 3px rgba(53, 195, 233, 0.1);
+.faqSearchInput::placeholder { color: #9aa4b2; }
+
+.faqSearchInput:focus-visible {
+  outline: 3px solid var(--as-color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(53, 195, 233, .12);
 }
 
 /* No results message */
 .noResults {
-    text-align: center;
-    padding: 2rem;
-    color: #64748b;
-    font-style: italic;
+  text-align: center;
+  padding: var(--as-spacing-8);
+  color: var(--as-text-secondary);
+  font-style: italic;
 }
 
 /* Wrapper del accordion */
 .accordionWrapper {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Item individual del accordion */
 .accordionItem {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    transition: all 0.3s ease;
+  padding: var(--as-spacing-2);
+  border-bottom: 1px solid var(--as-border-subtle);
+  transition: background-color .2s ease, box-shadow .2s ease;
+  border-radius: var(--as-radius-lg);
 }
 
 .accordionItem--open {
-    background: rgba(53, 195, 233, 0.02);
-    border-radius: 12px;
+  background: rgba(53, 195, 233, 0.03);
+  box-shadow: var(--as-shadow-sm);
 }
 
-.accordionItem:last-child {
-    border-bottom: none;
-}
+.accordionItem:last-child { border-bottom: none; }
 
 /* Botón del accordion */
 .accordionButton {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    border-radius: 12px;
-    background: none;
-    border: none;
-    text-align: left;
+  width: 100%;
+  display: flex;
+  gap: var(--as-spacing-3);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--as-spacing-4);
+  cursor: pointer;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  transition: background-color .2s ease, box-shadow .2s ease, transform .1s ease;
+  border-radius: var(--as-radius-lg);
+  background: var(--as-card-bg);
+  border: 1px solid var(--as-border-subtle);
+  text-align: left;
 }
 
-.accordionButton:hover {
-    background: #ebebeb;
+.accordionButton:hover { background: var(--as-bg-soft); box-shadow: var(--as-shadow-sm); }
+.accordionButton:active { transform: translateY(.5px); }
+
+.accordionButton:focus-visible {
+  outline: 3px solid var(--as-color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(53, 195, 233, .12);
 }
 
 /* Pregunta */
 .accordionQuestion {
-    font-weight: 400;
-    margin: 0;
-    color: #333;
-    padding-right: 2rem;
-    line-height: 1.4;
+  font-weight: 500;
+  margin: 0;
+  color: var(--as-text-primary);
+  padding-right: 2rem;
+  line-height: 1.4;
 }
 
 /* Icono */
 .accordionIcon {
-    font-size: 15px;
-    transition: transform 0.3s ease;
-    color: #0C4E6E;
-    padding: 6px;
-    border-radius: 50%;
+  font-size: 1rem;
+  transition: transform .2s ease, background-color .2s ease;
+  color: var(--as-color-primary);
+  padding: .375rem;
+  border-radius: 50%;
 }
 
-.accordionIcon.iconOpen {
-    transform: rotate(360deg);
-}
+.accordionIcon.iconOpen { transform: rotate(180deg); }
 
 /* Contenido/Respuesta */
 .accordionContent {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 15px;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 var(--as-spacing-4);
+  transition: max-height .3s ease, padding .3s ease, opacity .2s ease;
 }
 
 .accordionContent.contentOpen {
-    max-height: 500px;
-    padding: 15px;
+  max-height: 1000px;
+  opacity: 1;
+  padding: var(--as-spacing-4);
 }
 
 .accordionAnswer {
-    color: gray;
-    font-size: 1rem;
-    line-height: 1.6;
-    padding: 0;
+  color: var(--as-text-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding: 0;
 }
 
 /* Párrafos de respuesta */
-.answerParagraph {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-}
-
-.answerParagraph:last-child {
-    margin-bottom: 0;
-}
+.answerParagraph { margin-bottom: .75rem; line-height: 1.65; }
+.answerParagraph:last-child { margin-bottom: 0; }
 
 /* Contacto de emergencia */
-.emergencyContact {
-    margin-top: 3rem;
-    padding: 0 10px;
-}
+.emergencyContact { margin-top: var(--as-spacing-10); padding: 0 var(--as-spacing-2); }
 
 .emergencyBanner {
-    background: linear-gradient(135deg, #dc2626, #ef4444);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.2);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+  padding: var(--as-spacing-6);
+  border-radius: var(--as-radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--as-spacing-4);
+  box-shadow: 0 4px 16px rgba(220, 38, 38, .2);
 }
 
-.emergencyIcon {
-    font-size: 2rem;
-    animation: pulse 2s infinite;
-}
+.emergencyIcon { font-size: 2rem; animation: pulse 2s infinite; }
 
-.emergencyInfo h4 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.125rem;
-    font-weight: 600;
-}
-
-.emergencyInfo p {
-    margin: 0 0 0.5rem 0;
-    opacity: 0.9;
-    font-size: 0.875rem;
-}
+.emergencyInfo h4 { margin: 0 0 .25rem 0; font-size: 1.125rem; font-weight: 600; }
+.emergencyInfo p { margin: 0 0 .5rem 0; opacity: .9; font-size: .95rem; }
 
 .emergencyPhone {
-    color: white;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
+  color: #fff; text-decoration: none; font-size: 1.25rem; font-weight: 700;
+  transition: color .2s ease, text-decoration-color .2s ease;
 }
+.emergencyPhone:hover { color: #fef2f2; text-decoration: underline; }
 
-.emergencyPhone:hover {
-    color: #fef2f2;
-    text-decoration: underline;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
 
 /* Grid layout para pantallas grandes */
 @media (min-width: 1024px) {
-    .accordionWrapper {
-        max-width: 1200px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+  .accordionWrapper {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--as-spacing-5);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .faqContainer {
-        padding: 40px 0 60px;
-    }
-
-    .faqTitle {
-        font-size: 30px;
-        margin-bottom: 1rem;
-    }
-
-    .accordionButton {
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    .accordionQuestion {
-        padding-right: 1.5rem;
-    }
-
-    .accordionAnswer {
-        font-size: 0.95rem;
-    }
-
-    .accordionIcon {
-        font-size: 14px;
-    }
-
-    .emergencyBanner {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.75rem;
-    }
-
-    .emergencyIcon {
-        font-size: 1.5rem;
-    }
+  .faqContainer { padding: var(--as-spacing-6) 0 var(--as-spacing-10); }
+  .faqTitle { font-size: clamp(1.5rem, 4vw, 1.875rem); margin-bottom: var(--as-spacing-4); }
+  .accordionButton { padding: var(--as-spacing-3); font-size: 1rem; }
+  .accordionQuestion { padding-right: 1.5rem; }
+  .accordionAnswer { font-size: .95rem; }
+  .accordionIcon { font-size: .95rem; }
+  .emergencyBanner { flex-direction: column; text-align: center; gap: var(--as-spacing-3); }
+  .emergencyIcon { font-size: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-    .faqTitle {
-        font-size: 26px;
-    }
-
-    .accordionButton {
-        padding: 10px;
-        font-size: 15px;
-    }
-
-    .accordionQuestion {
-        padding-right: 1rem;
-    }
-
-    .accordionAnswer {
-        font-size: 0.9rem;
-    }
-
-    .accordionItem {
-        padding: 8px;
-    }
-
-    .faqSearch {
-        margin: 0 1rem;
-    }
+  .faqTitle { font-size: clamp(1.375rem, 5vw, 1.625rem); }
+  .accordionButton { padding: var(--as-spacing-2); font-size: .95rem; }
+  .accordionQuestion { padding-right: 1rem; }
+  .accordionItem { padding: var(--as-spacing-2); }
+  .faqSearch { margin: 0 var(--as-spacing-4); }
 }
 
 /* Animación suave para el contenido */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-6px);} to { opacity: 1; transform: translateY(0);} }
+.accordionContent.contentOpen .accordionAnswer { animation: slideDown .25s ease-out; }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.accordionContent.contentOpen .accordionAnswer {
-    animation: slideDown 0.3s ease-out;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .accordionButton,
+  .accordionContent,
+  .accordionIcon,
+  .emergencyIcon,
+  .emergencyPhone { transition: none !important; animation: none !important; }
 }

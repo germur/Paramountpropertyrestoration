@@ -6,7 +6,6 @@ const currentPath = Astro.url.pathname;
 
 const navItems = [
   { href: "/", label: "Home" },
-
   // Services
   {
     href: "/services",
@@ -19,7 +18,6 @@ const navItems = [
       { href: "/services/bedroom-remodeling", label: "Bedroom" },
     ],
   },
-
   // Restoration como MEGA MENÚ (con href en cada heading)
   {
     href: "/restoration",
@@ -78,19 +76,24 @@ const navItems = [
       }
     ],
   },
-
   { href: "/portfolio", label: "Portfolio" },
   { href: "/blog", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ];
 ---
 
-<HeaderNav
-  navItems={navItems}
-  currentPath={currentPath}
-  logoSrc="/images/ppr-logo.png"
-  client:idle
-/>
-
-
-
+<header class="site-header is-dark" role="banner">
+  <div class="site-header__bar">
+    <a class="site-header__brand" href="/" aria-label="Paramount Property Restoration home">
+      <img class="site-header__logo" src="/images/ppr-logo.png" alt="Paramount Property Restoration" decoding="async" loading="eager" />
+    </a>
+    <div class="site-header__nav">
+      <HeaderNav
+        navItems={navItems}
+        currentPath={currentPath}
+        logoSrc="/images/ppr-logo.png"
+        client:idle
+      />
+    </div>
+  </div>
+</header>

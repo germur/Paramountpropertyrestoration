@@ -226,6 +226,11 @@ body[data-page="home-additions"] .hero-section {
 body[data-page="living-dining"] .hero-section {
   background-image: url('/images/livingDiningHero.jpg');
 }
+body[data-page="water-damage"] .hero-section { background-image: url('/images/heroWater.jpg'); }
+body[data-page="storm-damage"] .hero-section { background-image: url('/images/heroStorm.jpg'); }
+body[data-page="fire-damage"] .hero-section { background-image: url('/images/heroFire.jpg'); }
+body[data-page="mold-remediation"] .hero-section { background-image: url('/images/heroMold.jpg'); }
+body[data-page="mitigation-services"] .hero-section { background-image: url('/images/heroMitigation.jpg'); }
 
 /* Fallback para otras páginas */
 .service-hero {
@@ -451,6 +456,9 @@ body[data-page="living-dining"] .hero-section {
   gap: 2rem;
   padding: 2rem 0;
 }
+.services-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.services-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.services-grid--5 { grid-template-columns: repeat(5, 1fr); }
 
 .service-item {
   text-align: center;
@@ -885,6 +893,18 @@ a:hover {
   background: var(--color-primary);
   color: var(--text-white);
   border-color: var(--color-primary);
+}
+
+/* Chip variation: glass effect */
+.chip--glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+}
+.chip--glass:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ===== SECCIONES SISTEMA ===== */

@@ -1,16 +1,14 @@
-/* LinkBuildingSection.css - Estilo Minimalista y Responsivo */
+/* LinkBuildingSection.css - Estilo Minimalista y Responsivo Optimizado */
 
 .link-building-container {
-    background: transparent;
-    color: #333;
-    padding: 50px 20px;
     background-color: #f9f9f9;
-    margin: 100px 0;   
+    color: #333;
+    padding: 60px 20px;
+    margin: 80px 0;
 }
 
 .link-building-container.full {
-    padding: 30px 20px;
-    
+    padding: 40px 20px;
 }
 
 .link-building-inner {
@@ -19,8 +17,8 @@
 }
 
 .link-building-header {
-    text-align: left;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .link-building-header.compact {
@@ -28,10 +26,10 @@
 }
 
 .link-building-title {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 10px;
-    color: #222;
+    color: #111;
 }
 
 .link-building-title.compact {
@@ -40,9 +38,10 @@
 
 .link-building-subtitle {
     font-size: 1rem;
-    color: #777;
+    color: #666;
     max-width: 600px;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin: 0 auto;
 }
 
 .link-building-subtitle.compact {
@@ -53,13 +52,11 @@
     display: none;
 }
 
-/* --- AJUSTE CLAVE PARA RESPONSIVE --- */
 .link-building-grid {
     display: grid;
-    /* Por defecto (móvil), mostramos UNA SOLA columna */
     grid-template-columns: 1fr;
-    gap: 30px; /* Aumentamos el gap vertical en móvil */
-    margin-top: 20px;
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .link-building-grid.compact {
@@ -67,16 +64,15 @@
 }
 
 .link-category {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
 }
 
 .link-category:hover {
-    transform: none;
-    background: transparent;
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .category-header {
@@ -91,10 +87,10 @@
 
 .category-title {
     font-size: 1rem;
-    font-weight: 500;
-    color: #333;
+    font-weight: 600;
+    color: #222;
     padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e0e0e0;
     width: 100%;
 }
 
@@ -114,39 +110,26 @@
 
 .link-item {
     display: block;
-    color: #555;
+    color: #444;
     text-decoration: none;
     padding: 4px 0;
-    background: transparent;
-    border: none;
     transition: color 0.3s ease, padding-left 0.3s ease;
     font-size: 0.9rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.link-item::before {
-    display: none;
 }
 
 .link-item:hover {
-    color: var(--color-accent);
-    padding-left: 10px;
+    color: var(--color-accent, #0077cc);
+    padding-left: 8px;
 }
 
-/* --- NUEVA MEDIA QUERY PARA TABLET Y ESCRITORIO --- */
+/* Responsive */
 @media (min-width: 768px) {
     .link-building-grid {
-        /* A partir de 768px, activamos la cuadrícula multi-columna */
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px; /* Restablecemos el gap para la cuadrícula */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
     }
 
     .link-building-header {
-        text-align: center; /* Centramos el título en pantallas grandes */
-    }
-
-    .link-building-subtitle {
-        margin: 0 auto; /* Centramos el subtítulo */
+        text-align: center;
     }
 }

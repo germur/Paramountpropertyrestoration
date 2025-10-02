@@ -1,104 +1,178 @@
 .tittleFAQacordeon {
-    font-size: 35px;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 40px 10px 30px;
-    text-align: center;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  padding: var(--spacing-8) var(--spacing-2) var(--spacing-6);
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
 }
 
 .sectionAcordeon {
-    padding: 40px 0;
+  padding: var(--spacing-8) 0;
 }
 
 .accordion {
-    margin: 10px;
-    border-radius: 8px;
-    padding: 60px 0 0;
+  margin: var(--spacing-2);
+  border-radius: var(--radius-lg);
+  background: #f9f9f9;
+  border: 1px solid var(--border-subtle);
 }
 
 .accordion-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+  padding: var(--spacing-2);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  cursor: pointer;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  font-weight: 600;
+  transition: background-color .3s ease, box-shadow .3s ease, transform .1s ease;
+  border-radius: var(--radius-xl);
+  background: #fafafa;
+  box-shadow: none;
 }
 
 .tittleAcordionHeader {
-    font-weight: 400;
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
 .accordion-header:hover {
-    background: #ebebeb;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.accordion-header:active {
+  transform: translateY(0.5px);
+}
+
+.accordion-header:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
 }
 
 .icon {
-    font-size: 15px;
-    transition: transform 0.3s ease;
-    color: #0C4E6E;
-    padding: 6px;
-    border-radius: 50%;
+  font-size: 18px;
+  transition: transform .3s ease, background-color .3s ease;
+  color: var(--color-primary);
+  padding: 6px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon:hover {
+  background: var(--bg-soft, #e0e7ff);
 }
 
 .icon.open {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
+/*
+  Content animation using max-height is intentionally generous (1000px)
+  to accommodate variable copy without layout jumps.
+*/
 .accordion-content {
-
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 15px;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 var(--spacing-4);
+  transition: max-height .4s ease, padding .3s ease, opacity .4s ease;
 }
 
 .accordion-content.show {
-    display: flex;
-    max-height: 170px;
-    padding: 15px;
-    gap: 20px;
+  max-height: 1000px;
+  opacity: 1;
+  padding: var(--spacing-4);
+  display: grid;
+  gap: var(--spacing-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .accordion-content.show {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
 }
 
 .imgItemAcordeon {
-    border-radius: 10px;
-    height: 140px;
+  border-radius: var(--radius-md);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .imgItemAcordeon {
     width: 140px;
+    height: 140px;
+  }
 }
 
 .textContentAcorde {
-    color: gray;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.125rem;
 }
 
 .cntButtCtaAcorde {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--spacing-6);
 }
 
 .btnAcordeonCta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #6F6F6F;
-    background-color: transparent;
-    border: 1px solid #A4ACB9;
-    height: 2.5rem;
-    width: 9rem;
-    border-radius: 3rem;
-    box-shadow: 0px 4px 5px -6px rgba(0, 0, 0, 0.75);
-    cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: none;
+  height: 2.5rem;
+  padding: 0 var(--spacing-5);
+  border-radius: 3rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease, transform .1s ease, box-shadow .3s ease;
+}
+
+.btnAcordeonCta:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+.btnAcordeonCta:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
 }
 
 .ArrowFreeCtaAcordeon {
-    padding-left: 10px;
+  padding-left: 10px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .accordion-header,
+  .accordion-content,
+  .btnAcordeonCta,
+  .icon {
+    transition: none !important;
+    transform: none !important;
+  }
 }

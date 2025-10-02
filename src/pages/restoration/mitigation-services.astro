@@ -10,7 +10,7 @@ const pageData = {
     slug: "mitigation-services",
     name: "Mitigation Services",
     template: "mitigation",
-    description: "Professional damage mitigation services"
+    description: "Professional damage mitigation services",
   },
   sub: {
     slug: "mitigation-services",
@@ -18,16 +18,17 @@ const pageData = {
     nombre: "Mitigation Services",
     template: "mitigation",
     short: "Professional damage mitigation services",
-    categoria: "restoration"
-  }
+    categoria: "restoration",
+  },
 };
 
 // SEO básico requerido por BaseLayout y SEOHead
 const pageTitle = "Mitigation Services in Florida | Water, Fire, Mold & Storm Prevention";
-const pageDescription = "Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection.";
+const pageDescription =
+  "Florida mitigation services to limit property damage from water, fire, mold, and storms. Fast response & prevention solutions. Call today for inspection.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} pageId="mitigation-services">
   {/* SEOHead genera title, description, canonical, OG/Twitter y JSON-LD */}
   <SEOHead
     title={pageTitle}
