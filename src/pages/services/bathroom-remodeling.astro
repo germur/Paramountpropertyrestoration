@@ -3,13 +3,35 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
+import SEOHead from "../../components/SEOHead.jsx";
+
+// SEO base para hub de Services (sin ciudad)
+const pageTitle = "Bathroom Remodeling Contractors | Paramount Property Restoration";
+const pageDescription = "Stylish, functional bathrooms with ADA conversions and premium materials. Transparent pricing & warranty.";
 ---
 
 <BaseLayout
-  title="Bathroom Remodeling Contractors | Paramount Property Restoration"
-  description="Stylish, functional bathrooms with ADA conversions and premium materials. Transparent pricing & warranty."
+  title={pageTitle}
+  description={pageDescription}
   data-page="bathroom"
 >
+  {/* SEO centralizado con SEOHead (hub sin ciudad) */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service="bathroom-remodeling"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
   <!-- Hero Section -->
   <section class="hero-section" style="background-image: url('/images/bathroomHero.jpg');">
     <div class="hero-overlay"></div>

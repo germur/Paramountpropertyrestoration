@@ -1,49 +1,19 @@
+Sitemap: https://paramountpropertyrestoration.com/sitemap.xml
+
 User-agent: *
 Allow: /
 
-# Permitir acceso a todas las páginas principales
-Allow: /services/
-Allow: /restoration/
-Allow: /portfolio/
-Allow: /blog/
-Allow: /contact/
-
-# Bloquear archivos del sistema y directorios técnicos
+# Block only truly non-public endpoints
 Disallow: /admin/
-Disallow: /api/
-Disallow: /_astro/
-Disallow: /node_modules/
-Disallow: /.git/
-Disallow: /src/
-Disallow: /dist/
-Disallow: /*.json$
-Disallow: /*.config.*
-Disallow: /package*.json
-Disallow: /.env*
-Disallow: /tsconfig.json
-Disallow: /astro.config.*
+Disallow: /api/private/
+Disallow: /api/internal/
+Disallow: /server-status
+Disallow: /404
+Disallow: /500
 
-# Permitir recursos estáticos importantes
+# Explicitly allow static assets (including Astro bundles) so renderers can fetch resources
 Allow: /images/
 Allow: /css/
 Allow: /js/
 Allow: /fonts/
-
-# Configuraciones específicas para bots de búsqueda principales
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Tiempo de rastreo (1 segundo entre requests)
-Crawl-delay: 1
-
-# Ubicación del sitemap
-Sitemap: https://paramountpropertyrestoration.com/sitemap.xml
-
-# Información adicional para SEO
-# Host: paramountpropertyrestoration.com
+Allow: /_astro/

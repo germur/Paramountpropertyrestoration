@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/BaseLayout.astro";
 import InteractiveBlog from "../../components/InteractiveBlog.jsx";
+import SEOHead from "../../components/SEOHead.jsx";
 import type { CollectionEntry } from "astro:content";
 
 const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
@@ -10,12 +11,29 @@ const sortedPosts = allPosts.sort(
 );
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 const recentPosts = sortedPosts.slice(0, 5);
+const pageTitle = "Remodeling & Construction Guides | Paramount Property Restoration Learning Hub";
+const pageDescription = "Discover expert resources to plan, estimate and manage your renovation or contracting career.";
 ---
 
 <Layout
-  title="Remodeling & Construction Guides | Paramount Property Restoration Learning Hub"
-  description="Discover expert resources to plan, estimate and manage your renovation or contracting career."
+  title={pageTitle}
+  description={pageDescription}
 >
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="blog"
+    service="blog"
+    subservice="index"
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
   <section class="blog-hero">
     <div class="containerBlog">
       <div class="hero-content">

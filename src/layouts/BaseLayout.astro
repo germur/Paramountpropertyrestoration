@@ -16,12 +16,6 @@ const {
   image = "/images/og-image.jpg",
 } = Astro.props;
 
-// Generación de URLs absolutas para un SEO robusto.
-const siteUrl =
-  Astro.site?.toString() || `${Astro.url.protocol}//${Astro.url.host}`;
-const canonicalURL = new URL(Astro.url.pathname, siteUrl);
-const imageURL = new URL(image, siteUrl);
-
 // Lógica para generar migas de pan dinámicamente a partir de la ruta.
 const pathname = Astro.url.pathname;
 const segments = pathname.split('/').filter(Boolean);
@@ -46,91 +40,23 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
+    {/* Fallback mínimo SOLO si la página no inyecta <SEOHead slot="head" /> */}
+    {!Astro.slots.has('head') && (
+      <>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </>
+    )}
+    {/* Aquí las páginas inyectan su SEO (SEOHead) */}
+    <slot name="head" />
 
-    {/* Keywords globales para PPR */}
-    <meta name="keywords" content="property restoration Florida, emergency restoration, water damage restoration, fire damage restoration, mold remediation, storm damage restoration, kitchen remodeling, bathroom remodeling, general contractor Florida, 24/7 emergency response" />
-
-    {/* Metatags para Open Graph (Facebook, etc.) */}
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={imageURL} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Paramount Property Restoration" />
-
-    {/* Metatags para Twitter Cards */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={imageURL} />
-
-    {/* Favicon actualizado */}
+    {/* Favicon */}
     <link rel="icon" type="image/png" href="/images/ppr-logo.png" />
     <link rel="apple-touch-icon" href="/images/ppr-logo.png" />
     <link rel="shortcut icon" href="/images/ppr-logo.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    {/* Schema.org para negocio local dual */}
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Paramount Property Restoration",
-        "description": "Emergency property restoration and professional remodeling services in Florida",
-        "url": "https://paramountpropertyrestoration.com",
-        "telephone": "+1-786-602-2217",
-        "email": "services@paramountpropertyrestoration.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Florida",
-          "addressCountry": "US"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Florida"
-        },
-        "serviceType": [
-          "Emergency Water Damage Restoration",
-          "Fire Damage Restoration", 
-          "Mold Remediation",
-          "Storm Damage Restoration",
-          "Kitchen Remodeling",
-          "Bathroom Remodeling",
-          "General Contracting",
-          "Home Additions"
-        ],
-        "openingHours": "Mo-Su 00:00-23:59",
-        "priceRange": "$$",
-        "image": "https://paramountpropertyrestoration.com/images/og-image.jpg",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Property Restoration & Remodeling Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Emergency Water Damage Restoration",
-                "description": "24/7 emergency water damage restoration and cleanup"
-              }
-            },
-            {
-              "@type": "Offer", 
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Kitchen Remodeling",
-                "description": "Complete kitchen renovation and remodeling services"
-              }
-            }
-          ]
-        }
-      }
-    </script>
-
-    {/* Google Analytics actualizado */}
+    {/* Google Analytics */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HW8CW41S53" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -152,7 +78,7 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
   <body>
     <Header />
     <main>
-      {/* Renderizado condicional: Las migas de pan solo aparecen si no estamos en la página de inicio. */}
+      {/* Migas solo si no estamos en el home */}
       {breadcrumbData.length > 1 && (
         <div class="container">
           <Breadcrumbs client:load crumbs={breadcrumbData} />

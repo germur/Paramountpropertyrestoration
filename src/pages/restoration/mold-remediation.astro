@@ -3,180 +3,48 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import MoldTemplate from "../../components/restoration/templates/MoldTemplate.astro";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import SEOHead from "../../components/SEOHead.jsx";
 
-// Page data configuration
+// Page data configuration (hub sin ciudad)
 const pageData = {
   group: {
     slug: "mold-remediation",
     name: "Mold Remediation",
-    template: 'mold',
+    template: "mold",
     description: "Professional mold inspection, testing, and removal services"
   },
   sub: {
     slug: "mold-remediation",
-    title: 'Mold Remediation',
+    title: "Mold Remediation",
     nombre: "Mold Remediation",
     template: "mold",
-    short: 'Professional mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention.',
+    short: "Professional mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention.",
     categoria: "restoration"
   }
 };
 
-// SEO configuration
-const seoConfig = {
-  title: "Mold Remediation in Florida | Black Mold Removal & Testing",
-  description: "Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today.",
-  canonical: "https://paramountpropertyrestoration.com/restoration/mold-remediation",
-  keywords: "mold remediation Florida, black mold removal, mold testing, mold inspection, toxic mold removal, mold cleanup Florida, certified mold removal, mold prevention Florida"
-};
+// SEO básico requerido por BaseLayout y SEOHead
+const pageTitle = "Mold Remediation in Florida | Black Mold Removal & Testing";
+const pageDescription = "Certified mold remediation experts in Florida. Safe removal of black mold with testing, treatment & prevention. Protect your home & health—request inspection today.";
 ---
 
-<BaseLayout
-  title={seoConfig.title}
-  description={seoConfig.description}
->
-  <!-- Enhanced Schema.org for Mold Remediation -->
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Mold Remediation in Florida",
-      "description": "Professional mold remediation and black mold removal services across Florida. Testing, treatment and prevention.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Paramount Property Restoration",
-        "telephone": "+1-786-602-2217",
-        "email": "services@paramountpropertyrestoration.com",
-        "url": "https://paramountpropertyrestoration.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Florida",
-          "addressCountry": "US"
-        },
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "license",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "State of Florida"
-            }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "certification",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "IICRC (Institute of Inspection, Cleaning and Restoration Certification)"
-            }
-          }
-        ]
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Florida"
-      },
-      "serviceType": "Mold Remediation and Testing",
-      "category": "Environmental Health Services",
-      "url": "https://paramountpropertyrestoration.com/restoration/mold-remediation",
-      "offers": {
-        "@type": "Offer",
-        "description": "Comprehensive mold remediation, testing, and prevention services",
-        "availability": "https://schema.org/InStock",
-        "availabilityStarts": "2024-01-01",
-        "businessFunction": "https://schema.org/ProvideService",
-        "priceRange": "$$"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Mold Remediation Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mold Inspection & Testing",
-              "description": "Professional mold testing and air quality assessment"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Black Mold Removal",
-              "description": "Safe removal of toxic black mold and other harmful species"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mold Containment",
-              "description": "Professional containment to prevent mold spread during remediation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Moisture Control",
-              "description": "Moisture elimination and humidity control to prevent future mold growth"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Post-Remediation Verification",
-              "description": "Independent testing to ensure successful mold remediation"
-            }
-          }
-        ]
-      },
-      "additionalType": "https://schema.org/HealthAndBeautyBusiness",
-      "knowsAbout": [
-        "Black Mold (Stachybotrys chartarum)",
-        "Aspergillus",
-        "Penicillium",
-        "Indoor Air Quality",
-        "EPA Mold Guidelines",
-        "IICRC Standards"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "178",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
-  </script>
-  
-  <!-- SEO Enhancement -->
-  <link rel="canonical" href={seoConfig.canonical} slot="head" />
-  <meta name="keywords" content={seoConfig.keywords} slot="head" />
-  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
-  <meta name="geo.region" content="US-FL" slot="head" />
-  <meta name="geo.placename" content="Florida" slot="head" />
-  
-  <!-- Health & Safety specific meta tags -->
-  <meta property="article:section" content="Environmental Health" slot="head" />
-  <meta name="service.category" content="Mold Remediation" slot="head" />
-  <meta name="service.type" content="Environmental Health Services" slot="head" />
-  <meta name="health.concern" content="Mold Exposure Prevention" slot="head" />
-  
-  <!-- Enhanced Open Graph -->
-  <meta property="og:title" content={seoConfig.title} slot="head" />
-  <meta property="og:description" content={seoConfig.description} slot="head" />
-  <meta property="og:url" content={seoConfig.canonical} slot="head" />
-  <meta property="og:type" content="website" slot="head" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" slot="head" />
-  <meta name="twitter:title" content={seoConfig.title} slot="head" />
-  <meta name="twitter:description" content={seoConfig.description} slot="head" />
+<BaseLayout title={pageTitle} description={pageDescription}>
+  {/* SEOHead genera title, description, canonical, OG/Twitter y JSON-LD */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service="mold-remediation"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
 
-  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
-  
   <MoldTemplate group={pageData.group} sub={pageData.sub} />
 </BaseLayout>

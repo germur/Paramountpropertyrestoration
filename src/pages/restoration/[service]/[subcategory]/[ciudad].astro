@@ -5,6 +5,7 @@ import { getEnrichedSubserviceContent } from "../../../../data/subservice-conten
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
+import SEOHead from "../../../../components/SEOHead.jsx";
 import "../../../../styles/pages/[ciudad].css";
 import "../../../../styles/pages/restoration-city.css";
 
@@ -22,13 +23,12 @@ export async function getStaticPaths() {
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
 
-// Page configuration
+// Page configuration (DETAIL: con ciudad)
 const pageConfig = {
   canonical: `/restoration/${service}/${subcategory}/${ciudad}`,
-  title: `${servicioData.title} in ${ciudadData.nombre}, FL | 24/7 Emergency Response`,
+  title: `${servicioData.title} in ${ciudadData.nombre}, ${ciudadData.region || 'FL'} | 24/7 Emergency Response`,
   description: servicioData.seo?.description || 
     `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`,
-  keywords: `${servicioData.title.toLowerCase()} ${ciudadData.nombre}, emergency restoration ${ciudadData.nombre}, ${servicioData.title.toLowerCase()} repair Florida, property restoration ${ciudadData.region}`
 };
 
 // Enriched content
@@ -74,80 +74,23 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
   title={pageConfig.title} 
   description={pageConfig.description}
 >
-  <!-- Enhanced Schema.org for Local Service -->
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": `${servicioData.title} in ${ciudadData.nombre}`,
-      "description": pageConfig.description,
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Paramount Property Restoration",
-        "telephone": "+1-786-602-2217",
-        "email": "services@paramountpropertyrestoration.com",
-        "url": "https://paramountpropertyrestoration.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Florida",
-          "addressCountry": "US"
-        },
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "license",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "State of Florida"
-          }
-        }
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": `${ciudadData.nombre}`,
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Florida"
-          }
-        },
-        {
-          "@type": "State", 
-          "name": "Florida"
-        }
-      ],
-      "serviceType": `${servicioData.title}`,
-      "category": "Emergency Property Restoration",
-      "url": `https://paramountpropertyrestoration.com${pageConfig.canonical}`,
-      "offers": {
-        "@type": "Offer",
-        "description": `Professional ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
-        "availability": "https://schema.org/InStock",
-        "availabilityStarts": "2024-01-01",
-        "businessFunction": "https://schema.org/ProvideService"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "89",
-        "bestRating": "5"
-      }
-    }
-  </script>
-  
-  <!-- SEO Meta Tags -->
-  <link rel="canonical" href={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
-  <meta name="keywords" content={pageConfig.keywords} slot="head" />
-  <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
-  <meta name="geo.region" content="US-FL" slot="head" />
-  <meta name="geo.placename" content={ciudadData.nombre} slot="head" />
-  
-  <!-- Open Graph specific to city -->
-  <meta property="og:title" content={pageConfig.title} slot="head" />
-  <meta property="og:description" content={pageConfig.description} slot="head" />
-  <meta property="og:url" content={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
-  
-  <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
-  
+  {/* SEO centralizado con ciudad (detalle) */}
+  <SEOHead
+    title={pageConfig.title}
+    description={pageConfig.description}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service={service}
+    subservice={subcategory}
+    city={ciudad}
+    addressLocality={ciudadData.nombre}
+    addressRegion={ciudadData.region || 'FL'}
+    phone={"+1-786-602-2217"}
+    isHub={false}
+    businessName="Paramount Property Restoration"
+    slot="head"
+  />
+
   <!-- Hero Section -->
   <section
     class="hero-section"

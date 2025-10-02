@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SEOHead from "../components/SEOHead.jsx";
+
+// 📄 Privacy Policy
+const pageTitle = "Privacy Policy | Paramount Property Restoration";
+const pageDescription = "Learn how Paramount Property Restoration collects, uses, and protects your personal data. Your privacy matters to us.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="legal"
+    service="privacy-policy"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
+  <section class="container" style="max-width: 900px; margin: 2rem auto; line-height:1.7;">
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: October 1, 2025</em></p>
+
+    <h2>Information We Collect</h2>
+    <p>We may collect personal information that you provide (name, email, phone, address), project details, and message content submitted via our forms. We also collect technical data (IP, device/browser info, pages visited) to improve the site.</p>
+
+    <h2>How We Use Your Information</h2>
+    <ul>
+      <li>To respond to inquiries, schedule visits, and provide estimates/services.</li>
+      <li>To operate and improve our website, content, and user experience.</li>
+      <li>For safety, fraud prevention, and compliance with legal obligations.</li>
+    </ul>
+
+    <h2>Sharing of Information</h2>
+    <p>We do not sell your data. We may share it with service providers (hosting, analytics, communications) under contracts that protect your privacy, or when required by law.</p>
+
+    <h2>Cookies & Analytics</h2>
+    <p>We use cookies/analytics to understand site usage and improve performance. You can control cookies through your browser settings.</p>
+
+    <h2>Data Security & Retention</h2>
+    <p>We apply reasonable administrative, technical, and physical safeguards. We retain information only as long as needed for the purposes described here or as required by law.</p>
+
+    <h2>Your Choices</h2>
+    <ul>
+      <li>Request access, correction, or deletion where applicable.</li>
+      <li>Opt out of marketing communications at any time.</li>
+    </ul>
+
+    <h2>Children’s Privacy</h2>
+    <p>Our services are not directed to children under 13. We do not knowingly collect data from children.</p>
+
+    <h2>Contact Us</h2>
+    <p>Questions about this policy? Email or call us:</p>
+    <p><strong>Paramount Property Restoration</strong><br />
+    Phone: (786) 602-2217<br />
+    Service Area: Florida</p>
+  </section>
+</BaseLayout>

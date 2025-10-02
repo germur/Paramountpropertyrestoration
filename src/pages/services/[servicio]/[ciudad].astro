@@ -3,6 +3,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import '../../../styles/pages/[ciudad].css'
 import { restorationGroups, cities } from "../../../data/restoration.js";
+import SEOHead from "../../../components/SEOHead.jsx";
 
 export async function getStaticPaths() {
   const combinations = [];
@@ -12,7 +13,6 @@ export async function getStaticPaths() {
     // Solo incluir servicios que van en /services/ (remodeling)
     if (group.slug === "remodeling-services" || 
         group.subservices.some(sub => sub.categoria === "remodeling")) {
-      
       group.subservices.forEach(service => {
         cities.forEach(city => {
           combinations.push({
@@ -96,6 +96,23 @@ const serviceName = servicioData.nombre || servicioData.title;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  {/* SEO para página de ciudad en /services */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service={servicio}
+    subservice={null}
+    city={ciudad}
+    addressLocality={ciudadData.nombre}
+    addressRegion={ciudadData.region}
+    phone={"+1-786-602-2217"}
+    isHub={false}
+    businessName="Paramount Property Restoration"
+    slot="head"
+  />
+
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">

@@ -3,12 +3,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/portfolio.css";
 import TabsNavegation from "../components/TabsNavegation.jsx";
+import SEOHead from "../components/SEOHead.jsx";
+
+const pageTitle = "Project Portfolio | Restoration & Remodeling Projects in Florida";
+const pageDescription = "See before/after results for water & fire restoration, mold remediation, and kitchen/bath/home remodels across Florida.";
 ---
 
-<BaseLayout
-  title="Remodeling Portfolio | 1GC Construction"
-  description="Explore the 1GC Construction portfolio of stunning home remodeling projects in Florida. Browse our gallery of modern kitchen, bath, and interior renovations for inspiration."
->
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="portfolio"
+    service="portfolio"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
   <!-- Section One -->
 
   <section class="projects-section">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { restorationGroups } from "../../../data/restoration.js";
+import { SERVICE_REGISTRY } from "../../../lib/routing";
 
 // Template imports
 import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
@@ -9,172 +10,142 @@ import StormTemplate from "../../../components/restoration/templates/StormTempla
 import MoldTemplate from "../../../components/restoration/templates/MoldTemplate.astro";
 import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
 import UnifiedTemplate from "../../../components/restoration/templates/UnifiedTemplate.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
 
-// Static paths generation
 export async function getStaticPaths() {
-    const combinations = [];
-    
-    restorationGroups.forEach(group => {
-        group.subservices.forEach(subservice => {
-            combinations.push({
-                params: {
-                    group: group.slug,
-                    subservice: subservice.slug
-                },
-                props: {
-                    groupData: {
-                        name: group.name,
-                        slug: group.slug,
-                        template: group.template || "generic",
-                        description: group.description
-                    },
-                    subData: {
-                        ...subservice,
-                        groupSlug: group.slug,
-                        groupName: group.name,
-                        template: group.template
-                    }
-                }
-            });
-        });
+  const paths = [] as { params: { group: string; subservice: string }, props?: any }[];
+
+  // 1) Collect existing combos from restorationGroups (if any)
+  restorationGroups.forEach((group) => {
+    group.subservices.forEach((sub) => {
+      paths.push({
+        params: { group: group.slug, subservice: sub.slug },
+        props: {
+          groupData: {
+            name: group.name,
+            slug: group.slug,
+            template: group.template || 'generic',
+            description: group.description,
+          },
+          subData: {
+            ...sub,
+            groupSlug: group.slug,
+            groupName: group.name,
+            template: group.template,
+          },
+        },
+      });
     });
-    
-    return combinations;
+  });
+
+  // 2) Ensure new required combos exist regardless of external imports
+  const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+    const exists = paths.some(p => p.params.group === groupSlug && p.params.subservice === subSlug);
+    if (!exists) {
+      paths.push({
+        params: { group: groupSlug, subservice: subSlug },
+        props: {
+          groupData: { name: groupName, slug: groupSlug, template, description: desc },
+          subData: {
+            slug: subSlug,
+            title: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+            nombre: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+            short: desc,
+            categoria: 'restoration',
+            template,
+            groupSlug,
+            groupName,
+          },
+        },
+      });
+    }
+  };
+
+  // Fire
+  ensure('fire-damage', 'fire-restoration', 'Fire Damage', 'fire', 'Fire & smoke damage cleanup and repairs.');
+  // Storm
+  ensure('storm-damage', 'roof-damage', 'Storm Damage', 'storm', 'Hurricane, wind, and storm damage services.');
+  // Mold
+  ensure('mold-remediation', 'air-quality-testing', 'Mold Remediation', 'mold', 'Mold inspection, cleanup & prevention.');
+  // Mitigation
+  ensure('mitigation-services', 'emergency-response', 'Mitigation Services', 'mitigation', 'Rapid mitigation to prevent further damage.');
+
+  return paths;
 }
 
-const { groupData, subData } = Astro.props;
+const groupMeta = {
+  'water-damage': { name: 'Water Damage', template: 'water', description: 'Water damage restoration & mitigation.' },
+  'fire-damage': { name: 'Fire Damage', template: 'fire', description: 'Fire & smoke damage cleanup and repairs.' },
+  'storm-damage': { name: 'Storm Damage', template: 'storm', description: 'Hurricane, wind, and storm damage services.' },
+  'mold-remediation': { name: 'Mold Remediation', template: 'mold', description: 'Mold inspection, cleanup & prevention.' },
+  'mitigation-services': { name: 'Mitigation Services', template: 'mitigation', description: 'Rapid mitigation to prevent further damage.' },
+};
 
-// Page configuration
+const params = Astro.params as { group: string; subservice: string };
+
+let { groupData, subData } = Astro.props as any;
+
+if (!groupData || !subData) {
+  const gm = groupMeta[params.group] || {
+    name: (params.group || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+    template: 'generic',
+    description: ''
+  };
+  groupData = {
+    name: gm.name,
+    slug: params.group,
+    template: gm.template,
+    description: gm.description,
+  };
+  subData = {
+    slug: params.subservice,
+    title: (params.subservice || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+    nombre: (params.subservice || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+    short: gm.description,
+    categoria: 'restoration',
+    template: gm.template,
+    groupSlug: params.group,
+    groupName: gm.name,
+  };
+}
+
+// Page configuration (hub de subservicio: sin ciudad)
 const pageConfig = {
-    canonical: `/restoration/${groupData.slug}/${subData.slug}`,
-    title: subData?.seo?.title ?? 
-        `${subData.title} | ${groupData.name} | Paramount Property Restoration`,
-    description: subData?.seo?.description ?? 
-        `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
-    keywords: `${subData.title} Florida, ${groupData.name.toLowerCase()} services, emergency restoration, ${subData.title.toLowerCase()} repair, property restoration Florida`
+  canonical: `/restoration/${groupData.slug}/${subData.slug}`,
+  title:
+    subData?.seo?.title ?? `${subData.title} | ${groupData.name} | Paramount Property Restoration`,
+  description:
+    subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
 };
 
 // Template selection
 const templateMap = {
-    water: WaterTemplate,
-    fire: FireTemplate,
-    storm: StormTemplate,
-    mold: MoldTemplate,
-    mitigation: MitigationTemplate,
+  water: WaterTemplate,
+  fire: FireTemplate,
+  storm: StormTemplate,
+  mold: MoldTemplate,
+  mitigation: MitigationTemplate,
 };
 const SelectedTemplate = templateMap[groupData.template] ?? UnifiedTemplate;
 ---
 
-<BaseLayout 
-    title={pageConfig.title} 
+<BaseLayout title={pageConfig.title} description={pageConfig.description}>
+  {/* SEO centralizado: canonical, OG/Twitter, JSON-LD */}
+  <SEOHead
+    title={pageConfig.title}
     description={pageConfig.description}
->
-    <!-- Enhanced Schema.org for Service -->
-    <script type="application/ld+json" slot="head">
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": `${subData.title} in Florida`,
-            "description": pageConfig.description,
-            "provider": {
-                "@type": "LocalBusiness",
-                "name": "Paramount Property Restoration",
-                "telephone": "+1-786-602-2217",
-                "email": "services@paramountpropertyrestoration.com",
-                "url": "https://paramountpropertyrestoration.com",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressRegion": "Florida",
-                    "addressCountry": "US"
-                },
-                "hasCredential": {
-                    "@type": "EducationalOccupationalCredential",
-                    "credentialCategory": "license",
-                    "recognizedBy": {
-                        "@type": "Organization",
-                        "name": "State of Florida"
-                    }
-                }
-            },
-            "areaServed": {
-                "@type": "State",
-                "name": "Florida"
-            },
-            "serviceType": `${subData.title}`,
-            "category": "Emergency Property Restoration",
-            "url": `https://paramountpropertyrestoration.com${pageConfig.canonical}`,
-            "offers": {
-                "@type": "Offer",
-                "description": `Professional ${subData.title.toLowerCase()} throughout Florida`,
-                "availability": "https://schema.org/InStock",
-                "availabilityStarts": "2024-01-01",
-                "businessFunction": "https://schema.org/ProvideService",
-                "priceRange": "$$"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": `${groupData.name} Services`,
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Emergency Response",
-                            "description": "24/7 emergency response and assessment"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Insurance Assistance",
-                            "description": "Direct insurance billing and claim support"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Licensed Restoration",
-                            "description": "Licensed and certified restoration services"
-                        }
-                    }
-                ]
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "156",
-                "bestRating": "5",
-                "worstRating": "1"
-            }
-        }
-    </script>
-    
-    <!-- SEO Enhancement -->
-    <link rel="canonical" href={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
-    <meta name="keywords" content={pageConfig.keywords} slot="head" />
-    <meta name="robots" content="index, follow, max-image-preview:large" slot="head" />
-    <meta name="geo.region" content="US-FL" slot="head" />
-    <meta name="geo.placename" content="Florida" slot="head" />
-    
-    <!-- Service-specific meta tags -->
-    <meta property="article:section" content={groupData.name} slot="head" />
-    <meta name="service.category" content="Emergency Property Restoration" slot="head" />
-    <meta name="service.type" content={subData.title} slot="head" />
-    
-    <!-- Enhanced Open Graph -->
-    <meta property="og:title" content={pageConfig.title} slot="head" />
-    <meta property="og:description" content={pageConfig.description} slot="head" />
-    <meta property="og:url" content={`https://paramountpropertyrestoration.com${pageConfig.canonical}`} slot="head" />
-    <meta property="og:type" content="website" slot="head" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" slot="head" />
-    <meta name="twitter:title" content={pageConfig.title} slot="head" />
-    <meta name="twitter:description" content={pageConfig.description} slot="head" />
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service={groupData.slug}
+    subservice={subData.slug}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
 
-    <!-- ELIMINADO: Breadcrumbs duplicados - BaseLayout los genera automáticamente -->
-    
-    <SelectedTemplate group={groupData} sub={subData} />
+  <SelectedTemplate group={groupData} sub={subData} />
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SEOHead from "../../components/SEOHead.jsx";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -12,6 +13,9 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const pageTitle = entry.data.title;
+const pageDescription = entry.data.description || "";
 
 // Formatear fecha
 const formattedDate = entry.data.date.toLocaleDateString("es-ES", {
@@ -31,6 +35,23 @@ const readingTime = Math.ceil(wordCount / 200);
   description={entry.data.description}
   image={entry.data.image}
 >
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    image={entry.data.image}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="blog"
+    service="blog"
+    subservice="post"
+    city={null}
+    addressLocality={null}
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    isHub={false}
+    pageType="article"
+    businessName="Paramount Property Restoration"
+    slot="head"
+  />
   <article class="blog-post">
     <!-- Hero Section -->
     <header class="post-header">

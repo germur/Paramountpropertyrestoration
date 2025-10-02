@@ -3,13 +3,32 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
+import SEOHead from "../../components/SEOHead.jsx";
+
+const pageTitle = "Kitchen Remodeling Experts | Paramount Property Restoration";
+const pageDescription = "From open layouts to premium countertops – transform your kitchen today with Paramount's expert team.";
 ---
 
 <BaseLayout
-  title="Kitchen Remodeling Experts | Paramount Property Restoration"
-  description="From open layouts to premium countertops – transform your kitchen today with Paramount's expert team."
+  title={pageTitle}
+  description={pageDescription}
   data-page="kitchen"
 >
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service="kitchen-remodeling"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
   <!-- Hero Section -->
   <section class="hero-section" style="background-image: url('/images/kitchenHero.jpg');">
     <div class="hero-overlay"></div>

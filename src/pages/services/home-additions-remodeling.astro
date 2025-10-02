@@ -3,13 +3,35 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../components/AcordeonServices";
+import SEOHead from "../../components/SEOHead.jsx";
+
+// SEO base para hub de Services (sin ciudad)
+const pageTitle = "Home Additions Contractors | Paramount Property Restoration";
+const pageDescription = "Add square footage with garage conversions, extra rooms, or second-story additions. Free consultation and permit-ready plans.";
 ---
 
 <BaseLayout
-  title="Home Additions Contractors | Paramount Property Restoration"
-  description="Add square footage with garage conversions, extra rooms, or second-story additions."
+  title={pageTitle}
+  description={pageDescription}
   data-page="home-additions"
 >
+  {/* SEO centralizado con SEOHead (hub sin ciudad) */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service="home-additions-remodeling"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
   <!-- Hero Section -->
   <section class="hero-section" style="background-image: url('/images/home-additionsHero.jpg');">
     <div class="hero-overlay"></div>
