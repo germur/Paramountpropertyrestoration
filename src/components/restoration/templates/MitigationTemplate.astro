@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
+import "../../../styles/restoration-templates.css";
 
 const { group, sub } = Astro.props;
 
@@ -274,7 +275,10 @@ const faqCategory = `mitigation-${sub.slug}`;
           <a href="/restoration/mitigation-services/water-mitigation/stuart">Mitigation Services Stuart</a>
           <a href="/restoration/mitigation-services/water-mitigation/vero-beach">Mitigation Services Vero Beach</a>
           <a href="/restoration/mitigation-services/water-mitigation/jupiter">Mitigation Services Jupiter</a>
-        <a href="/contact" class="btn">Prevent Damage Now →</a>
+        </div>
+        <div class="region-cta">
+          <a href="/contact" class="btn">Prevent Damage Now →</a>
+        </div>
       </div>
     </div>
 

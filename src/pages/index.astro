@@ -18,8 +18,7 @@ try {
   allPosts = await getCollection("blog");
   featuredPosts = allPosts
     .filter((post) => post.data.featured)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-    .slice(0, 3);
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 } catch (error) {
   console.log("No se pudieron cargar los posts del blog:", error);
 }
@@ -697,8 +696,10 @@ try {
 
   .blog-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .blog-card {
@@ -751,13 +752,13 @@ try {
 
   /* RESPONSIVE */
   @media (max-width: 1200px) {
-    .services-grid, .regions-grid, .blog-grid {
+    .services-grid, .regions-grid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media (max-width: 900px) {
-    .services-grid, .regions-grid, .blog-grid {
+    .services-grid, .regions-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -773,7 +774,7 @@ try {
       max-width: 280px;
     }
     
-    .services-grid, .regions-grid, .blog-grid {
+    .services-grid, .regions-grid {
       grid-template-columns: 1fr;
     }
     
