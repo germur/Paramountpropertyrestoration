@@ -56,7 +56,7 @@ try {
           <p class="hero-description">24/7 Response Available</p>
           
           <div class="hero-cta-dual">
-            <a href="tel:+17866022217" class="btn cta-action">
+            <a href="tel:+17866022217" class="btn cta-emergency">
               <i class="fas fa-phone"></i>
               <span>Emergency Help<br><strong>(786) 602-2217</strong></span>
             </a>
@@ -78,7 +78,7 @@ try {
           <p class="category-subtitle">When disaster strikes - We respond immediately</p>
         </div>
 
-        <div class="services-grid">
+        <div class="grid-fixed-4">
           <a href="/restoration/water-damage/" class="service-card">
             <div class="service-icon">💧</div>
             <h3>Water Damage</h3>
@@ -109,7 +109,7 @@ try {
         </div>
 
         <div class="cta-container">
-          <a href="tel:+17866022217" class="btn btn-blue">
+          <a href="tel:+17866022217" class="btn btn-emergency">
             <i class="fas fa-phone"></i>
             Call Emergency Line: (786) 602-2217
           </a>
@@ -123,7 +123,7 @@ try {
           <p class="category-subtitle">Transform your space with professional remodeling</p>
         </div>
 
-        <div class="services-grid">
+        <div class="grid-fixed-4">
           <a href="/services/kitchen-remodeling" class="service-card">
             <div class="service-number">01</div>
             <div class="service-image">
@@ -195,7 +195,7 @@ try {
       <p>Fast response in major Florida cities</p>
     </div>
 
-    <div class="regions-grid">
+    <div class="grid-fixed-4">
       <div class="region-column">
         <h3 class="region-title">Central Florida</h3>
         <div class="city-links">
@@ -348,48 +348,6 @@ try {
     margin: 0 0 1rem 0;
   }
 
-  /* BOTONES UNIFICADOS AZULES */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: var(--color-blue);
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .btn:hover,
-  .btn-blue:hover {
-    background: var(--color-blue-hover);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow);
-    color: white;
-    text-decoration: none;
-  }
-
-  .btn-blue {
-    background: var(--color-blue);
-    color: white;
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--color-navy);
-    border: 2px solid var(--color-navy);
-  }
-
-  .btn-outline:hover {
-    background: var(--color-navy);
-    color: white;
-  }
-
   /* HERO */
   .hero-section {
     position: relative;
@@ -442,60 +400,25 @@ try {
     flex-wrap: wrap;
   }
 
-  .cta-action, .cta-secondary {
-    padding: 1.25rem 2rem;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    min-width: 200px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .cta-action {
-    background: var(--color-blue);
-    color: white;
-  }
-
-  .cta-action:hover {
-    background: var(--color-blue-hover);
-    transform: translateY(-2px);
-    color: white;
-  }
-
-  .cta-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-
-  .cta-secondary:hover {
-    background: white;
-    color: var(--color-navy);
-  }
-
-  /* SERVICIOS */
+  /* SERVICIOS CON MÁS RESPIRACIÓN */
   .services-dual-section {
-    padding: 4rem 0;
+    padding: 6rem 0;
     background: var(--color-light);
   }
 
   .services-category {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
   .category-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     display: block;
   }
 
   .category-title {
     color: var(--color-navy);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     display: block;
     width: 100%;
   }
@@ -512,7 +435,7 @@ try {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   .service-card {
@@ -610,6 +533,11 @@ try {
 
   .cta-container {
     text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius);
+    backdrop-filter: blur(5px);
   }
 
   .response-time {
@@ -756,7 +684,7 @@ try {
       align-items: center;
     }
     
-    .cta-action, .cta-secondary {
+    .btn, .btn-outline {
       width: 100%;
       max-width: 280px;
     }

@@ -61,7 +61,7 @@ const defaultContent = {
 </section>
 
 <section>
-  <div class="services-grid">
+  <div class="grid-balanced">
     {defaultContent.services.map(service => (
       <div class="service-item">
         <i class={service.icon}></i>
@@ -75,7 +75,7 @@ const defaultContent = {
 <section class="solutions-section">
   <div class="container">
   <h2 class="solutions-title">Comprehensive Restoration Solutions</h2>
-  <div class="solutions-grid">
+  <div class="grid-balanced">
     {defaultContent.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
@@ -101,7 +101,7 @@ const defaultContent = {
 
 <section class="steps-section">
   <h2 class="steps-title">How It Works</h2>
-  <div class="steps-container">
+  <div class="grid-balanced-small">
     {defaultContent.process.map(step => (
       <div class="step-item" data-step={step.step}>
         <div class="step-icon">

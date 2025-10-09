@@ -162,7 +162,7 @@ const faqCategory = `storm-${sub.slug}`;
 
 <!-- Services Grid -->
 <section>
-  <div class="services-grid">
+  <div class="grid-balanced">
     {content.services.map((service) => (
       <div class="service-item-static">
         <i class={service.icon}></i>
@@ -176,7 +176,7 @@ const faqCategory = `storm-${sub.slug}`;
 <section class="solutions-section">
   <div class="container">
   <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
-  <div class="solutions-grid">
+  <div class="grid-balanced">
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
@@ -203,7 +203,7 @@ const faqCategory = `storm-${sub.slug}`;
 <!-- Process Steps -->
 <section class="steps-section">
   <h2 class="steps-title">How It Works</h2>
-  <div class="steps-container">
+  <div class="grid-balanced-small">
     {content.steps.map((step, index) => (
       <div class="step-item" data-step={index + 1}>
         <div class="step-icon">
@@ -224,7 +224,7 @@ const faqCategory = `storm-${sub.slug}`;
       <p>Emergency storm response in major Florida cities</p>
     </div>
 
-    <div class="restoration-regions-grid">
+    <div class="grid-fixed-4">
       <div class="region-column">
         <h3 class="region-title">Central Florida</h3>
         <div class="city-links">

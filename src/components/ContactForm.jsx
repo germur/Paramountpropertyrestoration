@@ -258,8 +258,8 @@ export default function ContactForm() {
         .form-select:focus,
         .form-textarea:focus {
           outline: none;
-          border-color: #f59e0b;
-          box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+          border-color: var(--color-secondary, #2F80ED);
+          box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
         }
 
         .form-textarea {
@@ -282,23 +282,25 @@ export default function ContactForm() {
         .form-submit {
           width: 100%;
           padding: 0.875rem 2rem;
-          background-color: #f59e0b;
+          background: var(--color-secondary, #2F80ED);
           color: white;
           border: none;
-          border-radius: 0.5rem;
+          border-radius: 50px;
           font-size: 1rem;
-          font-weight: 500;
+          font-weight: 600;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: var(--transition, all 0.2s ease);
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
+          box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
         }
 
         .form-submit:hover:not(:disabled) {
-          background-color: #d97706;
-          transform: translateY(-1px);
+          background: var(--color-secondary-hover, #1e6fd9);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
         }
 
         .form-submit:disabled {
@@ -362,9 +364,9 @@ export default function ContactForm() {
         .emergency-notice {
           margin-top: 2rem;
           padding: 1rem;
-          background-color: #fef3c7;
-          border: 2px solid #f59e0b;
-          border-radius: 0.5rem;
+          background: var(--bg-accent, #F2994A);
+          border: 2px solid var(--color-accent, #F2994A);
+          border-radius: var(--radius, 8px);
           display: flex;
           align-items: center;
           gap: 1rem;
@@ -376,21 +378,27 @@ export default function ContactForm() {
 
         .emergency-text {
           flex: 1;
-          color: #92400e;
+          color: white;
           font-size: 0.875rem;
+          font-weight: 600;
         }
 
         .emergency-phone {
           display: block;
-          color: #f59e0b;
+          color: white;
           font-weight: bold;
           font-size: 1rem;
           text-decoration: none;
           margin-top: 0.25rem;
+          padding: 0.25rem 0.5rem;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
+          transition: var(--transition, all 0.2s ease);
         }
 
         .emergency-phone:hover {
-          color: #d97706;
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
