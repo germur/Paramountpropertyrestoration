@@ -43,14 +43,19 @@ const getHrefLangs = ({ siteUrl, locales = ['en'], currentLocale = 'en', canonic
 const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : '');
 const humanize = (slug) => (slug || '').split('-').map(capitalize).join(' ');
 
+// Enhanced title and description templates for programmatic pages
 function generateTitle({ service, subservice, city, brand = 'Paramount Property Restoration' }) {
   const S = humanize(service);
   const SS = humanize(subservice);
   const C = humanize(city);
-  if (S && SS && C) return `${SS} in ${C} | ${S} | ${brand}`;
-  if (S && C) return `${S} in ${C} | ${brand}`;
-  if (S && SS) return `${SS} | ${S} | ${brand}`;
-  if (S) return `${S} | ${brand}`;
+  
+  if (S && SS && C) {
+    // City page: "Wind Damage Repair in Miami, FL | 24/7 Emergency | Paramount"
+    return `${SS} Repair in ${C}, FL | 24/7 Emergency | ${brand}`;
+  }
+  if (S && C) return `${S} in ${C} | 24/7 Emergency Response | ${brand}`;
+  if (S && SS) return `${SS} | ${S} Services | ${brand}`;
+  if (S) return `${S} Services | ${brand}`;
   return brand;
 }
 
@@ -58,10 +63,14 @@ function generateDescription({ service, subservice, city, region = 'FL' }) {
   const S = humanize(service);
   const SS = humanize(subservice);
   const C = humanize(city);
-  if (S && SS && C) return `${SS} in ${C}, ${region}. 24/7 response, certified techs, insurance assistance. Free on-site assessment.`;
-  if (S && C) return `${S} services in ${C}, ${region}. Fast mitigation, certified team, direct insurance billing.`;
-  if (S && SS) return `${SS} by our ${S} team. Rapid response and full restoration.`;
-  if (S) return `${S} across Florida. Emergency response and professional restoration.`;
+  
+  if (S && SS && C) {
+    // City page: "Emergency wind damage repair in Miami, FL. HVHZ-compliant materials, insurance claim help, licensed technicians. Call (786) 602-2217."
+    return `Emergency ${SS.toLowerCase()} repair in ${C}, ${region}. Licensed technicians, insurance claim assistance, 24/7 response. Call (786) 602-2217.`;
+  }
+  if (S && C) return `Emergency ${S.toLowerCase()} services in ${C}, ${region}. 24/7 response, certified technicians, insurance billing.`;
+  if (S && SS) return `Professional ${SS.toLowerCase()} services. Rapid emergency response and complete restoration.`;
+  if (S) return `${S} services across Florida with 24/7 emergency response and professional restoration.`;
   return 'Property restoration services across Florida with 24/7 emergency response.';
 }
 

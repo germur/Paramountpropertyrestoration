@@ -301,7 +301,16 @@ export const restorationGroups = [
 // ===========================
 export const cities = [
   // Central Florida
-  { slug: "orlando", name: "Orlando", nombre: "Orlando", county: "Orange County", region: "Central Florida" },
+  { 
+    slug: "orlando", 
+    name: "Orlando", 
+    nombre: "Orlando", 
+    county: "Orange County", 
+    region: "Central Florida",
+    nearby: ["Winter Garden", "Apopka", "Altamonte Springs", "Kissimmee", "Oviedo", "Lake Mary"],
+    codes: ["Orange County Building Code", "Central Florida Wind Zone", "Hurricane Category 2-3 zone"],
+    climate: "Hurricane season Jun-Nov, frequent thunderstorms, Category 2-3 exposure"
+  },
   { slug: "kissimmee", name: "Kissimmee", nombre: "Kissimmee", county: "Osceola County", region: "Central Florida" },
   { slug: "lakeland", name: "Lakeland", nombre: "Lakeland", county: "Polk County", region: "Central Florida" },
   { slug: "winter-garden", name: "Winter Garden", nombre: "Winter Garden", county: "Orange County", region: "Central Florida" },
@@ -337,10 +346,21 @@ export const cities = [
   { slug: "north-port", name: "North Port", nombre: "North Port", county: "Sarasota County", region: "Southwest Florida" },
 
   // South Florida
-  { slug: "miami", name: "Miami", nombre: "Miami", county: "Miami-Dade County", region: "South Florida" },
+  { 
+    slug: "miami", 
+    name: "Miami", 
+    nombre: "Miami", 
+    county: "Miami-Dade County", 
+    region: "South Florida",
+    nearby: ["Coral Gables", "Aventura", "Kendall", "Doral", "Pinecrest", "Coconut Grove"],
+    hvhz: true,
+    codes: ["Miami-Dade HVHZ", "NOA compliance", "Category 5 hurricane zone"],
+    climate: "Hurricane season Jun-Nov, frequent Category 3-5 storms, coastal wind exposure"
+  },
   { slug: "fort-lauderdale", name: "Fort Lauderdale", nombre: "Fort Lauderdale", county: "Broward County", region: "South Florida" },
   { slug: "hollywood", name: "Hollywood", nombre: "Hollywood", county: "Broward County", region: "South Florida" },
   { slug: "coral-gables", name: "Coral Gables", nombre: "Coral Gables", county: "Miami-Dade County", region: "South Florida" },
+  { slug: "doral", name: "Doral", nombre: "Doral", county: "Miami-Dade County", region: "South Florida" },
   { slug: "hialeah", name: "Hialeah", nombre: "Hialeah", county: "Miami-Dade County", region: "South Florida" },
   { slug: "plantation", name: "Plantation", nombre: "Plantation", county: "Broward County", region: "South Florida" },
   { slug: "davie", name: "Davie", nombre: "Davie", county: "Broward County", region: "South Florida" },
@@ -351,6 +371,7 @@ export const cities = [
   { slug: "west-palm-beach", name: "West Palm Beach", nombre: "West Palm Beach", county: "Palm Beach County", region: "South Florida" },
   { slug: "miramar", name: "Miramar", nombre: "Miramar", county: "Broward County", region: "South Florida" },
   { slug: "pembroke-pines", name: "Pembroke Pines", nombre: "Pembroke Pines", county: "Broward County", region: "South Florida" },
+  { slug: "weston", name: "Weston", nombre: "Weston", county: "Broward County", region: "South Florida" },
   { slug: "homestead", name: "Homestead", nombre: "Homestead", county: "Miami-Dade County", region: "South Florida" },
 
   // Treasure Coast

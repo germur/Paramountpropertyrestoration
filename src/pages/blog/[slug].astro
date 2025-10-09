@@ -57,12 +57,12 @@ const readingTime = Math.ceil(wordCount / 200);
     <header class="post-header">
       <div class="container-sm">
         <!-- Breadcrumb -->
-        <nav class="breadcrumb">
-          <a href="/">Inicio</a>
-          <span>/</span>
-          <a href="/blog">Blog</a>
-          <span>/</span>
-          <span>{entry.data.title}</span>
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><span aria-current="page">{entry.data.title}</span></li>
+          </ol>
         </nav>
 
         <h1 class="post-title">{entry.data.title}</h1>
@@ -249,21 +249,6 @@ const readingTime = Math.ceil(wordCount / 200);
   .post-header {
     background: var(--bg-secondary);
     padding: var(--spacing-12) 0;
-  }
-
-  .breadcrumb {
-    margin-bottom: var(--spacing-6);
-    font-size: var(--font-size-sm);
-    color: var(--text-light);
-  }
-
-  .breadcrumb a {
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-
-  .breadcrumb span {
-    margin: 0 var(--spacing-2);
   }
 
   .post-title {

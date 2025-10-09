@@ -355,7 +355,7 @@ export default function ContactForm() {
 
         .form-message.error {
           background-color: #fef2f2;
-          color: #dc2626;
+          color: var(--color-error);
           border: 1px solid #fecaca;
         }
 
