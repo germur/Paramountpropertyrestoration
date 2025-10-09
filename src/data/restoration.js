@@ -360,6 +360,7 @@ export const cities = [
   { slug: "fort-lauderdale", name: "Fort Lauderdale", nombre: "Fort Lauderdale", county: "Broward County", region: "South Florida" },
   { slug: "hollywood", name: "Hollywood", nombre: "Hollywood", county: "Broward County", region: "South Florida" },
   { slug: "coral-gables", name: "Coral Gables", nombre: "Coral Gables", county: "Miami-Dade County", region: "South Florida" },
+  { slug: "doral", name: "Doral", nombre: "Doral", county: "Miami-Dade County", region: "South Florida" },
   { slug: "hialeah", name: "Hialeah", nombre: "Hialeah", county: "Miami-Dade County", region: "South Florida" },
   { slug: "plantation", name: "Plantation", nombre: "Plantation", county: "Broward County", region: "South Florida" },
   { slug: "davie", name: "Davie", nombre: "Davie", county: "Broward County", region: "South Florida" },
@@ -370,6 +371,7 @@ export const cities = [
   { slug: "west-palm-beach", name: "West Palm Beach", nombre: "West Palm Beach", county: "Palm Beach County", region: "South Florida" },
   { slug: "miramar", name: "Miramar", nombre: "Miramar", county: "Broward County", region: "South Florida" },
   { slug: "pembroke-pines", name: "Pembroke Pines", nombre: "Pembroke Pines", county: "Broward County", region: "South Florida" },
+  { slug: "weston", name: "Weston", nombre: "Weston", county: "Broward County", region: "South Florida" },
   { slug: "homestead", name: "Homestead", nombre: "Homestead", county: "Miami-Dade County", region: "South Florida" },
 
   // Treasure Coast
