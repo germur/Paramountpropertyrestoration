@@ -12,7 +12,7 @@
 
 .areas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     max-width: 1400px;
     gap: 20px;
     justify-items: center;
@@ -47,4 +47,32 @@
     margin: 20px 0 20px;
     font-weight: 700;
     color: #333;
+}
+
+/* Responsive breakpoints to match global system */
+@media (max-width: 1200px) {
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .areas-served {
+        padding: 30px 10px;
+    }
+    
+    .areas-served h3 {
+        font-size: 28px;
+        padding: 30px 10px 20px;
+    }
 }

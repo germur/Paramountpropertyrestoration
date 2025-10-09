@@ -670,7 +670,7 @@ body[data-page="living-dining"] .hero-section {
 
 .remodels-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -765,7 +765,7 @@ body[data-page="living-dining"] .hero-section {
 
 .cntFather-cardBlogBathroo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 800px;
   margin: 0 auto;
@@ -967,7 +967,7 @@ a:hover {
 .blog-grid,
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -996,7 +996,7 @@ a:hover {
 
 .regions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -1116,14 +1116,22 @@ img {
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   .services-grid,
-  .solutions-grid {
+  .solutions-grid,
+  .remodels-gallery,
+  .blog-grid,
+  .gallery-grid,
+  .regions-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
   .services-grid,
-  .solutions-grid {
+  .solutions-grid,
+  .remodels-gallery,
+  .blog-grid,
+  .gallery-grid,
+  .regions-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1145,7 +1153,8 @@ img {
   .remodels-gallery,
   .cntFather-cardBlogBathroo,
   .blog-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .regions-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
