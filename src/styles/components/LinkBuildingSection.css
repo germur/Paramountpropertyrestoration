@@ -1,10 +1,9 @@
 /* LinkBuildingSection.css - Estilo Minimalista y Responsivo */
 
 .link-building-container {
-    background: transparent;
-    color: #333;
+    background: var(--bg-secondary, #F5F5F5);
+    color: var(--text-primary, #2B2B2B);
     padding: 50px 20px;
-    background-color: #f9f9f9;
     margin: 100px 0;   
 }
 
@@ -67,16 +66,19 @@
 }
 
 .link-category {
-    background: transparent;
-    border: none;
-    padding: 0;
+    background: var(--bg-primary, #FFFFFF);
+    border: 1px solid var(--color-border, #E2E8F0);
+    padding: 1.5rem;
     margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
+    border-radius: var(--radius, 8px);
+    transition: var(--transition, all 0.2s ease);
 }
 
 .link-category:hover {
-    transform: none;
-    background: transparent;
-    box-shadow: none;
+    transform: translateY(-2px);
+    background: var(--bg-primary, #FFFFFF);
+    box-shadow: var(--shadow-sm, 0 4px 16px rgba(10, 37, 64, 0.08));
+    border-color: var(--color-secondary, #2F80ED);
 }
 
 .category-header {
@@ -90,12 +92,13 @@
 }
 
 .category-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary, #2B2B2B);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-secondary, #2F80ED);
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .category-title.compact {
@@ -114,15 +117,16 @@
 
 .link-item {
     display: block;
-    color: #555;
+    color: var(--text-secondary, #64748B);
     text-decoration: none;
-    padding: 4px 0;
+    padding: 0.5rem 0;
     background: transparent;
     border: none;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    font-size: 0.9rem;
+    transition: var(--transition, all 0.2s ease);
+    font-size: 0.95rem;
     position: relative;
     overflow: hidden;
+    border-radius: var(--radius, 4px);
 }
 
 .link-item::before {
@@ -130,8 +134,10 @@
 }
 
 .link-item:hover {
-    color: var(--color-accent);
-    padding-left: 10px;
+    color: var(--color-secondary, #2F80ED);
+    padding-left: 1rem;
+    background: var(--bg-info, #EAF2FD);
+    transform: translateX(4px);
 }
 
 /* --- NUEVA MEDIA QUERY PARA TABLET Y ESCRITORIO --- */
