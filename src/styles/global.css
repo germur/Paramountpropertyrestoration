@@ -387,7 +387,7 @@ body[data-page="living-dining"] .hero-section {
   transform: scale(1.05);
 }
 
-/* ===== BOTONES SISTEMA UNIFICADO CON MARCA OFICIAL ===== */
+/* ===== BOTONES SISTEMA UNIFICADO CON MARCA OFICIAL - AZUL DOMINANTE ===== */
 .btn,
 .btn-primary,
 .cta-button,
@@ -399,7 +399,7 @@ body[data-page="living-dining"] .hero-section {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: white !important;
   text-decoration: none;
   border: none;
@@ -408,7 +408,7 @@ body[data-page="living-dining"] .hero-section {
   font-size: var(--font-size-base);
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(242, 153, 74, 0.3);
+  box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
 }
 
 .hero-cta-button,
@@ -419,7 +419,7 @@ body[data-page="living-dining"] .hero-section {
 
 /* Variantes de botones */
 .btn--primary {
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: white !important;
 }
 
@@ -445,10 +445,25 @@ body[data-page="living-dining"] .hero-section {
 .cta-action:hover,
 .hero-cta-button:hover,
 .card-link:hover {
-  background: var(--color-accent-hover);
+  background: var(--color-secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(242, 153, 74, 0.4);
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.4);
   color: white !important;
+}
+
+/* Emergency buttons remain orange for attention */
+.btn-emergency,
+.emergency-btn,
+.cta-emergency {
+  background: var(--color-accent) !important;
+  box-shadow: 0 2px 8px rgba(242, 153, 74, 0.3);
+}
+
+.btn-emergency:hover,
+.emergency-btn:hover,
+.cta-emergency:hover {
+  background: var(--color-accent-hover) !important;
+  box-shadow: 0 6px 20px rgba(242, 153, 74, 0.4);
 }
 
 /* ===== SISTEMA DE GRIDS MEJORADO 4-2-1 Y BALANCEADO ===== */
@@ -563,12 +578,12 @@ body[data-page="living-dining"] .hero-section {
 .service-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-accent);
+  border-color: var(--color-secondary);
 }
 
 .service-item i {
   font-size: 3rem;
-  color: var(--color-accent);
+  color: var(--color-secondary);
   margin-bottom: 1rem;
   display: block;
 }
@@ -933,7 +948,7 @@ a:hover {
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-accent);
+  border-color: var(--color-secondary);
 }
 
 /* Cards en secciones oscuras */
