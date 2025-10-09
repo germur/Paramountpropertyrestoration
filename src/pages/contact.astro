@@ -171,37 +171,9 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 </BaseLayout>
 
 <style>
-  /* ===== VARIABLES LOCALES AZULES ===== */
-  .contact-hero-section,
-  .contact-main-section,
-  .bottom-cta-section {
-    --paramount-primary: #1E293B;
-    --paramount-secondary: #64748B;
-    --paramount-accent: #3cbced;        /* AZUL PRINCIPAL */
-    --paramount-accent-hover: #2a9fd1;  /* AZUL HOVER */
-    --paramount-white: #FFFFFF;
-    --paramount-light: #F8FAFC;
-    --paramount-emergency: #DC2626;
-    --paramount-shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
-    --paramount-shadow-lg: 0 8px 24px rgba(30, 41, 59, 0.12);
-    --paramount-radius: 8px;
-    --paramount-radius-lg: 12px;
-    --paramount-transition: all 0.2s ease;
-    --paramount-spacing-2: 0.5rem;
-    --paramount-spacing-3: 0.75rem;
-    --paramount-spacing-4: 1rem;
-    --paramount-spacing-6: 1.5rem;
-    --paramount-spacing-8: 2rem;
-    --paramount-spacing-12: 3rem;
-    --paramount-font-sm: 0.875rem;
-    --paramount-font-base: 1rem;
-    --paramount-font-lg: 1.125rem;
-    --paramount-font-xl: 1.25rem;
-    --paramount-font-2xl: 1.5rem;
-    --paramount-font-3xl: 1.875rem;
-  }
+  /* ===== USO DE VARIABLES GLOBALES UNIFICADAS ===== */
 
-  /* ===== HERO SECTION ===== */
+  /* ===== HERO SECTION UNIFICADO ===== */
   .contact-hero-section {
     position: relative;
     width: 100%;
@@ -209,14 +181,14 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--paramount-spacing-8);
+    padding: var(--spacing-8);
     text-align: center;
-    color: var(--paramount-white);
+    color: var(--color-white);
     background-image: url("/images/heroContact.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-family);
   }
 
   .hero-overlay {
@@ -225,7 +197,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.8), rgba(5, 26, 47, 0.9));
     z-index: 1;
   }
 
@@ -241,7 +213,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 1rem;
-    color: var(--paramount-white);
+    color: var(--color-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
@@ -257,11 +229,11 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     line-height: 1.6;
   }
 
-  /* ===== MAIN CONTENT ===== */
+  /* ===== MAIN CONTENT UNIFICADO ===== */
   .contact-main-section {
-    padding: var(--paramount-spacing-12) 0;
-    background: var(--paramount-light);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: var(--spacing-12) 0;
+    background: var(--color-light);
+    font-family: var(--font-family);
   }
 
   .container {
@@ -270,7 +242,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     padding: 0 1rem;
   }
 
-  /* ===== DUAL CTA SECTION CON BOTONES AZULES ===== */
+  /* ===== DUAL CTA SECTION UNIFICADO ===== */
   .dual-cta-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -280,27 +252,27 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 
   .emergency-cta, 
   .remodeling-cta {
-    background: var(--paramount-white);
+    background: var(--bg-primary);
     padding: 2rem;
-    border-radius: var(--paramount-radius-lg);
-    box-shadow: var(--paramount-shadow);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     text-align: center;
     border-top: 4px solid;
-    transition: var(--paramount-transition);
+    transition: var(--transition);
   }
 
   .emergency-cta:hover, 
   .remodeling-cta:hover {
     transform: translateY(-2px);
-    box-shadow: var(--paramount-shadow-lg);
+    box-shadow: var(--shadow-lg);
   }
 
   .emergency-cta {
-    border-top-color: var(--paramount-emergency);
+    border-top-color: var(--color-accent);
   }
 
   .remodeling-cta {
-    border-top-color: var(--paramount-accent);
+    border-top-color: var(--color-secondary);
   }
 
   .cta-icon {
@@ -310,16 +282,16 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
   }
 
   .emergency-cta .cta-icon {
-    color: var(--paramount-emergency);
+    color: var(--color-accent);
   }
 
   .remodeling-cta .cta-icon {
-    color: var(--paramount-accent);
+    color: var(--color-secondary);
   }
 
   .emergency-cta h3, 
   .remodeling-cta h3 {
-    color: var(--paramount-primary);
+    color: var(--text-primary);
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
@@ -327,39 +299,39 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 
   .emergency-cta p, 
   .remodeling-cta p {
-    color: var(--paramount-secondary);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
   }
 
-  /* ===== BOTONES AZULES UNIFICADOS ===== */
-  /* ===== BOTONES AZULES UNIFICADOS ===== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--paramount-transition);
-  border: none;
-  cursor: pointer;
-  font-size: var(--paramount-font-base);
-}
+  /* ===== BOTONES SISTEMA UNIFICADO ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+  }
 
-.btn-emergency,
-.btn-remodeling {
-  background: #35c3e9;
-  color: var(--paramount-white);
-}
+  .btn-emergency,
+  .btn-remodeling {
+    background: var(--color-secondary);
+    color: var(--text-white);
+    box-shadow: 0 2px 8px rgba(47, 128, 237, 0.3);
+  }
 
-.btn:hover {
-  box-shadow: 0 6px 16px rgba(53, 195, 233, 0.3);
-  background: #2a9fd1;
-  color: white;
-  transform: translateY(-2px);
-}
+  .btn:hover {
+    box-shadow: 0 6px 16px rgba(47, 128, 237, 0.4);
+    background: var(--color-secondary-hover);
+    color: var(--text-white);
+    transform: translateY(-2px);
+  }
 
   /* ===== CONTACT LAYOUT ===== */
   .contact-layout {
