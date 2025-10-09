@@ -1,0 +1,448 @@
+/* ===== MITIGATION SERVICES - SPECIFIC STYLES ===== */
+
+/* Hero section specific */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(53, 195, 233, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(53, 195, 233, 0.4);
+    color: white;
+}
+
+/* Service item static (sin hover ni cursor) */
+.service-item-static {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+}
+
+.service-item-static i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.service-item-static h3 {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+}
+
+/* =====================
+   SOLUTIONS SECTION
+   ===================== */
+.solutions-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.solutions-title {
+    text-align: center;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    border-color: var(--color-accent);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-description p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+}
+
+.card-content .btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.card-content .btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* =====================
+   STEPS SECTION
+   ===================== */
+.steps-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.steps-title {
+    text-align: center;
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.step-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step-item::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.step-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: var(--color-accent);
+}
+
+.step-icon {
+    margin-bottom: 1rem;
+}
+
+.step-icon i {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+.step-item h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.step-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =====================
+   REGIONAL COVERAGE
+   ===================== */
+.restoration-coverage-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.coverage-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.coverage-header h2 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.coverage-header p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.restoration-regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.region-column {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.region-column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: var(--color-accent);
+}
+
+.region-title {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.city-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.city-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.city-links a:hover {
+    color: var(--color-accent);
+    padding-left: 0.5rem;
+    border-color: var(--color-accent);
+}
+
+.city-links a:last-child {
+    border-bottom: none;
+}
+
+.emergency-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-border);
+}
+
+.emergency-footer p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.emergency-phone {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.emergency-phone:hover {
+    color: var(--color-accent-hover);
+}
+
+/* =====================
+   RESPONSIVE DESIGN
+   ===================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .solutions-title,
+    .steps-title,
+    .coverage-header h2 {
+        font-size: 2rem;
+    }
+    
+    .solutions-grid,
+    .steps-container,
+    .restoration-regions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-item,
+    .solution-card,
+    .region-column {
+        margin: 0 1rem;
+    }
+    
+    .service-item-static h3 {
+        font-size: 0.8rem;
+    }
+    
+    .service-item-static i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card-content,
+    .region-column {
+        padding: 1.5rem;
+    }
+    
+    .service-features {
+        justify-content: center;
+    }
+}
