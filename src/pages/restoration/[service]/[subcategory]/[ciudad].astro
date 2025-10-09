@@ -6,6 +6,7 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
 import SEOHead from "../../../../components/SEOHead.jsx";
+import HeroAnimation from "../../../../components/HeroAnimation.jsx";
 import "../../../../styles/pages/[ciudad].css";
 import "../../../../styles/pages/restoration-city.css";
 
@@ -23,23 +24,41 @@ export async function getStaticPaths() {
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
 
-// Page configuration (DETAIL: con ciudad)
+// Content quality assessment for canonical strategy
+function assessContentQuality(subserviceContent, ciudadData) {
+  const hasLocalSignals = ciudadData?.nearby?.length > 0 || ciudadData?.codes?.length > 0;
+  const hasEnrichedContent = subserviceContent?.local_testimonials || subserviceContent?.local_gallery;
+  const hasLocalIntro = subserviceContent?.localIntroText;
+  
+  return hasLocalSignals && (hasEnrichedContent || hasLocalIntro);
+}
+
+// Enriched content
+const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
+const isHighQuality = assessContentQuality(subserviceContent, ciudadData);
+
+// Canonical logic: self-reference if high quality, otherwise canonicalize to parent
+const canonicalPath = isHighQuality 
+  ? `/restoration/${service}/${subcategory}/${ciudad}`
+  : `/restoration/${service}/${subcategory}`;
+
+// Page configuration with dynamic canonicalization
 const pageConfig = {
-  canonical: `/restoration/${service}/${subcategory}/${ciudad}`,
+  canonical: canonicalPath,
   title: `${servicioData.title} in ${ciudadData.nombre}, ${ciudadData.region || 'FL'} | 24/7 Emergency Response`,
   description: servicioData.seo?.description || 
     `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`,
 };
 
-// Enriched content
-const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
-
-// Hero configuration
+// Hero configuration with CRO-focused CTAs
 const heroConfig = {
   title: subserviceContent?.hero?.title || `${servicioData.title} in ${ciudadData.nombre}`,
   subtitle: subserviceContent?.hero?.description || 
     `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
-  ctaText: `Get Free Quote in ${ciudadData.nombre}`,
+  primaryCTA: "Call Emergency Line 24/7",
+  primaryCTAHref: "tel:+17866022217",
+  secondaryCTA: "Request Your Free Quote Online",
+  secondaryCTAHref: "/contact",
   bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
   badge: subserviceContent?.hero?.badge || null
 };
@@ -61,20 +80,36 @@ const customQuestions = (subserviceContent?.faqs || servicioData?.faqs || []).ma
 
 // CTA configuration
 const ctaConfig = {
-  title: `Start your ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
-  cta: `Request Your Free Estimate`,
-  href: servicioData.cta?.href ?? "/contact",
+  title: `Emergency ${servicioData.title} Available Now in ${ciudadData.nombre}`,
+  cta: "Call Emergency Line 24/7",
+  href: "tel:+17866022217",
 };
 
-// Nearby cities for SEO copy
-const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Doral", "Kendall"];
+// Dynamic nearby areas (use city data if available)
+const nearbyAreas = ciudadData?.nearby?.length 
+  ? ciudadData.nearby 
+  : ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Doral", "Kendall"];
+
+// Local intro text for uniqueness
+const localIntroText = subserviceContent?.localIntroText || 
+  `From ${ciudadData.nombre}'s ${ciudadData.climate || 'unique weather patterns'} to local building requirements, our licensed team delivers end-to-end ${servicioData.title.toLowerCase()} with ${ciudadData.codes?.[0] || 'code-compliant'} materials and expert permit handling.`;
+
+// Group title for breadcrumbs
+const groupTitle = groupData.name || servicioData.title;
 ---
 
 <BaseLayout 
   title={pageConfig.title} 
   description={pageConfig.description}
 >
-  {/* SEO centralizado con ciudad (detalle) */}
+  {/* Quality-based canonical and noindex logic */}
+  {!isHighQuality && (
+    <Fragment slot="head">
+      <meta name="robots" content="noindex,follow" />
+    </Fragment>
+  )}
+  
+  {/* SEO centralizado con canonicalización dinámica */}
   <SEOHead
     title={pageConfig.title}
     description={pageConfig.description}
@@ -85,17 +120,86 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     city={ciudad}
     addressLocality={ciudadData.nombre}
     addressRegion={ciudadData.region || 'FL'}
-    phone={"+1-786-602-2217"}
-    isHub={false}
+    phone="+1-786-602-2217"
+    isHub={!isHighQuality}
     businessName="Paramount Property Restoration"
     slot="head"
   />
 
-  <!-- Hero Section -->
+  {/* Enhanced JSON-LD structured data */}
+  <!-- Breadcrumbs JSON-LD -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Restoration","item":"https://paramountpropertyrestoration.com/restoration/"},
+        {"@type":"ListItem","position":2,"name":`${groupTitle}`,"item":`https://paramountpropertyrestoration.com/restoration/${service}/`},
+        {"@type":"ListItem","position":3,"name":`${servicioData.title}`,"item":`https://paramountpropertyrestoration.com/restoration/${service}/${subcategory}/`},
+        {"@type":"ListItem","position":4,"name":`${servicioData.title} in ${ciudadData.nombre}`}
+      ]
+    }
+  </script>
+
+  <!-- Service + LocalBusiness JSON-LD -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context":"https://schema.org",
+      "@type":"Service",
+      "@id":`https://paramountpropertyrestoration.com/#service-${subcategory}-${ciudad}`,
+      "name":`${servicioData.title} in ${ciudadData.nombre}`,
+      "serviceType":`${servicioData.title}`,
+      "areaServed":{
+        "@type":"City",
+        "name":`${ciudadData.nombre}`,
+        "addressRegion":`${ciudadData.region || "FL"}`,
+        "addressCountry":"US"
+      },
+      "provider":{
+        "@type":"LocalBusiness",
+        "@id":"https://paramountpropertyrestoration.com/#business",
+        "name":"Paramount Property Restoration",
+        "telephone":"+1-786-602-2217",
+        "image":"https://paramountpropertyrestoration.com/images/logo.png",
+        "url":"https://paramountpropertyrestoration.com",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":`${ciudadData.nombre}`,
+          "addressRegion":`${ciudadData.region || "FL"}`,
+          "addressCountry":"US"
+        },
+        "areaServed":[
+          {"@type":"City","name":`${ciudadData.nombre}`},
+          ...nearbyAreas.slice(0,4).map(area => ({"@type":"City","name":area}))
+        ]
+      }
+    }
+  </script>
+
+  {/* FAQ JSON-LD if available */}
+  {customQuestions?.length && (
+    <script type="application/ld+json" slot="head">
+      {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+          ...customQuestions.map(q => ({
+            "@type":"Question",
+            "name":q.question,
+            "acceptedAnswer":{"@type":"Answer","text":q.answer}
+          }))
+        ]
+      }
+    </script>
+  )}
+
+
+  <!-- Enhanced Hero Section with dual CTAs -->
   <section
     class="hero-section"
     style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroConfig.bgImage})`}
   >
+    <HeroAnimation client:load />
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">{heroConfig.title}</h1>
@@ -105,27 +209,38 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
           <div class="emergency-badge">{heroConfig.badge}</div>
         )}
 
-        <div class="hero-cta">
-          <a href="/contact" class="btn-primary btn-emergency">
-            {heroConfig.ctaText}
+        {/* CRO-optimized dual CTA strategy */}
+        <div class="hero-cta-dual">
+          <a href={heroConfig.primaryCTAHref} class="btn-primary btn-emergency">
+            📞 {heroConfig.primaryCTA}
           </a>
-          {servicioData.hero?.tagline && (
-            <p class="hero-tagline">{servicioData.hero.tagline}</p>
-          )}
+          <a href={heroConfig.secondaryCTAHref} class="btn-outline btn-secondary">
+            📋 {heroConfig.secondaryCTA}
+          </a>
+        </div>
+        
+        {/* Trust indicators */}
+        <div class="trust-bar">
+          <span class="trust-item">✅ Licensed & Insured</span>
+          <span class="trust-item">⏰ 24/7 Available</span>
+          <span class="trust-item">🏠 Insurance Assistance</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service Overview Section -->
+  <!-- Service Overview Section with Local Differentiation -->
   <section class="section service-overview">
     <div class="container">
       <div class="overview-grid">
         <div class="overview-content">
-          <h2>{servicioData.title} Services You Can Trust</h2>
+          <h2 class="section-title">{servicioData.title} Repair in {ciudadData.nombre} – 24/7 Emergency Service</h2>
+          <p class="overview-text local-intro">
+            {localIntroText}
+          </p>
           <p class="overview-text">
-            We deliver full-service {servicioData.title.toLowerCase()} in {ciudadData.nombre}
-            with expert technicians, clean work practices, and results you can rely on.
+            We deliver emergency {servicioData.title.toLowerCase()} in {ciudadData.nombre}
+            with expert technicians, {ciudadData.codes?.[0] || 'code-compliant'} materials, and rapid response times across all neighborhoods.
           </p>
 
           <ul class="service-features">
@@ -139,14 +254,13 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
         </div>
 
         <div class="overview-sidebar">
-          <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
+          <h3>Emergency Response in {ciudadData.nombre}</h3>
           <p>
-            We offer {servicioData.title.toLowerCase()} in {ciudadData.nombre} and
-            throughout {ciudadData.region}, including neighborhoods like {nearbyAreas.slice(0, 3).join(", ")}, 
-            and {nearbyAreas[3]}.
+            We provide 24/7 {servicioData.title.toLowerCase()} throughout {ciudadData.region}, including neighborhoods like {nearbyAreas.slice(0, 3).join(", ")}, 
+            and {nearbyAreas[3]}. Our local expertise includes {ciudadData.codes?.[0] || 'building code'} compliance and rapid emergency response.
           </p>
-          <a href="/contact" class="btn-outline">
-            Check Availability in Your Neighborhood →
+          <a href="tel:+17866022217" class="btn-outline">
+            Call Now: (786) 602-2217 →
           </a>
         </div>
       </div>
@@ -191,83 +305,108 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     </section>
   )}
 
-  <!-- Visual Gallery Section -->
-  <section class="section gallery-section bg-secondary">
+  <!-- Local Signals Section - Critical for E-A-T -->
+  <section class="section local-signals bg-light">
     <div class="container">
-      <h2 class="section-title">Our Work in {ciudadData.nombre}</h2>
-      <p class="section-subtitle">See the quality and professionalism we bring to every project</p>
-      
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-before-after-1.jpg"
-            alt={`${servicioData.title} before and after results in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Complete Restoration</h3>
-            <p>Professional results you can see</p>
-          </div>
+      <h2 class="section-title">Why {servicioData.title} in {ciudadData.nombre} Needs a Local Expert</h2>
+      <div class="local-expertise-grid">
+        <div class="local-info">
+          <h3>Local Codes & Regulations</h3>
+          <ul class="local-list">
+            {ciudadData.codes?.map((code) => (
+              <li><strong>{code}:</strong> We work with approved materials and meet local standards.</li>
+            )) || (
+              <li><strong>Florida Building Code:</strong> We ensure all work meets state compliance standards.</li>
+            )}
+            <li><strong>Permits & Inspections:</strong> We handle city permits and coordinate inspections for first-time approval.</li>
+          </ul>
         </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-process-1.jpg"
-            alt={`Professional ${servicioData.title.toLowerCase()} process in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Expert Technicians</h3>
-            <p>Skilled professionals at work</p>
-          </div>
+        
+        <div class="local-info">
+          <h3>Climate & Weather Expertise</h3>
+          <p><strong>{ciudadData.clima || ciudadData.climate || 'Florida weather patterns'}:</strong> {ciudadData.climate || 'We understand local weather challenges and prepare accordingly.'}</p>
+          <p><strong>Emergency Readiness:</strong> 24/7 rapid-response crews for storm damage, board-up, and emergency services.</p>
         </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-equipment-1.jpg"
-            alt={`Advanced ${servicioData.title.toLowerCase()} equipment used in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Advanced Equipment</h3>
-            <p>State-of-the-art tools and technology</p>
-          </div>
+
+        <div class="local-info">
+          <h3>Neighborhood Coverage</h3>
+          <p><strong>Areas we serve:</strong> {nearbyAreas.slice(0,6).join(", ")}, and surrounding communities in {ciudadData.county}.</p>
+          <p><strong>Local Response Times:</strong> Average 45-minute response for emergency calls within {ciudadData.nombre} city limits.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Indicators Section -->
-  <section class="section trust-section">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Licensed & Insured</h3>
-          <p>Fully licensed in Florida with comprehensive insurance coverage</p>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <h3>24/7 Emergency Service</h3>
-          <p>Round-the-clock availability for urgent restoration needs</p>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h3>Insurance Assistance</h3>
-          <p>We work directly with your insurance company to streamline claims</p>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <h3>4.9★ Rating</h3>
-          <p>Highly rated by customers across Florida</p>
+
+  {/* Local Testimonials - Only if available */}
+  {subserviceContent?.local_testimonials?.length && (
+    <section class="section testimonials-local">
+      <div class="container">
+        <h2 class="section-title">{servicioData.title} Testimonials from {ciudadData.nombre} Residents</h2>
+        <div class="testimonials-grid">
+          {subserviceContent.local_testimonials.map((testimonial) => (
+            <div class="testimonial-item">
+              <blockquote>
+                <p>"{testimonial.text}"</p>
+                <footer>
+                  <cite>{testimonial.name}, {testimonial.neighborhood || ciudadData.nombre}</cite>
+                </footer>
+              </blockquote>
+            </div>
+          ))}
         </div>
       </div>
+    </section>
+  )}
+
+
+  <!-- Related Services in City - Internal Linking -->
+  <section class="section related-services bg-light">
+    <div class="container">
+      <h2 class="section-title">Related Emergency Services in {ciudadData.nombre}</h2>
+      <div class="related-grid">
+        <div class="related-column">
+          <h3>Storm Damage Services</h3>
+          <ul class="related-list">
+            <li><a href={`/restoration/storm-damage/hurricane-damage/${ciudad}/`}>Hurricane Damage Repair</a></li>
+            <li><a href={`/restoration/storm-damage/wind-damage/${ciudad}/`}>Wind Damage Restoration</a></li>
+            <li><a href={`/restoration/storm-damage/storm-debris-removal/${ciudad}/`}>Storm Debris Removal</a></li>
+          </ul>
+        </div>
+        
+        <div class="related-column">
+          <h3>Water Damage Services</h3>
+          <ul class="related-list">
+            <li><a href={`/restoration/water-damage/flood-damage/${ciudad}/`}>Flood Damage Cleanup</a></li>
+            <li><a href={`/restoration/water-damage/leak-repair/${ciudad}/`}>Emergency Leak Repair</a></li>
+            <li><a href={`/restoration/water-damage/emergency-water-removal/${ciudad}/`}>Water Removal Services</a></li>
+          </ul>
+        </div>
+        
+        <div class="related-column">
+          <h3>Fire & Smoke Damage</h3>
+          <ul class="related-list">
+            <li><a href={`/restoration/fire-damage/smoke-damage/${ciudad}/`}>Smoke Damage Cleanup</a></li>
+            <li><a href={`/restoration/fire-damage/fire-damage-repair/${ciudad}/`}>Fire Damage Restoration</a></li>
+            <li><a href={`/restoration/fire-damage/soot-cleanup/${ciudad}/`}>Soot Removal Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Also Serving Nearby Areas -->
+  <section class="section nearby-areas">
+    <div class="container">
+      <h2 class="section-title">We Also Provide {servicioData.title} in Nearby Areas</h2>
+      <div class="nearby-grid">
+        {nearbyAreas.slice(0,6).map((area) => (
+          <a href={`/restoration/${service}/${subcategory}/${area.toLowerCase().replace(/\s+/g, '-')}/`} class="nearby-link">
+            {servicioData.title} in {area}
+          </a>
+        ))}
+      </div>
+      <p class="nearby-note">Serving all of {ciudadData.region} with 24/7 emergency response</p>
     </div>
   </section>
 
@@ -279,10 +418,10 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     client:load
   />
 
-  <!-- CTA Section -->
+  <!-- Enhanced CTA Section -->
   <RestorationCTA
     title={ctaConfig.title}
-    subtitle={`Expert ${servicioData.title.toLowerCase()} services available 24/7 in ${ciudadData.nombre} and throughout ${ciudadData.region}.`}
+    subtitle={`Don't wait - ${servicioData.title.toLowerCase()} emergencies require immediate action. Our certified technicians are standing by 24/7 to help ${ciudadData.nombre} residents.`}
     buttonText={ctaConfig.cta}
     buttonLink={ctaConfig.href}
     client:load
