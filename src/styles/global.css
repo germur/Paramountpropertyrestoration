@@ -436,7 +436,17 @@ body[data-page="living-dining"] .hero-section {
 .btn-outline,
 .btn-secondary,
 .cta-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary) !important;
+  border: 2px solid var(--color-accent);
+  backdrop-filter: blur(10px);
+}
+
+/* Context-specific button styles */
+.hero-section .btn-outline,
+.hero-section .btn-secondary,
+.hero-section .cta-secondary {
+  background: rgba(255, 255, 255, 0.15);
   color: white !important;
   border: 2px solid white;
 }
@@ -470,7 +480,7 @@ body[data-page="living-dining"] .hero-section {
 }
 
 .service-item {
-  text-align: center;
+  text-align: left;
   padding: 2rem 1rem;
   background: var(--bg-primary);
   border-radius: var(--radius-lg);
@@ -490,12 +500,19 @@ body[data-page="living-dining"] .hero-section {
   color: var(--color-accent);
   margin-bottom: 1rem;
   display: block;
+  text-align: center;
 }
 
 .service-item h3 {
   color: var(--text-primary);
   font-size: var(--font-size-xl);
   margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.service-item p {
+  color: var(--text-secondary);
+  text-align: left;
 }
 
 /* ===== SOLUTION CARDS SYSTEM ===== */
@@ -1034,6 +1051,49 @@ a:hover {
 
 .emergency-phone:hover {
   color: var(--color-accent-hover);
+}
+
+/* ===== OPTIMIZACIÓN PATRÓN F ===== */
+/* Main content areas - left aligned for better readability */
+.service-item,
+.solution-card .card-content,
+.overview-content,
+.local-info,
+.step-item {
+  text-align: left;
+}
+
+.service-item h3,
+.solution-card h3,
+.local-info h3 {
+  text-align: left;
+}
+
+/* Content text blocks */
+.overview-text,
+.local-intro,
+.service-description,
+.step-item p,
+.local-info p,
+.testimonial-item blockquote p {
+  text-align: left;
+}
+
+/* Lists alignment */
+.service-features,
+.local-list,
+.related-list {
+  text-align: left;
+}
+
+/* Keep navigation, headers, and CTAs centered */
+.hero-content,
+.section-title,
+.solutions-title,
+.testimonial-item,
+.cta-section,
+.trust-bar {
+  text-align: center;
 }
 
 /* ===== UTILIDADES ===== */

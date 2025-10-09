@@ -50,6 +50,41 @@ const pageConfig = {
     `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`,
 };
 
+// Hero configuration with service-specific background images
+const getServiceBgImage = (service, subcategory) => {
+  // Map service categories to appropriate background images
+  if (service === 'water-damage') {
+    if (subcategory === 'flood-damage') return '/images/FloodDamage.jpg';
+    if (subcategory === 'leak-repair') return '/images/LeakRepair.jpg';
+    if (subcategory === 'basement-flooding') return '/images/BasementFlooding.jpg';
+    if (subcategory === 'ceiling-water-damage') return '/images/CeilingWaterDamage.jpg';
+    if (subcategory === 'emergency-water-removal') return '/images/EmergencyWaterRemoval.jpg';
+    return '/images/waterDamage.jpg';
+  } else if (service === 'fire-damage') {
+    if (subcategory === 'smoke-damage') return '/images/SmokeDamage.jpg';
+    if (subcategory === 'soot-cleanup') return '/images/SootCleanup.jpg';
+    if (subcategory === 'fire-damage-repair') return '/images/FireDamageRepair.jpg';
+    if (subcategory === 'emergency-fire-response') return '/images/EmergencyFireResponse.jpg';
+    return '/images/fireDamage.jpg';
+  } else if (service === 'mold-remediation') {
+    if (subcategory === 'mold-inspection') return '/images/MoldInspection.jpg';
+    if (subcategory === 'black-mold-removal') return '/images/BlackMoldRemoval.jpg';
+    if (subcategory === 'mold-prevention') return '/images/MoldPrevention.jpg';
+    if (subcategory === 'mold-testing') return '/images/Moldtesting.jpg';
+    return '/images/moldDamage.jpg';
+  } else if (service === 'storm-damage') {
+    if (subcategory === 'hurricane-damage') return '/images/HurricaneDamage.jpg';
+    if (subcategory === 'wind-damage') return '/images/WindDamage.jpg';
+    if (subcategory === 'storm-debris-removal') return '/images/StormDebrisRemoval.jpg';
+    if (subcategory === 'emergency-storm-repair') return '/images/EmergencyStormRepair.jpg';
+    return '/images/stormDamage.jpg';
+  } else if (service === 'mitigation-services') {
+    return '/images/mitigation.jpg';
+  }
+  // Fallback image
+  return '/images/heroRestoration.jpeg';
+};
+
 // Hero configuration with CRO-focused CTAs
 const heroConfig = {
   title: subserviceContent?.hero?.title || `${servicioData.title} in ${ciudadData.nombre}`,
@@ -59,7 +94,7 @@ const heroConfig = {
   primaryCTAHref: "tel:+17866022217",
   secondaryCTA: "Request Your Free Quote Online",
   secondaryCTAHref: "/contact",
-  bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
+  bgImage: getServiceBgImage(service, subcategory),
   badge: subserviceContent?.hero?.badge || null
 };
 
