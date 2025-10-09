@@ -1,0 +1,130 @@
+/* ===== SERVICE ICONS COMPONENT - UNIFICADO ===== */
+.service-icons-section {
+  padding: 4rem 0;
+  background: var(--bg-secondary);
+}
+
+.service-icons-section.small {
+  padding: 3rem 0;
+}
+
+.service-icons-title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.service-icons-grid {
+  /* Usa las clases de grid del sistema global */
+}
+
+.service-icon-item {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.service-icon-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(242, 153, 74, 0.3);
+  transition: var(--transition);
+}
+
+.service-icon-item:hover .service-icon-wrapper {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(242, 153, 74, 0.4);
+}
+
+.service-icon-wrapper i {
+  font-size: 2rem;
+  color: white;
+}
+
+.service-icon-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.service-icon-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+
+/* Variante pequeña para steps */
+.service-icons-section.small .service-icon-item {
+  min-height: 160px;
+  padding: 1.5rem;
+}
+
+.service-icons-section.small .service-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.service-icons-section.small .service-icon-wrapper i {
+  font-size: 1.5rem;
+}
+
+.service-icons-section.small .service-icon-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: 0.5rem;
+}
+
+.service-icons-section.small .service-icon-description {
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-icons-section {
+    padding: 3rem 0;
+  }
+
+  .service-icon-item {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+
+  .service-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-icon-wrapper i {
+    font-size: 1.75rem;
+  }
+}

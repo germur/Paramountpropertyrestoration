@@ -173,7 +173,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-logo {
-    height: 80px;
+    height: 120px;
     width: auto;
     filter: brightness(0) invert(1);
   }
@@ -412,6 +412,12 @@ const currentYear = new Date().getFullYear();
   }
 
   /* ===== RESPONSIVE DESIGN ===== */
+  @media (min-width: 1024px) {
+    .footer-logo {
+      height: 140px;
+    }
+  }
+
   @media (max-width: 1024px) {
     .footer-content {
       grid-template-columns: repeat(3, 1fr);

@@ -1,51 +1,53 @@
 /* ===== PARAMOUNT PROPERTY RESTORATION - SISTEMA UNIFICADO ===== */
 
 :root {
-  /* ===== COLORES MARCA PRINCIPAL ===== */
-  --color-primary: #1E293B;        /* Navy principal - Headers, navegación */
-  --color-primary-dark: #0F172A;   /* Navy oscuro - hover states */
-  --color-secondary: #64748B;      /* Gris azulado - texto secundario */
-  --color-accent: #35c3e9;         /* Azul logo - ÚNICO para CTAs y acciones */
-  --color-accent-hover: #2a9fd1;   /* Azul hover */
+  /* ===== COLORES MARCA OFICIAL PARAMOUNT PROPERTY RESTORATION ===== */
+  --color-primary: #0A2540;        /* Azul marino profundo - Fondo header, títulos, CTAs principales */
+  --color-primary-dark: #051a2f;   /* Azul marino más oscuro - hover states */
+  --color-secondary: #2F80ED;      /* Azul claro profesional - Enlaces, botones secundarios */
+  --color-secondary-hover: #1e6fd9; /* Hover para azul claro */
+  --color-accent: #F2994A;         /* Naranja restauración - Llamados atención, CTA emergencia */
+  --color-accent-hover: #e8853e;   /* Hover para naranja */
 
   /* ===== NEUTROS SISTEMA ===== */
-  --color-navy: #1E293B;           /* Alias para primary */
-  --color-gray: #64748B;           /* Alias para secondary */
-  --color-blue: #35c3e9;           /* Azul logo principal */
-  --color-orange: #F59E0B;         /* Naranja - solo emergencias */
+  --color-navy: #0A2540;           /* Alias para primary */
+  --color-blue: #2F80ED;           /* Azul claro profesional */
+  --color-orange: #F2994A;         /* Naranja restauración */
   --color-white: #FFFFFF;
-  --color-light: #F8FAFC;          /* Fondos suaves */
+  --color-light: #F5F5F5;          /* Gris humo - Fondos secciones secundarias */
   --color-border: #E2E8F0;         /* Bordes sutiles */
+  --color-info-bg: #EAF2FD;        /* Azul hielo - Fondos informativos */
 
   /* ===== TEXTO JERARQUÍA ===== */
-  --text-primary: #1E293B;         /* Headings principales */
-  --text-secondary: #64748B;       /* Párrafos, descripciones */
+  --text-primary: #2B2B2B;         /* Gris carbón - Texto sobre fondos claros */
+  --text-secondary: #64748B;       /* Texto secundario */
   --text-muted: #94A3B8;           /* Texto sutil */
   --text-white: #FFFFFF;           /* Texto sobre fondos oscuros */
-  --text-dark: #0F172A;            /* Texto sobre fondos claros */
+  --text-dark: #0A2540;            /* Texto navy sobre fondos claros */
 
   /* ===== FONDOS SISTEMA ===== */
   --bg-primary: #FFFFFF;           /* Fondo principal */
-  --bg-secondary: #F8FAFC;         /* Secciones alternantes */
-  --bg-dark: #1E293B;              /* Secciones oscuras */
-  --bg-accent: #35c3e9;            /* Alertas azules */
+  --bg-secondary: #F5F5F5;         /* Secciones alternantes - gris humo */
+  --bg-dark: #0A2540;              /* Secciones oscuras - azul marino */
+  --bg-accent: #F2994A;            /* Alertas naranja */
+  --bg-info: #EAF2FD;              /* Fondos informativos azul hielo */
 
   /* ===== COLORES SEMÁNTICOS (SOLO ÍCONOS/CHIPS) ===== */
-  --service-water: #0EA5E9;        /* Azul agua */
+  --service-water: #2F80ED;        /* Azul profesional */
   --service-fire: #DC2626;         /* Rojo fuego */
   --service-mold: #16A34A;         /* Verde moho */
   --service-storm: #8B5CF6;        /* Púrpura tormenta */
 
   /* ===== ESTADOS SISTEMA ===== */
   --color-success: #16A34A;
-  --color-warning: #F59E0B;
+  --color-warning: #F2994A;
   --color-error: #DC2626;
-  --color-info: #0EA5E9;
+  --color-info: #2F80ED;
 
   /* ===== SOMBRAS Y EFECTOS ===== */
-  --shadow-sm: 0 4px 16px rgba(30, 41, 59, 0.08);
-  --shadow-md: 0 8px 24px rgba(30, 41, 59, 0.12);
-  --shadow-lg: 0 16px 32px rgba(30, 41, 59, 0.16);
+  --shadow-sm: 0 4px 16px rgba(10, 37, 64, 0.08);
+  --shadow-md: 0 8px 24px rgba(10, 37, 64, 0.12);
+  --shadow-lg: 0 16px 32px rgba(10, 37, 64, 0.16);
   
   /* ===== DIMENSIONES ===== */
   --radius: 8px;
@@ -98,12 +100,14 @@ body {
   padding: 0 var(--spacing-4);
 }
 
-/* ===== BREADCRUMBS ARREGLADOS ===== */
+/* ===== BREADCRUMBS MEJORADOS CON MARCA ===== */
 .breadcrumb-nav {
-  margin-bottom: 1.5rem;
-  padding: 1rem 0;
-  background: transparent;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-info);
   border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .breadcrumb-nav ol {
@@ -112,9 +116,10 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  font-size: 0.9rem;
+  color: var(--text-primary);
   font-family: var(--font-family);
+  font-weight: 500;
 }
 
 .breadcrumb-nav li {
@@ -123,29 +128,29 @@ body {
   position: relative;
 }
 
-/* Separador en forma de flecha */
+/* Separador en forma de flecha mejorado */
 .breadcrumb-nav li:not(:last-child)::after {
   content: '';
   width: 0;
   height: 0;
-  border-left: 4px solid var(--color-border);
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  margin: 0 0.75rem;
-  opacity: 0.6;
+  border-left: 5px solid var(--color-primary);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin: 0 0.8rem;
+  opacity: 0.7;
   transition: var(--transition);
 }
 
 .breadcrumb-nav li:hover:not(:last-child)::after {
-  opacity: 0.8;
-  border-left-color: var(--color-accent);
+  opacity: 1;
+  border-left-color: var(--color-secondary);
 }
 
 .breadcrumb-nav a {
-  color: var(--color-accent);
+  color: var(--color-secondary);
   text-decoration: none;
-  font-weight: 400;
-  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
   border-radius: var(--radius);
   transition: var(--transition);
   position: relative;
@@ -153,25 +158,26 @@ body {
 }
 
 .breadcrumb-nav a:hover {
-  color: var(--color-accent-hover);
-  background-color: rgba(53, 195, 233, 0.1);
+  color: var(--color-primary);
+  background-color: rgba(47, 128, 237, 0.1);
   text-decoration: none;
   transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(47, 128, 237, 0.2);
 }
 
 .breadcrumb-nav a:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-secondary);
   outline-offset: 2px;
-  color: var(--color-accent-hover);
+  color: var(--color-primary);
 }
 
 .breadcrumb-nav span[aria-current="page"] {
-  color: var(--text-primary);
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--bg-secondary);
+  color: var(--text-dark);
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(242, 153, 74, 0.15);
   border-radius: var(--radius);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(242, 153, 74, 0.3);
 }
 
 /* ===== HERO SYSTEM - FLEXIBLE ===== */
@@ -381,7 +387,7 @@ body[data-page="living-dining"] .hero-section {
   transform: scale(1.05);
 }
 
-/* ===== BOTONES SISTEMA UNIFICADO ===== */
+/* ===== BOTONES SISTEMA UNIFICADO CON MARCA OFICIAL ===== */
 .btn,
 .btn-primary,
 .cta-button,
@@ -402,6 +408,7 @@ body[data-page="living-dining"] .hero-section {
   font-size: var(--font-size-base);
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(242, 153, 74, 0.3);
 }
 
 .hero-cta-button,
@@ -438,13 +445,104 @@ body[data-page="living-dining"] .hero-section {
 .cta-action:hover,
 .hero-cta-button:hover,
 .card-link:hover {
-  background: #2a9fd1;
+  background: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(53, 195, 233, 0.3);
+  box-shadow: 0 6px 20px rgba(242, 153, 74, 0.4);
   color: white !important;
 }
 
-/* ===== SERVICES GRID SYSTEM ===== */
+/* ===== SISTEMA DE GRIDS MEJORADO 4-2-1 Y BALANCEADO ===== */
+
+/* Grid fijo 4-2-1 para contenido conocido */
+.grid-fixed-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+@media (max-width: 1024px) {
+  .grid-fixed-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-fixed-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Grid balanceado para contenido variable */
+.grid-balanced {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.grid-balanced > * {
+  flex: 1 1 calc(25% - 2rem);
+  min-width: 250px;
+  max-width: 300px;
+}
+
+@media (max-width: 1024px) {
+  .grid-balanced > * {
+    flex: 1 1 calc(50% - 2rem);
+    min-width: 250px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-balanced {
+    gap: 1rem;
+  }
+  
+  .grid-balanced > * {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+/* Grid balanceado con espaciado menor para steps */
+.grid-balanced-small {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.grid-balanced-small > * {
+  flex: 1 1 calc(25% - 1.5rem);
+  min-width: 220px;
+  max-width: 280px;
+}
+
+@media (max-width: 1024px) {
+  .grid-balanced-small > * {
+    flex: 1 1 calc(50% - 1.5rem);
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-balanced-small {
+    gap: 1rem;
+  }
+  
+  .grid-balanced-small > * {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+}
+
+/* LEGACY: Mantener compatibilidad hacia atrás */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
