@@ -138,7 +138,7 @@
 @media (min-width: 768px) {
     .link-building-grid {
         /* A partir de 768px, activamos la cuadrícula multi-columna */
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px; /* Restablecemos el gap para la cuadrícula */
     }
 
@@ -152,14 +152,14 @@
 }
 
 /* Additional responsive breakpoints */
-@media (max-width: 1200px) {
+@media (min-width: 900px) {
     .link-building-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1200px) {
     .link-building-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }

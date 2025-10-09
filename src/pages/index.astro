@@ -750,6 +750,18 @@ try {
   .mb-12 { margin-bottom: 3rem; }
 
   /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .services-grid, .regions-grid, .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .services-grid, .regions-grid, .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
     .hero-cta-dual {
       flex-direction: column;
@@ -761,7 +773,7 @@ try {
       max-width: 280px;
     }
     
-    .services-grid, .regions-grid {
+    .services-grid, .regions-grid, .blog-grid {
       grid-template-columns: 1fr;
     }
     

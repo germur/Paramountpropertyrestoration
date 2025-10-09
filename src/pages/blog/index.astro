@@ -537,10 +537,17 @@ const pageDescription = "Discover expert resources to plan, estimate and manage 
   @media (min-width: 768px) {
     .featured-grid,
     .posts-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     .hero-description {
       padding: 0;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .featured-grid,
+    .posts-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -554,6 +561,13 @@ const pageDescription = "Discover expert resources to plan, estimate and manage 
     .blog-layout {
       grid-template-columns: 1fr 300px;
       gap: var(--spacing-12);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .featured-grid,
+    .posts-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>
