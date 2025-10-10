@@ -510,7 +510,7 @@ try {
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
   }
@@ -750,6 +750,12 @@ try {
   .mb-12 { margin-bottom: 3rem; }
 
   /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
     .hero-cta-dual {
       flex-direction: column;
@@ -762,11 +768,17 @@ try {
     }
     
     .services-grid, .regions-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
     
     .large-card {
       grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid, .regions-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

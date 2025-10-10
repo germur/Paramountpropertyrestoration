@@ -14,54 +14,58 @@ export const SERVICE_REGISTRY: Record<string, Record<string, string[]>> = {
   restoration: {
     // WATER
     "water-damage": [
+      "water-restoration",
       "flood-damage",
-      "leak-detection",
+      "leak-repair",
       "basement-flooding",
       "ceiling-water-damage",
       "emergency-water-removal",
-      "water-extraction",
     ],
     // FIRE
     "fire-damage": [
+      "fire-restoration",
       "smoke-damage",
       "soot-cleanup",
       "fire-damage-repair",
       "emergency-fire-response",
       "smoke-odor-removal",
-      "fire-restoration", // newly added subservice
     ],
     // STORM
     "storm-damage": [
+      "storm-restoration",
       "hurricane-damage",
       "wind-damage",
       "storm-debris-removal",
       "emergency-storm-repair",
-      "roof-damage", // newly added subservice
+      "roof-damage",
     ],
     // MOLD
     "mold-remediation": [
+      "mold-restoration",
       "mold-inspection",
       "black-mold-removal",
       "mold-prevention",
       "mold-testing",
-      "air-quality-testing", // newly added subservice
+      "air-quality-testing",
       "mold-cleanup",
     ],
     // MITIGATION
     "mitigation-services": [
+      "damage-mitigation",
       "water-mitigation",
       "fire-mitigation",
       "mold-mitigation",
       "storm-mitigation",
-      "emergency-response", // newly added subservice
+      "emergency-response",
     ],
   },
 };
 
 // Backward-compatibility & editorial aliases to canonical slugs
-// e.g. old chips/links may use "leak-repair" but canonical is "leak-detection".
+// e.g. old chips/links may use "leak-detection" but canonical is "leak-repair".
 export const SUBSERVICE_ALIASES: Record<string, string> = {
-  "leak-repair": "leak-detection",
+  "leak-detection": "leak-repair",
+  "water-extraction": "emergency-water-removal",
   // add more legacy synonyms here if needed
 };
 

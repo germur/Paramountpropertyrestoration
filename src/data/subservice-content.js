@@ -6,6 +6,40 @@ export function getEnrichedSubserviceContent(subserviceSlug, cityData = null) {
     // ===========================
     // WATER DAMAGE SUBSERVICES
     // ===========================
+    "water-restoration": {
+      hero: {
+        title: cityData 
+          ? `Water Damage Restoration in ${cityData.nombre}, FL | 24/7 Emergency Response`
+          : "Water Damage? We Extract, Dry & Restore Properties Across Florida",
+        description: cityData
+          ? `Professional water damage restoration in ${cityData.nombre}, ${cityData.region}. Complete water extraction, drying, and restoration services. 24/7 emergency response team.`
+          : "When water damages your property, time is critical. Our Florida restoration teams provide 24/7 water damage services including extraction, drying, and complete restoration.",
+        badge: "🚨 24/7 Emergency Response"
+      },
+      services: [
+        { icon: "fas fa-tint", title: "Water Extraction", description: "Powerful pumps remove standing water quickly and efficiently." },
+        { icon: "fas fa-wind", title: "Structural Drying", description: "Industrial equipment dries walls, floors, and cavities completely." },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against mold and bacteria." },
+        { icon: "fas fa-tools", title: "Complete Restoration", description: "Rebuild and restore your property to pre-damage condition." }
+      ],
+      process: {
+        title: "Our Water Damage Restoration Process",
+        steps: [
+          { title: "Emergency Response", text: "24/7 rapid response to minimize damage", icon: "fas fa-phone" },
+          { title: "Assessment & Inspection", text: "Thorough evaluation of water damage extent", icon: "fas fa-search" },
+          { title: "Water Extraction", text: "Rapid removal of standing water", icon: "fas fa-tint" },
+          { title: "Drying & Dehumidification", text: "Industrial equipment ensures complete drying", icon: "fas fa-wind" },
+          { title: "Restoration & Repair", text: "Complete restoration to pre-damage condition", icon: "fas fa-tools" }
+        ]
+      },
+      faqs: [
+        { q: "How quickly can you respond to water damage?", a: "We provide 24/7 emergency response and can typically arrive within 60-90 minutes of your call." },
+        { q: "Will insurance cover water damage restoration?", a: "Most homeowners insurance covers sudden water damage. We work directly with insurance companies to streamline your claim." },
+        { q: "How long does water damage restoration take?", a: "Timeline varies by damage extent, but most residential projects are completed within 3-5 days." },
+        { q: "Can you prevent mold after water damage?", a: "Yes, rapid response and proper drying techniques within 24-48 hours significantly reduce mold risk." }
+      ]
+    },
+
     "flood-damage": {
       hero: {
         title: cityData 
