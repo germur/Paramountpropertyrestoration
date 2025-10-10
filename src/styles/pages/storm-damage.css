@@ -76,8 +76,6 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 900px;
-    margin: 0 auto;
     gap: 1.5rem;
 }
 
