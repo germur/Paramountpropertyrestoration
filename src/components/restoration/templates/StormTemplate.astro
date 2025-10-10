@@ -36,7 +36,7 @@ const getStormContent = (subSlug) => {
         { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Complete hurricane damage restoration", slug: "hurricane-damage", image: "/images/HurricaneDamage.jpg", link: "/restoration/storm-damage/hurricane-damage" },
         { icon: "fas fa-wind", title: "Wind Damage", description: "Roof and siding wind damage repair", slug: "wind-damage", image: "/images/WindDamage.jpg", link: "/restoration/storm-damage/wind-damage" },
         { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/StormDebrisRemoval.jpg", link: "/restoration/storm-damage/storm-debris-removal" },
-        { icon: "fas tools", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/storm-damage/emergency-storm-repair" },
+        { icon: "fas fa-tools", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/storm-damage/emergency-storm-repair" },
         { icon: "fas fa-home", title: "Structural Stabilization", description: "Emergency structural support and repairs", slug: "structural-repair", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/structural-repair" }
       ],
       faqs: [
@@ -180,10 +180,10 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <div class="service-item-static">
+      <a href={service.link} class="service-item-clickable">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
-      </div>
+      </a>
     ))}
   </div>
 </section>
@@ -196,7 +196,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/stormDamage.jpg" alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - hurricane and storm recovery`} loading="lazy" />
+          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - hurricane and storm recovery`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
