@@ -179,13 +179,15 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 
 <!-- Services Grid -->
 <section>
-  <div class="services-grid">
-    {content.services.map((service) => (
-      <a href={service.link} class="service-item-clickable">
-        <i class={service.icon}></i>
-        <h3>{service.title}</h3>
-      </a>
-    ))}
+  <div class="container">
+    <div class="services-grid">
+      {content.services.map((service) => (
+        <a href={service.link} class="service-item-clickable">
+          <i class={service.icon}></i>
+          <h3>{service.title}</h3>
+        </a>
+      ))}
+    </div>
   </div>
 </section>
 
