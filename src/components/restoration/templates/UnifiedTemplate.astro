@@ -206,24 +206,22 @@ const defaultContent = {
     <h2>Find Our Local {sub.title} Experts Near You</h2>
     <p class="section-subtitle">Professional restoration services available across Florida. Click your city for immediate local assistance.</p>
     
-    <div class="regions-container">
+    <div class="unified-city-container">
       {Object.entries(cityRegions).map(([regionName, cities]) => (
-        <div class="region-block">
-          <h3 class="region-title">{regionName}</h3>
-          <div class="city-grid">
-            {cities.slice(0, 6).map(city => (
-              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/general/${city.slug}`} class="city-card">
-                <div class="city-name">{city.nombre}</div>
-                <div class="city-county">{city.county}</div>
-                <div class="city-cta">Get Help →</div>
+        <div class="unified-region-card">
+          <h3 class="unified-region-title">{regionName}</h3>
+          <div class="unified-city-pills">
+            {cities.slice(0, 4).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/general/${city.slug}`} class="unified-city-pill">
+                {city.nombre}
               </a>
             ))}
+            {cities.length > 4 && (
+              <span class="unified-more-indicator">
+                +{cities.length - 4} more
+              </span>
+            )}
           </div>
-          {cities.length > 6 && (
-            <div class="view-more">
-              <p>+ {cities.length - 6} more cities in {regionName}</p>
-            </div>
-          )}
         </div>
       ))}
     </div>
