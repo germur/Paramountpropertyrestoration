@@ -70,7 +70,7 @@ const getFireContent = (subSlug) => {
           title: "Air Quality Restoration", 
           description: "HVAC cleaning and air purification", 
           slug: "air-quality", 
-          image: "/images/AirQuality.jpg",
+          image: "/images/EmergencyFireResponse.jpg",
           link: "/restoration/fire-damage/air-quality"
         }
       ],
@@ -446,105 +446,36 @@ const faqCategory = `fire-${sub?.slug || group.slug}`;
   </div>
 </section>
 
-<!-- Dynamic City Grid for Level 4 Distribution -->
+<!-- Unified City Grid Section -->
 <section class="section city-grid-section">
   <div class="container">
     <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
-    <p class="section-subtitle">Professional fire restoration services available across Florida. Click your city for immediate local assistance.</p>
+    <p class="section-subtitle">Professional {sub?.title || group.name.toLowerCase()} services available across Florida. Click your city for immediate local assistance.</p>
     
-    <div class="regions-container">
+    <div class="unified-city-container">
       {Object.entries(cityRegions).map(([regionName, cities]) => (
-        <div class="region-block">
-          <h3 class="region-title">{regionName}</h3>
-          <div class="city-grid">
-            {cities.slice(0, 8).map(city => (
-              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/fire-damage-repair/${city.slug}`} class="city-card">
-                <div class="city-name">{city.nombre}</div>
-                <div class="city-county">{city.county}</div>
-                <div class="city-cta">Get {sub?.title || group.name} Help →</div>
+        <div class="unified-region-card">
+          <h3 class="unified-region-title">{regionName}</h3>
+          <div class="unified-city-pills">
+            {cities.slice(0, 4).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/fire-damage-repair/${city.slug}`} class="unified-city-pill">
+                {city.nombre}
               </a>
             ))}
+            {cities.length > 4 && (
+              <span class="unified-more-indicator">
+                +{cities.length - 4} more
+              </span>
+            )}
           </div>
-          {cities.length > 8 && (
-            <div class="view-more">
-              <p>+ {cities.length - 8} more cities in {regionName}</p>
-            </div>
-          )}
         </div>
       ))}
     </div>
 
     <div class="emergency-notice">
       <h3>Emergency {sub?.title || group.name} Response</h3>
-      <p>Fire damage spreads rapidly without immediate action. Our certified teams are ready 24/7 to contain and restore your property.</p>
+      <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
       <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- Regional Coverage Section -->
-<section class="restoration-coverage-section">
-  <div class="container">
-    <div class="coverage-header">
-      <h2>Fire Damage Services Across Florida</h2>
-      <p>Emergency fire response in major Florida cities</p>
-    </div>
-
-    <div class="restoration-regions-grid">
-      <div class="region-column">
-        <h3 class="region-title">Central Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/fire-damage/fire-damage-repair/orlando">Fire Damage Orlando</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/kissimmee">Fire Damage Kissimmee</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/lakeland">Fire Damage Lakeland</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/winter-garden">Fire Damage Winter Garden</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">Tampa Bay Region</h3>
-        <div class="city-links">
-          <a href="/restoration/fire-damage/fire-damage-repair/tampa">Fire Damage Tampa</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg">Fire Damage St. Petersburg</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/clearwater">Fire Damage Clearwater</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/sarasota">Fire Damage Sarasota</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">South Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/fire-damage/fire-damage-repair/miami">Fire Damage Miami</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale">Fire Damage Fort Lauderdale</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/hollywood">Fire Damage Hollywood</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/coral-gables">Fire Damage Coral Gables</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">Southwest Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/fire-damage/fire-damage-repair/naples">Fire Damage Naples</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/cape-coral">Fire Damage Cape Coral</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/fort-myers">Fire Damage Fort Myers</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/bonita-springs">Fire Damage Bonita Springs</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">Treasure Coast</h3>
-        <div class="city-links">
-          <a href="/restoration/fire-damage/fire-damage-repair/port-st-lucie">Fire Damage Port St. Lucie</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/stuart">Fire Damage Stuart</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/vero-beach">Fire Damage Vero Beach</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/jupiter">Fire Damage Jupiter</a>
-        </div>
-        <a href="/contact" class="btn">Get Fire Help Now →</a>
-      </div>
-    </div>
-
-    <div class="emergency-footer">
-      <p>Need immediate help? <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217</a></p>
     </div>
   </div>
 </section>

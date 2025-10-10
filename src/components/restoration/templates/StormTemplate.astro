@@ -35,9 +35,9 @@ const getStormContent = (subSlug) => {
       services: [
         { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Complete hurricane damage restoration", slug: "hurricane-damage", image: "/images/HurricaneDamage.jpg", link: "/restoration/storm-damage/hurricane-damage" },
         { icon: "fas fa-wind", title: "Wind Damage", description: "Roof and siding wind damage repair", slug: "wind-damage", image: "/images/WindDamage.jpg", link: "/restoration/storm-damage/wind-damage" },
-        { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/DebrisRemoval.jpg", link: "/restoration/storm-damage/storm-debris-removal" },
-        { icon: "fas fa-tools", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/storm-damage/emergency-storm-repair" },
-        { icon: "fas fa-home", title: "Structural Stabilization", description: "Emergency structural support and repairs", slug: "structural-repair", image: "/images/StructuralRepair.jpg", link: "/restoration/storm-damage/structural-repair" }
+        { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/StormDebrisRemoval.jpg", link: "/restoration/storm-damage/storm-debris-removal" },
+        { icon: "fas tools", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/storm-damage/emergency-storm-repair" },
+        { icon: "fas fa-home", title: "Structural Stabilization", description: "Emergency structural support and repairs", slug: "structural-repair", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/structural-repair" }
       ],
       faqs: [
         { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
@@ -297,24 +297,26 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
   </div>
 </section>
 
-<!-- Dynamic City Grid for Level 4 Distribution -->
+<!-- Unified City Grid Section -->
 <section class="section city-grid-section">
   <div class="container">
     <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
-    <p class="section-subtitle">Professional storm restoration services available across Florida. Click your city for immediate local assistance.</p>
+    <p class="section-subtitle">Professional {sub?.title || group.name.toLowerCase()} services available across Florida. Click your city for immediate local assistance.</p>
     
-    <div class="compact-regions-grid">
-      {Object.entries(cityRegions).slice(0, 6).map(([regionName, cities]) => (
-        <div class="compact-region-card">
-          <h3 class="compact-region-title">{regionName}</h3>
-          <div class="compact-city-pills">
+    <div class="unified-city-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="unified-region-card">
+          <h3 class="unified-region-title">{regionName}</h3>
+          <div class="unified-city-pills">
             {cities.slice(0, 4).map(city => (
-              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/hurricane-damage/${city.slug}`} class="city-pill">
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/hurricane-damage/${city.slug}`} class="unified-city-pill">
                 {city.nombre}
               </a>
             ))}
             {cities.length > 4 && (
-              <span class="more-cities">+{cities.length - 4} more</span>
+              <span class="unified-more-indicator">
+                +{cities.length - 4} more
+              </span>
             )}
           </div>
         </div>
@@ -323,7 +325,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 
     <div class="emergency-notice">
       <h3>Emergency {sub?.title || group.name} Response</h3>
-      <p>Storm damage gets worse without immediate action. Our certified teams are ready 24/7 to protect and restore your property.</p>
+      <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
       <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
     </div>
   </div>
