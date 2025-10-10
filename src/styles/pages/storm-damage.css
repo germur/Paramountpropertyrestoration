@@ -77,9 +77,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 2rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .service-item {
@@ -690,7 +690,7 @@
     .services-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         padding: 1.5rem;
-        gap: 0.8rem;
+        gap: 1rem;
         max-width: 100%;
     }
 
@@ -850,7 +850,7 @@
     /* Services Grid */
     .services-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 6px;
+        gap: 8px;
         padding: 1rem;
         max-width: 100%;
         overflow: hidden;
