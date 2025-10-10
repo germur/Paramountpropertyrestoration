@@ -140,11 +140,74 @@
     display: block;
 }
 
+/* Service item static (sin hover ni cursor) */
+.service-item-static {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+}
+
+.service-item-static i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
 .service-item-static h3 {
     font-size: 0.85rem;
     margin: 0;
     color: #333;
     font-weight: 500;
+}
+
+/* Service item clickable (with hover and cursor) */
+.service-item-clickable {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.service-item-clickable:hover {
+    transform: translateY(-5px);
+    background-color: rgba(53, 195, 233, 0.05);
+    text-decoration: none;
+}
+
+.service-item-clickable i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.service-item-clickable:hover i {
+    color: #35c3e9;
+}
+
+.service-item-clickable h3 {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.service-item-clickable:hover h3 {
+    color: #35c3e9;
 }
 
 /* =====================
@@ -625,20 +688,28 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         padding: 1.5rem;
+        gap: 0.8rem;
+        max-width: 100%;
     }
 
     .service-item {
         padding: 0.75rem;
+        min-width: 0;
     }
 
-    .service-item i {
-        font-size: 2rem;
+    .service-item i,
+    .service-item-static i,
+    .service-item-clickable i {
+        font-size: 1.8rem;
     }
 
-    .service-item h3 {
-        font-size: 0.75rem;
+    .service-item h3,
+    .service-item-static h3,
+    .service-item-clickable h3 {
+        font-size: 0.7rem;
+        word-break: break-word;
     }
 }
 
@@ -778,33 +849,34 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 4px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
         padding: 1rem;
+        max-width: 100%;
+        overflow: hidden;
     }
 
-    .service-item {
+    .service-item,
+    .service-item-static,
+    .service-item-clickable {
         padding: 6px;
+        min-width: 0;
     }
 
-    .service-item i {
+    .service-item i,
+    .service-item-static i,
+    .service-item-clickable i {
         font-size: 1.5rem;
+        margin-bottom: 0.4rem;
     }
 
-    .service-item h3 {
+    .service-item h3,
+    .service-item-static h3,
+    .service-item-clickable h3 {
         font-size: 0.6rem;
-    }
-
-    .service-item-static {
-        padding: 6px;
-    }
-
-    .service-item-static i {
-        font-size: 1.5rem;
-    }
-
-    .service-item-static h3 {
-        font-size: 0.6rem;
+        line-height: 1.1;
+        word-break: break-word;
+        hyphens: auto;
     }
 
     /* Compact Cities Section */
