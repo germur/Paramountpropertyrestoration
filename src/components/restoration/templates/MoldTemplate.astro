@@ -4,8 +4,23 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
+import { cities } from "../../../data/restoration.js";
 
 const { group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
 
 // Contenido específico para mold remediation basado en el subservicio
 const getMoldContent = (subSlug) => {
@@ -18,10 +33,11 @@ const getMoldContent = (subSlug) => {
         bgImage: "/images/heroMold.jpg"
       },
       services: [
-        { icon: "fas fa-search", title: "Mold Inspection", description: "Professional mold testing and inspection", slug: "mold-inspection", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-inspection" },
-        { icon: "fas fa-virus", title: "Black Mold Removal", description: "Safe removal of toxic black mold", slug: "black-mold-removal", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
-        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Prevent future mold growth", slug: "mold-prevention", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-prevention" },
-        { icon: "fas fa-vial", title: "Mold Testing", description: "Certified mold testing services", slug: "mold-testing", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-testing" }
+        { icon: "fas fa-search", title: "Mold Inspection", description: "Professional mold testing and inspection", slug: "mold-inspection", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-virus", title: "Black Mold Removal", description: "Safe removal of toxic black mold", slug: "black-mold-removal", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Prevent future mold growth", slug: "mold-prevention", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-vial", title: "Mold Testing", description: "Certified mold testing services", slug: "mold-testing", image: "/images/MoldTesting.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-wind", title: "Air Quality Treatment", description: "HEPA filtration and air purification", slug: "air-treatment", image: "/images/AirTreatment.jpg", link: "/restoration/mold-remediation/mold-inspection" }
       ],
       faqs: [
         { q: "What is mold remediation?", a: "Mold remediation is the process of identifying, containing, and safely removing mold, followed by cleaning and moisture control to prevent regrowth." },
@@ -45,10 +61,11 @@ const getMoldContent = (subSlug) => {
         bgImage: "/images/moldDamage.jpg"
       },
       services: [
-        { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-inspection" },
-        { icon: "fas fa-vial", title: "Testing & Sampling", description: "Air and surface samples are collected for laboratory analysis.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-testing" },
-        { icon: "fas fa-microscope", title: "Lab Analysis", description: "Professional laboratory testing identifies mold types and concentration levels.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-testing" },
-        { icon: "fas fa-file-alt", title: "Detailed Report", description: "You receive a comprehensive report with findings and recommendations.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-inspection" }
+        { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-vial", title: "Testing & Sampling", description: "Air and surface samples are collected for laboratory analysis.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-microscope", title: "Lab Analysis", description: "Professional laboratory testing identifies mold types and concentration levels.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-file-alt", title: "Detailed Report", description: "You receive a comprehensive report with findings and recommendations.", image: "/images/MoldTesting.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-shield-alt", title: "Prevention Planning", description: "Recommendations to prevent future mold growth.", image: "/images/AirTreatment.jpg", link: "/restoration/mold-remediation/mold-prevention" }
       ],
       faqs: [
         { q: "What's the difference between inspection and testing?", a: "Inspection = visual & moisture scan. Testing = lab-confirmed type & spore count." },
@@ -72,10 +89,11 @@ const getMoldContent = (subSlug) => {
         bgImage: "/images/moldDamage.jpg"
       },
       services: [
-        { icon: "fas fa-search", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-inspection" },
-        { icon: "fas fa-shield-alt", title: "Containment & Safety Setup", description: "Seal affected areas to prevent further spread.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
-        { icon: "fas fa-wind", title: "Removal & Air Scrubbing", description: "HEPA filtration, safe disposal, and eco-friendly cleaning.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
-        { icon: "fas fa-tint", title: "Moisture Control & Prevention", description: "Fix leaks, humidity, and future mold risks.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-prevention" }
+        { icon: "fas fa-search", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-shield-alt", title: "Containment & Safety Setup", description: "Seal affected areas to prevent further spread.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-wind", title: "Removal & Air Scrubbing", description: "HEPA filtration, safe disposal, and eco-friendly cleaning.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-tint", title: "Moisture Control & Prevention", description: "Fix leaks, humidity, and future mold risks.", image: "/images/MoldTesting.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-check-circle", title: "Final Verification", description: "Post-remediation testing to ensure complete removal.", image: "/images/AirTreatment.jpg", link: "/restoration/mold-remediation/mold-testing" }
       ],
       faqs: [
         { q: "How dangerous is black mold?", a: "Black mold can trigger respiratory issues, allergies, and health risks—especially for children, elderly, and those with asthma. Professional removal is strongly recommended." },
@@ -98,10 +116,11 @@ const getMoldContent = (subSlug) => {
         bgImage: "/images/moldDamage.jpg"
       },
       services: [
-        { icon: "fas fa-search", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-inspection" },
-        { icon: "fas fa-wind", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-prevention" },
-        { icon: "fas fa-shield-alt", title: "Protective Barriers & Treatments", description: "Apply safe coatings to walls, attics & crawlspaces.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-prevention" },
-        { icon: "fas fa-check", title: "Ongoing Prevention Plan", description: "Recommendations for dehumidifiers, HVAC care & seasonal checks.", image: "/images/moldDamage.jpg", link: "/restoration/mold-remediation/mold-prevention" }
+        { icon: "fas fa-search", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-wind", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-shield-alt", title: "Protective Barriers & Treatments", description: "Apply safe coatings to walls, attics & crawlspaces.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-check", title: "Ongoing Prevention Plan", description: "Recommendations for dehumidifiers, HVAC care & seasonal checks.", image: "/images/MoldTesting.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-thermometer-half", title: "Humidity Control Systems", description: "Install and maintain optimal moisture levels.", image: "/images/AirTreatment.jpg", link: "/restoration/mold-remediation/mold-prevention" }
       ],
       faqs: [
         { q: "How can I prevent mold in Florida homes?", a: "By controlling humidity, fixing leaks, and applying preventive coatings." },
@@ -147,8 +166,8 @@ const getMoldContent = (subSlug) => {
   return moldContent[subSlug] || moldContent["mold-inspection"];
 };
 
-const content = getMoldContent(sub.slug);
-const faqCategory = `mold-${sub.slug}`;
+const content = getMoldContent(sub?.slug || group.slug);
+const faqCategory = `mold-${sub?.slug || group.slug}`;
 ---
 
 <!-- Hero Section -->
@@ -214,6 +233,123 @@ const faqCategory = `mold-${sub.slug}`;
         <p>{step.text}</p>
       </div>
     ))}
+  </div>
+</section>
+
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
+  <div class="container">
+    <h2>Understanding {sub?.title || group.name}</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <h3>Warning Signs of {sub?.title || group.name}</h3>
+          <p>Mold thrives in Florida's humid climate and can develop rapidly after water damage or in areas with poor ventilation. Health risks include respiratory problems, allergies, and more serious conditions, especially for vulnerable populations. Professional assessment and remediation are essential for safe, lasting results.</p>
+          <ul class="warning-signs">
+            <li><i class="fas fa-eye"></i> Visible mold spots or discoloration</li>
+            <li><i class="fas fa-nose"></i> Musty, damp, or earthy odors</li>
+            <li><i class="fas fa-water"></i> Water stains or moisture problems</li>
+            <li><i class="fas fa-lungs"></i> Respiratory symptoms or allergies</li>
+            <li><i class="fas fa-thermometer-half"></i> High humidity levels (>60%)</li>
+          </ul>
+        </div>
+        
+        <div class="content-block">
+          <h3>Our Detailed {sub?.title || group.name} Process</h3>
+          <p>Our certified mold remediation specialists follow strict IICRC protocols and use advanced containment and filtration systems. We address both visible mold and hidden contamination, ensuring thorough removal and prevention of future growth through moisture control and environmental improvements.</p>
+          <div class="process-detailed">
+            {content.steps.map((step, index) => (
+              <div class="process-step-detailed">
+                <div class="step-number">{index + 1}</div>
+                <div class="step-content">
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3>Why Choose Paramount Property Restoration?</h3>
+          <ul class="trust-list">
+            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
+            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
+            <li><i class="fas fa-microscope"></i> Certified Lab Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section bg-secondary insurance-help">
+  <div class="container">
+    <h2>Mold Damage Insurance Claims Support</h2>
+    <div class="insurance-grid">
+      <div class="insurance-content">
+        <p>Mold coverage can vary significantly between insurance policies, especially in Florida. Our team understands the complexities of mold claims and works to document the source of moisture damage, provide necessary testing reports, and coordinate with adjusters to maximize your coverage for remediation services.</p>
+        
+        <div class="insurance-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-vial"></i>
+            <h4>Professional Testing & Documentation</h4>
+            <p>Certified lab reports and comprehensive moisture assessments for claims</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Adjuster Coordination</h4>
+            <p>We work with insurance professionals to explain mold damage and remediation needs</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Maximize Coverage</h4>
+            <p>Our expertise helps identify covered damages and appropriate remediation scope</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dynamic City Grid for Level 4 Distribution -->
+<section class="section city-grid-section">
+  <div class="container">
+    <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
+    <p class="section-subtitle">Professional mold remediation services available across Florida. Click your city for immediate local assistance.</p>
+    
+    <div class="regions-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="region-block">
+          <h3 class="region-title">{regionName}</h3>
+          <div class="city-grid">
+            {cities.slice(0, 8).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/mold-inspection/${city.slug}`} class="city-card">
+                <div class="city-name">{city.nombre}</div>
+                <div class="city-county">{city.county}</div>
+                <div class="city-cta">Get {sub?.title || group.name} Help →</div>
+              </a>
+            ))}
+          </div>
+          {cities.length > 8 && (
+            <div class="view-more">
+              <p>+ {cities.length - 8} more cities in {regionName}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency {sub?.title || group.name} Response</h3>
+      <p>Mold spreads rapidly in Florida's climate. Our certified teams provide immediate assessment and safe remediation to protect your health and property.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
   </div>
 </section>
 

@@ -3,8 +3,23 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
+import { cities } from "../../../data/restoration.js";
 
 const { group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
 
 // Contenido específico para mitigation services basado en el subservicio
 const getMitigationContent = (subSlug) => {
@@ -17,10 +32,11 @@ const getMitigationContent = (subSlug) => {
         bgImage: "/images/mitigation.jpg"
       },
       services: [
-        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water damage mitigation", slug: "water-mitigation", image: "/images/mitigation.jpg", link: "/restoration/mitigation-services/water-mitigation" },
-        { icon: "fas fa-fire", title: "Fire Mitigation", description: "Fire damage containment and mitigation", slug: "fire-mitigation", image: "/images/mitigation.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
-        { icon: "fas fa-seedling", title: "Mold Mitigation", description: "Mold containment and prevention", slug: "mold-mitigation", image: "/images/mitigation.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
-        { icon: "fas fa-cloud-bolt", title: "Storm Mitigation", description: "Storm damage prevention and securing", slug: "storm-mitigation", image: "/images/mitigation.jpg", link: "/restoration/mitigation-services/storm-mitigation" }
+        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water damage mitigation", slug: "water-mitigation", image: "/images/WaterMitigation.jpg", link: "/restoration/mitigation-services/water-mitigation" },
+        { icon: "fas fa-fire", title: "Fire Mitigation", description: "Fire damage containment and mitigation", slug: "fire-mitigation", image: "/images/FireMitigation.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
+        { icon: "fas fa-seedling", title: "Mold Mitigation", description: "Mold containment and prevention", slug: "mold-mitigation", image: "/images/MoldMitigation.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
+        { icon: "fas fa-cloud-bolt", title: "Storm Mitigation", description: "Storm damage prevention and securing", slug: "storm-mitigation", image: "/images/StormMitigation.jpg", link: "/restoration/mitigation-services/storm-mitigation" },
+        { icon: "fas fa-shield-alt", title: "Emergency Response", description: "Immediate damage containment services", slug: "emergency-mitigation", image: "/images/EmergencyMitigation.jpg", link: "/restoration/mitigation-services/emergency-response" }
       ],
       faqs: [
         { q: "What are mitigation services?", a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss." },
@@ -147,8 +163,8 @@ const getMitigationContent = (subSlug) => {
   return mitigationContent[subSlug] || mitigationContent["water-mitigation"];
 };
 
-const content = getMitigationContent(sub.slug);
-const faqCategory = `mitigation-${sub.slug}`;
+const content = getMitigationContent(sub?.slug || group.slug);
+const faqCategory = `mitigation-${sub?.slug || group.slug}`;
 
 ---
 
@@ -215,6 +231,123 @@ const faqCategory = `mitigation-${sub.slug}`;
         <p>{step.text}</p>
       </div>
     ))}
+  </div>
+</section>
+
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
+  <div class="container">
+    <h2>Understanding {sub?.title || group.name}</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <h3>Warning Signs That Require {sub?.title || group.name}</h3>
+          <p>Mitigation services are the critical first step in property damage response. By acting immediately after water intrusion, fire, storm damage, or mold discovery, you can prevent secondary damage that often costs more than the original loss. Florida's climate makes rapid response especially important for preventing mold growth and structural deterioration.</p>
+          <ul class="warning-signs">
+            <li><i class="fas fa-eye"></i> Visible damage from water, fire, or storms</li>
+            <li><i class="fas fa-clock"></i> Time-sensitive damage spreading rapidly</li>
+            <li><i class="fas fa-home"></i> Structural integrity concerns</li>
+            <li><i class="fas fa-shield-alt"></i> Need for immediate containment</li>
+            <li><i class="fas fa-dollar-sign"></i> Risk of increased repair costs without action</li>
+          </ul>
+        </div>
+        
+        <div class="content-block">
+          <h3>Our Detailed {sub?.title || group.name} Process</h3>
+          <p>Our certified mitigation specialists follow industry best practices to contain damage, protect unaffected areas, and create stable conditions for restoration. We use advanced equipment and techniques to minimize loss and ensure your property is properly stabilized.</p>
+          <div class="process-detailed">
+            {content.steps.map((step, index) => (
+              <div class="process-step-detailed">
+                <div class="step-number">{index + 1}</div>
+                <div class="step-content">
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3>Why Choose Paramount Property Restoration?</h3>
+          <ul class="trust-list">
+            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
+            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
+            <li><i class="fas fa-tools"></i> Advanced Mitigation Equipment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section bg-secondary insurance-help">
+  <div class="container">
+    <h2>Mitigation Services Insurance Claims Support</h2>
+    <div class="insurance-grid">
+      <div class="insurance-content">
+        <p>Insurance companies recognize that proper mitigation saves money by preventing additional damage. Our team documents all mitigation efforts thoroughly, coordinates with adjusters, and ensures you receive full coverage for necessary emergency services that protect your property from further loss.</p>
+        
+        <div class="insurance-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-camera"></i>
+            <h4>Complete Damage Documentation</h4>
+            <p>Detailed before/during/after photos and reports for your insurance claim</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Insurance Coordination</h4>
+            <p>We work directly with adjusters to explain mitigation necessity and scope</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Cost Justification</h4>
+            <p>Our expertise helps demonstrate how mitigation reduces overall claim costs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dynamic City Grid for Level 4 Distribution -->
+<section class="section city-grid-section">
+  <div class="container">
+    <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
+    <p class="section-subtitle">Professional mitigation services available across Florida. Click your city for immediate emergency response.</p>
+    
+    <div class="regions-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="region-block">
+          <h3 class="region-title">{regionName}</h3>
+          <div class="city-grid">
+            {cities.slice(0, 8).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/water-mitigation/${city.slug}`} class="city-card">
+                <div class="city-name">{city.nombre}</div>
+                <div class="city-county">{city.county}</div>
+                <div class="city-cta">Get {sub?.title || group.name} Help →</div>
+              </a>
+            ))}
+          </div>
+          {cities.length > 8 && (
+            <div class="view-more">
+              <p>+ {cities.length - 8} more cities in {regionName}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency {sub?.title || group.name} Response</h3>
+      <p>Time is critical in damage mitigation. Our certified teams respond immediately to contain damage and protect your property from further loss.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
   </div>
 </section>
 

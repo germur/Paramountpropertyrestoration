@@ -1,5 +1,21 @@
 ---
+import { cities } from "../../../data/restoration.js";
+
 const { group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
 
 // Simple fallback template for any remaining generic cases
 const defaultContent = {
@@ -51,65 +67,186 @@ const defaultContent = {
 };
 ---
 
+<!-- Hero Section - Enhanced for Authority -->
 <section class="hero-sectionKitchen">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>{defaultContent.hero.title}</h1>
-    <p>{defaultContent.hero.description}</p>
-    <a href="/contact" class="cta-button">{defaultContent.hero.ctaText} →</a>
-  </div>
-</section>
-
-<section>
-  <div class="services-grid">
-    {defaultContent.services.map(service => (
-      <div class="service-item">
-        <i class={service.icon}></i>
-        <h3>{service.title}</h3>
+    <div class="hero-badge">
+      <i class="fas fa-certificate"></i>
+      IICRC Certified • Florida Licensed
+    </div>
+    <h1>Expert {defaultContent.hero.title} in Florida</h1>
+    <p>{defaultContent.hero.description} Our certified technicians provide 24/7 emergency response with advanced equipment and direct insurance billing.</p>
+    
+    <div class="hero-features">
+      <div class="feature-item">
+        <i class="fas fa-clock"></i>
+        <span>24/7 Response</span>
       </div>
-    ))}
+      <div class="feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <span>Licensed & Insured</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-handshake"></i>
+        <span>Insurance Billing</span>
+      </div>
+    </div>
+    
+    <div class="hero-actions">
+      <a href="/contact" class="cta-button primary">{defaultContent.hero.ctaText} →</a>
+      <a href="tel:+17866022217" class="cta-button secondary">
+        <i class="fas fa-phone"></i> (786) 602-2217
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- Solutions Cards -->
-<section class="solutions-section">
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
   <div class="container">
-  <h2 class="solutions-title">Comprehensive Restoration Solutions</h2>
-  <div class="solutions-grid">
-    {defaultContent.services.map((service, index) => (
-      <div class="solution-card">
-        <div class="card-image">
-          <img src="/images/restoration-default.jpg" alt={`Professional ${service.title.toLowerCase()} services in Florida`} loading="lazy" />
+    <h2>Professional {sub.title} Services in Florida</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <h3>When You Need {sub.title} Services</h3>
+          <p>Property damage requires immediate professional attention to prevent further deterioration and costly secondary issues. Our certified technicians understand Florida's unique environmental challenges and building requirements, ensuring proper restoration that protects your investment.</p>
+          <ul class="warning-signs">
+            <li><i class="fas fa-exclamation-triangle"></i> Visible damage to property structure</li>
+            <li><i class="fas fa-eye"></i> Signs of water intrusion or moisture</li>
+            <li><i class="fas fa-shield-alt"></i> Safety concerns requiring immediate attention</li>
+            <li><i class="fas fa-home"></i> Need for emergency stabilization services</li>
+          </ul>
         </div>
-        <div class="card-content">
-          <h3>{service.title}</h3>
-          <div class="service-description">
-            <p>{service.description}</p>
-            <div class="service-features">
-              <span class="feature-tag">⚡ Fast Response</span>
-              <span class="feature-tag">🛡️ Professional</span>
-              <span class="feature-tag">📞 24/7 Available</span>
-            </div>
+        
+        <div class="content-block">
+          <h3>Our Professional {sub.title} Process</h3>
+          <p>We follow industry-leading protocols and IICRC standards for all restoration work. Our process ensures thorough assessment, proper mitigation, and complete restoration that meets or exceeds Florida building codes.</p>
+          <div class="process-detailed">
+            {defaultContent.process.map((step, index) => (
+              <div class="process-step-detailed">
+                <div class="step-number">{index + 1}</div>
+                <div class="step-content">
+                  <h4>{step.title}</h4>
+                  <p>{step.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <a href={service.link || "/contact"} class="btn">Get Help Now →</a>
         </div>
       </div>
-    ))}
-  </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3>Why Choose Paramount Property Restoration?</h3>
+          <ul class="trust-list">
+            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
+            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
+            <li><i class="fas fa-star"></i> 4.9⭐ Customer Rating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="steps-section">
-  <h2 class="steps-title">How It Works</h2>
-  <div class="steps-container">
-    {defaultContent.process.map(step => (
-      <div class="step-item" data-step={step.step}>
-        <div class="step-icon">
-          <i class={step.icon}></i>
+<!-- Enhanced Services Overview -->
+<section class="section bg-secondary">
+  <div class="container">
+    <h2>Comprehensive {sub.title} Solutions</h2>
+    <div class="services-overview-grid">
+      {defaultContent.features.map((feature, index) => (
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>{feature}</h3>
+          <p>Professional {feature.toLowerCase()} services with certified technicians and advanced equipment.</p>
         </div>
-        <h3>{step.title}</h3>
-        <p>{step.description}</p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section insurance-help">
+  <div class="container">
+    <h2>Insurance Claims Assistance</h2>
+    <div class="insurance-grid">
+      <div class="insurance-content">
+        <p>Navigate the insurance claims process with confidence. Our team works directly with insurance adjusters to ensure proper documentation and maximum coverage for your restoration needs.</p>
+        
+        <div class="insurance-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-camera"></i>
+            <h4>Professional Documentation</h4>
+            <p>Complete damage assessment with detailed photos and reports</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Adjuster Coordination</h4>
+            <p>Direct communication with insurance representatives</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Maximize Coverage</h4>
+            <p>Ensure you receive full compensation for necessary repairs</p>
+          </div>
+        </div>
       </div>
-    ))}
+    </div>
+  </div>
+</section>
+
+<!-- Dynamic City Grid for Level 4 Distribution -->
+<section class="section city-grid-section">
+  <div class="container">
+    <h2>Find Our Local {sub.title} Experts Near You</h2>
+    <p class="section-subtitle">Professional restoration services available across Florida. Click your city for immediate local assistance.</p>
+    
+    <div class="regions-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="region-block">
+          <h3 class="region-title">{regionName}</h3>
+          <div class="city-grid">
+            {cities.slice(0, 6).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/general/${city.slug}`} class="city-card">
+                <div class="city-name">{city.nombre}</div>
+                <div class="city-county">{city.county}</div>
+                <div class="city-cta">Get Help →</div>
+              </a>
+            ))}
+          </div>
+          {cities.length > 6 && (
+            <div class="view-more">
+              <p>+ {cities.length - 6} more cities in {regionName}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency Response Available</h3>
+      <p>Don't wait - property damage gets worse over time. Our certified technicians are standing by 24/7.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      {defaultContent.faqs.map((faq, index) => (
+        <div class="faq-item">
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

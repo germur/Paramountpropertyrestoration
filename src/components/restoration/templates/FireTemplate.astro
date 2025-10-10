@@ -4,8 +4,23 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
+import { cities } from "../../../data/restoration.js";
 
 const { group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
 
 // Contenido específico para fire damage basado en el subservicio
 const getFireContent = (subSlug) => {
@@ -23,7 +38,7 @@ const getFireContent = (subSlug) => {
           title: "Smoke Damage", 
           description: "Professional smoke removal and odor elimination", 
           slug: "smoke-damage", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SmokeDamage.jpg",
           link: "/restoration/fire-damage/smoke-damage"
         },
         { 
@@ -31,7 +46,7 @@ const getFireContent = (subSlug) => {
           title: "Soot Cleanup", 
           description: "Safe soot removal from all surfaces", 
           slug: "soot-cleanup", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SootCleanup.jpg",
           link: "/restoration/fire-damage/soot-cleanup"
         },
         { 
@@ -39,7 +54,7 @@ const getFireContent = (subSlug) => {
           title: "Fire Damage Repair", 
           description: "Complete fire damage restoration", 
           slug: "fire-damage-repair", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/FireDamageRepair.jpg",
           link: "/restoration/fire-damage/fire-damage-repair"
         },
         { 
@@ -47,8 +62,16 @@ const getFireContent = (subSlug) => {
           title: "Emergency Fire Response", 
           description: "24/7 emergency fire response", 
           slug: "emergency-fire-response", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/EmergencyFireResponse.jpg",
           link: "/restoration/fire-damage/emergency-fire-response"
+        },
+        { 
+          icon: "fas fa-wind", 
+          title: "Air Quality Restoration", 
+          description: "HVAC cleaning and air purification", 
+          slug: "air-quality", 
+          image: "/images/AirQuality.jpg",
+          link: "/restoration/fire-damage/air-quality"
         }
       ],
       faqs: [
@@ -76,14 +99,14 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-broom", 
           title: "Soot & Residue Removal", 
           description: "Remove acidic soot before it corrodes surfaces", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SootCleanup.jpg",
           link: "/restoration/fire-damage/soot-cleanup"
         },
         { 
           icon: "fas fa-air-freshener", 
           title: "Odor Elimination", 
           description: "Advanced deodorization with ozone & hydroxyl machines", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SmokeDamage.jpg",
           link: "/restoration/fire-damage/odor-elimination"
         },
         { 
@@ -97,7 +120,7 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-home", 
           title: "Structural Cleaning", 
           description: "Ceilings, walls & HVAC fully decontaminated", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/FireDamageRepair.jpg",
           link: "/restoration/fire-damage/structural-cleaning"
         }
       ],
@@ -127,7 +150,7 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-home", 
           title: "Wall & Ceiling Soot Removal", 
           description: "Clean stains safely without damaging paint or drywall.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SootCleanup.jpg",
           link: "/restoration/fire-damage/wall-ceiling-cleanup"
         },
         { 
@@ -141,14 +164,14 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-wind", 
           title: "Air Duct & Vent Cleaning", 
           description: "Remove hidden soot and restore safe indoor air.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/FireDamageRepair.jpg",
           link: "/restoration/fire-damage/air-duct-cleaning"
         },
         { 
           icon: "fas fa-spray-can", 
           title: "Odor Control Solutions", 
           description: "Advanced ozone & hydroxyl treatments to neutralize smells.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SmokeDamage.jpg",
           link: "/restoration/fire-damage/odor-elimination"
         }
       ],
@@ -178,28 +201,28 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-smog", 
           title: "Smoke Damage Cleanup", 
           description: "Remove smoke particles and odors from walls, ceilings, and furniture with professional cleaning and deodorizing methods.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SmokeDamage.jpg",
           link: "/restoration/fire-damage/smoke-damage"
         },
         { 
           icon: "fas fa-broom", 
           title: "Soot Removal", 
           description: "Safe cleanup of soot from surfaces, HVAC systems, and personal belongings to prevent long-term damage.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SootCleanup.jpg",
           link: "/restoration/fire-damage/soot-cleanup"
         },
         { 
           icon: "fas fa-tools", 
           title: "Fire Structural Repair", 
           description: "Repair and replace fire-damaged drywall, insulation, flooring, and framing to restore property integrity.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/FireDamageRepair.jpg",
           link: "/restoration/fire-damage/structural-repair"
         },
         { 
           icon: "fas fa-shield-alt", 
           title: "Emergency Board-Up", 
           description: "Secure broken windows, doors, and openings after a fire to prevent further damage or theft.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/EmergencyFireResponse.jpg",
           link: "/restoration/fire-damage/emergency-fire-response"
         }
       ],
@@ -228,28 +251,28 @@ const getFireContent = (subSlug) => {
           icon: "fas fa-shield-alt", 
           title: "Emergency Board-Up", 
           description: "Immediate securing of windows, doors, and openings.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/EmergencyFireResponse.jpg",
           link: "/restoration/fire-damage/board-up-services"
         },
         { 
           icon: "fas fa-wind", 
           title: "Smoke Containment", 
           description: "Prevent smoke from spreading to unaffected areas.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/SmokeDamage.jpg",
           link: "/restoration/fire-damage/smoke-containment"
         },
         { 
           icon: "fas fa-clipboard-check", 
           title: "Damage Assessment", 
           description: "Complete evaluation for insurance and restoration planning.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/FireDamageRepair.jpg",
           link: "/restoration/fire-damage/damage-assessment"
         },
         { 
           icon: "fas fa-phone", 
           title: "24/7 Response Team", 
           description: "Always available for immediate emergency response.", 
-          image: "/images/fireDamage.jpg",
+          image: "/images/EmergencyFireResponse.jpg",
           link: "/contact"
         }
       ],
@@ -271,8 +294,8 @@ const getFireContent = (subSlug) => {
   return fireContent[subSlug] || fireContent["fire-damage-repair"];
 };
 
-const content = getFireContent(sub.slug);
-const faqCategory = `fire-${sub.slug}`;
+const content = getFireContent(sub?.slug || group.slug);
+const faqCategory = `fire-${sub?.slug || group.slug}`;
 ---
 
 <!-- Hero Section -->
@@ -305,7 +328,7 @@ const faqCategory = `fire-${sub.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/fireDamage.jpg" alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - smoke and soot cleanup experts`} loading="lazy" />
+          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - smoke and soot cleanup experts`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
@@ -342,12 +365,129 @@ const faqCategory = `fire-${sub.slug}`;
   </div>
 </section>
 
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
+  <div class="container">
+    <h2>Understanding {sub?.title || group.name}</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <h3>Warning Signs of {sub?.title || group.name}</h3>
+          <p>Fire damage extends far beyond what's visible to the eye. Smoke particles can penetrate walls, fabrics, and HVAC systems, creating long-term health risks and structural problems. Early professional intervention is critical for preventing permanent damage and ensuring safe restoration in Florida's climate.</p>
+          <ul class="warning-signs">
+            <li><i class="fas fa-fire"></i> Visible burn marks or charring</li>
+            <li><i class="fas fa-smog"></i> Persistent smoke or acrid odors</li>
+            <li><i class="fas fa-eye"></i> Soot stains on walls and ceilings</li>
+            <li><i class="fas fa-home"></i> Warped or discolored surfaces</li>
+            <li><i class="fas fa-wind"></i> Smoke residue in air vents</li>
+          </ul>
+        </div>
+        
+        <div class="content-block">
+          <h3>Our Detailed {sub?.title || group.name} Restoration Process</h3>
+          <p>Our IICRC-certified fire damage restoration specialists follow proven protocols for complete property recovery. We use advanced equipment and techniques to remove smoke particles, eliminate odors, and restore your property to pre-loss condition, ensuring all safety standards are met.</p>
+          <div class="process-detailed">
+            {content.steps.map((step, index) => (
+              <div class="process-step-detailed">
+                <div class="step-number">{index + 1}</div>
+                <div class="step-content">
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3>Why Choose Paramount Property Restoration?</h3>
+          <ul class="trust-list">
+            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
+            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
+            <li><i class="fas fa-fire-extinguisher"></i> Fire Damage Specialists</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section bg-secondary insurance-help">
+  <div class="container">
+    <h2>Fire Damage Insurance Claims Support</h2>
+    <div class="insurance-grid">
+      <div class="insurance-content">
+        <p>Fire damage claims require extensive documentation and expert knowledge of insurance processes. Our team specializes in documenting fire and smoke damage thoroughly, coordinating with adjusters, and ensuring you receive maximum compensation for your restoration needs.</p>
+        
+        <div class="insurance-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-camera"></i>
+            <h4>Comprehensive Documentation</h4>
+            <p>Detailed fire damage reports with photos and assessments for your claim</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Adjuster Meetings</h4>
+            <p>We represent your interests during insurance inspections and evaluations</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Maximize Your Settlement</h4>
+            <p>Our expertise helps ensure all fire damage is properly covered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dynamic City Grid for Level 4 Distribution -->
+<section class="section city-grid-section">
+  <div class="container">
+    <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
+    <p class="section-subtitle">Professional fire restoration services available across Florida. Click your city for immediate local assistance.</p>
+    
+    <div class="regions-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="region-block">
+          <h3 class="region-title">{regionName}</h3>
+          <div class="city-grid">
+            {cities.slice(0, 8).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/fire-damage-repair/${city.slug}`} class="city-card">
+                <div class="city-name">{city.nombre}</div>
+                <div class="city-county">{city.county}</div>
+                <div class="city-cta">Get {sub?.title || group.name} Help →</div>
+              </a>
+            ))}
+          </div>
+          {cities.length > 8 && (
+            <div class="view-more">
+              <p>+ {cities.length - 8} more cities in {regionName}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency {sub?.title || group.name} Response</h3>
+      <p>Fire damage spreads rapidly without immediate action. Our certified teams are ready 24/7 to contain and restore your property.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
+  </div>
+</section>
+
 <!-- Regional Coverage Section -->
 <section class="restoration-coverage-section">
   <div class="container">
     <div class="coverage-header">
-      <h2>Emergency Fire Damage Services Across Florida</h2>
-      <p>Fast response in major Florida cities</p>
+      <h2>Fire Damage Services Across Florida</h2>
+      <p>Emergency fire response in major Florida cities</p>
     </div>
 
     <div class="restoration-regions-grid">
@@ -399,7 +539,7 @@ const faqCategory = `fire-${sub.slug}`;
           <a href="/restoration/fire-damage/fire-damage-repair/vero-beach">Fire Damage Vero Beach</a>
           <a href="/restoration/fire-damage/fire-damage-repair/jupiter">Fire Damage Jupiter</a>
         </div>
-        <a href="/contact" class="btn">Get Fire Damage Help Now →</a>
+        <a href="/contact" class="btn">Get Fire Help Now →</a>
       </div>
     </div>
 

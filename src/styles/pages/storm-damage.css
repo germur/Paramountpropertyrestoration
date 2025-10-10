@@ -75,10 +75,11 @@
    ===================== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 2rem;
     max-width: 990px;
     margin: 0 auto;
+    gap: 1rem;
 }
 
 .service-item {
@@ -259,90 +260,128 @@
     border: 1px solid rgba(53, 195, 233, 0.3);
 }
 
-/* Regional Coverage Section */
-.restoration-coverage-section {
+/* =====================
+    CITY GRID SECTION - COMPACT
+   ===================== */
+.city-grid-section {
     padding: 4rem 0;
-    background: white;
+    background: #f8f9fa;
 }
 
-.coverage-header {
+.city-grid-section h2 {
     text-align: center;
-    margin-bottom: 3rem;
-}
-
-.coverage-header h2 {
-    color: #333;
     font-size: 2.25rem;
+    color: #333;
     margin-bottom: 0.5rem;
 }
 
-.coverage-header p {
+.section-subtitle {
+    text-align: center;
     color: #666;
     font-size: 1.125rem;
+    margin-bottom: 3rem;
 }
 
-.restoration-regions-grid {
+.compact-regions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
 }
 
-.region-column {
-    background: #f8f9fa;
-    padding: 2rem;
+.compact-region-card {
+    background: white;
+    padding: 1.5rem;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #e2e8f0;
 }
 
-.region-title {
+.compact-region-title {
     color: #333;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #35c3e9;
 }
 
-.city-links {
+.compact-city-pills {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.city-links a {
-    color: #666;
+.city-pill {
+    background: #35c3e9;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 0.95rem;
 }
 
-.city-links a:hover {
-    background: white;
-    color: #35c3e9;
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.city-pill:hover {
+    background: #2a9fd1;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(53, 195, 233, 0.3);
 }
 
-.emergency-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 2rem;
+.more-cities {
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+    padding: 0.4rem 0.8rem;
     background: #f8f9fa;
-    border-radius: 12px;
+    border-radius: 15px;
+}
+
+.emergency-notice {
+    text-align: center;
+    background: linear-gradient(135deg, #35c3e9, #2a9fd1);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.emergency-notice h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.emergency-notice p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
 }
 
 .emergency-phone {
+    display: inline-block;
+    background: white;
     color: #35c3e9;
-    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 50px;
     text-decoration: none;
+    font-weight: 700;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .emergency-phone:hover {
+    background: #f8f9fa;
     color: #2a9fd1;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =====================
@@ -638,6 +677,42 @@
         gap: 1.5rem;
     }
 
+    /* Compact Cities Section */
+    .city-grid-section {
+        padding: 3rem 1rem;
+    }
+
+    .city-grid-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .compact-regions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .compact-region-card {
+        padding: 1.2rem;
+    }
+
+    .emergency-notice {
+        padding: 2rem 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .emergency-notice h3 {
+        font-size: 1.3rem;
+    }
+
+    .emergency-notice p {
+        font-size: 1rem;
+    }
+
+    .emergency-phone {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+    }
+
     /* Steps Section */
     .steps-title {
         font-size: 2rem;
@@ -703,21 +778,74 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
         padding: 1rem;
     }
 
     .service-item {
-        padding: 8px;
+        padding: 6px;
     }
 
     .service-item i {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .service-item h3 {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+    }
+
+    .service-item-static {
+        padding: 6px;
+    }
+
+    .service-item-static i {
+        font-size: 1.5rem;
+    }
+
+    .service-item-static h3 {
+        font-size: 0.6rem;
+    }
+
+    /* Compact Cities Section */
+    .city-grid-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .compact-regions-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .compact-region-card {
+        padding: 1rem;
+    }
+
+    .compact-region-title {
+        font-size: 1rem;
+    }
+
+    .city-pill {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    .emergency-notice {
+        padding: 1.5rem 1rem;
+    }
+
+    .emergency-notice h3 {
+        font-size: 1.2rem;
+    }
+
+    .emergency-phone {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
     }
 
     /* Solutions Section */
