@@ -74,9 +74,12 @@
     SERVICES GRID
    ===================== */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .service-item {
@@ -89,6 +92,9 @@
     flex-direction: column;
     align-items: center;
     cursor: default;
+    flex: 1 1 150px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .service-item:hover {
@@ -128,6 +134,9 @@
     flex-direction: column;
     align-items: center;
     cursor: default;
+    flex: 1 1 150px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .service-item-static i {
@@ -147,6 +156,9 @@
     flex-direction: column;
     align-items: center;
     cursor: default;
+    flex: 1 1 150px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .service-item-static i {
@@ -175,6 +187,9 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    flex: 1 1 150px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .service-item-clickable:hover {
@@ -685,14 +700,19 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        flex-direction: row;
+        justify-content: center;
         gap: 1rem;
         max-width: 100%;
     }
 
-    .service-item {
+    .service-item,
+    .service-item-static,
+    .service-item-clickable {
         padding: 0.75rem;
-        min-width: 0;
+        flex: 0 1 calc(25% - 1rem);
+        min-width: 80px;
+        max-width: 120px;
     }
 
     .service-item i,
@@ -845,7 +865,8 @@
 
     /* Services Grid */
     .services-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        flex-direction: row;
+        justify-content: center;
         gap: 8px;
         max-width: 100%;
         overflow: hidden;
@@ -855,7 +876,9 @@
     .service-item-static,
     .service-item-clickable {
         padding: 6px;
-        min-width: 0;
+        flex: 0 1 calc(25% - 8px);
+        min-width: 70px;
+        max-width: 90px;
     }
 
     .service-item i,

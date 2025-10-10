@@ -1018,8 +1018,9 @@ body[data-page="living-dining"] .hero-section {
 
 /* ===== SERVICES GRID SYSTEM ===== */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 2rem 0;
   max-width: 1100px;
@@ -1034,6 +1035,9 @@ body[data-page="living-dining"] .hero-section {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   border: 1px solid var(--color-border);
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 250px;
 }
 
 .service-item:hover {
