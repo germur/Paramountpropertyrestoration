@@ -299,21 +299,6 @@ export const restorationGroups = [
           description: "Need immediate storm damage help? Our emergency teams provide 24/7 storm repair services including emergency board-up, temporary repairs, and immediate damage assessment.",
         }
       },
-      {
-        slug: "structural-stabilization",
-        title: "Structural Stabilization",
-        short: "Emergency structural support services",
-        nombre: "Structural Stabilization",
-        categoria: "restoration",
-        seo: {
-          title: "Structural Stabilization Florida | Emergency Building Support",
-          description: "Emergency structural stabilization services in Florida. Temporary bracing, foundation support, wall stabilization after storm damage.",
-        },
-        hero: {
-          title: "Structure Compromised? We Stabilize Buildings Safely",
-          description: "Storm damage compromised your building's structure? Our structural engineers provide emergency stabilization including temporary bracing, foundation support, and wall reinforcement.",
-        }
-      }
     ]
   },
 
