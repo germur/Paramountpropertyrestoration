@@ -389,11 +389,12 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
     position: relative;
     width: 100%;
     overflow-x: auto;
+    padding: 0 1rem;
 }
 
 .steps-container::before {
@@ -411,6 +412,8 @@
     text-align: center;
     padding: 1rem;
     position: relative;
+    min-width: 0;
+    flex: 1;
 }
 
 .step-icon {
@@ -443,14 +446,18 @@
     margin-bottom: 0.5rem;
     font-weight: 600;
     font-size: 1rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .step-item p {
     color: #666;
-    line-height: 1.5;
-    max-width: 200px;
+    line-height: 1.4;
     margin: 0 auto;
     font-size: 0.9rem;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 /* =====================
@@ -739,31 +746,38 @@
         grid-template-columns: repeat(5, 1fr);
         gap: 0.75rem;
         max-width: 100%;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
+        margin: 0;
     }
 
     .step-item {
-        padding: 0.5rem;
+        padding: 0.5rem 0.25rem;
+        min-width: 0;
     }
 
     .step-item h3 {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-bottom: 0.25rem;
+        line-height: 1.1;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-item p {
-        font-size: 0.7rem;
-        max-width: 120px;
-        line-height: 1.3;
+        font-size: 0.65rem;
+        line-height: 1.2;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-icon {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
+        margin-bottom: 0.5rem;
     }
 
     .step-icon i {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .steps-container::before {
@@ -871,33 +885,40 @@
 
     .steps-container {
         grid-template-columns: repeat(5, 1fr);
-        gap: 0.5rem;
+        gap: 0.4rem;
         max-width: 100%;
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
+        margin: 0;
     }
 
     .step-item {
-        padding: 0.25rem;
+        padding: 0.25rem 0.1rem;
+        min-width: 0;
     }
 
     .step-item h3 {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         margin-bottom: 0.2rem;
+        line-height: 1.1;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-item p {
-        font-size: 0.6rem;
-        max-width: 100px;
-        line-height: 1.2;
+        font-size: 0.55rem;
+        line-height: 1.1;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-icon {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 0.4rem;
     }
 
     .step-icon i {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /* Recent Remodels */
@@ -978,40 +999,47 @@
         font-size: 0.9rem;
     }
 
-    /* Steps Section - MAINTAIN 5 columns on mobile */
+    /* Steps Section - MAINTAIN 5 columns on mobile with aggressive optimization */
     .steps-section {
-        padding: 3rem 0.5rem;
+        padding: 3rem 0.25rem;
     }
 
     .steps-container {
         grid-template-columns: repeat(5, 1fr);
-        gap: 0.25rem;
+        gap: 0.2rem;
         max-width: 100%;
-        padding: 0 0.25rem;
+        padding: 0 0.1rem;
+        margin: 0;
     }
 
     .step-item {
-        padding: 0.1rem;
+        padding: 0.1rem 0.05rem;
+        min-width: 0;
     }
 
     .step-item h3 {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         margin-bottom: 0.1rem;
+        line-height: 1;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-item p {
-        font-size: 0.5rem;
-        max-width: 70px;
-        line-height: 1.1;
+        font-size: 0.45rem;
+        line-height: 1;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .step-icon {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
+        margin-bottom: 0.3rem;
     }
 
     .step-icon i {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     /* Recent Remodels */
