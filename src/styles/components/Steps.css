@@ -43,9 +43,82 @@
 
 .step-content .step-tittle {
     font-size: 20px;
-    font-weight:400;
+    font-weight: 400;
     color: #333;
     line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .steps-container {
+        padding: 15px;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .step {
+        gap: 15px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .step-content .step-tittle {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    
+    .step-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps-container {
+        padding: 10px;
+        gap: 12px;
+    }
+    
+    .step {
+        gap: 12px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        border-radius: 50%;
+    }
+    
+    .step:not(:last-child) .step-number::after {
+        height: calc(100% + 12px);
+    }
+    
+    .step-content {
+        flex: 1;
+    }
+    
+    .step-content .step-tittle {
+        font-size: 16px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
 }
 
 .step-content .step-text {

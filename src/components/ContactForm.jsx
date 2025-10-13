@@ -395,13 +395,105 @@ export default function ContactForm() {
 
         @media (max-width: 768px) {
           .contact-form {
-            padding: 0 1rem;
+            padding: 0;
+            max-width: 100%;
+          }
+          
+          .form-group {
+            margin-bottom: 1.25rem;
+          }
+          
+          .form-label {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+          }
+          
+          .form-input,
+          .form-select,
+          .form-textarea {
+            padding: 1rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.75rem;
+            min-height: 48px;
+            -webkit-appearance: none;
+            appearance: none;
+          }
+          
+          .form-select {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23374151" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
+          }
+          
+          .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+          }
+          
+          .form-submit {
+            padding: 1.125rem 1.5rem;
+            font-size: 1.05rem;
+            border-radius: 0.75rem;
+            min-height: 56px;
+            font-weight: 600;
+          }
+          
+          .form-message {
+            padding: 0.875rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
           }
 
           .emergency-notice {
             flex-direction: column;
             text-align: center;
+            gap: 0.75rem;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+          }
+          
+          .emergency-text {
+            font-size: 0.9rem;
+          }
+          
+          .emergency-phone {
+            font-size: 1.125rem;
+            padding: 0.5rem 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 0.5rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .form-input,
+          .form-select,
+          .form-textarea {
+            padding: 0.875rem;
+            font-size: 0.95rem;
+          }
+          
+          .form-submit {
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            min-height: 52px;
+          }
+          
+          .emergency-notice {
+            padding: 1rem;
             gap: 0.5rem;
+          }
+          
+          .emergency-text {
+            font-size: 0.85rem;
+          }
+          
+          .emergency-phone {
+            font-size: 1.1rem;
+            padding: 0.625rem 1rem;
           }
         }
       `}</style>

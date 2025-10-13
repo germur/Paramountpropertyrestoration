@@ -70,7 +70,11 @@ export default function P5HeroAnimation({ serviceType = 'restoration', isActive 
 
     // Animation loop
     const animate = () => {
-      ctx.fillStyle = 'rgba(30, 41, 59, 0.05)'; // Dark overlay with transparency
+      // Clear canvas with gradient background matching the new style
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, 'rgba(12, 78, 110, 0.8)');
+      gradient.addColorStop(1, 'rgba(3, 23, 79, 0.9)');
+      ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
@@ -87,7 +91,7 @@ export default function P5HeroAnimation({ serviceType = 'restoration', isActive 
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            const opacity = (120 - distance) / 120 * 0.1;
+            const opacity = (120 - distance) / 120 * 0.2;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);

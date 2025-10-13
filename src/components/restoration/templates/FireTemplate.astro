@@ -308,7 +308,7 @@ const faqCategory = `fire-${sub?.slug || group.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <a href={service.link} class="service-item-static">
+      <a href={service.link} class="service-item-clickable">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
       </a>

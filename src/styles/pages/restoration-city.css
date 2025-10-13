@@ -115,6 +115,7 @@
 
 .btn-emergency {
   background: linear-gradient(45deg, #ff4444, #ff6666);
+  color: white !important;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -127,6 +128,7 @@
 }
 
 .btn-emergency:hover {
+  color: white !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4);
   background: linear-gradient(45deg, #ff3333, #ff5555);
