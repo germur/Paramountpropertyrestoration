@@ -196,7 +196,7 @@ const faqCategory = `mold-${sub?.slug || group.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/moldDamage.jpg" alt={`Professional ${service.title.toLowerCase()} services in Florida - certified mold specialists`} loading="lazy" />
+          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} services in Florida - certified mold specialists`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
