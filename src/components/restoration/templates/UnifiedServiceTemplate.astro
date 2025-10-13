@@ -128,7 +128,7 @@ const cityRegions = getCitiesByRegion();
           <ul class="service-features">
             {serviceData.features.map(feature => (
               <li>
-                <span class="feature-icon">✓</span>
+                <span class="feature-icon">#</span>
                 {feature}
               </li>
             ))}
@@ -163,7 +163,7 @@ const cityRegions = getCitiesByRegion();
   </section>
 
   <!-- Cities Section - Using Service Page Pattern -->
-  <section class="section gallery-section">
+  <section class="section gallery-section" style="padding-bottom: 2rem;">
     <div class="container">
       <h2 class="section-title">
         Immediate {sub.title} Service Available Throughout Florida
@@ -176,15 +176,22 @@ const cityRegions = getCitiesByRegion();
       <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
         {Object.entries(cityRegions).map(([regionName, regionCities]) => 
           regionCities.slice(0, 6).map(city => (
-            <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="gallery-card-link">
-              <div class="gallery-item" style="background: #f8f9fa; border: 1px solid #e9ecef;">
-                <div style="padding: 1.5rem; text-align: center;">
-                  <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                  <h4 style="color: #333; margin-bottom: 0.25rem;">{city.nombre}</h4>
-                  <p style="color: #666; font-size: 0.875rem; margin: 0;">{city.condado} County</p>
-                </div>
-                <div class="gallery-overlay">
-                  <p>Service Available →</p>
+            <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="gallery-card-link" style="text-decoration: none;">
+              <div class="gallery-item" 
+                   style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; transition: all 0.3s ease; height: 140px;" 
+                   onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.15)'; this.querySelector('span').style.background='#1e90ff'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.querySelector('span').style.background='#35c3e9'">
+                <div style="padding: 1.5rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                    <h4 style="color: #333; margin-bottom: 0.25rem; font-size: 1rem;">{city.nombre}</h4>
+                    <p style="color: #666; font-size: 0.875rem; margin: 0;">{city.condado} County</p>
+                  </div>
+                  <div style="margin-top: 1rem;">
+                    <span style="background: #35c3e9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
+                      Service Available →
+                    </span>
+                  </div>
                 </div>
               </div>
             </a>
@@ -193,7 +200,7 @@ const cityRegions = getCitiesByRegion();
       </div>
 
       <!-- Emergency notice -->
-      <div class="emergency-notice" style="margin-top: 2rem;">
+      <div class="emergency-notice" style="margin-top: 1.5rem;">
         <h3>24/7 Emergency Response Available Statewide</h3>
         <p>Don't wait - property damage gets worse over time. Our certified technicians are standing by.</p>
         <a href="tel:+17866022217" class="emergency-phone">
@@ -204,7 +211,7 @@ const cityRegions = getCitiesByRegion();
   </section>
 
   <!-- FAQ Section -->
-  <section class="section faq-section">
+  <section class="section faq-section" style="padding-top: 2rem;">
     <div class="container">
       <h2 class="section-title">Frequently Asked Questions About {sub.title}</h2>
       <FAQ questions={[

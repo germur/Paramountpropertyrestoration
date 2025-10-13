@@ -639,7 +639,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
 // Componente principal FAQ optimizado
 const FAQ = ({
     category = 'general',
-    title = 'Preguntas Frecuentes',
+    title = 'Frequently Asked Questions',
     categories = [], // Array de categorías para mezclar
     customQuestions = [], // Para preguntas personalizadas
     showTitle = true,
