@@ -355,21 +355,6 @@ export const restorationGroups = [
           title: "Storm Damage Exposed Your Property? We Secure It Fast",
           description: "Storm left your property exposed to weather and intruders? Our mitigation teams provide emergency board-up, temporary roofing, and structural bracing to protect against further damage.",
         }
-      },
-      {
-        slug: "emergency-response",
-        title: "Emergency Response Services",
-        short: "24/7 emergency property response",
-        nombre: "Emergency Response Services",
-        categoria: "restoration",
-        seo: {
-          title: "Emergency Response Florida | 24/7 Property Damage Services",
-          description: "24/7 emergency response services in Florida. Immediate damage assessment, emergency protection, temporary repairs & crisis management.",
-        },
-        hero: {
-          title: "Property Emergency? We Respond Within 60 Minutes",
-          description: "Facing a property emergency? Our 24/7 response teams provide immediate damage assessment, emergency protection, and temporary repairs to secure your property fast.",
-        }
       }
     ]
   },
