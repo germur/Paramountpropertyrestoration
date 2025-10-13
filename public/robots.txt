@@ -17,3 +17,6 @@ Allow: /css/
 Allow: /js/
 Allow: /fonts/
 Allow: /_astro/
+
+# IndexNow Key File
+Allow: /196aabc169312b76f1539847beee6f9f.txt

@@ -6,6 +6,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:indexnow": "npm run build && node scripts/indexnow-submit.js",
+    "indexnow:submit": "node scripts/indexnow-submit.js",
+    "indexnow:test": "node scripts/indexnow-submit.js --dry-run",
+    "indexnow:urls": "node -e \"import('./src/lib/sitemap.js').then(m => console.log('URLs found:', m.getAllUrls().length))\"",
     "preview": "astro preview",
     "astro": "astro"
   },
