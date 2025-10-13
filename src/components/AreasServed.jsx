@@ -1,10 +1,10 @@
 import '../styles/components/AreasServed.css'
 
 const areas = [
-    { city: "Miami, FL", image: "images/miami.png" },
-    { city: "Orlando, FL", image: "images/orlando.png" },
-    { city: "Tampa, FL", image: "images/tampa.png" },
-    { city: "Sarasota, FL", image: "images/saratosa.png" },
+    { city: "Miami, FL", image: "/images/miami.png" },
+    { city: "Orlando, FL", image: "/images/orlando.png" },
+    { city: "Tampa, FL", image: "/images/tampa.png" },
+    { city: "Sarasota, FL", image: "/images/saratosa.png" },
 ];
 
 export default function AreasServed() {
