@@ -124,21 +124,6 @@ export const restorationGroups = [
           title: "Fire Emergency? We Respond Within 60 Minutes",
           description: "Fire emergency requiring immediate help? Our emergency teams provide 24/7 fire damage response including board-up services, structural stabilization, and damage assessment across Florida.",
         }
-      },
-      {
-        slug: "air-quality-restoration",
-        title: "Air Quality Restoration",
-        short: "Post-fire air purification services",
-        nombre: "Air Quality Restoration",
-        categoria: "restoration",
-        seo: {
-          title: "Air Quality Restoration Florida | Post-Fire Air Purification",
-          description: "Professional air quality restoration after fire damage. Complete air purification, HVAC cleaning & indoor air quality testing in Florida.",
-        },
-        hero: {
-          title: "Smoke in the Air? We Purify & Restore Clean Air",
-          description: "Poor air quality after fire damage? Our specialists provide complete air purification services including HVAC cleaning, air scrubbing, and indoor air quality restoration.",
-        }
       }
     ]
   },
