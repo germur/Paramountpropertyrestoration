@@ -134,7 +134,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: default;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex: 1 1 150px;
+    min-width: 120px;
+    max-width: 180px;
+}
+
+.service-item-static:hover {
+    transform: translateY(-5px);
+    color: inherit;
+    text-decoration: none;
 }
 
 .service-item-static i {
@@ -142,6 +153,11 @@
     color: var(--color-primary);
     margin-bottom: 0.75rem;
     display: block;
+    transition: color 0.3s ease;
+}
+
+.service-item-static:hover i {
+    color: #35c3e9;
 }
 
 .service-item-static h3 {
@@ -149,6 +165,11 @@
     margin: 0;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.service-item-static:hover h3 {
+    color: #35c3e9;
 }
 
 /* =====================
