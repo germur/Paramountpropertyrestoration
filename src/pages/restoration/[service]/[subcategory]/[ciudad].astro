@@ -6,6 +6,8 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
 import SEOHead from "../../../../components/SEOHead.jsx";
+import ServiceAreaMap from "../../../../components/ServiceAreaMap.jsx";
+import P5HeroAnimation from "../../../../components/P5HeroAnimation.jsx";
 import "../../../../styles/pages/[ciudad].css";
 import "../../../../styles/pages/restoration-city.css";
 import "../../../../styles/pages/programmatic-conversion.css";
@@ -94,18 +96,15 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
 
   <!-- INVERTED SEO PYRAMID: Hero Híbrido (APEX - Transactional & Urgent) -->
   <section class="programmatic-hero">
+    <P5HeroAnimation 
+      client:load 
+      serviceType={servicioData.title.toLowerCase()} 
+      isActive={true} 
+    />
     <div class="container">
       <div class="hero-conversion-grid">
         <!-- Left: H1, Urgency & Guarantee -->
         <div class="hero-main">
-          <!-- Breadcrumbs for Local Silo Confirmation -->
-          <nav class="breadcrumbs" aria-label="breadcrumb">
-            <span>Home</span> / 
-            <span>{groupData.name.split(' |')[0]}</span> /
-            <span>{servicioData.title}</span> /
-            <span class="breadcrumb-current">{servicioData.title} {ciudadData.nombre}</span>
-          </nav>
-
           <!-- H1: Focused on KW, Location, and Urgency -->
           <h1 class="conversion-h1">
             Emergency <strong>{servicioData.title}</strong> in <span class="location-highlight">{ciudadData.nombre}</span>
@@ -130,7 +129,17 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
             <h2 class="form-title">
               Request Your FREE {ciudadData.nombre} Inspection
             </h2>
-            <form class="emergency-form" action="/contact" method="POST">
+            <form 
+              class="emergency-form" 
+              name="emergency-request" 
+              method="POST" 
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              netlify
+            >
+              {/* Hidden fields for Netlify Forms */}
+              <input type="hidden" name="form-name" value="emergency-request" />
+              <input type="hidden" name="bot-field" />
               <input type="hidden" name="service" value={servicioData.title} />
               <input type="hidden" name="city" value={ciudadData.nombre} />
               
@@ -328,49 +337,6 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     </section>
   )}
 
-  <!-- Visual Gallery Section -->
-  <section class="section gallery-section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">Our Work in {ciudadData.nombre}</h2>
-      <p class="section-subtitle">See the quality and professionalism we bring to every project</p>
-      
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-before-after-1.jpg"
-            alt={`${servicioData.title} before and after results in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Complete Restoration</h3>
-            <p>Professional results you can see</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-process-1.jpg"
-            alt={`Professional ${servicioData.title.toLowerCase()} process in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Expert Technicians</h3>
-            <p>Skilled professionals at work</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-equipment-1.jpg"
-            alt={`Advanced ${servicioData.title.toLowerCase()} equipment used in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Advanced Equipment</h3>
-            <p>State-of-the-art tools and technology</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Trust Indicators Section -->
   <section class="section trust-section">
@@ -423,13 +389,14 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
         We Provide 24/7 Service Across All {ciudadData.nombre} Neighborhoods
       </h2>
       <div class="geo-validation-grid">
-        <!-- Map Placeholder (Geographical Proof) -->
+        <!-- Interactive Service Area Map -->
         <div class="service-area-map">
-          <div class="map-placeholder">
-            <i class="fas fa-map-marked-alt"></i>
-            <p>Interactive Service Area Map</p>
-            <span>Covering all of {ciudadData.county}</span>
-          </div>
+          <ServiceAreaMap 
+            client:load
+            city={ciudad} 
+            county={ciudadData.county} 
+            serviceCities={cities.filter(city => city.county === ciudadData.county || city.region === ciudadData.region)}
+          />
         </div>
         <!-- Neighborhoods List (Long-tail local KWs) -->
         <div class="neighborhoods-coverage">
