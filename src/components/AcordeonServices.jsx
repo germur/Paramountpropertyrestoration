@@ -576,33 +576,33 @@ const faqData = {
     general: [
         {
             id: 'gen-1',
-            question: '¿Ofrecen garantía en sus trabajos de restauración y remodelación?',
-            answer: 'Sí, todos nuestros trabajos incluyen garantía de 1 año en mano de obra y respetamos las garantías de los fabricantes en materiales. Para servicios de emergencia, garantizamos la efectividad de nuestras técnicas de mitigación.'
+            question: 'Do you offer warranty on your restoration and remodeling work?',
+            answer: 'Yes, all our work includes a 1-year warranty on labor and we honor manufacturer warranties on materials. For emergency services, we guarantee the effectiveness of our mitigation techniques.'
         },
         {
             id: 'gen-2',
-            question: '¿Trabajan con todas las compañías de seguros?',
-            answer: 'Sí, tenemos experiencia trabajando con todas las principales compañías de seguros en Florida. Manejamos la documentación necesaria, coordinamos con ajustadores y agilizamos el proceso de reclamos para nuestros clientes.'
+            question: 'Do you work with all insurance companies?',
+            answer: 'Yes, we have experience working with all major insurance companies in Florida. We handle the necessary documentation, coordinate with adjusters, and streamline the claims process for our clients.'
         },
         {
             id: 'gen-3',
-            question: '¿Ofrecen opciones de financiamiento para proyectos grandes?',
-            answer: 'Trabajamos con varias opciones de financiamiento para hacer su proyecto más accesible. Ofrecemos planes flexibles de 6, 12, 18 y 24 meses con tasas competitivas para proyectos de remodelación y restauración.'
+            question: 'Do you offer financing options for large projects?',
+            answer: 'We work with various financing options to make your project more accessible. We offer flexible payment plans of 6, 12, 18, and 24 months with competitive rates for remodeling and restoration projects.'
         },
         {
             id: 'gen-4',
-            question: '¿Están licenciados y asegurados en Florida?',
-            answer: 'Sí, estamos completamente licenciados, asegurados y vinculados en Florida. Mantenemos todas las certificaciones requeridas incluyendo licencias de contratista general, restauración de daños y certificaciones IICRC.'
+            question: 'Are you licensed and insured in Florida?',
+            answer: 'Yes, we are fully licensed, insured, and bonded in Florida. We maintain all required certifications including general contractor licenses, damage restoration, and IICRC certifications.'
         },
         {
             id: 'gen-5',
-            question: '¿Proporcionan estimados gratuitos?',
-            answer: 'Sí, ofrecemos estimados gratuitos para todos nuestros servicios de restauración y remodelación. Para emergencias, respondemos inmediatamente y proporcionamos evaluaciones in situ sin costo inicial.'
+            question: 'Do you provide free estimates?',
+            answer: 'Yes, we offer free estimates for all our restoration and remodeling services. For emergencies, we respond immediately and provide on-site evaluations at no initial cost.'
         },
         {
             id: 'gen-6',
-            question: '¿Cuáles son sus horarios de servicio?',
-            answer: 'Nuestros servicios de emergencia están disponibles 24/7/365. Para proyectos de remodelación, trabajamos de lunes a viernes de 7:00 AM a 6:00 PM, con horarios extendidos disponibles según las necesidades del proyecto.'
+            question: 'What are your service hours?',
+            answer: 'Our emergency services are available 24/7/365. For remodeling projects, we work Monday through Friday from 7:00 AM to 6:00 PM, with extended hours available based on project needs.'
         }
     ]
 };
@@ -700,7 +700,7 @@ const FAQ = ({
                             <i className="fas fa-search faqSearchIcon"></i>
                             <input
                                 type="text"
-                                placeholder="Buscar preguntas..."
+                                placeholder="Search questions..."
                                 value={searchTerm}
                                 onChange={handleSearch}
                                 className="faqSearchInput"
@@ -724,7 +724,7 @@ const FAQ = ({
                 ) : (
                     searchable && searchTerm && (
                         <div className="noResults">
-                            <p>No se encontraron preguntas que coincidan con "{searchTerm}"</p>
+                            <p>No questions found matching "{searchTerm}"</p>
                         </div>
                     )
                 )}
@@ -736,8 +736,8 @@ const FAQ = ({
                     <div className="emergencyBanner">
                         <i className="fas fa-phone-alt emergencyIcon"></i>
                         <div className="emergencyInfo">
-                            <h4>¿Necesita ayuda inmediata?</h4>
-                            <p>Servicio de emergencia 24/7 disponible</p>
+                            <h4>Need immediate help?</h4>
+                            <p>24/7 emergency service available</p>
                             <a href="tel:+17866022217" className="emergencyPhone">
                                 (786) 602-2217
                             </a>
