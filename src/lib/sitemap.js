@@ -1,4 +1,6 @@
 // src/lib/sitemap.js
+import { restorationGroups, cities } from '../data/restoration.js';
+
 const SITE_URL = (process.env.SITE_URL || 'https://paramountpropertyrestoration.com').replace(/\/$/, '');
 const BATCH_SIZE = 5000;
 const TODAY_ISO = new Date().toISOString(); // used for <lastmod>
@@ -14,54 +16,66 @@ const slugify = (input) => {
     .replace(/^-+|-+$/g, '');
 };
 
-const buildServicePath = ({ vertical = 'restoration', service, subservice, city }) => {
-  const parts = [slugify(vertical), slugify(service), slugify(subservice)].filter(Boolean);
-  const citySlug = slugify(city);
-  const base = `/${parts.join('/')}`;
-  return citySlug ? `${base}/${citySlug}` : base;
-};
-
 const withBaseUrl = (path) => {
   const clean = (path || '/').replace(/\/$/, '');
   return `${SITE_URL}${clean.startsWith('/') ? clean : `/${clean}`}`;
 };
 
-// --- DATA DUMMY (cámbiala luego por la real) ---
-const VERTICAL = 'restoration';
-const SERVICES = ['water-damage', 'fire-damage'];
-const SUBSERVICES_BY_SERVICE = {
-  'water-damage': ['flood-damage', 'leak-detection'],
-  'fire-damage': ['smoke-damage', 'soot-cleanup'],
-};
-const CITIES = ['miami', 'orlando', 'tampa'];
-
-// --- build urls ---
+// --- build urls using real restoration data ---
 export function getAllUrls() {
   const urls = new Set();
 
-  // Hubs (sin city)
-  for (const s of SERVICES) {
-    urls.add(withBaseUrl(buildServicePath({ vertical: VERTICAL, service: s })));
-    const subs = SUBSERVICES_BY_SERVICE[s] || [];
-    for (const sub of subs) {
-      urls.add(withBaseUrl(buildServicePath({ vertical: VERTICAL, service: s, subservice: sub })));
+  // Static pages
+  urls.add(withBaseUrl('/'));
+  urls.add(withBaseUrl('/services'));
+  urls.add(withBaseUrl('/restoration'));
+  urls.add(withBaseUrl('/portfolio'));
+  urls.add(withBaseUrl('/contact'));
+  urls.add(withBaseUrl('/blog'));
+
+  // Restoration service group pages (without cities)
+  for (const group of restorationGroups) {
+    if (group.template !== 'remodeling') {
+      urls.add(withBaseUrl(`/restoration/${group.slug}`));
     }
   }
 
-  // Details (con city)
-  for (const s of SERVICES) {
-    const subs = SUBSERVICES_BY_SERVICE[s] || [undefined];
-    for (const sub of subs) {
-      for (const city of CITIES) {
-        urls.add(withBaseUrl(buildServicePath({ vertical: VERTICAL, service: s, subservice: sub, city })));
+  // Restoration subservice pages (group/subservice without city)
+  for (const group of restorationGroups) {
+    if (group.template !== 'remodeling' && group.subservices) {
+      for (const subservice of group.subservices) {
+        urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}`));
       }
     }
   }
 
-  // Home (al final)
-  urls.add(SITE_URL);
+  // City-specific restoration pages (group/subservice/city)
+  for (const group of restorationGroups) {
+    if (group.template !== 'remodeling' && group.subservices) {
+      for (const subservice of group.subservices) {
+        for (const city of cities) {
+          urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}/${city.slug}`));
+        }
+      }
+    }
+  }
 
-  return Array.from(urls);
+  // Remodeling services (separate routing pattern)
+  const remodelingServices = ['bathroom-remodeling', 'kitchen-remodeling', 'bedroom-remodeling', 'living-dining-remodeling', 'home-additions-remodeling'];
+  
+  // Service pages without cities
+  for (const service of remodelingServices) {
+    urls.add(withBaseUrl(`/services/${service}`));
+  }
+
+  // Service-city combinations for remodeling
+  for (const service of remodelingServices) {
+    for (const city of cities) {
+      urls.add(withBaseUrl(`/services/${service}/${city.slug}`));
+    }
+  }
+
+  return Array.from(urls).sort();
 }
 
 export function chunk(arr, size) {

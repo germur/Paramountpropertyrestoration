@@ -1,0 +1,34 @@
+---
+const { title, content, benefits } = Astro.props;
+---
+
+<section class="section bg-primary">
+  <div class="container">
+    <div class="grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-4 text-center">
+        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class="fas fa-handshake text-white text-3xl"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-accent">Claims Solved.</h2>
+      </div>
+      <div class="md:col-span-8">
+        <h3 class="text-3xl font-bold mb-4 text-primary">{title}</h3>
+        <p class="mb-5 text-lg text-secondary leading-relaxed">{content}</p>
+        <ul class="space-y-3">
+          {benefits.map((benefit, index) => {
+            const icons = [
+              "fas fa-camera", "fas fa-phone", "fas fa-calculator", 
+              "fas fa-file-alt", "fas fa-user-shield"
+            ];
+            return (
+              <li class="flex items-center text-primary font-medium">
+                <i class={`${icons[index] || "fas fa-check-circle"} w-4 h-4 text-accent mr-3`}></i>
+                {benefit}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

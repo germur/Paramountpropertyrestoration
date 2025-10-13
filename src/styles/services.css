@@ -163,30 +163,40 @@
 }
 
 .services-grid-container {
-    padding: 30px 10px;
+    padding: 30px 20px;
     background-color: white;
     font-family: system-ui, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.services-grid {
-    display: grid;
+.services-grid-container .services-grid {
+    display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    padding: 0 !important;
+    max-width: unset !important;
+    margin: 0 auto;
 }
 
-.service-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.services-grid-container .service-card {
+    background-color: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0 !important;
+    border: none !important;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.services-grid-container .service-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    border-color: unset !important;
 }
 
 .card-image {
@@ -217,17 +227,21 @@
     margin-bottom: 20px;
 }
 
-.cnt-tagsServices span {
+.cnt-tagsServices span,
+.cnt-tagsServices .service-tag {
     background: var(--bg-secondary);
     color: var(--color-primary);
     padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     font-size: var(--font-size-sm);
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.cnt-tagsServices span:hover {
+.cnt-tagsServices span:hover,
+.cnt-tagsServices .service-tag:hover {
     background: var(--color-primary);
     color: white;
 }
@@ -253,5 +267,5 @@
 
 .card-link:hover {
     background-color:var(--color-accent);
-    color: whtie;
+    color: white;
 }

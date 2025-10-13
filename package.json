@@ -6,6 +6,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:indexnow": "npm run build && node scripts/indexnow-submit.js",
+    "indexnow:submit": "node scripts/indexnow-submit.js",
+    "indexnow:test": "node scripts/indexnow-submit.js --dry-run",
+    "indexnow:urls": "node -e \"import('./src/lib/sitemap.js').then(m => console.log('URLs found:', m.getAllUrls().length))\"",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -20,6 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "astro": "^5.12.8",
+    "lucide-react": "^0.545.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

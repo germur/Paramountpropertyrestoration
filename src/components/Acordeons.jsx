@@ -18,7 +18,7 @@ const Accordion = () => {
     return (
         <div className="accordion">
             <div>
-                <h3 className="tittleFAQacordeon">F.A.Q</h3>
+                <h3 className="tittleFAQacordeon">FAQ</h3>
             </div>
             {sections.map((section, index) => (
                 <div key={section.id} className="accordion-item">

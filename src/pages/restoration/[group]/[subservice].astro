@@ -4,12 +4,7 @@ import { restorationGroups } from "../../../data/restoration.js";
 import { SERVICE_REGISTRY } from "../../../lib/routing";
 
 // Template imports
-import WaterTemplate from "../../../components/restoration/templates/WaterTemplate.astro";
-import FireTemplate from "../../../components/restoration/templates/FireTemplate.astro";
-import StormTemplate from "../../../components/restoration/templates/StormTemplate.astro";
-import MoldTemplate from "../../../components/restoration/templates/MoldTemplate.astro";
-import MitigationTemplate from "../../../components/restoration/templates/MitigationTemplate.astro";
-import UnifiedTemplate from "../../../components/restoration/templates/UnifiedTemplate.astro";
+import UnifiedServiceTemplate from "../../../components/restoration/templates/UnifiedServiceTemplate.astro";
 import SEOHead from "../../../components/SEOHead.jsx";
 
 export async function getStaticPaths() {
@@ -24,7 +19,7 @@ export async function getStaticPaths() {
           groupData: {
             name: group.name,
             slug: group.slug,
-            template: group.template || 'generic',
+            template: group.template || 'unified',
             description: group.description,
           },
           subData: {
@@ -62,23 +57,23 @@ export async function getStaticPaths() {
   };
 
   // Fire
-  ensure('fire-damage', 'fire-restoration', 'Fire Damage', 'fire', 'Fire & smoke damage cleanup and repairs.');
+  ensure('fire-damage', 'fire-restoration', 'Fire Damage', 'unified', 'Fire & smoke damage cleanup and repairs.');
   // Storm
-  ensure('storm-damage', 'roof-damage', 'Storm Damage', 'storm', 'Hurricane, wind, and storm damage services.');
+  ensure('storm-damage', 'roof-damage', 'Storm Damage', 'unified', 'Hurricane, wind, and storm damage services.');
   // Mold
-  ensure('mold-remediation', 'air-quality-testing', 'Mold Remediation', 'mold', 'Mold inspection, cleanup & prevention.');
+  ensure('mold-remediation', 'air-quality-testing', 'Mold Remediation', 'unified', 'Mold inspection, cleanup & prevention.');
   // Mitigation
-  ensure('mitigation-services', 'emergency-response', 'Mitigation Services', 'mitigation', 'Rapid mitigation to prevent further damage.');
+  ensure('mitigation-services', 'emergency-response', 'Mitigation Services', 'unified', 'Rapid mitigation to prevent further damage.');
 
   return paths;
 }
 
 const groupMeta = {
-  'water-damage': { name: 'Water Damage', template: 'water', description: 'Water damage restoration & mitigation.' },
-  'fire-damage': { name: 'Fire Damage', template: 'fire', description: 'Fire & smoke damage cleanup and repairs.' },
-  'storm-damage': { name: 'Storm Damage', template: 'storm', description: 'Hurricane, wind, and storm damage services.' },
-  'mold-remediation': { name: 'Mold Remediation', template: 'mold', description: 'Mold inspection, cleanup & prevention.' },
-  'mitigation-services': { name: 'Mitigation Services', template: 'mitigation', description: 'Rapid mitigation to prevent further damage.' },
+  'water-damage': { name: 'Water Damage', template: 'unified', description: 'Water damage restoration & mitigation.' },
+  'fire-damage': { name: 'Fire Damage', template: 'unified', description: 'Fire & smoke damage cleanup and repairs.' },
+  'storm-damage': { name: 'Storm Damage', template: 'unified', description: 'Hurricane, wind, and storm damage services.' },
+  'mold-remediation': { name: 'Mold Remediation', template: 'unified', description: 'Mold inspection, cleanup & prevention.' },
+  'mitigation-services': { name: 'Mitigation Services', template: 'unified', description: 'Rapid mitigation to prevent further damage.' },
 };
 
 const params = Astro.params as { group: string; subservice: string };
@@ -88,7 +83,7 @@ let { groupData, subData } = Astro.props as any;
 if (!groupData || !subData) {
   const gm = groupMeta[params.group] || {
     name: (params.group || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
-    template: 'generic',
+    template: 'unified',
     description: ''
   };
   groupData = {
@@ -118,15 +113,8 @@ const pageConfig = {
     subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
 };
 
-// Template selection
-const templateMap = {
-  water: WaterTemplate,
-  fire: FireTemplate,
-  storm: StormTemplate,
-  mold: MoldTemplate,
-  mitigation: MitigationTemplate,
-};
-const SelectedTemplate = templateMap[groupData.template] ?? UnifiedTemplate;
+// All subservices now use the unified template
+const SelectedTemplate = UnifiedServiceTemplate;
 ---
 
 <BaseLayout title={pageConfig.title} description={pageConfig.description}>

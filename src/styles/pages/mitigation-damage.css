@@ -5,7 +5,7 @@
 .hero-section {
     position: relative;
     height: 600px;
-    background-image: url(/images/herowater.jpg);
+    background-image: url(/images/heroMitigation.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -311,524 +311,6 @@
     border: 1px solid rgba(53, 195, 233, 0.3);
 }
 
-/* Regional Coverage Section */
-.restoration-coverage-section {
-    padding: 4rem 0;
-    background: white;
-}
-
-.coverage-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.coverage-header h2 {
-    color: #333;
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.coverage-header p {
-    color: #666;
-    font-size: 1.125rem;
-}
-
-.restoration-regions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.region-column {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-}
-
-.region-title {
-    color: #333;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #35c3e9;
-}
-
-.city-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.city-links a {
-    color: #666;
-    text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.city-links a:hover {
-    background: white;
-    color: #35c3e9;
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.emergency-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 12px;
-}
-
-.emergency-phone {
-    color: #35c3e9;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.emergency-phone:hover {
-    color: #2a9fd1;
-}
-
-/* =====================
-    STEPS SECTION
-   ===================== */
-.steps-section {
-    padding: 6rem 2rem 4rem;
-}
-
-.steps-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 3rem;
-}
-
-.steps-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.steps-container::before {
-    content: '';
-    position: absolute;
-    top: 55px;
-    left: 12.5%;
-    right: 12.5%;
-    height: 2px;
-    background-color: #e0e0e0;
-    z-index: 0;
-}
-
-.step-item {
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-}
-
-.step-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    background-color: var(--color-primary);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.step-icon i {
-    font-size: 30px;
-    transition: color 0.3s ease;
-    color: white;
-}
-
-.step-item:hover .step-icon i {
-    color: orange;
-}
-
-.step-item h3 {
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.step-item p {
-    color: #666;
-    line-height: 1.5;
-    max-width: 200px;
-    margin: 0 auto;
-}
-
-/* =====================
-    RECENT REMODELS SECTION
-   ===================== */
-.recent-remodels-section {
-    padding: 4rem 2rem;
-    background-color: #ffffff;
-}
-
-.recent-remodels-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 3rem;
-}
-
-.remodels-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.remodel-item {
-    text-align: center;
-}
-
-.remodel-image {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.remodel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.remodel-item:hover .remodel-image img {
-    transform: scale(1.05);
-}
-
-.remodel-item h3 {
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 600;
-}
-
-.remodel-item p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-}
-
-/* =====================
-    TAGS PORTFOLIO
-   ===================== */
-.cnt-tagsPorfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 30px;
-    gap: var(--spacing-2);
-}
-
-.tag-itemPorfolio {
-    background: var(--bg-secondary);
-    color: var(--color-primary);
-    padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-sm);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.tag-itemPorfolio:hover {
-    background: var(--color-primary);
-    color: var(--text-white);
-}
-
-/* =====================
-    BLOGS BA;OS
-   ===================== */
-
-.sectionBlogBathroom {
-    background-color: var(--bg-secondary);
-    padding: 2rem 32px;
-    gap: 2rem;
-}
-
-.tittleSection-cardBlogBathroo {
-    text-align: center;
-    margin-bottom: var(--spacing-12);
-}
-
-.cntFather-cardBlogBathroo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cnt-cardBlogBathroom {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-primary);
-    padding: var(--spacing-6);
-}
-
-.title-cardBlogBathroom {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-lg);
-}
-
-.text-cardBlogBathroom {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-4);
-}
-
-.link-blogBathroom {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.flechaBlog {
-    font-size: 12px;
-}
-
-/* =====================
-    RESPONSIVE STYLES
-   ===================== */
-
-/* Tablet - 992px */
-@media (max-width: 992px) {
-
-    /* Steps Section */
-    .steps-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem 2rem;
-    }
-
-    .steps-container::before {
-        display: none;
-    }
-}
-
-/* Tablet - 768px */
-@media (max-width: 768px) and (min-width: 481px) {
-
-    /* Services Grid - Keep 5 columns but adjust sizing */
-    .services-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        padding: 1.5rem;
-        gap: 0.8rem;
-        max-width: 100%;
-    }
-
-    .service-item {
-        padding: 0.75rem;
-        min-width: 0;
-    }
-
-    .service-item i,
-    .service-item-static i,
-    .service-item-clickable i {
-        font-size: 1.8rem;
-    }
-
-    .service-item h3,
-    .service-item-static h3,
-    .service-item-clickable h3 {
-        font-size: 0.7rem;
-        word-break: break-word;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* Hero Section */
-    .hero-section {
-        height: 400px;
-    }
-
-    .hero-content {
-        padding: 1.5rem;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    /* Solutions Section */
-    .solutions-section {
-        padding: 3rem 1rem;
-    }
-
-    .solutions-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .solutions-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-
-    /* Steps Section */
-    .steps-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .steps-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .step-item {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    /* Recent Remodels */
-    .recent-remodels-section {
-        padding: 3rem 1rem;
-    }
-
-    .recent-remodels-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .remodels-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .remodel-item {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-/* Mobile - 480px */
-@media (max-width: 480px) {
-
-    /* Hero Section */
-    .hero-section {
-        height: 350px;
-    }
-
-    .hero-content {
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 1.75rem;
-    }
-
-    .hero-content p {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    /* Services Grid - Force 5 columns and ensure single row */
-    .services-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 6px;
-        padding: 1rem;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    .service-item,
-    .service-item-static,
-    .service-item-clickable {
-        padding: 6px;
-        min-width: 0;
-    }
-
-    .service-item i,
-    .service-item-static i,
-    .service-item-clickable i {
-        font-size: 1.5rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .service-item h3,
-    .service-item-static h3,
-    .service-item-clickable h3 {
-        font-size: 0.6rem;
-        line-height: 1.1;
-        word-break: break-word;
-        hyphens: auto;
-    }
-
-    /* Solutions Section */
-    .solutions-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card-content h3 {
-        font-size: 1.1rem;
-    }
-
-    .card-content p {
-        font-size: 0.9rem;
-    }
-
-    /* Steps Section */
-    .steps-section {
-        padding: 3rem 1rem;
-    }
-
-    .step-item h3 {
-        font-size: 1.1rem;
-    }
-
-    .step-item p {
-        font-size: 0.95rem;
-    }
-
-    /* Recent Remodels */
-    .remodel-item h3 {
-        font-size: 1rem;
-    }
-
-    .remodel-item p {
-        font-size: 0.95rem;
-    }
-}
-
 /* =====================
    UNIFIED CITY LAYOUT
    ===================== */
@@ -946,7 +428,139 @@
     text-decoration: none;
 }
 
+/* =====================
+    STEPS SECTION
+   ===================== */
+.steps-section {
+    padding: 6rem 2rem 4rem;
+}
+
+.steps-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 55px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+.step-item {
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.step-icon i {
+    font-size: 30px;
+    transition: color 0.3s ease;
+    color: white;
+}
+
+.step-item:hover .step-icon i {
+    color: orange;
+}
+
+.step-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.step-item p {
+    color: #666;
+    line-height: 1.5;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* =====================
+    RESPONSIVE STYLES
+   ===================== */
+
+/* Tablet - 992px */
+@media (max-width: 992px) {
+
+    /* Steps Section */
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 2rem;
+    }
+
+    .steps-container::before {
+        display: none;
+    }
+}
+
+/* Tablet - 768px */
 @media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Solutions Section */
+    .solutions-section {
+        padding: 3rem 1rem;
+    }
+
+    .solutions-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Unified City Grid */
     .city-grid-section {
         padding: 2rem 0;
     }
@@ -987,5 +601,150 @@
     .emergency-phone {
         padding: 0.85rem 1.5rem;
         font-size: 1rem;
+    }
+
+    /* Steps Section */
+    .steps-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .step-item {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+
+    /* Hero Section */
+    .hero-section {
+        height: 350px;
+    }
+
+    .hero-content {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+        padding: 1rem;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .service-item,
+    .service-item-static,
+    .service-item-clickable {
+        padding: 6px;
+        min-width: 0;
+    }
+
+    .service-item i,
+    .service-item-static i,
+    .service-item-clickable i {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .service-item h3,
+    .service-item-static h3,
+    .service-item-clickable h3 {
+        font-size: 0.6rem;
+        line-height: 1.1;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    /* Unified City Grid - Mobile */
+    .city-grid-section {
+        padding: 2rem 0;
+    }
+    
+    .unified-city-container {
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .unified-region-card {
+        padding: 1.25rem;
+    }
+    
+    .unified-region-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .unified-city-pills {
+        gap: 0.4rem;
+    }
+    
+    .unified-city-pill {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .emergency-notice {
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .emergency-notice h3 {
+        font-size: 1.2rem;
+    }
+
+    .emergency-phone {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Solutions Section */
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Steps Section */
+    .steps-section {
+        padding: 3rem 1rem;
+    }
+
+    .step-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .step-item p {
+        font-size: 0.95rem;
     }
 }
