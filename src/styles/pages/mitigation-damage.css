@@ -5,7 +5,7 @@
 .hero-section {
     position: relative;
     height: 600px;
-    background-image: url(/images/heroStorm.jpg);
+    background-image: url(/images/heroMitigation.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,8 +77,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    max-width: 800px;
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -134,31 +135,6 @@
     flex-direction: column;
     align-items: center;
     cursor: default;
-    flex: 1 1 150px;
-    min-width: 120px;
-    max-width: 180px;
-}
-
-.service-item-static i {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-    display: block;
-}
-
-/* Service item static (sin hover ni cursor) */
-.service-item-static {
-    text-align: center;
-    padding: 1rem;
-    border-radius: 8px;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: default;
-    flex: 1 1 150px;
-    min-width: 120px;
-    max-width: 180px;
 }
 
 .service-item-static i {
@@ -187,9 +163,6 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    flex: 1 1 150px;
-    min-width: 120px;
-    max-width: 180px;
 }
 
 .service-item-clickable:hover {
@@ -246,6 +219,9 @@
 }
 
 .solution-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
@@ -531,146 +507,6 @@
 }
 
 /* =====================
-    RECENT REMODELS SECTION
-   ===================== */
-.recent-remodels-section {
-    padding: 4rem 2rem;
-    background-color: #ffffff;
-}
-
-.recent-remodels-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 3rem;
-}
-
-.remodels-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.remodel-item {
-    text-align: center;
-}
-
-.remodel-image {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.remodel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.remodel-item:hover .remodel-image img {
-    transform: scale(1.05);
-}
-
-.remodel-item h3 {
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 600;
-}
-
-.remodel-item p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-}
-
-/* =====================
-    TAGS PORTFOLIO
-   ===================== */
-.cnt-tagsPorfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 30px;
-    gap: var(--spacing-2);
-}
-
-.tag-itemPorfolio {
-    background: var(--bg-secondary);
-    color: var(--color-primary);
-    padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-sm);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.tag-itemPorfolio:hover {
-    background: var(--color-primary);
-    color: var(--text-white);
-}
-
-/* =====================
-    BLOGS BA;OS
-   ===================== */
-
-.sectionBlogBathroom {
-    background-color: var(--bg-secondary);
-    padding: 2rem 32px;
-    gap: 2rem;
-}
-
-.tittleSection-cardBlogBathroo {
-    text-align: center;
-    margin-bottom: var(--spacing-12);
-}
-
-.cntFather-cardBlogBathroo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cnt-cardBlogBathroom {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-primary);
-    padding: var(--spacing-6);
-}
-
-.title-cardBlogBathroom {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-lg);
-}
-
-.text-cardBlogBathroom {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-4);
-}
-
-.link-blogBathroom {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.flechaBlog {
-    font-size: 12px;
-}
-
-/* =====================
     RESPONSIVE STYLES
    ===================== */
 
@@ -689,39 +525,6 @@
 }
 
 /* Tablet - 768px */
-@media (max-width: 768px) and (min-width: 481px) {
-
-    /* Services Grid */
-    .services-grid {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        max-width: 100%;
-    }
-
-    .service-item,
-    .service-item-static,
-    .service-item-clickable {
-        padding: 0.75rem;
-        flex: 0 1 calc(25% - 1rem);
-        min-width: 80px;
-        max-width: 120px;
-    }
-
-    .service-item i,
-    .service-item-static i,
-    .service-item-clickable i {
-        font-size: 1.8rem;
-    }
-
-    .service-item h3,
-    .service-item-static h3,
-    .service-item-clickable h3 {
-        font-size: 0.7rem;
-        word-break: break-word;
-    }
-}
-
 @media (max-width: 768px) {
 
     /* Hero Section */
@@ -815,25 +618,6 @@
         max-width: 300px;
         margin: 0 auto;
     }
-
-    /* Recent Remodels */
-    .recent-remodels-section {
-        padding: 3rem 1rem;
-    }
-
-    .recent-remodels-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .remodels-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .remodel-item {
-        max-width: 400px;
-        margin: 0 auto;
-    }
 }
 
 /* Mobile - 480px */
@@ -865,9 +649,9 @@
 
     /* Services Grid */
     .services-grid {
-        flex-direction: row;
-        justify-content: center;
-        gap: 8px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+        padding: 1rem;
         max-width: 100%;
         overflow: hidden;
     }
@@ -876,9 +660,7 @@
     .service-item-static,
     .service-item-clickable {
         padding: 6px;
-        flex: 0 1 calc(25% - 8px);
-        min-width: 70px;
-        max-width: 90px;
+        min-width: 0;
     }
 
     .service-item i,
@@ -963,15 +745,6 @@
     }
 
     .step-item p {
-        font-size: 0.95rem;
-    }
-
-    /* Recent Remodels */
-    .remodel-item h3 {
-        font-size: 1rem;
-    }
-
-    .remodel-item p {
         font-size: 0.95rem;
     }
 }
