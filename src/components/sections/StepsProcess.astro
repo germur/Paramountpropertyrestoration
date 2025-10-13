@@ -1,0 +1,22 @@
+---
+const { title, steps } = Astro.props;
+---
+
+<section class="section steps-process">
+  <div class="container">
+    <h2>{title}</h2>
+    
+    <div class="process-steps">
+      {steps.map(step => (
+        <div class="process-step">
+          <div class="step-number">{step.number}</div>
+          <div class="step-icon">
+            <i class={step.icon}></i>
+          </div>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

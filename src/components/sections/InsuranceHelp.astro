@@ -1,0 +1,22 @@
+---
+const { title, content, benefits } = Astro.props;
+---
+
+<section class="section insurance-help">
+  <div class="container">
+    <h2>{title}</h2>
+    <p class="section-description">{content}</p>
+    
+    <div class="insurance-benefits">
+      {benefits.map((benefit, index) => (
+        <div class="insurance-benefit">
+          <div class="benefit-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="benefit-title">Professional Support</h3>
+          <p class="benefit-description">{benefit}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

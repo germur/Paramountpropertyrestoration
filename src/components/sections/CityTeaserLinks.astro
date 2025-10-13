@@ -1,0 +1,36 @@
+---
+const { title, groupSlug, subSlug, cityRegions } = Astro.props;
+---
+
+<section class="section city-teaser-links">
+  <div class="container">
+    <h2>{title}</h2>
+    <p class="section-subtitle">Professional restoration services available across Florida. Click your city for immediate local assistance.</p>
+    
+    <div class="city-regions-grid">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="city-region-card">
+          <h3 class="region-title">{regionName}</h3>
+          <div class="city-links">
+            {cities.slice(0, 4).map(city => (
+              <a href={`/restoration/${groupSlug}/${subSlug}/${city.slug}`} class="city-link">
+                {city.nombre}
+              </a>
+            ))}
+            {cities.length > 4 && (
+              <span class="more-cities">
+                +{cities.length - 4} more cities
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency Response Available</h3>
+      <p>Don't wait - property damage gets worse over time. Our certified technicians are standing by 24/7.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
+  </div>
+</section>

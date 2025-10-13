@@ -1,0 +1,25 @@
+---
+const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
+---
+
+<section class="hero-service">
+  <div class="container">
+    {urgencyBadge && (
+      <div class="hero-urgency-badge">
+        <i class="fas fa-exclamation-triangle"></i> {urgencyBadge}
+      </div>
+    )}
+    <h1>{title}</h1>
+    <p class="hero-description">{description}</p>
+    <div class="hero-actions">
+      <a href="/contact" class="hero-cta-primary">
+        {ctaText}
+      </a>
+      {ctaPhone && (
+        <a href={`tel:${ctaPhone}`} class="hero-cta-phone">
+          <i class="fas fa-phone"></i> {ctaPhone}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

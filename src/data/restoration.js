@@ -23,6 +23,23 @@ export const restorationGroups = [
         hero: {
           title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
+        },
+        technicalSpecs: {
+          equipmentUsed: ["Truck-Mounted Extractors", "LGR Dehumidifiers", "Thermal Imaging Cameras", "Air Movers", "Moisture Meters"],
+          certificationsRequired: ["IICRC S500 Water Damage", "IICRC S520 Mold Remediation"],
+          methodsApplied: ["Psychrometric Calculations", "Negative Air Pressure", "Controlled Demolition"],
+          deliverables: [
+            "Emergency flood water extraction and removal",
+            "Advanced moisture detection and mapping", 
+            "Industrial-grade dehumidification and drying",
+            "Antimicrobial treatment and sanitization",
+            "Structural stabilization and repair",
+            "Complete documentation and final inspection"
+          ]
+        },
+        diagnosticTools: {
+          warningSigns: ["Standing water or visible flooding", "Musty odors or unusual smells", "Soft or warped flooring and walls", "Water stains on ceilings or walls", "Unexplained increases in water bills"],
+          severityAssessment: "Flood damage severity increases rapidly - contact our emergency teams within 24 hours to prevent extensive structural damage and mold growth."
         }
       },
       {
@@ -78,6 +95,23 @@ export const restorationGroups = [
         hero: {
           title: "Smoke Damage? We Remove Odors & Restore Air Quality Fast",
           description: "Smoke damage from fire? Our Florida teams provide complete smoke cleanup including odor neutralization, air purification, and residue removal. We eliminate smoke damage before it becomes permanent.",
+        },
+        technicalSpecs: {
+          equipmentUsed: ["Hydroxyl Generators", "Ozone Machines", "HEPA Air Scrubbers", "Thermal Foggers", "Ultrasonic Cleaners"],
+          certificationsRequired: ["IICRC S520 Applied Microbial Remediation", "IICRC S500 Water Damage", "IICRC S700 Fire Damage"],
+          methodsApplied: ["Dry Chemical Sponging", "Wet Cleaning", "Spray and Wipe", "Foam Cleaning", "Abrasive Cleaning"],
+          deliverables: [
+            "Complete smoke residue removal from all surfaces",
+            "Advanced odor neutralization and air purification",
+            "HVAC system cleaning and decontamination", 
+            "Content cleaning and restoration",
+            "Structural deodorization treatments",
+            "Air quality testing and certification"
+          ]
+        },
+        diagnosticTools: {
+          warningSigns: ["Persistent smoke odors", "Yellow or brown residue on surfaces", "Discolored walls or ceilings", "Smoky taste in air", "HVAC system contamination"],
+          severityAssessment: "Smoke damage becomes permanent within 72 hours - immediate professional intervention is critical to prevent irreversible damage."
         }
       },
       {
@@ -165,6 +199,23 @@ export const restorationGroups = [
         hero: {
           title: "Black Mold Found? We Remove It Safely & Completely",
           description: "Discovered black mold in your property? Our licensed specialists safely remove toxic black mold using proper containment, HEPA filtration, and disposal methods to protect your health.",
+        },
+        technicalSpecs: {
+          equipmentUsed: ["HEPA Air Filtration Units", "Negative Air Machines", "Containment Systems", "Personal Protective Equipment", "Antimicrobial Foggers"],
+          certificationsRequired: ["IICRC S520 Mold Remediation", "EPA RRP Lead-Safe Work Practices", "OSHA 40-Hour HAZWOPER"],
+          methodsApplied: ["Full Containment Protocols", "HEPA Vacuuming", "Wet Wiping with Antimicrobials", "Controlled Material Removal", "Post-Remediation Verification"],
+          deliverables: [
+            "Complete containment and isolation of affected areas",
+            "Safe removal and disposal of contaminated materials",
+            "HEPA filtration and air purification",
+            "Antimicrobial treatment and surface disinfection", 
+            "Moisture control and humidity management",
+            "Post-remediation testing and clearance certification"
+          ]
+        },
+        diagnosticTools: {
+          warningSigns: ["Black or dark green patches on walls", "Strong musty or earthy odors", "Recent water damage or leaks", "Respiratory symptoms or allergies", "High humidity levels above 60%"],
+          severityAssessment: "Black mold exposure poses serious health risks - professional removal within 48-72 hours is critical to prevent spore spread and health complications."
         }
       },
       {

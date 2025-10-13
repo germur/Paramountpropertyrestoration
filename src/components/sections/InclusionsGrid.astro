@@ -1,0 +1,21 @@
+---
+const { title, content, deliverables } = Astro.props;
+---
+
+<section class="section inclusions-grid">
+  <div class="container">
+    <h2>{title}</h2>
+    <p class="section-description">{content}</p>
+    
+    <div class="deliverables-grid">
+      {deliverables.map((deliverable, index) => (
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="deliverable-text">{deliverable}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+const { title, content, warningSignsTitle, warningSigns, assessmentCTA } = Astro.props;
+---
+
+<section class="section diagnostic-tools">
+  <div class="container">
+    <h2>{title}</h2>
+    <p class="section-description">{content}</p>
+    
+    <h3>{warningSignsTitle}</h3>
+    <div class="warning-signs-grid">
+      {warningSigns.map(sign => (
+        <div class="warning-sign-card">
+          <div class="warning-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="warning-text">{sign}</div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="assessment-cta">
+      <a href="/contact" class="assessment-button">
+        {assessmentCTA} →
+      </a>
+    </div>
+  </div>
+</section>

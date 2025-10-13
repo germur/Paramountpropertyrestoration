@@ -1,0 +1,25 @@
+---
+const { title, content, checklist } = Astro.props;
+---
+
+<section class="section overview-checklist">
+  <div class="container">
+    <h2>{title}</h2>
+    <div class="overview-content">
+      <div class="overview-main">
+        <p class="overview-text">{content}</p>
+      </div>
+      <div class="checklist">
+        <h3>Our Professional Benefits</h3>
+        <ul>
+          {checklist.map(item => (
+            <li>
+              <i class="fas fa-check-circle check-icon"></i>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
