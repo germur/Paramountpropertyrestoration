@@ -835,20 +835,33 @@
         gap: 1.5rem;
     }
 
-    /* Steps Section */
+    /* Steps Section - Keep all 5 steps in one row */
     .steps-title {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
 
     .steps-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
     }
 
-    .step-item {
-        max-width: 300px;
-        margin: 0 auto;
+    .step-item h3 {
+        font-size: 0.85rem;
+    }
+
+    .step-item p {
+        font-size: 0.75rem;
+        max-width: 120px;
+    }
+
+    .step-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .step-icon i {
+        font-size: 20px;
     }
 
     /* Recent Remodels */
@@ -930,17 +943,32 @@
         font-size: 0.9rem;
     }
 
-    /* Steps Section */
+    /* Steps Section - Maintain 5 columns on mobile */
     .steps-section {
         padding: 3rem 1rem;
     }
 
+    .steps-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.25rem;
+    }
+
     .step-item h3 {
-        font-size: 1.1rem;
+        font-size: 0.75rem;
     }
 
     .step-item p {
-        font-size: 0.95rem;
+        font-size: 0.65rem;
+        max-width: 90px;
+    }
+
+    .step-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .step-icon i {
+        font-size: 16px;
     }
 
     /* Recent Remodels */
