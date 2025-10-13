@@ -182,7 +182,7 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
 <section>
   <div class="services-grid">
     {content.services.map((service) => (
-      <a href={service.link} class="service-item-static">
+      <a href={service.link} class="service-item-clickable">
         <i class={service.icon}></i>
         <h3>{service.title}</h3>
       </a>
@@ -198,19 +198,19 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
     {content.services.map((service, index) => (
       <div class="solution-card">
         <div class="card-image">
-          <img src="/images/mitigation.jpg" alt={`Professional ${service.title.toLowerCase()} services in Florida - damage prevention specialists`} loading="lazy" />
+          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} services in Florida - damage prevention specialists`} loading="lazy" />
         </div>
         <div class="card-content">
           <h3>{service.title}</h3>
           <div class="service-description">
             <p>{service.description}</p>
             <div class="service-features">
-              <span class="feature-tag">⚡ Fast Action</span>
+              <span class="feature-tag">🚨 24/7 Response</span>
               <span class="feature-tag">🛡️ Prevention</span>
               <span class="feature-tag">💰 Cost Savings</span>
             </div>
           </div>
-          <a href={service.link || "/contact"} class="btn">Prevent Damage Now →</a>
+          <a href={service.link || "/contact"} class="btn">Get Emergency Mitigation Help →</a>
         </div>
       </div>
     ))}
