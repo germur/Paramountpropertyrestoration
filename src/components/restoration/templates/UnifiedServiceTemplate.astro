@@ -1,6 +1,5 @@
 ---
 import { cities } from "../../../data/restoration.js";
-import Breadcrumbs from "../../ui/Breadcrumbs.astro";
 import HeroService from "../../sections/HeroService.astro";
 import OverviewWithChecklist from "../../sections/OverviewWithChecklist.astro";
 import DiagnosticTools from "../../sections/DiagnosticTools.astro";
@@ -13,7 +12,6 @@ import TrustBar from "../../sections/TrustBar.astro";
 import RestorationCTA from "../../RestorationCTA";
 
 import "../../../styles/pages/water-damage.css";
-import "../../../styles/components/unified-service-template.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const { group, sub } = Astro.props;
@@ -21,13 +19,6 @@ const { group, sub } = Astro.props;
 // Enhanced data structure for the unified template
 const getEnhancedServiceData = (groupSlug, subSlug) => {
   const baseData = {
-    breadcrumbs: {
-      items: [
-        { label: "Home", url: "/" },
-        { label: group.name, url: `/restoration/${group.slug}` },
-        { label: sub.title, url: `/restoration/${group.slug}/${sub.slug}`, current: true }
-      ]
-    },
     hero: {
       title: sub?.hero?.title || `${sub.title} Experts in Florida: 24/7 Emergency Service`,
       description: sub?.hero?.description || `Professional ${sub.title.toLowerCase()} services across Florida. Emergency response, certified technicians, and insurance coordination available 24/7.`,
@@ -170,10 +161,7 @@ const cityRegions = getCitiesByRegion();
 ---
 
 <div class="unified-service-template">
-  <!-- 1. Breadcrumbs for Navigation -->
-  <Breadcrumbs items={serviceData.breadcrumbs.items} />
-
-  <!-- 2. Hero Transactional Section -->
+  <!-- Hero Transactional Section -->
   <HeroService 
     title={serviceData.hero.title}
     description={serviceData.hero.description}
