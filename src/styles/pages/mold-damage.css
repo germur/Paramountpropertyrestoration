@@ -51,7 +51,7 @@
 
 .cta-button {
     display: inline-block;
-    background: #35c3e9;
+    background: var(--color-accent);
     color: #ffffff;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -63,7 +63,7 @@
 }
 
 .cta-button:hover {
-    background: #2a9fd1;
+    background: var(--color-accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(53, 195, 233, 0.4);
     color: #ffffff;
@@ -111,7 +111,7 @@
 }
 
 .service-item:hover i {
-    color: #35c3e9;
+    color: var(--color-accent);
 }
 
 .service-item h3 {
@@ -122,7 +122,7 @@
 }
 
 .service-item:hover h3 {
-    color: #35c3e9;
+    color: var(--color-accent);
 }
 
 /* Service item static (sin hover ni cursor) */
@@ -157,7 +157,7 @@
 }
 
 .service-item-static:hover i {
-    color: #35c3e9;
+    color: var(--color-accent);
 }
 
 .service-item-static h3 {
@@ -169,7 +169,7 @@
 }
 
 .service-item-static:hover h3 {
-    color: #35c3e9;
+    color: var(--color-accent);
 }
 
 /* =====================
@@ -244,7 +244,7 @@
 
 .btn {
     display: inline-block;
-    background: #35c3e9;
+    background: var(--color-accent);
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
@@ -255,7 +255,7 @@
 }
 
 .btn:hover {
-    background: #2a9fd1;
+    background: var(--color-accent-hover);
     transform: translateY(-2px);
     color: #ffffff;
     text-decoration: none;
@@ -277,7 +277,7 @@
 
 .feature-tag {
     background: rgba(53, 195, 233, 0.1);
-    color: #35c3e9;
+    color: var(--color-accent);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -327,7 +327,7 @@
     font-size: 1.25rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #35c3e9;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 .city-links {
@@ -347,7 +347,7 @@
 
 .city-links a:hover {
     background: white;
-    color: #35c3e9;
+    color: var(--color-accent);
     transform: translateX(4px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -361,14 +361,14 @@
 }
 
 .emergency-phone {
-    color: #35c3e9;
+    color: var(--color-accent);
     font-weight: 600;
     text-decoration: none;
     font-size: 1.1rem;
 }
 
 .emergency-phone:hover {
-    color: #2a9fd1;
+    color: var(--color-accent-hover);
 }
 
 /* =====================
@@ -440,6 +440,7 @@
     color: #333;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .step-item p {
@@ -447,6 +448,7 @@
     line-height: 1.5;
     max-width: 200px;
     margin: 0 auto;
+    font-size: 0.9rem;
 }
 
 /* =====================
@@ -593,6 +595,18 @@
     UNIFIED CITY GRID SECTION
    ===================== */
 
+.city-grid-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.city-grid-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
 .section-subtitle {
     text-align: center;
     color: #666;
@@ -705,7 +719,7 @@
 }
 
 .emergency-phone:hover {
-    background: #2a9fd1;
+    background: var(--color-accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     color: white;
@@ -718,7 +732,6 @@
 
 /* Tablet - 992px */
 @media (max-width: 992px) {
-
     /* Steps Section - Keep 5 columns in single row */
     .steps-container {
         grid-template-columns: repeat(5, 1fr);
@@ -726,12 +739,21 @@
     }
 
     .step-item h3 {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .step-item p {
-        font-size: 0.85rem;
-        max-width: 150px;
+        font-size: 0.8rem;
+        max-width: 140px;
+    }
+
+    .step-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .step-icon i {
+        font-size: 24px;
     }
 
     .steps-container::before {
@@ -779,8 +801,7 @@
 }
 
 /* Tablet - 768px */
-@media (max-width: 768px) and (min-width: 481px) {
-
+@media (max-width: 768px) {
     /* Services Grid */
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -798,9 +819,6 @@
     .service-item h3 {
         font-size: 0.75rem;
     }
-}
-
-@media (max-width: 768px) {
 
     /* Hero Section */
     .hero-section {
@@ -843,25 +861,25 @@
 
     .steps-container {
         grid-template-columns: repeat(5, 1fr);
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
     .step-item h3 {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .step-item p {
-        font-size: 0.75rem;
-        max-width: 120px;
+        font-size: 0.7rem;
+        max-width: 110px;
     }
 
     .step-icon {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
     .step-icon i {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     /* Recent Remodels */
@@ -886,7 +904,6 @@
 
 /* Mobile - 480px */
 @media (max-width: 480px) {
-
     /* Hero Section */
     .hero-section {
         height: 350px;
@@ -954,21 +971,22 @@
     }
 
     .step-item h3 {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 
     .step-item p {
-        font-size: 0.65rem;
-        max-width: 90px;
+        font-size: 0.55rem;
+        max-width: 80px;
+        line-height: 1.3;
     }
 
     .step-icon {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     .step-icon i {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /* Recent Remodels */
