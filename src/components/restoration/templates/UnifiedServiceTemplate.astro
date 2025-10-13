@@ -1,14 +1,6 @@
 ---
 import { cities } from "../../../data/restoration.js";
-import HeroService from "../../sections/HeroService.astro";
-import OverviewWithChecklist from "../../sections/OverviewWithChecklist.astro";
-import DiagnosticTools from "../../sections/DiagnosticTools.astro";
-import InclusionsGrid from "../../sections/InclusionsGrid.astro";
-import InsuranceHelp from "../../sections/InsuranceHelp.astro";
-import StepsProcess from "../../sections/StepsProcess.astro";
-import CityTeaserLinks from "../../sections/CityTeaserLinks.astro";
 import FAQ from "../../AcordeonServices";
-import TrustBar from "../../sections/TrustBar.astro";
 import RestorationCTA from "../../RestorationCTA";
 
 import "../../../styles/pages/water-damage.css";
@@ -26,126 +18,41 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
       ctaPhone: "+1-786-602-2217",
       urgencyBadge: "24/7 Emergency Response Available"
     },
-    overview: {
-      title: `The Problem of ${sub.title} and Our Solution`,
-      content: `${sub.title} requires immediate professional attention to prevent extensive property damage and health risks. Our certified technicians understand the complexity of restoration work and provide comprehensive solutions that address both visible damage and hidden issues that can cause long-term problems.`,
-      checklist: [
-        "IICRC Certified Technicians",
-        "Advanced Moisture Detection Equipment", 
-        "Direct Insurance Billing",
-        "24/7 Emergency Response",
-        "Antimicrobial Treatments",
-        "Complete Documentation Process"
-      ]
-    },
-    diagnosticTools: {
-      title: `Hidden Damage Detection and Severity Assessment`,
-      content: `Early detection of hidden damage is crucial for effective restoration. Our advanced diagnostic tools help identify problems before they become costly disasters.`,
-      warningSignsTitle: "Warning Signs to Watch For:",
-      warningSigns: sub?.diagnosticTools?.warningSigns || [
-        "Unusual odors or musty smells",
-        "Visible staining or discoloration", 
-        "Soft or warped building materials",
-        "Unexplained increases in utility bills",
-        "Signs of moisture or humidity"
-      ],
-      assessmentCTA: "Get Professional Assessment"
-    },
-    technicalScope: {
-      title: `What Our Complete ${sub.title} Service Includes`,
-      content: `Our comprehensive approach addresses all aspects of restoration work, from initial assessment through final quality assurance.`,
-      deliverables: sub?.technicalSpecs?.deliverables || [
-        "Emergency damage assessment and documentation",
-        "Advanced moisture detection and mapping",
-        "Professional-grade extraction and drying equipment",
-        "Antimicrobial treatment and odor control",
-        "Structural repair and material replacement",
-        "Final inspection and quality assurance"
-      ]
-    },
-    insuranceHelp: {
-      title: `Your Guide for ${sub.title} Insurance Claims`,
-      content: `Navigating insurance claims can be complex. We help streamline the process and ensure you receive fair compensation for necessary restoration work.`,
-      benefits: [
-        "Complete damage documentation with photos",
-        "Direct communication with insurance adjusters", 
-        "Detailed repair estimates and timelines",
-        "Assistance with claim paperwork and filing",
-        "Advocacy for proper coverage and compensation"
-      ]
-    },
-    certifiedProcess: {
-      title: "Our Certified 5-Step Workflow Process",
-      steps: [
-        {
-          number: 1,
-          title: "Site Security & Assessment",
-          description: "Complete property evaluation with advanced detection equipment",
-          icon: "fas fa-shield-alt"
-        },
-        {
-          number: 2, 
-          title: "Emergency Stabilization",
-          description: "Immediate measures to prevent further damage",
-          icon: "fas fa-tools"
-        },
-        {
-          number: 3,
-          title: "Professional Restoration",
-          description: "Certified technicians perform comprehensive restoration work",
-          icon: "fas fa-hard-hat"
-        },
-        {
-          number: 4,
-          title: "Quality Control Inspection", 
-          description: "Thorough verification of all work completed",
-          icon: "fas fa-search"
-        },
-        {
-          number: 5,
-          title: "Final Approval & Documentation",
-          description: "Complete documentation package for insurance and records",
-          icon: "fas fa-certificate"
-        }
-      ]
-    },
-    faq: {
-      title: `${sub.title} Technical Questions`,
-      questions: sub?.faqs || [
-        {
-          question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
-          answer: "We provide 24/7 emergency response and can typically arrive on-site within 60-90 minutes of your call. Our rapid response helps minimize damage and reduces restoration costs."
-        },
-        {
-          question: `What equipment do you use for ${sub.title.toLowerCase()}?`,
-          answer: "We use professional-grade equipment including thermal imaging cameras, moisture meters, high-capacity extractors, industrial dehumidifiers, and air movers. All equipment meets IICRC standards."
-        },
-        {
-          question: `Do you work with insurance companies?`,
-          answer: "Yes, we work directly with insurance companies and adjusters. We provide detailed documentation, photos, and estimates to support your claim and ensure proper coverage."
-        },
-        {
-          question: `How long does the restoration process take?`,
-          answer: "Timeline varies based on damage extent, but most projects are completed within 3-7 days. We provide detailed timelines during our initial assessment."
-        },
-        {
-          question: `What certifications do your technicians have?`,
-          answer: "Our technicians are IICRC certified in water damage restoration, structural drying, and applied microbial remediation. We maintain ongoing training and certification updates."
-        },
-        {
-          question: `Do you provide guarantees on your work?`,
-          answer: "Yes, we provide written warranties on all restoration work. Our quality assurance process ensures work meets or exceeds industry standards."
-        }
-      ]
-    }
+    services: [
+      { name: "Emergency Assessment", icon: "fas fa-search", description: "Complete damage evaluation" },
+      { name: "Professional Equipment", icon: "fas fa-tools", description: "Advanced restoration tools" },
+      { name: "Insurance Coordination", icon: "fas fa-handshake", description: "Direct billing assistance" },
+      { name: "Licensed Technicians", icon: "fas fa-certificate", description: "IICRC certified experts" },
+      { name: "Quality Guarantee", icon: "fas fa-shield-alt", description: "Satisfaction assured" },
+      { name: "24/7 Response", icon: "fas fa-clock", description: "Always available" }
+    ],
+    features: [
+      "IICRC Certified Technicians",
+      "Advanced Moisture Detection Equipment", 
+      "Direct Insurance Billing",
+      "24/7 Emergency Response",
+      "Antimicrobial Treatments",
+      "Complete Documentation Process"
+    ],
+    warningSigns: [
+      "Unusual odors or musty smells",
+      "Visible staining or discoloration", 
+      "Soft or warped building materials",
+      "Unexplained increases in utility bills",
+      "Signs of moisture or humidity"
+    ],
+    process: [
+      { step: 1, title: "Site Security", description: "Emergency assessment & stabilization", icon: "fas fa-shield-alt" },
+      { step: 2, title: "Professional Restoration", description: "Certified technicians perform work", icon: "fas fa-tools" },
+      { step: 3, title: "Quality Assurance", description: "Complete documentation & approval", icon: "fas fa-certificate" }
+    ]
   };
-
   return baseData;
 };
 
 const serviceData = getEnhancedServiceData(group.slug, sub.slug);
 
-// Dynamic city grid for Level 4 distribution  
+// City data for regional display
 const getCitiesByRegion = () => {
   const regions = {};
   cities.forEach(city => {
@@ -161,73 +68,169 @@ const cityRegions = getCitiesByRegion();
 ---
 
 <div class="unified-service-template">
-  <!-- Hero Transactional Section -->
-  <HeroService 
-    title={serviceData.hero.title}
-    description={serviceData.hero.description}
-    ctaText={serviceData.hero.ctaText}
-    ctaPhone={serviceData.hero.ctaPhone}
-    urgencyBadge={serviceData.hero.urgencyBadge}
-  />
-
-  <!-- 3. Overview with Checklist -->
-  <OverviewWithChecklist
-    title={serviceData.overview.title}
-    content={serviceData.overview.content}
-    checklist={serviceData.overview.checklist}
-  />
-
-  <!-- 4. Diagnostic Interactive Tools -->
-  <DiagnosticTools
-    title={serviceData.diagnosticTools.title}
-    content={serviceData.diagnosticTools.content}
-    warningSignsTitle={serviceData.diagnosticTools.warningSignsTitle}
-    warningSigns={serviceData.diagnosticTools.warningSigns}
-    assessmentCTA={serviceData.diagnosticTools.assessmentCTA}
-  />
-
-  <!-- 5. Technical Scope Detailed -->
-  <InclusionsGrid
-    title={serviceData.technicalScope.title}
-    content={serviceData.technicalScope.content}
-    deliverables={serviceData.technicalScope.deliverables}
-  />
-
-  <!-- 6. Insurance/Claims Block -->
-  <InsuranceHelp
-    title={serviceData.insuranceHelp.title}
-    content={serviceData.insuranceHelp.content}
-    benefits={serviceData.insuranceHelp.benefits}
-  />
-
-  <!-- 7. Certified Process Steps -->
-  <StepsProcess
-    title={serviceData.certifiedProcess.title}
-    steps={serviceData.certifiedProcess.steps}
-  />
-
-  <!-- 8. City Teaser Links (Level 4 Distribution) -->
-  <CityTeaserLinks
-    title="Immediate Service Available in These Major Cities"
-    groupSlug={group.slug}
-    subSlug={sub.slug}
-    cityRegions={cityRegions}
-  />
-
-  <!-- 9. FAQ Section -->
-  <section class="section faq-section">
-    <div class="container">
-      <h2>{serviceData.faq.title}</h2>
-      <FAQ questions={serviceData.faq.questions} client:load />
+  <!-- Compact Hero Section -->
+  <section class="hero-section" style="background-image: url('/images/herowater.jpg'); height: 450px;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-clock"></i>
+        {serviceData.hero.urgencyBadge}
+      </div>
+      <h1>{serviceData.hero.title}</h1>
+      <p>{serviceData.hero.description}</p>
+      <div class="hero-actions">
+        <a href={`tel:${serviceData.hero.ctaPhone}`} class="cta-button primary">
+          <i class="fas fa-phone"></i> {serviceData.hero.ctaText}
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- 10. Trust Bar -->
-  <TrustBar />
+  <!-- Services Grid Section - Reusing pattern from service pages -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        {serviceData.services.map(service => (
+          <div class="service-item">
+            <i class={service.icon}></i>
+            <h3>{service.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <!-- 11. Final CTA -->
+  <!-- Consolidated Overview & Features Section -->
+  <section class="section service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <!-- Main content -->
+        <div class="overview-content">
+          <h2>Professional {sub.title} Services You Can Trust</h2>
+          <p class="overview-text">
+            {sub.title} requires immediate professional attention to prevent extensive property damage and health risks. 
+            Our certified technicians provide comprehensive solutions across Florida with advanced equipment and proven methods.
+          </p>
+          
+          <!-- Warning Signs as compact list -->
+          <div class="diagnostic-section">
+            <h3><i class="fas fa-exclamation-triangle" style="color: #f39c12;"></i> Warning Signs to Watch For:</h3>
+            <div class="warning-signs-grid">
+              {serviceData.warningSigns.map(sign => (
+                <div class="warning-item">
+                  <i class="fas fa-check-circle" style="color: #35c3e9;"></i>
+                  {sign}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <ul class="service-features">
+            {serviceData.features.map(feature => (
+              <li>
+                <span class="feature-icon">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Sidebar with process -->
+        <div class="overview-sidebar">
+          <h3><i class="fas fa-clipboard-list"></i> Our Process</h3>
+          {serviceData.process.map(step => (
+            <div class="process-step">
+              <div class="step-number">{step.step}</div>
+              <div class="step-content">
+                <h4>{step.title}</h4>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+          
+          <!-- Insurance help section -->
+          <div class="insurance-help-compact">
+            <h4><i class="fas fa-handshake" style="color: #35c3e9;"></i> Insurance Claims Assistance</h4>
+            <p>We work directly with your insurance company, handling all documentation and communication to ensure proper coverage for restoration work.</p>
+          </div>
+
+          <a href="/contact" class="btn-outline">
+            Get Emergency Assessment →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cities Section - Using Service Page Pattern -->
+  <section class="section gallery-section">
+    <div class="container">
+      <h2 class="section-title">
+        Immediate {sub.title} Service Available Throughout Florida
+      </h2>
+      <p class="section-subtitle">
+        We deploy local teams throughout Florida to guarantee fast response times and personalized service tailored to your city's regulations.
+      </p>
+
+      <!-- Using same card pattern as service pages but for cities -->
+      <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        {Object.entries(cityRegions).map(([regionName, regionCities]) => 
+          regionCities.slice(0, 6).map(city => (
+            <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="gallery-card-link">
+              <div class="gallery-item" style="background: #f8f9fa; border: 1px solid #e9ecef;">
+                <div style="padding: 1.5rem; text-align: center;">
+                  <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                  <h4 style="color: #333; margin-bottom: 0.25rem;">{city.nombre}</h4>
+                  <p style="color: #666; font-size: 0.875rem; margin: 0;">{city.condado} County</p>
+                </div>
+                <div class="gallery-overlay">
+                  <p>Service Available →</p>
+                </div>
+              </div>
+            </a>
+          ))
+        )}
+      </div>
+
+      <!-- Emergency notice -->
+      <div class="emergency-notice" style="margin-top: 2rem;">
+        <h3>24/7 Emergency Response Available Statewide</h3>
+        <p>Don't wait - property damage gets worse over time. Our certified technicians are standing by.</p>
+        <a href="tel:+17866022217" class="emergency-phone">
+          <i class="fas fa-phone-alt"></i> CALL NOW FOR FAST RESPONSE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions About {sub.title}</h2>
+      <FAQ questions={[
+        {
+          question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
+          answer: "We provide 24/7 emergency response and can typically arrive on-site within 60-90 minutes of your call. Our rapid response helps minimize damage and reduces restoration costs."
+        },
+        {
+          question: `What equipment do you use for ${sub.title.toLowerCase()}?`,
+          answer: "We use professional-grade equipment including thermal imaging cameras, moisture meters, high-capacity extractors, industrial dehumidifiers, and air movers. All equipment meets IICRC standards."
+        },
+        {
+          question: "Do you work with insurance companies?",
+          answer: "Yes, we work directly with insurance companies and adjusters. We provide detailed documentation, photos, and estimates to support your claim and ensure proper coverage."
+        },
+        {
+          question: "What certifications do your technicians have?",
+          answer: "Our technicians are IICRC certified in water damage restoration, structural drying, and applied microbial remediation. We maintain ongoing training and certification updates."
+        }
+      ]} client:load />
+    </div>
+  </section>
+
+  <!-- Final CTA -->
   <RestorationCTA 
-    title="Need a Certified Expert Now!"
+    title="Need Expert Help Now?"
     subtitle="Don't wait - property damage gets worse over time"
     ctaText="Get Emergency Help →"
     client:load 
