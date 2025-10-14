@@ -234,7 +234,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .card-title {
@@ -249,7 +249,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin: 0;
+    margin: 0.5rem 0 1rem 0;
     line-height: 1;
 }
 
@@ -280,7 +280,7 @@
 
 /* Add card description styling for better content hierarchy */
 .card-description {
-    margin: 0;
+    margin: 0 0 1rem 0;
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.9rem;
@@ -310,11 +310,23 @@
 @media (max-width: 768px) {
     .cnt-tagsServices {
         gap: 0.5rem;
+        margin: 1rem 0 1.25rem 0;
     }
     
     .cnt-tagsServices .service-tag {
         font-size: 0.75rem;
         padding: 0.4rem 0.7rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+    
+    .card-link {
+        margin-top: 1.25rem;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
     }
 }
 
@@ -329,11 +341,45 @@
     }
 }
 
+@media (max-width: 480px) {
+    .card-content {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+    
+    .cnt-tagsServices {
+        gap: 0.4rem;
+        margin: 0.75rem 0 1rem 0;
+    }
+    
+    .cnt-tagsServices .service-tag {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 16px;
+    }
+    
+    .card-link {
+        margin-top: 1rem;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
 .card-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
+    margin-top: 1rem;
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
     color: white;
     padding: 1rem 2rem;
