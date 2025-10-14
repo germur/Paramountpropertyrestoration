@@ -61,6 +61,17 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
                         </a>
                     </div>
 
+                    {/* Emergency CTA */}
+                    <div className="emergency-cta">
+                        <a href="tel:+17866022217" className="cta-button emergency">
+                            <i className="fas fa-phone" aria-hidden="true"></i>
+                            <div className="cta-text">
+                                <span className="cta-main">24/7 Emergency</span>
+                                <span className="cta-sub">Service Available</span>
+                            </div>
+                        </a>
+                    </div>
+
                     {/* Desktop */}
                     <nav className="nav desktop-nav" aria-label="Primary">
                         <ul className="nav-list">
