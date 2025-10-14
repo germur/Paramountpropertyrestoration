@@ -1,0 +1,374 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SEOHead from "../components/SEOHead.jsx";
+
+// 📄 404 Error Page
+const pageTitle = "Página No Encontrada | Paramount Property Restoration";
+const pageDescription = "La página que buscas no existe. Explora nuestros servicios de remodelación y restauración en Florida.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="error"
+    service="404"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
+  <section class="error-page">
+    <div class="container">
+      <div class="error-content">
+        <div class="error-visual">
+          <div class="error-number">404</div>
+          <div class="error-icon">
+            <svg viewBox="0 0 100 100" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" stroke="#35c3e9" stroke-width="3" fill="#f0f9ff"/>
+              <path d="M35 35 L65 65 M65 35 L35 65" stroke="#35c3e9" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="error-text">
+          <h1>¡Oops! Página No Encontrada</h1>
+          <p class="error-message">
+            La página que estás buscando no existe o ha sido movida. 
+            Pero no te preocupes, podemos ayudarte a encontrar lo que necesitas.
+          </p>
+        </div>
+
+        <div class="error-actions">
+          <a href="/" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Ir al Inicio
+          </a>
+          <a href="/contact" class="btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.19 12.85C3.49998 10.2412 2.44818 7.27099 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.2165 3.36162C2.30513 3.09849 2.44757 2.85669 2.63477 2.65162C2.82196 2.44655 3.04981 2.28271 3.30379 2.17052C3.55778 2.05833 3.83234 2.00026 4.11 2H7.11C7.59531 1.99522 8.06648 2.16708 8.43498 2.48353C8.80348 2.79999 9.04261 3.23945 9.11 3.72C9.23662 4.68007 9.47144 5.62273 9.81 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51356 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Contactarnos
+          </a>
+        </div>
+
+        <div class="helpful-links">
+          <h3>Enlaces Útiles</h3>
+          <div class="links-grid">
+            <div class="link-category">
+              <h4>Servicios Populares</h4>
+              <ul>
+                <li><a href="/services/bathroom-remodeling">Remodelación de Baños</a></li>
+                <li><a href="/services/kitchen-remodeling">Remodelación de Cocinas</a></li>
+                <li><a href="/restoration/water-damage">Daños por Agua</a></li>
+                <li><a href="/restoration/fire-damage">Daños por Fuego</a></li>
+              </ul>
+            </div>
+            <div class="link-category">
+              <h4>Información</h4>
+              <ul>
+                <li><a href="/services">Todos los Servicios</a></li>
+                <li><a href="/restoration">Servicios de Restauración</a></li>
+                <li><a href="/blog">Blog y Recursos</a></li>
+                <li><a href="/sitemap.html">Mapa del Sitio</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-contact">
+          <div class="emergency-banner">
+            <div class="emergency-content">
+              <div class="emergency-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="emergency-text">
+                <h3>¿Emergencia de Propiedad?</h3>
+                <p>Respondemos 24/7 para daños por agua, fuego, moho y tormentas</p>
+              </div>
+              <a href="tel:+17866022217" class="emergency-btn">
+                Llamar Ahora
+                <small>(786) 602-2217</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 2rem 0;
+    }
+
+    .error-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .error-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .error-number {
+      font-size: 8rem;
+      font-weight: 800;
+      color: #35c3e9;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .error-icon {
+      margin-bottom: 1rem;
+    }
+
+    .error-text h1 {
+      font-size: 2.5rem;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .error-message {
+      font-size: 1.125rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: #35c3e9;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2bb3d9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(53, 195, 233, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #35c3e9;
+      border-color: #35c3e9;
+    }
+
+    .btn-secondary:hover {
+      background: #35c3e9;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .helpful-links {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .helpful-links h3 {
+      text-align: center;
+      color: #1a202c;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .link-category h4 {
+      color: #35c3e9;
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .link-category ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .link-category li {
+      margin-bottom: 0.5rem;
+    }
+
+    .link-category a {
+      color: #4a5568;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .link-category a:hover {
+      color: #35c3e9;
+      text-decoration: underline;
+    }
+
+    .emergency-contact {
+      margin-top: 2rem;
+    }
+
+    .emergency-banner {
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      color: white;
+    }
+
+    .emergency-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .emergency-icon {
+      flex-shrink: 0;
+      color: #60a5fa;
+    }
+
+    .emergency-text {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .emergency-text h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .emergency-text p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .emergency-btn {
+      background: white;
+      color: #1e40af;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .emergency-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .emergency-btn small {
+      display: block;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .error-number {
+        font-size: 6rem;
+      }
+
+      .error-text h1 {
+        font-size: 2rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .emergency-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .emergency-text {
+        text-align: center;
+      }
+
+      .helpful-links {
+        padding: 1.5rem;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-number {
+        font-size: 4rem;
+      }
+
+      .error-text h1 {
+        font-size: 1.75rem;
+      }
+
+      .error-message {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</BaseLayout>
