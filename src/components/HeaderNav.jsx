@@ -246,6 +246,14 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
                                 </li>
                             );
                         })}
+                        
+                        {/* Emergency CTA in mobile menu */}
+                        <li className="nav-item mobile-emergency">
+                            <a href="tel:+17866022217" className="nav-link emergency-mobile">
+                                <i className="fas fa-phone" aria-hidden="true"></i>
+                                24/7 Emergency Service
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
