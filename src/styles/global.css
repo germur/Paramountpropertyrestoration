@@ -718,22 +718,6 @@
   opacity: 0.9;
 }
 
-.emergency-phone {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--color-accent);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.emergency-phone:hover {
-  background: var(--color-accent-hover);
-}
-
 /* ===== END LEVEL 3 HUB TEMPLATE OPTIMIZATION ===== */
 
 
@@ -1875,14 +1859,6 @@ a.btn:hover, a.btn-primary:hover, a.btn-blue:hover, a.btn-emergency:hover, a.btn
   background: var(--color-white);
   color: var(--color-accent);
   transform: translateX(4px);
-}
-
-.emergency-footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 2rem;
-  background: var(--bg-secondary);
-  border-radius: var(--radius);
 }
 
 

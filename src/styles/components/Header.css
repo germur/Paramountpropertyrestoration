@@ -41,11 +41,12 @@
 }
 
 /* ========================
-   Emergency CTA Button
+   Emergency CTA Button (Now positioned at the right)
    ======================== */
 .emergency-cta {
     display: flex;
     align-items: center;
+    margin-left: auto; /* This pushes it to the right */
 }
 
 .cta-button.emergency {
@@ -471,6 +472,11 @@
     .cta-sub {
         font-size: 0.7rem;
     }
+    
+    .imglogoHeader {
+        height: 90px;  /* Increased for mobile visibility */
+        width: 90px;   /* Increased for mobile visibility */
+    }
 
     .mobile-menu-btn {
         display: flex;
@@ -617,8 +623,8 @@
     }
     
     .imglogoHeader {
-        height: 70px;
-        width: 70px;
+        height: 85px;  /* Increased from 70px */
+        width: 85px;   /* Increased from 70px */
     }
 
     .emergency-cta {
