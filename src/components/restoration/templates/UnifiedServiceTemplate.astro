@@ -162,8 +162,8 @@ const cityRegions = getCitiesByRegion();
     </div>
   </section>
 
-  <!-- Cities Section - Using Service Page Pattern -->
-  <section class="section gallery-section" style="padding-bottom: 2rem;">
+  <!-- Cities Section - Improved UI/UX with Regional Accordion -->
+  <section class="section" style="padding-bottom: 2rem; background: #f8f9fa;">
     <div class="container">
       <h2 class="section-title">
         Immediate {sub.title} Service Available Throughout Florida
@@ -172,38 +172,163 @@ const cityRegions = getCitiesByRegion();
         We deploy local teams throughout Florida to guarantee fast response times and personalized service tailored to your city's regulations.
       </p>
 
-      <!-- Using same card pattern as service pages but for cities -->
-      <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-        {Object.entries(cityRegions).map(([regionName, regionCities]) => 
-          regionCities.slice(0, 6).map(city => (
-            <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="gallery-card-link" style="text-decoration: none;">
-              <div class="gallery-item" 
-                   style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; transition: all 0.3s ease; height: 140px;" 
-                   onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.15)'; this.querySelector('span').style.background='#1e90ff'"
-                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.querySelector('span').style.background='#35c3e9'">
-                <div style="padding: 1.5rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                  <div>
-                    <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                    <h4 style="color: #333; margin-bottom: 0.25rem; font-size: 1rem;">{city.nombre}</h4>
-                    <p style="color: #666; font-size: 0.875rem; margin: 0;">{city.condado} County</p>
-                  </div>
-                  <div style="margin-top: 1rem;">
-                    <span style="background: #35c3e9; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; transition: all 0.3s ease;">
-                      Service Available →
-                    </span>
-                  </div>
-                </div>
+      <!-- Featured Cities - Top 8 Most Important -->
+      <div class="featured-cities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        {[
+          cityRegions["South Florida"]?.find(c => c.slug === "miami"),
+          cityRegions["Central Florida"]?.find(c => c.slug === "orlando"),
+          cityRegions["Tampa Bay"]?.find(c => c.slug === "tampa"),
+          cityRegions["South Florida"]?.find(c => c.slug === "fort-lauderdale"),
+          cityRegions["Tampa Bay"]?.find(c => c.slug === "st-petersburg"),
+          cityRegions["Southwest Florida"]?.find(c => c.slug === "naples"),
+          cityRegions["Northeast Florida"]?.find(c => c.slug === "jacksonville"),
+          cityRegions["South Florida"]?.find(c => c.slug === "west-palm-beach")
+        ].filter(Boolean).slice(0, 8).map(city => (
+          <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="featured-city-card" style="
+            text-decoration: none;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+          " 
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='#35c3e9'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e9ecef'; this.style.boxShadow='none'">
+            <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.8rem; margin-bottom: 1rem;"></i>
+            <h4 style="color: #333; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">{city.nombre}</h4>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">{city.condado} County</p>
+            <span style="
+              background: #35c3e9; 
+              color: white; 
+              padding: 0.6rem 1.2rem; 
+              border-radius: 25px; 
+              font-size: 0.85rem; 
+              font-weight: 600; 
+              display: inline-block;
+            ">
+              Get Service Now →
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Regional Accordion for All Cities -->
+      <div class="regional-accordion" style="margin-top: 3rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="color: #333; margin-bottom: 0.5rem;">All Florida Service Areas</h3>
+          <p style="color: #666;">Click on any region to see all available cities</p>
+        </div>
+        
+        {Object.entries(cityRegions).map(([regionName, regionCities], index) => (
+          <div class="region-accordion-item" style="
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: white;
+            overflow: hidden;
+          ">
+            <button class="region-toggle" 
+                    style="
+                      width: 100%;
+                      background: #f8f9fa;
+                      border: none;
+                      padding: 1rem 1.5rem;
+                      text-align: left;
+                      font-size: 1.1rem;
+                      font-weight: 600;
+                      color: #333;
+                      cursor: pointer;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      transition: all 0.3s ease;
+                    "
+                    onclick="
+                      const content = this.nextElementSibling;
+                      const icon = this.querySelector('.toggle-icon');
+                      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                        this.style.background = '#f8f9fa';
+                      } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                        this.style.background = '#e9ecef';
+                      }
+                    "
+                    onmouseover="if (!this.nextElementSibling.style.maxHeight || this.nextElementSibling.style.maxHeight === '0px') this.style.background = '#e9ecef'"
+                    onmouseout="if (!this.nextElementSibling.style.maxHeight || this.nextElementSibling.style.maxHeight === '0px') this.style.background = '#f8f9fa'">
+              <span>
+                <i class="fas fa-map-marked-alt" style="color: #35c3e9; margin-right: 0.5rem;"></i>
+                {regionName} ({regionCities.length} cities)
+              </span>
+              <i class="fas fa-chevron-down toggle-icon" style="color: #666; transition: transform 0.3s ease;"></i>
+            </button>
+            
+            <div class="region-content" style="
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease;
+            ">
+              <div class="cities-grid" style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 0.75rem;
+                padding: 1.5rem;
+              ">
+                {regionCities.map(city => (
+                  <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} 
+                     style="
+                       text-decoration: none;
+                       background: #f8f9fa;
+                       border: 1px solid #e9ecef;
+                       border-radius: 6px;
+                       padding: 1rem;
+                       text-align: center;
+                       transition: all 0.2s ease;
+                       display: block;
+                     "
+                     onmouseover="this.style.background='white'; this.style.borderColor='#35c3e9'; this.style.transform='translateY(-2px)'"
+                     onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#e9ecef'; this.style.transform='translateY(0)'">
+                    <h5 style="color: #333; margin-bottom: 0.25rem; font-size: 0.95rem;">{city.nombre}</h5>
+                    <p style="color: #666; font-size: 0.8rem; margin: 0;">{city.condado} County</p>
+                  </a>
+                ))}
               </div>
-            </a>
-          ))
-        )}
+            </div>
+          </div>
+        ))}
       </div>
 
       <!-- Emergency notice -->
-      <div class="emergency-notice" style="margin-top: 1.5rem;">
-        <h3>24/7 Emergency Response Available Statewide</h3>
-        <p>Don't wait - property damage gets worse over time. Our certified technicians are standing by.</p>
-        <a href="tel:+17866022217" class="emergency-phone">
+      <div class="emergency-notice" style="
+        margin-top: 2.5rem;
+        background: linear-gradient(135deg, #35c3e9 0%, #1e90ff 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+      ">
+        <i class="fas fa-clock" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+        <h3 style="margin-bottom: 0.5rem;">24/7 Emergency Response Available Statewide</h3>
+        <p style="margin-bottom: 1.5rem; opacity: 0.9;">Don't wait - property damage gets worse over time. Our certified technicians are standing by.</p>
+        <a href="tel:+17866022217" style="
+          background: white;
+          color: #35c3e9;
+          text-decoration: none;
+          padding: 0.8rem 2rem;
+          border-radius: 25px;
+          font-weight: 700;
+          font-size: 1rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
           <i class="fas fa-phone-alt"></i> CALL NOW FOR FAST RESPONSE
         </a>
       </div>

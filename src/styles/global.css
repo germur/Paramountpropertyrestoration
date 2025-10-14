@@ -1952,6 +1952,18 @@ img {
     gap: 1rem;
   }
   
+  /* Featured Cities Grid Tablet */
+  .featured-cities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  /* Cities Grid Tablet */
+  .cities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
   .cta-button, 
   .hero-cta-button {
     width: 100%;
@@ -2186,6 +2198,24 @@ img {
   
   .hero-actions {
     margin-top: 1.5rem;
+  }
+
+  /* Featured Cities Grid Responsive */
+  .featured-cities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Regional Accordion Mobile Optimization */
+  .region-toggle {
+    font-size: 1rem !important;
+    padding: 0.8rem 1rem !important;
+  }
+  
+  .cities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    padding: 1rem !important;
   }
   
   .hero-features {
