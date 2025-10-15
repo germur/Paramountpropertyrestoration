@@ -19,15 +19,19 @@
 }
 
 .imglogoHeader {
-    height: 80px;
-    width: 80px;
+    height: 12vw;
+    width: 12vw;
+    max-height: 80px;
+    max-width: 80px;
+    min-height: 60px;
+    min-width: 60px;
     transition: all 0.3s ease;
 }
 
 .containerHeader {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
     position: relative;
     overflow: visible;
 }
@@ -461,6 +465,10 @@
 }
 
 @media (max-width: 768px) {
+    .containerHeader {
+        padding: 1rem 1.5rem;
+    }
+    
     .desktop-nav {
         display: none;
     }
@@ -470,8 +478,12 @@
     }
     
     .imglogoHeader {
-        height: 100px;  /* Larger logo for mobile visibility */
-        width: 100px;   /* Larger logo for mobile visibility */
+        height: 18vw;
+        width: 18vw;
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 70px;
+        min-width: 70px;
     }
 
     .mobile-menu-btn {
@@ -649,14 +661,18 @@
     }
 
     .imglogoHeader {
-        height: 100px;
-        width: 100px;
+        height: 16vw;
+        width: 16vw;
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 65px;
+        min-width: 65px;
     }
 }
 
 @media (max-width: 480px) {
     .containerHeader {
-        padding: 0.75rem;
+        padding: 0.75rem 1.5rem;
     }
     
     .header-content {
@@ -666,8 +682,12 @@
     }
     
     .imglogoHeader {
-        height: 95px;  /* Even larger for very small screens */
-        width: 95px;   /* Even larger for very small screens */
+        height: 20vw;
+        width: 20vw;
+        max-height: 95px;
+        max-width: 95px;
+        min-height: 60px;
+        min-width: 60px;
     }
 
     .emergency-cta {
