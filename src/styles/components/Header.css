@@ -1,21 +1,27 @@
 /* ========================
-   Variables y base
+   Modern Header Variables
    ======================== */
 :root {
     --header-h: 80px;
     --emergency-orange: #ff6b35;
     --emergency-orange-hover: #e55a2b;
+    --header-blur: blur(20px);
+    --nav-font-weight: 500;
+    --nav-font-size: 0.95rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Base */
+/* Modern Header Base */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+    backdrop-filter: var(--header-blur);
+    -webkit-backdrop-filter: var(--header-blur);
     position: sticky;
     top: 0;
     z-index: 1100;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+    transition: var(--transition-smooth);
 }
 
 .imglogoHeader {
@@ -31,7 +37,7 @@
 .containerHeader {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     position: relative;
     overflow: visible;
 }
@@ -41,7 +47,7 @@
     justify-content: space-between;
     align-items: center;
     height: var(--header-h);
-    gap: 2rem;
+    gap: 3rem;
 }
 
 /* ========================
@@ -129,7 +135,7 @@
 }
 
 /* ========================
-   Nav común
+   Modern Navigation Styles
    ======================== */
 .nav-list {
     list-style: none;
@@ -138,19 +144,45 @@
 }
 
 .nav-link {
-    color: var(--color-primary);
+    color: var(--text-primary);
     text-decoration: none;
-    font-weight: 500;
-    transition: color .2s;
+    font-weight: var(--nav-font-weight);
+    font-size: var(--nav-font-size);
+    transition: var(--transition-smooth);
+    position: relative;
+    padding: 0.625rem 0;
+    letter-spacing: -0.01em;
 }
 
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* ========================
+   Modern Typography Enhancements
+   ======================== */
 .mega-heading,
 .nav-label {
     display: inline-block;
-    font-weight: 700;
-    color: var(--color-primary);
+    font-weight: 600;
+    color: var(--text-primary);
     text-decoration: none;
-    margin: .25rem 0 .5rem;
+    margin: 0.25rem 0 0.75rem;
+    letter-spacing: -0.01em;
 }
 
 .nav-label {
@@ -166,33 +198,46 @@
     color: var(--color-accent);
 }
 
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-trigger .nav-link {
+    flex: 1;
+}
+
 .desktop-nav .nav-list {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
 .dropdown-btn {
     background: none;
     border: none;
-    padding: 0;
+    padding: 0.625rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-    transition: color .2s ease;
+    width: 28px;
+    height: 28px;
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
     font-size: 0.75rem;
+    border-radius: 6px;
+    margin-left: 0.5rem;
 }
 
 .dropdown-btn:hover {
     color: var(--color-accent);
+    background: rgba(53, 195, 233, 0.08);
 }
 
 .dropdown-btn i {
-    transition: transform .2s ease, color .2s ease;
+    transition: var(--transition-smooth);
 }
 
 .dropdown-btn.active i {
@@ -201,7 +246,7 @@
 }
 
 /* ========================
-   Dropdown clásico (desktop)
+   Modern Dropdown Menu (desktop)
    ======================== */
 .dropdown {
     position: relative;
@@ -211,42 +256,54 @@
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: .5rem;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
-    min-width: 200px;
-    padding: .5rem;
+    margin-top: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: var(--header-blur);
+    -webkit-backdrop-filter: var(--header-blur);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: 220px;
+    padding: 0.75rem;
     display: none;
     list-style: none;
     z-index: 60;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: var(--transition-smooth);
 }
 
 .dropdown-menu.show {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dropdown-menu a {
     display: block;
-    padding: .5rem .75rem;
-    border-radius: 4px;
-    color: var(--color-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: var(--text-primary);
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
 }
 
 .dropdown-menu a:hover {
-    background: #f3f4f6;
-    color: #1f2937;
+    background: rgba(53, 195, 233, 0.08);
+    color: var(--color-accent);
+    transform: translateX(2px);
 }
 
 .dropdown-menu a.active {
-    color: #1f2937;
-    font-weight: 500;
+    color: var(--color-accent);
+    background: rgba(53, 195, 233, 0.1);
+    font-weight: 600;
 }
 
 /* ========================
-   MEGA MENÚ (desktop) - CORREGIDO
+   Modern MEGA MENU (desktop)
    ======================== */
 .mega {
     position: relative;
@@ -257,68 +314,92 @@
     left: 50%;
     transform: translateX(-50%);
     top: 100%;
-    margin-top: .5rem;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
-    padding: 1rem 1.25rem;
+    margin-top: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: var(--header-blur);
+    -webkit-backdrop-filter: var(--header-blur);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
     display: none;
-    min-width: 600px;
+    min-width: 650px;
     max-width: 1000px;
     z-index: 70;
     max-height: 70vh;
     overflow: auto;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+    transition: var(--transition-smooth);
 }
 
 .mega-panel.show {
     display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .mega-grid {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .mega-col {
-    padding: .25rem;
+    padding: 0.5rem;
 }
 
 .mega-heading {
-    margin: .25rem 0 .5rem;
-    font-size: .95rem;
-    font-weight: 700;
-    color: #1f2937;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgba(53, 195, 233, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.mega-heading:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
 }
 
 .mega-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .mega-list a {
     display: block;
-    padding: .5rem .5rem;
-    border-radius: 6px;
-    color: var(--color-primary);
+    padding: 0.625rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: .95rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
 }
 
 .mega-list a:hover {
-    background: #f3f4f6;
-    color: #1f2937;
+    background: rgba(53, 195, 233, 0.08);
+    color: var(--color-accent);
+    transform: translateX(2px);
 }
 
 .mega-list a.active {
     color: var(--color-accent);
-    background: #eff6ff;
+    background: rgba(53, 195, 233, 0.1);
+    font-weight: 600;
 }
 
 /* ========================
-   Mobile
+   Modern Mobile Navigation
    ======================== */
 .mobile-menu-btn {
     display: none;
@@ -326,15 +407,22 @@
     gap: 4px;
     background: none;
     border: none;
-    padding: .5rem;
+    padding: 0.75rem;
     cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(53, 195, 233, 0.08);
 }
 
 .mobile-menu-btn span {
-    width: 25px;
-    height: 3px;
-    background: var(--color-primary);
-    transition: all .3s;
+    width: 26px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: var(--transition-smooth);
+    border-radius: 1px;
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
@@ -401,39 +489,45 @@
 }
 
 /* ========================
-   Acordeones (primario y nested)
+   Modern Accordion Animations
    ======================== */
 .submenu {
     list-style: none;
-    padding: 0 .5rem .5rem 1rem;
+    padding: 0 0.5rem 0.5rem 1rem;
     margin: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .4s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submenu.show {
     max-height: 1000px;
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
 }
 
 .submenu a {
     display: block;
-    padding: .5rem 1rem;
-    color: var(--color-primary);
-    background: #fff;
-    border-radius: 6px;
-    margin-bottom: .25rem;
-    font-size: .95rem;
+    padding: 0.625rem 1rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
     text-decoration: none;
+    transition: var(--transition-smooth);
+    font-weight: 500;
 }
 
 .submenu a:hover {
     color: var(--color-accent);
+    background: rgba(53, 195, 233, 0.08);
+    transform: translateX(2px);
 }
 
 .submenu a.active {
     color: var(--color-accent);
-    background: #eff6ff;
+    background: rgba(53, 195, 233, 0.1);
+    font-weight: 600;
 }
 
 /* Segundo nivel móvil (para mega) */
@@ -452,21 +546,34 @@
 /* ========================
    Responsivo
    ======================== */
+/* ========================
+   Modern Responsive Breakpoints
+   ======================== */
 @media (max-width: 1024px) {
     .mega-panel {
-        min-width: calc(90vw - 2rem);
+        min-width: calc(85vw - 2rem);
         left: 50%;
         transform: translateX(-50%);
+        padding: 1.25rem;
     }
 
     .mega-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+    
+    .desktop-nav .nav-list {
+        gap: 2rem;
     }
 }
 
 @media (max-width: 768px) {
     .containerHeader {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .header-content {
+        gap: 2rem;
     }
     
     .desktop-nav {
@@ -474,16 +581,16 @@
     }
 
     .emergency-cta {
-        display: none; /* Hide emergency CTA in mobile - it will be in hamburger menu */
+        display: none;
     }
     
     .imglogoHeader {
-        height: 18vw;
-        width: 18vw;
-        max-height: 100px;
-        max-width: 100px;
-        min-height: 70px;
-        min-width: 70px;
+        height: 16vw;
+        width: 16vw;
+        max-height: 90px;
+        max-width: 90px;
+        min-height: 65px;
+        min-width: 65px;
     }
 
     .mobile-menu-btn {
@@ -491,10 +598,10 @@
         z-index: 1150;
         position: relative;
         padding: 0.75rem;
-        margin-right: 0.5rem;
         background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(10px);
     }
     
     .mobile-menu-btn span {
@@ -509,8 +616,9 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: var(--header-blur);
+        -webkit-backdrop-filter: var(--header-blur);
         padding: calc(var(--header-h) + 20px) 1.5rem 2rem 1.5rem;
         display: none;
         overflow-y: auto;
@@ -518,94 +626,117 @@
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
         z-index: 1060;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
         width: 100vw;
         height: 100vh;
+        opacity: 0;
+        transition: var(--transition-smooth);
     }
 
     .mobile-nav.show {
         display: block;
+        opacity: 1;
     }
     
     .mobile-nav .nav-list {
-        gap: 1rem;
+        gap: 0.75rem;
         padding-top: 1rem;
     }
     
     .mobile-nav .nav-link {
-        padding: 1.25rem 1.5rem;
-        font-size: 1.1rem;
+        padding: 1.125rem 1.5rem;
+        font-size: 1.05rem;
         border-radius: 12px;
-        background: #f8f9fa;
-        border: 2px solid #e9ecef;
-        transition: all 0.2s ease;
+        background: rgba(248, 250, 252, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(226, 232, 240, 0.5);
+        transition: var(--transition-smooth);
         font-weight: 600;
-        letter-spacing: 0.5px;
+        letter-spacing: -0.01em;
     }
     
     .mobile-nav .nav-link:hover,
     .mobile-nav .nav-link.active {
-        background: var(--color-accent);
-        color: white;
+        background: rgba(53, 195, 233, 0.1);
+        color: var(--color-accent);
+        border-color: rgba(53, 195, 233, 0.3);
         transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(53, 195, 233, 0.15);
     }
     
     .mobile-item {
         border-radius: 12px;
         overflow: hidden;
-        margin-bottom: 0.75rem;
-        border: 2px solid #e9ecef;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 0.5rem;
+        border: 1px solid rgba(226, 232, 240, 0.5);
+        background: rgba(248, 250, 252, 0.8);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        transition: var(--transition-smooth);
+    }
+    
+    .mobile-item:hover {
+        box-shadow: 0 4px 12px rgba(53, 195, 233, 0.15);
+        border-color: rgba(53, 195, 233, 0.3);
     }
     
     .mobile-item .nav-link {
         border: none;
         border-radius: 12px 0 0 12px;
         margin-bottom: 0;
-        background: #f8f9fa;
+        background: transparent;
     }
     
     .mobile-item .dropdown-btn {
-        background: #f1f3f4;
-        border-left: 2px solid #e9ecef;
-        padding: 1.25rem;
+        background: rgba(243, 244, 246, 0.8);
+        border-left: 1px solid rgba(226, 232, 240, 0.5);
+        padding: 1.125rem;
         min-width: 60px;
         height: auto;
         border-radius: 0 12px 12px 0;
-        font-size: 1.2rem;
-        color: var(--color-primary);
+        font-size: 1rem;
+        color: var(--text-secondary);
+        transition: var(--transition-smooth);
+    }
+    
+    .mobile-item .dropdown-btn:hover {
+        background: rgba(53, 195, 233, 0.1);
+        color: var(--color-accent);
     }
     
     .submenu {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         margin: 0.5rem 0 0 0;
         padding: 1rem;
         border-radius: 12px;
-        border: 2px solid #e9ecef;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(226, 232, 240, 0.5);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         width: 100%;
         box-sizing: border-box;
     }
     
     .submenu a {
-        padding: 1rem 1.25rem;
-        margin-bottom: 0.75rem;
+        padding: 0.875rem 1rem;
+        margin-bottom: 0.5rem;
         border-radius: 10px;
-        font-size: 1rem;
-        background: #f8f9fa;
-        border: 2px solid transparent;
-        transition: all 0.2s ease;
+        font-size: 0.95rem;
+        background: rgba(248, 250, 252, 0.6);
+        border: 1px solid transparent;
+        transition: var(--transition-smooth);
         font-weight: 500;
         display: block;
         width: 100%;
         box-sizing: border-box;
+        color: var(--text-secondary);
     }
     
     .submenu a:hover,
     .submenu a.active {
-        background: rgba(53, 195, 233, 0.1);
+        background: rgba(53, 195, 233, 0.08);
         border-color: rgba(53, 195, 233, 0.2);
         color: var(--color-accent);
+        transform: translateX(2px);
     }
     
     .submenu.nested {
@@ -616,21 +747,22 @@
         padding: 1rem;
     }
     
-    /* Mobile Emergency CTA */
+    /* Modern Mobile Emergency CTA */
     .mobile-emergency .emergency-mobile {
         background: linear-gradient(135deg, var(--emergency-orange) 0%, var(--emergency-orange-hover) 100%);
         color: white !important;
         font-weight: 600;
-        margin-top: 1rem;
-        padding: 1rem 1.25rem;
-        border-radius: 12px;
+        margin-top: 1.5rem;
+        padding: 1.125rem 1.5rem;
+        border-radius: 14px;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.875rem;
         justify-content: center;
         box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        transition: var(--transition-smooth);
+        backdrop-filter: blur(10px);
     }
     
     .mobile-emergency .emergency-mobile:hover {
@@ -653,20 +785,21 @@
 @media (min-width: 768px) {
     .dropdown-trigger {
         display: flex;
+        align-items: center;
     }
 
     .dropdown-btn i {
-        margin-top: 10px;
-        margin-left: 20px;
+        margin-top: 0;
+        margin-left: 0;
     }
 
     .imglogoHeader {
-        height: 16vw;
-        width: 16vw;
-        max-height: 100px;
-        max-width: 100px;
-        min-height: 65px;
-        min-width: 65px;
+        height: 14vw;
+        width: 14vw;
+        max-height: 85px;
+        max-width: 85px;
+        min-height: 60px;
+        min-width: 60px;
     }
 }
 
