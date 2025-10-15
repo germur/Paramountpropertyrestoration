@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ModernContactAnimation from "../components/ModernContactAnimation.jsx";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../components/SEOHead.jsx";
+
 const pageTitle = "Contact Paramount Property Restoration | 24/7 Emergency Response";
 const pageDescription = "Call (786) 602-2217 for immediate help. Request free inspections or remodeling estimates across Florida.";
 ---
@@ -27,43 +26,42 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     slot="head"
   />
 
-  <!-- MODERN HERO SECTION WITH ANIMATION -->
-  <section class="modern-hero">
-    <div class="hero-animation-container">
-      <ModernContactAnimation client:load serviceType="contact" />
-    </div>
+  <!-- HERO SECTION -->
+  <section class="hero-section contact-hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">Get In Touch</h1>
-        <p class="hero-subtitle">Ready to transform your property? We're here 24/7 for emergencies and consultations.</p>
-        <div class="hero-ctas">
-          <a href="tel:+17866022217" class="btn-primary">
-            <i class="fas fa-phone"></i>
-            Emergency: (786) 602-2217
-          </a>
-          <a href="#contact-form" class="btn-secondary">
-            <i class="fas fa-message"></i>
-            Send Message
-          </a>
-        </div>
+      <div class="hero-badge">
+        <i class="fas fa-phone-alt"></i>
+        24/7 Emergency Response
+      </div>
+      <h1 class="hero-title">Get Professional Help Today</h1>
+      <p class="hero-description">Ready to transform your property? We're here 24/7 for emergencies and free consultations across Florida.</p>
+      <div class="hero-actions">
+        <a href="tel:+17866022217" class="cta-action">
+          <i class="fas fa-phone"></i>
+          Call Now: (786) 602-2217
+        </a>
+        <a href="#contact-form" class="cta-secondary">
+          <i class="fas fa-envelope"></i>
+          Send Message
+        </a>
       </div>
     </div>
   </section>
 
   <!-- MAIN CONTACT SECTION -->
-  <section class="contact-section">
+  <section class="section">
     <div class="container">
       <div class="section-header">
         <h2>How Can We Help You?</h2>
         <p>Choose the best way to reach us based on your needs</p>
       </div>
 
-      <!-- CONTACT GRID -->
       <div class="contact-grid">
         <!-- CONTACT FORM -->
-        <div class="contact-form-card" id="contact-form">
-          <div class="card-header">
-            <div class="card-icon">
+        <div class="contact-form-container" id="contact-form">
+          <div class="form-header">
+            <div class="form-icon">
               <i class="fas fa-paper-plane"></i>
             </div>
             <h3>Send Us a Message</h3>
@@ -72,7 +70,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
           
           <!-- NETLIFY FORM -->
           <form 
-            class="modern-form" 
+            class="contact-form" 
             name="contact"
             method="POST"
             data-netlify="true"
@@ -84,24 +82,24 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
             <input type="hidden" name="bot-field" />
 
             <div class="form-row">
-              <div class="form-field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
               </div>
-              <div class="form-field">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" required>
             </div>
 
-            <div class="form-field">
-              <label for="subject">Service Type</label>
-              <select id="subject" name="subject" required>
+            <div class="form-group">
+              <label for="subject" class="form-label">Service Type</label>
+              <select id="subject" name="subject" class="form-select" required>
                 <option value="">Select a service</option>
                 <option value="emergency-restoration">🚨 Emergency Restoration (Water, Fire, Mold, Storm)</option>
                 <option value="remodeling">🔨 Remodeling & Construction</option>
@@ -110,12 +108,12 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               </select>
             </div>
 
-            <div class="form-field">
-              <label for="message">Tell us about your project</label>
-              <textarea id="message" name="message" rows="5" placeholder="Describe your situation, timeline, and any specific requirements..." required></textarea>
+            <div class="form-group">
+              <label for="message" class="form-label">Tell us about your project</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Describe your situation, timeline, and any specific requirements..." required></textarea>
             </div>
 
-            <button type="submit" class="form-submit">
+            <button type="submit" class="btn-primary form-submit">
               <i class="fas fa-paper-plane"></i>
               Send Message
             </button>
@@ -123,29 +121,35 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
         </div>
 
         <!-- CONTACT INFO -->
-        <div class="contact-info-card">
-          <div class="card-header">
-            <div class="card-icon emergency">
-              <i class="fas fa-exclamation-triangle"></i>
+        <div class="contact-info-container">
+          <!-- Emergency Contact -->
+          <div class="emergency-contact-card">
+            <div class="emergency-header">
+              <div class="emergency-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3>Emergency Response</h3>
+              <p>Available 24/7/365 for immediate assistance</p>
             </div>
-            <h3>Emergency Response</h3>
-            <p>Available 24/7/365 for immediate assistance</p>
+
+            <div class="emergency-cta">
+              <a href="tel:+17866022217" class="emergency-phone-btn">
+                <i class="fas fa-phone"></i>
+                (786) 602-2217
+              </a>
+              <span class="response-time">⚡ 30-minute response</span>
+            </div>
           </div>
 
-          <div class="emergency-contact">
-            <a href="tel:+17866022217" class="emergency-phone">
-              <i class="fas fa-phone"></i>
-              (786) 602-2217
-            </a>
-            <span class="response-time">⚡ 30-minute response</span>
-          </div>
-
-          <div class="contact-methods">
+          <!-- Contact Methods -->
+          <div class="contact-methods-card">
+            <h3>Other Ways to Reach Us</h3>
+            
             <div class="contact-method">
               <div class="method-icon">
                 <i class="fas fa-envelope"></i>
               </div>
-              <div class="method-details">
+              <div class="method-info">
                 <h4>Email</h4>
                 <a href="mailto:services@paramountpropertyrestoration.com">services@paramountpropertyrestoration.com</a>
               </div>
@@ -155,7 +159,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               <div class="method-icon">
                 <i class="fas fa-clock"></i>
               </div>
-              <div class="method-details">
+              <div class="method-info">
                 <h4>Business Hours</h4>
                 <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 3:00 PM</p>
               </div>
@@ -165,7 +169,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               <div class="method-icon">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
-              <div class="method-details">
+              <div class="method-info">
                 <h4>Service Area</h4>
                 <p>All of Florida<br>Orlando, Tampa, Miami, Jacksonville & More</p>
               </div>
@@ -175,7 +179,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               <div class="method-icon">
                 <i class="fas fa-shield-alt"></i>
               </div>
-              <div class="method-details">
+              <div class="method-info">
                 <h4>Credentials</h4>
                 <p>Licensed • Insured • IICRC Certified</p>
               </div>
@@ -188,210 +192,71 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 </BaseLayout>
 
 <style>
-  /* ===== MODERN DESIGN SYSTEM ===== */
-  :root {
-    --primary: #35c3e9;
-    --primary-dark: #2a9fd1;
-    --secondary: #1e293b;
-    --accent: #f59e0b;
-    --success: #10b981;
-    --danger: #ef4444;
-    --white: #ffffff;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-
-    --border-radius: 12px;
-    --border-radius-lg: 16px;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* ===== MODERN HERO SECTION ===== */
-  .modern-hero {
-    position: relative;
-    height: 90vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--gray-900) 100%);
-    color: var(--white);
-    overflow: hidden;
-  }
-
-  .hero-animation-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    padding: 2rem;
-  }
-
-  .hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--white) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.1;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    margin-bottom: 2.5rem;
-    color: var(--gray-200);
-    font-weight: 300;
-    line-height: 1.6;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary, .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 1.1rem;
-  }
-
-  .btn-primary {
-    background: var(--danger);
-    color: var(--white);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .btn-primary:hover {
-    background: #dc2626;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-  }
-
-  .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-  }
-
-  .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-  }
-
-  /* ===== MAIN CONTACT SECTION ===== */
-  .contact-section {
-    padding: 5rem 0;
-    background: var(--gray-50);
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
+  /* ===== SECTION HEADER ===== */
   .section-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
   .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--secondary);
+    font-size: var(--font-size-3xl);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 
   .section-header p {
-    font-size: 1.25rem;
-    color: var(--gray-600);
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
   }
 
   /* ===== CONTACT GRID ===== */
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
     align-items: start;
   }
 
-  .contact-form-card, .contact-info-card {
-    background: var(--white);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
+  /* ===== CONTACT FORM ===== */
+  .contact-form-container {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
+    border: 1px solid var(--color-border);
   }
 
-  .card-header {
+  .form-header {
     padding: 2rem;
     text-align: center;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--bg-secondary);
   }
 
-  .card-icon {
+  .form-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: var(--color-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
     font-size: 1.5rem;
-    color: var(--white);
+    color: white;
   }
 
-  .card-icon.emergency {
-    background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);
-  }
-
-  .card-header h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--secondary);
+  .form-header h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
   }
 
-  .card-header p {
-    color: var(--gray-600);
-    font-size: 1rem;
+  .form-header p {
+    color: var(--text-secondary);
   }
 
-  /* ===== MODERN FORM STYLES ===== */
-  .modern-form {
+  .contact-form {
     padding: 2rem;
   }
 
@@ -402,102 +267,108 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     margin-bottom: 1.5rem;
   }
 
-  .form-field {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-field label {
-    display: block;
-    font-weight: 600;
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-  }
-
-  .form-field input,
-  .form-field select,
-  .form-field textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: var(--transition);
-    background: var(--white);
-  }
-
-  .form-field input:focus,
-  .form-field select:focus,
-  .form-field textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(53, 195, 233, 0.1);
-  }
-
-  .form-field textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
   .form-submit {
     width: 100%;
     padding: 1.25rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
+    font-size: var(--font-size-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+    margin-top: 1rem;
   }
 
-  .form-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+  /* ===== CONTACT INFO ===== */
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
-  /* ===== CONTACT INFO STYLES ===== */
-  .emergency-contact {
+  .emergency-contact-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .emergency-header {
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(220, 38, 38, 0.1) 100%);
-    border-top: 3px solid var(--danger);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(220, 38, 38, 0.05);
+  }
+
+  .emergency-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-error);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .emergency-header h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .emergency-header p {
+    color: var(--text-secondary);
+  }
+
+  .emergency-cta {
+    padding: 2rem;
     text-align: center;
   }
 
-  .emergency-phone {
+  .emergency-phone-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    background: var(--danger);
-    color: var(--white);
+    background: var(--color-error);
+    color: white;
     text-decoration: none;
-    border-radius: var(--border-radius);
-    font-size: 1.25rem;
+    border-radius: var(--radius);
+    font-size: var(--font-size-lg);
     font-weight: 700;
     margin-bottom: 1rem;
     transition: var(--transition);
   }
 
-  .emergency-phone:hover {
+  .emergency-phone-btn:hover {
     background: #dc2626;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
+    color: white;
   }
 
   .response-time {
-    font-size: 0.95rem;
-    color: var(--gray-600);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
     font-weight: 500;
   }
 
-  .contact-methods {
+  .contact-methods-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
     padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .contact-methods-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .contact-method {
@@ -514,101 +385,80 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
   .method-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: var(--color-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: white;
     flex-shrink: 0;
   }
 
-  .method-details h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--secondary);
+  .method-info h4 {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
   }
 
-  .method-details p,
-  .method-details a {
-    color: var(--gray-600);
+  .method-info p,
+  .method-info a {
+    color: var(--text-secondary);
     line-height: 1.5;
   }
 
-  .method-details a {
-    color: var(--primary);
+  .method-info a {
+    color: var(--color-accent);
     text-decoration: none;
   }
 
-  .method-details a:hover {
+  .method-info a:hover {
     text-decoration: underline;
   }
 
   /* ===== RESPONSIVE DESIGN ===== */
-  @media (max-width: 768px) {
-    .modern-hero {
-      height: 100vh;
-      min-height: 500px;
-    }
-
-    .hero-ctas {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn-primary, .btn-secondary {
-      width: 100%;
-      max-width: 300px;
-      justify-content: center;
-    }
-
+  @media (max-width: 1024px) {
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+  }
 
+  @media (max-width: 768px) {
     .form-row {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
     .section-header h2 {
-      font-size: 2rem;
+      font-size: var(--font-size-2xl);
     }
 
     .section-header p {
-      font-size: 1.1rem;
+      font-size: var(--font-size-base);
     }
 
-    .contact-section {
-      padding: 3rem 0;
-    }
-
-    .card-header,
-    .modern-form,
-    .emergency-contact,
-    .contact-methods {
+    .form-header,
+    .contact-form,
+    .emergency-cta,
+    .contact-methods-card {
       padding: 1.5rem;
     }
   }
 
   @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2.5rem;
+    .contact-form,
+    .emergency-cta,
+    .contact-methods-card {
+      padding: 1rem;
     }
 
-    .hero-subtitle {
-      font-size: 1.1rem;
+    .form-header {
+      padding: 1.5rem 1rem;
     }
 
-    .btn-primary, .btn-secondary {
+    .emergency-phone-btn {
       padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-    }
-
-    .contact-section {
-      padding: 2rem 0;
+      font-size: var(--font-size-base);
     }
   }
 </style>
@@ -634,12 +484,19 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     });
 
     // Form success handling
-    const contactForm = document.querySelector('.modern-form');
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', function(e) {
         const submitBtn = this.querySelector('.form-submit');
+        const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
+        
+        // Reset after potential redirect/reload
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
       });
     }
   });
