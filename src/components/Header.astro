@@ -1,156 +1,93 @@
 ---
 import '../styles/components/Header.css';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import config from '../config.js';
-import { Icon } from './user/index.js';
+import HeaderNav from './HeaderNav.jsx';
+
+// Data for navigation - matching the previous working structure
+const navItems = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Services',
+    href: '/services',
+    mega: [
+      {
+        heading: 'Remodeling Services',
+        href: '/services',
+        items: [
+          { label: 'Bathroom Remodeling', href: '/services/bathroom-remodeling' },
+          { label: 'Kitchen Remodeling', href: '/services/kitchen-remodeling' },
+          { label: 'Home Additions', href: '/services/home-additions' },
+          { label: 'Living & Dining Room', href: '/services/living-dining-room-remodeling' },
+        ]
+      },
+      {
+        heading: 'Commercial Services', 
+        href: '/services',
+        items: [
+          { label: 'Office Remodeling', href: '/services/office-remodeling' },
+          { label: 'Commercial Restoration', href: '/restoration' },
+        ]
+      }
+    ]
+  },
+  {
+    label: 'Restoration',
+    href: '/restoration',
+    mega: [
+      {
+        heading: 'Water Damage',
+        href: '/restoration/water-damage',
+        items: [
+          { label: 'Emergency Water Removal', href: '/restoration/water-damage/emergency-water-removal' },
+          { label: 'Flood Damage Restoration', href: '/restoration/water-damage/flood-damage-restoration' },
+          { label: 'Sewage Cleanup', href: '/restoration/water-damage/sewage-cleanup' },
+        ]
+      },
+      {
+        heading: 'Fire Damage',
+        href: '/restoration/fire-damage', 
+        items: [
+          { label: 'Fire Damage Restoration', href: '/restoration/fire-damage/fire-damage-restoration' },
+          { label: 'Smoke Damage Cleanup', href: '/restoration/fire-damage/smoke-damage-cleanup' },
+        ]
+      },
+      {
+        heading: 'Other Services',
+        href: '/restoration',
+        items: [
+          { label: 'Mold Remediation', href: '/restoration/mold' },
+          { label: 'Storm Damage Repair', href: '/restoration/storm-damage' },
+        ]
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    href: '/blog',
+    dropdown: [
+      { label: 'Blog', href: '/blog' },
+      { label: 'Emergency Tips', href: '/blog/emergency-tips' },
+    ]
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+];
+
+// Get current path for active states
+const currentPath = Astro.url.pathname;
 ---
 
-<header-component
-  class='group sticky top-4 z-50 max-md:z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent max-sm:py-1 sm:rounded-2xl'
->
-  <a
-    class='z-30 text-xl font-semibold group-[.not-top]:ms-2 sm:group-[.not-top]:ms-3'
-    style='transition:margin-inline 0.3s'
-    href='/'
-    aria-label='Paramount Property Restoration'>Paramount Property Restoration</a
-  >
+<HeaderNav 
+  client:load 
+  navItems={navItems} 
+  currentPath={currentPath} 
+  logoSrc="/images/LogoPrin.png" 
+/>
 
-  <div class='flex items-center gap-x-2'>
-    {/* Menu links */}
-    <div
-      id='headerExpandContent'
-      class='end-0 start-0 top-12 grid border border-transparent group-[.not-top]:rounded-xl group-[.expanded]:opacity-100 dark:group-[.expanded.not-top]:bg-muted max-sm:absolute max-sm:opacity-0 max-sm:group-[.not-top]:border-border max-sm:group-[.expanded.not-top]:bg-background max-sm:group-[.not-top]:px-4 max-sm:group-[.not-top]:py-2 sm:grid-rows-1'
-    >
-      <div class='flex flex-col items-center justify-center overflow-hidden sm:flex-row'>
-        <a
-          href="/"
-          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
-          aria-label='Home'
-        >
-          Home
-        </a>
-        <a
-          href="/services"
-          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
-          aria-label='Services'
-        >
-          Services
-        </a>
-        <a
-          href="/restoration"
-          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
-          aria-label='Restoration'
-        >
-          Restoration
-        </a>
-        <a
-          href="/blog"
-          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
-          aria-label='Resources'
-        >
-          Resources
-        </a>
-        <a
-          href="/contact"
-          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
-          aria-label='Contact'
-        >
-          Contact
-        </a>
-        <div class='flex w-full grow flex-row justify-end gap-x-3 sm:w-fit sm:gap-x-5'>
-          <a href="tel:+17866022217" class='px-1 py-2 transition-none sm:px-2' title='Emergency Call'>
-            <span class='sr-only'>24/7 Emergency Service</span>
-            <i class="fas fa-phone" style="color: var(--emergency-orange); font-size: 1.2rem;"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* buttons */}
-    <div class='z-30 flex gap-x-4 group-[.not-top]:gap-x-2' style='transition:gap 0.3s'>
-      <button
-        id='toggleDarkMode'
-        class='group/dark box-content size-5 rounded-md border p-1.5 transition-colors hover:bg-border sm:group-[.not-top]:rounded-xl'
-      >
-        <span class='sr-only'>Dark Theme</span>
-        <i class="fas fa-desktop system size-5 group-hover/dark:text-primary"></i>
-        <i class="fas fa-sun light hidden size-5 group-hover/dark:text-primary"></i>
-        <i class="fas fa-moon dark hidden size-5 group-hover/dark:text-primary"></i>
-      </button>
-      <button
-        id='toggleMenu'
-        class='rounded-md border p-1.5 transition-colors hover:bg-border sm:hidden sm:group-[.not-top]:rounded-xl'
-      >
-        <span class='sr-only'>Menu</span>
-        <i class="fas fa-bars size-5"></i>
-      </button>
-    </div>
-  </div>
-</header-component>
-
-{/* Use inline to load theme quicker */}
-<script is:inline>
-  // Initialize theme immediately
-  function initTheme() {
-    const theme = localStorage.getItem('theme') || 'system'
-    
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else if (theme === 'light') {
-      document.documentElement.classList.remove('dark')
-    } else {
-      // system
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    }
-    
-    // Update button state
-    const toggleDarkModeElement = document.getElementById('toggleDarkMode')
-    if (toggleDarkModeElement) {
-      toggleDarkModeElement.dataset.theme = theme
-    }
-  }
-  
-  initTheme()
-</script>
-<script>
-  import { setTheme, showToast } from '../utils/index.js'
-
-  class Header extends HTMLElement {
-    constructor() {
-      super()
-    }
-
-    connectedCallback() {
-      // Header
-      let preScrollY = window.scrollY
-      this.classList.toggle('not-top', preScrollY > 20)
-      window.addEventListener('scroll', () => {
-        this.classList.toggle('not-top', window.scrollY > 20)
-        this.dataset.show = (window.scrollY < 350 || window.scrollY < preScrollY).toString()
-        preScrollY = window.scrollY
-      })
-
-      // Dark Mode
-      const darkModeBtn = this.querySelector('#toggleDarkMode') as HTMLElement
-      darkModeBtn.addEventListener('click', () => {
-        const newTheme = setTheme(undefined, true)
-        darkModeBtn.dataset.theme = newTheme
-        showToast({ message: `Set theme to ${newTheme}` })
-      })
-
-      // Menu
-      this.querySelector('#toggleMenu')?.addEventListener('click', () => {
-        this.classList.toggle('expanded')
-      })
-    }
-  }
-
-  customElements.define('header-component', Header)
-</script>
 
 
 
