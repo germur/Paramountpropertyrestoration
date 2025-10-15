@@ -4,6 +4,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import '../../../styles/pages/[ciudad].css'
 import { restorationGroups, cities } from "../../../data/restoration.js";
 import SEOHead from "../../../components/SEOHead.jsx";
+import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
 
 export async function getStaticPaths() {
   const combinations = [];
@@ -115,6 +116,7 @@ const serviceName = servicioData.nombre || servicioData.title;
 
   <!-- Hero Section -->
   <section class="hero-section">
+    <AnimatedBackground client:load />
     <div class="container">
       <div class="hero-content">
         <!-- Service badges -->

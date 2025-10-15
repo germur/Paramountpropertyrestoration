@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/ContactForm.jsx";
-import EmergencyBanner from "../components/EmergencyBanner.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../components/AcordeonServices";
 import SEOHead from "../components/SEOHead.jsx";
@@ -28,7 +27,6 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     phone={"+1-786-602-2217"}
     slot="head"
   />
-  <EmergencyBanner position="sticky" variant="contact" />
 
   <!-- HERO SECTION CON FONDO -->
   <section class="contact-hero-section">
@@ -350,8 +348,8 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 
 .btn-emergency,
 .btn-remodeling {
-  background: #35c3e9;
-  color: var(--paramount-white);
+  background: #35c3e9 !important;
+  color: var(--paramount-white) !important;
 }
 
 .btn:hover {

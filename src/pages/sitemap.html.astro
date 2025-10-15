@@ -1,0 +1,379 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SEOHead from "../components/SEOHead.jsx";
+
+// Get all services data to build the sitemap
+import { cities, restorationGroups, getRestorationServices, getRemodelingServices } from "../data/restoration.js";
+import { getCollection } from "astro:content";
+
+// Get all blog posts
+const allBlogPosts = await getCollection("blog");
+
+// Get services by category
+const restorationServices = getRestorationServices();
+const remodelingServices = getRemodelingServices();
+const allServices = [...restorationServices, ...remodelingServices];
+
+// 📄 Sitemap HTML Page
+const pageTitle = "Mapa del Sitio | Paramount Property Restoration";
+const pageDescription = "Explore todas las páginas de nuestro sitio web, incluyendo servicios de remodelación, restauración y contenido del blog en toda Florida.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="sitemap"
+    service="sitemap"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
+  <section class="sitemap-container">
+    <div class="container">
+      <header class="sitemap-header">
+        <h1>Mapa del Sitio</h1>
+        <p>Encuentra fácilmente todas las páginas y servicios disponibles en nuestro sitio web</p>
+      </header>
+
+      <div class="sitemap-grid">
+        <!-- Main Pages -->
+        <div class="sitemap-section">
+          <h2>Páginas Principales</h2>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/services">Servicios de Remodelación</a></li>
+            <li><a href="/restoration">Servicios de Restauración</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/terms">Términos y Condiciones</a></li>
+            <li><a href="/privacy-policy">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <!-- Remodeling Services -->
+        <div class="sitemap-section">
+          <h2>Servicios de Remodelación</h2>
+          <ul>
+            {remodelingServices.map(group => (
+              group.subservices.map(servicio => (
+                <li>
+                  <a href={`/services/${servicio.slug}`}>{servicio.title}</a>
+                  <div class="subsection">
+                    <strong>Por Ciudad:</strong>
+                    <div class="city-grid">
+                      {cities.slice(0, 8).map(ciudad => (
+                        <a href={`/services/${servicio.slug}/${ciudad.slug}`} class="city-link">
+                          {ciudad.name}
+                        </a>
+                      ))}
+                      {cities.length > 8 && <span class="more-cities">+ {cities.length - 8} más</span>}
+                    </div>
+                  </div>
+                </li>
+              ))
+            ))}
+          </ul>
+        </div>
+
+        <!-- Restoration Services -->
+        <div class="sitemap-section">
+          <h2>Servicios de Restauración</h2>
+          <ul>
+            {restorationGroups.map(group => (
+              <li>
+                <a href={`/restoration/${group.slug}`}>{group.name}</a>
+                {group.subservices && group.subservices.length > 0 && (
+                  <div class="subsection">
+                    <strong>Servicios Específicos:</strong>
+                    <ul class="subservice-list">
+                      {group.subservices.map(subservice => (
+                        <li>
+                          <a href={`/restoration/${group.slug}/${subservice.slug}`}>
+                            {subservice.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="sitemap-section">
+          <h2>Artículos del Blog</h2>
+          <ul>
+            {allBlogPosts
+              .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+              .map(post => (
+                <li>
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                  <span class="post-date">
+                    {new Date(post.data.date).toLocaleDateString('es-ES', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <!-- Cities Coverage -->
+        <div class="sitemap-section">
+          <h2>Ciudades que Servimos en Florida</h2>
+          <div class="cities-grid">
+            {cities.map(ciudad => (
+              <div class="city-card">
+                <h3>{ciudad.name}</h3>
+                <div class="service-links">
+                  {remodelingServices[0]?.subservices.slice(0, 3).map(servicio => (
+                    <a href={`/services/${servicio.slug}/${ciudad.slug}`} class="service-link">
+                      {servicio.title}
+                    </a>
+                  ))}
+                  {remodelingServices[0]?.subservices.length > 3 && (
+                    <span class="more-services">+ {remodelingServices[0].subservices.length - 3} más</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <footer class="sitemap-footer">
+        <div class="contact-info">
+          <h3>¿No encuentras lo que buscas?</h3>
+          <p>Contáctanos directamente para más información sobre nuestros servicios</p>
+          <a href="/contact" class="contact-btn">Contactar Ahora</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <style>
+    .sitemap-container {
+      padding: 3rem 0;
+      background: #f8fafc;
+      min-height: 70vh;
+    }
+
+    .sitemap-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .sitemap-header h1 {
+      font-size: 2.5rem;
+      color: #1a202c;
+      margin-bottom: 1rem;
+    }
+
+    .sitemap-header p {
+      font-size: 1.125rem;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .sitemap-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      border-top: 4px solid #35c3e9;
+    }
+
+    .sitemap-section h2 {
+      color: #35c3e9;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .sitemap-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sitemap-section > ul > li {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+
+    .sitemap-section > ul > li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .sitemap-section a {
+      color: #2d3748;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .sitemap-section a:hover {
+      color: #35c3e9;
+      text-decoration: underline;
+    }
+
+    .subsection {
+      margin-top: 0.75rem;
+      padding-left: 1rem;
+    }
+
+    .subsection strong {
+      color: #4a5568;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .city-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .city-link {
+      background: #e2e8f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.875rem !important;
+      color: #4a5568 !important;
+      font-weight: 400 !important;
+    }
+
+    .city-link:hover {
+      background: #35c3e9;
+      color: white !important;
+    }
+
+    .more-cities, .more-services {
+      font-size: 0.875rem;
+      color: #718096;
+      font-style: italic;
+    }
+
+    .subservice-list {
+      margin-top: 0.5rem;
+    }
+
+    .subservice-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-date {
+      display: block;
+      font-size: 0.875rem;
+      color: #718096;
+      margin-top: 0.25rem;
+    }
+
+    .cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .city-card {
+      background: #f7fafc;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .city-card h3 {
+      color: #2d3748;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .service-link {
+      font-size: 0.875rem !important;
+      color: #4a5568 !important;
+    }
+
+    .sitemap-footer {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      text-align: center;
+      border-top: 4px solid #35c3e9;
+    }
+
+    .contact-info h3 {
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info p {
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #35c3e9;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: #2bb3d9;
+      text-decoration: none;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sitemap-header h1 {
+        font-size: 2rem;
+      }
+
+      .sitemap-section {
+        padding: 1.5rem;
+      }
+
+      .cities-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>

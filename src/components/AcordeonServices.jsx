@@ -729,22 +729,6 @@ const FAQ = ({
                     )
                 )}
             </div>
-
-            {/* Información de contacto para emergencias */}
-            {(category === 'water' || category === 'fire' || category === 'storm' || category === 'mitigation') && (
-                <div className="emergencyContact">
-                    <div className="emergencyBanner">
-                        <i className="fas fa-phone-alt emergencyIcon"></i>
-                        <div className="emergencyInfo">
-                            <h4>Need immediate help?</h4>
-                            <p>24/7 emergency service available</p>
-                            <a href="tel:+17866022217" className="emergencyPhone">
-                                (786) 602-2217
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

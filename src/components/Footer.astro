@@ -5,102 +5,51 @@ const currentYear = new Date().getFullYear();
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <!-- LOGO SECTION -->
-      <div class="footer-section logo-section">
-        <a href="/" class="footer-logo-link">
-          <img
-            class="footer-logo"
-            src="/images/ppr-logo.png"
-            alt="Paramount Property Restoration - Florida's Complete Property Partner"
-          />
-        </a>
-        <p class="company-description">
-          Florida's complete property partner for emergency restoration and professional remodeling services.
-        </p>
-        <div class="service-badges">
-          <span class="badge emergency-badge">🚨 24/7 Emergency</span>
-          <span class="badge licensed-badge">✅ Licensed & Insured</span>
-        </div>
-      </div>
-
-      <!-- EMERGENCY RESTORATION LINKS -->
-      <div class="footer-section">
-        <h4>🚨 Emergency Restoration</h4>
-        <ul class="footer-links">
-          <li><a href="/restoration/water-damage">Water Damage</a></li>
-          <li><a href="/restoration/fire-damage">Fire Damage</a></li>
-          <li><a href="/restoration/mold-remediation">Mold Remediation</a></li>
-          <li><a href="/restoration/storm-damage">Storm Damage</a></li>
-          <li><a href="/restoration/mitigation-services">Mitigation Services</a></li>
-        </ul>
-      </div>
-
-      <!-- REMODELING SERVICES -->
-      <div class="footer-section">
-        <h4>🔨 Remodeling Services</h4>
-        <ul class="footer-links">
-          <li><a href="/services/kitchen-remodeling">Kitchen Remodeling</a></li>
-          <li><a href="/services/bathroom-remodeling">Bathroom Remodeling</a></li>
-          <li><a href="/services/home-additions-remodeling">Home Additions</a></li>
-          <li><a href="/services/living-dining-remodeling">Living & Dining</a></li>
-          <li><a href="/services/bedroom-remodeling">Bedroom Remodeling</a></li>
-        </ul>
-      </div>
-
-      <!-- QUICK LINKS -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">All Services</a></li>
-          <li><a href="/restoration">Restoration</a></li>
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/blog">Resources</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- CONTACT INFORMATION -->
-      <div class="footer-section contact-section">
-        <h4>Contact PPR</h4>
-        <div class="contact-info">
-          <!-- EMERGENCY CONTACT -->
-          <div class="contact-emergency">
-            <p class="contact-emergency-title">🚨 Emergency Line:</p>
-            <a href="tel:+17866022217" class="contact-emergency-phone">(786) 602-2217</a>
-            <span class="contact-availability">Available 24/7</span>
-          </div>
-
-          <!-- REGULAR CONTACT -->
-          <div class="contact-regular">
+      <!-- CONTACT & COMPANY INFO -->
+      <div class="footer-section main-section">
+        <h4>Paramount Property Restoration</h4>
+        <p class="company-tagline">Florida's trusted restoration and remodeling experts</p>
+        
+        <div class="contact-group">
+          <a href="tel:+17866022217" class="emergency-contact">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span>
+              <strong>(786) 602-2217</strong>
+              <small>24/7 Emergency Service</small>
+            </span>
+          </a>
+          
+          <div class="contact-details">
             <div class="contact-item">
-              <span class="contact-label">📞 Phone:</span>
-              <a href="tel:+17866022217">(786) 602-2217</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">✉️ Email:</span>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
               <a href="mailto:services@paramountpropertyrestoration.com">services@paramountpropertyrestoration.com</a>
             </div>
             <div class="contact-item">
-              <span class="contact-label">📍 Service Area:</span>
-              <span class="contact-value">All of Florida</span>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Serving All of Florida</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ELIMINADO: SERVICE AREAS SECTION -->
-    <!-- ELIMINADO: EMERGENCY BANNER -->
+      <!-- QUICK NAVIGATION -->
+      <div class="footer-section nav-section">
+        <h5>Our Services</h5>
+        <div class="nav-links">
+          <a href="/restoration">Emergency Restoration</a>
+          <a href="/services">Home Remodeling</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER BOTTOM -->
     <div class="footer-bottom">
       <div class="footer-bottom-content">
         <p class="copyright">&copy; {currentYear} Paramount Property Restoration. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
-          <a href="/sitemap">Sitemap</a>
+        <div class="footer-links">
+          <a href="/privacy-policy">Privacy</a>
+          <a href="/terms">Terms</a>
         </div>
       </div>
     </div>
@@ -108,260 +57,147 @@ const currentYear = new Date().getFullYear();
 </footer>
 
 <style>
-  /* ===== FOOTER MODERNO AZUL UNIFICADO - ORIGINAL ===== */
+  /* ===== MINIMALIST FOOTER ===== */
   .footer {
-    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-    color: #ffffff;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
     margin-top: auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02" fill-rule="nonzero"><circle cx="30" cy="30" r="4"/></g></g></svg>');
-    background-size: 60px 60px;
-    z-index: 1;
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    position: relative;
-    z-index: 2;
   }
 
   /* ===== MAIN FOOTER CONTENT ===== */
   .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
-    padding: 4rem 0 3rem;
+    padding: 2.5rem 0 1.5rem 0;
+    align-items: start;
   }
 
-  .footer-section {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* ===== LOGO SECTION MEJORADA ===== */
-  .logo-section {
-    align-items: flex-start;
-  }
-
-  .footer-logo-link {
-    display: inline-block;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .footer-logo-link:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  }
-
-  .footer-logo {
-    height: 80px;
-    width: auto;
-    filter: brightness(0) invert(1);
-  }
-
-  .company-description {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .service-badges {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .badge {
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .emergency-badge {
-    background: rgba(220, 53, 69, 0.2);
-    color: #ff6b6b;
-    border-color: rgba(220, 53, 69, 0.3);
-  }
-
-  .licensed-badge {
-    background: rgba(53, 195, 233, 0.2);
-    color: #35c3e9;
-    border-color: rgba(53, 195, 233, 0.3);
-  }
-
-  /* ===== SECTION TITLES ===== */
   .footer-section h4 {
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    color: #212529;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    position: relative;
-    padding-bottom: 0.75rem;
   }
 
-  .footer-section h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: #35c3e9;
-    border-radius: 1px;
-  }
-
-  /* ===== FOOTER LINKS ===== */
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 0;
-    display: block;
-    position: relative;
-    font-size: 0.95rem;
-  }
-
-  .footer-links a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 2px;
-    background: #35c3e9;
-    transition: width 0.3s ease;
-  }
-
-  .footer-links a:hover {
-    color: #35c3e9;
-    padding-left: 1rem;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover::before {
-    width: 20px;
-  }
-
-  /* ===== CONTACT SECTION MEJORADA ===== */
-  .contact-section {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-  }
-
-  .contact-emergency {
-    background: rgba(53, 195, 233, 0.15);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(53, 195, 233, 0.3);
-    text-align: center;
-  }
-
-  .contact-emergency-title {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.9rem;
-    color: #35c3e9;
+  .footer-section h5 {
+    color: #495057;
+    margin-bottom: 1rem;
+    font-size: 1rem;
     font-weight: 600;
   }
 
-  .contact-emergency-phone {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #35c3e9;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.5rem;
-    transition: all 0.3s ease;
+  /* ===== MAIN SECTION ===== */
+  .company-tagline {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
   }
 
-  .contact-emergency-phone:hover {
-    color: #2a9fd1;
-    transform: scale(1.05);
-  }
-
-  .contact-availability {
-    font-size: 0.85rem;
-    color: rgba(53, 195, 233, 0.8);
-    font-style: italic;
-  }
-
-  .contact-regular {
+  .contact-group {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .contact-item {
+  .emergency-contact {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    max-width: 300px;
   }
 
-  .contact-label {
+  .emergency-contact:hover {
+    background: #2980b9;
+    color: white;
+  }
+
+  .emergency-contact i {
+    font-size: 1.2rem;
+  }
+
+  .emergency-contact span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .emergency-contact strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .emergency-contact small {
+    font-size: 0.85rem;
+    opacity: 0.9;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6c757d;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    min-width: 80px;
+  }
+
+  .contact-item i {
+    color: var(--color-accent);
+    width: 16px;
+    text-align: center;
   }
 
   .contact-item a {
-    color: #35c3e9;
+    color: #6c757d;
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
   }
 
   .contact-item a:hover {
-    color: #2a9fd1;
-    text-decoration: underline;
+    color: var(--color-accent);
   }
 
-  .contact-value {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
+  /* ===== NAV SECTION ===== */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  /* ===== FOOTER BOTTOM MEJORADO ===== */
+  .nav-links a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-accent);
+  }
+
+  /* ===== FOOTER BOTTOM ===== */
   .footer-bottom {
-    padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+    background: #ffffff;
   }
 
   .footer-bottom-content {
@@ -373,127 +209,84 @@ const currentYear = new Date().getFullYear();
   }
 
   .copyright {
-    color: rgba(255, 255, 255, 0.7);
+    color: #6c757d;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  .footer-bottom-links {
+  .footer-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .footer-bottom-links a {
-    color: rgba(255, 255, 255, 0.7);
+  .footer-links a {
+    color: #6c757d;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
   }
 
-  .footer-bottom-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #35c3e9;
-    transition: width 0.3s ease;
-  }
-
-  .footer-bottom-links a:hover {
-    color: #35c3e9;
-    text-decoration: none;
-  }
-
-  .footer-bottom-links a:hover::after {
-    width: 100%;
+  .footer-links a:hover {
+    color: var(--color-accent);
   }
 
   /* ===== RESPONSIVE DESIGN ===== */
-  @media (max-width: 1024px) {
-    .footer-content {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .contact-section {
-      grid-column: span 3;
-    }
-  }
-
   @media (max-width: 768px) {
     .footer-content {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
-      padding: 3rem 0 2rem;
+      gap: 2rem;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+    }
+
+    .emergency-contact {
+      max-width: 100%;
+      justify-content: center;
+    }
+
+    .contact-details {
+      align-items: center;
+    }
+
+    .nav-links {
+      align-items: center;
     }
 
     .footer-bottom-content {
       flex-direction: column;
       text-align: center;
-      gap: 1.5rem;
-    }
-
-    .contact-regular {
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      flex-direction: column;
-      align-items: flex-start;
       gap: 0.5rem;
     }
 
-    .footer-bottom-links {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
+    .footer-links {
+      justify-content: center;
     }
   }
 
   @media (max-width: 480px) {
-    .service-badges {
-      flex-direction: row;
-      gap: 0.5rem;
+    .footer-content {
+      padding: 1.5rem 0 1rem 0;
+      gap: 1.5rem;
     }
 
-    .badge {
-      font-size: 0.75rem;
-      padding: 0.4rem 0.8rem;
+    .emergency-contact {
+      padding: 0.875rem 1rem;
     }
 
-    .footer-logo {
-      height: 60px;
+    .emergency-contact strong {
+      font-size: 1rem;
     }
 
-    .contact-emergency-phone {
-      font-size: 1.25rem;
+    .emergency-contact small {
+      font-size: 0.8rem;
     }
-  }
 
-  /* ===== ANIMACIONES SUTILES ===== */
-  @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.8; }
-    100% { opacity: 1; }
-  }
-
-  .emergency-badge {
-    animation: pulse 3s infinite;
-  }
-
-  /* ===== ACCESIBILIDAD ===== */
-  @media (prefers-reduced-motion: reduce) {
-    .emergency-badge {
-      animation: none;
+    .contact-item {
+      font-size: 0.85rem;
     }
-    
-    .footer-logo-link:hover {
-      transform: none;
+
+    .footer-bottom {
+      padding: 0.75rem 0;
     }
-  }
-</style> 2px;
   }
 </style>

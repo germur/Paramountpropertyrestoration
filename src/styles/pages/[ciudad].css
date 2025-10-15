@@ -3,29 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,
-            rgba(12, 78, 110, 0.4) 0%,
-            rgba(3, 23, 79, 0.5) 100%),
-        url("/images/backgroundTemplateSeo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     padding: var(--spacing-16) 0 6rem;
     color: white;
     position: relative;
-}
-
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-            rgba(12, 78, 110, 0.2) 0%,
-            rgba(3, 23, 79, 0.3) 100%);
-    z-index: 1;
+    overflow: hidden;
 }
 
 .hero-section .container {

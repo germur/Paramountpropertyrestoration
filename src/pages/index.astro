@@ -4,7 +4,6 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Steps from "../components/Steps";
 import LinkBuildingSection from "../components/linkBuilding.jsx";
-import EmergencyBanner from "../components/EmergencyBanner.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import SEOHead from "../components/SEOHead.jsx";
@@ -44,8 +43,6 @@ try {
     phone={"+1-786-602-2217"}
     slot="head"
   />
-  <!-- BANNER AZUL COMPARTIDO -->
-  <EmergencyBanner position="static" variant="home" />
 
   <section class="hero-section">
     <div class="hero-overlay">
@@ -236,10 +233,6 @@ try {
         </div>
       </div>
     </div>
-
-    <div class="emergency-footer">
-      <p>Need immediate help? <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217</a></p>
-    </div>
   </div>
 </section>
 
@@ -375,8 +368,8 @@ try {
   }
 
   .btn-blue {
-    background: var(--color-blue);
-    color: white;
+    background: var(--color-blue) !important;
+    color: white !important;
   }
 
   .btn-outline {
