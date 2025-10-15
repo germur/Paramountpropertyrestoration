@@ -1,95 +1,156 @@
 ---
 import '../styles/components/Header.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import HeaderNav from "../components/HeaderNav.jsx";
-const currentPath = Astro.url.pathname;
-
-const navItems = [
-  { href: "/", label: "Home" },
-
-  // Services
-  {
-    href: "/services",
-    label: "Services",
-    dropdown: [
-      { href: "/services/kitchen-remodeling", label: "Kitchen" },
-      { href: "/services/bathroom-remodeling", label: "Bathroom" },
-      { href: "/services/home-additions-remodeling", label: "Home Additions" },
-      { href: "/services/living-dining-remodeling", label: "Living & Dining" },
-      { href: "/services/bedroom-remodeling", label: "Bedroom" },
-    ],
-  },
-
-  // Restoration como MEGA MENÚ (con href en cada heading)
-  {
-    href: "/restoration",
-    label: "Restoration",
-    mega: [
-      {
-        heading: "Water Damage",
-        href: "/restoration/water-damage",
-        items: [
-          { href: "/restoration/water-damage/flood-damage", label: "Flood Damage" },
-          { href: "/restoration/water-damage/leak-repair", label: "Leak Repair" },
-          { href: "/restoration/water-damage/basement-flooding", label: "Basement Flooding" },
-          { href: "/restoration/water-damage/ceiling-water-damage", label: "Ceiling Water Damage" },
-          { href: "/restoration/water-damage/emergency-water-removal", label: "Emergency Water Removal" },
-        ],
-      },
-      {
-        heading: "Fire Damage",
-        href: "/restoration/fire-damage",
-        items: [
-          { href: "/restoration/fire-damage/smoke-damage", label: "Smoke Damage" },
-          { href: "/restoration/fire-damage/soot-cleanup", label: "Soot Cleanup" },
-          { href: "/restoration/fire-damage/fire-damage-repair", label: "Fire Damage Repair" },
-          { href: "/restoration/fire-damage/emergency-fire-response", label: "Emergency Fire Response" },
-        ],
-      },
-      {
-        heading: "Mold Remediation",
-        href: "/restoration/mold-remediation",
-        items: [
-          { href: "/restoration/mold-remediation/mold-inspection", label: "Mold Inspection" },
-          { href: "/restoration/mold-remediation/black-mold-removal", label: "Black Mold Removal" },
-          { href: "/restoration/mold-remediation/mold-prevention", label: "Mold Prevention" },
-          { href: "/restoration/mold-remediation/mold-testing", label: "Mold testing" },
-        ],
-      },
-      {
-        heading: "Storm Damage",
-        href: "/restoration/storm-damage",
-        items: [
-          { href: "/restoration/storm-damage/hurricane-damage", label: "Hurricane Damage" },
-          { href: "/restoration/storm-damage/wind-damage", label: "Wind Damage" },
-          { href: "/restoration/storm-damage/storm-debris-removal", label: "Storm Debris Removal" },
-          { href: "/restoration/storm-damage/emergency-storm-repair", label: "Emergency Storm Repair" },
-        ],
-      },
-      {
-        heading: "Mitigation Services",
-        href: "/restoration/mitigation-services",
-        items: [
-          { href: "/restoration/mitigation-services/water-mitigation", label: "Water Mitigation" },
-          { href: "/restoration/mitigation-services/fire-mitigation", label: "Fire Mitigation" },
-          { href: "/restoration/mitigation-services/mold-mitigation", label: "Mold Mitigation" },
-          { href: "/restoration/mitigation-services/storm-mitigation", label: "Storm Mitigation" },
-        ],
-      }
-    ],
-  },
-
-  { href: "/blog", label: "Resources" },
-  { href: "/contact", label: "Contact" },
-];
+import config from '../config.js';
+import { Icon } from './user/index.js';
 ---
 
-<HeaderNav
-  navItems={navItems}
-  currentPath={currentPath}
-  logoSrc="/images/ppr-logo.png"
-  client:idle
-/>
+<header-component
+  class='group sticky top-4 z-50 max-md:z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent max-sm:py-1 sm:rounded-2xl'
+>
+  <a
+    class='z-30 text-xl font-semibold group-[.not-top]:ms-2 sm:group-[.not-top]:ms-3'
+    style='transition:margin-inline 0.3s'
+    href='/'
+    aria-label='Paramount Property Restoration'>Paramount Property Restoration</a
+  >
+
+  <div class='flex items-center gap-x-2'>
+    {/* Menu links */}
+    <div
+      id='headerExpandContent'
+      class='end-0 start-0 top-12 grid border border-transparent group-[.not-top]:rounded-xl group-[.expanded]:opacity-100 dark:group-[.expanded.not-top]:bg-muted max-sm:absolute max-sm:opacity-0 max-sm:group-[.not-top]:border-border max-sm:group-[.expanded.not-top]:bg-background max-sm:group-[.not-top]:px-4 max-sm:group-[.not-top]:py-2 sm:grid-rows-1'
+    >
+      <div class='flex flex-col items-center justify-center overflow-hidden sm:flex-row'>
+        <a
+          href="/"
+          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
+          aria-label='Home'
+        >
+          Home
+        </a>
+        <a
+          href="/services"
+          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
+          aria-label='Services'
+        >
+          Services
+        </a>
+        <a
+          href="/restoration"
+          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
+          aria-label='Restoration'
+        >
+          Restoration
+        </a>
+        <a
+          href="/blog"
+          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
+          aria-label='Resources'
+        >
+          Resources
+        </a>
+        <a
+          href="/contact"
+          class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
+          aria-label='Contact'
+        >
+          Contact
+        </a>
+        <div class='flex w-full grow flex-row justify-end gap-x-3 sm:w-fit sm:gap-x-5'>
+          <a href="tel:+17866022217" class='px-1 py-2 transition-none sm:px-2' title='Emergency Call'>
+            <span class='sr-only'>24/7 Emergency Service</span>
+            <i class="fas fa-phone" style="color: var(--emergency-orange); font-size: 1.2rem;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* buttons */}
+    <div class='z-30 flex gap-x-4 group-[.not-top]:gap-x-2' style='transition:gap 0.3s'>
+      <button
+        id='toggleDarkMode'
+        class='group/dark box-content size-5 rounded-md border p-1.5 transition-colors hover:bg-border sm:group-[.not-top]:rounded-xl'
+      >
+        <span class='sr-only'>Dark Theme</span>
+        <i class="fas fa-desktop system size-5 group-hover/dark:text-primary"></i>
+        <i class="fas fa-sun light hidden size-5 group-hover/dark:text-primary"></i>
+        <i class="fas fa-moon dark hidden size-5 group-hover/dark:text-primary"></i>
+      </button>
+      <button
+        id='toggleMenu'
+        class='rounded-md border p-1.5 transition-colors hover:bg-border sm:hidden sm:group-[.not-top]:rounded-xl'
+      >
+        <span class='sr-only'>Menu</span>
+        <i class="fas fa-bars size-5"></i>
+      </button>
+    </div>
+  </div>
+</header-component>
+
+{/* Use inline to load theme quicker */}
+<script is:inline>
+  // Initialize theme immediately
+  function initTheme() {
+    const theme = localStorage.getItem('theme') || 'system'
+    
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else if (theme === 'light') {
+      document.documentElement.classList.remove('dark')
+    } else {
+      // system
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    }
+    
+    // Update button state
+    const toggleDarkModeElement = document.getElementById('toggleDarkMode')
+    if (toggleDarkModeElement) {
+      toggleDarkModeElement.dataset.theme = theme
+    }
+  }
+  
+  initTheme()
+</script>
+<script>
+  import { setTheme, showToast } from '../utils/index.js'
+
+  class Header extends HTMLElement {
+    constructor() {
+      super()
+    }
+
+    connectedCallback() {
+      // Header
+      let preScrollY = window.scrollY
+      this.classList.toggle('not-top', preScrollY > 20)
+      window.addEventListener('scroll', () => {
+        this.classList.toggle('not-top', window.scrollY > 20)
+        this.dataset.show = (window.scrollY < 350 || window.scrollY < preScrollY).toString()
+        preScrollY = window.scrollY
+      })
+
+      // Dark Mode
+      const darkModeBtn = this.querySelector('#toggleDarkMode') as HTMLElement
+      darkModeBtn.addEventListener('click', () => {
+        const newTheme = setTheme(undefined, true)
+        darkModeBtn.dataset.theme = newTheme
+        showToast({ message: `Set theme to ${newTheme}` })
+      })
+
+      // Menu
+      this.querySelector('#toggleMenu')?.addEventListener('click', () => {
+        this.classList.toggle('expanded')
+      })
+    }
+  }
+
+  customElements.define('header-component', Header)
+</script>
 
 
 
