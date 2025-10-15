@@ -37,11 +37,11 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
       <h1 class="hero-title">Get Professional Help Today</h1>
       <p class="hero-description">Ready to transform your property? We're here 24/7 for emergencies and free consultations across Florida.</p>
       <div class="hero-actions">
-        <a href="tel:+17866022217" class="cta-action">
+        <a href="tel:+17866022217" class="btn btn-primary emergency-cta">
           <i class="fas fa-phone"></i>
           Call Now: (786) 602-2217
         </a>
-        <a href="#contact-form" class="cta-secondary">
+        <a href="#contact-form" class="btn btn-outline message-cta">
           <i class="fas fa-envelope"></i>
           Send Message
         </a>
@@ -192,6 +192,117 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 </BaseLayout>
 
 <style>
+  /* ===== CONTACT HERO BACKGROUND FIX ===== */
+  .contact-hero {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    background-image: url('/images/heroContact.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+
+  .contact-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .contact-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* ===== HERO BUTTON FIXES ===== */
+  .emergency-cta {
+    background: var(--color-error) !important;
+    color: white !important;
+    border: 2px solid var(--color-error) !important;
+    padding: 1rem 2rem !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-size: 1rem !important;
+  }
+
+  .emergency-cta:hover {
+    background: #dc2626 !important;
+    color: white !important;
+    border-color: #dc2626 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+    text-decoration: none !important;
+  }
+
+  .message-cta {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+    padding: 1rem 2rem !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-size: 1rem !important;
+  }
+
+  .message-cta:hover {
+    background: white !important;
+    color: var(--color-primary) !important;
+    border-color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3) !important;
+    text-decoration: none !important;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .emergency-cta,
+    .message-cta {
+      width: 100% !important;
+      max-width: 280px !important;
+    }
+
+    .contact-hero {
+      min-height: 50vh;
+      padding: 1.5rem;
+    }
+  }
+
   /* ===== SECTION HEADER ===== */
   .section-header {
     text-align: center;
