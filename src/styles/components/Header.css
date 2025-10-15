@@ -9,8 +9,8 @@
   --border: #e5e7eb;
   --background: #ffffff;
   --muted: #f9fafb;
-  --emergency-orange: #ff6b35;
-  --emergency-orange-hover: #e55a2b;
+  --emergency-orange: #F59E0B;
+  --emergency-orange-hover: #d97706;
   --header-bg: rgba(255, 255, 255, 0.95);
   --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --border-radius: 16px;
@@ -28,8 +28,7 @@
 
 /* Main Header */
 .header {
-  position: sticky;
-  top: 20px;
+  position: relative;
   z-index: 50;
   margin-bottom: 3rem;
   backdrop-filter: blur(20px);
@@ -66,7 +65,7 @@
 }
 
 .imglogoHeader {
-  height: 45px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -492,7 +491,6 @@
 /* Responsive Design */
 @media (max-width: 1023px) {
   .header {
-    top: 10px;
     margin-bottom: 2rem;
   }
   
@@ -501,13 +499,12 @@
   }
   
   .imglogoHeader {
-    height: 40px;
+    height: 50px;
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    top: 5px;
     margin-bottom: 1.5rem;
     margin-left: 10px;
     margin-right: 10px;
