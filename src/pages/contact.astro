@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SEOHead from "../components/SEOHead.jsx";
+import AnimatedBackground from "../components/AnimatedBackground.jsx";
 
 const pageTitle = "Contact Paramount Property Restoration | 24/7 Emergency Response";
 const pageDescription = "Call (786) 602-2217 for immediate help. Request free inspections or remodeling estimates across Florida.";
@@ -27,24 +28,26 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
   />
 
   <!-- HERO SECTION -->
-  <section class="hero-section contact-hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fas fa-phone-alt"></i>
-        24/7 Emergency Response
-      </div>
-      <h1 class="hero-title">Get Professional Help Today</h1>
-      <p class="hero-description">Ready to transform your property? We're here 24/7 for emergencies and free consultations across Florida.</p>
-      <div class="hero-actions">
-        <a href="tel:+17866022217" class="btn btn-primary emergency-cta">
-          <i class="fas fa-phone"></i>
-          Call Now: (786) 602-2217
-        </a>
-        <a href="#contact-form" class="btn btn-outline message-cta">
-          <i class="fas fa-envelope"></i>
-          Send Message
-        </a>
+  <section class="hero-section">
+    <AnimatedBackground client:load />
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-phone-alt"></i>
+          24/7 Emergency Response
+        </div>
+        <h1 class="hero-title">Get Professional Help Today</h1>
+        <p class="hero-description">Ready to transform your property? We're here 24/7 for emergencies and free consultations across Florida.</p>
+        <div class="hero-actions">
+          <a href="tel:+17866022217" class="btn-primary">
+            <i class="fas fa-phone"></i>
+            Call Now: (786) 602-2217
+          </a>
+          <a href="#contact-form" class="btn-outline">
+            <i class="fas fa-envelope"></i>
+            Send Message
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -192,88 +195,52 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
 </BaseLayout>
 
 <style>
-  /* ===== CONTACT HERO BACKGROUND FIX ===== */
-  .contact-hero {
+  /* ===== HERO SECTION ===== */
+  .hero-section {
     position: relative;
-    width: 100%;
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    text-align: center;
-    color: white;
-    background-image: url('/images/heroContact.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
+    padding: 2rem 0;
+    overflow: hidden;
   }
 
-  .contact-hero .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-  }
-
-  .contact-hero .hero-content {
+  .hero-content {
     position: relative;
     z-index: 2;
+    text-align: center;
+    color: white;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 2rem;
   }
 
-  /* ===== HERO BUTTON FIXES ===== */
-  .emergency-cta {
-    background: var(--color-error) !important;
-    color: white !important;
-    border: 2px solid var(--color-error) !important;
-    padding: 1rem 2rem !important;
-    border-radius: 50px !important;
-    font-weight: 600 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    font-size: 1rem !important;
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .emergency-cta:hover {
-    background: #dc2626 !important;
-    color: white !important;
-    border-color: #dc2626 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
-    text-decoration: none !important;
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
-  .message-cta {
-    background: transparent !important;
-    color: white !important;
-    border: 2px solid white !important;
-    padding: 1rem 2rem !important;
-    border-radius: 50px !important;
-    font-weight: 600 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease !important;
-    font-size: 1rem !important;
-  }
-
-  .message-cta:hover {
-    background: white !important;
-    color: var(--color-primary) !important;
-    border-color: white !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3) !important;
-    text-decoration: none !important;
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
   }
 
   .hero-actions {
@@ -281,25 +248,25 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 2rem;
   }
 
   @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
     .hero-actions {
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
     }
 
-    .emergency-cta,
-    .message-cta {
-      width: 100% !important;
-      max-width: 280px !important;
-    }
-
-    .contact-hero {
+    .hero-section {
       min-height: 50vh;
-      padding: 1.5rem;
+      padding: 1.5rem 0;
     }
   }
 
