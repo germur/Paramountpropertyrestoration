@@ -1,3 +1,16 @@
+/* Ensure mobile menu appears above all content */
+body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Ensure all page content has appropriate z-index stacking */
+main {
+    position: relative;
+    z-index: 1;
+}
+
 /* Quality banner for services */
 .quality-banner {
   display: inline-flex;
