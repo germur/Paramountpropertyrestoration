@@ -2,7 +2,7 @@
 import '../styles/components/Header.css';
 import HeaderNav from './HeaderNav.jsx';
 
-// Data for navigation - matching the previous working structure
+// Data for navigation - matching the correct URLs and structure
 const navItems = [
   {
     label: 'Home',
@@ -16,18 +16,11 @@ const navItems = [
         heading: 'Remodeling Services',
         href: '/services',
         items: [
-          { label: 'Bathroom Remodeling', href: '/services/bathroom-remodeling' },
-          { label: 'Kitchen Remodeling', href: '/services/kitchen-remodeling' },
-          { label: 'Home Additions', href: '/services/home-additions' },
-          { label: 'Living & Dining Room', href: '/services/living-dining-room-remodeling' },
-        ]
-      },
-      {
-        heading: 'Commercial Services', 
-        href: '/services',
-        items: [
-          { label: 'Office Remodeling', href: '/services/office-remodeling' },
-          { label: 'Commercial Restoration', href: '/restoration' },
+          { label: 'Kitchen', href: '/services/kitchen-remodeling' },
+          { label: 'Bathroom', href: '/services/bathroom-remodeling' },
+          { label: 'Dining', href: '/services/living-dining-remodeling' },
+          { label: 'Bedroom', href: '/services/bedroom-remodeling' },
+          { label: 'Home Additions', href: '/services/home-additions-remodeling' },
         ]
       }
     ]
@@ -37,28 +30,14 @@ const navItems = [
     href: '/restoration',
     mega: [
       {
-        heading: 'Water Damage',
-        href: '/restoration/water-damage',
-        items: [
-          { label: 'Emergency Water Removal', href: '/restoration/water-damage/emergency-water-removal' },
-          { label: 'Flood Damage Restoration', href: '/restoration/water-damage/flood-damage-restoration' },
-          { label: 'Sewage Cleanup', href: '/restoration/water-damage/sewage-cleanup' },
-        ]
-      },
-      {
-        heading: 'Fire Damage',
-        href: '/restoration/fire-damage', 
-        items: [
-          { label: 'Fire Damage Restoration', href: '/restoration/fire-damage/fire-damage-restoration' },
-          { label: 'Smoke Damage Cleanup', href: '/restoration/fire-damage/smoke-damage-cleanup' },
-        ]
-      },
-      {
-        heading: 'Other Services',
+        heading: 'Restoration Services',
         href: '/restoration',
         items: [
-          { label: 'Mold Remediation', href: '/restoration/mold' },
-          { label: 'Storm Damage Repair', href: '/restoration/storm-damage' },
+          { label: 'Water Damage', href: '/restoration/water-damage' },
+          { label: 'Fire', href: '/restoration/fire-damage' },
+          { label: 'Mold', href: '/restoration/mold-remediation' },
+          { label: 'Storm', href: '/restoration/storm-damage' },
+          { label: 'Mitigation', href: '/restoration/mitigation-services' },
         ]
       }
     ]
@@ -68,12 +47,8 @@ const navItems = [
     href: '/blog',
     dropdown: [
       { label: 'Blog', href: '/blog' },
-      { label: 'Emergency Tips', href: '/blog/emergency-tips' },
+      { label: 'Contact', href: '/contact' },
     ]
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
   },
 ];
 
