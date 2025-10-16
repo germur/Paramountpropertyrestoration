@@ -1,3 +1,54 @@
+/* Ensure mobile menu appears above all content */
+body.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure all page content has appropriate z-index stacking */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Quality banner for services */
+.quality-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.quality-banner .quality-icon {
+  font-size: 1rem;
+}
+
+.quality-banner .quality-phone {
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .quality-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .quality-banner .quality-phone {
+    margin-left: 0;
+  }
+}
+
 /* ===== ENHANCED HERO SECTIONS ===== */
 
 .hero-badge {
@@ -40,7 +91,7 @@
 }
 
 .feature-item i {
-  color: var(--color-accent);
+  color: #35c3e9;
   font-size: 1.2rem;
 }
 
@@ -73,12 +124,15 @@
 }
 
 .cta-button.primary {
-  background: var(--color-accent);
+  background: #35c3e9;
   color: white;
+  border-color: #35c3e9;
 }
 
 .cta-button.primary:hover {
-  background: var(--color-accent-hover);
+  background: #2a9fd1;
+  color: white;
+  border-color: #2a9fd1;
   transform: translateY(-2px);
 }
 
@@ -90,7 +144,8 @@
 
 .cta-button.secondary:hover {
   background: white;
-  color: var(--color-primary);
+  color: #1E293B;
+  border-color: white;
 }
 
 /* Enhanced Services Overview */
@@ -1171,15 +1226,16 @@ body[data-page="living-dining"] .hero-section {
 .btn-secondary,
 .cta-secondary {
   background: transparent;
-  color: white !important;
-  border: 2px solid white;
+  color: var(--color-accent) !important;
+  border: 2px solid var(--color-accent);
 }
 
 .btn-outline:hover,
 .btn-secondary:hover,
 .cta-secondary:hover {
-  background: white;
-  color: var(--color-primary) !important;
+  background: var(--color-accent);
+  color: white !important;
+  border-color: var(--color-accent);
 }
 
 .btn:hover,

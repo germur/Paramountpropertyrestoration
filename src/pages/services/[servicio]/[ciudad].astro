@@ -2,72 +2,45 @@
 // src/pages/services/[servicio]/[ciudad].astro
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import '../../../styles/pages/[ciudad].css'
-import { restorationGroups, cities } from "../../../data/restoration.js";
+import { serviceGroups, getAllGroupCityCombinations } from "../../../data/services.js";
+import { cities } from "../../../data/restoration.js";
 import SEOHead from "../../../components/SEOHead.jsx";
 import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export async function getStaticPaths() {
-  const combinations = [];
-  
-  // Solo servicios de remodeling (services)
-  restorationGroups.forEach(group => {
-    // Solo incluir servicios que van en /services/ (remodeling)
-    if (group.slug === "remodeling-services" || 
-        group.subservices.some(sub => sub.categoria === "remodeling")) {
-      group.subservices.forEach(service => {
-        cities.forEach(city => {
-          combinations.push({
-            params: {
-              servicio: service.slug,
-              ciudad: city.slug,
-            },
-            props: {
-              servicioData: {
-                ...service,
-                groupSlug: group.slug,
-                groupName: group.name,
-                template: group.template
-              },
-              ciudadData: city,
-            },
-          });
-        });
-      });
-    }
-  });
-
-  return combinations;
+  return getAllGroupCityCombinations().map(combo => ({
+    params: {
+      servicio: combo.servicio,
+      ciudad: combo.ciudad,
+    },
+    props: {
+      servicioData: combo.serviceData,
+      ciudadData: combo.cityData,
+    },
+  }));
 }
 
 const { servicio, ciudad } = Astro.params;
 const { servicioData, ciudadData } = Astro.props;
 
 // Generar contenido dinámico
-const pageTitle = `${servicioData.nombre || servicioData.title} in ${ciudadData.nombre} | Paramount Property Restoration`;
-const pageDescription = `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. Licensed professionals with quality guaranteed work.`;
+const pageTitle = `${servicioData.name} in ${ciudadData.nombre} | Paramount Property Restoration`;
+const pageDescription = `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. Licensed contractors with quality guaranteed work and free consultations.`;
 
 // Contenido dinámico
 const heroContent = {
-  title: `${servicioData.nombre || servicioData.title} in ${ciudadData.nombre}`,
-  subtitle: `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}.`,
-  ctaText: `Get Free Quote in ${ciudadData.nombre}`,
+  title: `${servicioData.name} in ${ciudadData.nombre}`,
+  subtitle: `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre} with quality craftsmanship and guaranteed results.`,
+  ctaText: `Get Free Consultation in ${ciudadData.nombre}`,
 };
 
-// Determinar si es servicio de emergencia o remodelación
-const isEmergencyService = servicioData.categoria === 'restoration';
-
-// Servicios relacionados dinámicos según el tipo
-const allServices = isEmergencyService ? [
-  { name: "Water Damage Restoration", icon: "💧" },
-  { name: "Fire Damage Restoration", icon: "🔥" },
-  { name: "Mold Remediation", icon: "🧽" },
-  { name: "Storm Damage Repair", icon: "⛈️" },
-  { name: "Emergency Services", icon: "🚨" },
-] : [
-  { name: "Bathroom Remodeling", icon: "🛁" },
+// Servicios relacionados para remodeling
+const relatedServices = [
   { name: "Kitchen Remodeling", icon: "🍳" },
+  { name: "Bathroom Renovation", icon: "🛁" },
+  { name: "Bedroom Design", icon: "🛏️" },
   { name: "Living & Dining", icon: "🛋️" },
-  { name: "Bedroom Remodeling", icon: "🛏️" },
   { name: "Home Additions", icon: "🏡" },
 ];
 
@@ -80,20 +53,15 @@ const serviceAreaCities = [
   "Kendall",
 ];
 
-// Características específicas por tipo de servicio
-const serviceFeatures = isEmergencyService ? [
-  "24/7 emergency response team",
-  "Advanced equipment & techniques", 
-  "Insurance claim assistance",
-  "Licensed & certified technicians"
-] : [
-  "On-site consultation & custom planning",
-  "Code-compliant materials & installation",
-  "Fast timelines and real-time updates", 
-  "Satisfaction guarantee on every job"
+// Características específicas para remodeling services
+const serviceFeatures = [
+  "Free in-home consultation & design",
+  "Licensed & insured contractors",
+  "Quality materials and craftsmanship", 
+  "Project management & timely completion"
 ];
 
-const serviceName = servicioData.nombre || servicioData.title;
+const serviceName = servicioData.name;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -122,12 +90,12 @@ const serviceName = servicioData.nombre || servicioData.title;
         <!-- Service badges -->
         <div class="service-badges">
           {
-            allServices.map((service) => (
+            relatedServices.map((service) => (
               <span
                 class="service-badge"
                 class:list={[
                   service.name.replace(/[^a-zA-Z]/g, "").toLowerCase().includes(
-                    serviceName.replace(/[^a-zA-Z]/g, "").toLowerCase().substring(0, 8)
+                    serviceName.replace(/[^a-zA-Z]/g, "").toLowerCase().substring(0, 7)
                   ) && "active",
                 ]}
               >
@@ -138,14 +106,12 @@ const serviceName = servicioData.nombre || servicioData.title;
           }
         </div>
 
-        <!-- Emergency banner for restoration services -->
-        {isEmergencyService && (
-          <div class="emergency-banner">
-            <span class="emergency-icon">🚨</span>
-            <span class="emergency-text">24/7 Emergency Response Available</span>
-            <span class="emergency-phone">Call Now: (786) 602-2217</span>
-          </div>
-        )}
+        <!-- Quality badge for remodeling services -->
+        <div class="quality-banner">
+          <span class="quality-icon">🏆</span>
+          <span class="quality-text">Licensed & Insured Contractors</span>
+          <span class="quality-phone">Free Consultation: (786) 602-2217</span>
+        </div>
 
         <!-- Main heading -->
         <h1 class="hero-title">
@@ -161,7 +127,7 @@ const serviceName = servicioData.nombre || servicioData.title;
         <!-- CTA Button -->
         <div class="hero-cta">
           <a href="/contact" class="btn-primary">
-            {isEmergencyService ? "Get Emergency Help" : "Get Free Quote"} →
+            Get Free Consultation →
           </a>
         </div>
       </div>
@@ -175,9 +141,9 @@ const serviceName = servicioData.nombre || servicioData.title;
         <div class="overview-content">
           <h2>{serviceName} Services You Can Trust</h2>
           <p class="overview-text">
-            We deliver {isEmergencyService ? "emergency" : "full-service"} {serviceName.toLowerCase()} in {
+            We deliver professional {serviceName.toLowerCase()} in {
               ciudadData.nombre
-            } with expert {isEmergencyService ? "technicians" : "contractors"}, {isEmergencyService ? "advanced equipment" : "clean installations"}, and results you can rely on.
+            } with expert contractors, quality materials, and results that exceed expectations. Every project is customized to your specific needs and preferences.
           </p>
 
           <ul class="service-features">
@@ -199,91 +165,103 @@ const serviceName = servicioData.nombre || servicioData.title;
             }, and {serviceAreaCities[3]}.
           </p>
           <a href="/contact" class="btn-outline">
-            {isEmergencyService ? "Request Emergency Service" : "Check Availability"} in Your Neighborhood →
+            Schedule Free Consultation in {ciudadData.nombre} →
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Visual Gallery Section -->
-  <section class="section gallery-section">
+  <!-- Why Choose Us Section -->
+  <section class="section why-choose-section">
     <div class="container">
       <h2 class="section-title">
-        See Our {serviceName} Projects Across Florida
+        Why Choose Our {serviceName} in {ciudadData.nombre}?
       </h2>
       <p class="section-subtitle">
-        We offer {serviceName.toLowerCase()} in {ciudadData.nombre} and throughout
-        {ciudadData.region}, including neighborhoods like {
-          serviceAreaCities.slice(0, 2).join(" and ")
-        }.
+        We combine years of experience with the latest techniques to deliver exceptional results that stand the test of time.
       </p>
 
-      <div class="gallery-grid">
-        {isEmergencyService ? (
-          <>
-            <a href="/portfolio" class="gallery-card-link">
-              <div class="gallery-item">
-                <img
-                  src="/images/water-damage-before-after.jpg"
-                  alt="Water Damage Restoration Before and After"
-                  class="gallery-image"
-                />
-                <div class="gallery-overlay">
-                  <h4>Water Damage Recovery</h4>
-                  <p>Complete restoration and drying</p>
-                </div>
-              </div>
-            </a>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Licensed & Certified</h3>
+          <p>All contractors are licensed, insured, and certified to work in {ciudadData.county}.</p>
+        </div>
 
-            <a href="/portfolio" class="gallery-card-link">
-              <div class="gallery-item">
-                <img
-                  src="/images/fire-damage-restoration.jpg"
-                  alt="Fire Damage Restoration"
-                  class="gallery-image"
-                />
-                <div class="gallery-overlay">
-                  <h4>Fire Damage Repair</h4>
-                  <p>Smoke and structural restoration</p>
-                </div>
-              </div>
-            </a>
-          </>
-        ) : (
-          <>
-            <a href="/portfolio" class="gallery-card-link">
-              <div class="gallery-item">
-                <img
-                  src="/images/BanoAntesDespues.jpeg"
-                  alt="Bathroom Remodeling Before and After"
-                  class="gallery-image"
-                />
-                <div class="gallery-overlay">
-                  <h4>Bathroom Transformation</h4>
-                  <p>Luxury finishes and modern fixtures</p>
-                </div>
-              </div>
-            </a>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>On-Time Completion</h3>
+          <p>We stick to schedules and complete your {serviceName.toLowerCase()} project on time, every time.</p>
+        </div>
 
-            <a href="/portfolio" class="gallery-card-link">
-              <div class="gallery-item">
-                <img
-                  src="/images/concinaAntesDespues.jpeg"
-                  alt="Kitchen Renovation"
-                  class="gallery-image"
-                />
-                <div class="gallery-overlay">
-                  <h4>Kitchen Upgrade</h4>
-                  <p>Modern design with custom cabinets</p>
-                </div>
-              </div>
-            </a>
-          </>
-        )}
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Quality Guarantee</h3>
+          <p>Every project comes with comprehensive warranties covering materials and workmanship.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees or surprise costs. Get detailed estimates before work begins.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Process Section -->
+  <section class="section process-section">
+    <div class="container">
+      <h2 class="section-title">Our {serviceName} Process</h2>
+      <p class="section-subtitle">
+        From consultation to completion, we follow a proven process that ensures quality results.
+      </p>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Free Consultation</h3>
+            <p>We visit your {ciudadData.nombre} property to assess your needs and provide a detailed estimate.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Design & Planning</h3>
+            <p>Create detailed plans and select materials that match your style and budget preferences.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Professional Installation</h3>
+            <p>Our certified team completes your {serviceName.toLowerCase()} with precision and attention to detail.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Final Inspection</h3>
+            <p>We conduct a thorough quality check and walkthrough to ensure your complete satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- FAQs Section -->
   <section class="section faq-section">
@@ -295,31 +273,19 @@ const serviceName = servicioData.nombre || servicioData.title;
       <div class="faq-grid">
         <div class="faq-item">
           <h3 class="faq-question">
-            {isEmergencyService 
-              ? `How quickly can you respond to ${serviceName.toLowerCase()} emergencies in ${ciudadData.nombre}?`
-              : `Do I need a permit for ${serviceName.toLowerCase()} in ${ciudadData.nombre}?`
-            }
+            Do I need a permit for {serviceName.toLowerCase()} in {ciudadData.nombre}?
           </h3>
           <p class="faq-answer">
-            {isEmergencyService 
-              ? `We provide 24/7 emergency response in ${ciudadData.nombre} with typical arrival times of 30-60 minutes for urgent situations.`
-              : `Yes, but we handle all permits and city documentation for you. Our team is familiar with ${ciudadData.county} requirements and ensures full compliance.`
-            }
+            Yes, but we handle all permits and city documentation for you. Our team is familiar with {ciudadData.county} requirements and ensures full compliance.
           </p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question">
-            {isEmergencyService
-              ? `Will insurance cover ${serviceName.toLowerCase()} costs?`
-              : `How long does a typical ${serviceName.toLowerCase()} project take?`
-            }
+            How long does a typical {serviceName.toLowerCase()} project take?
           </h3>
           <p class="faq-answer">
-            {isEmergencyService
-              ? `Most insurance policies cover emergency restoration services. We work directly with insurance companies and can help you navigate the claims process.`
-              : `Most ${serviceName.toLowerCase()} projects in ${ciudadData.nombre} are completed within 5–10 business days, depending on the scope and complexity.`
-            }
+            Most {serviceName.toLowerCase()} projects in {ciudadData.nombre} are completed within 5–10 business days, depending on the scope and complexity.
           </p>
         </div>
 
@@ -337,16 +303,10 @@ const serviceName = servicioData.nombre || servicioData.title;
 
         <div class="faq-item">
           <h3 class="faq-question">
-            {isEmergencyService
-              ? `Are your technicians licensed and certified?`
-              : `Do you offer warranties on your ${serviceName.toLowerCase()}?`
-            }
+            Do you offer warranties on your {serviceName.toLowerCase()}?
           </h3>
           <p class="faq-answer">
-            {isEmergencyService
-              ? `Yes, all our restoration technicians are fully licensed, certified, and trained in the latest industry standards and safety protocols.`
-              : `Yes, all our ${serviceName.toLowerCase()} work comes with comprehensive warranties covering both materials and labor for your peace of mind.`
-            }
+            Yes, all our {serviceName.toLowerCase()} work comes with comprehensive warranties covering both materials and labor for your peace of mind.
           </p>
         </div>
       </div>

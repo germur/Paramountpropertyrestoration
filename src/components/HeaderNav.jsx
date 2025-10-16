@@ -34,6 +34,26 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
         return () => document.removeEventListener("keydown", onEsc);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.classList.add('mobile-menu-open');
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = '0px'; // Prevent layout shift
+        } else {
+            document.body.classList.remove('mobile-menu-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        }
+        
+        // Cleanup on unmount
+        return () => {
+            document.body.classList.remove('mobile-menu-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        };
+    }, [mobileOpen]);
+
     const isActive = (href) => href === currentPath;
 
     // desktop toggles (garantiza uno abierto)
@@ -163,6 +183,7 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
                 </div>
 
                 {/* Mobile */}
+                {mobileOpen && <div className="mobile-overlay" onClick={() => setMobileOpen(false)}></div>}
                 <nav className={`nav mobile-nav ${mobileOpen ? "show" : ""}`} aria-label="Primary mobile">
                     <ul className="nav-list">
                         {navItems.map((item) => {

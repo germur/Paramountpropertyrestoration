@@ -1,11 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import UnifiedServiceTemplate from "../../components/services/templates/UnifiedServiceTemplate.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import FAQ from "../../components/AcordeonServices";
 import SEOHead from "../../components/SEOHead.jsx";
+import { getServiceGroup } from "../../data/services.js";
 
-// SEO base para hub de Services (sin ciudad)
+const pageData = {
+  group: getServiceGroup("bedroom-remodeling"),
+  sub: null
+};
+
 const pageTitle = "Bedroom Renovation Services | Paramount Property Restoration";
 const pageDescription = "Modern bedroom redesigns with lighting, storage, and smart layouts. Free consultation available.";
 ---
@@ -15,7 +20,6 @@ const pageDescription = "Modern bedroom redesigns with lighting, storage, and sm
   description={pageDescription}
   data-page="bedroom"
 >
-  {/* SEO centralizado con SEOHead (hub sin ciudad) */}
   <SEOHead
     title={pageTitle}
     description={pageDescription}
@@ -32,243 +36,5 @@ const pageDescription = "Modern bedroom redesigns with lighting, storage, and sm
     slot="head"
   />
 
-  <!-- Hero Section -->
-  <section class="hero-section" style="background-image: url('/images/bedroomHero.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Bedroom Remodeling in Florida: Your Personal Retreat</h1>
-      <p>
-        Transform your bedroom into a comfortable, stylish sanctuary. Custom
-        designs for master suites, guest rooms, and kids' rooms across Central
-        Florida and coastal areas
-      </p>
-      <a href="/contact" class="btn"
-        >Get Your Free Bedroom Remodel Estimate →</a
-      >
-    </div>
-  </section>
-
-  <!-- Services Grid Section -->
-  <section class="section">
-    <div class="container">
-      <div class="services-grid">
-        <div class="service-item">
-          <i class="fas fa-bed"></i>
-          <h3>Closet & Storage</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-paint-roller"></i>
-          <h3>Painting & Wall Repair</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-layer-group"></i>
-          <h3>Flooring Replacement</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Lighting Installation</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-door-open"></i>
-          <h3>Doors & Windows</h3>
-        </div>
-
-        <div class="service-item">
-          <i class="fas fa-home"></i>
-          <h3>Full Remodel</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions Cards Section -->
-  <section class="solutions-section">
-    <div class="container">
-      <h2 class="solutions-title">Tailored Bedroom Remodeling Solutions</h2>
-      <div class="solutions-grid">
-        <!-- Card 1 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img
-              src="/images/bedroomSolutionOne.jpg"
-              alt="Master Suite Transformation"
-            />
-          </div>
-          <div class="card-content">
-            <h3>Master Suite Transformations</h3>
-            <p>Create a luxurious and functional master bedroom with custom layouts, en-suite bathrooms, and dedicated sitting areas. Your ultimate personal oasis.</p>
-            <a href="/contact" class="btn">View Master Suite Projects</a>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img src="/images/bedroomSolutionTwo.jpg" alt="Custom Closet Design" />
-          </div>
-          <div class="card-content">
-            <h3>Custom Closet Design</h3>
-            <p>Maximize your storage with custom walk-in or reach-in closets. Designed for organization, efficiency, and seamless integration with your bedroom aesthetic.</p>
-            <a href="/contact" class="btn">Explore Closet Solutions</a>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img src="/images/bedroomSolutionThree.jpg" alt="Lighting & Ambiance Upgrades" />
-          </div>
-          <div class="card-content">
-            <h3>Lighting & Ambiance Upgrades</h3>
-            <p>Elevate comfort with personalized lighting (recessed, dimmable, accent) and serene interior finishes. Create the perfect mood for relaxation and rest.</p>
-            <a href="/contact" class="btn">See Design Possibilities</a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="solution-card">
-          <div class="card-image">
-            <img src="/images/bedroomSolutionFour.jpg" alt="Space Optimization & Layout" />
-          </div>
-          <div class="card-content">
-            <h3>Space Optimization & Layout</h3>
-            <p>Reconfigure layouts to optimize flow and functionality, especially for smaller bedrooms. Integrate custom built-ins and smart storage for a clutter-free environment. Ask us about smart room controls!</p>
-            <a href="/contact" class="btn">Learn About Space Solutions</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Steps Section -->
-  <section class="steps-section">
-    <div class="container">
-      <h2 class="steps-title">How It Works</h2>
-      <div class="steps-container">
-        <!-- Step 1 -->
-        <div class="step-item" data-step="1">
-          <div class="step-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <h3>Consultation</h3>
-          <p>Free 3D Design Session (Virtual or On Site)</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-item" data-step="2">
-          <div class="step-icon">
-            <i class="fas fa-cube"></i>
-          </div>
-          <h3>Material Selection</h3>
-          <p>Choose from 50+ Design Options & Fixtures</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-item" data-step="3">
-          <div class="step-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3>Installation</h3>
-          <p>Professional Process | Avg. Time: 1-2 Weeks</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step-item" data-step="4">
-          <div class="step-icon">
-            <i class="fas fa-check"></i>
-          </div>
-          <h3>Final Walkthrough</h3>
-          <p>Quality Check & Client Approval</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section class="recent-remodels-section">
-    <div class="container">
-      <h2 class="recent-remodels-title">Recent Bedroom Transformations</h2>
-      <div class="remodels-gallery">
-        <!-- Remodel 1 -->
-        <div class="remodel-item">
-          <div class="remodel-image">
-            <img src="/images/banoPortfolioOne.jpg" alt="Master Bedroom Remodel" />
-          </div>
-          <h3>Luxurious Master Suite</h3>
-          <p>Miami</p>
-        </div>
-
-        <!-- Remodel 2 -->
-        <div class="remodel-item">
-          <div class="remodel-image">
-            <img src="/images/banoPortfolioTwo.jpg" alt="Guest Bedroom Remodel" />
-          </div>
-          <h3>Modern Guest Room</h3>
-          <p>Orlando</p>
-        </div>
-
-        <!-- Remodel 3 -->
-        <div class="remodel-item">
-          <div class="remodel-image">
-            <img src="/images/banoPortfolioThree.jpg" alt="Kids Bedroom Remodel" />
-          </div>
-          <h3>Custom Kids' Room</h3>
-          <p>Tampa</p>
-        </div>
-      </div>
-
-      <!-- Portfolio Tags -->
-      <div class="cnt-tagsPorfolio">
-        <span class="tag-itemPorfolio">Master Bedrooms</span>
-        <span class="tag-itemPorfolio">Guest & Kids Rooms</span>
-        <span class="tag-itemPorfolio">Luxury Upgrades</span>
-        <span class="tag-itemPorfolio">Smart Home Integration</span>
-        <span class="tag-itemPorfolio">Eco-Friendly Designs</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section class="sectionBlogBathroom">
-    <div class="container">
-      <div>
-        <h2 class="tittleSection-cardBlogBathroo">
-          Bedroom Remodeling Guides
-        </h2>
-      </div>
-      <div>
-        <div class="cntFather-cardBlogBathroo">
-          <div class="cnt-cardBlogBathroom">
-            <h3 class="title-cardBlogBathroom">Master Bedroom Design Trends</h3>
-            <p class="text-cardBlogBathroom">
-              Discover the latest trends in master bedroom design, from luxurious finishes to smart storage solutions that maximize comfort and style.
-            </p>
-            <a class="link-blogBathroom"
-              >Read More <i class="flechaBlog fas fa-arrow-right"></i></a
-            >
-          </div>
-          <div class="cnt-cardBlogBathroom">
-            <h3 class="title-cardBlogBathroom">Small Bedroom Optimization</h3>
-            <p class="text-cardBlogBathroom">
-              Learn how to make the most of small bedroom spaces with clever storage ideas, multi-functional furniture, and smart layout planning.
-            </p>
-            <a class="link-blogBathroom"
-              >Read More <i class="flechaBlog fas fa-arrow-right"></i></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section">
-    <div class="container">
-      <FAQ client:load category="bedroom" title="FAQs" />
-    </div>
-  </section>
+  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
 </BaseLayout>
