@@ -65,6 +65,24 @@ function generateDescription({ service, subservice, city, region = 'FL' }) {
   return 'Property restoration services across Florida with 24/7 emergency response.';
 }
 
+/**
+ * Build FAQPage schema for JSON-LD
+ */
+function generateFAQSchema(questions = []) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+}
+
 /**********************
  * Component
  **********************/
@@ -94,6 +112,8 @@ const SEOHead = ({
   phone,
   addressLocality, // visible city name (pretty), optional
   addressRegion = 'FL',
+  // FAQ schema questions (optional)
+  faqQuestions = [],
 }) => {
   const parts = { vertical, service, subservice, city };
 
@@ -170,6 +190,13 @@ const SEOHead = ({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
       {jsonLdService && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      )}
+      {/* FAQPage schema JSON-LD */}
+      {faqQuestions.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqQuestions)) }}
+        />
       )}
     </>
   );

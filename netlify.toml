@@ -27,6 +27,23 @@
     Timestamp: {{ form.created_at }}
     """
 
+[[forms]]
+  name = "mold-landing"
+  # Configure notifications
+  [[forms.notifications]]
+    type = "email"
+    to = "services@paramountpropertyrestoration.com"
+    subject = "🚨 Mold Landing - Free Claim Consultation Request"
+    body = """
+    NEW MOLD LANDING LEAD:
+    
+    Name: {{ form.name }}
+    Phone: {{ form.phone }}
+    Message: {{ form.message }}
+    
+    Timestamp: {{ form.created_at }}
+    """
+
 # Redirects and headers for SEO
 [[redirects]]
   from = "/services/*"
