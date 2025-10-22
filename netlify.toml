@@ -60,12 +60,6 @@
     Description: {{ form.description }}
     Urgency: {{ form.urgency }}
     
-    UTM Source: {{ form.utm_source }}
-    UTM Medium: {{ form.utm_medium }}
-    UTM Campaign: {{ form.utm_campaign }}
-    UTM Term: {{ form.utm_term }}
-    UTM Content: {{ form.utm_content }}
-    
     Timestamp: {{ form.created_at }}
     """
 
