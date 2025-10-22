@@ -7,6 +7,22 @@
 
 [[forms]]
   name = "contact"
+  [[forms.notifications]]
+    type = "email"
+    to = "services@paramountpropertyrestoration.com"
+    subject = "📬 New Contact Form Submission"
+    body = """
+    NEW CONTACT REQUEST:
+    
+    Name: {{ form.name }}
+    Email: {{ form.email }}
+    Phone: {{ form.phone }}
+    Address: {{ form.address }}
+    Service Type: {{ form.subject }}
+    Message: {{ form.message }}
+    
+    Timestamp: {{ form.created_at }}
+    """
 
 [[forms]]
   name = "emergency-request"
@@ -33,13 +49,16 @@
   [[forms.notifications]]
     type = "email"
     to = "services@paramountpropertyrestoration.com"
-    subject = "🚨 Mold Landing - Free Claim Consultation Request"
+    subject = "🚨 Mold Landing - Free Visual Inspection Request"
     body = """
     NEW MOLD LANDING LEAD:
     
     Name: {{ form.name }}
     Phone: {{ form.phone }}
-    Message: {{ form.message }}
+    Email: {{ form.email }}
+    Property Type: {{ form.property_type }}
+    Description: {{ form.description }}
+    Urgency: {{ form.urgency }}
     
     Timestamp: {{ form.created_at }}
     """
