@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.jsx';
+import UnifiedServiceTemplate from '../components/restoration/templates/UnifiedServiceTemplate.astro';
+
+const groupData = {
+  name: 'Mold Remediation',
+  slug: 'mold-remediation',
+  template: 'unified',
+  description: 'Mold inspection, cleanup & prevention.',
+};
+const subData = {
+  slug: 'mold-inspection',
+  title: 'Mold Inspection',
+  nombre: 'Mold Inspection',
+  short: 'Mold inspection, cleanup & prevention.',
+  categoria: 'restoration',
+  template: 'unified',
+  groupSlug: 'mold-remediation',
+  groupName: 'Mold Remediation',
+};
+const pageConfig = {
+  canonical: '/book-mold-inspection',
+  title: 'Book Mold Inspection | Paramount Property Restoration',
+  description: 'Book certified mold inspection services by Paramount Property Restoration. Rapid 24/7 emergency response and professional mold inspection across Florida.',
+};
+---
+<BaseLayout title={pageConfig.title} description={pageConfig.description}>
+  <SEOHead
+    title={pageConfig.title}
+    description={pageConfig.description}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical=""
+    service="book-mold-inspection"
+    subservice=""
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+  <UnifiedServiceTemplate group={groupData} sub={subData} />
+</BaseLayout>

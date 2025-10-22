@@ -1,0 +1,263 @@
+---
+const pageTitle = "Florida Certified Mold Testing & Insurance Claim Support";
+const pageDescription = "DBPR Licensed Mold Assessor. Get expert insurance claim documentation for mold remediation. Same-day testing available. 24/7 Emergency Service.";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription}>
+    
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f7fafc; 
+        }
+        .container { 
+            max-width: 1100px; 
+        }
+        
+        /* Navy background matching global styles */
+        .primary-bg { 
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+        
+        /* Brand accent blue for CTAs */
+        .accent-cta { 
+            background: #35c3e9;
+            box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4);
+            transition: all 0.3s ease;
+        }
+        .accent-cta:hover { 
+            background: #2a9fd1;
+            box-shadow: 0 15px 40px rgba(53, 195, 233, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .shadow-cta { 
+            box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4); 
+        }
+        
+        /* Button styling matching global */
+        .btn-blue {
+            background: #35c3e9;
+            transition: all 0.3s ease;
+        }
+        .btn-blue:hover {
+            background: #2a9fd1;
+            box-shadow: 0 8px 20px rgba(53, 195, 233, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Accent color borders and text */
+        .border-accent {
+            border-color: #35c3e9 !important;
+        }
+        .text-accent {
+            color: #35c3e9 !important;
+        }
+        .bg-accent-light {
+            background-color: #e8f4fd;
+        }
+        
+        /* Navy accents */
+        .border-navy {
+            border-color: #1E293B !important;
+        }
+        .text-navy {
+            color: #1E293B !important;
+        }
+        .bg-navy-light {
+            background-color: #f1f5f9;
+        }
+        
+        .sticky-footer-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .sticky-footer-cta {
+                display: block;
+            }
+            .hero-form-container {
+                margin-top: 1rem;
+            }
+        }
+        .dbpr-seal { 
+            border: 2px solid #35c3e9;
+            background: rgba(53, 195, 233, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="primary-bg text-white py-3 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-xl font-extrabold tracking-tight">Paramount Restoration</div>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm font-semibold dbpr-seal p-1 rounded-md hidden sm:inline-block">
+                    FL DBPR Licensed Mold Assessor
+                </span>
+                <a href="tel:+17866022217" class="font-bold text-lg hover:text-blue-300 transition">
+                    (786) 602-2217
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 md:py-24 bg-cover bg-center local-hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/moldDamage.jpg');">
+        <div class="container mx-auto px-4 grid md:grid-cols-12 gap-10 items-center">
+            
+            <div class="md:col-span-7 bg-white/95 p-6 rounded-xl shadow-2xl">
+                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                    Florida Certified Mold Testing: Get Expert <span class="text-accent">Insurance Claim Support</span>
+                </h1>
+                
+                <p class="text-xl mb-6 font-semibold text-gray-700 border-l-4 border-accent pl-3">
+                    Don't risk claim denial. We provide the <strong>DBPR-Certified documentation</strong> needed to back your mold remediation claim with your insurance company.
+                </p>
+                
+                <a href="tel:+17866022217" class="accent-cta text-white font-black py-4 px-8 rounded-full text-xl shadow-cta transition duration-300 transform hover:scale-105 inline-flex items-center uppercase">
+                    <i data-lucide="phone-call" class="w-6 h-6 mr-3"></i> IMMEDIATE 60-MINUTE DISPATCH
+                </a>
+                <p class="text-sm mt-2 text-gray-600">Same-Day Testing Available. Call 24/7.</p>
+            </div>
+
+            <div class="md:col-span-5 w-full hero-form-container">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-xl border-t-4 border-accent">
+                    <h2 class="text-2xl font-bold text-center mb-4 text-gray-900">
+                        Stop the Risk. Get a Free Estimate.
+                    </h2>
+                    <form name="mold-landing" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                        <input type="hidden" name="form-name" value="mold-landing">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <input type="text" name="name" placeholder="Your Full Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400">
+                        <input type="tel" name="phone" placeholder="Best Contact Phone (Urgent)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400">
+                        <textarea name="message" placeholder="Tell us about the water incident or visible mold." rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"></textarea>
+                        <button type="submit" class="w-full btn-blue text-white font-bold py-3 rounded-lg shadow-lg transition uppercase">
+                            GET MY FREE CLAIM CONSULTATION
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-extrabold mb-10 text-center primary-bg text-white p-3 rounded-lg">
+                Why Choose a DBPR-Licensed Mold Assessor in Florida?
+            </h2>
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+                
+                <div class="card p-6 shadow-xl bg-navy-light rounded-xl border-t-4 border-navy">
+                    <i data-lucide="scan-face" class="w-8 h-8 text-navy mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">Licensed by the State of Florida</h3>
+                    <p class="text-sm text-gray-600">Mandatory compliance with Florida Statutes 468.84. We are fully <strong>DBPR Licensed</strong> and carry the required education and insurance.</p>
+                </div>
+                
+                <div class="card p-6 shadow-xl bg-accent-light rounded-xl border-t-4 border-accent">
+                    <i data-lucide="shield" class="w-8 h-8 text-accent mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">Maximum Insurance Payout</h3>
+                    <p class="text-sm text-gray-600">Our detailed, certified reports provide irrefutable proof to support your claim, avoiding common <strong>Exclusion</strong> or <strong>Denial</strong> issues.</p>
+                </div>
+
+                <div class="card p-6 shadow-xl bg-yellow-50 rounded-xl border-t-4 border-yellow-600">
+                    <i data-lucide="clock" class="w-8 h-8 text-yellow-600 mb-3"></i>
+                    <h3 class="font-bold text-xl mb-2">The 48-Hour Mold Danger</h3>
+                    <p class="text-sm text-gray-600">Mold spores activate in 24 hours and visible growth appears in <strong>48-72 hours</strong>. Delay is costly structural damage. <strong>Call now.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-extrabold mb-10 text-center text-gray-900">
+                Our 5-Step Certified Mold Testing Protocol
+            </h2>
+            <div class="grid md:grid-cols-5 gap-6 text-center">
+                
+                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                    <span class="text-3xl font-bold block mb-1">1</span>
+                    <i data-lucide="search" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                    <p class="font-semibold text-sm">Visual & Moisture Mapping</p>
+                </div>
+                
+                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                    <span class="text-3xl font-bold block mb-1">2</span>
+                    <i data-lucide="cloud-lightning" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                    <p class="font-semibold text-sm">Air Quality Sampling</p>
+                </div>
+                
+                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                    <span class="text-3xl font-bold block mb-1">3</span>
+                    <i data-lucide="flask-conical" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                    <p class="font-semibold text-sm">Third-Party Lab Analysis</p>
+                </div>
+                
+                <div class="p-4 rounded-xl primary-bg text-white shadow-lg transform scale-105 border-2 border-blue-400">
+                    <span class="text-3xl font-bold block mb-1">4</span>
+                    <i data-lucide="file-text" class="w-8 h-8 mx-auto mb-2 text-blue-200"></i>
+                    <p class="font-bold text-sm">Expert Claim Documentation</p>
+                </div>
+                
+                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                    <span class="text-3xl font-bold block mb-1">5</span>
+                    <i data-lucide="life-buoy" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                    <p class="font-semibold text-sm">Remediation Protocol & Next Steps</p>
+                </div>
+            </div>
+
+            <div class="mt-16 max-w-3xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-navy">Verified Florida Homeowner Reviews</h3>
+                    <p class="italic text-gray-700 mb-4 border-b pb-4">
+                        "Paramount was fast and professional. Their report was so detailed, my insurance company approved the remediation without any hassle. The <strong>claim support</strong> was the biggest help." - Jane D., Boca Raton
+                    </p>
+                    <p class="italic text-gray-700">
+                        "When I saw the mold, I panicked. They arrived in under an hour and guided me through the entire insurance process. True experts." - Michael V., Miami
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="primary-bg py-12">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-extrabold mb-3 text-white">
+                STOP MOLD DAMAGE. <span class="text-blue-200">GET YOUR CLAIM DOCUMENTATION STARTED.</span>
+            </h2>
+            <p class="text-xl mb-8 text-white opacity-90">
+                Call now for immediate service and certified results.
+            </p>
+            <a href="tel:+17866022217" class="accent-cta text-white font-extrabold py-4 px-12 rounded-full text-xl shadow-2xl uppercase transition duration-300 transform hover:scale-[1.03] inline-flex items-center justify-center">
+                <i data-lucide="phone-call" class="inline-block w-6 h-6 mr-3"></i> CALL A CERTIFIED MOLD ASSESSOR
+            </a>
+        </div>
+    </section>
+
+    <div class="sticky-footer-cta primary-bg py-3 px-4 shadow-2xl">
+        <a href="tel:+17866022217" class="accent-cta w-full text-white font-black py-3 rounded-lg text-lg uppercase flex items-center justify-center shadow-lg">
+            <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i> EMERGENCY CALL: (786) 602-2217
+        </a>
+    </div>
+
+    <script is:inline>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

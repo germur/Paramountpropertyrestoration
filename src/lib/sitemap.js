@@ -32,6 +32,8 @@ export function getAllUrls() {
   urls.add(withBaseUrl('/portfolio'));
   urls.add(withBaseUrl('/contact'));
   urls.add(withBaseUrl('/blog'));
+  // Landing page for booking Mold Inspection
+  urls.add(withBaseUrl('/book-mold-inspection'));
 
   // Restoration service group pages (without cities)
   for (const group of restorationGroups) {
