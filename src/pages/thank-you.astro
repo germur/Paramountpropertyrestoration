@@ -1,0 +1,349 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SEOHead from "../components/SEOHead.jsx";
+import AnimatedBackground from "../components/AnimatedBackground.jsx";
+
+const pageTitle = "Thank You - Paramount Property Restoration";
+const pageDescription = "Thank you for contacting Paramount Property Restoration. We'll respond to your request within 1 hour.";
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="contact"
+    service="thank-you"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <script is:inline>
+    gtag('event', 'conversion', {'send_to': 'AW-17595666136/Wps3CLnKy7AbENidosZB'});
+  </script>
+
+  <section class="hero-section">
+    <AnimatedBackground client:load />
+    <div class="container">
+      <div class="hero-content">
+        <div class="success-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <h1 class="hero-title">Thank You for Contacting Us!</h1>
+        <p class="hero-description">
+          We've received your request and will respond within 1 hour during business hours.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:+17866022217" class="btn-primary">
+            <i class="fas fa-phone"></i>
+            Emergency? Call Now: (786) 602-2217
+          </a>
+          <a href="/" class="btn-outline">
+            <i class="fas fa-home"></i>
+            Return to Homepage
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>What Happens Next?</h3>
+          <p>Our team will review your request and reach out within 1 hour during business hours (Mon-Fri 8AM-6PM, Sat 9AM-3PM). For after-hours emergencies, we'll respond immediately.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Licensed & Insured</h3>
+          <p>Rest assured, you're working with a fully licensed, insured, and IICRC certified team with years of experience in restoration and remodeling.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Expert Team Ready</h3>
+          <p>Our experienced professionals are ready to handle your project, whether it's an emergency restoration or a planned remodeling job.</p>
+        </div>
+      </div>
+
+      <div class="emergency-banner">
+        <div class="emergency-icon">🚨</div>
+        <div class="emergency-content">
+          <h3>Have an Emergency?</h3>
+          <p>Don't wait! For water damage, fire damage, or other emergencies requiring immediate attention, call us now for 24/7 emergency response.</p>
+          <a href="tel:+17866022217" class="emergency-phone">(786) 602-2217</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .success-icon {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: scaleIn 0.5s ease;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .success-icon svg {
+    color: #10b981;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .info-card {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .info-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .info-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .emergency-banner {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .emergency-banner .emergency-icon {
+    font-size: 3rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .emergency-content {
+    flex: 1;
+  }
+
+  .emergency-content h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 0.5rem;
+  }
+
+  .emergency-content p {
+    margin-bottom: 1rem;
+    opacity: 0.95;
+  }
+
+  .emergency-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background: white;
+    color: #f59e0b;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    transition: var(--transition);
+  }
+
+  .emergency-phone:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #d97706;
+  }
+
+  @media (max-width: 1024px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-section {
+      min-height: 50vh;
+      padding: 1.5rem 0;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-icon svg {
+      width: 60px;
+      height: 60px;
+    }
+
+    .emergency-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      gap: 1.5rem;
+    }
+
+    .emergency-content h3 {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .info-card,
+    .emergency-banner {
+      padding: 1.5rem;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-phone {
+      padding: 0.75rem 1.5rem;
+      font-size: var(--font-size-base);
+    }
+  }
+</style>
