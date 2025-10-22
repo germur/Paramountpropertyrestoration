@@ -15,26 +15,26 @@ export default function CookieConsent() {
     localStorage.setItem('cookieConsent', 'accepted');
     setIsVisible(false);
     
-    // Track acceptance event
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'cookie_consent_accepted', {
-        event_category: 'Privacy',
-        event_label: 'Cookie Banner'
-      });
-    }
+    // Track acceptance event using dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'cookie_consent_accepted',
+      'event_category': 'Privacy',
+      'event_label': 'Cookie Banner'
+    });
   };
 
   const rejectCookies = () => {
     localStorage.setItem('cookieConsent', 'rejected');
     setIsVisible(false);
     
-    // Track rejection event
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'cookie_consent_rejected', {
-        event_category: 'Privacy',
-        event_label: 'Cookie Banner'
-      });
-    }
+    // Track rejection event using dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'cookie_consent_rejected',
+      'event_category': 'Privacy',
+      'event_label': 'Cookie Banner'
+    });
   };
 
   if (!isVisible) return null;
