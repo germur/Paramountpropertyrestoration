@@ -15,26 +15,24 @@ export default function CookieConsent() {
     localStorage.setItem('cookieConsent', 'accepted');
     setIsVisible(false);
     
-    // Track acceptance event
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'cookie_consent_accepted', {
-        event_category: 'Privacy',
-        event_label: 'Cookie Banner'
-      });
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'cookie_consent_accepted',
+      event_category: 'Privacy',
+      event_label: 'Cookie Banner'
+    });
   };
 
   const rejectCookies = () => {
     localStorage.setItem('cookieConsent', 'rejected');
     setIsVisible(false);
     
-    // Track rejection event
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'cookie_consent_rejected', {
-        event_category: 'Privacy',
-        event_label: 'Cookie Banner'
-      });
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'cookie_consent_rejected',
+      event_category: 'Privacy',
+      event_label: 'Cookie Banner'
+    });
   };
 
   if (!isVisible) return null;
@@ -43,14 +41,14 @@ export default function CookieConsent() {
     <div className="cookie-banner">
       <div className="cookie-content">
         <div className="cookie-text">
-          <h3>🍪 Utilizamos Cookies</h3>
+          <h3>🍪 We Use Cookies</h3>
           <p>
-            Usamos cookies para mejorar tu experiencia en nuestro sitio web, 
-            analizar el tráfico y personalizar el contenido. Al continuar navegando, 
-            aceptas nuestro uso de cookies.
+            We use cookies to improve your experience on our website, 
+            analyze traffic and personalize content. By continuing to browse, 
+            you accept our use of cookies.
           </p>
           <a href="/terms" className="cookie-link">
-            Ver Términos y Condiciones
+            View Terms and Conditions
           </a>
         </div>
         <div className="cookie-actions">
@@ -59,14 +57,14 @@ export default function CookieConsent() {
             className="cookie-btn accept"
             type="button"
           >
-            Aceptar
+            Accept
           </button>
           <button 
             onClick={rejectCookies}
             className="cookie-btn reject"
             type="button"
           >
-            Rechazar
+            Reject
           </button>
         </div>
       </div>
