@@ -1,4 +1,6 @@
 ---
+import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
+
 const pageTitle = "Stop Hidden Mold Damage: IICRC Certified Testing 24/7 | Same-Day | Florida";
 const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Complete testing to remediation pathway. FREE visual inspection. Insurance documentation included. 24/7 emergency service across Florida.";
 ---
@@ -93,7 +95,7 @@ const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Co
             background-color: #f1f5f9;
         }
         
-        /* Hero section with gradient background - NO CANVAS */
+        /* Hero section with animated background */
         .animated-hero-section {
             position: relative;
             overflow: hidden;
@@ -102,7 +104,6 @@ const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Co
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #0c4e6e 0%, #03174f 100%);
         }
         
         /* Content layer */
@@ -176,6 +177,7 @@ const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Co
     </header>
 
     <section class="animated-hero-section">
+        <AnimatedBackground client:load />
         <div class="hero-content-wrapper">
             <div class="container mx-auto px-4 grid md:grid-cols-12 gap-10 items-center">
                 
@@ -220,7 +222,7 @@ const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Co
                         </h2>
                         <p class="text-sm text-gray-600">IICRC certified technician • Same-day available</p>
                     </div>
-                    <form name="mold-landing" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                    <form name="mold-landing" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="space-y-4">
                         <input type="hidden" name="form-name" value="mold-landing">
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
