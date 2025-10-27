@@ -1,0 +1,2 @@
+# Remove trailing slashes - single redirect, no chains
+/*/ /:splat 301!
