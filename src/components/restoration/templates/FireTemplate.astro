@@ -471,7 +471,7 @@ const faqCategory = `fire-${sub?.slug || group.slug}`;
     <div class="emergency-notice">
       <h3>Emergency {sub?.title || group.name} Response</h3>
       <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
-      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+      <a href="tel:+17866022217" class="emergency-phone" onclick="dataLayer.push({'event':'call_click'})">Call (786) 602-2217 Now</a>
     </div>
   </div>
 </section>

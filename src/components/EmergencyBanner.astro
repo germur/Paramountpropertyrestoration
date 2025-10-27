@@ -18,7 +18,7 @@ const { position = 'static', variant = 'home', dismissible = false } = Astro.pro
     <div class="paramount-emergency-text">
       <strong>PROPERTY EMERGENCY?</strong> We respond 24/7 - Don't wait!
     </div>
-    <a href="tel:+17866022217" class="paramount-emergency-button">
+    <a href="tel:+17866022217" class="paramount-emergency-button" onclick="dataLayer.push({'event':'call_click'})">
       Call: (786) 602-2217
     </a>
     {dismissible && (

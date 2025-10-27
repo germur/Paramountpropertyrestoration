@@ -162,7 +162,7 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
 
                     {/* Emergency CTA - Now at the end */}
                     <div className="emergency-cta">
-                        <a href="tel:+17866022217" className="cta-button emergency">
+                        <a href="tel:+17866022217" className="cta-button emergency" onClick={() => window.dataLayer?.push({'event':'call_click'})}>
                             <i className="fas fa-phone" aria-hidden="true"></i>
                             <div className="cta-text">
                                 <span className="cta-main">24/7 Emergency</span>
@@ -270,7 +270,7 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
                         
                         {/* Emergency CTA in mobile menu */}
                         <li className="nav-item mobile-emergency">
-                            <a href="tel:+17866022217" className="nav-link emergency-mobile">
+                            <a href="tel:+17866022217" className="nav-link emergency-mobile" onClick={() => window.dataLayer?.push({'event':'call_click'})}>
                                 <i className="fas fa-phone" aria-hidden="true"></i>
                                 24/7 Emergency Service
                             </a>

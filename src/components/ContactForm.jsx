@@ -220,7 +220,7 @@ export default function ContactForm() {
           <div className="emergency-icon">🚨</div>
           <div className="emergency-text">
             <strong>EMERGENCY?</strong> Don't wait - call us now for immediate response!
-            <a href="tel:+17866022217" className="emergency-phone">(786) 602-2217</a>
+            <a href="tel:+17866022217" className="emergency-phone" onClick={() => window.dataLayer?.push({'event':'call_click'})}>(786) 602-2217</a>
           </div>
         </div>
       </form>
