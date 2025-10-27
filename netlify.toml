@@ -63,17 +63,6 @@
     Timestamp: {{ form.created_at }}
     """
 
-# Redirects and headers for SEO
-[[redirects]]
-  from = "/services/*"
-  to = "/services/:splat"
-  status = 301
-
-[[redirects]]  
-  from = "/restoration/*"
-  to = "/restoration/:splat"
-  status = 301
-
 # Headers for better performance
 [[headers]]
   for = "/*"
