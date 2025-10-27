@@ -101,3 +101,126 @@
   for = "*.webp"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+# ============================================================
+# CANONICAL URL ENFORCEMENT - NO TRAILING SLASHES
+# ============================================================
+# Critical for SEO: These redirects ensure only ONE version of 
+# each URL is accessible, preventing duplicate content issues
+# and "non-indexable/canonicalized" errors in search engines
+# ============================================================
+
+# Programmatic service-city pages (most important for local SEO)
+[[redirects]]
+  from = "/services/:service/:city/"
+  to = "/services/:service/:city"
+  status = 301
+  force = true
+
+# Restoration service-subservice-city detail pages
+[[redirects]]
+  from = "/restoration/:service/:subservice/:city/"
+  to = "/restoration/:service/:subservice/:city"
+  status = 301
+  force = true
+
+# Restoration service-subservice hub pages (no city)
+[[redirects]]
+  from = "/restoration/:group/:subservice/"
+  to = "/restoration/:group/:subservice"
+  status = 301
+  force = true
+
+# Static service pages
+[[redirects]]
+  from = "/services/bathroom-remodeling/"
+  to = "/services/bathroom-remodeling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/kitchen-remodeling/"
+  to = "/services/kitchen-remodeling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/bedroom-remodeling/"
+  to = "/services/bedroom-remodeling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/living-dining-remodeling/"
+  to = "/services/living-dining-remodeling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/home-additions-remodeling/"
+  to = "/services/home-additions-remodeling"
+  status = 301
+  force = true
+
+# Static restoration category pages
+[[redirects]]
+  from = "/restoration/water-damage/"
+  to = "/restoration/water-damage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/fire-damage/"
+  to = "/restoration/fire-damage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mold-remediation/"
+  to = "/restoration/mold-remediation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/storm-damage/"
+  to = "/restoration/storm-damage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/mitigation-services/"
+  to = "/restoration/mitigation-services"
+  status = 301
+  force = true
+
+# Top-level section pages
+[[redirects]]
+  from = "/services/"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restoration/"
+  to = "/restoration"
+  status = 301
+  force = true
+
+# Other important pages
+[[redirects]]
+  from = "/contact/"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio/"
+  to = "/portfolio"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/book-mold-inspection/"
+  to = "/book-mold-inspection"
+  status = 301
+  force = true
