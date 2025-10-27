@@ -106,5 +106,16 @@ const breadcrumbData = [{ label: 'Home', href: '/' }, ...crumbs];
         }
       });
     </script>
+
+    {/* Listener global para trackear clicks en enlaces de teléfono */}
+    <script is:inline>
+      document.addEventListener('click', function(e) {
+        const telLink = e.target.closest('a[href^="tel:"]');
+        if (telLink) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({'event': 'call_click'});
+        }
+      });
+    </script>
   </body>
 </html>
