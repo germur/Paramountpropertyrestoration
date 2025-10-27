@@ -1,2 +1,2 @@
-# Remove trailing slashes - single redirect, no chains
-/*/ /:splat 301!
+# Netlify Pretty URLs automatically handles .html files without redirects
+# No manual redirect rules needed - let Netlify handle it natively
