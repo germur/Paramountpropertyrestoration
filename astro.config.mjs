@@ -5,8 +5,8 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   output: 'static',
-  trailingSlash: 'ignore',
+  trailingSlash: 'never',
   build: {
-    format: 'directory'
+    format: 'file'
   }
 });

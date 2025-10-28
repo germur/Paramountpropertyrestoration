@@ -105,8 +105,8 @@
 # ============================================================
 # CANONICAL URL ENFORCEMENT
 # ============================================================
-# With Astro's build.format = 'directory' and trailingSlash = 'never',
+# With Astro's build.format = 'file' and trailingSlash = 'never',
 # Netlify's Pretty URLs feature automatically handles serving /path
-# from /path/index.html without trailing slashes. No manual redirects
-# needed - this prevents redirect chains and ensures clean 200 responses.
+# from /path.html without trailing slashes or redirects. This ensures
+# clean 200 OK responses across all pages without unnecessary 301s.
 # ============================================================
