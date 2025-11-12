@@ -186,7 +186,7 @@ const cityRegions = getCitiesByRegion();
 
 <div class="unified-service-template">
   <!-- Enhanced Hero Section -->
-  <section class="hero-section" style={`background-image: url('/images/${group.slug.replace('-remodeling', '')}Hero.jpg'); min-height: 60vh;`}>
+  <section class="hero-section" style={`background-image: url('/images/${group.slug === 'kitchen-remodeling' ? 'kitchenHero.jpg' : group.slug === 'bathroom-remodeling' ? 'bathroomHero.jpg' : group.slug === 'bedroom-remodeling' ? 'bedroomHero.jpg' : group.slug === 'living-dining-remodeling' ? 'livingDiningHero.jpg' : group.slug === 'home-additions-remodeling' ? 'home-additionsHero.jpg' : 'portadaHome.jpg'}'); min-height: 60vh;`}>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
