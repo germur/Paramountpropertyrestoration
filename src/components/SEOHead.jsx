@@ -141,41 +141,112 @@ const SEOHead = ({
   // hreflang alternates
   const hrefLangs = getHrefLangs({ siteUrl, locales, currentLocale, canonicalPath });
 
-  // JSON-LD: LocalBusiness + Service (cuando aplique)
+  // JSON-LD: Enhanced LocalBusiness with more details
   const jsonLdLocalBusiness = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${canonicalURL}#localbusiness`,
     name: businessName,
+    image: `${siteUrl}/images/ppr-logo-new.png`,
     url: canonicalURL,
     telephone: phone,
+    email: 'services@paramountpropertyrestoration.com',
+    priceRange: '$$',
     address: addressLocality ? {
       '@type': 'PostalAddress',
       addressLocality: addressLocality,
       addressRegion: addressRegion,
       addressCountry: 'US',
-    } : undefined,
-    areaServed: city ? [{ '@type': 'City', name: addressLocality || humanize(city) }] : undefined,
+    } : {
+      '@type': 'PostalAddress',
+      addressLocality: 'Florida',
+      addressRegion: 'FL',
+      addressCountry: 'US',
+    },
+    geo: addressLocality ? undefined : {
+      '@type': 'GeoCoordinates',
+      latitude: '27.6648',
+      longitude: '-81.5158'
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59'
+    },
+    areaServed: city ? [{ '@type': 'City', name: addressLocality || humanize(city) }] : {
+      '@type': 'State',
+      name: 'Florida'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '150'
+    },
+    sameAs: [
+      'https://www.facebook.com/paramountpropertyrestoration',
+      'https://www.instagram.com/paramountpropertyrestoration'
+    ]
   };
 
   const jsonLdService = service ? {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${canonicalURL}#service`,
     name: humanize(subservice) || humanize(service),
-    provider: { '@type': 'Organization', name: businessName, url: siteUrl },
-    areaServed: city ? { '@type': 'City', name: addressLocality || humanize(city) } : { '@type': 'AdministrativeArea', name: 'Florida' },
+    description: finalDesc,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: businessName,
+      url: siteUrl,
+      telephone: phone
+    },
+    areaServed: city ? { '@type': 'City', name: addressLocality || humanize(city) } : { '@type': 'State', name: 'Florida' },
     serviceType: humanize(service) || 'Restoration',
     url: canonicalURL,
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: canonicalURL,
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: phone,
+        contactType: 'Emergency Service',
+        availableLanguage: ['en', 'es'],
+        hoursAvailable: '24/7'
+      }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${humanize(service)} Services`,
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: `Emergency ${humanize(service)}`
+          }
+        }
+      ]
+    }
   } : null;
 
-  // JSON-LD Article Schema
+  // JSON-LD Enhanced Article Schema
   const jsonLdArticle = pageType === 'article' ? {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `${canonicalURL}#article`,
     headline: finalTitle,
     description: finalDesc,
-    image: imageURL,
-    datePublished: datePublished ? new Date(datePublished).toISOString() : undefined,
-    dateModified: dateModified ? new Date(dateModified).toISOString() : datePublished ? new Date(datePublished).toISOString() : undefined,
+    image: {
+      '@type': 'ImageObject',
+      url: imageURL,
+      width: 1200,
+      height: 630
+    },
+    datePublished: datePublished ? new Date(datePublished).toISOString() : new Date().toISOString(),
+    dateModified: dateModified ? new Date(dateModified).toISOString() : datePublished ? new Date(datePublished).toISOString() : new Date().toISOString(),
     author: {
       '@type': 'Organization',
       name: author || businessName,
@@ -187,7 +258,9 @@ const SEOHead = ({
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo.png`,
+        url: `${siteUrl}/images/ppr-logo-new.png`,
+        width: 600,
+        height: 60
       },
     },
     mainEntityOfPage: {
@@ -195,7 +268,19 @@ const SEOHead = ({
       '@id': canonicalURL,
     },
     articleSection: category || 'Home Improvement',
-    inLanguage: currentLocale,
+    keywords: keywords.length > 0 ? keywords.join(', ') : undefined,
+    inLanguage: 'en-US',
+    about: {
+      '@type': 'Thing',
+      name: category || 'Home Improvement'
+    },
+    isAccessibleForFree: true,
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: businessName
+    }
   } : null;
 
   return (
