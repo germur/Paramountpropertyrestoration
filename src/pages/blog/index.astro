@@ -4,6 +4,7 @@ import Layout from "../../layouts/BaseLayout.astro";
 import InteractiveBlog from "../../components/InteractiveBlog.jsx";
 import SEOHead from "../../components/SEOHead.jsx";
 import type { CollectionEntry } from "astro:content";
+import "../../styles/modern-blog.css";
 
 const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
 const sortedPosts = allPosts.sort(
