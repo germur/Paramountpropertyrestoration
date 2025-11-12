@@ -79,99 +79,78 @@ export default function InteractiveBlog({ allPosts, allTags, recentPosts }) {
 
     return (
         <div className="modern-blog-container">
-            {/* Search and Filter Bar */}
-            <div className="blog-controls">
-                <div className="search-filter-section">
-                    <div className="search-wrapper">
-                        <svg className="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input
-                            type="text"
-                            placeholder="Search articles, topics, or authors..."
-                            className="modern-search-input"
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                        />
-                        {searchTerm && (
-                            <button className="clear-search-icon" onClick={() => setSearchTerm("")}>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="blog-layout-wrapper">
+                {/* Main Content */}
+                <div className="blog-main-content">
+                    {/* Search Bar */}
+                    <div className="blog-search-bar">
+                        <div className="search-wrapper">
+                            <svg className="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input
+                                type="text"
+                                placeholder="Search articles, topics, or authors..."
+                                className="modern-search-input"
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                            />
+                            {searchTerm && (
+                                <button className="clear-search-icon" onClick={() => setSearchTerm("")}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            )}
+                        </div>
+
+                        <div className="view-toggle">
+                            <button
+                                className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
+                                onClick={() => setViewMode('grid')}
+                                title="Grid view"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </button>
+                            <button
+                                className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
+                                onClick={() => setViewMode('list')}
+                                title="List view"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Results Info */}
+                    {isFiltering && (
+                        <div className="results-info">
+                            <span className="results-count">
+                                {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'} found
+                            </span>
+                            <button onClick={clearFilters} className="clear-filters-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <line x1="18" y1="6" x2="6" y2="18"></line>
                                     <line x1="6" y1="6" x2="18" y2="18"></line>
                                 </svg>
+                                Clear filters
                             </button>
-                        )}
-                    </div>
-
-                    <div className="view-toggle">
-                        <button
-                            className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                            onClick={() => setViewMode('grid')}
-                            title="Grid view"
-                        >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <button
-                            className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-                            onClick={() => setViewMode('list')}
-                            title="List view"
-                        >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <line x1="8" y1="6" x2="21" y2="6"></line>
-                                <line x1="8" y1="12" x2="21" y2="12"></line>
-                                <line x1="8" y1="18" x2="21" y2="18"></line>
-                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                {/* Tags Filter */}
-                <div className="tags-filter-section">
-                    <span className="filter-label">Filter by topic:</span>
-                    <div className="tags-scroll">
-                        <button
-                            className={`filter-tag ${!activeTag ? 'active' : ''}`}
-                            onClick={clearFilters}
-                        >
-                            All Articles
-                        </button>
-                        {allTags.map((tag) => (
-                            <button
-                                key={tag}
-                                className={`filter-tag ${activeTag === tag ? 'active' : ''}`}
-                                onClick={() => handleTagClick(tag)}
-                            >
-                                {tag}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Results Info */}
-                {isFiltering && (
-                    <div className="results-info">
-                        <span className="results-count">
-                            {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'} found
-                        </span>
-                        <button onClick={clearFilters} className="clear-filters-btn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                            Clear filters
-                        </button>
-                    </div>
-                )}
-            </div>
+                        </div>
+                    )}
 
             {/* No Results */}
             {filteredPosts.length === 0 && (
@@ -263,33 +242,77 @@ export default function InteractiveBlog({ allPosts, allTags, recentPosts }) {
                 </section>
             )}
 
-            {/* Sidebar - Recent Posts */}
-            {!isFiltering && recentPosts.length > 0 && (
-                <aside className="blog-sidebar-modern">
+                </div>
+
+                {/* Right Sidebar - Tags & Recent Posts */}
+                <aside className="blog-right-sidebar">
+                    {/* Tags Filter */}
                     <div className="sidebar-card">
-                        <h3 className="sidebar-title">Recent Articles</h3>
-                        <div className="recent-posts-list">
-                            {recentPosts.slice(0, 5).map((post) => (
-                                <a href={`/blog/${post.slug}`} className="recent-post-item" key={post.id}>
-                                    {post.data.image && (
-                                        <div className="recent-post-thumb">
-                                            <img src={post.data.image} alt={post.data.title} loading="lazy" />
-                                        </div>
-                                    )}
-                                    <div className="recent-post-content">
-                                        <h4>{post.data.title}</h4>
-                                        <time>{new Date(post.data.date).toLocaleDateString("en-US", {
-                                            month: "short",
-                                            day: "numeric",
-                                            year: "numeric"
-                                        })}</time>
-                                    </div>
-                                </a>
+                        <h3 className="sidebar-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{display: 'inline', marginRight: '0.5rem'}}>
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Filter by Topic
+                        </h3>
+                        <div className="sidebar-tags-list">
+                            <button
+                                className={`sidebar-tag ${!activeTag ? 'active' : ''}`}
+                                onClick={clearFilters}
+                            >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M3 6h18M3 12h18M3 18h18"></path>
+                                </svg>
+                                All Articles
+                            </button>
+                            {allTags.map((tag) => (
+                                <button
+                                    key={tag}
+                                    className={`sidebar-tag ${activeTag === tag ? 'active' : ''}`}
+                                    onClick={() => handleTagClick(tag)}
+                                >
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                    </svg>
+                                    {tag}
+                                </button>
                             ))}
                         </div>
                     </div>
+
+                    {/* Recent Posts */}
+                    {recentPosts.length > 0 && (
+                        <div className="sidebar-card">
+                            <h3 className="sidebar-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{display: 'inline', marginRight: '0.5rem'}}>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Recent Articles
+                            </h3>
+                            <div className="recent-posts-list">
+                                {recentPosts.slice(0, 5).map((post) => (
+                                    <a href={`/blog/${post.slug}`} className="recent-post-item" key={post.id}>
+                                        {post.data.image && (
+                                            <div className="recent-post-thumb">
+                                                <img src={post.data.image} alt={post.data.title} loading="lazy" />
+                                            </div>
+                                        )}
+                                        <div className="recent-post-content">
+                                            <h4>{post.data.title}</h4>
+                                            <time>{new Date(post.data.date).toLocaleDateString("en-US", {
+                                                month: "short",
+                                                day: "numeric",
+                                                year: "numeric"
+                                            })}</time>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </aside>
-            )}
+            </div>
         </div>
     );
 }

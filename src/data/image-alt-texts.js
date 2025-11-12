@@ -137,7 +137,6 @@ export const imageAltTexts = {
   'reparacion-banos': 'Bathroom repair and renovation guide for homeowners',
   'tendencias-web-2025': 'Web design trends and best practices for 2025',
   'renovations-value-florida': 'Home renovations that add value in Florida real estate market',
-  'marketing-pequeñas-empresas': 'Digital marketing guide for small businesses',
 
   // Template Images
   'backgroundTemplateSeo': 'Professional remodeling and restoration services background image',
