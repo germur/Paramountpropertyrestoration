@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WaterTemplate from "../../components/restoration/templates/WaterTemplate.astro";
+import "../../styles/pages/water-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import SEOHead from "../../components/SEOHead.jsx";
+
+// Page data configuration (hub sin ciudad)
+const pageData = {
+  group: {
+    slug: "water-damage",
+    name: "Water Damage Restoration", 
+    template: "water",
+    description: "Emergency water damage restoration and cleanup services"
+  },
+  sub: null
+};
+
+// SEO básico requerido por BaseLayout y SEOHead
+const pageTitle = "Water Damage Restoration in Florida | 24/7 Emergency Service";
+const pageDescription = "Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  {/* SEOHead genera title, description, canonical, OG/Twitter y JSON-LD */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service="water-damage"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <WaterTemplate group={pageData.group} sub={pageData.sub} />
+</BaseLayout>

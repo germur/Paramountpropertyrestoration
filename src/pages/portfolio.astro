@@ -1,0 +1,697 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SEOHead from "../components/SEOHead.jsx";
+import AnimatedBackground from "../components/AnimatedBackground.jsx";
+
+const pageTitle = "Project Portfolio | Restoration & Remodeling Projects in Florida";
+const pageDescription = "See before/after results for water & fire restoration, mold remediation, and kitchen/bath/home remodels across Florida.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="portfolio"
+    service="portfolio"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <AnimatedBackground client:load />
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          Our Successful Projects
+        </div>
+        <h1 class="hero-title">Project Portfolio</h1>
+        <p class="hero-description">Explore our completed restoration and remodeling projects across Florida. Quality work that speaks for itself.</p>
+        <div class="hero-actions">
+          <a href="tel:+17866022217" class="btn-primary">
+            <i class="fas fa-phone"></i>
+            Call Now: (786) 602-2217
+          </a>
+          <a href="#portfolio-form" class="btn-outline">
+            <i class="fas fa-clipboard-list"></i>
+            Request Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Completed Work</h2>
+        <p>Browse through our portfolio of restoration and remodeling projects</p>
+      </div>
+
+      <div class="gallery-grid-custom">
+        <div class="gallery-item-custom">
+          <img
+            src="/images/remoKitchenHome.jpg"
+            alt="Kitchen Remodeling Project"
+            class="gallery-image-custom"
+          />
+          <div class="gallery-caption">
+            <h3>Kitchen Remodeling</h3>
+            <p>Complete kitchen transformation</p>
+          </div>
+        </div>
+
+        <div class="gallery-item-custom">
+          <img
+            src="/images/habitacionModerna.jpg"
+            alt="Bedroom Remodeling Project"
+            class="gallery-image-custom"
+          />
+          <div class="gallery-caption">
+            <h3>Bedroom Remodeling</h3>
+            <p>Modern bedroom renovation</p>
+          </div>
+        </div>
+
+        <div class="gallery-item-custom">
+          <img
+            src="/images/bañoMinimalista.jpg"
+            alt="Bathroom Remodeling Project"
+            class="gallery-image-custom"
+          />
+          <div class="gallery-caption">
+            <h3>Bathroom Remodeling</h3>
+            <p>Luxury bathroom renovation</p>
+          </div>
+        </div>
+
+        <div class="gallery-item-custom">
+          <img
+            src="/images/livingDiningHero.jpg"
+            alt="Living & Dining Remodeling Project"
+            class="gallery-image-custom"
+          />
+          <div class="gallery-caption">
+            <h3>Living & Dining</h3>
+            <p>Open concept living space</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="section form-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- PROJECT ESTIMATE FORM -->
+        <div class="contact-form-container" id="portfolio-form">
+          <div class="form-header">
+            <div class="form-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3>Request Your Project Estimate</h3>
+            <p>Tell us about your project and we'll provide a detailed estimate</p>
+          </div>
+          
+          <!-- NETLIFY FORM -->
+          <form 
+            class="contact-form" 
+            name="portfolio"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            netlify
+          >
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="portfolio" />
+            <input type="hidden" name="bot-field" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="project-type" class="form-label">Project Type</label>
+              <select id="project-type" name="project-type" class="form-select" required>
+                <option value="">Select a project type</option>
+                <option value="kitchen-remodel">🍳 Kitchen Remodeling</option>
+                <option value="bathroom-remodel">🚿 Bathroom Remodeling</option>
+                <option value="bedroom-remodel">🛏️ Bedroom Remodeling</option>
+                <option value="living-dining-remodel">🛋️ Living/Dining Remodeling</option>
+                <option value="water-restoration">💧 Water Damage Restoration</option>
+                <option value="fire-restoration">🔥 Fire Damage Restoration</option>
+                <option value="mold-remediation">🦠 Mold Remediation</option>
+                <option value="other">📋 Other Project</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Project Details</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Describe your project, budget range, timeline, and any specific requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">
+              <i class="fas fa-paper-plane"></i>
+              Request Free Estimate
+            </button>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info-container">
+          <!-- Call to Action Card -->
+          <div class="emergency-contact-card">
+            <div class="emergency-header">
+              <div class="emergency-icon">
+                <i class="fas fa-phone-volume"></i>
+              </div>
+              <h3>Start Your Project Today</h3>
+              <p>Get a free consultation and detailed estimate</p>
+            </div>
+
+            <div class="emergency-cta">
+              <a href="tel:+17866022217" class="emergency-phone-btn">
+                <i class="fas fa-phone"></i>
+                (786) 602-2217
+              </a>
+              <span class="response-time">⚡ Free estimates available</span>
+            </div>
+          </div>
+
+          <!-- Why Choose Us -->
+          <div class="contact-methods-card">
+            <h3>Why Choose Us</h3>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="method-info">
+                <h4>Quality Guaranteed</h4>
+                <p>All projects backed by our workmanship guarantee</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="method-info">
+                <h4>On-Time Completion</h4>
+                <p>We respect your time and deliver on schedule</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <div class="method-info">
+                <h4>Transparent Pricing</h4>
+                <p>No hidden fees or surprise costs</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="method-info">
+                <h4>Licensed & Insured</h4>
+                <p>Full credentials and insurance coverage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+
+<style>
+  /* ===== HERO SECTION ===== */
+  .hero-section {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== GALLERY SECTION ===== */
+  .gallery-section {
+    background: var(--bg-secondary);
+    padding: 5rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+  }
+
+  .gallery-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-item-custom {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid var(--color-border);
+    background: var(--bg-primary);
+  }
+
+  .gallery-item-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+
+  .gallery-image-custom {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item-custom:hover .gallery-image-custom {
+    transform: scale(1.05);
+  }
+
+  .gallery-caption {
+    padding: 1.5rem;
+  }
+
+  .gallery-caption h3 {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-caption p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  /* ===== FORM SECTION ===== */
+  .form-section {
+    background: var(--bg-primary);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ===== CONTACT FORM ===== */
+  .contact-form-container {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .form-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--bg-secondary);
+  }
+
+  .form-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .form-header h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-header p {
+    color: var(--text-secondary);
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  /* ===== CONTACT INFO ===== */
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .emergency-contact-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .emergency-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(59, 130, 246, 0.05);
+  }
+
+  .emergency-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .emergency-header h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .emergency-header p {
+    color: var(--text-secondary);
+  }
+
+  .emergency-cta {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .emergency-phone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+  }
+
+  .emergency-phone-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: white;
+  }
+
+  .response-time {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .contact-methods-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .contact-methods-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-method:last-child {
+    margin-bottom: 0;
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .method-info h4 {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .method-info p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .gallery-grid-custom {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-section {
+      min-height: 50vh;
+      padding: 1.5rem 0;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .section-header p {
+      font-size: var(--font-size-base);
+    }
+
+    .form-header,
+    .contact-form,
+    .emergency-cta,
+    .contact-methods-card {
+      padding: 1.5rem;
+    }
+
+    .gallery-section {
+      padding: 3rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-form,
+    .emergency-cta,
+    .contact-methods-card {
+      padding: 1rem;
+    }
+
+    .form-header {
+      padding: 1.5rem 1rem;
+    }
+
+    .emergency-phone-btn {
+      padding: 0.875rem 1.5rem;
+      font-size: var(--font-size-base);
+    }
+
+    .gallery-grid-custom {
+      gap: 1rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Smooth scroll for anchor links
+  document.addEventListener('DOMContentLoaded', function() {
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+    
+    smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Form success handling
+    const portfolioForm = document.querySelector('.contact-form');
+    if (portfolioForm) {
+      portfolioForm.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('.form-submit');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Reset after potential redirect/reload
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      });
+    }
+  });
+</script>

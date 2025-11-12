@@ -1,0 +1,370 @@
+---
+import { cities } from "../../../data/restoration.js";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
+
+import "../../../styles/pages/water-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const { group, sub } = Astro.props;
+
+// Enhanced data structure for the unified template
+const getEnhancedServiceData = (groupSlug, subSlug) => {
+  const baseData = {
+    hero: {
+      title: sub?.hero?.title || `${sub.title} Experts in Florida: 24/7 Emergency Service`,
+      description: sub?.hero?.description || `Professional ${sub.title.toLowerCase()} services across Florida. Emergency response, certified technicians, and insurance coordination available 24/7.`,
+      ctaText: "Call Now for Emergency Help",
+      ctaPhone: "+1-786-602-2217",
+      urgencyBadge: "24/7 Emergency Response Available"
+    },
+    services: [
+      { name: "Emergency Assessment", icon: "fas fa-search", description: "Complete damage evaluation" },
+      { name: "Professional Equipment", icon: "fas fa-tools", description: "Advanced restoration tools" },
+      { name: "Insurance Coordination", icon: "fas fa-handshake", description: "Direct billing assistance" },
+      { name: "Licensed Technicians", icon: "fas fa-certificate", description: "IICRC certified experts" },
+      { name: "Quality Guarantee", icon: "fas fa-shield-alt", description: "Satisfaction assured" },
+      { name: "24/7 Response", icon: "fas fa-clock", description: "Always available" }
+    ],
+    features: [
+      "IICRC Certified Technicians",
+      "Advanced Moisture Detection Equipment", 
+      "Direct Insurance Billing",
+      "24/7 Emergency Response",
+      "Antimicrobial Treatments",
+      "Complete Documentation Process"
+    ],
+    warningSigns: [
+      "Unusual odors or musty smells",
+      "Visible staining or discoloration", 
+      "Soft or warped building materials",
+      "Unexplained increases in utility bills",
+      "Signs of moisture or humidity"
+    ],
+    process: [
+      { step: 1, title: "Site Security", description: "Emergency assessment & stabilization", icon: "fas fa-shield-alt" },
+      { step: 2, title: "Professional Restoration", description: "Certified technicians perform work", icon: "fas fa-tools" },
+      { step: 3, title: "Quality Assurance", description: "Complete documentation & approval", icon: "fas fa-certificate" }
+    ]
+  };
+  return baseData;
+};
+
+const serviceData = getEnhancedServiceData(group.slug, sub.slug);
+
+// City data for regional display
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
+---
+
+<div class="unified-service-template">
+  <!-- Compact Hero Section -->
+  <section class="hero-section" style="background-image: url('/images/herowater.jpg'); height: 450px;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-clock"></i>
+        {serviceData.hero.urgencyBadge}
+      </div>
+      <h1>{serviceData.hero.title}</h1>
+      <p>{serviceData.hero.description}</p>
+      <div class="hero-actions">
+        <a href={`tel:${serviceData.hero.ctaPhone}`} class="cta-button primary">
+          <i class="fas fa-phone"></i> {serviceData.hero.ctaText}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section - Reusing pattern from service pages -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        {serviceData.services.map(service => (
+          <div class="service-item">
+            <i class={service.icon}></i>
+            <h3>{service.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Consolidated Overview & Features Section -->
+  <section class="section service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <!-- Main content -->
+        <div class="overview-content">
+          <h2>Professional {sub.title} Services You Can Trust</h2>
+          <p class="overview-text">
+            {sub.title} requires immediate professional attention to prevent extensive property damage and health risks. 
+            Our certified technicians provide comprehensive solutions across Florida with advanced equipment and proven methods.
+          </p>
+          
+          <!-- Warning Signs as compact list -->
+          <div class="diagnostic-section">
+            <h3><i class="fas fa-exclamation-triangle" style="color: #f39c12;"></i> Warning Signs to Watch For:</h3>
+            <div class="warning-signs-grid">
+              {serviceData.warningSigns.map(sign => (
+                <div class="warning-item">
+                  <i class="fas fa-check-circle" style="color: #35c3e9;"></i>
+                  {sign}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <ul class="service-features">
+            {serviceData.features.map(feature => (
+              <li>
+                <span class="feature-icon">#</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Sidebar with process -->
+        <div class="overview-sidebar">
+          <h3><i class="fas fa-clipboard-list"></i> Our Process</h3>
+          {serviceData.process.map(step => (
+            <div class="process-step">
+              <div class="step-number">{step.step}</div>
+              <div class="step-content">
+                <h4>{step.title}</h4>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+          
+          <!-- Insurance help section -->
+          <div class="insurance-help-compact">
+            <h4><i class="fas fa-handshake" style="color: #35c3e9;"></i> Insurance Claims Assistance</h4>
+            <p>We work directly with your insurance company, handling all documentation and communication to ensure proper coverage for restoration work.</p>
+          </div>
+
+          <a href="/contact" class="btn-outline">
+            Get Emergency Assessment →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cities Section - Improved UI/UX with Regional Accordion -->
+  <section class="section" style="padding-bottom: 2rem; background: #f8f9fa;">
+    <div class="container">
+      <h2 class="section-title">
+        Immediate {sub.title} Service Available Throughout Florida
+      </h2>
+      <p class="section-subtitle">
+        We deploy local teams throughout Florida to guarantee fast response times and personalized service tailored to your city's regulations.
+      </p>
+
+      <!-- Featured Cities - Top 8 Most Important -->
+      <div class="featured-cities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        {[
+          cityRegions["South Florida"]?.find(c => c.slug === "miami"),
+          cityRegions["Central Florida"]?.find(c => c.slug === "orlando"),
+          cityRegions["Tampa Bay"]?.find(c => c.slug === "tampa"),
+          cityRegions["South Florida"]?.find(c => c.slug === "fort-lauderdale"),
+          cityRegions["Tampa Bay"]?.find(c => c.slug === "st-petersburg"),
+          cityRegions["Southwest Florida"]?.find(c => c.slug === "naples"),
+          cityRegions["Northeast Florida"]?.find(c => c.slug === "jacksonville"),
+          cityRegions["South Florida"]?.find(c => c.slug === "west-palm-beach")
+        ].filter(Boolean).slice(0, 8).map(city => (
+          <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} class="featured-city-card" style="
+            text-decoration: none;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+          " 
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='#35c3e9'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e9ecef'; this.style.boxShadow='none'">
+            <i class="fas fa-map-marker-alt" style="color: #35c3e9; font-size: 1.8rem; margin-bottom: 1rem;"></i>
+            <h4 style="color: #333; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">{city.nombre}</h4>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">{city.condado} County</p>
+            <span style="
+              background: #35c3e9; 
+              color: white; 
+              padding: 0.6rem 1.2rem; 
+              border-radius: 25px; 
+              font-size: 0.85rem; 
+              font-weight: 600; 
+              display: inline-block;
+            ">
+              Get Service Now →
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Regional Accordion for All Cities -->
+      <div class="regional-accordion" style="margin-top: 3rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="color: #333; margin-bottom: 0.5rem;">All Florida Service Areas</h3>
+          <p style="color: #666;">Click on any region to see all available cities</p>
+        </div>
+        
+        {Object.entries(cityRegions).map(([regionName, regionCities], index) => (
+          <div class="region-accordion-item" style="
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: white;
+            overflow: hidden;
+          ">
+            <button class="region-toggle" 
+                    style="
+                      width: 100%;
+                      background: #f8f9fa;
+                      border: none;
+                      padding: 1rem 1.5rem;
+                      text-align: left;
+                      font-size: 1.1rem;
+                      font-weight: 600;
+                      color: #333;
+                      cursor: pointer;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      transition: all 0.3s ease;
+                    "
+                    onclick="
+                      const content = this.nextElementSibling;
+                      const icon = this.querySelector('.toggle-icon');
+                      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                        this.style.background = '#f8f9fa';
+                      } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                        this.style.background = '#e9ecef';
+                      }
+                    "
+                    onmouseover="if (!this.nextElementSibling.style.maxHeight || this.nextElementSibling.style.maxHeight === '0px') this.style.background = '#e9ecef'"
+                    onmouseout="if (!this.nextElementSibling.style.maxHeight || this.nextElementSibling.style.maxHeight === '0px') this.style.background = '#f8f9fa'">
+              <span>
+                <i class="fas fa-map-marked-alt" style="color: #35c3e9; margin-right: 0.5rem;"></i>
+                {regionName} ({regionCities.length} cities)
+              </span>
+              <i class="fas fa-chevron-down toggle-icon" style="color: #666; transition: transform 0.3s ease;"></i>
+            </button>
+            
+            <div class="region-content" style="
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease;
+            ">
+              <div class="cities-grid" style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 0.75rem;
+                padding: 1.5rem;
+              ">
+                {regionCities.map(city => (
+                  <a href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`} 
+                     style="
+                       text-decoration: none;
+                       background: #f8f9fa;
+                       border: 1px solid #e9ecef;
+                       border-radius: 6px;
+                       padding: 1rem;
+                       text-align: center;
+                       transition: all 0.2s ease;
+                       display: block;
+                     "
+                     onmouseover="this.style.background='white'; this.style.borderColor='#35c3e9'; this.style.transform='translateY(-2px)'"
+                     onmouseout="this.style.background='#f8f9fa'; this.style.borderColor='#e9ecef'; this.style.transform='translateY(0)'">
+                    <h5 style="color: #333; margin-bottom: 0.25rem; font-size: 0.95rem;">{city.nombre}</h5>
+                    <p style="color: #666; font-size: 0.8rem; margin: 0;">{city.condado} County</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Emergency notice -->
+      <div class="emergency-notice" style="
+        margin-top: 2.5rem;
+        background: linear-gradient(135deg, #35c3e9 0%, #1e90ff 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+      ">
+        <i class="fas fa-clock" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+        <h3 style="margin-bottom: 0.5rem;">24/7 Emergency Response Available Statewide</h3>
+        <p style="margin-bottom: 1.5rem; opacity: 0.9;">Don't wait - property damage gets worse over time. Our certified technicians are standing by.</p>
+        <a href="tel:+17866022217" style="
+          background: white;
+          color: #35c3e9;
+          text-decoration: none;
+          padding: 0.8rem 2rem;
+          border-radius: 25px;
+          font-weight: 700;
+          font-size: 1rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+          <i class="fas fa-phone-alt"></i> CALL NOW FOR FAST RESPONSE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" style="padding-top: 2rem;">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions About {sub.title}</h2>
+      <FAQ questions={[
+        {
+          question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
+          answer: "We provide 24/7 emergency response and can typically arrive on-site within 60-90 minutes of your call. Our rapid response helps minimize damage and reduces restoration costs."
+        },
+        {
+          question: `What equipment do you use for ${sub.title.toLowerCase()}?`,
+          answer: "We use professional-grade equipment including thermal imaging cameras, moisture meters, high-capacity extractors, industrial dehumidifiers, and air movers. All equipment meets IICRC standards."
+        },
+        {
+          question: "Do you work with insurance companies?",
+          answer: "Yes, we work directly with insurance companies and adjusters. We provide detailed documentation, photos, and estimates to support your claim and ensure proper coverage."
+        },
+        {
+          question: "What certifications do your technicians have?",
+          answer: "Our technicians are IICRC certified in water damage restoration, structural drying, and applied microbial remediation. We maintain ongoing training and certification updates."
+        }
+      ]} client:load />
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <RestorationCTA 
+    title="Need Expert Help Now?"
+    subtitle="Don't wait - property damage gets worse over time"
+    ctaText="Get Emergency Help →"
+    client:load 
+  />
+</div>

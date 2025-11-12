@@ -1,0 +1,207 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AreasServed from "../components/AreasServed.jsx";
+import LinkBuildingSection from "../components/linkBuilding";
+import "../styles/services.css";
+import SEOHead from "../components/SEOHead.jsx";
+const pageTitle = "Construction & Remodeling Services in Florida | Paramount";
+const pageDescription = "Explore residential & commercial services: kitchen, bathroom, flooring, additions & more. Licensed & insured contractors in Florida.";
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service="services"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Professional Remodeling Services</h1>
+      <p class="hero-subtitle">
+        Transforming spaces in Cali with quality craftsmanship and attention to
+        detail.
+      </p>
+      <a href="/contact" class="hero-cta-button">Get a Free Quote</a>
+    </div>
+  </section>
+  <section>
+    <div class="tabs-container">
+      <div class="tabs-services">
+        <div class="cnt-iconsServices">
+          <a href="/services/kitchen-remodeling" class="tab-button"
+            ><i class="fas fa-kitchen-set"></i>Kitchens</a
+          >
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/services/bathroom-remodeling" class="tab-button"
+            ><i class="fas fa-bath"></i>Bathrooms</a
+          >
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/services/bedroom-remodeling" class="tab-button"
+            ><i class="fas fa-bed"></i>Bedroom</a
+          >
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/services/home-additions-remodeling" class="tab-button">
+            <i class="fas fa-house-chimney-window"></i>HomeAdditions</a
+          >
+        </div>
+
+        <div class="cnt-iconsServices">
+          <a href="/services/living-dining-remodeling" class="tab-button"
+            ><i class="fas fa-couch"></i>Living & Dining</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services-grid-container">
+    <div class="services-grid">
+      <div class="service-card">
+        <img
+          src="/images/kitchenHero.jpg"
+          alt="Remodelación de Cocina"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Kitchen Remodeling</h2>
+          <p class="card-description">Transform your kitchen into the heart of your home with our comprehensive remodeling services. From custom cabinetry and premium countertops to state-of-the-art appliances and smart storage solutions, we create functional, beautiful spaces that increase your property value by up to 15% while making daily cooking a joy. Our certified contractors handle everything from permits to final inspection, ensuring a stress-free renovation experience.</p>
+          <div class="cnt-tagsServices">
+            <a href="/services/kitchen-remodeling/miami" class="service-tag">Kitchen Islands</a>
+            <a href="/services/kitchen-remodeling/orlando" class="service-tag">Compact Kitchens</a>
+            <a href="/services/kitchen-remodeling/tampa" class="service-tag">Luxury Upgrades</a>
+            <a href="/services/kitchen-remodeling/fort-lauderdale" class="service-tag">Sustainable Designs</a>
+            <a href="/services/kitchen-remodeling/jacksonville" class="service-tag">Smart Tech Integration</a>
+            <a href="/services/kitchen-remodeling/naples" class="service-tag">Modern Kitchen Design</a>
+          </div>
+          <div>
+            <a href="/services/kitchen-remodeling" class="card-link"
+              >Transform Your Kitchen Today &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/bathroomHero.jpg"
+          alt="Renovación de Baño"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Bathroom Renovation</h2>
+          <p class="card-description">Turn your bathroom into a luxurious personal spa with our expert renovation services. We specialize in modernizing outdated bathrooms with waterproof installations, energy-efficient fixtures, and premium tile work that stands the test of time. Whether you need a quick refresh or complete reconstruction, our licensed professionals deliver stunning results that boost your home's resale value while creating a relaxing retreat where you can unwind after long days.</p>
+          <div class="cnt-tagsServices">
+            <a href="/services/bathroom-remodeling/miami" class="service-tag">Bathroom Renovation</a>
+            <a href="/services/bathroom-remodeling/orlando" class="service-tag">Shower Installation</a>
+            <a href="/services/bathroom-remodeling/tampa" class="service-tag">Tile Replacement</a>
+            <a href="/services/bathroom-remodeling/fort-lauderdale" class="service-tag">Vanity Upgrade</a>
+            <a href="/services/bathroom-remodeling/jacksonville" class="service-tag">Bathroom Waterproofing</a>
+            <a href="/services/bathroom-remodeling/naples" class="service-tag">Modern Bathroom Design</a>
+          </div>
+          <div>
+            <a href="/services/bathroom-remodeling" class="card-link"
+              >Upgrade Your Bathroom Now &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/bedroomHero.jpg"
+          alt="Diseño de Habitaciones"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Bedroom Design</h2>
+          <p class="card-description">Create your perfect sanctuary with custom bedroom designs that combine comfort, functionality, and style. Our experienced team crafts personalized sleeping spaces featuring premium finishes, built-in storage solutions, smart home technology, and luxury touches that reflect your personality. From master suite transformations to cozy guest rooms, we design bedrooms that promote better sleep, improve organization, and serve as your personal escape from daily stress.</p>
+          <div class="cnt-tagsServices">
+            <a href="/services/bedroom-remodeling/miami" class="service-tag">Master Bedrooms</a>
+            <a href="/services/bedroom-remodeling/orlando" class="service-tag">Guest & Kids Rooms</a>
+            <a href="/services/bedroom-remodeling/tampa" class="service-tag">Luxury Upgrades</a>
+            <a href="/services/bedroom-remodeling/fort-lauderdale" class="service-tag">Smart Home Integration</a>
+            <a href="/services/bedroom-remodeling/jacksonville" class="service-tag">Eco-Friendly Designs</a>
+          </div>
+          <div>
+            <a href="/services/bedroom-remodeling" class="card-link"
+              >Create Your Dream Bedroom &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/livingDiningHero.jpg"
+          alt="Salas y Comedores"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Living & Dining</h2>
+          <p class="card-description">Revolutionize your family gathering spaces with open-concept living and dining room renovations that bring loved ones together. We specialize in removing walls, installing modern lighting systems, upgrading flooring, and creating seamless flow between spaces. Our designs maximize natural light, improve traffic patterns, and incorporate entertainment-ready features that make hosting effortless while significantly increasing your home's market appeal and functionality for everyday living.</p>
+          <div class="cnt-tagsServices">
+            <a href="/services/living-dining-remodeling/miami" class="service-tag">Living Rooms</a>
+            <a href="/services/living-dining-remodeling/orlando" class="service-tag">Dining Rooms</a>
+            <a href="/services/living-dining-remodeling/tampa" class="service-tag">Luxury Upgrades</a>
+            <a href="/services/living-dining-remodeling/fort-lauderdale" class="service-tag">Smart Lighting</a>
+            <a href="/services/living-dining-remodeling/jacksonville" class="service-tag">Open Concepts</a>
+            <a href="/services/living-dining-remodeling/naples" class="service-tag">Modern Design</a>
+          </div>
+          <div>
+            <a href="/services/living-dining-remodeling" class="card-link"
+              >Redesign Your Living Spaces &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img
+          src="/images/home-additionsHero.jpg"
+          alt="Adiciones al Hogar"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Home Additions</h2>
+          <p class="card-description">Maximize your property's potential with expertly designed home additions that seamlessly blend with your existing architecture. From single-room expansions and multi-story additions to outdoor living structures and ADUs, we handle complex structural projects that can increase your home's square footage and value by 20-30%. Our licensed engineers and contractors ensure every addition meets Florida building codes while providing the extra space your growing family needs without the hassle of moving.</p>
+          <div class="cnt-tagsServices">
+            <a href="/services/home-additions-remodeling/miami" class="service-tag">Room Expansions</a>
+            <a href="/services/home-additions-remodeling/orlando" class="service-tag">Multi-Story Projects</a>
+            <a href="/services/home-additions-remodeling/tampa" class="service-tag">Outdoor Structures</a>
+            <a href="/services/home-additions-remodeling/fort-lauderdale" class="service-tag">Smart Home Integration</a>
+            <a href="/services/home-additions-remodeling/jacksonville" class="service-tag">Energy Efficient Additions</a>
+          </div>
+          <div class="cnt-card-linkServices">
+            <a href="/services/home-additions-remodeling" class="card-link"
+              >Expand Your Living Space &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <AreasServed client:load />
+  </section>
+  <section>
+    <LinkBuildingSection />
+  </section>
+</BaseLayout>

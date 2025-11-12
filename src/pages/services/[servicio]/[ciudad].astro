@@ -1,0 +1,357 @@
+---
+// src/pages/services/[servicio]/[ciudad].astro
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import '../../../styles/pages/[ciudad].css'
+import '../../../styles/pages/programmatic-conversion.css'
+import { serviceGroups, getAllGroupCityCombinations } from "../../../data/services.js";
+import { cities } from "../../../data/restoration.js";
+import { generateCityIntro, generateLocalRisks, generateNeighborhoodContent, hasCityContent } from "../../../lib/city-content-generator.js";
+import SEOHead from "../../../components/SEOHead.jsx";
+import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+export async function getStaticPaths() {
+  return getAllGroupCityCombinations().map(combo => ({
+    params: {
+      servicio: combo.servicio,
+      ciudad: combo.ciudad,
+    },
+    props: {
+      servicioData: combo.serviceData,
+      ciudadData: combo.cityData,
+    },
+  }));
+}
+
+const { servicio, ciudad } = Astro.params;
+const { servicioData, ciudadData } = Astro.props;
+
+// Generar contenido dinámico
+const pageTitle = `${servicioData.name} in ${ciudadData.nombre} | Paramount Property Restoration`;
+const pageDescription = `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. Licensed contractors with quality guaranteed work and free consultations.`;
+
+// Generate unique city content for services pages
+const cityIntro = generateCityIntro(ciudad, servicioData.name, false);
+const localRisks = generateLocalRisks(ciudad, servicioData.name);
+const neighborhoodContent = generateNeighborhoodContent(ciudad);
+const hasUniqueContent = hasCityContent(ciudad);
+
+// Contenido dinámico
+const heroContent = {
+  title: `${servicioData.name} in ${ciudadData.nombre}`,
+  subtitle: `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre} with quality craftsmanship and guaranteed results.`,
+  ctaText: `Get Free Consultation in ${ciudadData.nombre}`,
+};
+
+// Servicios relacionados para remodeling
+const relatedServices = [
+  { name: "Kitchen Remodeling", icon: "🍳" },
+  { name: "Bathroom Renovation", icon: "🛁" },
+  { name: "Bedroom Design", icon: "🛏️" },
+  { name: "Living & Dining", icon: "🛋️" },
+  { name: "Home Additions", icon: "🏡" },
+];
+
+const serviceAreaCities = [
+  "Weston",
+  "Pembroke Pines",
+  "Coral Gables",
+  "Aventura",
+  "Doral",
+  "Kendall",
+];
+
+// Características específicas para remodeling services
+const serviceFeatures = [
+  "Free in-home consultation & design",
+  "Licensed & insured contractors",
+  "Quality materials and craftsmanship", 
+  "Project management & timely completion"
+];
+
+const serviceName = servicioData.name;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  {/* SEO para página de ciudad en /services */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service={servicio}
+    subservice={null}
+    city={ciudad}
+    addressLocality={ciudadData.nombre}
+    addressRegion={ciudadData.region}
+    phone={"+1-786-602-2217"}
+    isHub={false}
+    businessName="Paramount Property Restoration"
+    slot="head"
+  />
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <AnimatedBackground client:load />
+    <div class="container">
+      <div class="hero-content">
+        <!-- Service badges -->
+        <div class="service-badges">
+          {
+            relatedServices.map((service) => (
+              <span
+                class="service-badge"
+                class:list={[
+                  service.name.replace(/[^a-zA-Z]/g, "").toLowerCase().includes(
+                    serviceName.replace(/[^a-zA-Z]/g, "").toLowerCase().substring(0, 7)
+                  ) && "active",
+                ]}
+              >
+                <span class="badge-icon">{service.icon}</span>
+                <span class="badge-text">{service.name}</span>
+              </span>
+            ))
+          }
+        </div>
+
+        <!-- Quality badge for remodeling services -->
+        <div class="quality-banner">
+          <span class="quality-icon">🏆</span>
+          <span class="quality-text">Licensed & Insured Contractors</span>
+          <span class="quality-phone">Free Consultation: (786) 602-2217</span>
+        </div>
+
+        <!-- Main heading -->
+        <h1 class="hero-title">
+          Professional {serviceName}<br />
+          in {ciudadData.nombre}
+        </h1>
+
+        <!-- Hero subtitle -->
+        <p class="hero-subtitle">
+          {heroContent.subtitle}
+        </p>
+
+        <!-- CTA Button -->
+        <div class="hero-cta">
+          <a href="/contact" class="btn-primary">
+            Get Free Consultation →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview Section -->
+  <section class="section service-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <h2>{serviceName} Services You Can Trust</h2>
+          <p class="overview-text">
+            We deliver professional {serviceName.toLowerCase()} in {
+              ciudadData.nombre
+            } with expert contractors, quality materials, and results that exceed expectations. Every project is customized to your specific needs and preferences.
+          </p>
+
+          <ul class="service-features">
+            {serviceFeatures.map((feature) => (
+              <li>
+                <span class="feature-icon">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="overview-sidebar">
+          <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
+          <p>
+            We offer {serviceName.toLowerCase()} in {ciudadData.nombre} and
+            throughout {ciudadData.region}, including neighborhoods like {
+              serviceAreaCities.slice(0, 3).join(", ")
+            }, and {serviceAreaCities[3]}.
+          </p>
+          <a href="/contact" class="btn-outline">
+            Schedule Free Consultation in {ciudadData.nombre} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIQUE CITY CONTENT: SEO & Local Authority -->
+  {hasUniqueContent && cityIntro && (
+    <section class="city-unique-content">
+      <div class="container">
+        <div class="city-intro-card">
+          <h2 class="city-intro-title">
+            Expert {serviceName} Contractors Serving {ciudadData.nombre}
+          </h2>
+          <p class="city-intro-text">{cityIntro}</p>
+
+          {neighborhoodContent && (
+            <div class="neighborhoods-section">
+              <h3 class="neighborhoods-title">
+                <i class="fas fa-map-marker-alt"></i>
+                Complete {ciudadData.county} Coverage
+              </h3>
+              <p class="neighborhoods-text">{neighborhoodContent}</p>
+            </div>
+          )}
+
+          {localRisks && (
+            <div class="local-risks-section">
+              <h3 class="risks-title">
+                <i class="fas fa-home"></i>
+                Why {ciudadData.nombre} Homes Choose Our {serviceName}
+              </h3>
+              <p class="risks-text">{localRisks}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Why Choose Us Section -->
+  <section class="section why-choose-section">
+    <div class="container">
+      <h2 class="section-title">
+        Why Choose Our {serviceName} in {ciudadData.nombre}?
+      </h2>
+      <p class="section-subtitle">
+        We combine years of experience with the latest techniques to deliver exceptional results that stand the test of time.
+      </p>
+
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Licensed & Certified</h3>
+          <p>All contractors are licensed, insured, and certified to work in {ciudadData.county}.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>On-Time Completion</h3>
+          <p>We stick to schedules and complete your {serviceName.toLowerCase()} project on time, every time.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Quality Guarantee</h3>
+          <p>Every project comes with comprehensive warranties covering materials and workmanship.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees or surprise costs. Get detailed estimates before work begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section process-section">
+    <div class="container">
+      <h2 class="section-title">Our {serviceName} Process</h2>
+      <p class="section-subtitle">
+        From consultation to completion, we follow a proven process that ensures quality results.
+      </p>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Free Consultation</h3>
+            <p>We visit your {ciudadData.nombre} property to assess your needs and provide a detailed estimate.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Design & Planning</h3>
+            <p>Create detailed plans and select materials that match your style and budget preferences.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Professional Installation</h3>
+            <p>Our certified team completes your {serviceName.toLowerCase()} with precision and attention to detail.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Final Inspection</h3>
+            <p>We conduct a thorough quality check and walkthrough to ensure your complete satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQs Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="section-title">
+        FAQs About {serviceName} in {ciudadData.nombre}
+      </h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Do I need a permit for {serviceName.toLowerCase()} in {ciudadData.nombre}?
+          </h3>
+          <p class="faq-answer">
+            Yes, but we handle all permits and city documentation for you. Our team is familiar with {ciudadData.county} requirements and ensures full compliance.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            How long does a typical {serviceName.toLowerCase()} project take?
+          </h3>
+          <p class="faq-answer">
+            Most {serviceName.toLowerCase()} projects in {ciudadData.nombre} are completed within 5–10 business days, depending on the scope and complexity.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            What areas of {ciudadData.nombre} do you serve?
+          </h3>
+          <p class="faq-answer">
+            We serve all of {ciudadData.nombre} and surrounding areas in {
+              ciudadData.region
+            }, including
+            {serviceAreaCities.slice(0, 4).join(", ")}, and more.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Do you offer warranties on your {serviceName.toLowerCase()}?
+          </h3>
+          <p class="faq-answer">
+            Yes, all our {serviceName.toLowerCase()} work comes with comprehensive warranties covering both materials and labor for your peace of mind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

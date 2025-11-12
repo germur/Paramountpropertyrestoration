@@ -1,0 +1,38 @@
+---
+const { title, content, checklist } = Astro.props;
+---
+
+<section class="section bg-primary">
+  <div class="container">
+    <h2 class="section-title text-center mb-12">{title}</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <p class="text-lg leading-relaxed mb-6">
+            <strong class="text-accent">{content.split('.')[0]}.</strong> {content.split('.').slice(1).join('.')}
+          </p>
+        </div>
+      </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3 class="text-accent mb-6">Certified Authority</h3>
+          <ul class="trust-list">
+            {checklist.map((item, index) => {
+              const icons = [
+                "fas fa-bolt", "fas fa-microscope", "fas fa-handshake", 
+                "fas fa-clock", "fas fa-shield-virus", "fas fa-file-alt"
+              ];
+              return (
+                <li>
+                  <i class={icons[index] || "fas fa-check-circle"}></i>
+                  <span>{item}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,114 @@
+[build]
+  publish = "dist"
+  command = "npm run build && node scripts/indexnow-submit.js"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[forms]]
+  name = "contact"
+  [[forms.notifications]]
+    type = "email"
+    to = "services@paramountpropertyrestoration.com"
+    subject = "📬 New Contact Form Submission"
+    body = """
+    NEW CONTACT REQUEST:
+    
+    Name: {{ form.name }}
+    Email: {{ form.email }}
+    Phone: {{ form.phone }}
+    Address: {{ form.address }}
+    Service Type: {{ form.subject }}
+    Message: {{ form.message }}
+    
+    Timestamp: {{ form.created_at }}
+    """
+
+[[forms]]
+  name = "emergency-request"
+  # Configure notifications
+  [[forms.notifications]]
+    type = "email"
+    to = "services@paramountpropertyrestoration.com"
+    subject = "🚨 Emergency Service Request - {{ form.city }}"
+    body = """
+    NEW EMERGENCY REQUEST:
+    
+    Name: {{ form.name }}
+    Phone: {{ form.phone }}
+    Service: {{ form.service }}
+    City: {{ form.city }}
+    Description: {{ form.description }}
+    
+    Timestamp: {{ form.created_at }}
+    """
+
+[[forms]]
+  name = "mold-landing"
+  # Configure notifications
+  [[forms.notifications]]
+    type = "email"
+    to = "services@paramountpropertyrestoration.com"
+    subject = "🚨 Mold Landing - Free Visual Inspection Request"
+    body = """
+    NEW MOLD LANDING LEAD:
+    
+    Name: {{ form.name }}
+    Phone: {{ form.phone }}
+    Email: {{ form.email }}
+    Property Type: {{ form.property_type }}
+    Description: {{ form.description }}
+    Urgency: {{ form.urgency }}
+    
+    Timestamp: {{ form.created_at }}
+    """
+
+# Redirects and headers for SEO
+[[redirects]]
+  from = "/services/*"
+  to = "/services/:splat"
+  status = 301
+
+[[redirects]]  
+  from = "/restoration/*"
+  to = "/restoration/:splat"
+  status = 301
+
+# Headers for better performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

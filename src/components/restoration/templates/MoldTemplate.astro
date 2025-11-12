@@ -1,0 +1,366 @@
+---
+import "../../../styles/pages/mold-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../../AcordeonServices";
+import RestorationCTA from "../../RestorationCTA";
+import "../../../styles/global.css";
+import { cities } from "../../../data/restoration.js";
+
+const { group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+  const regions = {};
+  cities.forEach(city => {
+    if (!regions[city.region]) {
+      regions[city.region] = [];
+    }
+    regions[city.region].push(city);
+  });
+  return regions;
+};
+
+const cityRegions = getCitiesByRegion();
+
+// Contenido específico para mold remediation basado en el subservicio
+const getMoldContent = (subSlug) => {
+  const moldContent = {
+    "mold-remediation": {
+      hero: {
+        title: "Florida Certified Mold Testing: Get Expert Insurance Claim Support",
+        description: "Our Florida teams provide 24/7 mold remediation to protect your home, office, and health. From black mold testing to full remediation and prevention, we deliver safe, lasting results.",
+        cta: "Remove Mold Fast",
+        bgImage: "/images/heroMold.jpg"
+      },
+      services: [
+        { icon: "fas fa-magnifying-glass", title: "Mold Inspection", description: "Professional mold testing and inspection", slug: "mold-inspection", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-broom", title: "Black Mold Removal", description: "Safe removal of toxic black mold", slug: "black-mold-removal", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Prevent future mold growth", slug: "mold-prevention", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-vial", title: "Mold Testing", description: "Certified mold testing services", slug: "mold-testing", image: "/images/Moldtesting.jpg", link: "/restoration/mold-remediation/mold-testing" }
+      ],
+      faqs: [
+        { q: "¿Cubre mi seguro de casa el moho en Florida?", a: "Las pólizas estándar tienen limitaciones. El moho debe ser el resultado de un daño cubierto (ej. tubería rota). Por eso, nuestra documentación certificada es crítica para respaldar tu reclamo." },
+        { q: "¿Necesito un asesor de moho (Assessor) o un remediador (Remediator) en Florida?", a: "La ley de FL exige que el asesor que hace la prueba sea independiente del remediador. Nosotros somos asesores licenciados por el DBPR para evitar conflictos de interés." },
+        { q: "¿Cuánto tiempo tarda en crecer el moho después de una inundación?", a: "El moho puede comenzar a activarse en 24 horas y el crecimiento visible puede ocurrir en 48-72 horas. La acción inmediata es esencial para limitar los daños estructurales y los costos." },
+        { q: "¿Qué incluye el servicio de prueba de moho certificado?", a: "Incluye inspección visual, muestreo de aire, análisis de laboratorio, lecturas de humedad y temperatura, y un protocolo de remediación detallado para su seguro." }
+      ],
+      steps: [
+        { title: "Inspection", text: "Identify mold type & source", icon: "fas fa-magnifying-glass" },
+        { title: "Containment", text: "Isolate affected areas", icon: "fas fa-hard-hat" },
+        { title: "Removal", text: "Safely clean mold colonies", icon: "fas fa-broom" },
+        { title: "Air Treatment", text: "HEPA filtration & agents", icon: "fas fa-wind" },
+        { title: "Prevention", text: "Moisture control & testing", icon: "fas fa-shield-alt" }
+      ]
+    },
+    "mold-inspection": {
+      hero: {
+        title: "Get Certified Mold Testing in Florida—Fast, Accurate, Reliable",
+        description: "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
+        cta: "Schedule My Mold Test Today",
+        bgImage: "/images/moldDamage.jpg"
+      },
+      services: [
+        { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-flask", title: "Testing & Sampling", description: "Air and surface samples are collected for laboratory analysis.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-microscope", title: "Lab Analysis", description: "Professional laboratory testing identifies mold types and concentration levels.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-clipboard-list", title: "Detailed Report", description: "You receive a comprehensive report with findings and recommendations.", image: "/images/Moldtesting.jpg", link: "/restoration/mold-remediation/mold-inspection" }
+      ],
+      faqs: [
+        { q: "What's the difference between inspection and testing?", a: "Inspection = visual & moisture scan. Testing = lab-confirmed type & spore count." },
+        { q: "How accurate are mold tests?", a: "Lab-certified results with 99% accuracy." },
+        { q: "Is mold testing required before removal?", a: "Yes—testing confirms the strain & guides safe remediation." },
+        { q: "How long until I get results?", a: "Most reports delivered in 24–48 hours." }
+      ],
+      steps: [
+        { title: "Initial Check", text: "Spot visible mold & risks", icon: "fas fa-eye" },
+        { title: "Air Sampling", text: "Detect invisible spores", icon: "fas fa-lungs" },
+        { title: "Surface Test", text: "Confirm mold type", icon: "fas fa-hand-paper" },
+        { title: "Lab Analysis", text: "Identify strain & levels", icon: "fas fa-microscope" },
+        { title: "Clear Report", text: "Results & action plan", icon: "fas fa-clipboard-list" }
+      ]
+    },
+    "black-mold-removal": {
+      hero: {
+        title: "Black Mold is Toxic—We Remove It Safely",
+        description: "Our certified Florida teams eliminate dangerous black mold, clean the air, and protect your family's health with proven remediation methods.",
+        cta: "Get Black Mold Removal Now",
+        bgImage: "/images/moldDamage.jpg"
+      },
+      services: [
+        { icon: "fas fa-magnifying-glass", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-hard-hat", title: "Containment & Safety Setup", description: "Seal affected areas to prevent further spread.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-wind", title: "Removal & Air Scrubbing", description: "HEPA filtration, safe disposal, and eco-friendly cleaning.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/black-mold-removal" },
+        { icon: "fas fa-droplet", title: "Moisture Control & Prevention", description: "Fix leaks, humidity, and future mold risks.", image: "/images/Moldtesting.jpg", link: "/restoration/mold-remediation/mold-prevention" }
+      ],
+      faqs: [
+        { q: "How dangerous is black mold?", a: "Black mold can trigger respiratory issues, allergies, and health risks—especially for children, elderly, and those with asthma. Professional removal is strongly recommended." },
+        { q: "Can I remove black mold myself?", a: "Not safely. DIY cleaning often spreads spores further—professional removal is essential." },
+        { q: "How long does black mold removal take?", a: "Small jobs: 1–2 days. Severe infestations: up to a week." },
+        { q: "Does insurance cover black mold removal?", a: "Often yes, if caused by a covered water damage event." }
+      ],
+      steps: [
+        { title: "Inspection", text: "Detect spread & levels", icon: "fas fa-magnifying-glass" },
+        { title: "Containment", text: "Seal affected areas", icon: "fas fa-hard-hat" },
+        { title: "Removal", text: "HEPA filtration & cleaning", icon: "fas fa-wind" },
+        { title: "Prevention", text: "Fix leaks & humidity", icon: "fas fa-droplet" }
+      ]
+    },
+    "mold-prevention": {
+      hero: {
+        title: "Stop Mold Before It Starts",
+        description: "Our certified Florida specialists protect your property with proven prevention strategies—moisture control, air treatment, and protective barriers.",
+        cta: "Protect My Home From Mold",
+        bgImage: "/images/moldDamage.jpg"
+      },
+      services: [
+        { icon: "fas fa-thermometer-half", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-inspection" },
+        { icon: "fas fa-fan", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-paint-brush", title: "Protective Barriers & Treatments", description: "Apply safe coatings to walls, attics & crawlspaces.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-prevention" },
+        { icon: "fas fa-calendar-check", title: "Ongoing Prevention Plan", description: "Recommendations for dehumidifiers, HVAC care & seasonal checks.", image: "/images/Moldtesting.jpg", link: "/restoration/mold-remediation/mold-prevention" }
+      ],
+      faqs: [
+        { q: "How can I prevent mold in Florida homes?", a: "By controlling humidity, fixing leaks, and applying preventive coatings." },
+        { q: "Does mold prevention really work?", a: "Yes. Professional prevention reduces risk of infestation by controlling conditions mold needs." },
+        { q: "What's the difference between mold prevention and mold removal?", a: "Prevention stops growth before it starts, while removal handles active infestations." },
+        { q: "Is mold prevention covered by insurance?", a: "Usually no—insurance covers damage, not prevention. But prevention lowers long-term costs." }
+      ],
+      steps: [
+        { title: "Assessment", text: "Identify leaks & risks", icon: "fas fa-thermometer-half" },
+        { title: "Air Check", text: "Ensure proper airflow", icon: "fas fa-fan" },
+        { title: "Protection", text: "Apply safe coatings", icon: "fas fa-paint-brush" },
+        { title: "Prevention", text: "Ongoing care plan", icon: "fas fa-calendar-check" }
+      ]
+    },
+    "mold-testing": {
+      hero: {
+        title: "Know What's in Your Air—Protect Your Health & Property",
+        description: "Professional mold testing in Florida. Certified inspectors use advanced air & surface sampling to detect hidden mold. Fast results, clear reports, peace of mind.",
+        cta: "Book Certified Mold Testing Now",
+        bgImage: "/images/moldDamage.jpg"
+      },
+      services: [
+        { icon: "fas fa-lungs", title: "Air Testing", description: "Lab-grade air sampling to detect invisible mold spores.", image: "/images/MoldInspection.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-hand-paper", title: "Surface Testing", description: "Swab testing to confirm mold type on surfaces.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-file-medical", title: "Lab Reports", description: "Certified laboratory analysis with detailed findings.", image: "/images/MoldPrevention.jpg", link: "/restoration/mold-remediation/mold-testing" },
+        { icon: "fas fa-checklist", title: "Prevention Plan", description: "Recommendations to prevent future mold growth.", image: "/images/Moldtesting.jpg", link: "/restoration/mold-remediation/mold-prevention" }
+      ],
+      faqs: [
+        { q: "What is mold testing?", a: "Professional air and surface testing to identify mold species and hidden contamination." },
+        { q: "How long does mold testing take?", a: "Most homes: 1–2 hours, with a full report the same day." },
+        { q: "Does testing include air quality analysis?", a: "Absolutely. We test air and surfaces to identify mold type and levels." },
+        { q: "Is testing required before mold removal?", a: "Yes—testing confirms the strain & guides safe remediation." }
+      ],
+      steps: [
+        { title: "Visual Scan", text: "Identify early growth", icon: "fas fa-eye" },
+        { title: "Air Testing", text: "Analyze indoor quality", icon: "fas fa-lungs" },
+        { title: "Lab Report", text: "Certified results", icon: "fas fa-file-medical" },
+        { title: "Action Plan", text: "Fix & prevent guidance", icon: "fas fa-checklist" }
+      ]
+    }
+  };
+
+  return moldContent[subSlug] || moldContent["mold-inspection"];
+};
+
+const content = getMoldContent(sub?.slug || group.slug);
+const faqCategory = `mold-${sub?.slug || group.slug}`;
+---
+
+<!-- Hero Section -->
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>{content.hero.title}</h1>
+    <p>{content.hero.description}</p>
+    <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+  <div class="services-grid">
+    {content.services.map((service) => (
+      <a href={service.link} class="service-item-clickable">
+        <i class={service.icon}></i>
+        <h3>{service.title}</h3>
+      </a>
+    ))}
+  </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+  <div class="container">
+  <h2 class="solutions-title">Comprehensive Mold Solutions</h2>
+  <div class="solutions-grid">
+    {content.services.map((service, index) => (
+      <div class="solution-card">
+        <div class="card-image">
+          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} services in Florida - certified mold specialists`} loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>{service.title}</h3>
+          <div class="service-description">
+            <p>{service.description}</p>
+            <div class="service-features">
+              <span class="feature-tag">🧪 Lab Testing</span>
+              <span class="feature-tag">🫁 Health Safe</span>
+              <span class="feature-tag">🛡️ Prevention</span>
+            </div>
+          </div>
+          <a href={service.link || "/contact"} class="btn">Remove Mold Safely Now →</a>
+        </div>
+      </div>
+    ))}
+  </div>
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+  <h2 class="steps-title">How It Works</h2>
+  <div class="steps-container">
+    {content.steps.map((step, index) => (
+      <div class="step-item" data-step={index + 1}>
+        <div class="step-icon">
+          <i class={step.icon}></i>
+        </div>
+        <h3>{step.title}</h3>
+        <p>{step.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
+  <div class="container">
+    <h2>Understanding {sub?.title || group.name}</h2>
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="content-block">
+          <h3>Warning Signs of {sub?.title || group.name}</h3>
+          <p>Mold thrives in Florida's humid climate and can develop rapidly after water damage or in areas with poor ventilation. Health risks include respiratory problems, allergies, and more serious conditions, especially for vulnerable populations. Professional assessment and remediation are essential for safe, lasting results.</p>
+          <ul class="warning-signs">
+            <li><i class="fas fa-eye"></i> Visible mold spots or discoloration</li>
+            <li><i class="fas fa-nose"></i> Musty, damp, or earthy odors</li>
+            <li><i class="fas fa-water"></i> Water stains or moisture problems</li>
+            <li><i class="fas fa-lungs"></i> Respiratory symptoms or allergies</li>
+            <li><i class="fas fa-thermometer-half"></i> High humidity levels (>60%)</li>
+          </ul>
+        </div>
+        
+        <div class="content-block">
+          <h3>Our Detailed {sub?.title || group.name} Process</h3>
+          <p>Our certified mold remediation specialists follow strict IICRC protocols and use advanced containment and filtration systems. We address both visible mold and hidden contamination, ensuring thorough removal and prevention of future growth through moisture control and environmental improvements.</p>
+          <div class="process-detailed">
+            {content.steps.map((step, index) => (
+              <div class="process-step-detailed">
+                <div class="step-number">{index + 1}</div>
+                <div class="step-content">
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-sidebar">
+        <div class="trust-indicators">
+          <h3>Why Choose Paramount Property Restoration?</h3>
+          <ul class="trust-list">
+            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
+            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
+            <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
+            <li><i class="fas fa-microscope"></i> Certified Lab Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section bg-secondary insurance-help">
+  <div class="container">
+    <h2>Mold Damage Insurance Claims Support</h2>
+    <div class="insurance-grid">
+      <div class="insurance-content">
+        <p>Mold coverage can vary significantly between insurance policies, especially in Florida. Our team understands the complexities of mold claims and works to document the source of moisture damage, provide necessary testing reports, and coordinate with adjusters to maximize your coverage for remediation services.</p>
+        
+        <div class="insurance-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-vial"></i>
+            <h4>Professional Testing & Documentation</h4>
+            <p>Certified lab reports and comprehensive moisture assessments for claims</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Adjuster Coordination</h4>
+            <p>We work with insurance professionals to explain mold damage and remediation needs</p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Maximize Coverage</h4>
+            <p>Our expertise helps identify covered damages and appropriate remediation scope</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unified City Grid Section -->
+<section class="section city-grid-section">
+  <div class="container">
+    <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
+    <p class="section-subtitle">Professional {sub?.title || group.name.toLowerCase()} services available across Florida. Click your city for immediate local assistance.</p>
+    
+    <div class="unified-city-container">
+      {Object.entries(cityRegions).map(([regionName, cities]) => (
+        <div class="unified-region-card">
+          <h3 class="unified-region-title">{regionName}</h3>
+          <div class="unified-city-pills">
+            {cities.slice(0, 4).map(city => (
+              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/mold-inspection/${city.slug}`} class="unified-city-pill">
+                {city.nombre}
+              </a>
+            ))}
+            {cities.length > 4 && (
+              <span class="unified-more-indicator">
+                +{cities.length - 4} more
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="emergency-notice">
+      <h3>Emergency {sub?.title || group.name} Response</h3>
+      <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
+      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+    id: `${faqCategory}-${index}`,
+    question: faq.q,
+    answer: faq.a
+  }))} title="Frequently Asked Questions" />
+</section>
+
+<!-- Final CTA -->
+<RestorationCTA
+  client:load
+  title="Protect your home and health from mold."
+  subtitle="Schedule your inspection today and get professional mold remediation in Florida."
+  buttonText="Remove Mold Fast"
+  buttonLink="/contact"
+/>

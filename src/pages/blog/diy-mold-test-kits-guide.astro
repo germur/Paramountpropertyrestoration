@@ -1,0 +1,1038 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SEOHead from "../../components/SEOHead.jsx";
+
+const pageTitle = "DIY Mold Test Kits: What Homeowners Need to Know Before Buying";
+const pageDescription = "Discover the truth about DIY mold test kits. Learn what they can and can't tell you, common mistakes that cost thousands, and smart steps for proper mold investigation in Florida homes.";
+const author = "Paramount Property Restoration";
+const date = new Date("2025-11-11");
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    image="/images/Moldtesting.jpg"
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="blog"
+    service="blog"
+    subservice="post"
+    city={null}
+    addressLocality={null}
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    isHub={false}
+    pageType="article"
+    businessName="Paramount Property Restoration"
+    slot="head"
+  />
+
+  <article class="diy-kit-guide">
+    <!-- Sticky Navigation -->
+    <header class="guide-nav">
+      <nav class="container">
+        <div class="nav-content">
+          <h1 class="nav-brand">MoldTest<span>Guide</span></h1>
+          <div class="nav-links">
+            <a href="#overview" class="nav-link">Overview</a>
+            <a href="#limitations" class="nav-link">Limitations</a>
+            <a href="#error" class="nav-link">The Costly Mistake</a>
+            <a href="#steps" class="nav-link">Smart Steps</a>
+          </div>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu hidden" id="mobileMenu">
+        <a href="#overview" class="mobile-link">Overview</a>
+        <a href="#limitations" class="mobile-link">Limitations</a>
+        <a href="#error" class="mobile-link">The Costly Mistake</a>
+        <a href="#steps" class="mobile-link">Smart Steps</a>
+      </div>
+    </header>
+
+    <main class="guide-content">
+      <!-- Overview Section -->
+      <section id="overview" class="guide-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="badge badge-teal">The Homeowner's Dilemma</span>
+            <h2 class="section-title">You Suspect Mold. You're Not Alone.</h2>
+            <p class="section-description">
+              That feeling of doubt when you see a strange spot or smell a musty odor is common. This guide is for the "Responsible Homeowner" who wants to investigate properly before spending thousands. We'll explore what DIY mold kits can—and can't—do for you.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3 class="card-title">A Highly Searched Topic</h3>
+            <p class="card-description">
+              Tens of thousands of homeowners just like you search for answers about <a href="/restoration/mold-remediation/mold-testing" class="inline-link">mold testing</a> every month. This chart shows the massive search volume for just two key terms, highlighting how common this concern is.
+            </p>
+            <div class="chart-container">
+              <canvas id="searchVolumeChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Limitations Section -->
+      <section id="limitations" class="guide-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="badge badge-orange">Accuracy & Limitations</span>
+            <h2 class="section-title">What DIY Kits Can (and Can't) Do</h2>
+            <p class="section-description">
+              DIY kits seem like a simple solution for diagnosis, but it's crucial to understand what their results *really* mean. Most common kits (like petri dishes) are simple "settling plates."
+            </p>
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comparison-card can-do">
+              <h3 class="comparison-title">
+                <span class="check-icon">✔</span> What Kits CAN Tell You
+              </h3>
+              <ul class="comparison-list">
+                <li>
+                  <span class="list-icon">✓</span>
+                  <div>
+                    <strong>If Mold Spores Are Present:</strong> A basic petri dish kit will likely grow *something*. Why? Because mold spores are almost always present in the air, both indoors and outdoors.
+                  </div>
+                </li>
+                <li>
+                  <span class="list-icon">✓</span>
+                  <div>
+                    <strong>A "Yes/No" for Spore Activity:</strong> Seeing growth confirms that spores in your air are viable. This is a very basic, non-specific confirmation.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="comparison-card cannot-do">
+              <h3 class="comparison-title">
+                <span class="x-icon">✖</span> What Kits CAN'T Tell You
+              </h3>
+              <ul class="comparison-list">
+                <li>
+                  <span class="list-icon">!</span>
+                  <div>
+                    <strong>The Type of Mold:</strong> Identifying mold species (e.g., "<a href="/restoration/mold-remediation/black-mold-removal" class="inline-link">toxic black mold</a>") requires a microscope and a trained mycologist. A picture of a petri dish is not a diagnosis.
+                  </div>
+                </li>
+                <li>
+                  <span class="list-icon">!</span>
+                  <div>
+                    <strong>The Concentration (How Much):</strong> The kit can't tell you if the spore level is normal or dangerously elevated. A <a href="/restoration/mold-remediation/mold-inspection" class="inline-link">professional air test</a> compares indoor vs. outdoor spore counts for a real baseline.
+                  </div>
+                </li>
+                <li>
+                  <span class="list-icon">!</span>
+                  <div>
+                    <strong>The Source of the Problem:</strong> The test doesn't tell you *where* the mold is coming from (e.g., a <a href="/restoration/water-damage/leak-repair" class="inline-link">hidden leak in a wall</a>). This is the most critical piece of information you need.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Error Section -->
+      <section id="error" class="guide-section error-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="badge badge-red">The Common Error Costing Thousands</span>
+            <h2 class="section-title">The Pitfall of a Positive Test</h2>
+            <p class="section-description">
+              The biggest risk isn't the $50 kit. It's making a $5,000 decision based on incomplete data. A positive DIY test often leads to panic, but it's not an actionable diagnosis.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3 class="card-title">Visualizing the Decision Path</h3>
+            <div class="decision-paths">
+              <!-- Error Path -->
+              <div class="decision-path error-path">
+                <h4 class="path-title error">The Costly Error Path</h4>
+                <div class="path-steps">
+                  <div class="path-step neutral">
+                    <strong>Doubt:</strong> "I see a spot!"
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step neutral">
+                    <strong>DIY Test:</strong> "It grew mold!"
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step warning">
+                    <strong>Panic & Misinterpretation:</strong> "I have toxic mold!"
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step warning">
+                    <strong>Action:</strong> Call a remediation-only company.
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step danger">
+                    <strong>Result:</strong> $5,000+ for unnecessary <a href="/restoration/mold-remediation" class="inline-link-light">remediation</a>, and the *source* (e.g., a pipe leak) is never fixed.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Smart Path -->
+              <div class="decision-path success-path">
+                <h4 class="path-title success">The Smart Investigation Path</h4>
+                <div class="path-steps">
+                  <div class="path-step neutral">
+                    <strong>Doubt:</strong> "I see a spot!"
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step neutral">
+                    <strong>Investigation:</strong> "Where is the moisture?"
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step info">
+                    <strong>Informed Diagnosis:</strong> "The spot is small, but it's near a leaky pipe."
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step info">
+                    <strong>Action:</strong> Call a plumber *or* a certified <a href="/restoration/mold-remediation/mold-inspection" class="inline-link-light">mold inspector</a> (not remediator) for a real assessment.
+                  </div>
+                  <div class="path-arrow">↓</div>
+                  <div class="path-step success">
+                    <strong>Result:</strong> $200 to fix the <a href="/restoration/water-damage/leak-repair" class="inline-link-light">leak</a> and $50 for cleanup. Problem solved at the source.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Steps Section -->
+      <section id="steps" class="guide-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="badge badge-teal">The Responsible Homeowner's Plan</span>
+            <h2 class="section-title">Start a Smart Investigation</h2>
+            <p class="section-description">
+              Gaining trust starts with a proper investigation. Use this as your guide *before* you buy a kit or call a professional.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <ol class="steps-list">
+              <li class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4 class="step-title">Follow Your Nose & Eyes</h4>
+                  <p>A musty, earthy smell is a major red flag for hidden mold. Visually inspect areas with high humidity: under sinks, in basements, around windows, and in bathrooms. Look for water stains, discoloration, or peeling paint. If you discover <a href="/restoration/water-damage" class="inline-link">water damage</a>, address it immediately.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4 class="step-title">Find the Water Source</h4>
+                  <p>Mold cannot grow without moisture. Your primary goal is not to find the mold, but to find the *water*. Check for leaky pipes, <a href="/restoration/storm-damage" class="inline-link">roof leaks from storms</a>, <a href="/restoration/water-damage/flood-damage" class="inline-link">flooding</a>, or poor drainage. Fixing the water problem is 90% of the battle.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4 class="step-title">Use a DIY Kit for... Nothing?</h4>
+                  <p>Honestly, they are rarely necessary. If you see mold, you have mold. You don't need a test to confirm it. If you suspect hidden mold (you smell it but can't see it), a DIY test is still the wrong tool. It can't find the source. Learn more about <a href="/blog/professional-mold-testing-cost-guide-2025" class="inline-link">professional testing costs</a>.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4 class="step-title">When to Call a Professional</h4>
+                  <p>
+                    Call a <strong>Certified Mold Inspector</strong> (not a remediation company) if:
+                  </p>
+                  <ul class="sub-list">
+                    <li>You smell mold but can't find it</li>
+                    <li>You had a major <a href="/restoration/water-damage/flood-damage" class="inline-link">flood</a> or <a href="/restoration/water-damage/leak-repair" class="inline-link">leak</a></li>
+                    <li>You need proof for a landlord or insurance</li>
+                    <li>Family members experience health symptoms at home</li>
+                  </ul>
+                  <p class="mt-3">An inspector works for *you* and provides an unbiased report and a plan for fixing the source and <a href="/restoration/mold-remediation" class="inline-link">removing the mold</a>, if necessary.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- CTA Card -->
+          <div class="cta-card">
+            <h3>Don't Let a $50 Kit Lead to a $5,000 Mistake</h3>
+            <p>Our certified inspectors provide comprehensive <a href="/restoration/mold-remediation/mold-inspection" class="inline-link-light">mold inspection services</a> throughout Florida with accurate testing, moisture mapping, and clear remediation protocols.</p>
+            <div class="cta-buttons">
+              <a href="/contact" class="cta-button primary">Get Professional Inspection</a>
+              <a href="/restoration/mold-remediation" class="cta-button secondary">Learn About Remediation</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources Section -->
+      <section class="resources-section">
+        <div class="container">
+          <h2 class="section-title">Additional Resources</h2>
+          <div class="resources-grid">
+            <div class="resource-category">
+              <h3>Related Services</h3>
+              <ul>
+                <li><a href="/restoration/mold-remediation/mold-prevention">Mold Prevention Services</a></li>
+                <li><a href="/restoration/water-damage">Water Damage Restoration</a></li>
+                <li><a href="/restoration/mitigation-services/water-mitigation">Emergency Water Mitigation</a></li>
+                <li><a href="/restoration/mold-remediation/black-mold-removal">Black Mold Removal</a></li>
+              </ul>
+            </div>
+            <div class="resource-category">
+              <h3>Educational Guides</h3>
+              <ul>
+                <li><a href="/blog/homeowner-mold-prevention-guide">Homeowner's Mold Prevention Guide</a></li>
+                <li><a href="/blog/professional-mold-testing-cost-guide-2025">Professional Mold Testing Cost Guide</a></li>
+                <li><a href="/restoration/water-damage">Understanding Water Damage</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="guide-footer">
+      <div class="container">
+        <p>&copy; 2025 Paramount Property Restoration. This information is for educational purposes only and not a substitute for professional advice.</p>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Global Styles */
+  .diy-kit-guide {
+    background: #f8fafc;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Navigation */
+  .guide-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2a9fd1;
+  }
+
+  .nav-brand span {
+    font-weight: 400;
+    color: #64748b;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    color: #35c3e9;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .mobile-menu-btn span {
+    width: 24px;
+    height: 2px;
+    background: #64748b;
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu.hidden {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+
+  .mobile-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #64748b;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .mobile-link:hover {
+    background: #e6f7fb;
+    color: #35c3e9;
+  }
+
+  /* Guide Content */
+  .guide-content {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 80px;
+  }
+
+  .section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .badge-teal {
+    background: #e6f7fb;
+    color: #2a9fd1;
+  }
+
+  .badge-orange {
+    background: #ffedd5;
+    color: #ea580c;
+  }
+
+  .badge-red {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.875rem;
+    }
+  }
+
+  .section-description {
+    font-size: 1.125rem;
+    color: #64748b;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Content Cards */
+  .content-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+  }
+
+  @media (max-width: 768px) {
+    .content-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-description {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Chart Container */
+  .chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    .chart-container {
+      height: 300px;
+    }
+  }
+
+  /* Comparison Grid */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .comparison-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e2e8f0;
+  }
+
+  .can-do {
+    border-color: #10b981;
+  }
+
+  .cannot-do {
+    border-color: #ef4444;
+  }
+
+  .comparison-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .can-do .comparison-title {
+    color: #059669;
+  }
+
+  .cannot-do .comparison-title {
+    color: #dc2626;
+  }
+
+  .check-icon, .x-icon {
+    font-size: 2rem;
+    margin-right: 0.75rem;
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .list-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 2px;
+  }
+
+  .can-do .list-icon {
+    background: #10b981;
+  }
+
+  .cannot-do .list-icon {
+    background: #ef4444;
+  }
+
+  /* Decision Paths */
+  .decision-paths {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .decision-paths {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .decision-path {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .path-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .path-title.error {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .path-title.success {
+    background: #d1fae5;
+    color: #059669;
+  }
+
+  .path-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .path-step {
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .path-step.neutral {
+    background: #f1f5f9;
+    color: #475569;
+  }
+
+  .path-step.warning {
+    background: #fee2e2;
+    border: 2px solid #fca5a5;
+    color: #7f1d1d;
+  }
+
+  .path-step.danger {
+    background: #fecaca;
+    border: 2px solid #ef4444;
+    color: #7f1d1d;
+  }
+
+  .path-step.info {
+    background: #d1fae5;
+    border: 2px solid #86efac;
+    color: #064e3b;
+  }
+
+  .path-step.success {
+    background: #a7f3d0;
+    border: 2px solid #10b981;
+    color: #064e3b;
+  }
+
+  .path-arrow {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #cbd5e1;
+  }
+
+  .error-path .path-arrow {
+    color: #ef4444;
+  }
+
+  .success-path .path-arrow {
+    color: #10b981;
+  }
+
+  /* Steps List */
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #35c3e9 0%, #2a9fd1 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-content p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .sub-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+  }
+
+  .sub-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: #64748b;
+  }
+
+  .sub-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #35c3e9;
+    font-weight: 700;
+  }
+
+  .mt-3 {
+    margin-top: 1rem;
+  }
+
+  /* CTA Card */
+  .cta-card {
+    background: linear-gradient(135deg, #35c3e9 0%, #2a9fd1 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .cta-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-card p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .cta-button.primary {
+    background: #FF6B35;
+    color: white;
+  }
+
+  .cta-button.primary:hover {
+    background: #e85d2a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+  }
+
+  .cta-button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+  }
+
+  .cta-button.secondary:hover {
+    background: white;
+    color: #2a9fd1;
+  }
+
+  /* Resources Section */
+  .resources-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .resource-category h3 {
+    color: #2a9fd1;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .resource-category ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .resource-category li {
+    padding: 0.5rem 0;
+  }
+
+  .resource-category a {
+    color: #35c3e9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .resource-category a:hover {
+    color: #FF6B35;
+  }
+
+  /* Links */
+  .inline-link {
+    color: #35c3e9;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(53, 195, 233, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .inline-link:hover {
+    color: #FF6B35;
+    border-bottom-color: #FF6B35;
+  }
+
+  .inline-link-light {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .inline-link-light:hover {
+    border-bottom-color: white;
+  }
+
+  /* Footer */
+  .guide-footer {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  /* Error Section Background */
+  .error-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 4rem 0;
+    margin: 4rem 0;
+  }
+</style>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Search Volume Chart
+    const searchVolumeCtx = document.getElementById('searchVolumeChart') as HTMLCanvasElement;
+    if (searchVolumeCtx) {
+      new Chart(searchVolumeCtx, {
+        type: 'bar',
+        data: {
+          labels: ['"mold testing kit"', '"mold testing kit for home"'],
+          datasets: [{
+            label: 'Monthly Search Volume',
+            data: [49500, 6600],
+            backgroundColor: [
+              '#35c3e9',
+              '#2a9fd1'
+            ],
+            borderColor: [
+              '#2a9fd1',
+              '#1e8ab0'
+            ],
+            borderWidth: 2,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              backgroundColor: 'rgba(53, 195, 233, 0.95)',
+              padding: 12,
+              titleColor: '#ffffff',
+              bodyColor: '#ffffff',
+              callbacks: {
+                label: function(context) {
+                  return ` ${context.parsed.x.toLocaleString()} searches/month`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Average Monthly Searches',
+                color: '#64748b',
+                font: {
+                  size: 13,
+                  weight: '600'
+                }
+              },
+              ticks: {
+                callback: function(value) {
+                  return value.toLocaleString();
+                },
+                color: '#64748b'
+              },
+              grid: {
+                color: '#e2e8f0'
+              }
+            },
+            y: {
+              ticks: {
+                color: '#1e293b',
+                font: {
+                  size: 13,
+                  weight: '600'
+                }
+              },
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        if (targetId) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>

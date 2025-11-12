@@ -1,0 +1,22 @@
+Sitemap: https://paramountpropertyrestoration.com/sitemap.xml
+
+User-agent: *
+Allow: /
+
+# Block only truly non-public endpoints
+Disallow: /admin/
+Disallow: /api/private/
+Disallow: /api/internal/
+Disallow: /server-status
+Disallow: /404
+Disallow: /500
+
+# Explicitly allow static assets (including Astro bundles) so renderers can fetch resources
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /_astro/
+
+# IndexNow Key File
+Allow: /196aabc169312b76f1539847beee6f9f.txt

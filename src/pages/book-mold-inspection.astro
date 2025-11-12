@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/SEOHead.jsx';
+import '../styles/pages/mold-landing.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+const pageConfig = {
+  canonical: '/book-mold-inspection',
+  title: 'Florida Certified Mold Testing | DBPR Licensed Insurance Claim Support',
+  description: 'Get DBPR-Certified mold testing documentation to back your insurance claim. Same-day testing, 60-minute dispatch. Don\'t risk claim denial. Call 24/7.',
+};
+---
+<BaseLayout title={pageConfig.title} description={pageConfig.description}>
+  <SEOHead
+    title={pageConfig.title}
+    description={pageConfig.description}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service="book-mold-inspection"
+    subservice=""
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <div class="mold-landing-page">
+    <!-- Hero Section with Form -->
+    <section class="landing-hero">
+      <div class="landing-hero-content">
+        <div class="hero-text">
+          <h1>Florida Certified Mold Testing: Get Expert Insurance Claim Support</h1>
+          <p class="hero-subtitle">Don't risk claim denial. We provide the DBPR-Certified documentation needed to back your mold remediation claim with your insurance company.</p>
+          
+          <div class="hero-badges">
+            <div class="badge">
+              <i class="fas fa-clock"></i>
+              <span><strong>IMMEDIATE 60-MINUTE DISPATCH</strong><br/>Same-Day Testing Available. Call 24/7.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-form-container">
+          <form class="mold-claim-form" action="/contact" method="get">
+            <h3>Stop the Risk. Get a Free Estimate.</h3>
+            
+            <div class="form-group">
+              <label for="fullName">Your Full Name</label>
+              <input type="text" id="fullName" name="name" placeholder="John Smith" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Best Contact Phone (Urgent)</label>
+              <input type="tel" id="phone" name="phone" placeholder="(786) 555-1234" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about the water incident or visible mold.</label>
+              <textarea id="message" name="message" rows="4" placeholder="Example: Water leak in bathroom 3 days ago, now seeing dark spots on ceiling..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">
+              <i class="fas fa-clipboard-check"></i> GET MY FREE CLAIM CONSULTATION
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+      <div class="container">
+        <h2>Why Trust Paramount for Mold Testing?</h2>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <i class="fas fa-certificate"></i>
+            <h4>DBPR Licensed Assessor</h4>
+            <p>Florida law requires independent certification. We're licensed to provide legally valid test results.</p>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Insurance Claim Documentation</h4>
+            <p>We provide the detailed reports and evidence your insurance company requires for mold claims.</p>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-clock"></i>
+            <h4>60-Minute Emergency Dispatch</h4>
+            <p>Time matters. We arrive fast, test thoroughly, and deliver results within 24-48 hours.</p>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-microscope"></i>
+            <h4>Lab-Certified Results</h4>
+            <p>All samples analyzed by accredited laboratories with 99% accuracy for claim validation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-Step Process -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our 5-Step Certified Testing Protocol</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h4>Emergency Call & Dispatch</h4>
+            <p>Call us 24/7. We dispatch within 60 minutes to your location.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h4>Visual Inspection</h4>
+            <p>Licensed assessor examines visible mold and moisture sources.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h4>Air & Surface Sampling</h4>
+            <p>We collect samples using professional equipment per Florida standards.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h4>Lab Analysis</h4>
+            <p>Accredited lab identifies mold type, spore count, and health risks.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h4>Certified Report Delivery</h4>
+            <p>You receive DBPR-certified documentation for your insurance claim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Don't Let Mold Damage Your Health or Property Value</h2>
+        <p>Every hour counts. Get certified testing now to protect your family and secure your insurance coverage.</p>
+        <a href="tel:+17866022217" class="cta-phone-btn">
+          <i class="fas fa-phone-alt"></i> CALL NOW: (786) 602-2217
+        </a>
+        <p class="cta-note">24/7 Emergency Response • Same-Day Testing Available</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

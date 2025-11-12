@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StormTemplate from "../../components/restoration/templates/StormTemplate.astro";
+import "../../styles/pages/storm-damage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import SEOHead from "../../components/SEOHead.jsx";
+
+// Page data configuration (hub sin ciudad)
+const pageData = {
+  group: {
+    slug: "storm-damage",
+    name: "Storm Damage Restoration",
+    template: "storm", 
+    description: "Hurricane and storm damage restoration services"
+  },
+  sub: null
+};
+
+// SEO básico requerido por BaseLayout y SEOHead
+const pageTitle = "Storm Damage Restoration in Florida | Hurricane & Roof Repair";
+const pageDescription = "Florida storm damage restoration experts. Emergency response for hurricanes, roof damage, and debris removal. Serving Orlando, Miami, Tampa & beyond. Call 24/7.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  {/* SEOHead genera title, description, canonical, OG/Twitter y JSON-LD */}
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service="storm-damage"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <StormTemplate group={pageData.group} sub={pageData.sub} />
+</BaseLayout>

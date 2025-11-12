@@ -1,0 +1,241 @@
+/* AcordeonServices.css */
+
+/* Container principal */
+.faqContainer {
+    margin: 10px;
+    border-radius: 8px;
+    padding: 60px 0 120px;
+}
+
+/* Header del FAQ con búsqueda */
+.faqHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Título del FAQ */
+.faqTitle {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Búsqueda de FAQ */
+.faqSearch {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.faqSearchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.faqSearchInput {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.faqSearchInput:focus {
+    outline: none;
+    border-color: #35c3e9;
+    box-shadow: 0 0 0 3px rgba(53, 195, 233, 0.1);
+}
+
+/* No results message */
+.noResults {
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Wrapper del accordion */
+.accordionWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Item individual del accordion */
+.accordionItem {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.accordionItem--open {
+    background: rgba(53, 195, 233, 0.02);
+    border-radius: 12px;
+}
+
+.accordionItem:last-child {
+    border-bottom: none;
+}
+
+/* Botón del accordion */
+.accordionButton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border-radius: 12px;
+    background: none;
+    border: none;
+    text-align: left;
+}
+
+.accordionButton:hover {
+    background: #ebebeb;
+}
+
+/* Pregunta */
+.accordionQuestion {
+    font-weight: 400;
+    margin: 0;
+    color: #333;
+    padding-right: 2rem;
+    line-height: 1.4;
+}
+
+/* Icono */
+.accordionIcon {
+    font-size: 15px;
+    transition: transform 0.3s ease;
+    color: #0C4E6E;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.accordionIcon.iconOpen {
+    transform: rotate(360deg);
+}
+
+/* Contenido/Respuesta */
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordionContent.contentOpen {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.accordionAnswer {
+    color: gray;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Párrafos de respuesta */
+.answerParagraph {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.answerParagraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Grid layout para pantallas grandes */
+@media (min-width: 1024px) {
+    .accordionWrapper {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faqContainer {
+        padding: 40px 0 60px;
+    }
+
+    .faqTitle {
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+
+    .accordionButton {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .accordionQuestion {
+        padding-right: 1.5rem;
+    }
+
+    .accordionAnswer {
+        font-size: 0.95rem;
+    }
+
+    .accordionIcon {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faqTitle {
+        font-size: 26px;
+    }
+
+    .accordionButton {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .accordionQuestion {
+        padding-right: 1rem;
+    }
+
+    .accordionAnswer {
+        font-size: 0.9rem;
+    }
+
+    .accordionItem {
+        padding: 8px;
+    }
+
+    .faqSearch {
+        margin: 0 1rem;
+    }
+}
+
+/* Animación suave para el contenido */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordionContent.contentOpen .accordionAnswer {
+    animation: slideDown 0.3s ease-out;
+}

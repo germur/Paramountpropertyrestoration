@@ -1,0 +1,77 @@
+# 🌐 Astro Starter Website – Página Web Profesional con React
+
+Este proyecto es una **página web moderna y funcional**, creada con [Astro](https://astro.build/) y componentes de [React](https://reactjs.org/), ideal para mostrar contenido dinámico y bien estructurado. Incluye las siguientes secciones:
+
+- 🏠 **Inicio**: Una bienvenida clara y atractiva.
+- 🛠️ **Servicios**: Detalle de lo que ofrecemos.
+- 📝 **Blog**: Publicaciones y artículos actualizados.
+- 📬 **Contáctanos**: Formulario de contacto para estar en comunicación.
+
+---
+
+## 🚀 ¿Qué es Astro?
+
+Astro es un framework moderno para crear sitios web rápidos y optimizados. Combina HTML estático con la capacidad de usar componentes interactivos de frameworks populares como React, Vue o Svelte, logrando lo mejor de ambos mundos: rendimiento y dinamismo.
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+/
+├── public/               # Archivos públicos como imágenes o favicon
+│   └── favicon.svg
+├── src/                  # Código fuente del proyecto
+│   ├── components/       # Componentes reutilizables (muchos en React)
+│   ├── layouts/          # Layout base del sitio
+│   ├── pages/            # Páginas principales del sitio (inicio, servicios, blog, contacto)
+│   └── styles/           # Estilos globales o por componente
+├── astro.config.mjs      # Configuración principal de Astro
+├── package.json          # Dependencias y scripts del proyecto
+└── tsconfig.json         # Configuración de TypeScript (opcional)
+
+```
+
+## 🧑‍💻 Tecnologías Utilizadas
+
+- ⚡ **Astro**: Para la estructura principal del sitio.
+- ⚛️ **React**: Componentes interactivos y reutilizables.
+- 🎨 **CSS / Tailwind (opcional)**: Estilos modernos y personalizables.
+- 📄 **Markdown**: Ideal para la creación de entradas del blog o contenido estático.
+- 🔍 **IndexNow**: Notificación automática a Bing para indexación inmediata.
+
+---
+
+## 🔍 IndexNow Integration
+
+Este sitio incluye integración automática con **IndexNow** para notificar a Bing sobre cambios en el contenido.
+
+### Configuración Netlify
+
+El deployment en Netlify ejecuta automáticamente el script de IndexNow después de cada build:
+
+```bash
+npm run build && node scripts/indexnow-submit.js
+```
+
+Esto envía todas las URLs del sitio (1,686 páginas) a Bing para indexación inmediata.
+
+### Comandos Disponibles
+
+```bash
+# Ver URLs que se enviarán (sin enviar)
+npm run indexnow:test
+
+# Enviar manualmente todas las URLs
+npm run indexnow:submit
+
+# Build y submit en un solo comando
+npm run build:indexnow
+```
+
+### Verificación
+
+- Key file público: `https://paramountpropertyrestoration.com/196aabc169312b76f1539847beee6f9f.txt`
+- Verifica el estado en [Bing Webmaster Tools](https://www.bing.com/webmasters)
+- Revisa logs de build en Netlify para confirmar el envío exitoso
+

@@ -1,0 +1,565 @@
+/* ===========================
+   INVERTED SEO PYRAMID STYLES
+   Optimized Programmatic Pages
+   ========================== */
+
+/* ===== HERO CONVERSION SECTION (APEX) ===== */
+.programmatic-hero {
+  color: white;
+  padding: 60px 0 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-conversion-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumbs span {
+  margin: 0 0.5rem;
+}
+
+.breadcrumb-current {
+  font-weight: 600;
+  color: #F59E0B !important;
+}
+
+/* Conversion H1 */
+.conversion-h1 {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.location-highlight {
+  color: #F59E0B;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Guarantee Text */
+.conversion-guarantee {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #F59E0B;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mega CTA Button */
+.mega-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #35c3e9;
+  color: white;
+  text-decoration: none;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 15px 40px rgba(53, 195, 233, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse-ring 3s infinite;
+  border: 2px solid transparent;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(53, 195, 233, 0.5), 0 15px 40px rgba(53, 195, 233, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(53, 195, 233, 0), 0 15px 40px rgba(53, 195, 233, 0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(53, 195, 233, 0), 0 15px 40px rgba(53, 195, 233, 0.4); }
+}
+
+.mega-cta-button:hover {
+  background: #2a9fd1;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(53, 195, 233, 0.5);
+}
+
+.mega-cta-button i {
+  font-size: 1.1em;
+}
+
+.availability-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== CONVERSION FORM (RIGHT SIDE) ===== */
+.hero-form-container {
+  align-self: start;
+  position: sticky;
+  top: 2rem;
+}
+
+.conversion-form-card {
+  background: white;
+  color: #333;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(53, 195, 233, 0.3);
+  border-top: 4px solid #35c3e9;
+}
+
+.form-title {
+  color: #0077b6;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.emergency-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-input {
+  padding: 0.875rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #35c3e9;
+  box-shadow: 0 0 0 3px rgba(53, 195, 233, 0.1);
+}
+
+.form-submit-btn {
+  background: #35c3e9;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(53, 195, 233, 0.3);
+}
+
+.form-submit-btn:hover {
+  background: #2a9fd1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(53, 195, 233, 0.4);
+}
+
+/* ===== TRUST & AUTHORITY SECTION ===== */
+.local-trust-section {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.trust-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.trust-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+  position: relative;
+}
+
+.testimonial-icon {
+  color: #3b82f6;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.guarantee-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #10b981;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guarantee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-icon {
+  color: #10b981;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.guarantee-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.guarantee-text {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== LOCAL AUTHORITY SECTION ===== */
+.local-authority-section {
+  padding: 4rem 0;
+  background: #f1f5f9;
+}
+
+.authority-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.problem-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #35c3e9;
+  padding-left: 1rem;
+}
+
+.problem-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.authority-link {
+  color: #35c3e9;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.authority-link:hover {
+  color: #2a9fd1;
+}
+
+.service-scope-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.scope-title {
+  color: #0077b6;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.scope-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scope-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.scope-item i {
+  color: #10b981;
+  font-size: 1.25rem;
+  margin-top: 0.125rem;
+}
+
+/* ===== GEOGRAPHIC VALIDATION SECTION ===== */
+.geographic-validation-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.geo-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.geo-validation-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.service-area-map {
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  text-align: center;
+}
+
+.map-placeholder i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #9ca3af;
+}
+
+.map-placeholder p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.neighborhoods-coverage {
+  background: #1e293b;
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.coverage-title {
+  color: #F59E0B;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.neighborhoods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.neighborhood-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.neighborhood-item i {
+  color: #35c3e9;
+  font-size: 0.875rem;
+}
+
+.coverage-note {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ===== FINAL CONVERSION CTA ===== */
+.final-conversion-cta {
+  background: #35c3e9;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.final-cta-urgency {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.final-mega-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  color: #1f2937;
+  text-decoration: none;
+  padding: 1.25rem 3rem;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.final-mega-cta:hover {
+  background: #f9fafb;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.final-cta-guarantee {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .hero-conversion-grid {
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+  }
+  
+  .authority-grid {
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-conversion-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-form-container {
+    position: relative;
+    top: auto;
+  }
+  
+  .authority-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .geo-validation-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .neighborhoods-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .programmatic-hero {
+    padding: 40px 0 60px;
+    min-height: auto;
+  }
+  
+  .conversion-h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  
+  .conversion-guarantee {
+    font-size: 1.25rem;
+  }
+  
+  .mega-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .trust-section-title,
+  .geo-section-title,
+  .final-cta-title {
+    font-size: 2rem;
+  }
+  
+  .conversion-form-card {
+    padding: 1.5rem;
+  }
+  
+  .trust-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .programmatic-hero {
+    padding: 30px 0 50px;
+  }
+  
+  .final-mega-cta {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .service-area-map {
+    height: 300px;
+  }
+}

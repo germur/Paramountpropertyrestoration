@@ -1,0 +1,152 @@
+/* LinkBuildingSection.css - Estilo Minimalista y Responsivo */
+
+.link-building-container {
+    background: transparent;
+    color: #333;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    margin: 100px 0;   
+}
+
+.link-building-container.full {
+    padding: 30px 20px;
+    
+}
+
+.link-building-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.link-building-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.link-building-header.compact {
+    margin-bottom: 20px;
+}
+
+.link-building-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.link-building-title.compact {
+    font-size: 1.5rem;
+}
+
+.link-building-subtitle {
+    font-size: 1rem;
+    color: #777;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.link-building-subtitle.compact {
+    font-size: 0.9rem;
+}
+
+.link-building-stats {
+    display: none;
+}
+
+/* --- AJUSTE CLAVE PARA RESPONSIVE --- */
+.link-building-grid {
+    display: grid;
+    /* Por defecto (móvil), mostramos UNA SOLA columna */
+    grid-template-columns: 1fr;
+    gap: 30px; /* Aumentamos el gap vertical en móvil */
+    margin-top: 20px;
+}
+
+.link-building-grid.compact {
+    gap: 15px;
+}
+
+.link-category {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
+}
+
+.link-category:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-icon {
+    display: none;
+}
+
+.category-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.category-title.compact {
+    font-size: 0.9rem;
+}
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.links-list.compact {
+    gap: 6px;
+}
+
+.link-item {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    padding: 4px 0;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-item::before {
+    display: none;
+}
+
+.link-item:hover {
+    color: var(--color-accent);
+    padding-left: 10px;
+}
+
+/* --- NUEVA MEDIA QUERY PARA TABLET Y ESCRITORIO --- */
+@media (min-width: 768px) {
+    .link-building-grid {
+        /* A partir de 768px, activamos la cuadrícula multi-columna */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px; /* Restablecemos el gap para la cuadrícula */
+    }
+
+    .link-building-header {
+        text-align: center; /* Centramos el título en pantallas grandes */
+    }
+
+    .link-building-subtitle {
+        margin: 0 auto; /* Centramos el subtítulo */
+    }
+}

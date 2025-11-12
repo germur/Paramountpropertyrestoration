@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import UnifiedServiceTemplate from "../../components/services/templates/UnifiedServiceTemplate.astro";
+import "../../styles/global.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import SEOHead from "../../components/SEOHead.jsx";
+import { getServiceGroup } from "../../data/services.js";
+
+const pageData = {
+  group: getServiceGroup("home-additions-remodeling"),
+  sub: null
+};
+
+const pageTitle = "Home Additions Contractors | Paramount Property Restoration";
+const pageDescription = "Add square footage with garage conversions, extra rooms, or second-story additions. Free consultation and permit-ready plans.";
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  data-page="home-additions"
+>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="services"
+    service="home-additions-remodeling"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
+  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
+</BaseLayout>

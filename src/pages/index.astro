@@ -1,0 +1,782 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Steps from "../components/Steps";
+import LinkBuildingSection from "../components/linkBuilding.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import SEOHead from "../components/SEOHead.jsx";
+const pageTitle = "Paramount Property Restoration | Florida Restoration & Remodeling";
+const pageDescription = "24/7 water, fire, mold & storm restoration. Bathroom, kitchen, and home remodeling across Florida. Free inspection & estimates.";
+
+// Obtener posts destacados del blog
+let allPosts: CollectionEntry<"blog">[] = [];
+let featuredPosts: CollectionEntry<"blog">[] = [];
+try {
+  allPosts = await getCollection("blog");
+  featuredPosts = allPosts
+    .filter((post) => post.data.featured)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 3);
+} catch (error) {
+  console.log("No se pudieron cargar los posts del blog:", error);
+}
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="home"
+    service="home"
+    subservice={null}
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone={"+1-786-602-2217"}
+    slot="head"
+  />
+
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Florida's Complete Property Partner</h1>
+          <h2 class="hero-subtitle">Emergency Restoration & Expert Remodeling</h2>
+          <p class="hero-description">24/7 Response Available</p>
+          
+          <div class="hero-cta-dual">
+            <a href="tel:+17866022217" class="btn cta-action">
+              <i class="fas fa-phone"></i>
+              <span>Emergency Help<br><strong>(786) 602-2217</strong></span>
+            </a>
+            <a href="/contact" class="btn-outline cta-secondary">
+              <i class="fas fa-calculator"></i>
+              <span>Free Estimate<br><strong>Get Quote</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-dual-section">
+    <div class="container">
+      <div class="services-category">
+        <div class="category-header">
+          <h2 class="category-title">Emergency Restoration Services</h2>
+          <p class="category-subtitle">When disaster strikes - We respond immediately</p>
+        </div>
+
+        <div class="services-grid">
+          <a href="/restoration/water-damage/" class="service-card">
+            <div class="service-icon">💧</div>
+            <h3>Water Damage</h3>
+            <p>24/7 water extraction, drying & restoration</p>
+            <div class="service-tag">Emergency Response</div>
+          </a>
+
+          <a href="/restoration/fire-damage/" class="service-card">
+            <div class="service-icon">🔥</div>
+            <h3>Fire Damage</h3>
+            <p>Complete fire & smoke damage restoration</p>
+            <div class="service-tag">Emergency Response</div>
+          </a>
+
+          <a href="/restoration/mold-remediation/" class="service-card">
+            <div class="service-icon">🦠</div>
+            <h3>Mold Remediation</h3>
+            <p>Safe mold removal & air quality restoration</p>
+            <div class="service-tag">Health Priority</div>
+          </a>
+
+          <a href="/restoration/storm-damage/" class="service-card">
+            <div class="service-icon">🌪️</div>
+            <h3>Storm Damage</h3>
+            <p>Hurricane recovery & roof protection</p>
+            <div class="service-tag">Emergency Response</div>
+          </a>
+        </div>
+
+        <div class="cta-container">
+          <a href="tel:+17866022217" class="btn btn-blue">
+            <i class="fas fa-phone"></i>
+            Call Emergency Line: (786) 602-2217
+          </a>
+          <p class="response-time">⚡ 30-minute response time guaranteed</p>
+        </div>
+      </div>
+
+      <div class="services-category">
+        <div class="category-header">
+          <h2 class="category-title">Construction & Remodeling Services</h2>
+          <p class="category-subtitle">Transform your space with professional remodeling</p>
+        </div>
+
+        <div class="services-grid">
+          <a href="/services/kitchen-remodeling" class="service-card">
+            <div class="service-number">01</div>
+            <div class="service-image">
+              <img src="/images/remoKitchenHome.jpg" alt="Kitchen Remodeling" loading="lazy" />
+            </div>
+            <h3>Kitchen Remodeling</h3>
+            <div class="service-tags">
+              <span>Modern Design</span>
+              <span>Kitchen Islands</span>
+              <span>Luxury Upgrades</span>
+            </div>
+          </a>
+
+          <a href="/services/bathroom-remodeling" class="service-card">
+            <div class="service-number">02</div>
+            <div class="service-image">
+              <img src="/images/remoBathroomHome.jpg" alt="Bathroom Remodeling" loading="lazy" />
+            </div>
+            <h3>Bathroom Remodeling</h3>
+            <div class="service-tags">
+              <span>Modern Design</span>
+              <span>Shower Installation</span>
+              <span>Waterproofing</span>
+            </div>
+          </a>
+
+          <a href="/services/home-additions-remodeling" class="service-card">
+            <div class="service-number">03</div>
+            <div class="service-image">
+              <img src="/images/remoHomeAdditions.jpg" alt="Home Additions" loading="lazy" />
+            </div>
+            <h3>Home Additions</h3>
+            <div class="service-tags">
+              <span>Room Expansions</span>
+              <span>Multi-Story</span>
+              <span>Smart Integration</span>
+            </div>
+          </a>
+
+          <a href="/services/bedroom-remodeling" class="service-card">
+            <div class="service-number">04</div>
+            <div class="service-image">
+              <img src="/images/remoBedroom.jpg" alt="Bedroom Remodeling" loading="lazy" />
+            </div>
+            <h3>Bedroom Remodeling</h3>
+            <div class="service-tags">
+              <span>Master Bedrooms</span>
+              <span>Kids Rooms</span>
+              <span>Luxury Upgrades</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="cta-container">
+          <a href="/contact" class="btn btn-blue">
+            <i class="fas fa-calculator"></i>
+            Get Your Free Project Estimate
+          </a>
+          <p class="response-time">📅 Same-day quote response</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="minimal-services-section">
+  <div class="container">
+    <div class="minimal-header">
+      <h2>Emergency Restoration Services Across Florida</h2>
+      <p>Fast response in major Florida cities</p>
+    </div>
+
+    <div class="regions-grid">
+      <div class="region-column">
+        <h3 class="region-title">Central Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/orlando">Flood Damage Orlando</a>
+          <a href="/restoration/fire-damage/fire-damage-repair/kissimmee">Fire Damage Kissimmee</a>
+          <a href="/restoration/mold-remediation/mold-inspection/lakeland">Mold Inspection Lakeland</a>
+          <a href="/restoration/storm-damage/hurricane-damage/winter-garden">Hurricane Damage Winter Garden</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Tampa Bay Region</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/tampa">Flood Damage Tampa</a>
+          <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg">Fire Damage St. Petersburg</a>
+          <a href="/restoration/mold-remediation/mold-inspection/clearwater">Mold Inspection Clearwater</a>
+          <a href="/restoration/storm-damage/hurricane-damage/sarasota">Hurricane Damage Sarasota</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">South Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/miami">Flood Damage Miami</a>
+          <a href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale">Fire Damage Fort Lauderdale</a>
+          <a href="/restoration/mold-remediation/mold-inspection/hollywood">Mold Inspection Hollywood</a>
+          <a href="/restoration/storm-damage/hurricane-damage/coral-gables">Hurricane Damage Coral Gables</a>
+        </div>
+      </div>
+
+      <div class="region-column">
+        <h3 class="region-title">Southwest Florida</h3>
+        <div class="city-links">
+          <a href="/restoration/water-damage/flood-damage/naples">Flood Damage Naples</a>
+          <a href="/restoration/fire-damage/fire-damage-repair/cape-coral">Fire Damage Cape Coral</a>
+          <a href="/restoration/mold-remediation/mold-inspection/fort-myers">Mold Inspection Fort Myers</a>
+          <a href="/restoration/storm-damage/hurricane-damage/bonita-springs">Hurricane Damage Bonita Springs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <Steps client:load />
+
+  <section class="service-areas-section">
+    <div class="container">
+      <LinkBuildingSection 
+        client:load 
+        showTitle={true} 
+        showStats={false} 
+        compact={false} 
+        categories="all" 
+      />
+    </div>
+  </section>
+  {
+    featuredPosts.length > 0 && (
+      <section class="blog-section">
+        <div class="container">
+          <div class="text-center mb-12">
+            <h2>Latest Property Tips & Insights</h2>
+            <p>Expert advice for Florida property owners</p>
+          </div>
+          <div class="blog-grid">
+            {featuredPosts.map((post) => (
+              <article class="blog-card">
+                <div class="blog-card-content">
+                  <h3>
+                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                  </h3>
+                  <p>{post.data.description}</p>
+                  <div class="blog-meta">
+                    <span class="blog-author">Por {post.data.author}</span>
+                    <span class="blog-date">
+                      {post.data.date.toLocaleDateString("es-ES", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  <a href={`/blog/${post.slug}`} class="read-more">
+                    Leer más
+                    <i class="arrowbtnHww fas fa-arrow-right" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div class="text-center">
+            <a href="/blog" class="btn btn-blue">
+              View All Articles
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  /* SISTEMA UNIFICADO AZUL PARAMOUNT */
+  :root {
+    --color-navy: #1E293B;
+    --color-gray: #64748B;
+    --color-blue: #3cbced;          /* AZUL PRINCIPAL */
+    --color-blue-hover: #2a9fd1;    /* AZUL HOVER */
+    --color-white: #FFFFFF;
+    --color-light: #F8FAFC;
+    --color-border: #E2E8F0;
+    --shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
+    --radius: 8px;
+    --transition: all 0.2s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--color-navy);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-navy);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 1rem 0;
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.5rem; }
+
+  p {
+    color: var(--color-gray);
+    margin: 0 0 1rem 0;
+  }
+
+  /* BOTONES UNIFICADOS AZULES */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--color-blue);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .btn:hover,
+  .btn-blue:hover {
+    background: var(--color-blue-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+    color: white;
+    text-decoration: none;
+  }
+
+  .btn-blue {
+    background: var(--color-blue) !important;
+    color: white !important;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-navy);
+    border: 2px solid var(--color-navy);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-navy);
+    color: white;
+  }
+
+  /* HERO */
+  .hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/images/heroContact.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero-cta-dual {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-action, .cta-secondary {
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cta-action {
+    background: var(--color-blue);
+    color: white;
+  }
+
+  .cta-action:hover {
+    background: var(--color-blue-hover);
+    transform: translateY(-2px);
+    color: white;
+  }
+
+  .cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .cta-secondary:hover {
+    background: white;
+    color: var(--color-navy) !important;
+  }
+
+  .cta-secondary:hover strong,
+  .cta-secondary:hover span {
+    color: var(--color-navy) !important;
+  }
+
+  /* SERVICIOS */
+  .services-dual-section {
+    padding: 4rem 0;
+    background: var(--color-light);
+  }
+
+  .services-category {
+    margin-bottom: 4rem;
+  }
+
+  .category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  .category-title {
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+  }
+
+  .category-subtitle {
+    color: var(--color-gray);
+    font-size: 1.125rem;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-navy);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 41, 59, 0.12);
+    color: var(--color-navy);
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-navy);
+  }
+
+  .service-card p {
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+  }
+
+  .service-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-blue);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+
+  .service-card:hover .service-image img {
+    transform: scale(1.05);
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .service-tags span {
+    background: var(--color-light);
+    color: var(--color-gray);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.875rem;
+  }
+
+  .service-tag {
+    background: var(--color-blue);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .cta-container {
+    text-align: center;
+  }
+
+  .response-time {
+    margin-top: 1rem;
+    color: var(--color-gray);
+    font-size: 0.875rem;
+  }
+
+  /* REGIONS */
+  .minimal-services-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .minimal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .region-column {
+    background: var(--color-light);
+    padding: 2rem;
+    border-radius: var(--radius);
+  }
+
+  .region-title {
+    color: var(--color-navy);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-blue);
+  }
+
+  .city-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .city-links a {
+    color: var(--color-gray);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+
+  .city-links a:hover {
+    background: white;
+    color: var(--color-blue);
+    transform: translateX(4px);
+  }
+
+  .emergency-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--color-light);
+    border-radius: var(--radius);
+  }
+
+  .emergency-phone {
+    color: var(--color-blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* SERVICE AREAS */
+  .service-areas-section {
+    padding: 4rem 0;
+    background: var(--color-light);
+  }
+
+  /* BLOG */
+  .blog-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 41, 59, 0.12);
+  }
+
+  .blog-card-content {
+    padding: 1.5rem;
+  }
+
+  .blog-card h3 a {
+    color: var(--color-navy);
+    text-decoration: none;
+  }
+
+  .blog-card h3 a:hover {
+    color: var(--color-blue);
+  }
+
+  .blog-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    color: var(--color-blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .read-more:hover {
+    color: var(--color-blue-hover);
+  }
+
+  /* UTILIDADES */
+  .text-center { text-align: center; }
+  .mb-12 { margin-bottom: 3rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-cta-dual {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-action, .cta-secondary {
+      width: 100%;
+      max-width: 280px;
+    }
+    
+    .services-grid, .regions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .large-card {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid, .regions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
