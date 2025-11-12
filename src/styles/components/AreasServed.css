@@ -34,17 +34,23 @@
     transform: scale(1.05);
 }
 
-.area-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.area-icon {
+    font-size: 80px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
 }
 
 .area-card p {
     margin: 20px 0 20px;
-    font-weight: 700;
+    font-weight: 500;
     color: #333;
+    font-size: 18px;
+}
+
+.area-card p strong {
+    font-weight: 700;
+    color: #1a1a1a;
 }
