@@ -1,1 +1,6 @@
-[DUMMY FILE CONTENT]
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#0ea5e9"/>
+  <circle cx="200" cy="150" r="80" fill="#fbbf24" opacity="0.9"/>
+  <text x="200" y="240" font-family="Arial" font-size="48" font-weight="bold" fill="white" text-anchor="middle">MIAMI</text>
+  <text x="200" y="270" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Florida</text>
+</svg>
