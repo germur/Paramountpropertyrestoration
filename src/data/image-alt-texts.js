@@ -138,6 +138,13 @@ export const imageAltTexts = {
   'tendencias-web-2025': 'Web design trends and best practices for 2025',
   'renovations-value-florida': 'Home renovations that add value in Florida real estate market',
 
+  // Blog Article Hero Images (WebP format)
+  'diy-mold-testing-kit-hero': 'DIY mold testing kit on kitchen counter with test swabs and petri dishes - Florida homeowner mold testing guide',
+  'florida-mold-inspection-hero': 'Professional mold inspector examining Florida home wall with moisture meter and testing equipment',
+  'mold-prevention-home-hero': 'Clean modern Florida home interior with dehumidifier showing proper mold prevention techniques',
+  'mold-health-symptoms-hero': 'Medical professional reviewing mold exposure test results with patient in modern clinic',
+  'professional-mold-testing-hero': 'Professional mold remediation specialist conducting thorough inspection in Florida home with advanced testing equipment',
+
   // Template Images
   'backgroundTemplateSeo': 'Professional remodeling and restoration services background image',
 };
