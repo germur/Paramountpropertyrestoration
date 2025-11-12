@@ -1,5 +1,6 @@
 // src/lib/sitemap.js
 import { restorationGroups, cities } from '../data/restoration.js';
+import { getCollection } from 'astro:content';
 
 const SITE_URL = (process.env.SITE_URL || 'https://paramountpropertyrestoration.com').replace(/\/$/, '');
 const BATCH_SIZE = 5000;
@@ -22,7 +23,7 @@ const withBaseUrl = (path) => {
 };
 
 // --- build urls using real restoration data ---
-export function getAllUrls() {
+export async function getAllUrls() {
   const urls = new Set();
 
   // Static pages
@@ -32,8 +33,21 @@ export function getAllUrls() {
   urls.add(withBaseUrl('/portfolio'));
   urls.add(withBaseUrl('/contact'));
   urls.add(withBaseUrl('/blog'));
+  urls.add(withBaseUrl('/privacy-policy'));
+  urls.add(withBaseUrl('/terms'));
   // Landing page for booking Mold Inspection
   urls.add(withBaseUrl('/book-mold-inspection'));
+  urls.add(withBaseUrl('/landing/mold-remediation'));
+
+  // Blog articles (dynamic from content collection)
+  try {
+    const blogPosts = await getCollection('blog');
+    for (const post of blogPosts) {
+      urls.add(withBaseUrl(`/blog/${post.slug}`));
+    }
+  } catch (error) {
+    console.warn('Could not load blog collection:', error);
+  }
 
   // Restoration service group pages (without cities)
   for (const group of restorationGroups) {
@@ -106,7 +120,7 @@ export function indexToXml(indexItems) {
     `\n</sitemapindex>`;
 }
 
-export function getBatches() {
-  const all = getAllUrls();
+export async function getBatches() {
+  const all = await getAllUrls();
   return chunk(all, BATCH_SIZE);
 }
