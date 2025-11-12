@@ -38,6 +38,8 @@ export async function getAllUrls() {
   // Landing page for booking Mold Inspection
   urls.add(withBaseUrl('/book-mold-inspection'));
   urls.add(withBaseUrl('/landing/mold-remediation'));
+  // Tools
+  urls.add(withBaseUrl('/tools/mold-testing-cost-calculator'));
 
   // Blog articles (dynamic from content collection)
   try {
