@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className,
+  loading = 'lazy',
+  decoding = 'async',
+  quality = 85,
+  ...rest
+} = Astro.props;
+
+// If src is already a full path starting with /images/, just use it
+const imageSrc = src.startsWith('/images/') ? src : `/images/${src}`;
+
+// Generate appropriate alt text if empty
+const imageAlt = alt || generateAltText(src);
+
+function generateAltText(path: string): string {
+  const filename = path.split('/').pop()?.replace(/\.(jpg|jpeg|png|webp)$/i, '') || '';
+  return filename
+    .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+    .replace(/[-_]/g, ' ') // Replace hyphens and underscores with spaces
+    .trim()
+    .replace(/\s+/g, ' ') // Remove extra spaces
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+---
+
+<img
+  src={imageSrc}
+  alt={imageAlt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding={decoding}
+  class={className}
+  {...rest}
+/>

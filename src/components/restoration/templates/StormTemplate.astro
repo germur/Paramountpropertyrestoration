@@ -5,6 +5,7 @@ import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
 import { cities } from "../../../data/restoration.js";
+import { getAltText } from "../../../data/image-alt-texts.js";
 
 const { group, sub } = Astro.props;
 
@@ -168,7 +169,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}>
+<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`} role="img" aria-label={getAltText(content.hero.bgImage)}>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>

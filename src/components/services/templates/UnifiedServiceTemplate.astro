@@ -1,6 +1,7 @@
 ---
 import { cities } from "../../../data/restoration.js";
 import FAQ from "../../AcordeonServices";
+import { getAltText } from "../../../data/image-alt-texts.js";
 import "../../../styles/pages/services-template.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -182,11 +183,28 @@ const getCitiesByRegion = () => {
 };
 
 const cityRegions = getCitiesByRegion();
+
+// Get hero image based on service group
+const getHeroImage = (slug) => {
+  const imageMap = {
+    'kitchen-remodeling': 'kitchenHero',
+    'bathroom-remodeling': 'bathroomHero',
+    'bedroom-remodeling': 'bedroomHero',
+    'living-dining-remodeling': 'livingDiningHero',
+    'home-additions-remodeling': 'home-additionsHero'
+  };
+  return imageMap[slug] || 'portadaHome';
+};
+
+const heroImage = getHeroImage(group.slug);
+const heroImageWebP = `/images/${heroImage}.webp`;
+const heroImageJpg = `/images/${heroImage}.jpg`;
+const heroAlt = getAltText(heroImage);
 ---
 
 <div class="unified-service-template">
   <!-- Enhanced Hero Section -->
-  <section class="hero-section" style={`background-image: url('/images/${group.slug === 'kitchen-remodeling' ? 'kitchenHero.jpg' : group.slug === 'bathroom-remodeling' ? 'bathroomHero.jpg' : group.slug === 'bedroom-remodeling' ? 'bedroomHero.jpg' : group.slug === 'living-dining-remodeling' ? 'livingDiningHero.jpg' : group.slug === 'home-additions-remodeling' ? 'home-additionsHero.jpg' : 'portadaHome.jpg'}'); min-height: 60vh;`}>
+  <section class="hero-section" style={`background-image: url('${heroImageJpg}'); min-height: 60vh;`} role="img" aria-label={heroAlt}>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
