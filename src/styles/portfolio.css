@@ -1,10 +1,12 @@
 /* =====================================================
    PORTFOLIO — PAGE STYLES (mobile‑first, accessible)
-   Preserves original class names; consolidates breakpoints.
+   Now scoped to body[data-page="portfolio"] and layered
    ===================================================== */
 
+@layer pages {
+
 /* --- BASE (Mobile First) --- */
-.projects-section {
+body[data-page="portfolio"] .projects-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +15,7 @@
   overflow: hidden;
 }
 
-.projects-containerPort {
+body[data-page="portfolio"] .projects-containerPort {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,7 +24,7 @@
   margin-bottom: 2rem;
 }
 
-.projects-title {
+body[data-page="portfolio"] .projects-title {
   /* 80px was too large on phones */
   font-size: clamp(2.25rem, 8vw, 6rem);
   font-weight: 800; /* stronger heading weight */
@@ -40,7 +42,7 @@
   margin: 0; /* reset */
 }
 
-.project-frame {
+body[data-page="portfolio"] .project-frame {
   position: absolute;
   z-index: 1;
   width: 120px; /* slightly smaller for mobile fit */
@@ -50,14 +52,14 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.project-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+body[data-page="portfolio"] .project-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.image-one { transform: rotate(-12deg); top: -80px; left: -8px; }
-.image-two { transform: rotate(12deg);  top: 140px; right: -8px; }
+body[data-page="portfolio"] .image-one { transform: rotate(-12deg); top: -80px; left: -8px; }
+body[data-page="portfolio"] .image-two { transform: rotate(12deg);  top: 140px; right: -8px; }
 
-.cnt-projects-description { display: flex; justify-content: center; align-items: center; }
+body[data-page="portfolio"] .cnt-projects-description { display: flex; justify-content: center; align-items: center; }
 
-.projects-description {
+body[data-page="portfolio"] .projects-description {
   padding: 120px 0 0; /* leaves room for floating frames */
   text-align: center;
   max-width: 90%;
@@ -68,26 +70,26 @@
 }
 
 /* --- GALLERY --- */
-.image-gallery-section { padding: 1rem; background-color: #fff; }
+body[data-page="portfolio"] .image-gallery-section { padding: 1rem; background-color: #fff; }
 
-.gallery-title { text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.25rem); color: #1a1a1a; margin-bottom: 2rem; }
+body[data-page="portfolio"] .gallery-title { text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.25rem); color: #1a1a1a; margin-bottom: 2rem; }
 
-.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+body[data-page="portfolio"] .gallery-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
 
-.gallery-item {
+body[data-page="portfolio"] .gallery-item {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   aspect-ratio: 16 / 10;
 }
 
-.gallery-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
-.gallery-item:hover .gallery-image { transform: scale(1.04); }
+body[data-page="portfolio"] .gallery-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+body[data-page="portfolio"] .gallery-item:hover .gallery-image { transform: scale(1.04); }
 
 /* --- PROJECT DETAILS BLOCKS --- */
-.project-details-section { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+body[data-page="portfolio"] .project-details-section { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-.project-feature-block {
+body[data-page="portfolio"] .project-feature-block {
   border: 1px solid #e2e8f0;
   border-radius: 16px;
   overflow: hidden;
@@ -95,43 +97,45 @@
   background: #fff;
 }
 
-.feature-content { padding: 1.5rem; }
+body[data-page="portfolio"] .feature-content { padding: 1.5rem; }
 
-.feature-content h2 { font-size: clamp(1.25rem, 2.2vw, 1.75rem); color: #000; margin: 0 0 1rem; }
+body[data-page="portfolio"] .feature-content h2 { font-size: clamp(1.25rem, 2.2vw, 1.75rem); color: #000; margin: 0 0 1rem; }
 
-.feature-content ul { list-style: none; padding: 0; margin: 0; }
-.feature-content li { line-height: 1.6; margin-bottom: .75rem; }
+body[data-page="portfolio"] .feature-content ul { list-style: none; padding: 0; margin: 0; }
+body[data-page="portfolio"] .feature-content li { line-height: 1.6; margin-bottom: .75rem; }
 
-.feature-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+body[data-page="portfolio"] .feature-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* --- TABLET (≥768px) --- */
 @media (min-width: 768px) {
-  .projects-section { padding: 5rem 1.5rem; }
+  body[data-page="portfolio"] .projects-section { padding: 5rem 1.5rem; }
 
-  .project-frame { width: 170px; height: 200px; }
-  .image-one  { top: -40px; left: -140px; }
-  .image-two  { top: 120px; right: -125px; }
+  body[data-page="portfolio"] .project-frame { width: 170px; height: 200px; }
+  body[data-page="portfolio"] .image-one  { top: -40px; left: -140px; }
+  body[data-page="portfolio"] .image-two  { top: 120px; right: -125px; }
 
-  .projects-description { padding: 100px 0 0; max-width: 650px; }
+  body[data-page="portfolio"] .projects-description { padding: 100px 0 0; max-width: 650px; }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto; }
-  .image-gallery-section { padding: 4rem 3rem; }
+  body[data-page="portfolio"] .gallery-grid { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto; }
+  body[data-page="portfolio"] .image-gallery-section { padding: 4rem 3rem; }
 
-  .project-feature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem; }
-  .feature-content { padding: 0; }
+  body[data-page="portfolio"] .project-feature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem; }
+  body[data-page="portfolio"] .feature-content { padding: 0; }
 
   /* alternate blocks: image/content swap */
-  .project-feature-block:nth-child(even) { grid-template-areas: "image content"; }
-  .project-feature-block:nth-child(even) .feature-image { grid-area: image; }
-  .project-feature-block:nth-child(even) .feature-content { grid-area: content; }
+  body[data-page="portfolio"] .project-feature-block:nth-child(even) { grid-template-areas: "image content"; }
+  body[data-page="portfolio"] .project-feature-block:nth-child(even) .feature-image { grid-area: image; }
+  body[data-page="portfolio"] .project-feature-block:nth-child(even) .feature-content { grid-area: content; }
 }
 
 /* --- DESKTOP (≥1024px) --- */
 @media (min-width: 1024px) {
-  .projects-title { font-size: clamp(3rem, 6vw, 6rem); }
+  body[data-page="portfolio"] .projects-title { font-size: clamp(3rem, 6vw, 6rem); }
 }
 
 /* --- LARGE DESKTOP (≥1440px) --- */
 @media (min-width: 1440px) {
-  .projects-section { padding: 6rem 1rem; }
+  body[data-page="portfolio"] .projects-section { padding: 6rem 1rem; }
+}
+
 }

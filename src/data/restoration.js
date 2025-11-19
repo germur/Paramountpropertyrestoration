@@ -23,6 +23,8 @@ export const restorationGroups = [
         hero: {
           title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
+          bgImage: "/images/herowater.jpg",
+          gallery: ["/images/waterDamage.jpg", "/images/EmergencyWaterRemoval.jpg", "/images/FloodDamage.jpg"]
         }
       },
       {
@@ -30,28 +32,44 @@ export const restorationGroups = [
         title: "Leak Repair",
         short: "Emergency water removal services",
         nombre: "Leak Repair",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/LeakRepair.jpg"
+        },
+        gallery: ["/images/LeakRepair.jpg", "/images/CeilingWaterDamage.jpg", "/images/waterDamage.jpg"]
       },
       {
         slug: "basement-flooding",
         title: "Basement Flooding",
         short: "Basement flooding restoration",
         nombre: "Basement Flooding",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/BasementFlooding.jpg"
+        },
+        gallery: ["/images/BasementFlooding.jpg", "/images/waterDamage.jpg", "/images/EmergencyWaterRemoval.jpg"]
       },
       {
         slug: "ceiling-water-damage",
         title: "Ceiling Water Damage",
         short: "Ceiling water damage repair",
         nombre: "Ceiling Water Damage",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/CeilingWaterDamage.jpg"
+        },
+        gallery: ["/images/CeilingWaterDamage.jpg", "/images/LeakRepair.jpg", "/images/waterDamage.jpg"]
       },
       {
         slug: "emergency-water-removal",
         title: "Emergency Water Removal",
         short: "Emergency water extraction services",
         nombre: "Emergency Water Removal",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/EmergencyWaterRemoval.jpg"
+        },
+        gallery: ["/images/EmergencyWaterRemoval.jpg", "/images/FloodDamage.jpg", "/images/waterDamage.jpg"]
       }
     ]
   },
@@ -70,14 +88,22 @@ export const restorationGroups = [
         title: "Smoke Damage",
         short: "Professional smoke removal",
         nombre: "Smoke Damage",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/SmokeDamage.jpg"
+        },
+        gallery: ["/images/SmokeDamage.jpg", "/images/SootCleanup.jpg", "/images/fireDamage.jpg"]
       },
       {
         slug: "soot-cleanup",
         title: "Soot Cleanup",
         short: "Soot cleanup and removal",
         nombre: "Soot Cleanup",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/SootCleanup.jpg"
+        },
+        gallery: ["/images/SootCleanup.jpg", "/images/SmokeDamage.jpg", "/images/fireDamage.jpg"]
       },
       {
         slug: "fire-damage-repair",
@@ -88,6 +114,8 @@ export const restorationGroups = [
         seo: {
           title: "Fire Damage Repair Florida | Smoke & Soot Cleanup",
           description: "Professional fire damage restoration in Florida. Complete fire, smoke, and soot cleanup with structural restoration services.",
+          bgImage: "/images/FireDamageRepair.jpg",
+          gallery: ["/images/FireDamageRepair.jpg", "/images/herofire.jpg", "/images/fireDamage.jpg"]
         }
       },
       {
@@ -95,7 +123,11 @@ export const restorationGroups = [
         title: "Emergency Fire Response",
         short: "24/7 emergency fire response",
         nombre: "Emergency Fire Response",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/EmergencyFireResponse.jpg"
+        },
+        gallery: ["/images/EmergencyFireResponse.jpg", "/images/herofire.jpg", "/images/fireDamage.jpg"]
       }
     ]
   },
@@ -118,6 +150,8 @@ export const restorationGroups = [
         seo: {
           title: "Mold Inspection Florida | Professional Mold Testing",
           description: "Professional mold inspection and testing services in Florida. Certified inspectors using advanced detection methods.",
+          bgImage: "/images/MoldInspection.jpg",
+          gallery: ["/images/MoldInspection.jpg", "/images/Moldtesting.jpg", "/images/moldDamage.jpg"]
         }
       },
       {
@@ -125,21 +159,33 @@ export const restorationGroups = [
         title: "Black Mold Removal",
         short: "Black mold remediation",
         nombre: "Black Mold Removal",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/BlackMoldRemoval.jpg"
+        },
+        gallery: ["/images/BlackMoldRemoval.jpg", "/images/moldDamage.jpg", "/images/MoldPrevention.jpg"]
       },
       {
         slug: "mold-prevention",
         title: "Mold Prevention",
         short: "Mold prevention services",
         nombre: "Mold Prevention",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/MoldPrevention.jpg"
+        },
+        gallery: ["/images/MoldPrevention.jpg", "/images/moldDamage.jpg", "/images/MoldInspection.jpg"]
       },
       {
         slug: "mold-testing",
         title: "Mold Testing",
         short: "Professional mold testing",
         nombre: "Mold Testing",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/Moldtesting.jpg"
+        },
+        gallery: ["/images/Moldtesting.jpg", "/images/MoldInspection.jpg", "/images/moldDamage.jpg"]
       }
     ]
   },
@@ -162,6 +208,8 @@ export const restorationGroups = [
         seo: {
           title: "Hurricane Damage Restoration Florida | Emergency Storm Response",
           description: "Expert hurricane damage repair services in Florida. Emergency response, roof repairs, water damage cleanup, and reconstruction.",
+          bgImage: "/images/HurricaneDamage.jpg",
+          gallery: ["/images/HurricaneDamage.jpg", "/images/heroStorm.jpg", "/images/stormDamage.jpg"]
         }
       },
       {
@@ -169,21 +217,33 @@ export const restorationGroups = [
         title: "Wind Damage",
         short: "Wind damage repair services",
         nombre: "Wind Damage",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/WindDamage.jpg"
+        },
+        gallery: ["/images/WindDamage.jpg", "/images/heroStorm.jpg", "/images/stormDamage.jpg"]
       },
       {
         slug: "storm-debris-removal",
         title: "Storm Debris Removal",
         short: "Storm debris cleanup and removal",
         nombre: "Storm Debris Removal",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/StormDebrisRemoval.jpg"
+        },
+        gallery: ["/images/StormDebrisRemoval.jpg", "/images/heroStorm.jpg", "/images/stormDamage.jpg"]
       },
       {
         slug: "emergency-storm-repair",
         title: "Emergency Storm Repair",
         short: "24/7 emergency storm response",
         nombre: "Emergency Storm Repair",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/EmergencyStormRepair.jpg"
+        },
+        gallery: ["/images/EmergencyStormRepair.jpg", "/images/heroStorm.jpg", "/images/stormDamage.jpg"]
       }
     ]
   },
@@ -202,28 +262,44 @@ export const restorationGroups = [
         title: "Water Mitigation",
         short: "Water damage mitigation",
         nombre: "Water Mitigation",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/mitigation.jpg"
+        },
+        gallery: ["/images/mitigation.jpg", "/images/waterDamage.jpg", "/images/herowater.jpg"]
       },
       {
         slug: "fire-mitigation",
         title: "Fire Mitigation",
         short: "Fire damage mitigation",
         nombre: "Fire Mitigation",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/mitigation.jpg"
+        },
+        gallery: ["/images/mitigation.jpg", "/images/fireDamage.jpg", "/images/herofire.jpg"]
       },
       {
         slug: "mold-mitigation",
         title: "Mold Mitigation",
         short: "Mold damage mitigation",
         nombre: "Mold Mitigation",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/mitigation.jpg"
+        },
+        gallery: ["/images/mitigation.jpg", "/images/moldDamage.jpg", "/images/heroMold.jpg"]
       },
       {
         slug: "storm-mitigation",
         title: "Storm Mitigation",
         short: "Storm damage mitigation",
         nombre: "Storm Mitigation",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          bgImage: "/images/mitigation.jpg"
+        },
+        gallery: ["/images/mitigation.jpg", "/images/stormDamage.jpg", "/images/heroStorm.jpg"]
       }
     ]
   },
@@ -384,14 +460,14 @@ export const cities = [
 
 // Get all restoration services only
 export function getRestorationServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug !== "remodeling-services"
   );
 }
 
 // Get all remodeling services only  
 export function getRemodelingServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug === "remodeling-services"
   );
 }
@@ -420,7 +496,7 @@ export function getCityBySlug(slug) {
 // FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
   const combinations = [];
-  
+
   restorationGroups.forEach(group => {
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
@@ -438,7 +514,7 @@ export function getAllRestorationCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -446,7 +522,7 @@ export function getAllRestorationCombinations() {
 export function getAllRemodelingCombinations() {
   const remodelingServices = getRemodelingServices();
   const combinations = [];
-  
+
   remodelingServices.forEach(group => {
     group.subservices.forEach(service => {
       cities.forEach(city => {
@@ -462,7 +538,7 @@ export function getAllRemodelingCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -499,7 +575,7 @@ export function getCityData(citySlug) {
 export function getStats() {
   const restorationServices = getRestorationServices().reduce((total, group) => total + group.subservices.length, 0);
   const remodelingServices = getRemodelingServices().reduce((total, group) => total + group.subservices.length, 0);
-  
+
   return {
     totalGroups: restorationGroups.length,
     restorationServices,

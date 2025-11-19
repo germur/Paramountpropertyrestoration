@@ -198,39 +198,23 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
       <p class="section-subtitle">See the quality and professionalism we bring to every project</p>
       
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-before-after-1.jpg"
-            alt={`${servicioData.title} before and after results in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Complete Restoration</h3>
-            <p>Professional results you can see</p>
+        {(servicioData.gallery || [
+          "/images/restoration-default.jpg",
+          "/images/restoration-default.jpg",
+          "/images/restoration-default.jpg"
+        ]).slice(0, 3).map((image, index) => (
+          <div class="gallery-item">
+            <img
+              src={image}
+              alt={`${servicioData.title} project example ${index + 1} in ${ciudadData.nombre}`}
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <h3>{index === 0 ? "Complete Restoration" : index === 1 ? "Expert Technicians" : "Advanced Equipment"}</h3>
+              <p>{index === 0 ? "Professional results you can see" : index === 1 ? "Skilled professionals at work" : "State-of-the-art tools and technology"}</p>
+            </div>
           </div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-process-1.jpg"
-            alt={`Professional ${servicioData.title.toLowerCase()} process in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Expert Technicians</h3>
-            <p>Skilled professionals at work</p>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="/images/restoration-equipment-1.jpg"
-            alt={`Advanced ${servicioData.title.toLowerCase()} equipment used in ${ciudadData.nombre}`}
-            loading="lazy"
-          />
-          <div class="gallery-overlay">
-            <h3>Advanced Equipment</h3>
-            <p>State-of-the-art tools and technology</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>

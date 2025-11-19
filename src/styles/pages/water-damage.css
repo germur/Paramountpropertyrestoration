@@ -1,23 +1,24 @@
-/* =====================
-   WATER DAMAGE PAGE – Optimized Styles (mobile-first)
-   Notes:
-   - Preserves original class names (no markup changes required)
-   - Unifies colors via CSS variables already defined in global.css
-   - Adds focus-visible for accessibility
-   - Adds prefers-reduced-motion guard
-   - Normalizes hover states and spacing
-   ===================== */
+/* =====================================================
+   WATER DAMAGE — PAGE STYLES (scoped, layered, mobile‑first)
+   - Scoped to body[data-page="water-damage"] to avoid cross‑page leaks
+   - Uses design tokens from global.css
+   - Adds accessibility focus and reduced‑motion guards
+   ===================================================== */
+
+@layer pages {
 
 /* ---------------------
    Accessibility & Motion
 ---------------------- */
-:where(a, button, .btn, .cta-button):focus-visible {
+body[data-page="water-damage"] :where(a, button, .btn, .cta-button):focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  body[data-page="water-damage"] *,
+  body[data-page="water-damage"] *::before,
+  body[data-page="water-damage"] *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
@@ -27,7 +28,7 @@
 /* =====================
     SERVICES GRID
    ===================== */
-.services-grid {
+body[data-page="water-damage"] .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
@@ -36,11 +37,11 @@
   margin: 0 auto;
 }
 
-.service-item,
-.service-item-static {
+body[data-page="water-damage"] .service-item,
+body[data-page="water-damage"] .service-item-static {
   text-align: center;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -48,35 +49,35 @@
 }
 
 /* Only interactive cards lift on hover */
-.service-item { cursor: pointer; transition: transform .3s ease; }
-.service-item:hover { transform: translateY(-5px); color: inherit; }
+body[data-page="water-damage"] .service-item { cursor: pointer; transition: transform .3s ease; }
+body[data-page="water-damage"] .service-item:hover { transform: translateY(-5px); color: inherit; }
 
-.service-item i,
-.service-item-static i {
+body[data-page="water-damage"] .service-item i,
+body[data-page="water-damage"] .service-item-static i {
   font-size: 2.25rem;
   color: var(--color-primary);
   margin-bottom: .75rem;
   display: block;
   transition: color .3s ease;
 }
-.service-item:hover i { color: var(--color-accent); }
+body[data-page="water-damage"] .service-item:hover i { color: var(--color-accent); }
 
-.service-item h3,
-.service-item-static h3 {
+body[data-page="water-damage"] .service-item h3,
+body[data-page="water-damage"] .service-item-static h3 {
   font-size: .85rem;
   margin: 0;
   color: var(--text-primary);
   font-weight: 500;
 }
-.service-item:hover h3 { color: var(--color-accent); }
+body[data-page="water-damage"] .service-item:hover h3 { color: var(--color-accent); }
 
 /* =====================
     SOLUTIONS SECTION
    ===================== */
-.solutions-section { padding: 3rem 1rem; background-color: var(--bg-secondary, #f8f9fa); }
-.solutions-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
+body[data-page="water-damage"] .solutions-section { padding: 3rem 1rem; background-color: var(--bg-secondary, #f8f9fa); }
+body[data-page="water-damage"] .solutions-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
 
-.solutions-grid {
+body[data-page="water-damage"] .solutions-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
@@ -84,7 +85,7 @@
   margin: 0 auto;
 }
 
-.solution-card {
+body[data-page="water-damage"] .solution-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,51 +95,51 @@
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
   transition: transform .3s ease, box-shadow .3s ease;
 }
-.solution-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,.12); }
+body[data-page="water-damage"] .solution-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,.12); }
 
-.card-image { width: 100%; height: 200px; overflow: hidden; }
-.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
-.solution-card:hover .card-image img { transform: scale(1.05); }
+body[data-page="water-damage"] .card-image { width: 100%; height: 200px; overflow: hidden; }
+body[data-page="water-damage"] .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+body[data-page="water-damage"] .solution-card:hover .card-image img { transform: scale(1.05); }
 
-.card-content { padding: 1.25rem; }
-.card-content h3 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: .5rem; }
-.card-content p { color: var(--text-secondary); font-size: .95rem; margin-bottom: 1rem; line-height: 1.55; }
+body[data-page="water-damage"] .card-content { padding: 1.25rem; }
+body[data-page="water-damage"] .card-content h3 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: .5rem; }
+body[data-page="water-damage"] .card-content p { color: var(--text-secondary); font-size: .95rem; margin-bottom: 1rem; line-height: 1.55; }
 
-.btn { display: inline-block; background: var(--color-accent); color: #fff; padding: .7rem 1.25rem; text-decoration: none; border-radius: 999px; font-weight: 500; font-size: .9rem; transition: background .3s ease, transform .3s ease; }
-.btn:hover { background: var(--color-accent-hover); transform: translateY(-2px); color: #fff; text-decoration: none; }
+body[data-page="water-damage"] .btn { display: inline-block; background: var(--color-accent); color: #fff; padding: .7rem 1.25rem; text-decoration: none; border-radius: 999px; font-weight: 500; font-size: .9rem; transition: background .3s ease, transform .3s ease; }
+body[data-page="water-damage"] .btn:hover { background: var(--color-accent-hover); transform: translateY(-2px); color: #fff; text-decoration: none; }
 
 /* Service features tags */
-.service-description { display: flex; flex-direction: column; gap: 1rem; }
-.service-features { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
-.feature-tag { background: rgba(53,195,233,.08); color: var(--color-accent); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem; font-weight: 600; border: 1px solid rgba(53,195,233,.25); }
+body[data-page="water-damage"] .service-description { display: flex; flex-direction: column; gap: 1rem; }
+body[data-page="water-damage"] .service-features { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+body[data-page="water-damage"] .feature-tag { background: rgba(53,195,233,.08); color: var(--color-accent); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem; font-weight: 600; border: 1px solid rgba(53,195,233,.25); }
 
 /* =====================
     REGIONAL COVERAGE
    ===================== */
-.restoration-coverage-section { padding: 4rem 0; background: #fff; }
-.coverage-header { text-align: center; margin-bottom: 2.25rem; }
-.coverage-header h2 { color: var(--text-primary); font-size: clamp(1.5rem, 1.6vw + 1rem, 2.25rem); margin-bottom: .5rem; }
-.coverage-header p { color: var(--text-secondary); font-size: 1.05rem; }
+body[data-page="water-damage"] .restoration-coverage-section { padding: 4rem 0; background: #fff; }
+body[data-page="water-damage"] .coverage-header { text-align: center; margin-bottom: 2.25rem; }
+body[data-page="water-damage"] .coverage-header h2 { color: var(--text-primary); font-size: clamp(1.5rem, 1.6vw + 1rem, 2.25rem); margin-bottom: .5rem; }
+body[data-page="water-damage"] .coverage-header p { color: var(--text-secondary); font-size: 1.05rem; }
 
-.restoration-regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-.region-column { background: var(--bg-secondary, #f8f9fa); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
-.region-title { color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--color-accent); }
+body[data-page="water-damage"] .restoration-regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+body[data-page="water-damage"] .region-column { background: var(--bg-secondary, #f8f9fa); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+body[data-page="water-damage"] .region-title { color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--color-accent); }
 
-.city-links { display: flex; flex-direction: column; gap: .65rem; }
-.city-links a { color: var(--text-secondary); text-decoration: none; padding: .5rem; border-radius: 6px; transition: all .25s ease; font-size: .95rem; }
-.city-links a:hover { background: #fff; color: var(--color-accent); transform: translateX(4px); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+body[data-page="water-damage"] .city-links { display: flex; flex-direction: column; gap: .65rem; }
+body[data-page="water-damage"] .city-links a { color: var(--text-secondary); text-decoration: none; padding: .5rem; border-radius: 6px; transition: all .25s ease; font-size: .95rem; }
+body[data-page="water-damage"] .city-links a:hover { background: #fff; color: var(--color-accent); transform: translateX(4px); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
 
-.emergency-footer { text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-secondary, #f8f9fa); border-radius: 12px; }
-.emergency-phone { color: var(--color-accent); font-weight: 600; text-decoration: none; font-size: 1.05rem; }
-.emergency-phone:hover { color: var(--color-accent-hover); }
+body[data-page="water-damage"] .emergency-footer { text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-secondary, #f8f9fa); border-radius: 12px; }
+body[data-page="water-damage"] .emergency-phone { color: var(--color-accent); font-weight: 600; text-decoration: none; font-size: 1.05rem; }
+body[data-page="water-damage"] .emergency-phone:hover { color: var(--color-accent-hover); }
 
 /* =====================
     STEPS SECTION
    ===================== */
-.steps-section { padding: 4rem 1rem; }
-.steps-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
+body[data-page="water-damage"] .steps-section { padding: 4rem 1rem; }
+body[data-page="water-damage"] .steps-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
 
-.steps-container {
+body[data-page="water-damage"] .steps-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -148,48 +149,48 @@
 }
 
 /* Decorative line hidden on mobile */
-.steps-container::before { content: ''; position: absolute; top: 55px; left: 12.5%; right: 12.5%; height: 2px; background-color: #e0e0e0; z-index: 0; display: none; }
+body[data-page="water-damage"] .steps-container::before { content: ''; position: absolute; top: 55px; left: 12.5%; right: 12.5%; height: 2px; background-color: #e0e0e0; z-index: 0; display: none; }
 
-.step-item { text-align: center; padding: 1rem; position: relative; }
-.step-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; background: var(--color-primary); transition: transform .3s ease, background .3s ease; position: relative; z-index: 1; }
-.step-icon i { font-size: 30px; color: #fff; transition: color .3s ease; }
-.step-item:hover .step-icon { transform: translateY(-2px); }
-.step-item:hover .step-icon i { color: orange; }
-.step-item h3 { color: var(--text-primary); margin-bottom: .5rem; font-weight: 600; }
-.step-item p { color: var(--text-secondary); line-height: 1.55; max-width: 260px; margin: 0 auto; }
+body[data-page="water-damage"] .step-item { text-align: center; padding: 1rem; position: relative; }
+body[data-page="water-damage"] .step-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; background: var(--color-primary); transition: transform .3s ease, background .3s ease; position: relative; z-index: 1; }
+body[data-page="water-damage"] .step-icon i { font-size: 30px; color: #fff; transition: color .3s ease; }
+body[data-page="water-damage"] .step-item:hover .step-icon { transform: translateY(-2px); }
+body[data-page="water-damage"] .step-item:hover .step-icon i { color: orange; }
+body[data-page="water-damage"] .step-item h3 { color: var(--text-primary); margin-bottom: .5rem; font-weight: 600; }
+body[data-page="water-damage"] .step-item p { color: var(--text-secondary); line-height: 1.55; max-width: 260px; margin: 0 auto; }
 
 /* =====================
     RECENT REMODELS
    ===================== */
-.recent-remodels-section { padding: 3rem 1rem; background: #fff; }
-.recent-remodels-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
+body[data-page="water-damage"] .recent-remodels-section { padding: 3rem 1rem; background: #fff; }
+body[data-page="water-damage"] .recent-remodels-title { text-align: center; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); color: var(--text-primary); margin-bottom: 2rem; }
 
-.remodels-gallery { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 1100px; margin: 0 auto; }
-.remodel-item { text-align: center; }
-.remodel-image { width: 100%; height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; }
-.remodel-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
-.remodel-item:hover .remodel-image img { transform: scale(1.05); }
-.remodel-item h3 { font-size: 1.05rem; color: var(--text-primary); font-weight: 600; }
-.remodel-item p { font-size: .92rem; color: var(--text-secondary); margin: 0; }
+body[data-page="water-damage"] .remodels-gallery { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 1100px; margin: 0 auto; }
+body[data-page="water-damage"] .remodel-item { text-align: center; }
+body[data-page="water-damage"] .remodel-image { width: 100%; height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 1rem; }
+body[data-page="water-damage"] .remodel-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+body[data-page="water-damage"] .remodel-item:hover .remodel-image img { transform: scale(1.05); }
+body[data-page="water-damage"] .remodel-item h3 { font-size: 1.05rem; color: var(--text-primary); font-weight: 600; }
+body[data-page="water-damage"] .remodel-item p { font-size: .92rem; color: var(--text-secondary); margin: 0; }
 
 /* =====================
     TAGS PORTFOLIO
    ===================== */
-.cnt-tagsPorfolio { display: flex; flex-wrap: wrap; justify-content: center; padding-top: 30px; gap: var(--spacing-2); }
-.tag-itemPorfolio { background: var(--bg-secondary); color: var(--color-primary); padding: var(--spacing-1) var(--spacing-3); border-radius: var(--border-radius); font-size: var(--font-size-sm); cursor: pointer; transition: background .2s ease, color .2s ease; }
-.tag-itemPorfolio:hover { background: var(--color-primary); color: var(--text-white); }
+body[data-page="water-damage"] .cnt-tagsPorfolio { display: flex; flex-wrap: wrap; justify-content: center; padding-top: 30px; gap: var(--spacing-2); }
+body[data-page="water-damage"] .tag-itemPorfolio { background: var(--bg-secondary); color: var(--color-primary); padding: var(--spacing-1) var(--spacing-3); border-radius: var(--radius); font-size: var(--font-size-sm); cursor: pointer; transition: background .2s ease, color .2s ease; }
+body[data-page="water-damage"] .tag-itemPorfolio:hover { background: var(--color-primary); color: var(--text-white); }
 
 /* =====================
-    BLOGS BAÑOS
+    BLOGS BAÑOS (reused block names kept)
    ===================== */
-.sectionBlogBathroom { background: var(--bg-secondary); padding: 2rem 32px; gap: 2rem; }
-.tittleSection-cardBlogBathroo { text-align: center; margin-bottom: var(--spacing-12); }
-.cntFather-cardBlogBathroo { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
-.cnt-cardBlogBathroom { background: #fff; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); overflow: hidden; transition: transform .3s ease, box-shadow .3s ease; border: 1px solid var(--color-primary); padding: var(--spacing-6); }
-.title-cardBlogBathroom { color: var(--text-primary); text-decoration: none; font-size: var(--font-size-lg); }
-.text-cardBlogBathroom { color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--spacing-4); }
-.link-blogBathroom { color: var(--color-primary); text-decoration: none; font-weight: 500; transition: color .2s ease; }
-.flechaBlog { font-size: 12px; }
+body[data-page="water-damage"] .sectionBlogBathroom { background: var(--bg-secondary); padding: 2rem 32px; gap: 2rem; }
+body[data-page="water-damage"] .tittleSection-cardBlogBathroo { text-align: center; margin-bottom: var(--spacing-12); }
+body[data-page="water-damage"] .cntFather-cardBlogBathroo { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+body[data-page="water-damage"] .cnt-cardBlogBathroom { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; transition: transform .3s ease, box-shadow .3s ease; border: 1px solid var(--color-primary); padding: var(--spacing-6); }
+body[data-page="water-damage"] .title-cardBlogBathroom { color: var(--text-primary); text-decoration: none; font-size: var(--font-size-lg); }
+body[data-page="water-damage"] .text-cardBlogBathroom { color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--spacing-4); }
+body[data-page="water-damage"] .link-blogBathroom { color: var(--color-primary); text-decoration: none; font-weight: 500; transition: color .2s ease; }
+body[data-page="water-damage"] .flechaBlog { font-size: 12px; }
 
 /* =====================
    RESPONSIVE BREAKPOINTS
@@ -197,32 +198,35 @@
 
 /* ≥ 481px */
 @media (min-width: 481px) {
-  .services-grid { grid-template-columns: repeat(5, 1fr); padding: 1.25rem; }
-  .service-item i, .service-item-static i { font-size: 2.4rem; }
+  body[data-page="water-damage"] .services-grid { grid-template-columns: repeat(5, 1fr); padding: 1.25rem; }
+  body[data-page="water-damage"] .service-item i,
+  body[data-page="water-damage"] .service-item-static i { font-size: 2.4rem; }
 }
 
 /* ≥ 768px */
 @media (min-width: 768px) {
-  .solutions-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-  .steps-container { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
-  .steps-container::before { display: none; }
-  .recent-remodels-section { padding: 3.25rem 1.25rem; }
+  body[data-page="water-damage"] .solutions-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  body[data-page="water-damage"] .steps-container { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
+  body[data-page="water-damage"] .steps-container::before { display: none; }
+  body[data-page="water-damage"] .recent-remodels-section { padding: 3.25rem 1.25rem; }
 }
 
 /* ≥ 992px */
 @media (min-width: 992px) {
-  .steps-title { margin-bottom: 3rem; }
-  .steps-container { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-  .steps-container::before { display: block; }
+  body[data-page="water-damage"] .steps-title { margin-bottom: 3rem; }
+  body[data-page="water-damage"] .steps-container { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  body[data-page="water-damage"] .steps-container::before { display: block; }
 }
 
 /* ≥ 1100px */
 @media (min-width: 1100px) {
-  .remodels-gallery { grid-template-columns: repeat(3, 1fr); }
+  body[data-page="water-damage"] .remodels-gallery { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* =====================
     CTA BUTTON
    ===================== */
-.cta-button { display: inline-block; background: var(--color-accent); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: background .3s ease, transform .3s ease, box-shadow .3s ease; box-shadow: 0 2px 10px rgba(53,195,233,.3); }
-.cta-button:hover { background: var(--color-accent-hover); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(53,195,233,.4); color: #fff; text-decoration: none; }
+body[data-page="water-damage"] .cta-button { display: inline-block; background: var(--color-accent); color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: background .3s ease, transform .3s ease, box-shadow .3s ease; box-shadow: 0 2px 10px rgba(53,195,233,.3); }
+body[data-page="water-damage"] .cta-button:hover { background: var(--color-accent-hover); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(53,195,233,.4); color: #fff; text-decoration: none; }
+
+}

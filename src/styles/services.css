@@ -1,313 +1,16 @@
-.hero-section {
-    position: relative;
-    width: 100%;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-    color: white;
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero-title {
-    max-width: 700px;
-    font-size: clamp(3.5rem, 6vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 1rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 400;
-    max-width: 500px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-}
-
-.hero-cta-button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: var(--color-accent);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    /* Bordes redondeados */
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.hero-cta-button:hover {
-    background-color: var(--color-accent);
-    /* Un tono más oscuro para el hover */
-    transform: translateY(-3px);
-    outline: none;
-}
-
-.cnt-Back-images {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: .5;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
-}
-
-.cnt-btn-FAQ {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 80px;
-}
-
-.tabs-container {
-    width: 100%;
-    padding: 30px 10px 10px;
-    background-color: white;
-}
-
-.tabs-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 5px;
-}
-
-.cnt-iconsServices {
-    display: flex;
-    height: 100px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tab-button {
-    color: var(--color-primary);
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    min-width: 110px;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.tab-button i {
-    font-size: 2rem;
-    line-height: 1;
-}
-
-.tab-button span {
-    font-size: 0.9rem;
-    line-height: 1;
-    text-align: center;
-}
-
-.tab-button:hover {
-    color: var(--color-accent);
-    transform: translateY(-3px);
-}
-
-.tab-button:focus-visible {
-    outline: 2px solid var(--color-accent, #0ea5e9);
-    outline-offset: 2px;
-}
-
-.tab-button.active {
-    color: var(--color-accent);
-}
-
-.tab-button.active i {
-    color: var(--color-accent);
-}
-
-.services-grid-container {
-    padding: 30px 10px;
-    background-color: white;
-    font-family: system-ui, sans-serif;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background-color: white;
-    border-radius: var(--radius-m, 12px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-.card-title {
-    margin: 0 0 0.75rem;
-    font-size: 1.5rem;
-    color: var(--text-primary, #222);
-}
-
-.cnt-tagsServices {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 20px;
-}
-
-.cnt-tagsServices span {
-    background: var(--bg-secondary);
-    color: var(--color-primary);
-    padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-sm);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.cnt-tagsServices a {
-    background: var(--bg-secondary);
-    color: var(--color-primary);
-    padding: var(--spacing-1) var(--spacing-3);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-sm);
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.cnt-tagsServices span:hover {
-    background: var(--color-primary);
-    color: white;
-}
-
-.cnt-tagsServices a:hover {
-    background: var(--color-primary);
-    color: white;
-}
-
-.card-description {
-    margin: 0 0 1.5rem;
-    color: var(--text-secondary, #555);
-    line-height: 1.6;
-    flex-grow: 1;
-}
-
-.card-link {
-    display: inline-flex;
-    margin-top: auto;
-    background-color:var(--color-primary);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background-color 0.1s ease;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-link:hover {
-    background-color:var(--color-accent);
-    color: white;
-}
-
-/* Focus styles for key interactive elements */
-.card-link:focus-visible,
-.hero-cta-button:focus-visible {
-    outline: 2px solid var(--color-accent, #0ea5e9);
-    outline-offset: 2px;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .service-card,
-    .tab-button,
-    .hero-cta-button {
-        transition: none !important;
-        transform: none !important;
-    }
-}
 /* =====================================================
-   SERVICES — PAGE STYLES (mobile‑first, accessible)
-   Notes:
-   • Keep class names stable to avoid template breaks
-   • Align with global tokens: --color-primary, --color-accent, --bg-secondary, etc.
+   SERVICES — PAGE STYLES (scoped, layered, tokens-fixed)
+   - All rules are scoped to body[data-page="services"]
+   - Placed under @layer pages to avoid cross-page leaks
+   - Token fixes: --border-radius -> --radius; --radius-m -> --radius-lg
    ===================================================== */
+
+@layer pages {
 
 /*********************
  * HERO
  *********************/
-.hero-section {
+body[data-page="services"] .hero-section {
   position: relative;
   width: 100%;
   min-height: 56vh;
@@ -321,33 +24,33 @@
   background-position: center;
 }
 
-.hero-section::before {
+body[data-page="services"] .hero-section::before {
   content: "";
   position: absolute; inset: 0;
   background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4));
   z-index: 1;
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 56rem; }
+body[data-page="services"] .hero-content { position: relative; z-index: 2; max-width: 56rem; }
 
-.hero-title {
+body[data-page="services"] .hero-title {
   max-width: 44rem;
-  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.2;
   margin: 0 0 1rem;
   text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
+body[data-page="services"] .hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
   font-weight: 400;
   max-width: 36rem;
   margin: 0 auto 1.75rem;
   opacity: .95;
 }
 
-.hero-cta-button {
+body[data-page="services"] .hero-cta-button {
   display: inline-block;
   padding: .8rem 1.75rem;
   background-color: var(--color-accent);
@@ -363,22 +66,22 @@
   box-shadow: 0 4px 14px rgba(0,0,0,.18);
 }
 
-.hero-cta-button:hover { background-color: var(--color-accent-hover, var(--color-accent)); transform: translateY(-2px); }
-.hero-cta-button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+body[data-page="services"] .hero-cta-button:hover { background-color: var(--color-accent-hover, var(--color-accent)); transform: translateY(-2px); }
+body[data-page="services"] .hero-cta-button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
-.cnt-Back-images { position: absolute; inset: 0; z-index: 0; }
-.background-image { width: 100%; height: 100%; object-fit: cover; opacity: .5; }
-.hero-text { position: relative; z-index: 2; text-align: center; color: #fff; }
+body[data-page="services"] .cnt-Back-images { position: absolute; inset: 0; z-index: 0; }
+body[data-page="services"] .background-image { width: 100%; height: 100%; object-fit: cover; opacity: .5; }
+body[data-page="services"] .hero-text { position: relative; z-index: 2; text-align: center; color: #fff; }
 
 /*********************
  * TABS / FILTERS
  *********************/
-.tabs-container { width: 100%; padding: 30px 10px 10px; background-color: #fff; }
-.tabs-services { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 6px; row-gap: 6px; }
+body[data-page="services"] .tabs-container { width: 100%; padding: 30px 10px 10px; background-color: #fff; }
+body[data-page="services"] .tabs-services { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 6px; row-gap: 6px; }
 
-.cnt-iconsServices { display: flex; height: 100px; flex-direction: column; justify-content: center; align-items: center; }
+body[data-page="services"] .cnt-iconsServices { display: flex; height: 100px; flex-direction: column; justify-content: center; align-items: center; }
 
-.tab-button {
+body[data-page="services"] .tab-button {
   color: var(--color-primary);
   background-color: transparent;
   border: 1px solid transparent;
@@ -391,70 +94,72 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.tab-button i { font-size: 2rem; line-height: 1; }
-.tab-button span { font-size: .9rem; line-height: 1; text-align: center; }
+body[data-page="services"] .tab-button i { font-size: 2rem; line-height: 1; }
+body[data-page="services"] .tab-button span { font-size: .9rem; line-height: 1; text-align: center; }
 
-.tab-button:hover { color: var(--color-accent); transform: translateY(-2px); }
-.tab-button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-.tab-button.active, .tab-button[aria-current="true"] { color: var(--color-accent); }
-.tab-button.active i, .tab-button[aria-current="true"] i { color: var(--color-accent); }
+body[data-page="services"] .tab-button:hover { color: var(--color-accent); transform: translateY(-2px); }
+body[data-page="services"] .tab-button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+body[data-page="services"] .tab-button.active,
+body[data-page="services"] .tab-button[aria-current="true"] { color: var(--color-accent); }
+body[data-page="services"] .tab-button.active i,
+body[data-page="services"] .tab-button[aria-current="true"] i { color: var(--color-accent); }
 
 /*********************
  * GRID
  *********************/
-.services-grid-container { padding: 30px 10px; background-color: #fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+body[data-page="services"] .services-grid-container { padding: 30px 10px; background-color: #fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
 
 /* Keep content centered */
-.services-grid-container > .services-grid,
-.services-grid { max-width: 1200px; margin: 0 auto; }
+body[data-page="services"] .services-grid-container > .services-grid,
+body[data-page="services"] .services-grid { max-width: 1200px; margin: 0 auto; }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+body[data-page="services"] .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
 
-.service-card {
+body[data-page="services"] .service-card {
   background-color: #fff;
-  border-radius: var(--radius-m, 12px);
+  border-radius: var(--radius-lg);
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
   overflow: hidden;
   display: flex; flex-direction: column;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
+body[data-page="services"] .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
 
-.card-image { width: 100%; height: 200px; object-fit: cover; display: block; }
+body[data-page="services"] .card-image { width: 100%; height: 200px; object-fit: cover; display: block; }
 
-.card-content { padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; flex-grow: 1; }
+body[data-page="services"] .card-content { padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; flex-grow: 1; }
 
-.card-title { margin: 0; font-size: 1.25rem; color: var(--text-primary, #222); font-weight: 800; }
+body[data-page="services"] .card-title { margin: 0; font-size: 1.25rem; color: var(--text-primary, #222); font-weight: 800; }
 
-.card-description { margin: 0 0 .75rem; color: var(--text-secondary, #555); line-height: 1.6; flex-grow: 1; }
+body[data-page="services"] .card-description { margin: 0 0 .75rem; color: var(--text-secondary, #555); line-height: 1.6; flex-grow: 1; }
 
 /*********************
  * TAGS / CHIPS
  *********************/
-.cnt-tagsServices { display: flex; flex-wrap: wrap; gap: 6px; margin: .25rem 0 1rem; }
+body[data-page="services"] .cnt-tagsServices { display: flex; flex-wrap: wrap; gap: 6px; margin: .25rem 0 1rem; }
 
-.cnt-tagsServices span,
-.cnt-tagsServices a {
+body[data-page="services"] .cnt-tagsServices span,
+body[data-page="services"] .cnt-tagsServices a {
   background: var(--bg-secondary);
   color: var(--color-primary);
   padding: var(--spacing-1) var(--spacing-3);
-  border-radius: var(--border-radius);
+  border-radius: var(--radius);
   font-size: var(--font-size-sm);
   text-decoration: none;
   cursor: pointer;
   transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
 
-.cnt-tagsServices span:hover,
-.cnt-tagsServices a:hover { background: var(--color-primary); color: #fff; transform: translateY(-1px); }
+body[data-page="services"] .cnt-tagsServices span:hover,
+body[data-page="services"] .cnt-tagsServices a:hover { background: var(--color-primary); color: #fff; transform: translateY(-1px); }
 
-.cnt-tagsServices a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+body[data-page="services"] .cnt-tagsServices a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 /*********************
  * CTA BUTTON (CARD)
  *********************/
-.card-link {
+body[data-page="services"] .card-link {
   display: inline-flex; margin-top: auto; align-items: center; justify-content: center;
   background-color: var(--color-primary);
   color: #fff; padding: .75rem 1.25rem;
@@ -462,24 +167,29 @@
   transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 
-.card-link:hover { background-color: var(--color-accent); transform: translateY(-1px); }
-.card-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+body[data-page="services"] .card-link:hover { background-color: var(--color-accent); transform: translateY(-1px); }
+body[data-page="services"] .card-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 /*********************
  * REDUCED MOTION
  *********************/
 @media (prefers-reduced-motion: reduce) {
-  .service-card, .tab-button, .hero-cta-button, .card-link { transition: none !important; transform: none !important; }
+  body[data-page="services"] .service-card,
+  body[data-page="services"] .tab-button,
+  body[data-page="services"] .hero-cta-button,
+  body[data-page="services"] .card-link { transition: none !important; transform: none !important; }
 }
 
 /*********************
  * BREAKPOINTS
  *********************/
 @media (min-width: 768px) {
-  .hero-section { min-height: 60vh; }
-  .services-grid { gap: 2rem; }
+  body[data-page="services"] .hero-section { min-height: 60vh; }
+  body[data-page="services"] .services-grid { gap: 2rem; }
 }
 
 @media (min-width: 1024px) {
-  .hero-title { font-size: clamp(2.5rem, 3.2vw, 3.25rem); }
+  body[data-page="services"] .hero-title { font-size: clamp(2.5rem, 3.2vw, 3.25rem); }
+}
+
 }
