@@ -10,8 +10,8 @@ tags: ["Mold Prevention", "Home Maintenance", "Mold Detection", "Florida Homes",
 keywords: ["mold prevention tips", "how to prevent mold", "Florida mold control", "home humidity control", "mold detection methods", "prevent mold growth"]
 category: "Home Maintenance & Prevention"
 featured: true
-image: "/images/mold-damage.jpg"
-ogImage: "/images/mold-damage.jpg"
+image: "/images/blog/homeowner-mold-prevention-guide.png"
+ogImage: "/images/blog/homeowner-mold-prevention-guide.png"
 readTime: 6
 ---
 

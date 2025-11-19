@@ -10,8 +10,8 @@ tags: ["Florida Mold", "SB 2A", "Insurance Claims", "Mold Testing", "Property In
 keywords: ["Florida SB 2A", "mold insurance claims Florida", "certified mold inspector", "Florida property insurance", "mold testing requirements", "hurricane damage mold"]
 category: "Florida Property Law & Insurance"
 featured: true
-image: "/images/hero-mold.jpg"
-ogImage: "/images/hero-mold.jpg"
+image: "/images/blog/florida-mold-challenge-sb2a-guide.png"
+ogImage: "/images/blog/florida-mold-challenge-sb2a-guide.png"
 readTime: 10
 ---
 

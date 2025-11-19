@@ -10,8 +10,8 @@ tags: ["Real Estate", "Mold Testing", "Florida", "Home Buying", "Home Selling"]
 keywords: ["mold testing florida", "real estate mold inspection", "buying house with mold", "selling house with mold"]
 category: "Mold Prevention & Testing"
 featured: true
-image: "/images/mold-inspection.webp"
-ogImage: "/images/mold-inspection.webp"
+image: "/images/blog/real-estate-risk-mold-testing-florida.png"
+ogImage: "/images/blog/real-estate-risk-mold-testing-florida.png"
 readTime: 5
 ---
 
