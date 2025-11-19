@@ -6,7 +6,7 @@ metaDescription: "Should I Demand Mold Testing When Buying or Selling a House? U
 author: "Paramount Property Restoration"
 date: 2025-11-19
 lastModified: 2025-11-19
-tags: ["Real Estate", "Mold Testing", "Florida", "Home Buying", "Home Selling"]
+tags: ["Mold Testing", "Real Estate", "Florida Property"]
 keywords: ["mold testing florida", "real estate mold inspection", "buying house with mold", "selling house with mold"]
 category: "Mold Prevention & Testing"
 featured: true

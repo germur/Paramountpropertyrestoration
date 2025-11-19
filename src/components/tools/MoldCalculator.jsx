@@ -475,7 +475,7 @@ const MoldCalculator = () => {
 
             <div className="result-actions">
               <a href="/contact" className="btn btn-primary">Schedule Inspection</a>
-              <a href="tel:+13212694816" className="btn btn-secondary">Call (321) 269-4816</a>
+              <a href="tel:+17866022217" className="btn btn-secondary">Call (786) 602-2217</a>
               <button className="btn btn-reset" onClick={resetCalculator}>
                 Calculate Again
               </button>

@@ -6,7 +6,7 @@ metaDescription: "Complete guide to mold exposure symptoms, health risks, and me
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Mold Symptoms", "Health Risks", "Medical Testing", "Mold Exposure", "Indoor Air Quality", "Mold Illness"]
+tags: ["Health & Safety", "Mold Testing"]
 keywords: ["mold exposure symptoms", "mold illness signs", "mold health effects", "mold medical testing", "toxic mold symptoms", "indoor air quality health"]
 category: "Health & Safety"
 featured: true

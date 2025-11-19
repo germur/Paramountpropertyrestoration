@@ -6,7 +6,7 @@ metaDescription: "Professional mold testing costs in Florida: $300-$900. Complet
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Mold Testing", "Mold Inspection", "Cost Guide", "Florida Homes", "Mold Detection"]
+tags: ["Mold Testing", "Florida Property"]
 keywords: ["mold testing cost", "professional mold inspection price", "Florida mold testing", "air quality testing cost", "mold assessment fees", "certified mold inspector"]
 category: "Mold Testing & Inspection"
 featured: true

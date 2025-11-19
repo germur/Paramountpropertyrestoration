@@ -6,7 +6,7 @@ metaDescription: "Florida SB 2A changed mold testing requirements for insurance 
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Florida Mold", "SB 2A", "Insurance Claims", "Mold Testing", "Property Insurance", "Hurricane Damage"]
+tags: ["Insurance & Claims", "Florida Property", "Mold Testing"]
 keywords: ["Florida SB 2A", "mold insurance claims Florida", "certified mold inspector", "Florida property insurance", "mold testing requirements", "hurricane damage mold"]
 category: "Florida Property Law & Insurance"
 featured: true

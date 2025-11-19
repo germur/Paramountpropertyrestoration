@@ -6,7 +6,7 @@ metaDescription: "Complete guide to DIY mold testing kits for Florida homeowners
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["DIY Mold Testing", "Mold Kits", "Home Inspection", "Mold Detection", "Florida Homes"]
+tags: ["Mold Testing", "Home Maintenance", "Florida Property"]
 keywords: ["DIY mold test kit", "mold testing kit for home", "home mold inspection", "Florida mold testing", "mold kit accuracy", "professional mold testing", "toxic black mold detection"]
 category: "Mold Prevention & Testing"
 featured: true
