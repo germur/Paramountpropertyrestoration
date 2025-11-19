@@ -10,8 +10,8 @@ tags: ["DIY Mold Testing", "Mold Kits", "Home Inspection", "Mold Detection", "Fl
 keywords: ["DIY mold test kit", "mold testing kit for home", "home mold inspection", "Florida mold testing", "mold kit accuracy", "professional mold testing", "toxic black mold detection"]
 category: "Mold Prevention & Testing"
 featured: true
-image: "/images/Moldtesting.jpg"
-ogImage: "/images/Moldtesting.jpg"
+image: "/images/mold-testing.jpg"
+ogImage: "/images/mold-testing.jpg"
 readTime: 8
 ---
 

@@ -10,8 +10,8 @@ tags: ["Mold Symptoms", "Health Risks", "Medical Testing", "Mold Exposure", "Ind
 keywords: ["mold exposure symptoms", "mold illness signs", "mold health effects", "mold medical testing", "toxic mold symptoms", "indoor air quality health"]
 category: "Health & Safety"
 featured: true
-image: "/images/heroMold.jpg"
-ogImage: "/images/heroMold.jpg"
+image: "/images/hero-mold.jpg"
+ogImage: "/images/hero-mold.jpg"
 readTime: 12
 ---
 
