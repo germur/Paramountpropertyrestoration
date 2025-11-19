@@ -115,7 +115,7 @@
   accent-color: #3b82f6;
 }
 
-.radio-option input[type="radio"]:checked + span {
+.radio-option input[type="radio"]:checked+span {
   color: #1e293b;
   font-weight: 600;
 }
@@ -187,6 +187,40 @@
   color: #64748b;
   font-size: 1.125rem;
 }
+
+/* Prominent Disclaimer Banner */
+.estimate-disclaimer-banner {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 2px solid #0ea5e9;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.disclaimer-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.disclaimer-content strong {
+  display: block;
+  color: #075985;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer-content p {
+  color: #0c4a6e;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
 
 .cost-estimate-box {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
@@ -381,6 +415,7 @@
 }
 
 @media (max-width: 768px) {
+
   .calculator-step,
   .calculator-result {
     padding: 1.5rem;
