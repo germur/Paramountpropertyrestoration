@@ -32,7 +32,7 @@ export function generateLocalBusinessSchema({
     '@type': 'LocalBusiness',
     '@id': `${url}/#localbusiness`,
     name,
-    image: `${url}/images/ppr-logo-new.png`,
+    image: `${url}/images/ppr-logo-new.webp`,
     url,
     telephone: phone,
     email,
@@ -175,7 +175,7 @@ export function generateArticleSchema({
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo-new.png`,
+        url: `${siteUrl}/images/ppr-logo-new.webp`,
         width: 600,
         height: 60
       }
@@ -308,7 +308,7 @@ export function generateReviewSchema({
 export function generateOrganizationSchema({
   name = 'Paramount Property Restoration',
   url = 'https://paramountpropertyrestoration.com',
-  logo = '/images/ppr-logo-new.png',
+  logo = '/images/ppr-logo-new.webp',
   phone = '+1-786-602-2217',
   email = 'services@paramountpropertyrestoration.com',
   description = "Florida's premier property restoration and remodeling company. 24/7 emergency services for water, fire, mold, and storm damage. Professional home remodeling for kitchens, bathrooms, and more."

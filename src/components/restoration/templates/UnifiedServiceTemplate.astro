@@ -21,7 +21,7 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
       ctaText: "Call Now for Emergency Help",
       ctaPhone: "+1-786-602-2217",
       urgencyBadge: "24/7 Emergency Response Available",
-      bgImage: sub?.hero?.bgImage || "/images/herowater.jpg",
+      bgImage: sub?.hero?.bgImage || "/images/herowater.webp",
     },
     services: [
       {
@@ -115,7 +115,7 @@ const cityRegions = getCitiesByRegion();
   <!-- Compact Hero Section -->
   <section
     class="hero-section"
-    style={`background-image: url('${serviceData.hero.bgImage || "/images/herowater.jpg"}'); height: 450px;`}
+    style={`background-image: url('${serviceData.hero.bgImage || "/images/herowater.webp"}'); height: 450px;`}
   >
     <div class="hero-overlay"></div>
     <div class="hero-content">

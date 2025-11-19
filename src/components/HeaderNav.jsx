@@ -9,7 +9,7 @@ function useOutsideClose(ref, onClose) {
     }, [ref, onClose]);
 }
 
-export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = "/images/LogoPrin.png" }) {
+export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = "/images/LogoPrin.webp" }) {
     // estado
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openDesktopKey, setOpenDesktopKey] = useState(null);        // "services" | "restoration" | null

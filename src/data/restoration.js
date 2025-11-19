@@ -23,7 +23,7 @@ export const restorationGroups = [
         hero: {
           title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
-          bgImage: "/images/flood-damage.jpg",
+          bgImage: "/images/flood-damage.webp",
         },
         technicalSpecs: {
           equipmentUsed: ["Truck-Mounted Extractors", "LGR Dehumidifiers", "Thermal Imaging Cameras", "Air Movers", "Moisture Meters"],
@@ -52,7 +52,7 @@ export const restorationGroups = [
         hero: {
           title: "Hidden Leaks? We Find & Fix Them Fast",
           description: "Water leaks can cause hidden damage. We use advanced detection to find leaks and repair them immediately.",
-          bgImage: "/images/leak-repair.jpg"
+          bgImage: "/images/leak-repair.webp"
         }
       },
       {
@@ -64,7 +64,7 @@ export const restorationGroups = [
         hero: {
           title: "Flooded Basement? Emergency Extraction 24/7",
           description: "Basement flooding requires immediate action. We pump out water and dry your basement completely.",
-          bgImage: "/images/basement-flooding.jpg"
+          bgImage: "/images/basement-flooding.webp"
         }
       },
       {
@@ -76,7 +76,7 @@ export const restorationGroups = [
         hero: {
           title: "Ceiling Leaks? We Repair Water Damage Overhead",
           description: "Water stains on your ceiling? We fix the source and repair the damage to prevent collapse or mold.",
-          bgImage: "/images/ceiling-water-damage.jpg"
+          bgImage: "/images/ceiling-water-damage.webp"
         }
       },
       {
@@ -88,7 +88,7 @@ export const restorationGroups = [
         hero: {
           title: "24/7 Emergency Water Removal Services",
           description: "Fast water extraction when you need it most. Our teams are ready to respond day or night.",
-          bgImage: "/images/emergency-water-removal.jpg"
+          bgImage: "/images/emergency-water-removal.webp"
         }
       }
     ]
@@ -116,7 +116,7 @@ export const restorationGroups = [
         hero: {
           title: "Smoke Damage? We Remove Odors & Restore Air Quality Fast",
           description: "Smoke damage from fire? Our Florida teams provide complete smoke cleanup including odor neutralization, air purification, and residue removal. We eliminate smoke damage before it becomes permanent.",
-          bgImage: "/images/smoke-damage.jpg",
+          bgImage: "/images/smoke-damage.webp",
         },
         technicalSpecs: {
           equipmentUsed: ["Hydroxyl Generators", "Ozone Machines", "HEPA Air Scrubbers", "Thermal Foggers", "Ultrasonic Cleaners"],
@@ -149,7 +149,7 @@ export const restorationGroups = [
         hero: {
           title: "Soot Cleanup: Restoring Cleanliness & Safety",
           description: "Soot is toxic and corrosive. We professionally clean and remove soot from all surfaces.",
-          bgImage: "/images/soot-cleanup.jpg"
+          bgImage: "/images/soot-cleanup.webp"
         }
       },
       {
@@ -165,7 +165,7 @@ export const restorationGroups = [
         hero: {
           title: "Complete Fire Damage Repair & Reconstruction",
           description: "From structural repairs to final touches, we rebuild your home after fire damage.",
-          bgImage: "/images/fire-damage-repair.jpg"
+          bgImage: "/images/fire-damage-repair.webp"
         }
       },
       {
@@ -181,7 +181,7 @@ export const restorationGroups = [
         hero: {
           title: "24/7 Emergency Fire Response Team",
           description: "Immediate board-up and securing services after a fire. We are here to help 24/7.",
-          bgImage: "/images/emergency-fire-response.jpg"
+          bgImage: "/images/emergency-fire-response.webp"
         }
       }
     ]
@@ -209,7 +209,7 @@ export const restorationGroups = [
         hero: {
           title: "Professional Mold Inspection & Detection",
           description: "Suspect mold? Our certified inspectors identify hidden mold and moisture sources.",
-          bgImage: "/images/mold-inspection.jpg"
+          bgImage: "/images/mold-inspection.webp"
         }
       },
       {
@@ -225,7 +225,7 @@ export const restorationGroups = [
         hero: {
           title: "Safe & Effective Black Mold Removal",
           description: "Black mold is dangerous. We safely remove toxic mold and sanitize your property.",
-          bgImage: "/images/black-mold-removal.jpg"
+          bgImage: "/images/black-mold-removal.webp"
         },
         technicalSpecs: {
           equipmentUsed: ["HEPA Air Filtration Units", "Negative Air Machines", "Containment Systems", "Personal Protective Equipment", "Antimicrobial Foggers"],
@@ -258,7 +258,7 @@ export const restorationGroups = [
         hero: {
           title: "Long-Term Mold Prevention Solutions",
           description: "Stop mold before it starts. We implement moisture control and prevention strategies.",
-          bgImage: "/images/mold-prevention.jpg"
+          bgImage: "/images/mold-prevention.webp"
         }
       },
       {
@@ -274,7 +274,7 @@ export const restorationGroups = [
         hero: {
           title: "Air Quality Testing & Mold Analysis",
           description: "Breathe easier with our professional air quality testing and mold analysis services.",
-          bgImage: "/images/mold-testing.jpg"
+          bgImage: "/images/mold-testing.webp"
         }
       },
       {
@@ -290,7 +290,7 @@ export const restorationGroups = [
         hero: {
           title: "Complete Mold Damage Restoration",
           description: "Repairing damage caused by mold growth. We restore your home to a safe condition.",
-          bgImage: "/images/mold-damage.jpg"
+          bgImage: "/images/mold-damage.webp"
         }
       }
     ]
@@ -318,7 +318,7 @@ export const restorationGroups = [
         hero: {
           title: "Hurricane Damage Restoration Experts",
           description: "Recovering from a hurricane? We provide comprehensive storm damage restoration.",
-          bgImage: "/images/hurricane-damage.jpg"
+          bgImage: "/images/hurricane-damage.webp"
         }
       },
       {
@@ -334,7 +334,7 @@ export const restorationGroups = [
         hero: {
           title: "Wind Damage Repair & Reconstruction",
           description: "Strong winds can cause severe damage. We repair roofs, siding, and structural issues.",
-          bgImage: "/images/wind-damage.jpg"
+          bgImage: "/images/wind-damage.webp"
         }
       },
       {
@@ -350,7 +350,7 @@ export const restorationGroups = [
         hero: {
           title: "Fast Storm Debris Removal & Cleanup",
           description: "Clearing the way for restoration. We remove fallen trees and storm debris quickly.",
-          bgImage: "/images/storm-debris-removal.jpg"
+          bgImage: "/images/storm-debris-removal.webp"
         }
       },
       {
@@ -366,7 +366,7 @@ export const restorationGroups = [
         hero: {
           title: "Emergency Storm Repair Services",
           description: "Immediate repairs to secure your home after a storm. Tarping, board-up, and more.",
-          bgImage: "/images/emergency-storm-repair.jpg"
+          bgImage: "/images/emergency-storm-repair.webp"
         }
       },
     ]
@@ -394,7 +394,7 @@ export const restorationGroups = [
         hero: {
           title: "Water Damage Mitigation Services",
           description: "Stopping water damage in its tracks. Immediate mitigation to prevent further loss.",
-          bgImage: "/images/mitigation-services.jpg"
+          bgImage: "/images/mitigation-services.webp"
         }
       },
       {
@@ -410,7 +410,7 @@ export const restorationGroups = [
         hero: {
           title: "Fire Damage Mitigation Services",
           description: "Immediate action to limit fire and smoke damage. We secure and stabilize your property.",
-          bgImage: "/images/fire-damage-repair.jpg"
+          bgImage: "/images/fire-damage-repair.webp"
         }
       },
       {
@@ -426,7 +426,7 @@ export const restorationGroups = [
         hero: {
           title: "Mold Damage Mitigation Services",
           description: "Containing mold growth and preventing spread. Expert mitigation for a safer home.",
-          bgImage: "/images/mold-prevention.jpg"
+          bgImage: "/images/mold-prevention.webp"
         }
       },
       {
@@ -441,7 +441,7 @@ export const restorationGroups = [
         },
         hero: {
           description: "Storm left your property exposed to weather and intruders? Our mitigation teams provide emergency board-up, temporary roofing, and structural bracing to protect against further damage.",
-          bgImage: "/images/emergency-storm-repair.jpg"
+          bgImage: "/images/emergency-storm-repair.webp"
         }
       }
     ]
