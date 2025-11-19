@@ -85,6 +85,55 @@ function generateFAQSchema(questions = []) {
   };
 }
 
+/**
+ * Build BreadcrumbList schema for JSON-LD
+ */
+function generateBreadcrumbSchema({ vertical, service, subservice, city, siteUrl }) {
+  const breadcrumbs = [
+    { name: 'Home', url: '/' }
+  ];
+
+  if (vertical && vertical !== 'home') {
+    breadcrumbs.push({
+      name: humanize(vertical),
+      url: `/${vertical}`
+    });
+  }
+
+  if (service) {
+    breadcrumbs.push({
+      name: humanize(service),
+      url: `/${vertical}/${service}`
+    });
+  }
+
+  if (subservice) {
+    breadcrumbs.push({
+      name: humanize(subservice),
+      url: `/${vertical}/${service}/${subservice}`
+    });
+  }
+
+  if (city) {
+    breadcrumbs.push({
+      name: humanize(city),
+      url: `/${vertical}/${service}/${subservice}/${city}`
+    });
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${siteUrl}/#breadcrumb`,
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url === '/' ? `${siteUrl}/` : `${siteUrl}${crumb.url}/`
+    }))
+  };
+}
+
 /**********************
  * Component
  **********************/
@@ -178,16 +227,10 @@ const SEOHead = ({
       '@type': 'State',
       name: 'Florida'
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '150'
-    },
     sameAs: [
       'https://www.facebook.com/paramountpropertyrestoration',
-      'https://www.instagram.com/paramountpropertyrestoration'
+      'https://www.instagram.com/paramountpropertyrestoration',
+      'https://g.page/r/CQtjSl3ISUEWEBA' // Google Business Profile - Google controls the reviews
     ]
   };
 
@@ -324,17 +367,25 @@ const SEOHead = ({
         <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} />
       ))}
 
-      {/* JSON-LD */}
-      {pageType !== 'article' && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
-      )}
-      {jsonLdService && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
-      )}
-      {jsonLdArticle && (
+      {/* JSON-LD: Use @graph to connect schemas properly */}
+      {pageType === 'article' ? (
+        // Articles: separate Article schema
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      ) : (
+        // Service pages: use @graph to show relationships
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              jsonLdLocalBusiness,
+              jsonLdService,
+              (vertical || service) && generateBreadcrumbSchema({ vertical, service, subservice, city, siteUrl })
+            ].filter(Boolean)
+          })
+        }} />
       )}
-      {/* FAQPage schema JSON-LD */}
+
+      {/* FAQPage schema JSON-LD (separate for better compatibility) */}
       {faqQuestions.length > 0 && (
         <script
           type="application/ld+json"
