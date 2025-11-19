@@ -12,14 +12,13 @@ const sortedPosts = allPosts.sort(
 );
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 const recentPosts = sortedPosts.slice(0, 5);
-const pageTitle = "Remodeling & Construction Guides | Paramount Property Restoration Learning Hub";
-const pageDescription = "Discover expert resources to plan, estimate and manage your renovation or contracting career.";
+const pageTitle =
+  "Remodeling & Construction Guides | Paramount Property Restoration Learning Hub";
+const pageDescription =
+  "Discover expert resources to plan, estimate and manage your renovation or contracting career.";
 ---
 
-<Layout
-  title={pageTitle}
-  description={pageDescription}
->
+<Layout title={pageTitle} description={pageDescription}>
   <SEOHead
     title={pageTitle}
     description={pageDescription}
@@ -64,7 +63,7 @@ const pageDescription = "Discover expert resources to plan, estimate and manage 
   /* ==========================================================================
      1. ESTILOS PARA LA PÁGINA PRINCIPAL DEL BLOG (Layout, Hero, Sidebar, etc.)
      ========================================================================== */
-  
+
   /* --- HERO SECTION ARREGLADA CON OVERLAY OSCURO --- */
   .blog-hero {
     position: relative;
@@ -76,7 +75,7 @@ const pageDescription = "Discover expert resources to plan, estimate and manage 
     padding: 2rem;
     text-align: center;
     color: white !important;
-    background-image: url("/images/blog/heroBlog.jpg");
+    background-image: url("/images/blog/hero-blog.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -90,7 +89,11 @@ const pageDescription = "Discover expert resources to plan, estimate and manage 
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    background: linear-gradient(
+      135deg,
+      rgba(30, 41, 59, 0.8),
+      rgba(15, 23, 42, 0.9)
+    );
     z-index: 1;
   }
 
