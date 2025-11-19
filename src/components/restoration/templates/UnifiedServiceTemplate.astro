@@ -109,17 +109,6 @@ const getCitiesByRegion = () => {
 };
 
 const cityRegions = getCitiesByRegion();
-// Assuming 'toggleRegion' is a function defined elsewhere or intended to be defined.
-// If 'toggleRegion' is not defined, this line will cause a runtime error.
-// For type safety, 'window' is cast to 'any'.
-(window as any).toggleRegion = (regionName: string) => {
-  const regionElement = document.getElementById(
-    `region-${regionName.replace(/\s+/g, "-")}`,
-  );
-  if (regionElement) {
-    regionElement.classList.toggle("active");
-  }
-};
 ---
 
 <div class="unified-service-template">
@@ -527,3 +516,26 @@ const cityRegions = getCitiesByRegion();
     client:load
   />
 </div>
+
+<script>
+  // Regional accordion functionality
+  function toggleRegion(regionId) {
+    const content = document.getElementById(regionId);
+    const chevron = document.getElementById(
+      regionId.replace("region-", "chevron-"),
+    );
+
+    if (content && chevron) {
+      if (content.style.maxHeight === "0px" || !content.style.maxHeight) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        chevron.style.transform = "rotate(180deg)";
+      } else {
+        content.style.maxHeight = "0px";
+        chevron.style.transform = "rotate(0deg)";
+      }
+    }
+  }
+
+  // Make function globally available
+  (window as any).toggleRegion = toggleRegion;
+</script>
