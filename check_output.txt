@@ -1,0 +1,767 @@
+07:34:30 [content] Syncing content
+07:34:30 [content] Synced content
+07:34:30 [types] Generated 132ms
+07:34:30 [check] Getting diagnostics for Astro files in /Users/rogermurillo/Paramountpropertyrestoration...
+[96msrc/components/Breadcrumbs.jsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/EnhancedSchemas.jsx[0m:[93m20[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'openingHours' is declared but its value is never read.
+
+[7m20[0m   openingHours = 'Mo-Su 00:00-24:00',
+[7m  [0m [93m  ~~~~~~~~~~~~[0m
+
+[96msrc/components/FloridaScenarios.jsx[0m:[93m1[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m1[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/OptimizedImage.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m2[0m import { Image } from 'astro:assets';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/RestorationLinks.jsx[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m2[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/SEOHead.jsx[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m2[0m import React from 'react';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/linkBuilding.jsx[0m:[93m107[0m:[93m11[0m - [93mwarning[0m[90m ts(6133): [0m'totalLinks' is declared but its value is never read.
+
+[7m107[0m     const totalLinks = categoriesToShow.reduce((sum, cat) => sum + linkData[cat].links.length, 0);
+[7m   [0m [93m          ~~~~~~~~~~[0m
+
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m465[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m465[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m463[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m463[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m458[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m458[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m483[0m:[93m83[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m483[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                                  ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m483[0m:[93m78[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m483[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                             ~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m458[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m458[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m388[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m388[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                      ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m388[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m388[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                ~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m354[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m354[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                              ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m354[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m354[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                        ~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m326[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m326[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m326[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m326[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m326[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m326[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m312[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m312[0m     {content.services.map((service) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/FireTemplate.astro[0m:[93m28[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m28[0m const getFireContent = (subSlug) => {
+[7m  [0m [93m                        ~~~~~~~[0m
+
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m338[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m338[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m336[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m336[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m331[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m331[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m356[0m:[93m83[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m356[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                                  ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m356[0m:[93m78[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m356[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                             ~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m331[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m331[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m261[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m261[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                      ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m261[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m261[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                ~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m227[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m227[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                              ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m227[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m227[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                        ~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m200[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m200[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m200[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m200[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m200[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m200[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m186[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m186[0m     {content.services.map((service) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/MitigationTemplate.astro[0m:[93m28[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m28[0m const getMitigationContent = (subSlug) => {
+[7m  [0m [93m                              ~~~~~~~[0m
+
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m336[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m336[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m334[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m334[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m329[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m329[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m354[0m:[93m83[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m354[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                                  ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m354[0m:[93m78[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m354[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                             ~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m329[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m329[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m259[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m259[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                      ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m259[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m259[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                ~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m225[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m225[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                              ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m225[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m225[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                        ~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m198[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m198[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m198[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m198[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m198[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m198[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m184[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m184[0m     {content.services.map((service) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/MoldTemplate.astro[0m:[93m28[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m28[0m const getMoldContent = (subSlug) => {
+[7m  [0m [93m                        ~~~~~~~[0m
+
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m323[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m323[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m321[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m321[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m316[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m316[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m341[0m:[93m83[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m341[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                                  ~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m341[0m:[93m78[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m341[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                             ~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m316[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m316[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m246[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m246[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                      ~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m246[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m246[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                ~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m211[0m:[93m49[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'tag' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m211[0m               {service.tags && service.tags.map(tag => (
+[7m   [0m [93m                                                ~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m201[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m201[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m201[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m201[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m201[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m201[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m186[0m:[93m30[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m186[0m       {content.services.map((service) => (
+[7m   [0m [93m                             ~~~~~~~[0m
+[96msrc/components/restoration/templates/StormTemplate.astro[0m:[93m28[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m28[0m const getStormContent = (subSlug) => {
+[7m  [0m [93m                         ~~~~~~~[0m
+
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m399[0m:[93m35[0m - [91merror[0m[90m ts(2339): [0mProperty 'map' does not exist on type 'unknown'.
+
+[7m399[0m                     {regionCities.map((city) => (
+[7m   [0m [91m                                  ~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m374[0m:[93m49[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m374[0m                     {regionName} ({regionCities.length} cities)
+[7m   [0m [91m                                                ~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m399[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m399[0m                     {regionCities.map((city) => (
+[7m   [0m [93m                                       ~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m325[0m:[93m42[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m325[0m             ([regionName, regionCities], index) => (
+[7m   [0m [93m                                         ~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m262[0m:[93m16[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m262[0m               (c) => c.slug === "west-palm-beach",
+[7m   [0m [93m               ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m259[0m:[93m16[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m259[0m               (c) => c.slug === "jacksonville",
+[7m   [0m [93m               ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m257[0m:[93m53[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m257[0m             cityRegions["Southwest Florida"]?.find((c) => c.slug === "naples"),
+[7m   [0m [93m                                                    ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m256[0m:[93m45[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m256[0m             cityRegions["Tampa Bay"]?.find((c) => c.slug === "st-petersburg"),
+[7m   [0m [93m                                            ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m254[0m:[93m16[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m254[0m               (c) => c.slug === "fort-lauderdale",
+[7m   [0m [93m               ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m252[0m:[93m45[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m252[0m             cityRegions["Tampa Bay"]?.find((c) => c.slug === "tampa"),
+[7m   [0m [93m                                            ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m251[0m:[93m51[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m251[0m             cityRegions["Central Florida"]?.find((c) => c.slug === "orlando"),
+[7m   [0m [93m                                                  ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m250[0m:[93m49[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m250[0m             cityRegions["South Florida"]?.find((c) => c.slug === "miami"),
+[7m   [0m [93m                                                ~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m12[0m:[93m44[0m - [93mwarning[0m[90m ts(6133): [0m'subSlug' is declared but its value is never read.
+
+[7m12[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m12[0m:[93m44[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m12[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m12[0m:[93m33[0m - [93mwarning[0m[90m ts(6133): [0m'groupSlug' is declared but its value is never read.
+
+[7m12[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                ~~~~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedServiceTemplate.astro[0m:[93m12[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m12[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                ~~~~~~~~~[0m
+
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m221[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m221[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m219[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m219[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m214[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m214[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m242[0m:[93m38[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m242[0m       {defaultContent.faqs.map((faq, index) => (
+[7m   [0m [93m                                     ~~~~~[0m
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m214[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m214[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/UnifiedTemplate.astro[0m:[93m160[0m:[93m46[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m160[0m       {defaultContent.features.map((feature, index) => (
+[7m   [0m [93m                                             ~~~~~[0m
+
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m374[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m374[0m                 +{cities.length - 4} more
+[7m   [0m [91m                         ~~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m372[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m372[0m             {cities.length > 4 && (
+[7m   [0m [91m                    ~~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m367[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m367[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [91m                    ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m392[0m:[93m83[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m392[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                                  ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m392[0m:[93m78[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m392[0m   <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
+[7m   [0m [93m                                                                             ~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m367[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m367[0m             {cities.slice(0, 4).map(city => (
+[7m   [0m [93m                                    ~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m297[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m297[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                      ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m297[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m297[0m             {content.steps.map((step, index) => (
+[7m   [0m [93m                                ~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m263[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m263[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                              ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m263[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m263[0m     {content.steps.map((step, index) => (
+[7m   [0m [93m                        ~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m236[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'index' is declared but its value is never read.
+
+[7m236[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m236[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m236[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                                    ~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m236[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m236[0m     {content.services.map((service, index) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m222[0m:[93m28[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m222[0m     {content.services.map((service) => (
+[7m   [0m [93m                           ~~~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m29[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m29[0m const getWaterContent = (subSlug) => {
+[7m  [0m [93m                         ~~~~~~~[0m
+[96msrc/components/restoration/templates/WaterTemplate.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'BaseLayout' is declared but its value is never read.
+
+[7m2[0m import BaseLayout from "../../../layouts/BaseLayout.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/sections/CityTeaserLinks.astro[0m:[93m28[0m:[93m26[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m28[0m                 +{cities.length - 5} more cities available
+[7m  [0m [91m                         ~~~~~~[0m
+[96msrc/components/sections/CityTeaserLinks.astro[0m:[93m26[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m26[0m             {cities.length > 5 && (
+[7m  [0m [91m                    ~~~~~~[0m
+[96msrc/components/sections/CityTeaserLinks.astro[0m:[93m17[0m:[93m21[0m - [91merror[0m[90m ts(2339): [0mProperty 'slice' does not exist on type 'unknown'.
+
+[7m17[0m             {cities.slice(0, 5).map(city => (
+[7m  [0m [91m                    ~~~~~[0m
+[96msrc/components/sections/CityTeaserLinks.astro[0m:[93m17[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m17[0m             {cities.slice(0, 5).map(city => (
+[7m  [0m [93m                                    ~~~~[0m
+
+[96msrc/components/sections/DiagnosticTools.astro[0m:[93m11[0m:[93m32[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m       {warningSigns.map((sign, index) => {
+[7m  [0m [93m                               ~~~~~[0m
+[96msrc/components/sections/DiagnosticTools.astro[0m:[93m11[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'sign' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m       {warningSigns.map((sign, index) => {
+[7m  [0m [93m                         ~~~~[0m
+[96msrc/components/sections/DiagnosticTools.astro[0m:[93m2[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'warningSignsTitle' is declared but its value is never read.
+
+[7m2[0m const { title, content, warningSignsTitle, warningSigns, assessmentCTA } = Astro.props;
+[7m [0m [93m                        ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/sections/InclusionsGrid.astro[0m:[93m11[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m       {deliverables.map((deliverable, index) => {
+[7m  [0m [93m                                      ~~~~~[0m
+[96msrc/components/sections/InclusionsGrid.astro[0m:[93m11[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'deliverable' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m       {deliverables.map((deliverable, index) => {
+[7m  [0m [93m                         ~~~~~~~~~~~[0m
+
+[96msrc/components/sections/InsuranceHelp.astro[0m:[93m18[0m:[93m35[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m18[0m           {benefits.map((benefit, index) => {
+[7m  [0m [93m                                  ~~~~~[0m
+[96msrc/components/sections/InsuranceHelp.astro[0m:[93m18[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'benefit' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m18[0m           {benefits.map((benefit, index) => {
+[7m  [0m [93m                         ~~~~~~~[0m
+
+[96msrc/components/sections/OverviewWithChecklist.astro[0m:[93m21[0m:[93m35[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m21[0m             {checklist.map((item, index) => {
+[7m  [0m [93m                                  ~~~~~[0m
+[96msrc/components/sections/OverviewWithChecklist.astro[0m:[93m21[0m:[93m29[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'item' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m21[0m             {checklist.map((item, index) => {
+[7m  [0m [93m                            ~~~~[0m
+
+[96msrc/components/sections/StepsProcess.astro[0m:[93m13[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m13[0m       {steps.map((step, index) => (
+[7m  [0m [93m                        ~~~~~[0m
+[96msrc/components/sections/StepsProcess.astro[0m:[93m13[0m:[93m19[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m13[0m       {steps.map((step, index) => (
+[7m  [0m [93m                  ~~~~[0m
+
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m462[0m:[93m31[0m - [91merror[0m[90m ts(2339): [0mProperty 'map' does not exist on type 'unknown'.
+
+[7m462[0m                 {regionCities.map((city) => (
+[7m   [0m [91m                              ~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m443[0m:[93m45[0m - [91merror[0m[90m ts(2339): [0mProperty 'length' does not exist on type 'unknown'.
+
+[7m443[0m                 {regionName} ({regionCities.length} Cities)
+[7m   [0m [91m                                            ~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m462[0m:[93m36[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'city' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m462[0m                 {regionCities.map((city) => (
+[7m   [0m [93m                                   ~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m341[0m:[93m48[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m341[0m           cityRegions["Central Florida"]?.find(c => c.slug === "gainesville"),
+[7m   [0m [93m                                               ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m340[0m:[93m42[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m340[0m           cityRegions["Tampa Bay"]?.find(c => c.slug === "st-petersburg"),
+[7m   [0m [93m                                         ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m339[0m:[93m50[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m339[0m           cityRegions["Southwest Florida"]?.find(c => c.slug === "naples"),
+[7m   [0m [93m                                                 ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m338[0m:[93m48[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m338[0m           cityRegions["Central Florida"]?.find(c => c.slug === "jacksonville"),
+[7m   [0m [93m                                               ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m337[0m:[93m46[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m337[0m           cityRegions["South Florida"]?.find(c => c.slug === "fort-lauderdale"),
+[7m   [0m [93m                                             ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m336[0m:[93m42[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m336[0m           cityRegions["Tampa Bay"]?.find(c => c.slug === "tampa"),
+[7m   [0m [93m                                         ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m335[0m:[93m48[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m335[0m           cityRegions["Central Florida"]?.find(c => c.slug === "orlando"),
+[7m   [0m [93m                                               ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m334[0m:[93m46[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'c' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m334[0m           cityRegions["South Florida"]?.find(c => c.slug === "miami"),
+[7m   [0m [93m                                             ~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m290[0m:[93m46[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'sign' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m290[0m               {serviceData.warningSigns.map((sign) => (
+[7m   [0m [93m                                             ~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m270[0m:[93m40[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'feature' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m270[0m             {serviceData.features.map((feature) => (
+[7m   [0m [93m                                       ~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m249[0m:[93m35[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m249[0m         {serviceData.services.map(service => (
+[7m   [0m [93m                                  ~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m200[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'heroImageWebP' is declared but its value is never read.
+
+[7m200[0m const heroImageWebP = `/images/${heroImage}.webp`;
+[7m   [0m [93m      ~~~~~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m188[0m:[93m23[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'slug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m188[0m const getHeroImage = (slug) => {
+[7m   [0m [93m                      ~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m162[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'groupSlug' is declared but its value is never read.
+
+[7m162[0m const getProcessForGroup = (groupSlug) => {
+[7m   [0m [93m                            ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m162[0m:[93m29[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m162[0m const getProcessForGroup = (groupSlug) => {
+[7m   [0m [93m                            ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m121[0m:[93m34[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m121[0m const getWarningSignsForGroup = (groupSlug) => {
+[7m   [0m [93m                                 ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m75[0m:[93m30[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m75[0m const getFeaturesForGroup = (groupSlug) => {
+[7m  [0m [93m                             ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m29[0m:[93m30[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m29[0m const getServicesForGroup = (groupSlug) => {
+[7m  [0m [93m                             ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m11[0m:[93m44[0m - [93mwarning[0m[90m ts(6133): [0m'subSlug' is declared but its value is never read.
+
+[7m11[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                           ~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m11[0m:[93m44[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                           ~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m11[0m:[93m33[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m11[0m const getEnhancedServiceData = (groupSlug, subSlug) => {
+[7m  [0m [93m                                ~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m514[0m:[93m10[0m - [91merror[0m[90m ts(2339): [0mProperty 'toggleRegion' does not exist on type 'Window & typeof globalThis'.
+
+[7m514[0m   window.toggleRegion = toggleRegion;
+[7m   [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/components/services/templates/UnifiedServiceTemplate.astro[0m:[93m500[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'regionId' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m500[0m   function toggleRegion(regionId) {
+[7m   [0m [93m                        ~~~~~~~~[0m
+
+[96msrc/components/ui/Breadcrumbs.astro[0m:[93m8[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m8[0m       {items.map((item, index) => (
+[7m [0m [93m                        ~~~~~[0m
+[96msrc/components/ui/Breadcrumbs.astro[0m:[93m8[0m:[93m19[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'item' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m8[0m       {items.map((item, index) => (
+[7m [0m [93m                  ~~~~[0m
+
+[96msrc/layouts/BaseLayout.astro[0m:[93m17[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'image' is declared but its value is never read.
+
+[7m17[0m   image = "/images/og-image.jpg",
+[7m  [0m [93m  ~~~~~[0m
+
+[96msrc/lib/sitemap.js[0m:[93m10[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'slugify' is declared but its value is never read.
+
+[7m10[0m const slugify = (input) => {
+[7m  [0m [93m      ~~~~~~~[0m
+
+[96msrc/pages/contact.astro[0m:[93m81[0m:[93m13[0m - [91merror[0m[90m ts(2322): [0mType '{ children: any[]; class: string; name: string; method: string; "data-netlify": string; "data-netlify-honeypot": string; netlify: true; }' is not assignable to type 'FormHTMLAttributes'.
+  Property 'netlify' does not exist on type 'FormHTMLAttributes'.
+
+[7m81[0m             netlify
+[7m  [0m [91m            ~~~~~~~[0m
+[96msrc/pages/contact.astro[0m:[93m567[0m:[93m55[0m - [93mwarning[0m[90m ts(6133): [0m'e' is declared but its value is never read.
+
+[7m567[0m       contactForm.addEventListener('submit', function(e) {
+[7m   [0m [93m                                                      ~[0m
+
+[96msrc/pages/portfolio.astro[0m:[93m726[0m:[93m58[0m - [93mwarning[0m[90m ts(6133): [0m'e' is declared but its value is never read.
+
+[7m726[0m       portfolioForm.addEventListener("submit", function (e) {
+[7m   [0m [93m                                                         ~[0m
+
+[96msrc/pages/sitemap.html.astro[0m:[93m142[0m:[93m71[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'servicio' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m142[0m                   {remodelingServices[0]?.subservices.slice(0, 3).map(servicio => (
+[7m   [0m [93m                                                                      ~~~~~~~~[0m
+[96msrc/pages/sitemap.html.astro[0m:[93m97[0m:[93m46[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subservice' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m97[0m                       {group.subservices.map(subservice => (
+[7m  [0m [93m                                             ~~~~~~~~~~[0m
+[96msrc/pages/sitemap.html.astro[0m:[93m66[0m:[93m37[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'servicio' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m66[0m               group.subservices.map(servicio => (
+[7m  [0m [93m                                    ~~~~~~~~[0m
+[96msrc/pages/sitemap.html.astro[0m:[93m15[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'allServices' is declared but its value is never read.
+
+[7m15[0m const allServices = [...restorationServices, ...remodelingServices];
+[7m  [0m [93m      ~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/[slug].astro[0m:[93m44[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'canonicalUrl' is declared but its value is never read.
+
+[7m44[0m const canonicalUrl = entry.data.canonicalUrl || `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
+[7m  [0m [93m      ~~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/diy-mold-test-kits-guide.astro[0m:[93m11[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'formattedDate' is declared but its value is never read.
+
+[7m11[0m const formattedDate = date.toLocaleDateString("en-US", {
+[7m  [0m [93m      ~~~~~~~~~~~~~[0m
+[96msrc/pages/blog/diy-mold-test-kits-guide.astro[0m:[93m9[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'author' is declared but its value is never read.
+
+[7m9[0m const author = "Paramount Property Restoration";
+[7m [0m [93m      ~~~~~~[0m
+
+[96msrc/pages/landing/mold-remediation/index.astro[0m:[93m520[0m:[93m13[0m - [93mwarning[0m[90m ts(6133): [0m'lastScrollTop' is declared but its value is never read.
+
+[7m520[0m         let lastScrollTop = 0;
+[7m   [0m [93m            ~~~~~~~~~~~~~[0m
+
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m47[0m:[93m52[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'w' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m47[0m             nombre: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+[7m  [0m [93m                                                   ~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m46[0m:[93m51[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'w' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m46[0m             title: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+[7m  [0m [93m                                                  ~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m37[0m:[93m60[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'desc' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m37[0m   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+[7m  [0m [93m                                                           ~~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m37[0m:[93m50[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'template' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m37[0m   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+[7m  [0m [93m                                                 ~~~~~~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m37[0m:[93m39[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupName' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m37[0m   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+[7m  [0m [93m                                      ~~~~~~~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m37[0m:[93m30[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'subSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m37[0m   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+[7m  [0m [93m                             ~~~~~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m37[0m:[93m19[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'groupSlug' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m37[0m   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+[7m  [0m [93m                  ~~~~~~~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m15[0m:[93m32[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'sub' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m15[0m     group.subservices.forEach((sub) => {
+[7m  [0m [93m                               ~~~[0m
+[96msrc/pages/restoration/[group]/[subservice].astro[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SERVICE_REGISTRY' is declared but its value is never read.
+
+[7m4[0m import { SERVICE_REGISTRY } from "../../../lib/routing";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m390[0m:[93m46[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'service' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m390[0m             {subserviceContent.services.map((service) => (
+[7m   [0m [93m                                             ~~~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m366[0m:[93m57[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m366[0m             {subserviceContent.process.steps.map((step, index) => (
+[7m   [0m [93m                                                        ~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m366[0m:[93m51[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'step' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m366[0m             {subserviceContent.process.steps.map((step, index) => (
+[7m   [0m [93m                                                  ~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m333[0m:[93m36[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'feature' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m333[0m               serviceFeatures.map((feature) => (
+[7m   [0m [93m                                   ~~~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m285[0m:[93m25[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'deliverable' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m285[0m                   .map((deliverable) => (
+[7m   [0m [93m                        ~~~~~~~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m86[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'ctaConfig' is declared but its value is never read.
+
+[7m86[0m const ctaConfig = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m79[0m:[93m13[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m79[0m ).map((faq, index) => ({
+[7m  [0m [93m            ~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m79[0m:[93m8[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'faq' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m79[0m ).map((faq, index) => ({
+[7m  [0m [93m       ~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m54[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'heroConfig' is declared but its value is never read.
+
+[7m54[0m const heroConfig = {
+[7m  [0m [93m      ~~~~~~~~~~[0m
+[96msrc/pages/restoration/[service]/[subcategory]/[ciudad].astro[0m:[93m9[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'RestorationCTA' is declared but its value is never read.
+
+[7m9[0m import RestorationCTA from "../../../../components/RestorationCTA.jsx";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/services/[servicio]/[ciudad].astro[0m:[93m7[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'cities' is declared but its value is never read.
+
+[7m7[0m import { cities } from "../../../data/restoration.js";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/services/[servicio]/[ciudad].astro[0m:[93m6[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'serviceGroups' is declared but its value is never read.
+
+[7m6[0m import { serviceGroups, getAllGroupCityCombinations } from "../../../data/services.js";
+[7m [0m [93m         ~~~~~~~~~~~~~[0m
+
+Result (99 files): 
+- 27 errors
+- 0 warnings
+- 154 hints
+

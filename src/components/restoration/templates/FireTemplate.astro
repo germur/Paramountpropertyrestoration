@@ -455,14 +455,14 @@ const faqCategory = `fire-${sub?.slug || group.slug}`;
         <div class="unified-region-card">
           <h3 class="unified-region-title">{regionName}</h3>
           <div class="unified-city-pills">
-            {cities.slice(0, 4).map(city => (
+            {(cities as any[]).slice(0, 4).map(city => (
               <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/fire-damage-repair/${city.slug}`} class="unified-city-pill">
                 {city.nombre}
               </a>
             ))}
-            {cities.length > 4 && (
+            {(cities as any[]).length > 4 && (
               <span class="unified-more-indicator">
-                +{cities.length - 4} more
+                +{(cities as any[]).length - 4} more
               </span>
             )}
           </div>
