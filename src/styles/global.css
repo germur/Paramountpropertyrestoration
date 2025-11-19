@@ -1050,7 +1050,7 @@ body[data-page="bedroom"] .hero-section {
 }
 
 body[data-page="kitchen"] .hero-section {
-  background-image: url('/images/kitchenHero.jpg');
+  background-image: url('/images/kitchen-hero.jpg');
 }
 
 body[data-page="home-additions"] .hero-section {

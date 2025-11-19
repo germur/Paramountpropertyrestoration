@@ -38,10 +38,14 @@ const { Content } = await entry.render();
 
 // SEO Meta
 const pageTitle = entry.data.metaTitle || entry.data.title;
-const pageDescription = entry.data.metaDescription || entry.data.description || "";
-const ogImage = entry.data.ogImage || entry.data.image || "/images/blog/heroBlog.jpg";
+const pageDescription =
+  entry.data.metaDescription || entry.data.description || "";
+const ogImage =
+  entry.data.ogImage || entry.data.image || "/images/blog/hero-blog.jpg";
 const keywords = entry.data.keywords || entry.data.tags || [];
-const canonicalUrl = entry.data.canonicalUrl || `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
+const canonicalUrl =
+  entry.data.canonicalUrl ||
+  `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
 
 // Format date
 const formattedDate = entry.data.date.toLocaleDateString("en-US", {
@@ -246,7 +250,9 @@ const readingTime = entry.data.readTime || Math.ceil(wordCount / 200);
           <div class="author-details">
             <h4>{entry.data.author}</h4>
             <p>
-              Web Development and Digital Marketing Specialist. Passionate about creating innovative solutions that help businesses grow in the digital world.
+              Web Development and Digital Marketing Specialist. Passionate about
+              creating innovative solutions that help businesses grow in the
+              digital world.
             </p>
           </div>
         </div>
