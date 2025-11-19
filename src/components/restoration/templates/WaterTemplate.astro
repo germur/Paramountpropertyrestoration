@@ -5,6 +5,7 @@ import "../../../styles/pages/restoration-responsive.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import ServiceAreas from "../../ServiceAreas.astro";
 import "../../../styles/global.css";
 import { cities } from "../../../data/restoration.js";
 import { getAltText } from "../../../data/image-alt-texts.js";
@@ -870,6 +871,14 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
     title="Frequently Asked Questions"
   />
 </section>
+
+<!-- Service Areas - Critical for SEO Internal Linking -->
+<ServiceAreas
+  serviceSlug="water-damage"
+  serviceName="Water Damage Restoration"
+  subserviceSlug={sub?.slug}
+  vertical="restoration"
+/>
 
 <!-- Final CTA -->
 <RestorationCTA

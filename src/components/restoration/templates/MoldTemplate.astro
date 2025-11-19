@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../../../styles/pages/restoration-responsive.css";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import ServiceAreas from "../../ServiceAreas.astro";
 import "../../../styles/global.css";
 import { cities } from "../../../data/restoration.js";
 import { getAltText } from "../../../data/image-alt-texts.js";
@@ -722,6 +723,14 @@ const faqCategory = `mold-${sub?.slug || group.slug}`;
     title="Frequently Asked Questions"
   />
 </section>
+
+<!-- Service Areas - Critical for SEO Internal Linking -->
+<ServiceAreas
+  serviceSlug="mold-remediation"
+  serviceName="Mold Remediation"
+  subserviceSlug={sub?.slug}
+  vertical="restoration"
+/>
 
 <!-- Final CTA -->
 <RestorationCTA

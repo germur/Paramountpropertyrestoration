@@ -1,0 +1,172 @@
+---
+// src/components/ServiceAreas.astro
+interface Props {
+    serviceSlug: string;
+    serviceName: string;
+    subserviceSlug?: string;
+    vertical?: string;
+}
+
+const {
+    serviceSlug,
+    serviceName,
+    subserviceSlug,
+    vertical = "restoration",
+} = Astro.props;
+
+// Top Florida cities for service coverage
+const majorCities = [
+    { name: "Miami", slug: "miami" },
+    { name: "Orlando", slug: "orlando" },
+    { name: "Tampa", slug: "tampa" },
+    { name: "Fort Lauderdale", slug: "fort-lauderdale" },
+    { name: "Jacksonville", slug: "jacksonville" },
+    { name: "Pembroke Pines", slug: "pembroke-pines" },
+    { name: "Cape Coral", slug: "cape-coral" },
+    { name: "St. Petersburg", slug: "st-petersburg" },
+    { name: "Hialeah", slug: "hialeah" },
+    { name: "Port St. Lucie", slug: "port-st-lucie" },
+    { name: "Tallahassee", slug: "tallahassee" },
+    { name: "Gainesville", slug: "gainesville" },
+];
+
+// Build URLs based on whether we have a subservice
+const buildCityUrl = (citySlug: string) => {
+    if (subserviceSlug) {
+        return `/${vertical}/${serviceSlug}/${subserviceSlug}/${citySlug}/`;
+    }
+    return `/${vertical}/${serviceSlug}/${citySlug}/`;
+};
+---
+
+<section class="service-areas-section">
+    <div class="service-areas-container">
+        <h2 class="service-areas-title">
+            {serviceName} Services Available Across Florida
+        </h2>
+        <p class="service-areas-intro">
+            Our rapid response teams are ready to serve you 24/7 in:
+        </p>
+
+        <ul class="cities-grid">
+            {
+                majorCities.map((city) => (
+                    <li class="city-item">
+                        <a href={buildCityUrl(city.slug)} class="city-link">
+                            <i
+                                class="fas fa-map-marker-alt"
+                                aria-hidden="true"
+                            />
+                            {city.name} {serviceName}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <p class="service-areas-note">
+            Can't find your city? We serve all major Florida metro areas.
+            <a href="/contact" class="contact-link">Contact us</a> to check availability.
+        </p>
+    </div>
+</section>
+
+<style>
+    .service-areas-section {
+        padding: 4rem 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+
+    .service-areas-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .service-areas-title {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: #1e293b;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .service-areas-intro {
+        font-size: 1.125rem;
+        color: #64748b;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .cities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+    }
+
+    .city-item {
+        margin: 0;
+    }
+
+    .city-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #1e293b;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .city-link:hover {
+        background: #3cbced;
+        border-color: #3cbced;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(60, 188, 237, 0.3);
+    }
+
+    .city-link i {
+        color: #3cbced;
+        font-size: 1.125rem;
+    }
+
+    .city-link:hover i {
+        color: white;
+    }
+
+    .service-areas-note {
+        text-align: center;
+        color: #64748b;
+        font-size: 0.9375rem;
+        padding-top: 2rem;
+        border-top: 1px solid #cbd5e1;
+    }
+
+    .contact-link {
+        color: #3cbced;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .contact-link:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .cities-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-areas-section {
+            padding: 3rem 0;
+        }
+    }
+</style>
