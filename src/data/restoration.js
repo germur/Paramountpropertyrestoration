@@ -23,6 +23,7 @@ export const restorationGroups = [
         hero: {
           title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
+          bgImage: "/images/flood-damage.jpg",
         },
         technicalSpecs: {
           equipmentUsed: ["Truck-Mounted Extractors", "LGR Dehumidifiers", "Thermal Imaging Cameras", "Air Movers", "Moisture Meters"],
@@ -30,7 +31,7 @@ export const restorationGroups = [
           methodsApplied: ["Psychrometric Calculations", "Negative Air Pressure", "Controlled Demolition"],
           deliverables: [
             "Emergency flood water extraction and removal",
-            "Advanced moisture detection and mapping", 
+            "Advanced moisture detection and mapping",
             "Industrial-grade dehumidification and drying",
             "Antimicrobial treatment and sanitization",
             "Structural stabilization and repair",
@@ -47,28 +48,48 @@ export const restorationGroups = [
         title: "Leak Repair",
         short: "Emergency water removal services",
         nombre: "Leak Repair",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          title: "Hidden Leaks? We Find & Fix Them Fast",
+          description: "Water leaks can cause hidden damage. We use advanced detection to find leaks and repair them immediately.",
+          bgImage: "/images/leak-repair.jpg"
+        }
       },
       {
         slug: "basement-flooding",
         title: "Basement Flooding",
         short: "Basement flooding restoration",
         nombre: "Basement Flooding",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          title: "Flooded Basement? Emergency Extraction 24/7",
+          description: "Basement flooding requires immediate action. We pump out water and dry your basement completely.",
+          bgImage: "/images/basement-flooding.jpg"
+        }
       },
       {
         slug: "ceiling-water-damage",
         title: "Ceiling Water Damage",
         short: "Ceiling water damage repair",
         nombre: "Ceiling Water Damage",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          title: "Ceiling Leaks? We Repair Water Damage Overhead",
+          description: "Water stains on your ceiling? We fix the source and repair the damage to prevent collapse or mold.",
+          bgImage: "/images/ceiling-water-damage.jpg"
+        }
       },
       {
         slug: "emergency-water-removal",
         title: "Emergency Water Removal",
         short: "Emergency water extraction services",
         nombre: "Emergency Water Removal",
-        categoria: "restoration"
+        categoria: "restoration",
+        hero: {
+          title: "24/7 Emergency Water Removal Services",
+          description: "Fast water extraction when you need it most. Our teams are ready to respond day or night.",
+          bgImage: "/images/emergency-water-removal.jpg"
+        }
       }
     ]
   },
@@ -95,6 +116,7 @@ export const restorationGroups = [
         hero: {
           title: "Smoke Damage? We Remove Odors & Restore Air Quality Fast",
           description: "Smoke damage from fire? Our Florida teams provide complete smoke cleanup including odor neutralization, air purification, and residue removal. We eliminate smoke damage before it becomes permanent.",
+          bgImage: "/images/smoke-damage.jpg",
         },
         technicalSpecs: {
           equipmentUsed: ["Hydroxyl Generators", "Ozone Machines", "HEPA Air Scrubbers", "Thermal Foggers", "Ultrasonic Cleaners"],
@@ -103,7 +125,7 @@ export const restorationGroups = [
           deliverables: [
             "Complete smoke residue removal from all surfaces",
             "Advanced odor neutralization and air purification",
-            "HVAC system cleaning and decontamination", 
+            "HVAC system cleaning and decontamination",
             "Content cleaning and restoration",
             "Structural deodorization treatments",
             "Air quality testing and certification"
@@ -125,8 +147,9 @@ export const restorationGroups = [
           description: "Professional soot cleanup services in Florida. Complete soot removal from walls, ceilings, furniture & HVAC systems after fire damage.",
         },
         hero: {
-          title: "Soot Everywhere? We Clean All Surfaces & Systems",
-          description: "Soot contamination after a fire? Our certified technicians remove soot from all surfaces, clean HVAC systems, and restore your property's cleanliness and safety.",
+          title: "Soot Cleanup: Restoring Cleanliness & Safety",
+          description: "Soot is toxic and corrosive. We professionally clean and remove soot from all surfaces.",
+          bgImage: "/images/soot-cleanup.jpg"
         }
       },
       {
@@ -140,8 +163,9 @@ export const restorationGroups = [
           description: "Complete fire damage repair services in Florida. Structural restoration, rebuilding, smoke cleanup & content restoration. Insurance approved contractors.",
         },
         hero: {
-          title: "Fire Damage Repair - We Rebuild What Fire Destroyed",
-          description: "Fire destroyed your property? Our licensed contractors provide complete fire damage repair including structural rebuilding, smoke cleanup, and content restoration. We work with your insurance.",
+          title: "Complete Fire Damage Repair & Reconstruction",
+          description: "From structural repairs to final touches, we rebuild your home after fire damage.",
+          bgImage: "/images/fire-damage-repair.jpg"
         }
       },
       {
@@ -155,8 +179,9 @@ export const restorationGroups = [
           description: "24/7 emergency fire response in Florida. Immediate board-up, smoke cleanup, structural stabilization & damage assessment. Fast response guaranteed.",
         },
         hero: {
-          title: "Fire Emergency? We Respond Within 60 Minutes",
-          description: "Fire emergency requiring immediate help? Our emergency teams provide 24/7 fire damage response including board-up services, structural stabilization, and damage assessment across Florida.",
+          title: "24/7 Emergency Fire Response Team",
+          description: "Immediate board-up and securing services after a fire. We are here to help 24/7.",
+          bgImage: "/images/emergency-fire-response.jpg"
         }
       }
     ]
@@ -182,8 +207,9 @@ export const restorationGroups = [
           description: "Professional mold inspection services in Florida. Certified inspectors using advanced detection methods, air quality testing & comprehensive mold assessments.",
         },
         hero: {
-          title: "Suspect Mold? Get Professional Testing & Inspection",
-          description: "Think you have mold? Our certified mold inspectors provide comprehensive testing including air quality analysis, moisture detection, and visual inspections to identify all mold issues.",
+          title: "Professional Mold Inspection & Detection",
+          description: "Suspect mold? Our certified inspectors identify hidden mold and moisture sources.",
+          bgImage: "/images/mold-inspection.jpg"
         }
       },
       {
@@ -197,8 +223,9 @@ export const restorationGroups = [
           description: "Safe black mold removal in Florida. Licensed specialists remove toxic black mold using containment, HEPA filtration & proper disposal methods.",
         },
         hero: {
-          title: "Black Mold Found? We Remove It Safely & Completely",
-          description: "Discovered black mold in your property? Our licensed specialists safely remove toxic black mold using proper containment, HEPA filtration, and disposal methods to protect your health.",
+          title: "Safe & Effective Black Mold Removal",
+          description: "Black mold is dangerous. We safely remove toxic mold and sanitize your property.",
+          bgImage: "/images/black-mold-removal.jpg"
         },
         technicalSpecs: {
           equipmentUsed: ["HEPA Air Filtration Units", "Negative Air Machines", "Containment Systems", "Personal Protective Equipment", "Antimicrobial Foggers"],
@@ -208,7 +235,7 @@ export const restorationGroups = [
             "Complete containment and isolation of affected areas",
             "Safe removal and disposal of contaminated materials",
             "HEPA filtration and air purification",
-            "Antimicrobial treatment and surface disinfection", 
+            "Antimicrobial treatment and surface disinfection",
             "Moisture control and humidity management",
             "Post-remediation testing and clearance certification"
           ]
@@ -229,8 +256,9 @@ export const restorationGroups = [
           description: "Professional mold prevention services in Florida. Moisture control, ventilation improvements, antimicrobial treatments & humidity management.",
         },
         hero: {
-          title: "Prevent Mold Growth Before It Becomes a Problem",
-          description: "Want to prevent mold growth? Our prevention specialists provide moisture control solutions, ventilation improvements, and antimicrobial treatments to stop mold before it starts.",
+          title: "Long-Term Mold Prevention Solutions",
+          description: "Stop mold before it starts. We implement moisture control and prevention strategies.",
+          bgImage: "/images/mold-prevention.jpg"
         }
       },
       {
@@ -244,8 +272,9 @@ export const restorationGroups = [
           description: "Professional mold testing services in Florida. Air quality testing, spore identification, moisture mapping & post-remediation verification.",
         },
         hero: {
-          title: "Need Proof of Mold? Get Professional Testing & Analysis",
-          description: "Need documented proof of mold issues? Our certified labs provide comprehensive mold testing including air sampling, spore identification, and detailed analysis reports.",
+          title: "Air Quality Testing & Mold Analysis",
+          description: "Breathe easier with our professional air quality testing and mold analysis services.",
+          bgImage: "/images/mold-testing.jpg"
         }
       },
       {
@@ -259,8 +288,9 @@ export const restorationGroups = [
           description: "Complete mold damage restoration in Florida. Structural repairs, material replacement, air purification & final clearance testing after mold removal.",
         },
         hero: {
-          title: "Mold Damaged Your Property? We Restore It Completely",
-          description: "Mold caused structural damage? Our restoration team provides complete property repair including material replacement, structural repairs, and final air quality clearance testing.",
+          title: "Complete Mold Damage Restoration",
+          description: "Repairing damage caused by mold growth. We restore your home to a safe condition.",
+          bgImage: "/images/mold-damage.jpg"
         }
       }
     ]
@@ -286,8 +316,9 @@ export const restorationGroups = [
           description: "Expert hurricane damage repair services in Florida. Emergency response, roof repairs, water damage cleanup, wind damage restoration & reconstruction.",
         },
         hero: {
-          title: "Hurricane Damage? We Restore Homes After Major Storms",
-          description: "Hurricane caused major damage to your property? Our storm restoration specialists provide complete hurricane damage repair including emergency board-up, water extraction, and structural reconstruction.",
+          title: "Hurricane Damage Restoration Experts",
+          description: "Recovering from a hurricane? We provide comprehensive storm damage restoration.",
+          bgImage: "/images/hurricane-damage.jpg"
         }
       },
       {
@@ -301,8 +332,9 @@ export const restorationGroups = [
           description: "Professional wind damage repair in Florida. Roof repairs, siding replacement, window damage, structural repairs after severe weather.",
         },
         hero: {
-          title: "Wind Damage to Roof or Siding? We Fix Storm Damage Fast",
-          description: "Severe winds damaged your property? Our certified contractors repair wind damage including roof repairs, siding replacement, window damage, and structural reinforcement.",
+          title: "Wind Damage Repair & Reconstruction",
+          description: "Strong winds can cause severe damage. We repair roofs, siding, and structural issues.",
+          bgImage: "/images/wind-damage.jpg"
         }
       },
       {
@@ -316,8 +348,9 @@ export const restorationGroups = [
           description: "Professional storm debris removal in Florida. Tree removal, structural debris cleanup, emergency property clearing after hurricanes and storms.",
         },
         hero: {
-          title: "Storm Left Debris Everywhere? We Clear Your Property Fast",
-          description: "Storm debris blocking access or creating safety hazards? Our cleanup crews provide emergency debris removal including tree removal, structural debris, and complete property clearing.",
+          title: "Fast Storm Debris Removal & Cleanup",
+          description: "Clearing the way for restoration. We remove fallen trees and storm debris quickly.",
+          bgImage: "/images/storm-debris-removal.jpg"
         }
       },
       {
@@ -331,8 +364,9 @@ export const restorationGroups = [
           description: "24/7 emergency storm repair services in Florida. Immediate response, temporary repairs, board-up services & storm damage assessment.",
         },
         hero: {
-          title: "Storm Emergency? We Respond Within 60 Minutes",
-          description: "Need immediate storm damage help? Our emergency teams provide 24/7 storm repair services including emergency board-up, temporary repairs, and immediate damage assessment.",
+          title: "Emergency Storm Repair Services",
+          description: "Immediate repairs to secure your home after a storm. Tarping, board-up, and more.",
+          bgImage: "/images/emergency-storm-repair.jpg"
         }
       },
     ]
@@ -358,8 +392,9 @@ export const restorationGroups = [
           description: "Emergency water damage mitigation in Florida. Immediate water extraction, moisture control, dehumidification & structural drying to prevent further damage.",
         },
         hero: {
-          title: "Water Damage Spreading? We Stop It Before It Gets Worse",
-          description: "Water damage spreading through your property? Our mitigation specialists provide immediate water extraction, moisture control, and structural drying to minimize damage and prevent mold growth.",
+          title: "Water Damage Mitigation Services",
+          description: "Stopping water damage in its tracks. Immediate mitigation to prevent further loss.",
+          bgImage: "/images/mitigation-services.jpg"
         }
       },
       {
@@ -373,8 +408,9 @@ export const restorationGroups = [
           description: "Emergency fire damage mitigation in Florida. Board-up services, smoke sealing, structure stabilization & content protection after fires.",
         },
         hero: {
-          title: "Fire Damage Getting Worse? We Secure & Protect Immediately",
-          description: "Fire damage exposing your property to further harm? Our mitigation teams provide emergency board-up, smoke sealing, and structural protection to prevent additional damage.",
+          title: "Fire Damage Mitigation Services",
+          description: "Immediate action to limit fire and smoke damage. We secure and stabilize your property.",
+          bgImage: "/images/fire-damage-repair.jpg"
         }
       },
       {
@@ -388,8 +424,9 @@ export const restorationGroups = [
           description: "Emergency mold damage mitigation in Florida. Immediate containment, air filtration, moisture control & prevention of mold spread.",
         },
         hero: {
-          title: "Mold Spreading? We Contain & Stop Growth Immediately",
-          description: "Discovered mold spreading in your property? Our mitigation specialists provide immediate containment, air filtration, and moisture control to stop mold growth and prevent health risks.",
+          title: "Mold Damage Mitigation Services",
+          description: "Containing mold growth and preventing spread. Expert mitigation for a safer home.",
+          bgImage: "/images/mold-prevention.jpg"
         }
       },
       {
@@ -403,8 +440,8 @@ export const restorationGroups = [
           description: "Emergency storm damage mitigation in Florida. Immediate board-up, temporary roofing, structural bracing & weather protection services.",
         },
         hero: {
-          title: "Storm Damage Exposed Your Property? We Secure It Fast",
           description: "Storm left your property exposed to weather and intruders? Our mitigation teams provide emergency board-up, temporary roofing, and structural bracing to protect against further damage.",
+          bgImage: "/images/emergency-storm-repair.jpg"
         }
       }
     ]
@@ -566,14 +603,14 @@ export const cities = [
 
 // Get all restoration services only
 export function getRestorationServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug !== "remodeling-services"
   );
 }
 
 // Get all remodeling services only  
 export function getRemodelingServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug === "remodeling-services"
   );
 }
@@ -602,7 +639,7 @@ export function getCityBySlug(slug) {
 // FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
   const combinations = [];
-  
+
   restorationGroups.forEach(group => {
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
@@ -620,7 +657,7 @@ export function getAllRestorationCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -628,7 +665,7 @@ export function getAllRestorationCombinations() {
 export function getAllRemodelingCombinations() {
   const remodelingServices = getRemodelingServices();
   const combinations = [];
-  
+
   remodelingServices.forEach(group => {
     group.subservices.forEach(service => {
       cities.forEach(city => {
@@ -644,7 +681,7 @@ export function getAllRemodelingCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -681,7 +718,7 @@ export function getCityData(citySlug) {
 export function getStats() {
   const restorationServices = getRestorationServices().reduce((total, group) => total + group.subservices.length, 0);
   const remodelingServices = getRemodelingServices().reduce((total, group) => total + group.subservices.length, 0);
-  
+
   return {
     totalGroups: restorationGroups.length,
     restorationServices,
