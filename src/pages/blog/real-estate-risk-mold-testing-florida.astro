@@ -1,0 +1,502 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SEOHead from "../../components/SEOHead.jsx";
+
+const pageTitle = "Real Estate Risk: Mold Testing in Florida";
+const pageDescription =
+    "Should I Demand Mold Testing When Buying or Selling a House? Understand the risks, health implications, and financial impact of mold in Florida real estate.";
+const author = "Paramount Property Restoration";
+const date = new Date(); // Using current date as it's a new article
+const formattedDate = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        image="/images/og-image.webp"
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="blog"
+        service="blog"
+        subservice="post"
+        city={null}
+        addressLocality={null}
+        addressRegion="FL"
+        phone={"+1-786-602-2217"}
+        isHub={false}
+        pageType="article"
+        businessName="Paramount Property Restoration"
+        slot="head"
+    />
+
+    <!-- Injecting Tailwind CDN specifically for this article as requested in the provided code -->
+    <script src="https://cdn.tailwindcss.com" slot="head"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet"
+        slot="head"
+    />
+
+    <article class="font-inter bg-[#F5F5F5] text-gray-800">
+        <header class="bg-[#0047FF] text-white p-8 text-center shadow-lg">
+            <h1 class="text-3xl md:text-5xl font-bold mb-2">
+                Real Estate Risk in Florida
+            </h1>
+            <p class="text-xl md:text-2xl font-light">
+                Should I Demand Mold Testing When Buying or Selling a House?
+            </p>
+            <div class="mt-4 text-sm opacity-80">
+                By {author} • {formattedDate}
+            </div>
+        </header>
+
+        <main class="container mx-auto p-4 md:p-8">
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8 text-center">
+                <h2 class="text-2xl font-semibold text-[#FF007A] mb-4">
+                    The Unique Florida Challenge
+                </h2>
+                <p class="text-lg mb-6 max-w-3xl mx-auto">
+                    Florida is synonymous with sunshine, but also with humidity.
+                    This subtropical climate creates the perfect conditions for
+                    mold growth, often in hidden places. Protecting your
+                    investment and your health starts with understanding this
+                    risk.
+                </p>
+                <div class="bg-gray-100 rounded-lg p-6 max-w-md mx-auto">
+                    <div class="text-6xl font-bold text-[#0047FF]">60%</div>
+                    <p class="text-xl text-gray-700 mt-2">
+                        Of homes in Florida may have underlying moisture issues,
+                        a key precursor to mold.
+                    </p>
+                    <span class="text-sm text-gray-500"
+                        >(Illustrative statistic based on climate conditions)</span
+                    >
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-semibold text-[#0047FF] mb-4">
+                        Pillar II: Health & Toxicity
+                    </h2>
+                    <p class="mb-4">
+                        Mold isn't just a stain on the wall; it's a health risk.
+                        Spores can be released into the air and inhaled, causing
+                        a range of issues. This is especially critical for
+                        children, the elderly, and those with compromised immune
+                        systems.
+                    </p>
+                    <h3 class="text-lg font-semibold mb-2">
+                        Common Symptoms Include:
+                    </h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Allergic reactions (sneezing, watery eyes)</li>
+                        <li>Respiratory issues and asthma attacks</li>
+                        <li>Chronic headaches and fatigue</li>
+                        <li>Skin irritation and rashes</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
+                >
+                    <h3 class="text-xl font-semibold text-center mb-4">
+                        Distribution of Reported Symptoms
+                    </h3>
+                    <div
+                        class="chart-container h-80 md:h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
+                    >
+                        <canvas id="healthRiskChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-4">
+                        This chart illustrates how respiratory issues and
+                        allergies dominate reported health problems linked to
+                        indoor mold exposure.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2
+                    class="text-2xl font-semibold text-center text-[#FF007A] mb-6"
+                >
+                    Decision Guide: Should I Ask for a Mold Test?
+                </h2>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="flow-box w-full md:w-3/4 lg:w-1/2 bg-white border-2 border-[#0047FF] rounded-lg shadow-md p-4 text-center text-gray-800 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <h4 class="font-semibold">
+                            Start: Are you buying or selling?
+                        </h4>
+                        <p class="text-sm">Both parties have high stakes.</p>
+                    </div>
+                    <div
+                        class="flow-arrow text-[#0047FF] font-bold text-2xl mx-4 my-2 text-center"
+                    >
+                        ↓
+                    </div>
+                    <div
+                        class="flow-box w-full md:w-3/4 lg:w-1/2 bg-white border-2 border-[#0047FF] rounded-lg shadow-md p-4 text-center text-gray-800 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                    >
+                        <h4 class="font-semibold">
+                            Are there visible signs of mold or a musty smell?
+                        </h4>
+                    </div>
+
+                    <div
+                        class="w-full md:w-3/4 lg:w-1/2 grid grid-cols-2 gap-4 items-center"
+                    >
+                        <div
+                            class="flow-arrow text-right text-[#0047FF] font-bold text-2xl mx-4 my-2"
+                        >
+                            → YES →
+                        </div>
+                        <div
+                            class="flow-arrow text-left text-[#0047FF] font-bold text-2xl mx-4 my-2"
+                        >
+                            ← NO ←
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full md:w-3/4 lg:w-2/3 grid grid-cols-2 gap-4"
+                    >
+                        <div
+                            class="flow-box bg-[#FF007A] text-white border-[#FF007A] rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                        >
+                            <h4 class="font-bold">YES, Test!</h4>
+                            <p class="text-sm">
+                                Crucial to identify type and extent. Proceed
+                                with professional inspection.
+                            </p>
+                        </div>
+                        <div
+                            class="flow-box bg-white border-2 border-[#0047FF] rounded-lg shadow-md p-4 text-center text-gray-800 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                        >
+                            <h4 class="font-semibold">
+                                Was there recent or past water damage (floods,
+                                leaks)?
+                            </h4>
+                            <div
+                                class="flow-arrow text-[#0047FF] font-bold text-2xl mx-4 my-2 text-center"
+                            >
+                                ↓
+                            </div>
+                            <div
+                                class="flow-box bg-[#0047FF] text-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                            >
+                                <h4 class="font-bold">YES: Consider Testing</h4>
+                                <p class="text-sm">
+                                    Mold may be hidden behind walls or under
+                                    flooring.
+                                </p>
+                            </div>
+                            <div
+                                class="flow-arrow text-[#0047FF] font-bold text-2xl mx-4 my-2 text-center"
+                            >
+                                ↓
+                            </div>
+                            <div
+                                class="flow-box bg-white border-2 border-[#0047FF] rounded-lg shadow-md p-4 text-center text-gray-800 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
+                            >
+                                <h4 class="font-semibold">
+                                    NO: Testing Optional
+                                </h4>
+                                <p class="text-sm">
+                                    Consider a test for maximum peace of mind
+                                    (your emotional JTBD).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h2 class="text-2xl font-semibold text-[#0047FF] mb-4">
+                        The Buyer's Risk: Hidden Costs
+                    </h2>
+                    <p class="text-lg mb-6">
+                        Buying a home with undetected mold can lead to
+                        unexpected remediation costs that are often not covered
+                        by standard insurance.
+                    </p>
+                    <div class="bg-gray-100 rounded-lg p-6 max-w-md mx-auto">
+                        <div class="text-5xl font-bold text-[#FF007A]">
+                            $7,500
+                        </div>
+                        <p class="text-xl text-gray-700 mt-2">
+                            Average cost of mold remediation in Florida,
+                            potentially exceeding $30,000 in severe cases.
+                        </p>
+                        <span class="text-sm text-gray-500"
+                            >(Illustrative figure)</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
+                >
+                    <h2
+                        class="text-2xl font-semibold text-[#0047FF] mb-4 text-center"
+                    >
+                        The Seller's Risk: Deal Failure
+                    </h2>
+                    <p class="text-center text-sm text-gray-600 mb-4">
+                        Discovering mold during the buyer's inspection is a
+                        leading reason why real estate deals fail or get
+                        delayed.
+                    </p>
+                    <div
+                        class="chart-container h-80 md:h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
+                    >
+                        <canvas id="sellerImpactChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2
+                    class="text-2xl font-semibold text-center text-[#0047FF] mb-6"
+                >
+                    Common Mold Types in Florida Homes
+                </h2>
+                <p
+                    class="text-center text-sm text-gray-600 mb-4 max-w-3xl mx-auto"
+                >
+                    Not all mold is equal. Some are allergenic, while others,
+                    like *Stachybotrys* (black mold), are toxigenic and pose
+                    serious health risks.
+                </p>
+                <div
+                    class="chart-container h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
+                >
+                    <canvas id="moldTypesChart"></canvas>
+                </div>
+            </section>
+
+            <section
+                class="bg-[#0047FF] text-white rounded-lg shadow-md p-8 text-center"
+            >
+                <h2 class="text-3xl font-bold mb-4">
+                    Your Peace of Mind is Priceless
+                </h2>
+                <p class="text-xl font-light mb-6 max-w-3xl mx-auto">
+                    A mold test is not an expense; it is an investment in your
+                    family's health and the safety of your largest financial
+                    asset. Don't leave your peace of mind to chance.
+                </p>
+                <a
+                    href="/contact"
+                    class="inline-block bg-[#FF007A] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-pink-700"
+                >
+                    Contact for Pre-Sale/Purchase Inspection
+                </a>
+            </section>
+        </main>
+
+        <footer class="text-center p-6 text-gray-600 text-sm">
+            <p>
+                &copy; 2025 Paramount Property Restoration. This infographic is
+                for informational purposes only.
+            </p>
+        </footer>
+    </article>
+</BaseLayout>
+
+<style>
+    /* Custom styles to supplement Tailwind */
+    .font-inter {
+        font-family: "Inter", sans-serif;
+    }
+    /* Ensuring charts have correct height */
+    .chart-container {
+        position: relative;
+        width: 100%;
+    }
+</style>
+
+<script>
+    import Chart from "chart.js/auto";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Mandatory Tooltip Callback for Multiline Labels
+        const createTooltipCallback = () => {
+            return {
+                title: function (tooltipItems: any) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(" ");
+                    } else {
+                        return label;
+                    }
+                },
+            };
+        };
+
+        const chartColors = [
+            "#0047FF",
+            "#FF007A",
+            "#FFD600",
+            "#00227A",
+            "#6B8EFF",
+        ];
+
+        const healthRiskChartEl = document.getElementById(
+            "healthRiskChart",
+        ) as HTMLCanvasElement;
+        if (healthRiskChartEl) {
+            const ctxHealth = healthRiskChartEl.getContext("2d");
+            if (ctxHealth) {
+                new Chart(ctxHealth, {
+                    type: "doughnut",
+                    data: {
+                        labels: [
+                            "Allergies",
+                            ["Respiratory", "Issues"],
+                            ["Chronic", "Headaches"],
+                            ["Skin", "Irritation"],
+                            "Other",
+                        ],
+                        datasets: [
+                            {
+                                label: "Symptom Distribution",
+                                data: [40, 30, 15, 10, 5],
+                                backgroundColor: chartColors,
+                                borderColor: "#FFFFFF",
+                                borderWidth: 2,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "bottom",
+                            },
+                            tooltip: {
+                                callbacks: createTooltipCallback(),
+                            },
+                        },
+                    },
+                });
+            }
+        }
+
+        const sellerImpactChartEl = document.getElementById(
+            "sellerImpactChart",
+        ) as HTMLCanvasElement;
+        if (sellerImpactChartEl) {
+            const ctxSeller = sellerImpactChartEl.getContext("2d");
+            if (ctxSeller) {
+                new Chart(ctxSeller, {
+                    type: "bar",
+                    data: {
+                        labels: [
+                            ["Deal", "Cancellation"],
+                            ["Price", "Reduction"],
+                            "No Impact",
+                        ],
+                        datasets: [
+                            {
+                                label: "Impact on Sale (%)",
+                                data: [30, 50, 20],
+                                backgroundColor: [
+                                    "#FF007A",
+                                    "#0047FF",
+                                    "#FFD600",
+                                ],
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 60,
+                                ticks: {
+                                    callback: function (value) {
+                                        return value + "%";
+                                    },
+                                },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: createTooltipCallback(),
+                            },
+                        },
+                    },
+                });
+            }
+        }
+
+        const moldTypesChartEl = document.getElementById(
+            "moldTypesChart",
+        ) as HTMLCanvasElement;
+        if (moldTypesChartEl) {
+            const ctxTypes = moldTypesChartEl.getContext("2d");
+            if (ctxTypes) {
+                new Chart(ctxTypes, {
+                    type: "bar",
+                    data: {
+                        labels: [
+                            "Aspergillus",
+                            "Cladosporium",
+                            ["Stachybotrys", "(Black Mold)"],
+                            "Penicillium",
+                            "Other",
+                        ],
+                        datasets: [
+                            {
+                                label: "Frequency in Homes (%)",
+                                data: [35, 25, 15, 15, 10],
+                                backgroundColor: chartColors,
+                                borderRadius: 4,
+                            },
+                        ],
+                    },
+                    options: {
+                        indexAxis: "y",
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function (value) {
+                                        return value + "%";
+                                    },
+                                },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: createTooltipCallback(),
+                            },
+                        },
+                    },
+                });
+            }
+        }
+    });
+</script>

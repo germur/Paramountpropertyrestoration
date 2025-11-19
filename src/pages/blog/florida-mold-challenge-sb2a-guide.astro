@@ -775,18 +775,17 @@ const pageDescription =
   }
 </style>
 
-<script>
-  import Chart from "chart.js/auto";
+<!-- Inject Chart.js via CDN -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+  (function () {
     const brandColors = ["#35c3e9", "#2a9fd1", "#1e8ab0", "#90E0EF", "#CAF0F8"];
     const chartLabelColor = "#1e293b";
     const chartGridColor = "#e2e8f0";
 
     // Mold Types Doughnut Chart
-    const ctxMold = document.getElementById(
-      "moldTypesChart",
-    ) as HTMLCanvasElement;
+    const ctxMold = document.getElementById("moldTypesChart");
     if (ctxMold) {
       new Chart(ctxMold, {
         type: "doughnut",
@@ -842,9 +841,7 @@ const pageDescription =
     }
 
     // Comparison Bar Chart
-    const ctxCompare = document.getElementById(
-      "comparisonChart",
-    ) as HTMLCanvasElement;
+    const ctxCompare = document.getElementById("comparisonChart");
     if (ctxCompare) {
       new Chart(ctxCompare, {
         type: "bar",
@@ -925,5 +922,5 @@ const pageDescription =
         },
       });
     }
-  });
+  })();
 </script>

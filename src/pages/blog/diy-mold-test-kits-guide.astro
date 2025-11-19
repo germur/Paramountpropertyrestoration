@@ -1059,15 +1059,15 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 </style>
 
-<script>
-  import Chart from "chart.js/auto";
+<!-- Inject Chart.js via CDN -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+  (function () {
     // Search Volume Chart
-    const searchVolumeCtx = document.getElementById(
-      "searchVolumeChart",
-    ) as HTMLCanvasElement;
+    const searchVolumeCtx = document.getElementById("searchVolumeChart");
     if (searchVolumeCtx) {
+      console.log("Found searchVolumeChart canvas, initializing...");
       new Chart(searchVolumeCtx, {
         type: "bar",
         data: {
@@ -1140,9 +1140,11 @@ const formattedDate = date.toLocaleDateString("en-US", {
           },
         },
       });
+    } else {
+      console.error("Canvas searchVolumeChart not found");
     }
 
-    // Navigation
+    // Navigation Logic
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const navLinks = document.querySelectorAll(".nav-link, .mobile-link");
@@ -1171,5 +1173,5 @@ const formattedDate = date.toLocaleDateString("en-US", {
         }
       });
     });
-  });
+  })();
 </script>

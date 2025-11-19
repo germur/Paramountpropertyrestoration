@@ -1107,18 +1107,16 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  declare const Chart: any;
-
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script is:inline>
+  (function () {
     const navButtons = document.querySelectorAll(".mold-nav-btn");
     const sections = document.querySelectorAll(".mold-content-section");
     const accordionHeaders = document.querySelectorAll(
       ".mold-accordion-header",
     );
 
-    function showSection(sectionId: string) {
+    function showSection(sectionId) {
       sections.forEach((section) => {
         section.classList.remove("mold-content-section-active");
       });
@@ -1143,31 +1141,29 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
     navButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const sectionId = (btn as HTMLElement).dataset.section;
+        const sectionId = btn.dataset.section;
         if (sectionId) showSection(sectionId);
       });
     });
 
     accordionHeaders.forEach((header) => {
       header.addEventListener("click", () => {
-        const h = header as HTMLElement;
+        const h = header;
         const contentId = h.dataset.accordion + "-content";
         const content = document.getElementById(contentId);
         if (content) {
           const isVisible = content.style.display === "block";
           document
             .querySelectorAll(".mold-accordion-content")
-            .forEach((c) => ((c as HTMLElement).style.display = "none"));
+            .forEach((c) => (c.style.display = "none"));
           content.style.display = isVisible ? "none" : "block";
         }
       });
     });
 
     const totalTasks = document.querySelectorAll(".mold-checkbox").length;
-    const progressChartCtx = document.getElementById(
-      "mold-progress-chart",
-    ) as HTMLCanvasElement;
-    let progressChart: any;
+    const progressChartCtx = document.getElementById("mold-progress-chart");
+    let progressChart;
 
     const chartData = {
       labels: ["Complete", "Remaining"],
@@ -1188,7 +1184,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: function (context: any) {
+            label: function (context) {
               return `${context.label}: ${context.parsed} task(s)`;
             },
           },
@@ -1232,5 +1228,5 @@ const formattedDate = date.toLocaleDateString("en-US", {
     });
 
     updateProgress();
-  });
+  })();
 </script>

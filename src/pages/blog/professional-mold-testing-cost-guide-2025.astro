@@ -1251,16 +1251,15 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 </style>
 
-<script>
-  import Chart from "chart.js/auto";
+<!-- Inject Chart.js via CDN -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+  (function () {
     const brandColors = ["#35c3e9", "#2a9fd1", "#FF6B35", "#e85d2a", "#1e8ab0"];
 
     // Average Cost Doughnut Chart
-    const ctx1 = document.getElementById(
-      "averageCostChart",
-    ) as HTMLCanvasElement;
+    const ctx1 = document.getElementById("averageCostChart");
     if (ctx1) {
       new Chart(ctx1, {
         type: "doughnut",
@@ -1306,9 +1305,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     }
 
     // Service Cost Horizontal Bar Chart
-    const ctx2 = document.getElementById(
-      "serviceCostChart",
-    ) as HTMLCanvasElement;
+    const ctx2 = document.getElementById("serviceCostChart");
     if (ctx2) {
       new Chart(ctx2, {
         type: "bar",
@@ -1386,5 +1383,5 @@ const formattedDate = date.toLocaleDateString("en-US", {
         },
       });
     }
-  });
+  })();
 </script>
