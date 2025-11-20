@@ -1,12 +1,19 @@
 ---
 import { cities } from "../../../data/restoration.js";
 import FAQ from "../../AcordeonServices";
+import { generateFAQSchema } from "../../EnhancedSchemas.jsx";
+import { faqData } from "../../../data/faq.js";
 import { getAltText } from "../../../data/image-alt-texts.js";
 import { CONTACT_PHONE, BRAND_COLORS } from "../../../config/constants.js";
 import "../../../styles/pages/services-template.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const { group, sub, isHub = false } = Astro.props;
+
+// Calculate FAQ category and generate schema
+const faqCategory = group.slug.replace("-remodeling", "");
+const faqQuestions = faqData[faqCategory] || faqData.general;
+const faqSchema = generateFAQSchema(faqQuestions);
 
 // Enhanced data structure for services template
 const getEnhancedServiceData = (groupSlug, subSlug) => {
@@ -349,6 +356,9 @@ const heroImageWebP = `/images/${heroImage}.webp`;
 const heroImageJpg = `/images/${heroImage}.webp`;
 const heroAlt = getAltText(heroImage);
 ---
+
+<!-- Inject FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <div class="unified-service-template">
   <!-- Enhanced Hero Section -->
@@ -721,8 +731,9 @@ const heroAlt = getAltText(heroImage);
     <div class="container">
       <FAQ
         client:load
-        category={group.slug.replace("-remodeling", "")}
+        category={faqCategory}
         title={`${group.name} FAQs`}
+        serviceName={sub?.title || group.name}
       />
     </div>
   </section>

@@ -7,7 +7,22 @@ import { CONTACT_PHONE, BRAND_COLORS } from "../../../config/constants.js";
 import "../../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+import { generateFAQSchema } from "../../EnhancedSchemas.jsx";
+import { faqData } from "../../../data/faq.js";
+
 const { group, sub } = Astro.props;
+
+// Map group slug to FAQ category
+const categoryMap = {
+  "water-damage": "water",
+  "fire-damage": "fire",
+  "storm-damage": "storm",
+  "mold-remediation": "mold",
+  "mitigation-services": "mitigation",
+};
+const faqCategory = categoryMap[group.slug] || "general";
+const faqQuestions = faqData[faqCategory] || faqData.general;
+const faqSchema = generateFAQSchema(faqQuestions);
 
 // Enhanced data structure for the unified template
 const getEnhancedServiceData = (groupSlug, subSlug) => {
@@ -111,6 +126,9 @@ const getCitiesByRegion = () => {
 
 const cityRegions = getCitiesByRegion();
 ---
+
+<!-- Inject FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <div class="unified-service-template">
   <!-- Compact Hero Section -->
@@ -282,7 +300,7 @@ const cityRegions = getCitiesByRegion();
             text-align: center;
             transition: all 0.3s ease;
             display: block;
-          "
+            "
                 onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='#35c3e9'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.15)'"
                 onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e9ecef'; this.style.boxShadow='none'"
               >
@@ -485,31 +503,7 @@ const cityRegions = getCitiesByRegion();
       <h2 class="section-title">
         Frequently Asked Questions About {sub.title}
       </h2>
-      <FAQ
-        customQuestions={[
-          {
-            question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
-            answer:
-              "We provide 24/7 emergency response and can typically arrive on-site within 60-90 minutes of your call. Our rapid response helps minimize damage and reduces restoration costs.",
-          },
-          {
-            question: `What equipment do you use for ${sub.title.toLowerCase()}?`,
-            answer:
-              "We use professional-grade equipment including thermal imaging cameras, moisture meters, high-capacity extractors, industrial dehumidifiers, and air movers. All equipment meets IICRC standards.",
-          },
-          {
-            question: "Do you work with insurance companies?",
-            answer:
-              "Yes, we work directly with insurance companies and adjusters. We provide detailed documentation, photos, and estimates to support your claim and ensure proper coverage.",
-          },
-          {
-            question: "What certifications do your technicians have?",
-            answer:
-              "Our technicians are IICRC certified in water damage restoration, structural drying, and applied microbial remediation. We maintain ongoing training and certification updates.",
-          },
-        ]}
-        client:load
-      />
+      <FAQ category={faqCategory} serviceName={sub.title} client:load />
     </div>
   </section>
 
