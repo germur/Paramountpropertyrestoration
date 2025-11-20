@@ -1,18 +1,10 @@
 // src/components/SEOHead.jsx
 import React from 'react';
+import { slugify } from '../utils/slugify';
 
 /**********************
  * Helpers (JS only)
  **********************/
-const slugify = (input) => {
-  if (!input) return '';
-  return input
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-};
 
 const buildServicePath = ({ vertical = 'restoration', service, subservice, city }) => {
   const parts = [slugify(vertical), slugify(service), slugify(subservice)].filter(Boolean);

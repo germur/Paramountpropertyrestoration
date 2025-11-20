@@ -3,6 +3,7 @@
 import {
   getAllRestorationCombinations,
   cities,
+  regionalRisks,
 } from "../../../../data/restoration.js";
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
@@ -89,15 +90,17 @@ const ctaConfig = {
   href: servicioData.cta?.href ?? "/contact",
 };
 
-// Nearby cities for SEO copy
-const nearbyAreas = [
-  "Weston",
-  "Pembroke Pines",
-  "Coral Gables",
-  "Aventura",
-  "Doral",
-  "Kendall",
-];
+// Nearby cities for SEO copy (Dynamic based on region)
+const nearbyAreas = cities
+  .filter((c) => c.region === ciudadData.region && c.slug !== ciudadData.slug)
+  .map((c) => c.name)
+  .slice(0, 6);
+
+// Get regional specific content
+const regionalRisk = regionalRisks[ciudadData.region] || {
+  title: `The Danger of ${servicioData.title} in ${ciudadData.region}`,
+  description: `Due to ${ciudadData.region}'s high humidity and unique climate conditions, standard ${servicioData.title.toLowerCase()} approaches are insufficient. We use specialized equipment and proven techniques designed specifically for ${ciudadData.region}'s environmental challenges to prevent long-term damage and ensure complete restoration.`,
+};
 ---
 
 <BaseLayout title={pageConfig.title} description={pageConfig.description}>
@@ -121,7 +124,7 @@ const nearbyAreas = [
   <!-- INVERTED SEO PYRAMID: Hero Híbrido (APEX - Transactional & Urgent) -->
   <section class="programmatic-hero">
     <P5HeroAnimation
-      client:load
+      client:media="(min-width: 768px)"
       serviceType={servicioData.title.toLowerCase()}
       isActive={true}
     />
@@ -259,14 +262,10 @@ const nearbyAreas = [
         <!-- Problem: UX Writing focuses on city-specific challenges -->
         <div class="local-problem">
           <h2 class="problem-title">
-            The Danger of {servicioData.title} in {ciudadData.region}
+            {regionalRisk.title}
           </h2>
           <p class="problem-description">
-            Due to {ciudadData.region}'s high humidity and unique climate
-            conditions, standard {servicioData.title.toLowerCase()} approaches are
-            insufficient. We use specialized equipment and proven techniques designed
-            specifically for {ciudadData.region}'s environmental challenges to
-            prevent long-term damage and ensure complete restoration.
+            {regionalRisk.description}
           </p>
           <a href="#service-area" class="authority-link">
             See Our Service Area in {ciudadData.county}
@@ -345,8 +344,10 @@ const nearbyAreas = [
           <p>
             We offer {servicioData.title.toLowerCase()} in {ciudadData.nombre} and
             throughout {ciudadData.region}, including neighborhoods like {
-              nearbyAreas.slice(0, 3).join(", ")
-            }, and {nearbyAreas[3]}.
+              nearbyAreas.length > 0
+                ? nearbyAreas.slice(0, 3).join(", ")
+                : "nearby communities"
+            }{nearbyAreas.length > 3 ? `, and ${nearbyAreas[3]}` : ""}.
           </p>
           <a href="/contact" class="btn-outline">
             Check Availability in Your Neighborhood →
@@ -443,7 +444,7 @@ const nearbyAreas = [
     category={groupData.template || "general"}
     customQuestions={customQuestions}
     title={`Frequently Asked Questions About ${servicioData.title} in ${ciudadData.nombre}`}
-    client:load
+    client:visible
   />
 
   <!-- GEOGRAPHIC VALIDATION: Map and Service Area (BASE of Pyramid) -->
@@ -456,7 +457,7 @@ const nearbyAreas = [
         <!-- Interactive Service Area Map -->
         <div class="service-area-map">
           <ServiceAreaMap
-            client:load
+            client:visible
             city={ciudad}
             county={ciudadData.county}
             serviceCities={cities.filter(

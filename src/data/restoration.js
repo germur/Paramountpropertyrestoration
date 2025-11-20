@@ -728,3 +728,37 @@ export function getStats() {
     totalCombinations: getAllCombinations().length
   };
 }
+
+// ===========================
+// REGIONAL CONTENT DATA
+// ===========================
+export const regionalRisks = {
+  "South Florida": {
+    title: "High Humidity & Hurricane Risks",
+    description: "South Florida's tropical climate creates year-round humidity challenges that accelerate mold growth. Combined with frequent tropical storms and hurricanes, properties in this region face unique water intrusion risks that require specialized drying protocols."
+  },
+  "Central Florida": {
+    title: "Storm Surges & Sinkhole Risks",
+    description: "Central Florida faces a dual threat of severe afternoon thunderstorms and potential ground shifting. Our restoration protocols account for the region's specific soil conditions and rapid weather changes that can lead to sudden water damage."
+  },
+  "Tampa Bay": {
+    title: "Coastal Flooding & Saltwater Intrusion",
+    description: "The Tampa Bay area is particularly susceptible to coastal flooding and storm surges. Saltwater intrusion requires specific cleaning agents and corrosion inhibitors that standard restoration companies often overlook."
+  },
+  "Southwest Florida": {
+    title: "Tropical Storm Exposure",
+    description: "Southwest Florida's coastline is directly exposed to Gulf storms. We specialize in addressing the rapid mold development that occurs in this region's consistently high temperatures and humidity levels."
+  },
+  "Northeast Florida": {
+    title: "Nor'easter Storms & Coastal Erosion",
+    description: "Northeast Florida faces unique challenges from Nor'easters and coastal erosion. Our teams are equipped to handle the specific structural drying needs caused by these prolonged wind and rain events."
+  },
+  "Northwest Florida": {
+    title: "Panhandle Storm Tracks",
+    description: "The Panhandle often faces direct impacts from major Gulf storms. Our restoration approach focuses on rapid structural stabilization and heavy-duty water extraction designed for severe storm aftermaths."
+  },
+  "Treasure Coast": {
+    title: "Atlantic Storm Exposure",
+    description: "The Treasure Coast's direct Atlantic exposure brings salt-heavy air and frequent squalls. We use specialized corrosion-resistant materials and drying techniques suited for this coastal environment."
+  }
+};
