@@ -17,7 +17,7 @@ readTime: 7
 
 # How Much Does Professional Mold Testing Cost in 2025?
 
-Understanding mold testing costs helps Florida homeowners make informed decisions about protecting their property and health. This comprehensive guide breaks down professional inspection and sampling costs for 2025.
+Understanding mold testing costs helps Florida homeowners make informed decisions about protecting their property and health. This comprehensive guide breaks down [professional inspection](/restoration/mold-remediation/mold-inspection) and sampling costs for 2025.
 
 ## National Average Cost: $675
 

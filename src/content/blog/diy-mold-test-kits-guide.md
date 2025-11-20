@@ -17,7 +17,7 @@ readTime: 8
 
 # DIY Mold Test Kits: What Homeowners Need to Know Before Buying
 
-You suspect mold in your home. That musty smell or strange discoloration has you worried. Before spending money on a DIY mold test kit, read this comprehensive guide to understand what these kits can—and critically, can't—tell you.
+You suspect [mold in your home](/restoration/mold-remediation/mold-inspection). That musty smell or strange discoloration has you worried. Before spending money on a DIY mold test kit, read this comprehensive guide to understand what these kits can—and critically, can't—tell you.
 
 ## The Homeowner's Dilemma
 

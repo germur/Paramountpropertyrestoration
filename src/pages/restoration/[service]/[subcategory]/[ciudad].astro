@@ -6,6 +6,7 @@ import {
   regionalRisks,
 } from "../../../../data/restoration.js";
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
+import { getRelatedServices } from "../../../../data/service-relations.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
@@ -101,6 +102,9 @@ const regionalRisk = regionalRisks[ciudadData.region] || {
   title: `The Danger of ${servicioData.title} in ${ciudadData.region}`,
   description: `Due to ${ciudadData.region}'s high humidity and unique climate conditions, standard ${servicioData.title.toLowerCase()} approaches are insufficient. We use specialized equipment and proven techniques designed specifically for ${ciudadData.region}'s environmental challenges to prevent long-term damage and ensure complete restoration.`,
 };
+
+// Get related services for cross-linking (Horizontal Linking Strategy)
+const relatedServicesList = getRelatedServices(subcategory || service);
 ---
 
 <BaseLayout title={pageConfig.title} description={pageConfig.description}>
@@ -352,6 +356,30 @@ const regionalRisk = regionalRisks[ciudadData.region] || {
           <a href="/contact" class="btn-outline">
             Check Availability in Your Neighborhood →
           </a>
+
+          {/* Cross-Service Linking: Break the Silo */}
+          {
+            relatedServicesList.length > 0 && (
+              <div class="related-services-box mt-8 pt-6 border-t border-gray-200">
+                <h4 class="text-lg font-bold text-gray-800 mb-3">
+                  Related Services in {ciudadData.nombre}
+                </h4>
+                <ul class="space-y-2">
+                  {relatedServicesList.map((relService) => (
+                    <li>
+                      <a
+                        href={`/restoration/${relService.slug}/${ciudadData.slug}`}
+                        class="text-accent hover:text-accent-dark transition-colors flex items-center gap-2"
+                      >
+                        <i class="fas fa-arrow-right text-xs" />
+                        {relService.label} in {ciudadData.nombre}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
         </div>
       </div>
     </div>

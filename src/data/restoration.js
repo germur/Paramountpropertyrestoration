@@ -210,6 +210,9 @@ export const restorationGroups = [
           title: "Professional Mold Inspection & Detection",
           description: "Suspect mold? Our certified inspectors identify hidden mold and moisture sources.",
           bgImage: "/images/mold-inspection.webp"
+        },
+        cta: {
+          href: "/book-mold-inspection"
         }
       },
       {
@@ -275,6 +278,9 @@ export const restorationGroups = [
           title: "Air Quality Testing & Mold Analysis",
           description: "Breathe easier with our professional air quality testing and mold analysis services.",
           bgImage: "/images/mold-testing.webp"
+        },
+        cta: {
+          href: "/book-mold-inspection"
         }
       },
       {

@@ -17,7 +17,7 @@ readTime: 10
 
 # Florida's Mold Challenge: Why Local Expertise is Vital After Senate Bill 2A
 
-Florida's climate creates the perfect storm for mold growth. High humidity, frequent rainfall, and the constant threat of hurricanes make mold not just a nuisance—it's a significant threat to property value and family health. After the passage of Senate Bill 2A in 2022, the stakes for proper [mold testing](/restoration/mold-remediation/mold-testing) and documentation have never been higher.
+Florida's climate creates the perfect storm for [mold growth](/restoration/mold-remediation). High humidity, frequent rainfall, and the constant threat of hurricanes make mold not just a nuisance—it's a significant threat to property value and family health. After the passage of Senate Bill 2A in 2022, the stakes for proper [mold testing](/restoration/mold-remediation/mold-testing) and documentation have never been higher.
 
 ---
 

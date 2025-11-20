@@ -17,7 +17,7 @@ readTime: 6
 
 # Homeowner's Complete Mold Prevention & Detection Guide
 
-Mold is a common concern for Florida homeowners due to our humid climate. This comprehensive interactive guide will help you understand, detect, prevent, and address mold issues in your home.
+Mold is a common concern for Florida homeowners due to our humid climate. This comprehensive interactive guide will help you understand, detect, prevent, and address [mold issues](/restoration/mold-remediation) in your home.
 
 ## What You'll Learn
 

@@ -17,7 +17,7 @@ readTime: 12
 
 # Is Mold Making You Sick? Understanding Symptoms, Risks, and Medical Testing
 
-Mold exposure affects millions of people, yet symptoms are often mistaken for other conditions like allergies, chronic fatigue, or viral infections. This comprehensive infographic guide helps you understand the health impacts of mold, recognize warning signs, and navigate the medical testing process to protect yourself and your family.
+[Mold exposure](/restoration/mold-remediation) affects millions of people, yet symptoms are often mistaken for other conditions like allergies, chronic fatigue, or viral infections. This comprehensive infographic guide helps you understand the health impacts of mold, recognize warning signs, and navigate the medical testing process to protect yourself and your family.
 
 ---
 
