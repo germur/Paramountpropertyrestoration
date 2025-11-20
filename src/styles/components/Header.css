@@ -61,8 +61,8 @@
 .logo {
   flex-shrink: 0;
   /* Prevent logo from shrinking */
-  max-width: 500px;
-  /* Increased to allow wider desktop logos */
+  max-width: 600px;
+  /* Increased significantly */
   display: flex;
   align-items: center;
 }
@@ -90,8 +90,8 @@
 .desktop-logo {
   display: block;
   height: auto;
-  max-height: 85px;
-  /* Reduced slightly to be safe */
+  max-height: 120px;
+  /* Increased from 85px to 120px */
   width: auto;
 }
 
