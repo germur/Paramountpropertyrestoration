@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedServiceTemplate from "../../components/services/templates/UnifiedServiceTemplate.astro";
+import RemodelingServiceTemplate from "../../components/services/templates/RemodelingServiceTemplate.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
@@ -8,18 +8,16 @@ import { getServiceGroup } from "../../data/services.js";
 
 const pageData = {
   group: getServiceGroup("bedroom-remodeling"),
-  sub: null
+  sub: null,
 };
 
-const pageTitle = "Bedroom Renovation Services | Paramount Property Restoration";
-const pageDescription = "Modern bedroom redesigns with lighting, storage, and smart layouts. Free consultation available.";
+const pageTitle =
+  "Bedroom Renovation Services | Paramount Property Restoration";
+const pageDescription =
+  "Modern bedroom redesigns with lighting, storage, and smart layouts. Free consultation available.";
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={pageDescription}
-  data-page="bedroom"
->
+<BaseLayout title={pageTitle} description={pageDescription} data-page="bedroom">
   <SEOHead
     title={pageTitle}
     description={pageDescription}
@@ -36,5 +34,9 @@ const pageDescription = "Modern bedroom redesigns with lighting, storage, and sm
     slot="head"
   />
 
-  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
+  <RemodelingServiceTemplate
+    group={pageData.group}
+    sub={pageData.sub}
+    isHub={true}
+  />
 </BaseLayout>
