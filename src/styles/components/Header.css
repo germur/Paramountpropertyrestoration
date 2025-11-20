@@ -61,8 +61,8 @@
 .logo {
   flex-shrink: 0;
   /* Prevent logo from shrinking */
-  max-width: 280px;
-  /* Constrain width */
+  max-width: 500px;
+  /* Increased to allow wider desktop logos */
   display: flex;
   align-items: center;
 }
