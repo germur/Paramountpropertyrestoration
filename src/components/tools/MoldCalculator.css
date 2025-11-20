@@ -382,8 +382,8 @@
 }
 
 .btn-secondary {
-  background: #10b981;
-  color: white;
+  background: #10b981 !important;
+  color: white !important;
 }
 
 .btn-secondary:hover {
@@ -393,9 +393,9 @@
 }
 
 .btn-reset {
-  background: #e2e8f0;
-  color: #1e293b;
-  border: 1px solid #cbd5e1;
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
 }
 
 .btn-reset:hover {
