@@ -2,6 +2,7 @@
 import { cities } from "../../../data/restoration.js";
 import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import { CONTACT_PHONE, BRAND_COLORS } from "../../../config/constants.js";
 
 import "../../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,7 +20,7 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
         sub?.hero?.description ||
         `Professional ${sub.title.toLowerCase()} services across Florida. Emergency response, certified technicians, and insurance coordination available 24/7.`,
       ctaText: "Call Now for Emergency Help",
-      ctaPhone: "+1-786-602-2217",
+      ctaPhone: CONTACT_PHONE,
       urgencyBadge: "24/7 Emergency Response Available",
       bgImage: sub?.hero?.bgImage || "/images/herowater.webp",
     },
@@ -173,7 +174,10 @@ const cityRegions = getCitiesByRegion();
               {
                 serviceData.warningSigns.map((sign) => (
                   <div class="warning-item">
-                    <i class="fas fa-check-circle" style="color: #35c3e9;" />
+                    <i
+                      class="fas fa-check-circle"
+                      style={`color: ${BRAND_COLORS.primary};`}
+                    />
                     {sign}
                   </div>
                 ))
@@ -211,8 +215,9 @@ const cityRegions = getCitiesByRegion();
           <!-- Insurance help section -->
           <div class="insurance-help-compact">
             <h4>
-              <i class="fas fa-handshake" style="color: #35c3e9;"></i> Insurance
-              Claims Assistance
+              <i
+                class="fas fa-handshake"
+                style={`color: ${BRAND_COLORS.primary};`}></i> Insurance Claims Assistance
             </h4>
             <p>
               We work directly with your insurance company, handling all
@@ -283,7 +288,7 @@ const cityRegions = getCitiesByRegion();
               >
                 <i
                   class="fas fa-map-marker-alt"
-                  style="color: #35c3e9; font-size: 1.8rem; margin-bottom: 1rem;"
+                  style={`color: ${BRAND_COLORS.primary}; font-size: 1.8rem; margin-bottom: 1rem;`}
                 />
                 <h4 style="color: #333; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">
                   {city.nombre}
@@ -292,15 +297,15 @@ const cityRegions = getCitiesByRegion();
                   {city.condado} County
                 </p>
                 <span
-                  style="
-              background: #35c3e9; 
+                  style={`
+              background: ${BRAND_COLORS.primary}; 
               color: white; 
               padding: 0.6rem 1.2rem; 
               border-radius: 25px; 
               font-size: 0.85rem; 
               font-weight: 600; 
               display: inline-block;
-            "
+            `}
                 >
                   Get Service Now →
                 </span>
@@ -369,7 +374,7 @@ const cityRegions = getCitiesByRegion();
                   <span>
                     <i
                       class="fas fa-map-marked-alt"
-                      style="color: #35c3e9; margin-right: 0.5rem;"
+                      style={`color: ${BRAND_COLORS.primary}; margin-right: 0.5rem;`}
                     />
                     {regionName} ({(regionCities as any[]).length} cities)
                   </span>
@@ -431,14 +436,14 @@ const cityRegions = getCitiesByRegion();
       <!-- Emergency notice -->
       <div
         class="emergency-notice"
-        style="
+        style={`
         margin-top: 2.5rem;
-        background: linear-gradient(135deg, #35c3e9 0%, #1e90ff 100%);
+        background: linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, #1e90ff 100%);
         color: white;
         padding: 2rem;
         border-radius: 12px;
         text-align: center;
-      "
+      `}
       >
         <i
           class="fas fa-clock"
@@ -452,9 +457,9 @@ const cityRegions = getCitiesByRegion();
         </p>
         <a
           href="tel:+17866022217"
-          style="
+          style={`
           background: white;
-          color: #35c3e9;
+          color: ${BRAND_COLORS.primary};
           text-decoration: none;
           padding: 0.8rem 2rem;
           border-radius: 25px;
@@ -464,7 +469,7 @@ const cityRegions = getCitiesByRegion();
           align-items: center;
           gap: 0.5rem;
           transition: all 0.3s ease;
-        "
+        `}
           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
         >

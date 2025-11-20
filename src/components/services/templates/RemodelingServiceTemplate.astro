@@ -2,6 +2,7 @@
 import { cities } from "../../../data/restoration.js";
 import FAQ from "../../AcordeonServices";
 import { getAltText } from "../../../data/image-alt-texts.js";
+import { CONTACT_PHONE, BRAND_COLORS } from "../../../config/constants.js";
 import "../../../styles/pages/services-template.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -19,7 +20,7 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
         : sub?.hero?.description ||
           `Professional ${sub.title.toLowerCase()} services across Florida. Quality craftsmanship, licensed contractors, and satisfaction guaranteed.`,
       ctaText: isHub ? "Get Free Consultation" : "Start Your Project",
-      ctaPhone: "+1-786-602-2217",
+      ctaPhone: CONTACT_PHONE,
       badgeText: isHub
         ? "Licensed & Insured Contractors"
         : "Quality Guaranteed Work",
@@ -522,11 +523,13 @@ const heroAlt = getAltText(heroImage);
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(30, 41, 59, 0.06);
           "
-                onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.12)'; this.style.borderColor='#35c3e9'"
+                onmouseover={`this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.12)'; this.style.borderColor='${BRAND_COLORS.primary}'`}
                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(30, 41, 59, 0.06)'; this.style.borderColor='#e2e8f0'"
               >
                 <div style="text-align: center;">
-                  <div style="background: #35c3e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
+                  <div
+                    style={`background: ${BRAND_COLORS.primary}; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;`}
+                  >
                     <i class="fas fa-map-marker-alt" />
                   </div>
                   <h4 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">
@@ -536,15 +539,15 @@ const heroAlt = getAltText(heroImage);
                     {city.condado} County
                   </p>
                   <span
-                    style="
-                background: #35c3e9; 
+                    style={`
+                background: ${BRAND_COLORS.primary}; 
                 color: white; 
                 padding: 0.6rem 1.2rem; 
                 border-radius: 25px; 
                 font-size: 0.85rem; 
                 font-weight: 600; 
                 display: inline-block;
-              "
+              `}
                   >
                     Get Service Now →
                   </span>
@@ -557,14 +560,14 @@ const heroAlt = getAltText(heroImage);
       <!-- Professional Notice -->
       <div
         class="professional-notice"
-        style="
+        style={`
         margin-top: 3rem;
-        background: linear-gradient(135deg, #35c3e9 0%, #2563eb 100%);
+        background: linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, #2563eb 100%);
         color: white;
         padding: 2rem;
         border-radius: 12px;
         text-align: center;
-      "
+      `}
       >
         <i
           class="fas fa-tools"
@@ -578,9 +581,9 @@ const heroAlt = getAltText(heroImage);
         </p>
         <a
           href="/contact"
-          style="
+          style={`
           background: white;
-          color: #35c3e9;
+          color: ${BRAND_COLORS.primary};
           text-decoration: none;
           padding: 0.8rem 2rem;
           border-radius: 25px;
@@ -590,7 +593,7 @@ const heroAlt = getAltText(heroImage);
           align-items: center;
           gap: 0.5rem;
           transition: all 0.3s ease;
-        "
+        `}
           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
         >
@@ -645,7 +648,7 @@ const heroAlt = getAltText(heroImage);
                   <span style="color: #2563eb;">
                     <i
                       class="fas fa-map-marker-alt"
-                      style="margin-right: 0.5rem; color: #35c3e9;"
+                      style={`margin-right: 0.5rem; color: ${BRAND_COLORS.primary};`}
                     />
                     {regionName} ({(regionCities as any[]).length} Cities)
                   </span>
@@ -693,7 +696,7 @@ const heroAlt = getAltText(heroImage);
                     align-items: center;
                     justify-content: space-between;
                   "
-                        onmouseover="this.style.backgroundColor='#35c3e9'; this.style.color='white'; this.style.borderColor='#35c3e9'"
+                        onmouseover={`this.style.backgroundColor='${BRAND_COLORS.primary}'; this.style.color='white'; this.style.borderColor='${BRAND_COLORS.primary}'`}
                         onmouseout="this.style.backgroundColor='#f8fafc'; this.style.color='#374151'; this.style.borderColor='#e2e8f0'"
                       >
                         <span>{city.nombre}</span>

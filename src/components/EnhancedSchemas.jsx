@@ -1,5 +1,6 @@
 // Enhanced Schema.org markup for rich snippets
 // Generates multiple schema types for better SERP visibility
+import { CONTACT_PHONE } from '../config/constants.js';
 
 /**
  * Generate enhanced LocalBusiness schema with all properties
@@ -7,7 +8,7 @@
 export function generateLocalBusinessSchema({
   name = 'Paramount Property Restoration',
   url = 'https://paramountpropertyrestoration.com',
-  phone = '+1-786-602-2217',
+  phone = CONTACT_PHONE,
   email = 'services@paramountpropertyrestoration.com',
   address = {
     streetAddress: '',
@@ -309,7 +310,7 @@ export function generateOrganizationSchema({
   name = 'Paramount Property Restoration',
   url = 'https://paramountpropertyrestoration.com',
   logo = '/images/ppr-logo-new.webp',
-  phone = '+1-786-602-2217',
+  phone = CONTACT_PHONE,
   email = 'services@paramountpropertyrestoration.com',
   description = "Florida's premier property restoration and remodeling company. 24/7 emergency services for water, fire, mold, and storm damage. Professional home remodeling for kitchens, bathrooms, and more."
 }) {
