@@ -1,95 +1,97 @@
 /* LinkBuildingSection.css - Estilo Minimalista y Responsivo */
 
-.link-building-container {
+.linkBuildingContainer {
     background: transparent;
     color: #333;
     padding: 50px 20px;
     background-color: #f9f9f9;
-    margin: 100px 0;   
+    margin: 100px 0;
 }
 
-.link-building-container.full {
+.linkBuildingContainer.full {
     padding: 30px 20px;
-    
+
 }
 
-.link-building-inner {
+.linkBuildingInner {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.link-building-header {
+.linkBuildingHeader {
     text-align: left;
     margin-bottom: 30px;
 }
 
-.link-building-header.compact {
+.linkBuildingHeader.compact {
     margin-bottom: 20px;
 }
 
-.link-building-title {
+.linkBuildingTitle {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 10px;
     color: #222;
 }
 
-.link-building-title.compact {
+.linkBuildingTitle.compact {
     font-size: 1.5rem;
 }
 
-.link-building-subtitle {
+.linkBuildingSubtitle {
     font-size: 1rem;
     color: #777;
     max-width: 600px;
     line-height: 1.5;
 }
 
-.link-building-subtitle.compact {
+.linkBuildingSubtitle.compact {
     font-size: 0.9rem;
 }
 
-.link-building-stats {
+.linkBuildingStats {
     display: none;
 }
 
 /* --- AJUSTE CLAVE PARA RESPONSIVE --- */
-.link-building-grid {
+.linkBuildingGrid {
     display: grid;
     /* Por defecto (móvil), mostramos UNA SOLA columna */
     grid-template-columns: 1fr;
-    gap: 30px; /* Aumentamos el gap vertical en móvil */
+    gap: 30px;
+    /* Aumentamos el gap vertical en móvil */
     margin-top: 20px;
 }
 
-.link-building-grid.compact {
+.linkBuildingGrid.compact {
     gap: 15px;
 }
 
-.link-category {
+.linkCategory {
     background: transparent;
     border: none;
     padding: 0;
-    margin-bottom: 0; /* Eliminamos el margen inferior ya que 'gap' lo maneja */
+    margin-bottom: 0;
+    /* Eliminamos el margen inferior ya que 'gap' lo maneja */
 }
 
-.link-category:hover {
+.linkCategory:hover {
     transform: none;
     background: transparent;
     box-shadow: none;
 }
 
-.category-header {
+.categoryHeader {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.category-icon {
+.categoryIcon {
     display: none;
 }
 
-.category-title {
+.categoryTitle {
     font-size: 1rem;
     font-weight: 500;
     color: #333;
@@ -98,21 +100,21 @@
     width: 100%;
 }
 
-.category-title.compact {
+.categoryTitle.compact {
     font-size: 0.9rem;
 }
 
-.links-list {
+.linksList {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.links-list.compact {
+.linksList.compact {
     gap: 6px;
 }
 
-.link-item {
+.linkItem {
     display: block;
     color: #555;
     text-decoration: none;
@@ -125,28 +127,31 @@
     overflow: hidden;
 }
 
-.link-item::before {
+.linkItem::before {
     display: none;
 }
 
-.link-item:hover {
+.linkItem:hover {
     color: var(--color-accent);
     padding-left: 10px;
 }
 
 /* --- NUEVA MEDIA QUERY PARA TABLET Y ESCRITORIO --- */
 @media (min-width: 768px) {
-    .link-building-grid {
+    .linkBuildingGrid {
         /* A partir de 768px, activamos la cuadrícula multi-columna */
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px; /* Restablecemos el gap para la cuadrícula */
+        gap: 20px;
+        /* Restablecemos el gap para la cuadrícula */
     }
 
-    .link-building-header {
-        text-align: center; /* Centramos el título en pantallas grandes */
+    .linkBuildingHeader {
+        text-align: center;
+        /* Centramos el título en pantallas grandes */
     }
 
-    .link-building-subtitle {
-        margin: 0 auto; /* Centramos el subtítulo */
+    .linkBuildingSubtitle {
+        margin: 0 auto;
+        /* Centramos el subtítulo */
     }
 }

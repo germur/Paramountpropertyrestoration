@@ -152,7 +152,7 @@ const MoldCalculator = () => {
         return {
           probability: 'High Probability',
           message: 'Your insurance likely covers this type of sudden, accidental damage. Document everything and contact your insurer immediately.',
-          color: '#10b981'
+          color: 'var(--color-success)'
         };
       case 'medium-high':
         return {

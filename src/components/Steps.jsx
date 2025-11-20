@@ -1,4 +1,4 @@
-import '/src/styles/components/Steps.css'
+import styles from './Steps.module.css'
 
 const Steps = () => {
     const steps = [
@@ -26,16 +26,16 @@ const Steps = () => {
 
     return (
         <div>
-            <h2 className='step-tiitlePrinci'>Your Florida Remodeling Project – Simplified in 4 Steps</h2>
-            <div className="steps-container">
+            <h2 className={styles.stepTiitlePrinci}>Your Florida Remodeling Project – Simplified in 4 Steps</h2>
+            <div className={styles.stepsContainer}>
                 {steps.map((step, index) => (
-                    <div key={index} className="step">
-                        <div className="step-number">
+                    <div key={index} className={styles.step}>
+                        <div className={styles.stepNumber}>
                             {String(step.number).padStart(2, '0')}
                         </div>
-                        <div className="step-content">
-                            <h3 className='step-tittle'>{step.title}</h3>
-                            <p className='step-text'>{step.description}</p>
+                        <div className={styles.stepContent}>
+                            <h3 className={styles.stepTittle}>{step.title}</h3>
+                            <p className={styles.stepText}>{step.description}</p>
                         </div>
                     </div>
                 ))}

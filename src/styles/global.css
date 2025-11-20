@@ -1,4 +1,6 @@
 /* Prevent horizontal overflow on all pages */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 html,
 body {
   overflow-x: hidden;
@@ -26,7 +28,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #10B981, #059669);
+  background: linear-gradient(135deg, var(--color-success), #059669);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -100,7 +102,7 @@ main {
 }
 
 .feature-item i {
-  color: #35c3e9;
+  color: var(--color-accent);
   font-size: 1.2rem;
 }
 
@@ -122,27 +124,33 @@ main {
 .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.125rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  cursor: pointer;
+  line-height: 1.2;
 }
 
 .cta-button.primary {
-  background: #35c3e9;
+  background: var(--color-accent);
   color: white;
-  border-color: #35c3e9;
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
 }
 
 .cta-button.primary:hover {
-  background: #2a9fd1;
+  background: var(--color-accent-hover);
   color: white;
-  border-color: #2a9fd1;
+  border-color: var(--color-accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 118, 255, 0.23);
+  text-decoration: none;
 }
 
 .cta-button.secondary {
@@ -153,7 +161,7 @@ main {
 
 .cta-button.secondary:hover {
   background: white;
-  color: #1E293B;
+  color: var(--color-primary);
   border-color: white;
 }
 
@@ -249,7 +257,7 @@ main {
   padding: 1.5rem;
   background: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #35c3e9;
+  border-left: 4px solid var(--color-accent);
 }
 
 .diagnostic-section h3 {
@@ -292,7 +300,7 @@ main {
 .step-number {
   width: 32px;
   height: 32px;
-  background: #35c3e9;
+  background: var(--color-accent);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -388,8 +396,8 @@ main {
 .btn-outline {
   display: inline-block;
   background: transparent;
-  color: #35c3e9;
-  border: 2px solid #35c3e9;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 50px;
@@ -400,7 +408,7 @@ main {
 }
 
 .btn-outline:hover {
-  background: #35c3e9;
+  background: var(--color-accent);
   color: white;
   text-decoration: none;
   transform: translateY(-2px);
@@ -788,7 +796,7 @@ main {
 
 :root {
   /* ===== COLORES MARCA PRINCIPAL ===== */
-  --color-primary: #1E293B;
+  --color-primary: var(--color-primary);
   /* Navy principal - Headers, navegación */
   --color-primary-dark: #0F172A;
   /* Navy oscuro - hover states */
@@ -800,7 +808,7 @@ main {
   /* Azul hover */
 
   /* ===== NEUTROS SISTEMA ===== */
-  --color-navy: #1E293B;
+  --color-navy: var(--color-primary);
   /* Alias para primary */
   --color-gray: #64748B;
   /* Alias para secondary */
@@ -815,7 +823,7 @@ main {
   /* Bordes sutiles */
 
   /* ===== TEXTO JERARQUÍA ===== */
-  --text-primary: #1E293B;
+  --text-primary: var(--color-primary);
   /* Headings principales */
   --text-secondary: #64748B;
   /* Párrafos, descripciones */
@@ -831,7 +839,7 @@ main {
   /* Fondo principal */
   --bg-secondary: #F8FAFC;
   /* Secciones alternantes */
-  --bg-dark: #1E293B;
+  --bg-dark: var(--color-primary);
   /* Secciones oscuras */
   --bg-accent: #35c3e9;
   /* Alertas azules */
@@ -1017,7 +1025,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/heroContact.jpg');
+  background-image: url('/images/heroContact.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1042,28 +1050,28 @@ body {
 
 /* Hero específico para cada página */
 body[data-page="bathroom"] .hero-section {
-  background-image: url('/images/bathroom-hero.jpg');
+  background-image: url('/images/bathroom-hero.webp');
 }
 
 body[data-page="bedroom"] .hero-section {
-  background-image: url('/images/bedroom-hero.jpg');
+  background-image: url('/images/bedroom-hero.webp');
 }
 
 body[data-page="kitchen"] .hero-section {
-  background-image: url('/images/kitchen-hero.jpg');
+  background-image: url('/images/kitchen-hero.webp');
 }
 
 body[data-page="home-additions"] .hero-section {
-  background-image: url('/images/home-additions-hero.jpg');
+  background-image: url('/images/home-additions-hero.webp');
 }
 
 body[data-page="living-dining"] .hero-section {
-  background-image: url('/images/living-dining-hero.jpg');
+  background-image: url('/images/living-dining-hero.webp');
 }
 
 /* Fallback para otras páginas */
 .service-hero {
-  background-image: url('/images/heroContact.jpg');
+  background-image: url('/images/heroContact.webp');
 }
 
 /* Hero overlay universal */
@@ -1153,7 +1161,7 @@ body[data-page="living-dining"] .hero-section {
   padding: 2rem;
   text-align: center;
   color: white;
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0F172A 100%) !important;
   background-image: none !important;
 }
 
@@ -1279,7 +1287,7 @@ body[data-page="living-dining"] .hero-section {
 .cta-action:hover,
 .hero-cta-button:hover,
 .card-link:hover {
-  background: #2a9fd1;
+  background: var(--color-accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(53, 195, 233, 0.3);
   color: white !important;

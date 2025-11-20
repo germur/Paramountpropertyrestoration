@@ -1,18 +1,18 @@
-.regional-coverage {
+.regionalCoverage {
   background-color: white;
   padding: 80px 20px 20px 20px;
   position: relative;
   overflow: hidden;
 }
 
-.regional-coverage-container {
+.regionalCoverageContainer {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-.regional-coverage-title {
+.regionalCoverageTitle {
   font-size: 2.8rem;
   font-weight: 700;
   text-align: center;
@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.regional-coverage-title::after {
+.regionalCoverageTitle::after {
   content: "";
   display: block;
   width: 80px;
@@ -31,7 +31,7 @@
   border-radius: 2px;
 }
 
-.regional-coverage-subtitle {
+.regionalCoverageSubtitle {
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 50px;
@@ -39,14 +39,14 @@
   font-weight: 500;
 }
 
-.regions-grid {
+.regionsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   margin-bottom: 60px;
 }
 
-.region-item {
+.regionItem {
   background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
   padding: 30px 25px;
   border-radius: 16px;
@@ -55,12 +55,12 @@
   border: 1px solid rgba(44, 90, 160, 0.1);
 }
 
-.region-item:hover {
+.regionItem:hover {
   transform: translateY(-8px) scale(1.02);
   border-color: rgba(44, 90, 160, 0.2);
 }
 
-.region-name {
+.regionName {
   font-size: 1.5rem;
   font-weight: 700;
   color: #2c5aa0;
@@ -70,13 +70,13 @@
   align-items: center;
 }
 
-.region-name::before {
+.regionName::before {
   content: "🌎";
   margin-right: 10px;
   font-size: 1.2rem;
 }
 
-.region-cities {
+.regionCities {
   font-size: 1.1rem;
   color: #555;
   line-height: 1.7;
@@ -84,19 +84,19 @@
   font-weight: 500;
 }
 
-.city-link {
+.cityLink {
   color: #666;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.city-link:hover {
+.cityLink:hover {
   color: #4a90e2;
   text-decoration: underline;
 }
 
-.internal-links-section {
+.internalLinksSection {
   background: linear-gradient(135deg, #2c5aa0 0%, #4a90e2 100%);
   padding: 40px;
   border-radius: 20px;
@@ -105,7 +105,7 @@
   overflow: hidden;
 }
 
-.internal-links-title {
+.internalLinksTitle {
   font-size: 1.8rem;
   font-weight: 700;
   color: white;
@@ -114,13 +114,13 @@
   align-items: center;
 }
 
-.internal-links-title::before {
+.internalLinksTitle::before {
   content: "🌐";
   margin-right: 12px;
   font-size: 1.5rem;
 }
 
-.internal-links-list {
+.internalLinksList {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -129,11 +129,11 @@
   gap: 15px;
 }
 
-.internal-links-list li {
+.internalLinksList li {
   margin: 0;
 }
 
-.internal-link {
+.internalLink {
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -148,64 +148,64 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.internal-link:hover {
+.internalLink:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateX(5px);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-.internal-link::before {
+.internalLink::before {
   content: "📍";
   margin-right: 12px;
   font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .regional-coverage {
+  .regionalCoverage {
     padding: 60px 15px;
   }
 
-  .regional-coverage-title {
+  .regionalCoverageTitle {
     font-size: 2.2rem;
   }
 
-  .regional-coverage-subtitle {
+  .regionalCoverageSubtitle {
     font-size: 1.1rem;
     margin-bottom: 35px;
   }
 
-  .regions-grid {
+  .regionsGrid {
     grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 40px;
   }
 
-  .region-item {
+  .regionItem {
     padding: 25px 20px;
   }
 
-  .region-name {
+  .regionName {
     font-size: 1.3rem;
   }
 
-  .region-cities {
+  .regionCities {
     font-size: 1rem;
   }
 
-  .internal-links-section {
+  .internalLinksSection {
     padding: 30px 20px;
   }
 
-  .internal-links-title {
+  .internalLinksTitle {
     font-size: 1.5rem;
   }
 
-  .internal-links-list {
+  .internalLinksList {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .internal-link {
+  .internalLink {
     font-size: 1rem;
     padding: 10px 15px;
   }

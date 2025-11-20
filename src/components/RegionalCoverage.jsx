@@ -1,4 +1,4 @@
-import "../styles/components/RegionalCoverage.css";
+import styles from "./RegionalCoverage.module.css";
 
 const defaultRegions = [
   {
@@ -35,23 +35,23 @@ export default function RegionalCoverage({
   subcategory = "emergency",
 }) {
   return (
-    <section className="regional-coverage">
-      <div className="regional-coverage-container">
-        <h2 className="regional-coverage-title">{title}</h2>
-        <p className="regional-coverage-subtitle">
+    <section className={styles.regionalCoverage}>
+      <div className={styles.regionalCoverageContainer}>
+        <h2 className={styles.regionalCoverageTitle}>{title}</h2>
+        <p className={styles.regionalCoverageSubtitle}>
           Serving all of Florida, including:
         </p>
 
-        <div className="regions-grid">
+        <div className={styles.regionsGrid}>
           {regions.map((region, index) => (
-            <div className="region-item" key={index}>
-              <h3 className="region-name">{region.name}:</h3>
-              <p className="region-cities">
+            <div className={styles.regionItem} key={index}>
+              <h3 className={styles.regionName}>{region.name}:</h3>
+              <p className={styles.regionCities}>
                 {region.cities.map((city, cityIndex) => (
                   <span key={cityIndex}>
-                    <a 
+                    <a
                       href={`/restoration/${service}/${subcategory}/${cityToSlug(city)}`}
-                      className="city-link"
+                      className={styles.cityLink}
                     >
                       {city}
                     </a>
@@ -64,11 +64,11 @@ export default function RegionalCoverage({
         </div>
 
         {internalLinks && internalLinks.length > 0 && (
-          <div className="internal-links-section">
-            <ul className="internal-links-list">
+          <div className={styles.internalLinksSection}>
+            <ul className={styles.internalLinksList}>
               {internalLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.url} className="internal-link">
+                  <a href={link.url} className={styles.internalLink}>
                     {link.text}
                   </a>
                 </li>

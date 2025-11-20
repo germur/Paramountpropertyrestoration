@@ -205,7 +205,7 @@
 .feature-icon {
     width: 24px;
     height: 24px;
-    background: linear-gradient(135deg, #35c3e9, #1e90ff);
+    background: linear-gradient(135deg, var(--color-accent), #1e90ff);
     color: white;
     border-radius: 50%;
     display: flex;

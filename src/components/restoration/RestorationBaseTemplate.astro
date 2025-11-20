@@ -1,0 +1,374 @@
+---
+// src/components/restoration/RestorationBaseTemplate.astro
+// Reusable base template for all restoration services
+// Consolidates common sections to eliminate duplication
+
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import FAQ from "../AcordeonServices";
+import RestorationCTA from "../RestorationCTA";
+import ServiceAreas from "../ServiceAreas.astro";
+import { cities } from "../../data/restoration.js";
+import { getAltText } from "../../data/image-alt-texts.js";
+
+export interface Props {
+    content: {
+        hero: {
+            title: string;
+            description: string;
+            cta: string;
+            bgImage: string;
+        };
+        services: Array<{
+            icon: string;
+            title: string;
+            description: string;
+            image: string;
+            link: string;
+            slug?: string;
+        }>;
+        faqs: Array<{
+            q: string;
+            a: string;
+        }>;
+        steps: Array<{
+            title: string;
+            text: string;
+            icon: string;
+        }>;
+    };
+    type: "water" | "fire" | "mold" | "storm" | "mitigation" | "general";
+    group: any;
+    sub: any;
+}
+
+const { content, type, group, sub } = Astro.props;
+
+// Dynamic city grid for Level 4 distribution
+const getCitiesByRegion = () => {
+    const regions = {};
+    cities.forEach((city) => {
+        if (!regions[city.region]) {
+            regions[city.region] = [];
+        }
+        regions[city.region].push(city);
+    });
+    return regions;
+};
+
+const cityRegions = getCitiesByRegion();
+const faqCategory = `${type}-${sub?.slug || group.slug}`;
+
+// Get service name for display
+const serviceName = sub?.title || group.name;
+---
+
+<!-- Hero Section -->
+<section
+    class="hero-section"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}
+    role="img"
+    aria-label={getAltText(content.hero.bgImage)}
+>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>{content.hero.title}</h1>
+        <p>{content.hero.description}</p>
+        <a href="/contact" class="cta-button">{content.hero.cta} →</a>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section>
+    <div class="services-grid">
+        {
+            content.services.map((service) => (
+                <a href={service.link} class="service-item-clickable">
+                    <i class={service.icon} />
+                    <h3>{service.title}</h3>
+                </a>
+            ))
+        }
+    </div>
+</section>
+
+<!-- Solutions Cards -->
+<section class="solutions-section">
+    <div class="container">
+        <h2 class="solutions-title">Comprehensive {serviceName} Solutions</h2>
+        <div class="solutions-grid">
+            {
+                content.services.map((service, index) => (
+                    <div class="solution-card">
+                        <div class="card-image">
+                            <img
+                                src={service.image}
+                                alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - 24/7 emergency response`}
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="card-content">
+                            <h3>{service.title}</h3>
+                            <div class="service-description">
+                                <p>{service.description}</p>
+                                <div class="service-features">
+                                    <span class="feature-tag">
+                                        🚨 24/7 Response
+                                    </span>
+                                    <span class="feature-tag">
+                                        💧 Advanced Equipment
+                                    </span>
+                                    <span class="feature-tag">
+                                        🛡️ Mold Prevention
+                                    </span>
+                                </div>
+                            </div>
+                            <a href={service.link || "/contact"} class="btn">
+                                Get Emergency Help →
+                            </a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Process Steps -->
+<section class="steps-section">
+    <h2 class="steps-title">How It Works</h2>
+    <div class="steps-container">
+        {
+            content.steps.map((step, index) => (
+                <div class="step-item" data-step={index + 1}>
+                    <div class="step-icon">
+                        <i class={step.icon} />
+                    </div>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<!-- Content Deep Section: Understanding the Service -->
+<section class="section content-deep">
+    <div class="container">
+        <h2>Understanding {serviceName}</h2>
+        <div class="content-grid">
+            <div class="content-main">
+                <div class="content-block">
+                    <h3>Warning Signs of {serviceName}</h3>
+                    <p>
+                        Recognizing {serviceName.toLowerCase()} early is crucial
+                        for preventing extensive property damage. Look for water
+                        stains on ceilings or walls, musty odors that indicate hidden
+                        moisture, warped flooring or baseboards, and unexplained
+                        increases in your water bill. In Florida's humid climate,
+                        even small leaks can quickly escalate into major restoration
+                        projects.
+                    </p>
+                    <ul class="warning-signs">
+                        <li>
+                            <i class="fas fa-eye"></i> Visible water stains or discoloration
+                        </li>
+                        <li>
+                            <i class="fas fa-nose"></i> Musty or moldy odors
+                        </li>
+                        <li>
+                            <i class="fas fa-home"></i> Warped floors, walls, or
+                            ceilings
+                        </li>
+                        <li>
+                            <i class="fas fa-dollar-sign"></i> Unexplained water
+                            bill increases
+                        </li>
+                        <li>
+                            <i class="fas fa-thermometer-half"></i> Increased humidity
+                            levels indoors
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content-block">
+                    <h3>Our Detailed {serviceName} Restoration Process</h3>
+                    <p>
+                        Our certified technicians follow IICRC standards for {
+                            serviceName.toLowerCase()
+                        } restoration. We begin with moisture mapping using thermal
+                        imaging to identify all affected areas, including hidden
+                        damage. Our industrial-grade equipment removes standing water
+                        and moisture from building materials, preventing secondary
+                        damage like mold growth.
+                    </p>
+                    <div class="process-detailed">
+                        {
+                            content.steps.map((step, index) => (
+                                <div class="process-step-detailed">
+                                    <div class="step-number">{index + 1}</div>
+                                    <div class="step-content">
+                                        <h4>{step.title}</h4>
+                                        <p>{step.text}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-sidebar">
+                <div class="trust-indicators">
+                    <h3>Why Choose Paramount Property Restoration?</h3>
+                    <ul class="trust-list">
+                        <li>
+                            <i class="fas fa-certificate"></i> IICRC Certified Technicians
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt"></i> Licensed & Insured
+                            in Florida
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i> 24/7 Emergency Response
+                        </li>
+                        <li>
+                            <i class="fas fa-handshake"></i> Direct Insurance Billing
+                        </li>
+                        <li>
+                            <i class="fas fa-star"></i> 4.9★ Customer Rating
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insurance Assistance Section -->
+<section class="section bg-secondary insurance-help">
+    <div class="container">
+        <h2>Insurance Claims Assistance for {serviceName}</h2>
+        <div class="insurance-grid">
+            <div class="insurance-content">
+                <p>
+                    Dealing with insurance claims for {
+                        serviceName.toLowerCase()
+                    } can be overwhelming. Our team acts as your advocate throughout
+                    the entire claims process, ensuring you receive maximum coverage
+                    for your restoration needs. We document everything thoroughly,
+                    communicate directly with adjusters, and handle all paperwork
+                    to streamline your claim.
+                </p>
+
+                <div class="insurance-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-camera"></i>
+                        <h4>Professional Documentation</h4>
+                        <p>
+                            Detailed photos, moisture readings, and damage
+                            reports for your claim
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Adjuster Coordination</h4>
+                        <p>
+                            We meet with insurance adjusters and provide expert
+                            testimony
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>Maximize Coverage</h4>
+                        <p>
+                            Our experience helps ensure you receive the full
+                            compensation you deserve
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Unified City Grid Section -->
+<section class="section city-grid-section">
+    <div class="container">
+        <h2>Find Our Local {serviceName} Experts Near You</h2>
+        <p class="section-subtitle">
+            Professional {serviceName.toLowerCase()} services available across Florida.
+            Click your city for immediate local assistance.
+        </p>
+
+        <div class="unified-city-container">
+            {
+                Object.entries(cityRegions).map(([regionName, cities]) => (
+                    <div class="unified-region-card">
+                        <h3 class="unified-region-title">{regionName}</h3>
+                        <div class="unified-city-pills">
+                            {(cities as any[]).slice(0, 4).map((city) => (
+                                <a
+                                    href={
+                                        sub
+                                            ? `/restoration/${group.slug}/${sub.slug}/${city.slug}`
+                                            : `/restoration/${group.slug}/flood-damage/${city.slug}`
+                                    }
+                                    class="unified-city-pill"
+                                >
+                                    {city.nombre}
+                                </a>
+                            ))}
+                            {(cities as any[]).length > 4 && (
+                                <span class="unified-more-indicator">
+                                    +{(cities as any[]).length - 4} more
+                                </span>
+                            )}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="emergency-notice">
+            <h3>Emergency {serviceName} Response</h3>
+            <p>
+                Don't wait for damage to worsen. Our certified technicians are
+                standing by 24/7 to help protect your property.
+            </p>
+            <a href="tel:+17866022217" class="emergency-phone"
+                >Call (786) 602-2217 Now</a
+            >
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section>
+    <FAQ
+        client:load
+        category={faqCategory}
+        customQuestions={content.faqs.map((faq, index) => ({
+            id: `${faqCategory}-${index}`,
+            question: faq.q,
+            answer: faq.a,
+        }))}
+        title="Frequently Asked Questions"
+    />
+</section>
+
+<!-- Service Areas - Critical for SEO Internal Linking -->
+<ServiceAreas
+    serviceSlug={`${type}-damage`}
+    serviceName={`${serviceName} Restoration`}
+    subserviceSlug={sub?.slug}
+    vertical="restoration"
+/>
+
+<!-- Final CTA -->
+<RestorationCTA
+    client:load
+    title={`Don't let ${type} damage linger.`}
+    subtitle="Schedule your free assessment now—restoration starts immediately."
+    buttonText={`Free ${serviceName} Assessment`}
+    buttonLink="/contact"
+/>

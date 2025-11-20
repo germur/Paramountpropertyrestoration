@@ -12,7 +12,7 @@ const pageDescription =
   <SEOHead
     title={pageTitle}
     description={pageDescription}
-    image="/images/blog/florida-mold-challenge-sb2a-guide.png"
+    image="/images/blog/florida-mold-challenge-sb2a-guide.webp"
     siteUrl="https://paramountpropertyrestoration.com"
     vertical="blog"
     service="blog"
@@ -385,7 +385,7 @@ const pageDescription =
 
   .guide-subtitle {
     font-size: 1.5rem;
-    color: #35c3e9;
+    color: var(--color-accent);
   }
 
   @media (max-width: 768px) {
@@ -439,14 +439,14 @@ const pageDescription =
   .stat-number {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #35c3e9;
+    color: var(--color-accent);
     margin-bottom: 0.75rem;
   }
 
   .stat-label {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #1e293b;
+    color: var(--color-primary);
     margin-bottom: 0.75rem;
   }
 
@@ -482,7 +482,7 @@ const pageDescription =
   }
 
   .comparison-card.after {
-    border-left-color: #10b981;
+    border-left-color: var(--color-success);
   }
 
   .comparison-title {
@@ -512,7 +512,7 @@ const pageDescription =
 
   .takeaway {
     font-size: 1.125rem;
-    color: #1e293b;
+    color: var(--color-primary);
     text-align: center;
     margin-top: 2rem;
     padding: 1.5rem;
@@ -601,7 +601,7 @@ const pageDescription =
     flex-shrink: 0;
     width: 40px;
     height: 40px;
-    background: #35c3e9;
+    background: var(--color-accent);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -614,7 +614,7 @@ const pageDescription =
   .step-content h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: #1e293b;
+    color: var(--color-primary);
     margin-bottom: 0.5rem;
   }
 
@@ -626,7 +626,7 @@ const pageDescription =
 
   .step-arrow {
     text-align: center;
-    color: #35c3e9;
+    color: var(--color-accent);
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -651,7 +651,7 @@ const pageDescription =
 
   /* CTA Section */
   .cta-section {
-    background: linear-gradient(135deg, #35c3e9 0%, #2a9fd1 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #2a9fd1 100%);
     color: white;
     padding: 3rem;
     border-radius: 12px;
@@ -741,7 +741,7 @@ const pageDescription =
   }
 
   .resource-category a {
-    color: #35c3e9;
+    color: var(--color-accent);
     text-decoration: none;
     transition: color 0.3s ease;
   }
@@ -752,7 +752,7 @@ const pageDescription =
 
   /* Links */
   .inline-link {
-    color: #35c3e9;
+    color: var(--color-accent);
     text-decoration: none;
     border-bottom: 1px solid rgba(53, 195, 233, 0.3);
     transition: all 0.3s ease;
@@ -781,7 +781,7 @@ const pageDescription =
 <script is:inline>
   (function () {
     const brandColors = ["#35c3e9", "#2a9fd1", "#1e8ab0", "#90E0EF", "#CAF0F8"];
-    const chartLabelColor = "#1e293b";
+    const chartLabelColor = "var(--color-primary)";
     const chartGridColor = "#e2e8f0";
 
     // Mold Types Doughnut Chart

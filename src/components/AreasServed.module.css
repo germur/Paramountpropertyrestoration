@@ -1,16 +1,16 @@
-.areas-served {
+.areasServed {
     padding: 40px 10px;
     text-align: center;
 }
 
-.areas-served h3 {
+.areasServed h3 {
     font-size: 35px;
     font-weight: 600;
     line-height: 1.2;
     padding: 40px 10px 30px;
 }
 
-.areas-grid {
+.areasGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 1400px;
@@ -21,7 +21,7 @@
     justify-content: center;
 }
 
-.area-card {
+.areaCard {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -30,11 +30,11 @@
     max-width: 350px;
 }
 
-.area-card:hover {
+.areaCard:hover {
     transform: scale(1.05);
 }
 
-.area-icon {
+.areaIcon {
     font-size: 80px;
     margin: 20px 0;
     display: flex;
@@ -43,14 +43,14 @@
     height: 120px;
 }
 
-.area-card p {
+.areaCard p {
     margin: 20px 0 20px;
     font-weight: 500;
     color: #333;
     font-size: 18px;
 }
 
-.area-card p strong {
+.areaCard p strong {
     font-weight: 700;
     color: #1a1a1a;
 }

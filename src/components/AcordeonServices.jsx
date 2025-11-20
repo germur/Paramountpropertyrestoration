@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/components/AcordeonServices.css';
+import styles from './AcordeonServices.module.css';
 import { faqData } from '../data/faq.js';
 
 // Banco de preguntas categorizadas EXPANDIDO - RECUPERADO
@@ -8,23 +8,23 @@ import { faqData } from '../data/faq.js';
 // Componente de Accordion Item con UI mejorada
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
     return (
-        <div className={`accordionItem ${isOpen ? 'accordionItem--open' : ''}`}>
+        <div className={`${styles.accordionItem} ${isOpen ? styles.accordionItemOpen : ''}`}>
             <button
-                className="accordionButton"
+                className={styles.accordionButton}
                 onClick={onClick}
                 aria-expanded={isOpen}
                 type="button"
             >
-                <h3 className="accordionQuestion">{question}</h3>
-                <span className={`accordionIcon ${isOpen ? 'iconOpen' : ''}`}>
+                <h3 className={styles.accordionQuestion}>{question}</h3>
+                <span className={`${styles.accordionIcon} ${isOpen ? styles.iconOpen : ''}`}>
                     <i className={`fas fa-chevron-${isOpen ? 'up' : 'down'}`}></i>
                 </span>
             </button>
-            <div className={`accordionContent ${isOpen ? 'contentOpen' : ''}`}>
-                <div className="accordionAnswer">
+            <div className={`${styles.accordionContent} ${isOpen ? styles.contentOpen : ''}`}>
+                <div className={styles.accordionAnswer}>
                     {/* Render multiline answers properly */}
                     {answer.split('\n').map((line, index) => (
-                        <p key={index} className="answerParagraph">
+                        <p key={index} className={styles.answerParagraph}>
                             {line}
                         </p>
                     ))}
@@ -123,26 +123,26 @@ const FAQ = ({
     };
 
     return (
-        <div className={`faqContainer ${className}`}>
+        <div className={`${styles.faqContainer} ${className}`}>
             {showTitle && (
-                <div className="faqHeader">
-                    <h2 className="faqTitle">{title}</h2>
+                <div className={styles.faqHeader}>
+                    <h2 className={styles.faqTitle}>{title}</h2>
                     {searchable && (
-                        <div className="faqSearch">
-                            <i className="fas fa-search faqSearchIcon"></i>
+                        <div className={styles.faqSearch}>
+                            <i className={`fas fa-search ${styles.faqSearchIcon}`}></i>
                             <input
                                 type="text"
                                 placeholder="Search questions..."
                                 value={searchTerm}
                                 onChange={handleSearch}
-                                className="faqSearchInput"
+                                className={styles.faqSearchInput}
                             />
                         </div>
                     )}
                 </div>
             )}
 
-            <div className="accordionWrapper">
+            <div className={styles.accordionWrapper}>
                 {displayQuestions.length > 0 ? (
                     displayQuestions.map((item) => (
                         <AccordionItem
@@ -155,7 +155,7 @@ const FAQ = ({
                     ))
                 ) : (
                     searchable && searchTerm && (
-                        <div className="noResults">
+                        <div className={styles.noResults}>
                             <p>No questions found matching "{searchTerm}"</p>
                         </div>
                     )

@@ -1,4 +1,4 @@
-.steps-container {
+.stepsContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -14,7 +14,7 @@
     position: relative;
 }
 
-.step-number {
+.stepNumber {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,7 @@
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.4), 0 -2px 0 0 rgba(10, 0, 18, 0.1);
 }
 
-.step:not(:last-child) .step-number::after {
+.step:not(:last-child) .stepNumber::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -41,7 +41,7 @@
     background-color: rgba(16, 24, 40, 0.05);
 }
 
-.step-content .step-tittle {
+.stepContent .stepTittle {
     font-size: 20px;
     font-weight: 400;
     color: #333;
@@ -49,7 +49,7 @@
     margin-bottom: 0.5rem;
 }
 
-.step-content p {
+.stepContent p {
     color: #666;
     line-height: 1.5;
     margin: 0;
@@ -57,77 +57,78 @@
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
-    .steps-container {
+    .stepsContainer {
         padding: 15px;
         gap: 15px;
         max-width: 100%;
     }
-    
+
     .step {
         gap: 15px;
     }
-    
-    .step-number {
+
+    .stepNumber {
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
-    
-    .step-content .step-tittle {
+
+    .stepContent .stepTittle {
         font-size: 18px;
         line-height: 1.3;
     }
-    
-    .step-content p {
+
+    .stepContent p {
         font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
-    .steps-container {
+    .stepsContainer {
         padding: 10px;
         gap: 12px;
     }
-    
+
     .step {
         gap: 12px;
         flex-direction: row;
         align-items: flex-start;
     }
-    
-    .step-number {
+
+    .stepNumber {
         width: 45px;
         height: 45px;
         font-size: 18px;
         border-radius: 50%;
     }
-    
-    .step:not(:last-child) .step-number::after {
+
+    .step:not(:last-child) .stepNumber::after {
         height: calc(100% + 12px);
     }
-    
-    .step-content {
+
+    .stepContent {
         flex: 1;
     }
-    
-    .step-content .step-tittle {
+
+    .stepContent .stepTittle {
         font-size: 16px;
         margin-bottom: 0.4rem;
     }
-    
-    .step-content p {
+
+    .stepContent p {
         font-size: 0.9rem;
         line-height: 1.4;
     }
 }
 
-.step-content .step-text {
+.stepContent .stepText {
     margin: 8px 0 0;
     font-size: 16px;
     color: #6F6F6F;
     line-height: 1.2;
 }
-.step-tiitlePrinci{
+
+.stepTiitlePrinci {
     text-align: center;
     font-size: 30px;
     font-weight: 500;

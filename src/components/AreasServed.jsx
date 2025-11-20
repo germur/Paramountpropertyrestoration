@@ -1,4 +1,4 @@
-import '../styles/components/AreasServed.css'
+import styles from './AreasServed.module.css'
 
 const areas = [
     { city: "Miami", state: "FL", icon: "🌴" },
@@ -9,12 +9,12 @@ const areas = [
 
 export default function AreasServed() {
     return (
-        <section className="areas-served">
+        <section className={styles.areasServed}>
             <h3>Areas Served</h3>
-            <div className="areas-grid">
+            <div className={styles.areasGrid}>
                 {areas.map((area, index) => (
-                    <div className="area-card" key={index}>
-                        <div className="area-icon">{area.icon}</div>
+                    <div className={styles.areaCard} key={index}>
+                        <div className={styles.areaIcon}>{area.icon}</div>
                         <p><strong>{area.city}</strong>, {area.state}</p>
                     </div>
                 ))}
