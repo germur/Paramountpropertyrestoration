@@ -53,6 +53,8 @@
   min-height: 90px;
   gap: 1rem;
   padding: 0.5rem 0;
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
 }
 
 /* Logo Styles */
@@ -60,12 +62,16 @@
   flex-shrink: 0;
   /* Prevent logo from shrinking */
   max-width: 280px;
-  /* Constrain width to prevent overflow */
+  /* Constrain width */
+  display: flex;
+  align-items: center;
 }
 
 .logo a {
   display: block;
   transition: transform var(--transition-smooth);
+  line-height: 0;
+  /* Remove extra space from anchor */
 }
 
 .logo a:hover {
@@ -78,16 +84,14 @@
   object-fit: contain;
   max-width: 100%;
   display: block;
-  /* Ensure no inline spacing issues */
 }
 
 /* Desktop Logo */
 .desktop-logo {
   display: block;
   height: auto;
-  /* Allow auto height */
-  max-height: 100px;
-  /* Cap height to reasonable size */
+  max-height: 85px;
+  /* Reduced slightly to be safe */
   width: auto;
 }
 
@@ -103,12 +107,13 @@
   }
 
   .header-content {
-    min-height: 85px;
+    min-height: 70px;
+    /* Reduced mobile height */
   }
 
   .logo {
-    max-width: 80px;
-    /* Tighter constraint for mobile isologo */
+    max-width: 60px;
+    /* Strict mobile width */
   }
 
   /* Show Mobile Logo (Isologo) and Hide Desktop Logo */
@@ -118,7 +123,8 @@
 
   .mobile-logo {
     display: block;
-    height: 60px;
+    height: 50px;
+    /* Fixed height for mobile logo */
     width: auto;
   }
 }
@@ -135,21 +141,21 @@
   }
 
   .header-content {
-    min-height: 80px;
+    min-height: 65px;
   }
 
   .mobile-logo {
-    height: 55px;
+    height: 45px;
   }
 }
 
 @media (max-width: 480px) {
   .header-content {
-    min-height: 75px;
+    min-height: 60px;
   }
 
   .mobile-logo {
-    height: 50px;
+    height: 40px;
   }
 }
 
