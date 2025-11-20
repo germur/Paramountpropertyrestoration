@@ -56,6 +56,13 @@
 }
 
 /* Logo Styles */
+.logo {
+  flex-shrink: 0;
+  /* Prevent logo from shrinking */
+  max-width: 280px;
+  /* Constrain width to prevent overflow */
+}
+
 .logo a {
   display: block;
   transition: transform var(--transition-smooth);
@@ -70,13 +77,18 @@
   width: auto;
   object-fit: contain;
   max-width: 100%;
+  display: block;
+  /* Ensure no inline spacing issues */
 }
 
 /* Desktop Logo */
 .desktop-logo {
   display: block;
-  height: 120px;
-  /* Increased size for desktop */
+  height: auto;
+  /* Allow auto height */
+  max-height: 100px;
+  /* Cap height to reasonable size */
+  width: auto;
 }
 
 /* Mobile Logo */
@@ -94,6 +106,11 @@
     min-height: 85px;
   }
 
+  .logo {
+    max-width: 80px;
+    /* Tighter constraint for mobile isologo */
+  }
+
   /* Show Mobile Logo (Isologo) and Hide Desktop Logo */
   .desktop-logo {
     display: none;
@@ -102,7 +119,7 @@
   .mobile-logo {
     display: block;
     height: 60px;
-    /* Adjust size for mobile */
+    width: auto;
   }
 }
 
