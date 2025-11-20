@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SEOHead from "../../components/SEOHead.jsx";
+import {
+    HealthRiskChart,
+    SellerImpactChart,
+    MoldTypesChart,
+} from "../../components/blog/RealEstateCharts.jsx";
 
 const pageTitle = "Real Estate Risk: Mold Testing in Florida";
 const pageDescription =
@@ -114,11 +119,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
                     <h3 class="text-xl font-semibold text-center mb-4">
                         Distribution of Reported Symptoms
                     </h3>
-                    <div
-                        class="chart-container h-80 md:h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
-                    >
-                        <canvas id="healthRiskChart"></canvas>
-                    </div>
+                    <HealthRiskChart client:visible />
                     <p class="text-center text-sm text-gray-600 mt-4">
                         This chart illustrates how respiratory issues and
                         allergies dominate reported health problems linked to
@@ -271,11 +272,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
                         leading reason why real estate deals fail or get
                         delayed.
                     </p>
-                    <div
-                        class="chart-container h-80 md:h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
-                    >
-                        <canvas id="sellerImpactChart"></canvas>
-                    </div>
+                    <SellerImpactChart client:visible />
                 </div>
             </section>
 
@@ -292,11 +289,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
                     like *Stachybotrys* (black mold), are toxigenic and pose
                     serious health risks.
                 </p>
-                <div
-                    class="chart-container h-96 w-full relative max-w-[600px] mx-auto h-[300px] md:h-[350px]"
-                >
-                    <canvas id="moldTypesChart"></canvas>
-                </div>
+                <MoldTypesChart client:visible />
             </section>
 
             <section
@@ -357,180 +350,3 @@ const formattedDate = date.toLocaleDateString("en-US", {
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 </style>
-
-<script>
-    import Chart from "chart.js/auto";
-
-    document.addEventListener("DOMContentLoaded", () => {
-        // Mandatory Tooltip Callback for Multiline Labels
-        const createTooltipCallback = () => {
-            return {
-                title: function (tooltipItems: any) {
-                    const item = tooltipItems[0];
-                    let label = item.chart.data.labels[item.dataIndex];
-                    if (Array.isArray(label)) {
-                        return label.join(" ");
-                    } else {
-                        return label;
-                    }
-                },
-            };
-        };
-
-        const chartColors = [
-            "#35c3e9", // Primary teal
-            "#1e293b", // Dark navy
-            "#64748b", // Gray
-            "#10b981", // Green
-            "#ea580c", // Orange
-        ];
-
-        const healthRiskChartEl = document.getElementById(
-            "healthRiskChart",
-        ) as HTMLCanvasElement;
-        if (healthRiskChartEl) {
-            const ctxHealth = healthRiskChartEl.getContext("2d");
-            if (ctxHealth) {
-                new Chart(ctxHealth, {
-                    type: "doughnut",
-                    data: {
-                        labels: [
-                            "Allergies",
-                            ["Respiratory", "Issues"],
-                            ["Chronic", "Headaches"],
-                            ["Skin", "Irritation"],
-                            "Other",
-                        ],
-                        datasets: [
-                            {
-                                label: "Symptom Distribution",
-                                data: [40, 30, 15, 10, 5],
-                                backgroundColor: chartColors,
-                                borderColor: "#FFFFFF",
-                                borderWidth: 2,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: "bottom",
-                            },
-                            tooltip: {
-                                callbacks: createTooltipCallback(),
-                            },
-                        },
-                    },
-                });
-            }
-        }
-
-        const sellerImpactChartEl = document.getElementById(
-            "sellerImpactChart",
-        ) as HTMLCanvasElement;
-        if (sellerImpactChartEl) {
-            const ctxSeller = sellerImpactChartEl.getContext("2d");
-            if (ctxSeller) {
-                new Chart(ctxSeller, {
-                    type: "bar",
-                    data: {
-                        labels: [
-                            ["Deal", "Cancellation"],
-                            ["Price", "Reduction"],
-                            "No Impact",
-                        ],
-                        datasets: [
-                            {
-                                label: "Impact on Sale (%)",
-                                data: [30, 50, 20],
-                                backgroundColor: [
-                                    "#ea580c", // Orange
-                                    "#35c3e9", // Teal
-                                    "#10b981", // Green
-                                ],
-                                borderRadius: 4,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 60,
-                                ticks: {
-                                    callback: function (value) {
-                                        return value + "%";
-                                    },
-                                },
-                            },
-                        },
-                        plugins: {
-                            legend: {
-                                display: false,
-                            },
-                            tooltip: {
-                                callbacks: createTooltipCallback(),
-                            },
-                        },
-                    },
-                });
-            }
-        }
-
-        const moldTypesChartEl = document.getElementById(
-            "moldTypesChart",
-        ) as HTMLCanvasElement;
-        if (moldTypesChartEl) {
-            const ctxTypes = moldTypesChartEl.getContext("2d");
-            if (ctxTypes) {
-                new Chart(ctxTypes, {
-                    type: "bar",
-                    data: {
-                        labels: [
-                            "Aspergillus",
-                            "Cladosporium",
-                            ["Stachybotrys", "(Black Mold)"],
-                            "Penicillium",
-                            "Other",
-                        ],
-                        datasets: [
-                            {
-                                label: "Frequency in Homes (%)",
-                                data: [35, 25, 15, 15, 10],
-                                backgroundColor: chartColors,
-                                borderRadius: 4,
-                            },
-                        ],
-                    },
-                    options: {
-                        indexAxis: "y",
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: function (value) {
-                                        return value + "%";
-                                    },
-                                },
-                            },
-                        },
-                        plugins: {
-                            legend: {
-                                display: false,
-                            },
-                            tooltip: {
-                                callbacks: createTooltipCallback(),
-                            },
-                        },
-                    },
-                });
-            }
-        }
-    });
-</script>
