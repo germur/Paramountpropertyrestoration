@@ -234,10 +234,7 @@ const SEOHead = ({
     name: humanize(subservice) || humanize(service),
     description: finalDesc,
     provider: {
-      '@type': 'LocalBusiness',
-      name: businessName,
-      url: siteUrl,
-      telephone: phone
+      '@id': `${canonicalURL}#localbusiness` // Reference to LocalBusiness in @graph
     },
     areaServed: city ? { '@type': 'City', name: addressLocality || humanize(city) } : { '@type': 'State', name: 'Florida' },
     serviceType: humanize(service) || 'Restoration',
