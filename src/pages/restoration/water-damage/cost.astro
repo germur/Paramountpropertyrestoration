@@ -1,0 +1,335 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import RestorationCalculator from "../../../components/tools/RestorationCalculator";
+import RestorationCTA from "../../../components/RestorationCTA";
+import FAQ from "../../../components/AcordeonServices";
+import "../../../styles/pages/cost-guide.css";
+import "../../../styles/pages/water-damage.css";
+import "../../../styles/pages/restoration-responsive.css";
+
+const costFaqs = [
+    {
+        id: "cost-1",
+        question:
+            "Does homeowners insurance cover water damage restoration costs?",
+        answer: "In most cases, yes. Standard homeowners insurance policies typically cover 'sudden and accidental' water damage, such as burst pipes, appliance failures, or accidental overflows. However, gradual damage (like a slow leak) or flood damage (from rising water outside) often requires separate coverage. We work directly with your insurance to maximize your claim.",
+    },
+    {
+        id: "cost-2",
+        question: "How much does water extraction cost per square foot?",
+        answer: "Water extraction typically ranges from $3.50 to $7.00 per square foot, depending on the amount of water and the difficulty of extraction. This is just the first step; drying and dehumidification are additional costs necessary to prevent mold.",
+    },
+    {
+        id: "cost-3",
+        question: "Is it cheaper to clean up water damage myself?",
+        answer: "While DIY might seem cheaper upfront, it often leads to higher costs later due to hidden moisture causing mold growth and structural rot. Professional equipment dries walls and subfloors that fans and towels can't reach. If mold develops, remediation costs can triple the original restoration price.",
+    },
+    {
+        id: "cost-4",
+        question: "What factors affect the total price of restoration?",
+        answer: "The main factors are: 1) Size of the affected area, 2) Category of water (Clean vs. Grey vs. Black), 3) Class of water damage (rate of evaporation), 4) Materials affected (hardwood vs. carpet vs. drywall), and 5) How long the water sat before cleanup began.",
+    },
+];
+---
+
+<BaseLayout
+    title="Water Damage Restoration Cost in Florida | 2025 Price Guide"
+    description="How much does water damage restoration cost in Florida? Use our free calculator. Average costs range from $2,500 to $7,500. Insurance accepted."
+>
+    <!-- Hero Section -->
+    <section class="cost-hero">
+        <div class="cost-hero-bg">
+            <img
+                src="/images/hero-water.webp"
+                alt="Water damage restoration cost assessment"
+            />
+            <div class="cost-hero-overlay"></div>
+        </div>
+        <div class="cost-hero-content">
+            <div class="trust-badges">
+                <span class="trust-badge">
+                    <i class="fas fa-check-circle" style="color: #4ade80;"></i> 2025
+                    Updated Prices
+                </span>
+                <span class="trust-badge">
+                    <i class="fas fa-shield-alt" style="color: #60a5fa;"></i> Insurance
+                    Accepted
+                </span>
+            </div>
+            <h1>
+                Water Damage Restoration <br />
+                <span class="highlight">Cost Guide & Calculator</span>
+            </h1>
+            <p>
+                Don't overpay. Get transparent pricing, understand insurance
+                coverage, and calculate your estimated restoration costs in
+                seconds.
+            </p>
+            <div class="hero-actions">
+                <a href="#calculator" class="cta-button primary">
+                    <i class="fas fa-calculator"></i> Calculate Cost
+                </a>
+                <a
+                    href="tel:7866022217"
+                    class="cta-button secondary"
+                    style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.3);"
+                >
+                    <i class="fas fa-phone"></i> Get Official Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="cost-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Estimate Your Restoration Cost</h2>
+                <p style="color: #6b7280;">
+                    Use our interactive tool to get a rough estimate based on
+                    your property's size and damage severity.
+                </p>
+            </div>
+
+            <div class="calculator-grid">
+                <div class="calculator-wrapper">
+                    <RestorationCalculator client:load serviceType="water" />
+                </div>
+                <div
+                    class="glass-card"
+                    style="padding: 2rem; border-radius: 1.5rem;"
+                >
+                    <h3
+                        style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;"
+                    >
+                        <i
+                            class="fas fa-info-circle"
+                            style="color: var(--color-accent);"></i> Understanding
+                        Estimates
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li
+                            style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 1rem; color: #6b7280;"
+                        >
+                            <i
+                                class="fas fa-check-circle"
+                                style="color: #10b981; margin-top: 0.25rem;"
+                            ></i>
+                            <span
+                                ><strong>Light Damage:</strong> Clean water (Category
+                                1), surface level, quick response.</span
+                            >
+                        </li>
+                        <li
+                            style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 1rem; color: #6b7280;"
+                        >
+                            <i
+                                class="fas fa-exclamation-circle"
+                                style="color: #eab308; margin-top: 0.25rem;"
+                            ></i>
+                            <span
+                                ><strong>Moderate Damage:</strong> Grey water (Category
+                                2) or water that has soaked into drywall/carpet pads.</span
+                            >
+                        </li>
+                        <li
+                            style="display: flex; align-items: start; gap: 0.75rem; color: #6b7280;"
+                        >
+                            <i
+                                class="fas fa-times-circle"
+                                style="color: #ef4444; margin-top: 0.25rem;"
+                            ></i>
+                            <span
+                                ><strong>Severe Damage:</strong> Black water (Category
+                                3), sewage, or long-standing water requiring major
+                                reconstruction.</span
+                            >
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1rem; background: rgba(53, 195, 233, 0.1); border-radius: 0.5rem; border: 1px solid rgba(53, 195, 233, 0.3);"
+                    >
+                        <p
+                            style="font-size: 0.875rem; color: #0f172a; margin: 0;"
+                        >
+                            <strong>Note:</strong> This calculator provides a rough
+                            estimate. Insurance often covers 100% of these costs
+                            (minus deductible).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Breakdown Table -->
+    <section class="cost-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Transparent Pricing</span>
+                <h2 class="section-title">Average Cost Breakdown</h2>
+            </div>
+
+            <div class="cost-table-container">
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Service / Category</th>
+                            <th>Average Cost Range</th>
+                            <th>What's Included</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">Water Extraction</td>
+                            <td>$3.50 - $7.00 / sq.ft.</td>
+                            <td
+                                >Removal of standing water using pumps and
+                                vacuums.</td
+                            >
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Structural Drying</td>
+                            <td>$800 - $2,500+</td>
+                            <td
+                                >Dehumidifiers and air movers running for 3-5
+                                days.</td
+                            >
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Ceiling Repair</td>
+                            <td>$350 - $1,200</td>
+                            <td
+                                >Patching, texturing, and painting water-stained
+                                areas.</td
+                            >
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;"
+                                >Flooring Replacement</td
+                            >
+                            <td>$8 - $25 / sq.ft.</td>
+                            <td
+                                >Replacing damaged carpet, laminate, or
+                                hardwood.</td
+                            >
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Mold Remediation</td>
+                            <td>$1,500 - $6,000</td>
+                            <td
+                                >Required if water sat for >48 hours.
+                                Containment & removal.</td
+                            >
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="cost-section bg-light">
+        <div class="container" style="max-width: 64rem; text-align: center;">
+            <h2 class="section-title">Does Insurance Cover the Cost?</h2>
+            <p
+                style="font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem;"
+            >
+                The good news is that <strong
+                    >most homeowners insurance policies cover sudden water
+                    damage</strong
+                >. At Paramount Property Restoration, we bill your insurance
+                directly so you don't have to pay out of pocket.
+            </p>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;"
+            >
+                <div
+                    style="background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);"
+                >
+                    <div
+                        style="color: #10b981; font-size: 1.5rem; margin-bottom: 0.75rem;"
+                    >
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 0.5rem;">
+                        Typically Covered
+                    </h3>
+                    <ul
+                        style="font-size: 0.875rem; color: #6b7280; list-style: none; padding: 0; margin: 0;"
+                    >
+                        <li style="margin-bottom: 0.5rem;">Burst pipes</li>
+                        <li style="margin-bottom: 0.5rem;">Appliance leaks</li>
+                        <li style="margin-bottom: 0.5rem;">
+                            Accidental overflow
+                        </li>
+                        <li>Storm damage (wind-driven rain)</li>
+                    </ul>
+                </div>
+                <div
+                    style="background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);"
+                >
+                    <div
+                        style="color: #ef4444; font-size: 1.5rem; margin-bottom: 0.75rem;"
+                    >
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 0.5rem;">
+                        Typically NOT Covered
+                    </h3>
+                    <ul
+                        style="font-size: 0.875rem; color: #6b7280; list-style: none; padding: 0; margin: 0;"
+                    >
+                        <li style="margin-bottom: 0.5rem;">
+                            Gradual leaks (neglect)
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            Rising flood water (needs Flood Insurance)
+                        </li>
+                        <li>Sewage backup (often an add-on)</li>
+                    </ul>
+                </div>
+                <div
+                    style="background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); border: 2px solid rgba(53, 195, 233, 0.3);"
+                >
+                    <div
+                        style="color: var(--color-accent); font-size: 1.5rem; margin-bottom: 0.75rem;"
+                    >
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 style="font-weight: 700; margin-bottom: 0.5rem;">
+                        We Handle Claims
+                    </h3>
+                    <p style="font-size: 0.875rem; color: #6b7280; margin: 0;">
+                        We document all damage, meet with your adjuster, and
+                        ensure your claim includes everything needed to restore
+                        your home fully.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="cost-section">
+        <div class="container" style="max-width: 48rem;">
+            <h2 class="section-title">Common Cost Questions</h2>
+            <FAQ
+                client:visible
+                category="water-cost"
+                customQuestions={costFaqs}
+                title=""
+            />
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <RestorationCTA
+        client:visible
+        title="Don't Let Cost Worries Delay Repairs"
+        subtitle="Delaying only increases the damage. We offer free assessments and direct insurance billing."
+        buttonText="Get Free Assessment"
+        buttonLink="/contact"
+    />
+</BaseLayout>

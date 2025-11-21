@@ -918,11 +918,11 @@ body {
 
 /* ===== BREADCRUMBS ARREGLADOS ===== */
 .breadcrumb-nav {
-  margin-bottom: 2rem;
-  padding: 1rem 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
   background: rgba(248, 249, 250, 0.6);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -930,9 +930,9 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   font-family: var(--font-family);
 }
@@ -946,10 +946,10 @@ body {
 /* Separador moderno */
 .breadcrumb-nav li:not(:last-child)::after {
   content: '›';
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   color: rgba(53, 195, 233, 0.6);
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   transition: all 0.3s ease;
 }
 
@@ -962,15 +962,15 @@ body {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(53, 195, 233, 0.08);
-  border: 1px solid rgba(53, 195, 233, 0.15);
+  gap: 0.4rem;
+  background: rgba(53, 195, 233, 0.05);
+  border: 1px solid rgba(53, 195, 233, 0.1);
 }
 
 .breadcrumb-nav a::before {
@@ -981,7 +981,7 @@ body {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(53, 195, 233, 0.1) 0%, rgba(53, 195, 233, 0.05) 100%);
-  border-radius: 8px;
+  border-radius: 6px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -990,7 +990,7 @@ body {
   color: white;
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(53, 195, 233, 0.3);
+  box-shadow: 0 2px 8px rgba(53, 195, 233, 0.2);
   border-color: var(--color-accent);
 }
 
@@ -1007,11 +1007,11 @@ body {
 .breadcrumb-nav span[aria-current="page"] {
   color: var(--text-primary);
   font-weight: 600;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }

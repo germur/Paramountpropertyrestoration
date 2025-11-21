@@ -1,0 +1,273 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import RemodelingCalculator from "../../../components/tools/RemodelingCalculator";
+import RestorationCTA from "../../../components/RestorationCTA";
+import FAQ from "../../../components/AcordeonServices";
+import "../../../styles/pages/cost-guide.css";
+import "../../../styles/pages/services-template.css";
+
+const costFaqs = [
+    {
+        id: "kitchen-cost-1",
+        question: "What is the average cost of a kitchen remodel in Florida?",
+        answer: "In Florida, a mid-range kitchen remodel typically costs between $25,000 and $50,000. High-end remodels with custom cabinetry, structural changes, and luxury appliances can range from $60,000 to $100,000+.",
+    },
+    {
+        id: "kitchen-cost-2",
+        question: "How much value does a kitchen remodel add to my home?",
+        answer: "Kitchen remodels in Florida offer one of the highest returns on investment (ROI), typically recouping 60% to 80% of the cost upon resale. This makes it a smart investment for increasing your property's equity.",
+    },
+    {
+        id: "kitchen-cost-3",
+        question: "Do you offer financing for kitchen remodeling?",
+        answer: "Yes! We partner with trusted lenders to offer flexible financing plans, including low-interest options and payments spread over 6-24 months, making your dream kitchen more affordable.",
+    },
+    {
+        id: "kitchen-cost-4",
+        question: "What is the most expensive part of a kitchen remodel?",
+        answer: "Cabinetry usually accounts for 30-40% of the total budget. Labor (including plumbing and electrical) is the second largest cost, followed by appliances and countertops.",
+    },
+];
+---
+
+<BaseLayout
+    title="Kitchen Remodeling Cost in Florida | 2025 Price Guide & Calculator"
+    description="How much does a kitchen remodel cost in Florida? Use our free calculator. Prices range from $15k to $80k+. Get a custom quote today."
+>
+    <!-- Hero Section -->
+    <section class="cost-hero">
+        <div class="cost-hero-bg">
+            <img
+                src="/images/kitchen-remodel-hero.webp"
+                alt="Kitchen remodeling cost guide florida"
+            />
+            <div class="cost-hero-overlay"></div>
+        </div>
+        <div class="cost-hero-content">
+            <div class="trust-badges">
+                <span class="trust-badge">
+                    <i class="fas fa-calendar-check" style="color: #4ade80;"
+                    ></i> 2025 Price Guide
+                </span>
+                <span class="trust-badge">
+                    <i class="fas fa-map-marker-alt" style="color: #f87171;"
+                    ></i> Florida Average
+                </span>
+            </div>
+            <h1>
+                Kitchen Remodeling <br />
+                <span class="highlight">Cost Guide & Calculator</span>
+            </h1>
+            <p>
+                Planning a kitchen makeover? Get realistic cost estimates for
+                Economy, Mid-Range, and Luxury renovations in Florida.
+            </p>
+            <div class="hero-actions">
+                <a href="#calculator" class="cta-button primary">
+                    <i class="fas fa-calculator"></i> Estimate My Kitchen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="cost-section bg-light">
+        <div class="container">
+            <div class="calculator-grid">
+                <div class="calculator-wrapper">
+                    <RemodelingCalculator client:load serviceType="kitchen" />
+                </div>
+                <div
+                    class="glass-card"
+                    style="padding: 2rem; border-radius: 1rem;"
+                >
+                    <h3
+                        style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;"
+                    >
+                        <i class="fas fa-lightbulb" style="color: #eab308;"></i>
+                        ROI & Value
+                    </h3>
+                    <p style="color: #4b5563; margin-bottom: 1rem;">
+                        A kitchen remodel is one of the best investments you can
+                        make in your home. In Florida, homeowners typically
+                        recoup <strong>60-80%</strong> of their investment upon resale.
+                        Beyond financial returns, a new kitchen significantly enhances
+                        daily living and appeal.
+                    </p>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0 0 2rem 0;"
+                    >
+                        <li
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;"
+                        >
+                            <i
+                                class="fas fa-check-circle"
+                                style="color: var(--color-accent);"></i> Increased
+                            Home Value
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;"
+                        >
+                            <i
+                                class="fas fa-check-circle"
+                                style="color: var(--color-accent);"></i> Enhanced
+                            Functionality & Aesthetics
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; color: #374151;"
+                        >
+                            <i
+                                class="fas fa-check-circle"
+                                style="color: var(--color-accent);"></i> Faster Sale
+                            Time
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 0.5rem; color: #374151;"
+                        >
+                            <i
+                                class="fas fa-check-circle"
+                                style="color: var(--color-accent);"></i> Improved
+                            Energy Efficiency
+                        </li>
+                    </ul>
+                    <RestorationCTA
+                        title="Ready for a Precise Quote?"
+                        subtitle="Online calculators are estimates. Our design team provides exact pricing."
+                        buttonText="Get Free Quote"
+                        buttonLink="/contact"
+                        compact={true}
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Tiers -->
+    <section class="cost-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Compare Packages</span>
+                <h2 class="section-title">Kitchen Remodel Tiers</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Economy -->
+                <div class="pricing-tier">
+                    <div class="tier-stripe gray"></div>
+                    <div class="tier-icon gray">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="tier-title">Economy Refresh</h3>
+                    <p class="tier-price">$15k - $30k</p>
+                    <p class="tier-description">
+                        Best for cosmetic updates and keeping existing layout.
+                    </p>
+                    <ul class="tier-features">
+                        <li>
+                            <i class="fas fa-check"></i> Cabinet painting/refacing
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Laminate or basic granite
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Vinyl or tile flooring
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Basic appliance package
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mid-Range -->
+                <div class="pricing-tier featured">
+                    <div class="tier-badge">MOST POPULAR</div>
+                    <div class="tier-icon blue">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="tier-title">Mid-Range Custom</h3>
+                    <p class="tier-price">$30k - $65k</p>
+                    <p class="tier-description">
+                        Full remodel with semi-custom materials and layout
+                        tweaks.
+                    </p>
+                    <ul class="tier-features">
+                        <li>
+                            <i class="fas fa-check"></i> New semi-custom cabinets
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Quartz or granite tops
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Hardwood or premium tile
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Improved lighting plan
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Luxury -->
+                <div class="pricing-tier">
+                    <div class="tier-stripe yellow"></div>
+                    <div class="tier-icon yellow">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="tier-title">Luxury Chef's</h3>
+                    <p class="tier-price">$70k+</p>
+                    <p class="tier-description">
+                        Top-tier materials, structural changes, and smart
+                        appliances.
+                    </p>
+                    <ul class="tier-features">
+                        <li>
+                            <i class="fas fa-check"></i> Custom hardwood cabinets
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Exotic stone / Quartzite
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Pro-grade appliances
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Structural layout changes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="cost-section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Is a Kitchen Remodel Worth It?</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">70%</div>
+                    <p class="stat-label">Average ROI in Florida</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">#1</div>
+                    <p class="stat-label">Most Desired Feature by Buyers</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50%</div>
+                    <p class="stat-label">Faster Sale Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="cost-section">
+        <div class="container" style="max-width: 48rem;">
+            <h2 class="section-title">Kitchen Cost FAQs</h2>
+            <FAQ
+                client:visible
+                category="kitchen-cost"
+                customQuestions={costFaqs}
+                title=""
+            />
+        </div>
+    </section>
+</BaseLayout>

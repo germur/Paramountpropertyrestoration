@@ -9,143 +9,201 @@
 export const waterContent = {
     "water-damage": {
         hero: {
-            title: "Water Damage? We Remove, Dry & Restore",
-            description: "Fast water extraction, moisture control, and structural drying to prevent mold and further damage. Serving Orlando, Miami, Tampa & beyond.",
-            cta: "Free Water Damage Assessment",
+            title: "Water Damage Restoration in {city} | 24/7 Emergency Extraction",
+            titleFallback: "Water Damage Restoration in Florida | 24/7 Emergency Extraction",
+            description: "Facing a flooded home, burst pipe, or storm damage? Time is critical. Our IICRC-certified Florida restoration team arrives in 60 minutes to extract water, dry your property, and prevent mold growth. We handle everything from leak detection to full structural repairs, billing your insurance directly so you can focus on recovery.",
+            cta: "🚨 Call 24/7: (786) 602-2217",
+            ctaSecondary: "Get Free Assessment",
             bgImage: "/images/hero-water.webp",
+            pricing: {
+                min: 2500,
+                max: 7500,
+                average: 5000,
+                unit: "USD",
+                disclaimer: "Direct insurance billing available • $0 Upfront for covered claims"
+            },
+            responseTime: "60 Minutes",
+            availability: "24/7/365",
+            certifications: ["IICRC Certified", "State Licensed", "Insurance Approved"]
         },
         services: [
             {
                 icon: "fas fa-water",
-                title: "Flood Damage",
-                description: "Emergency flood cleanup and water extraction",
+                title: "Flood Damage Cleanup",
+                description: "Rapid removal of standing water from storms, hurricanes, or plumbing failures. We use industrial-grade pumps and vacuums to extract thousands of gallons quickly, minimizing structural saturation.",
                 slug: "flood-damage",
                 image: "/images/flood-damage.webp",
                 link: "/restoration/water-damage/flood-damage",
+                ctaText: "Get 24/7 Flood Cleanup",
+                features: ["Rapid Extraction", "Basement Drying", "Sewage Cleanup"]
             },
             {
-                icon: "fas fa-wrench",
-                title: "Leak Repair",
-                description: "Fix burst pipes and hidden leaks",
+                icon: "fas fa-faucet",
+                title: "Leak Repair & Detection",
+                description: "Hidden leak detection experts using thermal imaging to stop water damage at the source. We find leaks behind walls and under slabs without destruction.",
                 slug: "leak-repair",
                 image: "/images/leak-repair.webp",
                 link: "/restoration/water-damage/leak-repair",
+                ctaText: "Detect & Fix Leaks",
+                features: ["Non-Invasive Detect", "Plumbing Repair", "Wall Drying"]
             },
             {
-                icon: "fas fa-home",
+                icon: "fas fa-dungeon",
                 title: "Basement Flooding",
-                description: "Basement water removal and drying",
+                description: "Rapid basement water extraction and drying to prevent mold and structural damage. We remove wet drywall/insulation and dehumidify the space.",
                 slug: "basement-flooding",
                 image: "/images/basement-flooding.webp",
                 link: "/restoration/water-damage/basement-flooding",
+                ctaText: "Dry Your Basement",
+                features: ["Sump Pump Failure", "Concrete Drying", "Mold Prevention"]
             },
             {
                 icon: "fas fa-cloud-rain",
                 title: "Ceiling Water Damage",
-                description: "Ceiling leak repair and restoration",
+                description: "Emergency ceiling leak repair and water stain removal to prevent collapse. We trace the leak and restore the drywall seamlessly.",
                 slug: "ceiling-water-damage",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/ceiling-water-damage",
+                ctaText: "Repair Ceiling Damage",
+                features: ["Collapse Prevention", "Leak Tracing", "Seamless Patching"]
             },
             {
-                icon: "fas fa-tint",
+                icon: "fas fa-pump-soap",
                 title: "Emergency Water Removal",
-                description: "24/7 rapid water extraction",
+                description: "Immediate 24/7 water extraction for any size emergency. We arrive in 60 minutes to save your floors, carpets, and furniture.",
                 slug: "emergency-water-removal",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/emergency-water-removal",
+                ctaText: "Start Water Extraction",
+                features: ["Truck-Mounted Units", "Carpet Salvage", "24/7 Dispatch"]
             },
         ],
         faqs: [
             {
-                q: "What is water damage restoration?",
-                a: "Water damage restoration is the process of cleaning, drying, and repairing property after water intrusion from floods, leaks, or storms. Our certified technicians use industrial-grade equipment to extract water, dry affected areas, and prevent secondary damage like mold growth.",
+                q: "How much does water damage restoration cost in Florida?",
+                a: "<strong>Average costs range from $2,500 to $7,500</strong> for standard restoration. However, costs vary based on the water category (Clean, Grey, Black) and the extent of the damage. <strong>Good news:</strong> Most homeowners insurance policies cover 'sudden and accidental' water damage. We work directly with your adjuster to maximize your coverage and minimize your out-of-pocket costs."
             },
             {
-                q: "How quickly should water damage restoration start?",
-                a: "Ideally within 24 hours. Early extraction and drying reduce structural damage and the risk of mold growth. The longer water sits, the more expensive and extensive the restoration becomes.",
+                q: "What is the difference between water mitigation and restoration?",
+                a: "<strong>Mitigation</strong> is the immediate emergency phase: stopping the water, extracting it, and drying the structure to prevent further damage. <strong>Restoration</strong> is the rebuilding phase: repairing drywall, installing new flooring, painting, and returning your home to its pre-loss condition. We handle both seamlessly."
             },
             {
-                q: "What does the water damage process include?",
-                a: "Our process includes: emergency inspection & moisture mapping, water extraction, cleaning & sanitizing, odor control, repairs, and finish restoration. We follow IICRC standards throughout the entire process.",
+                q: "How long does the drying process take?",
+                a: "<strong>Typically 3 to 5 days.</strong> We use industrial air movers and dehumidifiers to pull moisture from deep within materials. We monitor moisture levels daily. If materials are not dried properly, mold can begin to grow within 24-48 hours, so we never rush this critical step."
             },
             {
-                q: "Do you handle floods, leaks, and burst pipes?",
-                a: "Yes. We respond to storm flooding, appliance failures, roof leaks, slab leaks, and burst supply lines. Our 24/7 emergency response team is equipped to handle any water damage scenario.",
+                q: "What should I do immediately after discovering water damage?",
+                a: "1. <strong>Safety First:</strong> Turn off electricity to affected areas if safe.<br>2. <strong>Stop the Water:</strong> Shut off the main water valve.<br>3. <strong>Call a Pro:</strong> Contact us immediately (786-602-2217).<br>4. <strong>Document:</strong> Take photos/videos of the damage for your insurance.<br>5. <strong>Wait:</strong> Do not start major cleanup yourself; insurance needs to see the initial state."
             },
             {
-                q: "Will my insurance cover water damage restoration?",
-                a: "Most homeowner's policies cover sudden water damage from burst pipes or appliance failures. Flood damage typically requires separate flood insurance. We work directly with insurance companies and help with claims documentation.",
+                q: "Does homeowners insurance cover flood damage?",
+                a: "<strong>It depends on the source.</strong> Standard policies typically cover internal issues like burst pipes or appliance leaks. They often <em>exclude</em> rising water from outside (storms, overflowing rivers)—that requires a separate Flood Insurance policy. We can help review your policy to understand your coverage."
             },
             {
-                q: "How long does the water damage restoration process take?",
-                a: "The timeline varies depending on the extent of damage. Minor water damage can be resolved in 2-3 days, while major flooding may take 1-2 weeks. We provide detailed timelines during our initial assessment.",
+                q: "Can you save my wood floors after water damage?",
+                a: "<strong>Often, yes, if we act fast.</strong> Using specialized injectidry systems, we can sometimes dry hardwood floors from underneath without removing them. However, if the wood has buckled or cupped significantly, replacement might be necessary. Immediate extraction is key."
             },
+            {
+                q: "Is water damage dangerous to my health?",
+                a: "<strong>It can be.</strong> 'Grey water' (from appliances) and 'Black water' (sewage/flood) contain harmful bacteria and pathogens. Even clean water can lead to toxic mold growth if left untreated. Our technicians wear PPE and use antimicrobial treatments to ensure your home is safe."
+            }
         ],
         steps: [
             {
-                title: "Emergency Call",
-                text: "Free on-site inspection & moisture assessment",
-                icon: "fas fa-phone",
+                title: "1. Emergency Contact & Dispatch",
+                text: "You call, we answer 24/7. We dispatch a certified team to your property within 60 minutes.",
+                icon: "fas fa-phone-volume",
             },
             {
-                title: "Water Extraction",
-                text: "Pumps & vacuums remove standing water",
-                icon: "fas fa-tint",
+                title: "2. Inspection & Assessment",
+                text: "We use thermal cameras and moisture meters to map the full extent of the damage, visible and hidden.",
+                icon: "fas fa-search-location",
             },
             {
-                title: "Drying & Dehumidifying",
-                text: "Air movers, dehumidifiers & moisture readings",
+                title: "3. Water Extraction",
+                text: "Powerful truck-mounted pumps remove standing water immediately to stop the spread.",
+                icon: "fas fa-water",
+            },
+            {
+                title: "4. Drying & Dehumidification",
+                text: "Industrial air movers and dehumidifiers run for days to eliminate moisture from walls and floors.",
                 icon: "fas fa-wind",
             },
             {
-                title: "Cleaning & Repairs",
-                text: "Sanitize, deodorize, and restore materials",
-                icon: "fas fa-tools",
+                title: "5. Cleaning & Sanitizing",
+                text: "We treat all affected areas with antimicrobials to prevent mold and remove odors.",
+                icon: "fas fa-pump-medical",
+            },
+            {
+                title: "6. Restoration & Repairs",
+                text: "From drywall patching to new flooring, we rebuild your home to its pre-loss condition.",
+                icon: "fas fa-hammer",
             },
         ],
     },
 
     "flood-damage": {
         hero: {
-            title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
-            description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
+            title: "Flood Damage Cleanup in {city} | 24/7 Water Extraction",
+            titleFallback: "Flood Damage Cleanup in Florida | 24/7 Water Extraction",
+            description: "Storm surge? Hurricane flooding? Our Florida flood response team extracts water fast, dries your home, and sanitizes against sewage and bacteria. We protect your property from long-term structural damage and mold.",
             cta: "Start Flood Extraction Now",
             bgImage: "/images/waterDamage.webp",
+        },
+        education: {
+            overview: "Flood damage occurs when water from external sources—such as hurricanes, tropical storms, heavy rainfall, or storm surge—enters your property and causes widespread destruction. Unlike clean water from burst pipes, floodwater is classified as 'Category 3' or 'Black Water,' meaning it contains sewage, bacteria, chemicals, and other hazardous contaminants. In Florida, our proximity to the coast, low elevation, and intense hurricane season make flood damage a serious and recurring threat. Floodwater doesn't just soak carpets and furniture—it saturates drywall, insulation, and structural framing, creating ideal conditions for mold growth within 24-48 hours. The longer water sits, the more it compromises your home's structural integrity, weakens foundations, and destroys personal belongings. Professional flood cleanup involves rapid water extraction, thorough drying, antimicrobial treatment, and complete restoration to prevent long-term health hazards and property devaluation.",
+            causes: [
+                "Hurricane storm surge and tropical storm flooding overwhelming drainage systems and inundating coastal and low-lying properties",
+                "Heavy seasonal rainfall exceeding drainage capacity, causing street flooding that enters homes through doors, windows, and foundation cracks",
+                "Overflowing rivers, lakes, and retention ponds during extreme weather events, particularly in flood-prone zones",
+                "Sump pump failures or overwhelmed systems during severe storms, allowing groundwater to flood basements and crawl spaces"
+            ],
+            risks: [
+                "Exposure to sewage, bacteria, viruses, and chemical contaminants in floodwater causing serious infections, gastrointestinal illness, and skin diseases",
+                "Rapid mold growth within 24-48 hours in wet drywall, insulation, and carpets, releasing toxic spores that trigger respiratory problems and allergies",
+                "Structural damage to foundations, floor joists, and wall framing as prolonged water exposure causes wood rot, warping, and compromised load-bearing capacity",
+                "Electrical hazards from submerged outlets, appliances, and wiring creating risk of electrocution and fire even after water recedes"
+            ],
+            urgency: [
+                "Floodwater spreads contaminants throughout your home within hours—immediate extraction prevents bacteria from saturating porous materials and causing permanent health hazards",
+                "Mold begins colonizing wet surfaces in 24-48 hours; professional drying within this window prevents costly remediation and protects your family's respiratory health",
+                "Insurance claims require prompt action and professional documentation—delays can result in claim denials or reduced coverage for secondary damage",
+                "Structural deterioration accelerates rapidly as water weakens foundations and framing; fast response saves tens of thousands in reconstruction costs"
+            ]
         },
         services: [
             {
                 icon: "fas fa-tint",
-                title: "Emergency Water Extraction",
-                description: "Pumps and vacuums remove large volumes of water quickly.",
+                title: "Rapid Water Extraction",
+                description: "We deploy industrial submersible pumps and truck-mounted vacuums to remove thousands of gallons of standing water in minutes.",
                 image: "/images/flood-damage.webp",
                 link: "/restoration/water-damage/emergency-water-removal",
             },
             {
                 icon: "fas fa-wind",
-                title: "Industrial Drying",
-                description: "Air movers and dehumidifiers dry walls, floors, and cavities.",
+                title: "Structural Drying",
+                description: "Floodwater seeps into drywall and studs. Our high-velocity air movers and dehumidifiers pull moisture out to prevent rot.",
                 image: "/images/leak-repair.webp",
                 link: "/restoration/water-damage/flood-damage",
             },
             {
                 icon: "fas fa-shield-alt",
-                title: "Mold Prevention",
-                description: "Antimicrobial treatments protect against bacteria and mold.",
+                title: "Sewage & Contaminant Cleanup",
+                description: "Floodwater is often 'Black Water' containing bacteria. We sanitize and disinfect all affected surfaces for your safety.",
                 image: "/images/basement-flooding.webp",
                 link: "/restoration/water-damage/flood-damage",
             },
             {
                 icon: "fas fa-tools",
-                title: "Structural Stabilization",
-                description: "Support for weakened ceilings, floors, and framing.",
+                title: "Debris Removal & Demolition",
+                description: "We safely remove ruined drywall, carpet, and flooring, preparing your home for reconstruction.",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/flood-damage",
             },
             {
                 icon: "fas fa-hammer",
-                title: "Property Restoration",
-                description: "Complete restoration of damaged areas to pre-loss condition.",
+                title: "Complete Restoration",
+                description: "From new flooring to drywall installation, we rebuild your home to be better than before.",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/flood-damage",
             },
@@ -153,90 +211,112 @@ export const waterContent = {
         faqs: [
             {
                 q: "How long does flood cleanup take?",
-                a: "Most properties dry within 2–5 days depending on water levels and building materials. Continuous monitoring ensures safe humidity levels before restoration begins.",
+                a: "<strong>It varies by severity.</strong> Extraction takes 1-2 days. Drying takes 3-5 days. Full repairs can take 1-2 weeks. We provide a clear timeline after our initial inspection.",
             },
             {
                 q: "Does insurance cover flood damage?",
-                a: "Coverage varies—flooding from storms often requires separate flood insurance. Most policies cover sudden water events. We assist with documentation for your claim.",
+                a: "<strong>Typically, no.</strong> Standard homeowners insurance covers <em>internal</em> water damage (pipes). Rising water (floods) requires a separate Flood Policy (NFIP). We help you understand your coverage and document everything."
             },
             {
                 q: "Can a flooded home be saved?",
-                a: "Yes. With rapid extraction and drying, most structures can be stabilized and restored. Delays increase risks of mold and structural loss.",
+                a: "<strong>Yes, with speed.</strong> The key is immediate extraction. If water sits for days, structural integrity weakens and mold takes over. Our 24/7 response is designed to save your home."
             },
             {
-                q: "What should I do first after a flood?",
-                a: "Stay safe, shut off electricity if needed, and call for emergency water removal. Avoid entering rooms with standing water.",
+                q: "What is 'Black Water'?",
+                a: "<strong>Category 3 Water.</strong> It contains sewage, bacteria, and pathogens. Floodwater is almost always Black Water. It requires professional PPE and specialized sanitization—never try to clean it yourself."
             },
         ],
         steps: [
             {
-                title: "Inspection & Moisture Mapping",
-                text: "Identify visible and hidden flood damage",
-                icon: "fas fa-search",
+                title: "1. Safety & Inspection",
+                text: "We assess electrical hazards and structural stability before entering.",
+                icon: "fas fa-hard-hat",
             },
             {
-                title: "Rapid Water Extraction",
-                text: "Remove standing floodwater using high-capacity pumps",
+                title: "2. Water Extraction",
+                text: "High-capacity pumps remove standing floodwater immediately.",
                 icon: "fas fa-tint",
             },
             {
-                title: "Drying & Dehumidification",
-                text: "Stabilize humidity with industrial air movers",
+                title: "3. Muck-Out & Cleaning",
+                text: "We remove mud, silt, and damaged materials (carpet, drywall).",
+                icon: "fas fa-trash-alt",
+            },
+            {
+                title: "4. Drying & Sanitizing",
+                text: "Industrial drying plus antimicrobial treatments to kill bacteria.",
                 icon: "fas fa-wind",
             },
             {
-                title: "Antimicrobial Treatment",
-                text: "Protect walls, flooring, and furniture against mold",
-                icon: "fas fa-shield-alt",
-            },
-            {
-                title: "Ongoing Monitoring",
-                text: "Daily moisture checks until drying is complete",
-                icon: "fas fa-chart-line",
+                title: "5. Reconstruction",
+                text: "We repair and rebuild your home to pre-flood condition.",
+                icon: "fas fa-hammer",
             },
         ],
     },
 
     "leak-repair": {
         hero: {
-            title: "Stop Leaks Before They Cause Bigger Damage",
-            description: "Whether it's a burst pipe, ceiling leak, or hidden water damage inside your walls, our Florida leak repair specialists act fast to protect your home or business. With 24/7 emergency response and advanced detection tools, we fix leaks before they become costly disasters.",
-            cta: "Fix My Leak Now",
+            title: "Leak Detection & Repair in {city} | Stop Hidden Damage",
+            titleFallback: "Leak Detection & Repair in Florida | Stop Hidden Damage",
+            description: "A small leak can cause major rot and mold. Our Florida leak detection specialists use thermal imaging and acoustic tech to find hidden leaks behind walls and under slabs without destruction.",
+            cta: "Find My Leak Now",
             bgImage: "/images/waterDamage.webp",
+        },
+        education: {
+            overview: "Hidden water leaks are silent destroyers that can cause thousands of dollars in damage before you even notice them. Unlike obvious burst pipes, slow leaks behind walls, under slabs, or in ceilings drip continuously for weeks or months, saturating insulation, rotting wood framing, and creating perfect conditions for toxic mold growth. In Florida's humid climate, even small amounts of hidden moisture accelerate deterioration and mold colonization. Common signs include unexplained increases in water bills, warm spots on floors, musty odors, or the sound of running water when all fixtures are off. Our leak detection specialists use advanced technology—thermal imaging cameras, acoustic listening devices, and moisture meters—to pinpoint the exact location of leaks without destructive exploratory demolition. We then perform surgical repairs, extract any accumulated water, dry affected structures, and restore finishes to prevent long-term damage and protect your property value.",
+            causes: [
+                "Aging copper or galvanized pipes developing pinhole leaks due to corrosion, hard water minerals, and Florida's acidic soil conditions",
+                "Slab leaks from pipes embedded in concrete foundations shifting due to soil settlement, tree root intrusion, or poor initial installation",
+                "Hidden roof leaks allowing water to travel along rafters and drip into wall cavities, often far from the actual roof penetration point",
+                "Faulty plumbing connections behind walls from improper installation, vibration loosening, or degraded seals in supply lines and drain pipes"
+            ],
+            risks: [
+                "Extensive mold growth in wall cavities and under flooring as hidden moisture creates dark, humid environments perfect for toxic spore colonization",
+                "Structural wood rot weakening floor joists, wall studs, and roof rafters, compromising your home's safety and requiring costly framing replacement",
+                "Skyrocketing water bills as even small leaks waste hundreds of gallons monthly—a 1/8-inch crack can leak 250 gallons per day",
+                "Foundation damage and soil erosion from slab leaks undermining concrete, causing cracks, settling, and expensive structural repairs"
+            ],
+            urgency: [
+                "Hidden leaks worsen exponentially—what starts as a small drip becomes a flood as corrosion expands and water pressure enlarges cracks",
+                "Mold begins growing within 48 hours of moisture exposure; early detection prevents health hazards and $10,000+ remediation costs",
+                "Insurance companies may deny claims for 'long-term seepage' if leaks aren't addressed promptly—professional detection provides documentation",
+                "Every day of delay adds to water waste and structural damage; thermal imaging finds leaks in hours, saving weeks of destructive searching"
+            ]
         },
         services: [
             {
-                icon: "fas fa-cloud-rain",
-                title: "Ceiling Leak Repair",
-                description: "Repair water-damaged ceilings, replace drywall & insulation.",
-                image: "/images/flood-damage.webp",
-                link: "/restoration/water-damage/ceiling-water-damage",
-            },
-            {
-                icon: "fas fa-wrench",
-                title: "Pipe Leak Repair",
-                description: "Fix burst, corroded, or leaking pipes to restore flow & safety.",
-                image: "/images/leak-repair.webp",
-                link: "/restoration/water-damage/leak-repair",
-            },
-            {
                 icon: "fas fa-search",
-                title: "Hidden Leak Detection",
-                description: "Advanced tools locate leaks inside walls, floors, or basements.",
+                title: "Non-Invasive Leak Detection",
+                description: "We use infrared cameras and acoustic listening devices to locate leaks precisely without tearing up your walls.",
                 image: "/images/basement-flooding.webp",
                 link: "/restoration/water-damage/leak-repair",
             },
             {
+                icon: "fas fa-wrench",
+                title: "Pipe Repair & Re-Piping",
+                description: "From fixing a single burst pipe to whole-home PEX repiping, our licensed plumbers handle it all.",
+                image: "/images/leak-repair.webp",
+                link: "/restoration/water-damage/leak-repair",
+            },
+            {
+                icon: "fas fa-cloud-rain",
+                title: "Slab Leak Repair",
+                description: "Leaks under your foundation are dangerous. We detect and fix them to prevent structural settling.",
+                image: "/images/flood-damage.webp",
+                link: "/restoration/water-damage/ceiling-water-damage",
+            },
+            {
                 icon: "fas fa-wind",
-                title: "Drying & Dehumidification",
-                description: "Complete moisture removal from affected areas.",
+                title: "Moisture Drying",
+                description: "Fixing the leak is step one. We also dry the water that escaped to prevent mold growth.",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/leak-repair",
             },
             {
                 icon: "fas fa-shield-alt",
-                title: "Preventive Treatments",
-                description: "Antimicrobial applications to prevent mold growth.",
+                title: "Mold Prevention",
+                description: "We treat wet areas with antimicrobials to ensure no mold spores take root after the leak.",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/leak-repair",
             },
@@ -244,136 +324,158 @@ export const waterContent = {
         faqs: [
             {
                 q: "How do I know if I have a hidden water leak?",
-                a: "Signs include moldy odors, warped walls, and unexplained water bills. We use specialized tools to detect hidden leaks.",
+                a: "<strong>Look for signs:</strong> Unexplained high water bills, warm spots on the floor, the sound of running water when taps are off, or musty odors. If you suspect a leak, call us for a detection scan."
             },
             {
-                q: "Can a ceiling leak cause mold?",
-                a: "Yes. Within 24–48 hours, mold may develop on damp ceilings. Fast drying and repairs are essential.",
+                q: "Do you break walls to find leaks?",
+                a: "<strong>Rarely.</strong> Our thermal imaging and acoustic tools allow us to 'see' and 'hear' inside walls. We only open the wall at the exact spot of the repair, minimizing damage."
             },
             {
-                q: "Can leaking pipes be fixed without replacing everything?",
-                a: "Often yes. We patch, seal, or replace sections of pipe depending on severity.",
+                q: "Does insurance cover slab leaks?",
+                a: "<strong>Often, yes.</strong> The 'tear-out' to get to the pipe and the resulting water damage are usually covered. The pipe repair itself might not be. We help you navigate these policy details."
             },
             {
                 q: "How long does leak repair take?",
-                a: "Small leaks may be fixed same-day; larger or hidden leaks may take 2–3 days including drying and restoration.",
+                a: "<strong>Detection takes 1-2 hours.</strong> Repair takes 2-4 hours. Drying the water damage can take 3 days. We handle the entire process from start to finish."
             },
         ],
         steps: [
             {
-                title: "Inspection & Leak Detection",
-                text: "Thermal imaging & moisture meters find the source",
-                icon: "fas fa-search",
+                title: "1. Electronic Detection",
+                text: "We use advanced tech to pinpoint the leak's exact location.",
+                icon: "fas fa-crosshairs",
             },
             {
-                title: "Emergency Containment",
-                text: "Stop water flow, prevent further damage",
-                icon: "fas fa-stop",
+                title: "2. Access & Repair",
+                text: "We open the smallest area possible to fix the pipe permanently.",
+                icon: "fas fa-wrench",
             },
             {
-                title: "Drying & Dehumidification",
-                text: "Industrial air movers, dehumidifiers",
+                title: "3. Water Extraction",
+                text: "We remove any water that has pooled in walls or floors.",
+                icon: "fas fa-tint",
+            },
+            {
+                title: "4. Structural Drying",
+                text: "We dry the area completely to prevent mold and rot.",
                 icon: "fas fa-wind",
             },
             {
-                title: "Repair & Restoration",
-                text: "Pipes, drywall, ceilings, and flooring fixed",
-                icon: "fas fa-tools",
-            },
-            {
-                title: "Mold Prevention & Quality Check",
-                text: "Antimicrobial treatment + testing",
-                icon: "fas fa-check-circle",
+                title: "5. Restoration",
+                text: "We patch the drywall, paint, and replace flooring.",
+                icon: "fas fa-paint-roller",
             },
         ],
     },
 
     "basement-flooding": {
         hero: {
-            title: "Basement Flooding? We Pump Out Water & Protect Your Foundation",
-            description: "Is your basement underwater? Our Florida team provides 24/7 basement flooding cleanup, including pump-out, cavity drying, and mold prevention. We remove water fast, protect your foundation, and restore your property safely.",
-            cta: "Protect Against Mold",
+            title: "Basement Flooding Cleanup in {city} | Pump-Out & Drying",
+            titleFallback: "Basement Flooding Cleanup in Florida | Pump-Out & Drying",
+            description: "Basement underwater? Don't wait for mold. Our Florida emergency team pumps out water, dries hidden moisture in walls, and waterproofs your foundation. We restore safety and prevent structural damage.",
+            cta: "Pump Out My Basement",
             bgImage: "/images/waterDamage.webp",
+        },
+        education: {
+            overview: "Basement flooding is one of the most destructive and stressful water damage emergencies a homeowner can face. When your basement fills with water—whether from heavy rainfall, sump pump failure, burst pipes, or sewage backup—the damage extends far beyond wet carpets and ruined storage boxes. Water saturates concrete, seeps into wall cavities, soaks insulation, and creates ideal conditions for rapid mold growth and structural deterioration. In Florida, where high water tables and intense seasonal storms are common, basement flooding can happen suddenly and without warning. The porous nature of concrete means moisture wicks deep into foundations, weakening structural integrity and creating persistent humidity problems even after visible water is removed. Professional basement flood cleanup involves high-capacity water extraction, specialized cavity drying techniques, antimicrobial treatment, dehumidification, and often waterproofing solutions to prevent recurrence. Without proper drying, basements become breeding grounds for toxic mold, wood rot, and foundation damage that can cost tens of thousands to repair.",
+            causes: [
+                "Sump pump failures during heavy storms when power outages disable pumps or mechanical failures prevent water removal from foundation drains",
+                "Heavy seasonal rainfall and tropical storms overwhelming drainage systems, causing groundwater to seep through foundation cracks and floor joints",
+                "Burst water heaters, washing machine hoses, or supply line failures flooding basements with hundreds of gallons in minutes",
+                "Sewage backups from overwhelmed municipal systems or clogged main lines pushing contaminated water into basement drains and toilets"
+            ],
+            risks: [
+                "Rapid mold colonization within 24-48 hours in wet drywall, wood framing, and insulation, releasing toxic spores that cause respiratory illness and allergies",
+                "Foundation damage and structural weakening as prolonged water exposure erodes concrete, rusts rebar, and causes settling and cracking",
+                "Electrical hazards from submerged outlets, appliances, and service panels creating serious electrocution and fire risks",
+                "Contamination from sewage backups exposing your family to dangerous bacteria, viruses, and pathogens requiring professional biohazard cleanup"
+            ],
+            urgency: [
+                "Standing water continues damaging foundations and wicking into walls every hour it remains—immediate pump-out prevents structural compromise",
+                "Mold begins growing within 24 hours in wet materials; professional extraction and drying within this window prevents costly remediation",
+                "Sewage-contaminated water poses immediate health risks—professional cleanup with PPE and antimicrobials is essential for family safety",
+                "Insurance claims require prompt professional response and documentation—delays can result in coverage denials for secondary damage"
+            ]
         },
         services: [
             {
                 icon: "fas fa-pump-soap",
-                title: "Basement Pump-Out",
-                description: "Rapid water evacuation with high-volume pumps.",
+                title: "Emergency Pump-Out",
+                description: "We use gas-powered trash pumps to remove thousands of gallons of water from flooded basements in hours.",
                 image: "/images/flood-damage.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
             {
                 icon: "fas fa-wind",
-                title: "Structural Drying",
-                description: "Dry walls, subfloors, and insulation to protect the foundation.",
+                title: "Cavity Drying",
+                description: "Water hides behind drywall and under flooring. We inject dry air into cavities to stop mold growth at the source.",
                 image: "/images/leak-repair.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
             {
                 icon: "fas fa-shield-alt",
                 title: "Mold Prevention",
-                description: "Apply treatments and humidity control to stop mold growth.",
+                description: "Basements are dark and damp—perfect for mold. We apply professional-grade antimicrobials to seal surfaces.",
                 image: "/images/basement-flooding.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
             {
                 icon: "fas fa-chart-line",
                 title: "Moisture Monitoring",
-                description: "Track safe drying progress with daily readings.",
+                description: "We track humidity levels daily to ensure your basement reaches a safe dry standard before we leave.",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
             {
                 icon: "fas fa-home",
-                title: "Foundation Restoration",
-                description: "Repair and restore basement structure and finishes.",
+                title: "Waterproofing Solutions",
+                description: "After cleanup, we can recommend sump pumps and sealing to keep your basement dry permanently.",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
         ],
         faqs: [
             {
-                q: "What causes basement flooding?",
-                a: "Common causes include heavy rains, poor drainage, foundation cracks, burst pipes, or failed sump pumps.",
+                q: "What causes basement flooding in Florida?",
+                a: "<strong>Heavy rains and high water tables.</strong> Sump pump failures and burst pipes are also common. Whatever the cause, we have the equipment to fix it.",
             },
             {
                 q: "Can a flooded basement be saved?",
-                a: "Yes. With fast pump-out and drying, most basements can be restored. Delays increase risks of mold and foundation damage.",
+                a: "<strong>Yes, if pumped out quickly.</strong> The longer water sits, the more it damages the foundation and drywall. Immediate extraction is critical.",
             },
             {
-                q: "Do I need a sump pump installed?",
-                a: "For flood-prone basements, a sump system with backup power is strongly recommended to prevent future flooding.",
+                q: "Do I need a sump pump?",
+                a: "<strong>Highly recommended.</strong> If your basement has flooded once, it's likely to happen again. A sump pump with battery backup is your best defense.",
             },
             {
                 q: "How long does basement drying take?",
-                a: "Typically 2–5 days depending on water volume and humidity levels. Continuous monitoring ensures safe results.",
+                a: "<strong>3 to 5 days on average.</strong> Concrete holds moisture longer than other materials, so we use specialized dehumidifiers to pull it out.",
             },
         ],
         steps: [
             {
-                title: "Safety & Assessment",
-                text: "Check for electrical hazards and structural risks before entry",
+                title: "1. Safety Check",
+                text: "We ensure electricity is off and the structure is safe to enter.",
                 icon: "fas fa-hard-hat",
             },
             {
-                title: "Pump-Out & Water Removal",
-                text: "High-capacity pumps quickly clear standing basement water",
+                title: "2. Pump-Out",
+                text: "High-volume pumps remove standing water rapidly.",
                 icon: "fas fa-pump-soap",
             },
             {
-                title: "Cavity Drying",
-                text: "Industrial dehumidifiers and air movers dry walls, flooring, and crawlspaces",
+                title: "3. Debris Removal",
+                text: "We remove wet carpet, padding, and ruined drywall.",
+                icon: "fas fa-trash",
+            },
+            {
+                title: "4. Structural Drying",
+                text: "Industrial dehumidifiers run 24/7 to dry the concrete and framing.",
                 icon: "fas fa-wind",
             },
             {
-                title: "Humidity Control",
-                text: "Stabilize indoor moisture levels to safe conditions",
-                icon: "fas fa-thermometer-half",
-            },
-            {
-                title: "Antimicrobial Treatment",
-                text: "Apply disinfectants to prevent mold and bacteria growth",
+                title: "5. Sanitization",
+                text: "We clean and disinfect the entire area to prevent odors and mold.",
                 icon: "fas fa-spray-can",
             },
         ],
@@ -381,90 +483,112 @@ export const waterContent = {
 
     "ceiling-water-damage": {
         hero: {
-            title: "Ceiling Leak or Water Stains? We Fix It Fast.",
-            description: "From small leaks to major ceiling collapses, our Florida ceiling repair teams restore drywall, insulation, and finishes—stopping hidden mold before it spreads. With 24/7 emergency response and licensed specialists, we protect your home or business from water damage and ceiling collapse.",
-            cta: "Schedule Ceiling Repair",
+            title: "Ceiling Leak Repair in {city} | Fix Stains & Sagging",
+            titleFallback: "Ceiling Leak Repair in Florida | Fix Stains & Sagging",
+            description: "Water stains or sagging drywall? These are signs of a serious leak above. We trace the source, fix the leak, remove damaged drywall, and restore your ceiling to a perfect finish. 24/7 Emergency Service.",
+            cta: "Fix My Ceiling",
             bgImage: "/images/waterDamage.webp",
+        },
+        education: {
+            overview: "Ceiling water damage is a visible warning sign of a serious problem above—whether from roof leaks, plumbing failures, HVAC condensation, or second-floor bathroom issues. That brown stain or sagging drywall isn't just cosmetic; it indicates water has been pooling in your attic or ceiling cavity, saturating insulation, rotting wood framing, and creating conditions for mold growth. In Florida, where intense afternoon thunderstorms and aging roofs are common, ceiling leaks can develop quickly and worsen rapidly. Water follows the path of least resistance, often traveling along rafters and joists before dripping through drywall far from the actual leak source. Wet drywall loses up to 50% of its structural strength and can collapse without warning, posing serious safety risks. Professional ceiling water damage repair involves identifying and fixing the leak source, safely removing compromised drywall and insulation, thoroughly drying the cavity, treating for mold, and restoring the ceiling with perfect texture matching so repairs are invisible.",
+            causes: [
+                "Roof leaks from damaged shingles, flashing failures, or storm damage allowing rainwater to enter attics and soak ceiling insulation",
+                "Plumbing leaks from second-floor bathrooms, burst supply lines, or leaking drain pipes dripping water into ceiling cavities below",
+                "HVAC condensation from clogged drain lines, frozen coils, or improperly installed air handlers causing water to overflow into ceilings",
+                "Attic condensation in Florida's humid climate when inadequate ventilation causes moisture to condense on roof decking and drip onto insulation"
+            ],
+            risks: [
+                "Ceiling collapse from water-saturated drywall losing structural integrity, potentially causing injury and extensive damage to rooms below",
+                "Hidden mold growth in attic spaces and ceiling cavities where dark, damp conditions create perfect environments for toxic spore colonization",
+                "Electrical hazards from water contacting ceiling-mounted fixtures, junction boxes, and wiring, creating shock and fire risks",
+                "Structural wood rot in roof rafters, trusses, and ceiling joists as prolonged moisture exposure weakens framing and compromises roof integrity"
+            ],
+            urgency: [
+                "Water-damaged drywall can collapse suddenly without warning—immediate professional assessment prevents injury and catastrophic failure",
+                "Active leaks worsen with every rain; what starts as a small stain becomes a major repair as water damage spreads through ceiling cavities",
+                "Mold begins growing in wet insulation within 24-48 hours; early intervention prevents health hazards and expensive attic remediation",
+                "Insurance companies require prompt leak repairs—delays allow 'long-term seepage' exclusions that can deny your claim"
+            ]
         },
         services: [
             {
                 icon: "fas fa-wrench",
-                title: "Leak Source Repair",
-                description: "Fix pipes, roof leaks, or AC condensation.",
+                title: "Leak Source Identification",
+                description: "We don't just patch the hole; we find and fix the roof leak, pipe burst, or AC overflow that caused it.",
                 image: "/images/flood-damage.webp",
                 link: "/restoration/water-damage/leak-repair",
             },
             {
                 icon: "fas fa-hammer",
-                title: "Drywall & Ceiling Replacement",
-                description: "Remove & replace water-damaged sections.",
+                title: "Drywall Removal & Replacement",
+                description: "Wet drywall loses 50% of its strength. We safely remove sagging sections and install new, fire-rated drywall.",
                 image: "/images/leak-repair.webp",
                 link: "/restoration/water-damage/ceiling-water-damage",
             },
             {
                 icon: "fas fa-paint-roller",
-                title: "Stain & Finish Restoration",
-                description: "Prime, paint, and re-texture surfaces.",
+                title: "Texture Matching & Painting",
+                description: "Popcorn, knockdown, or smooth? We match your existing ceiling texture perfectly so the repair is invisible.",
                 image: "/images/basement-flooding.webp",
                 link: "/restoration/water-damage/ceiling-water-damage",
             },
             {
                 icon: "fas fa-virus",
                 title: "Mold Remediation",
-                description: "Long-term protection against hidden growth.",
+                description: "Ceiling cavities are dark and humid—ideal for mold. We treat the framing to ensure no spores remain.",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/ceiling-water-damage",
             },
             {
                 icon: "fas fa-wind",
-                title: "Advanced Drying Systems",
-                description: "Industrial equipment for complete moisture removal.",
+                title: "Attic Insulation Replacement",
+                description: "Wet insulation breeds mold. We remove soggy insulation and blow in new, energy-efficient material.",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/ceiling-water-damage",
             },
         ],
         faqs: [
             {
-                q: "How do I know if ceiling water damage is serious?",
-                a: "Look for sagging, discoloration, musty odors, or peeling paint. These signal hidden water issues.",
+                q: "Is a water stain on the ceiling dangerous?",
+                a: "<strong>It can be.</strong> A stain means water is pooling above. This can lead to mold growth or even a ceiling collapse if the drywall becomes too heavy.",
             },
             {
-                q: "Can I just paint over ceiling stains?",
-                a: "No. Without fixing the leak source, stains and mold will return.",
+                q: "Can I just paint over a water stain?",
+                a: "<strong>No.</strong> You must fix the leak and dry the area first. Painting over wet drywall traps moisture and feeds mold. The stain will just come back.",
             },
             {
-                q: "How long does it take to repair ceiling water damage?",
-                a: "Small repairs: 1–2 days. Major restoration: up to a week.",
+                q: "How long does ceiling repair take?",
+                a: "<strong>Minor repairs: 1-2 days.</strong> Major restoration involving insulation and painting: 3-5 days. We work fast to minimize disruption.",
             },
             {
-                q: "Can water-damaged ceilings collapse?",
-                a: "Yes. Untreated damage weakens drywall & beams, raising collapse risk.",
+                q: "Will the repair be visible?",
+                a: "<strong>Not with us.</strong> Our texture matching experts ensure the new patch blends seamlessly with the rest of your ceiling.",
             },
         ],
         steps: [
             {
-                title: "Inspection & Moisture Detection",
-                text: "Thermal cameras to locate leaks",
-                icon: "fas fa-camera",
+                title: "1. Leak Detection",
+                text: "We find the source (roof, pipe, AC) and stop the water.",
+                icon: "fas fa-search",
             },
             {
-                title: "Containment & Drying",
-                text: "Industrial dehumidifiers & air movers",
-                icon: "fas fa-wind",
-            },
-            {
-                title: "Drywall & Insulation Replacement",
-                text: "Remove damaged materials",
-                icon: "fas fa-hammer",
-            },
-            {
-                title: "Mold Prevention",
-                text: "Antimicrobial treatments applied",
+                title: "2. Containment",
+                text: "We cover your furniture and floors to protect them from dust.",
                 icon: "fas fa-shield-alt",
             },
             {
-                title: "Finish Restoration",
-                text: "Paint, texture & restore ceiling",
+                title: "3. Removal",
+                text: "We cut out wet, unsafe drywall and remove wet insulation.",
+                icon: "fas fa-hammer",
+            },
+            {
+                title: "4. Drying",
+                text: "We dry the attic and framing completely.",
+                icon: "fas fa-wind",
+            },
+            {
+                title: "5. Reconstruction",
+                text: "We install new drywall, texture, and paint for a flawless finish.",
                 icon: "fas fa-paint-roller",
             },
         ],
@@ -472,91 +596,113 @@ export const waterContent = {
 
     "emergency-water-removal": {
         hero: {
-            title: "Rapid Emergency Water Removal When Every Minute Counts",
-            description: "Flooding, burst pipes, or storm intrusion can overwhelm your home or business in minutes. Our Florida emergency water removal teams respond 24/7 with industrial pumps, vacuums, and drying systems—eliminating standing water before it spreads.",
-            cta: "Request Water Removal Now",
+            title: "24/7 Emergency Water Removal in {city} | 60-Min Response",
+            titleFallback: "24/7 Emergency Water Removal in Florida | 60-Min Response",
+            description: "Flooding doesn't wait for business hours. Neither do we. Our emergency extraction teams are on call 24/7/365 to remove water, save your belongings, and stop mold before it starts.",
+            cta: "Call 24/7: (786) 602-2217",
             bgImage: "/images/waterDamage.webp",
+        },
+        education: {
+            overview: "Water damage emergencies strike without warning—burst pipes at 2 AM, storm flooding during hurricanes, water heater failures on weekends, or appliance malfunctions while you're at work. Every minute counts when water is actively flooding your home or business. Standing water spreads rapidly, wicking into walls, soaking carpets and padding, saturating hardwood floors, and damaging furniture and belongings. In Florida's humid climate, wet materials begin supporting mold growth within 24-48 hours, and structural damage accelerates quickly as water compromises drywall, insulation, and framing. Our emergency water removal teams are strategically positioned across Florida and equipped with truck-mounted extraction units, submersible pumps, and industrial-grade equipment to respond within 60 minutes, 24 hours a day, 365 days a year. Immediate professional water extraction is the critical first step that determines whether your property can be saved or requires extensive reconstruction—the faster we remove standing water and begin drying, the less damage occurs and the lower your restoration costs.",
+            causes: [
+                "Burst pipes from freezing temperatures, corrosion, or excessive water pressure flooding homes with hundreds of gallons per hour",
+                "Storm and hurricane flooding overwhelming drainage systems and inundating properties with contaminated water requiring immediate extraction",
+                "Appliance failures including water heater ruptures, washing machine hose bursts, and dishwasher leaks releasing water throughout homes",
+                "Sewage backups from clogged main lines or overwhelmed municipal systems pushing contaminated water into homes requiring emergency biohazard response"
+            ],
+            risks: [
+                "Rapid damage escalation as water spreads through porous materials—every hour of delay increases restoration costs by hundreds of dollars",
+                "Mold colonization beginning within 24-48 hours in wet drywall, carpets, and wood, creating health hazards and requiring expensive remediation",
+                "Structural damage to floors, walls, and foundations as prolonged water exposure causes warping, rot, and compromised integrity",
+                "Permanent loss of belongings, furniture, and irreplaceable items if water extraction doesn't occur within the first few hours"
+            ],
+            urgency: [
+                "Water migrates rapidly through walls and floors—immediate extraction within the first hour prevents damage from spreading to unaffected areas",
+                "Insurance companies favor prompt professional response with documentation—delays can result in coverage denials for preventable secondary damage",
+                "Mold prevention window is only 24-48 hours; emergency extraction and drying within this timeframe avoids costly remediation and health risks",
+                "Every minute of delay increases restoration costs exponentially—60-minute response saves thousands in reconstruction and replacement expenses"
+            ]
         },
         services: [
             {
                 icon: "fas fa-home",
-                title: "Flooded Living Rooms & Basements",
-                description: "Water extraction before it seeps into walls, flooring, and insulation.",
+                title: "Residential Water Extraction",
+                description: "From flooded living rooms to wet carpets, we extract water fast to save your home's finishes.",
                 image: "/images/flood-damage.webp",
                 link: "/restoration/water-damage/basement-flooding",
             },
             {
-                icon: "fas fa-wrench",
-                title: "Burst Pipes or Plumbing Failures",
-                description: "Rapid mitigation to stop spreading leaks.",
-                image: "/images/leak-repair.webp",
-                link: "/restoration/water-damage/leak-repair",
-            },
-            {
-                icon: "fas fa-cloud-bolt",
-                title: "Storm or Hurricane Flooding",
-                description: "High-capacity pumps handle heavy stormwater intrusion.",
-                image: "/images/basement-flooding.webp",
-                link: "/restoration/water-damage/flood-damage",
-            },
-            {
                 icon: "fas fa-building",
-                title: "Commercial Water Emergencies",
-                description: "Fast removal to minimize downtime and inventory loss.",
+                title: "Commercial Water Removal",
+                description: "We minimize business downtime with powerful truck-mounted extraction units for large spaces.",
                 image: "/images/ceiling-water-damage.webp",
                 link: "/restoration/water-damage/emergency-water-removal",
             },
             {
-                icon: "fas fa-phone",
-                title: "24/7 Emergency Response",
-                description: "Immediate response to prevent further damage.",
+                icon: "fas fa-cloud-bolt",
+                title: "Storm & Hurricane Response",
+                description: "When storms hit Florida, we are ready with generators and pumps to handle severe flooding.",
+                image: "/images/basement-flooding.webp",
+                link: "/restoration/water-damage/flood-damage",
+            },
+            {
+                icon: "fas fa-wrench",
+                title: "Burst Pipe Cleanup",
+                description: "Plumbing failure? We stop the water and clean up the mess immediately.",
+                image: "/images/leak-repair.webp",
+                link: "/restoration/water-damage/leak-repair",
+            },
+            {
+                icon: "fas fa-couch",
+                title: "Content Protection",
+                description: "We move your furniture and valuables to dry areas to prevent permanent damage.",
                 image: "/images/emergency-water-removal.webp",
                 link: "/restoration/water-damage/emergency-water-removal",
             },
         ],
         faqs: [
             {
-                q: "Can water be removed immediately after a flood?",
-                a: "Yes. With industrial pumps, most water is extracted within hours. Acting quickly prevents mold and structural damage.",
+                q: "How fast can you get here?",
+                a: "<strong>Within 60 minutes.</strong> We have teams stationed across Florida ready to roll 24/7.",
             },
             {
-                q: "What happens if water isn't removed right away?",
-                a: "It seeps into drywall, flooring, insulation—leading to mold, odor, and weakened structures.",
+                q: "Is emergency removal different from drying?",
+                a: "<strong>Yes.</strong> Removal is the rapid extraction of standing water (the bulk of the water). Drying removes the remaining moisture absorbed into walls and floors.",
             },
             {
-                q: "Is emergency water removal different from drying?",
-                a: "Yes. Removal extracts large volumes fast; drying stabilizes hidden moisture after.",
+                q: "Do you work with my insurance?",
+                a: "<strong>Yes.</strong> We document the emergency phase thoroughly, which is critical for your claim approval. We bill them directly.",
             },
             {
-                q: "Do you handle commercial water emergencies?",
-                a: "Absolutely. We service offices, warehouses, and retail spaces with minimal downtime.",
+                q: "What if I wait until morning?",
+                a: "<strong>Don't wait.</strong> Water migrates fast. In just a few hours, it can wick up walls, ruin cabinets, and start mold growth. Immediate action saves money.",
             },
         ],
         steps: [
             {
-                title: "Inspection & Safety Check",
-                text: "Identify hazards, source of water",
-                icon: "fas fa-hard-hat",
+                title: "1. Rapid Dispatch",
+                text: "Call us anytime. A live person answers and dispatches a team.",
+                icon: "fas fa-phone-volume",
             },
             {
-                title: "Water Extraction",
-                text: "Industrial pumps + vacuums remove standing water",
+                title: "2. Water Extraction",
+                text: "We pump out standing water immediately upon arrival.",
                 icon: "fas fa-tint",
             },
             {
-                title: "Drying & Dehumidification",
-                text: "Air movers + dehumidifiers stabilize humidity",
+                title: "3. Content Protection",
+                text: "We block up furniture and move items to safety.",
+                icon: "fas fa-couch",
+            },
+            {
+                title: "4. Moisture Inspection",
+                text: "We map out where the water has traveled.",
+                icon: "fas fa-search",
+            },
+            {
+                title: "5. Drying Setup",
+                text: "We set up air movers to begin the drying process instantly.",
                 icon: "fas fa-wind",
-            },
-            {
-                title: "Antimicrobial Treatment",
-                text: "Stop mold & bacteria growth",
-                icon: "fas fa-spray-can",
-            },
-            {
-                title: "Damage Assessment & Restoration Plan",
-                text: "Full documentation for insurance",
-                icon: "fas fa-clipboard-list",
             },
         ],
     },
@@ -576,10 +722,10 @@ export const fireContent = {
             bgImage: "/images/hero-fire.webp"
         },
         services: [
-            { icon: "fas fa-smog", title: "Smoke Damage", description: "Professional smoke removal and odor elimination", slug: "smoke-damage", image: "/images/smoke-damage.webp", link: "/restoration/fire-damage/smoke-damage" },
-            { icon: "fas fa-broom", title: "Soot Cleanup", description: "Safe soot removal from all surfaces", slug: "soot-cleanup", image: "/images/soot-cleanup.webp", link: "/restoration/fire-damage/soot-cleanup" },
-            { icon: "fas fa-hammer", title: "Fire Damage Repair", description: "Complete fire damage restoration", slug: "fire-damage-repair", image: "/images/fire-damage-repair.webp", link: "/restoration/fire-damage/fire-damage-repair" },
-            { icon: "fas fa-fire-extinguisher", title: "Emergency Fire Response", description: "24/7 emergency fire response", slug: "emergency-fire-response", image: "/images/emergency-fire-response.webp", link: "/restoration/fire-damage/emergency-fire-response" }
+            { icon: "fas fa-smog", title: "Smoke Damage", description: "Advanced smoke particle removal using HEPA air scrubbers and thermal fogging to eliminate odors from walls, HVAC systems, and fabrics. We neutralize acidic residue that corrodes surfaces if left untreated.", slug: "smoke-damage", image: "/images/smoke-damage.webp", link: "/restoration/fire-damage/smoke-damage", ctaText: "Remove Smoke Odors", features: ["HEPA Air Scrubbers", "Thermal Fogging", "Odor Neutralization"] },
+            { icon: "fas fa-broom", title: "Soot Cleanup", description: "Specialized soot removal using dry chemical sponges and HEPA vacuums to safely clean walls, ceilings, and contents without spreading particles. We treat all surfaces with antimicrobial sealants to prevent odor return.", slug: "soot-cleanup", image: "/images/soot-cleanup.webp", link: "/restoration/fire-damage/soot-cleanup", ctaText: "Clean Soot Now", features: ["Dry Chemical Sponges", "HEPA Vacuums", "Antimicrobial Sealing"] },
+            { icon: "fas fa-hammer", title: "Fire Damage Repair", description: "Complete structural restoration from charred framing to smoke-damaged drywall. We rebuild fire-rated assemblies, replace compromised insulation, and restore finishes to code-compliant, pre-loss condition.", slug: "fire-damage-repair", image: "/images/fire-damage-repair.webp", link: "/restoration/fire-damage/fire-damage-repair", ctaText: "Repair Fire Damage", features: ["Structural Rebuild", "Fire-Rated Assemblies", "Code-Compliant Finish"] },
+            { icon: "fas fa-fire-extinguisher", title: "Emergency Fire Response", description: "Immediate 24/7 emergency board-up and smoke containment to prevent secondary damage. We secure openings, extract firefighting water, and stabilize structures while coordinating with your insurance adjuster.", slug: "emergency-fire-response", image: "/images/emergency-fire-response.webp", link: "/restoration/fire-damage/emergency-fire-response", ctaText: "Get Emergency Help", features: ["Emergency Board-Up", "Water Extraction", "Insurance Coordination"] }
         ],
         faqs: [
             { q: "How to restore fire damage?", a: "Fire damage restoration involves soot cleanup, smoke odor removal, and structural repairs. Professionals handle debris removal, deep cleaning, and rebuilding to return the property to pre-loss condition." },
@@ -602,6 +748,27 @@ export const fireContent = {
             description: "When smoke invades your property, the damage goes beyond stains and odors—it impacts your health and safety. Our certified Florida restoration teams provide 24/7 smoke cleanup, soot removal, odor elimination, and surface repairs.",
             cta: "Request Smoke Damage Help Now",
             bgImage: "/images/fire-damage.webp"
+        },
+        education: {
+            overview: "Smoke damage is often more pervasive and difficult to remediate than the fire itself. Long after the flames are extinguished, smoke residues continue to settle on surfaces, penetrate porous materials, and circulate through HVAC systems. In Florida homes, where air conditioning is constant, smoke particles are rapidly distributed to every room, embedding in drywall, carpets, upholstery, and clothing. Different types of fires produce different types of smoke—wet smoke from smoldering fires is sticky and pungent, while dry smoke from fast-burning fires is powdery. Both contain toxic chemicals, carcinogens, and acidic compounds that can corrode metals, etch glass, and permanently stain surfaces within hours. Professional smoke damage restoration requires more than just cleaning; it involves thermal fogging, ozone treatment, and specialized chemical sponging to neutralize odors at the molecular level and physically remove toxic residues to restore safe indoor air quality.",
+            causes: [
+                "Protein residues from kitchen fires (burnt food, grease) leaving an invisible but extremely pungent and sticky film on walls and ceilings",
+                "Synthetic smoke from burning plastics and fabrics producing thick, black, toxic residue that smears easily and is difficult to clean",
+                "Puff-backs from malfunctioning oil burners or furnaces blowing soot and smoke through the heating system into every room",
+                "Wildfire smoke infiltration during dry seasons entering homes through vents and windows, settling as fine ash and causing respiratory irritation"
+            ],
+            risks: [
+                "Severe respiratory irritation and asthma attacks from inhaling microscopic soot particles and chemical off-gassing from burnt materials",
+                "Permanent yellowing and staining of walls, plastics, and appliances as acidic smoke residues react with surfaces over time",
+                "Corrosion and pitting of metal fixtures, electronics, and appliances due to the acidic nature of soot and smoke residue",
+                "Lingering toxic odors that become embedded in structural framing and insulation, requiring extensive demolition if not treated immediately"
+            ],
+            urgency: [
+                "Acidic soot begins discoloring plastics and tarnishing metals within minutes—immediate cleaning prevents permanent damage",
+                "Smoke odors penetrate deeper into porous materials every hour; delayed treatment makes complete deodorization nearly impossible without reconstruction",
+                "Toxic particulates remain airborne and settle in lungs; professional air scrubbing is needed immediately to protect family health",
+                "Insurance claims for smoke damage require detailed documentation of 'unseen' damage—we provide the testing and reports needed for coverage"
+            ]
         },
         services: [
             { icon: "fas fa-broom", title: "Soot & Residue Removal", description: "Remove acidic soot before it corrodes surfaces", image: "/images/soot-cleanup.webp", link: "/restoration/fire-damage/soot-cleanup" },
@@ -630,6 +797,27 @@ export const fireContent = {
             cta: "Request Soot Cleanup Now",
             bgImage: "/images/fire-damage.webp"
         },
+        education: {
+            overview: "Soot is a dangerous byproduct of incomplete combustion, composed of microscopic carbon particles, acids, chemicals, and metals. It doesn't just sit on the surface; it adheres to walls, ceilings, and contents, often creating an oily or sticky film that is extremely difficult to remove without professional techniques. In Florida's humid environment, soot can become acidic when mixed with moisture in the air, accelerating damage to your property. Improper cleaning methods—like wiping soot with a wet cloth—can smear the residue, drive it deeper into pores, and cause permanent staining. Our certified soot cleanup specialists use HEPA vacuums, dry chemical sponges, and specialized degreasers to lift soot safely without damaging finishes. We also address hidden soot in HVAC ducts and behind outlets to ensure your home is truly clean and safe from the health risks associated with particle inhalation.",
+            causes: [
+                "Incomplete combustion of organic materials like wood, paper, and cotton producing fine, powdery soot that spreads easily through air currents",
+                "Burning synthetic materials (plastics, foam, carpets) creating sticky, oily soot that adheres stubbornly to walls and furniture",
+                "Furnace or boiler malfunctions ('puff-backs') releasing sudden bursts of oily soot into the heating system and throughout the home",
+                "Candle burning over long periods, especially scented candles, depositing fine black soot (ghosting) on walls, ceilings, and carpets"
+            ],
+            risks: [
+                "Inhalation of microscopic soot particles (PM 2.5) which can penetrate deep into lungs and enter the bloodstream, causing heart and lung disease",
+                "Etching and corrosion of glass, mirrors, and metal surfaces as acidic soot reacts with humidity, causing irreversible pitting within 72 hours",
+                "Permanent discoloration of light-colored porous materials like drywall, paint, and upholstery if soot is not removed promptly",
+                "Electrical short circuits and overheating in appliances and electronics as conductive soot particles accumulate inside devices"
+            ],
+            urgency: [
+                "Soot becomes acidic with humidity and begins etching glass and metal within hours—rapid removal saves expensive fixtures",
+                "Health risks from inhaling soot are immediate; professional HEPA cleaning is required to make the air safe for occupancy",
+                "DIY cleaning often causes permanent damage by smearing oily soot; professional dry removal techniques are needed first",
+                "The longer soot sits, the harder it is to remove; prompt action can save repainting and refinishing costs"
+            ]
+        },
         services: [
             { icon: "fas fa-paint-roller", title: "Wall & Ceiling Soot Removal", description: "Clean stains safely without damaging paint or drywall.", image: "/images/soot-cleanup.webp", link: "/restoration/fire-damage/wall-ceiling-cleanup" },
             { icon: "fas fa-couch", title: "Furniture & Upholstery Cleanup", description: "Restore salvageable sofas, chairs & fabrics.", image: "/images/fire-damage.webp", link: "/restoration/fire-damage/furniture-restoration" },
@@ -656,6 +844,27 @@ export const fireContent = {
             description: "We provide 24/7 fire and smoke damage restoration across Florida. From emergency board-up to soot removal and full repairs, our team restores homes and businesses to safe, pre-loss condition.",
             cta: "Clean Up After Fire",
             bgImage: "/images/fire-damage.webp"
+        },
+        education: {
+            overview: "Fire damage is a complex combination of destruction from flames, heat, smoke, and the water used to extinguish the fire. The visible charring is often just the tip of the iceberg; heat can compromise structural integrity, melt electrical wiring, and weaken plumbing systems. In Florida, the aftermath of a fire is further complicated by high humidity, which can trigger mold growth in water-soaked areas within days. Effective fire damage repair requires a coordinated approach: immediate board-up to secure the property, water extraction to prevent mold, specialized smoke and soot removal, and finally, structural reconstruction. Our licensed general contractors handle everything from minor repairs to complete rebuilds, ensuring your property is restored to its pre-loss condition—or better—while navigating the complex insurance claims process for you.",
+            causes: [
+                "Electrical fires from faulty wiring, overloaded circuits, or malfunctioning appliances, often causing damage inside walls before becoming visible",
+                "Kitchen fires, particularly grease fires, which are the leading cause of home fires and cause extensive smoke and protein residue damage",
+                "Lightning strikes during Florida's frequent thunderstorms, causing immediate structural fires and electrical system surges",
+                "Dryer vent clogs leading to lint ignition, a common but preventable cause of severe laundry room and house fires"
+            ],
+            risks: [
+                "Structural collapse from weakened load-bearing walls, floor joists, and roof trusses compromised by high heat and charring",
+                "Hidden water damage and mold growth resulting from the thousands of gallons of water used by firefighters to extinguish flames",
+                "Toxic chemical exposure from burned synthetic materials, plastics, and insulation releasing hazardous carcinogens into the air",
+                "Security risks from burned-out windows and doors, leaving the property vulnerable to theft, vandalism, and weather damage"
+            ],
+            urgency: [
+                "Open windows and roofs must be boarded up immediately to prevent rain damage, theft, and liability issues",
+                "Water from firefighting efforts causes mold growth in 24-48 hours; extraction must happen simultaneously with fire investigation",
+                "Ash and soot are acidic and will corrode pipes and electronics if not cleaned within days, increasing restoration costs",
+                "Insurance policies require you to 'mitigate further damage'—failure to secure the property can lead to claim denial"
+            ]
         },
         services: [
             { icon: "fas fa-smog", title: "Smoke Damage Cleanup", description: "Remove smoke particles and odors from walls, ceilings, and furniture with professional cleaning and deodorizing methods.", image: "/images/smoke-damage.webp", link: "/restoration/fire-damage/smoke-damage" },
@@ -684,6 +893,27 @@ export const fireContent = {
             description: "When fire strikes, every second counts. Our emergency fire response teams provide immediate board-up, smoke containment, and damage assessment to protect your property and begin the restoration process.",
             cta: "Get Emergency Fire Help",
             bgImage: "/images/fire-damage.webp"
+        },
+        education: {
+            overview: "The first 24 to 48 hours after a fire are critical for saving your property. Once the firefighters leave, your home is vulnerable to the elements, theft, and rapid secondary damage from water and corrosive smoke residues. Our emergency fire response service is designed to bridge the gap between the fire department leaving and the start of full restoration. We deploy immediately to secure the site with board-up services for broken windows and doors, tarp damaged roofs to prevent rain intrusion, and establish containment zones to stop soot from spreading to unaffected rooms. In Florida, where daily storms are common, leaving a fire-damaged roof or window open for even a few hours can lead to catastrophic water damage. Our team also provides immediate power generation, safety assessments, and coordinates with your insurance adjuster to document the loss properly from day one.",
+            causes: [
+                "Structural fires leaving homes exposed to weather and unauthorized entry through burned-out windows, doors, and roof sections",
+                "Arson or vandalism incidents requiring immediate site security and evidence preservation for police and insurance investigations",
+                "Lightning strikes causing localized fire damage and electrical hazards that need immediate containment and safety inspection",
+                "Kitchen or electrical fires that have been extinguished but left the property filled with toxic smoke and water requiring urgent mitigation"
+            ],
+            risks: [
+                "Unauthorized entry, looting, and vandalism if the property is not immediately boarded up and secured after the fire department departs",
+                "Severe water damage and mold growth from rain entering through damaged roofs or windows, compounding the fire loss",
+                "Cross-contamination of unaffected areas as soot and smoke travel through HVAC systems and open hallways if not contained",
+                "Liability issues if someone enters your unsecured, unsafe property and gets injured on debris or unstable structures"
+            ],
+            urgency: [
+                "Insurance policies require you to take 'reasonable steps' to prevent further damage—emergency board-up is the most critical step",
+                "Rain can destroy salvageable belongings and structural elements within minutes if the roof or windows are compromised",
+                "Looters often target fire-damaged homes within hours; immediate security prevents theft of remaining valuables",
+                "Soot and water damage worsen exponentially with time; immediate mitigation stops the clock on destruction and reduces total claim costs"
+            ]
         },
         services: [
             { icon: "fas fa-shield-alt", title: "Emergency Board-Up", description: "Immediate securing of windows, doors, and openings.", image: "/images/emergency-fire-response.webp", link: "/restoration/fire-damage/board-up-services" },
@@ -718,11 +948,32 @@ export const moldContent = {
             cta: "Remove Mold Fast",
             bgImage: "/images/hero-mold.webp"
         },
+        education: {
+            overview: "Mold remediation is a scientific process that goes far beyond simple cleaning. In Florida's hot, humid climate, mold is a persistent threat that can colonize a home in as little as 24-48 hours following water damage. It feeds on organic materials like drywall, wood, and insulation, slowly digesting the structural components of your property while releasing microscopic spores and mycotoxins into the air. These airborne contaminants can cause serious health issues, from allergic reactions to severe respiratory infections. Professional mold remediation involves identifying the moisture source, containing the affected area to prevent cross-contamination, physically removing the mold growth using HEPA-filtered equipment, and treating surfaces with EPA-approved antimicrobials. We don't just bleach the surface; we remove the root system and correct the environment to ensure the mold doesn't return.",
+            causes: [
+                "Undetected plumbing leaks inside walls or under cabinets providing a constant moisture source for mold colonies",
+                "Roof leaks and attic condensation allowing mold to grow on insulation and sheathing, often spreading to ceilings below",
+                "High indoor humidity (above 60%) due to HVAC failures or poor ventilation, creating a perfect breeding ground for spores",
+                "Flood damage or water intrusion that was not properly dried within 48 hours, leading to widespread fungal growth"
+            ],
+            risks: [
+                "Respiratory distress, asthma attacks, and chronic sinus infections caused by inhaling high concentrations of mold spores",
+                "Structural damage as mold enzymes break down cellulose in drywall and wood framing, compromising the integrity of your home",
+                "Decreased property value and difficulty selling your home due to the stigma and disclosure requirements of mold history",
+                "Cross-contamination of HVAC systems, spreading spores to every room in the house and requiring expensive duct cleaning"
+            ],
+            urgency: [
+                "Mold colonies grow exponentially—what starts as a small spot can cover a wall in days if the moisture source remains",
+                "Mycotoxins from black mold (Stachybotrys) are hazardous neurotoxins; immediate removal is critical for family safety",
+                "Insurance coverage often depends on prompt action; ignoring visible mold can be considered 'negligence' and lead to claim denial",
+                "Structural wood rot accelerates with mold presence; early remediation saves thousands in carpentry and reconstruction costs"
+            ]
+        },
         services: [
-            { icon: "fas fa-magnifying-glass", title: "Mold Inspection", description: "Professional mold testing and inspection", slug: "mold-inspection", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-inspection" },
-            { icon: "fas fa-broom", title: "Black Mold Removal", description: "Safe removal of toxic black mold", slug: "black-mold-removal", image: "/images/black-mold-removal.webp", link: "/restoration/mold-remediation/black-mold-removal" },
-            { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Prevent future mold growth", slug: "mold-prevention", image: "/images/mold-prevention.webp", link: "/restoration/mold-remediation/mold-prevention" },
-            { icon: "fas fa-vial", title: "Mold Testing", description: "Certified mold testing services", slug: "mold-testing", image: "/images/mold-testing.webp", link: "/restoration/mold-remediation/mold-testing" }
+            { icon: "fas fa-magnifying-glass", title: "Mold Inspection", description: "DBPR-licensed mold assessment using thermal imaging and moisture meters to detect hidden growth behind walls and in HVAC systems. We provide detailed reports with spore counts and remediation protocols for insurance claims.", slug: "mold-inspection", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-inspection", ctaText: "Book Inspection", features: ["DBPR-Licensed", "Thermal Imaging", "Insurance Reports"] },
+            { icon: "fas fa-broom", title: "Black Mold Removal", description: "Safe removal of toxic Stachybotrys (black mold) using negative air chambers and HEPA filtration. We contain affected areas, remove contaminated materials, and apply EPA-approved antimicrobials to prevent regrowth.", slug: "black-mold-removal", image: "/images/black-mold-removal.webp", link: "/restoration/mold-remediation/black-mold-removal", ctaText: "Remove Black Mold", features: ["Negative Air Chambers", "HEPA Filtration", "EPA-Approved Treatment"] },
+            { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Comprehensive moisture control including dehumidification, ventilation improvements, and application of mold-resistant coatings to vulnerable areas. We identify and fix humidity sources to prevent future infestations.", slug: "mold-prevention", image: "/images/mold-prevention.webp", link: "/restoration/mold-remediation/mold-prevention", ctaText: "Prevent Mold", features: ["Moisture Control", "Dehumidification", "Mold-Resistant Coating"] },
+            { icon: "fas fa-vial", title: "Mold Testing", description: "Certified laboratory air and surface sampling to identify mold species and concentration levels. We use AIHA-accredited labs for accurate results and provide clearance testing after remediation to verify safe air quality.", slug: "mold-testing", image: "/images/mold-testing.webp", link: "/restoration/mold-remediation/mold-testing", ctaText: "Test Air Quality", features: ["AIHA-Accredited Labs", "Air Sampling", "Clearance Testing"] }
         ],
         faqs: [
             { q: "¿Cubre mi seguro de casa el moho en Florida?", a: "Las pólizas estándar tienen limitaciones. El moho debe ser el resultado de un daño cubierto (ej. tubería rota). Por eso, nuestra documentación certificada es crítica para respaldar tu reclamo." },
@@ -744,6 +995,27 @@ export const moldContent = {
             description: "Not sure if mold is hiding in your home or business? Our certified testing identifies mold type & levels—so you know exactly what you're breathing.",
             cta: "Schedule My Mold Test Today",
             bgImage: "/images/mold-damage.webp"
+        },
+        education: {
+            overview: "Visible mold is often just a symptom of a larger, hidden problem. Because mold thrives in dark, damp environments, the most dangerous colonies frequently grow behind drywall, under flooring, or inside HVAC ducts where they can't be seen. A professional mold inspection is the only way to uncover the full extent of an infestation. Our DBPR-licensed mold assessors use advanced diagnostic tools—including thermal imaging cameras to detect hidden moisture pockets, hygrometers to measure humidity levels, and borescopes to see inside wall cavities—to locate fungal growth without destructive demolition. We provide a comprehensive, unbiased report detailing the type of mold present, the spore concentration levels, and the specific source of moisture causing the growth. This documentation is essential for insurance claims and for developing an effective remediation protocol.",
+            causes: [
+                "Musty odors that persist despite cleaning, indicating active mold growth in hidden areas like crawlspaces or wall voids",
+                "Unexplained allergic reactions or respiratory symptoms among family members that improve when leaving the house",
+                "History of water damage or flooding that may have left trapped moisture in building materials",
+                "Real estate transactions requiring a 'clean bill of health' for the property to ensure no hidden liabilities exist"
+            ],
+            risks: [
+                "Hidden mold releasing spores into the air for months or years, causing chronic health issues without the homeowner knowing the cause",
+                "Extensive structural rot occurring behind walls where it goes unnoticed until significant damage has been done",
+                "Denial of insurance claims due to lack of professional documentation proving the cause and extent of the mold damage",
+                "Purchase of a 'lemon' property with pre-existing mold issues that could cost tens of thousands to remediate later"
+            ],
+            urgency: [
+                "If you can smell mold, it's already airborne; an inspection is needed immediately to identify the source and protect air quality",
+                "Buying or selling a home requires clear answers fast; our rapid inspection reports keep your real estate closing on track",
+                "Unchecked moisture causes mold to spread to unaffected areas; early detection limits the scope and cost of remediation",
+                "Health symptoms won't improve until the source is found; identifying the mold type helps doctors treat mold-related illnesses"
+            ]
         },
         services: [
             { icon: "fas fa-eye", title: "Visual Inspection", description: "Comprehensive visual examination to identify visible mold and moisture issues.", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-inspection" },
@@ -772,6 +1044,27 @@ export const moldContent = {
             cta: "Get Black Mold Removal Now",
             bgImage: "/images/mold-damage.webp"
         },
+        education: {
+            overview: "Stachybotrys chartarum, commonly known as 'black mold,' is the most feared fungal infestation for good reason. Unlike common mildew, black mold produces mycotoxins—potent neurotoxins that can cause severe health problems including chronic fatigue, headaches, respiratory bleeding, and neurological issues. It typically grows on cellulose-rich materials like drywall, cardboard, and wood that have been wet for an extended period. Removing black mold is not a DIY project; disturbing the colony releases billions of toxic spores into the air, drastically increasing exposure risks. Our black mold removal protocol follows strict IICRC S520 standards: we build negative-air containment chambers to isolate the area, use full PPE including respirators, and employ HEPA air scrubbers to capture airborne spores. We physically remove the contaminated materials and chemically treat the remaining structure to ensure your home is safe again.",
+            causes: [
+                "Long-term, undetected water leaks that keep building materials constantly saturated for weeks or months",
+                "Flooding events involving contaminated water (Category 3) that soak into drywall and insulation",
+                "Condensation issues in HVAC systems or attics that provide a steady supply of moisture to organic dust and materials",
+                "Poorly ventilated bathrooms or laundry rooms where humidity remains high enough to support toxic mold growth"
+            ],
+            risks: [
+                "Severe toxicity (Sick Building Syndrome) affecting the nervous system, immune system, and respiratory system of occupants",
+                "Permanent contamination of porous belongings like furniture, clothing, and mattresses, requiring total disposal",
+                "Legal liability for landlords or business owners if tenants or employees are exposed to known toxic mold hazards",
+                "Complete loss of structural drywall and framing in affected areas, necessitating extensive and expensive reconstruction"
+            ],
+            urgency: [
+                "Black mold mycotoxins are dangerous immediately upon inhalation; evacuation and professional removal are often necessary",
+                "Spores spread through HVAC systems rapidly; containment must be set up instantly to protect the rest of the building",
+                "The longer black mold grows, the more expensive the remediation; it digs deep into structural wood, making surface cleaning impossible",
+                "Health effects can be long-lasting; prompt removal is the only way to stop the exposure and begin recovery"
+            ]
+        },
         services: [
             { icon: "fas fa-magnifying-glass", title: "Inspection & Testing", description: "Detect mold spread and measure spore levels.", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-inspection" },
             { icon: "fas fa-hard-hat", title: "Containment & Safety Setup", description: "Seal affected areas to prevent further spread.", image: "/images/black-mold-removal.webp", link: "/restoration/mold-remediation/black-mold-removal" },
@@ -798,6 +1091,27 @@ export const moldContent = {
             cta: "Protect My Home From Mold",
             bgImage: "/images/mold-damage.webp"
         },
+        education: {
+            overview: "In Florida's tropical climate, mold prevention is an ongoing battle. High humidity, frequent storms, and air conditioning usage create a perfect storm for fungal growth. Prevention is far cheaper and healthier than remediation. Our mold prevention services focus on controlling the one factor mold needs to survive: moisture. We implement comprehensive strategies including crawlspace encapsulation, dehumidification system installation, and the application of antimicrobial coatings to vulnerable surfaces. We also assess your property's envelope—roof, windows, and foundation—to identify and seal potential water intrusion points. By maintaining indoor humidity below 60% and eliminating organic food sources, we create an environment where mold simply cannot grow, protecting your property and your health for the long term.",
+            causes: [
+                "Inadequate ventilation in attics, bathrooms, and kitchens allowing moisture to accumulate and condense on surfaces",
+                "Poorly sealed windows and doors letting in humid outdoor air that condenses when it meets cool air-conditioned surfaces",
+                "Oversized or undersized HVAC units that fail to properly dehumidify the air, leading to 'clammy' indoor conditions",
+                "Lack of vapor barriers in crawlspaces or slab foundations allowing ground moisture to wick up into the home"
+            ],
+            risks: [
+                "Recurrent mold blooms that require repeated, expensive cleaning because the underlying moisture issue was never solved",
+                "Gradual degradation of indoor air quality as minor mold growth releases allergens continuously over time",
+                "Damage to clothes, shoes, and leather goods which are often the first items to show mold growth in humid closets",
+                "Voided manufacturer warranties on flooring and windows if installation guidelines regarding moisture control were not followed"
+            ],
+            urgency: [
+                "Florida humidity is constant; without active prevention, mold can start growing in a clean home within days of an AC failure",
+                "Prevention costs a fraction of remediation; investing in moisture control now saves thousands in future repairs",
+                "Protecting vulnerable populations (infants, elderly) requires proactive air quality management, not just reactive cleaning",
+                "Water damage events are inevitable; having mold-resistant materials and coatings in place minimizes the impact when they occur"
+            ]
+        },
         services: [
             { icon: "fas fa-thermometer-half", title: "Moisture Assessment", description: "Identify leaks, humidity levels & hidden risks.", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-inspection" },
             { icon: "fas fa-fan", title: "Air Quality & Ventilation Check", description: "Ensure airflow prevents condensation & spores.", image: "/images/black-mold-removal.webp", link: "/restoration/mold-remediation/mold-prevention" },
@@ -823,6 +1137,27 @@ export const moldContent = {
             description: "Professional mold testing in Florida. Certified inspectors use advanced air & surface sampling to detect hidden mold. Fast results, clear reports, peace of mind.",
             cta: "Book Certified Mold Testing Now",
             bgImage: "/images/mold-damage.webp"
+        },
+        education: {
+            overview: "You can't fight what you can't see. Mold testing provides the scientific data needed to make informed decisions about your property's safety. While a visual inspection finds obvious growth, air quality testing reveals the invisible threat: airborne spore counts. We use air-o-cell cassettes to capture microscopic particles and bio-tape lifts to sample surface growth. These samples are analyzed by an independent, AIHA-accredited laboratory to identify the specific genus of mold (e.g., Aspergillus, Penicillium, Stachybotrys) and the concentration levels compared to outdoor baselines. This data is crucial for three reasons: it confirms if a property is safe to occupy, it dictates the necessary remediation protocol, and 'clearance testing' proves that a remediation job was successful. Don't guess with your health—get the facts.",
+            causes: [
+                "Need for objective proof of mold presence to justify insurance coverage or landlord action",
+                "Verification of successful remediation ('clearance testing') to ensure the area is safe for re-occupancy",
+                "Unexplained health symptoms where doctors suspect environmental triggers but need confirmation of mold exposure",
+                "Real estate due diligence to ensure a property doesn't have a hidden history of water damage and mold"
+            ],
+            risks: [
+                "False negatives from DIY test kits which are notoriously unreliable and often show 'mold' even in safe homes, causing unnecessary panic",
+                "False positives or missed hidden mold if sampling is not performed by a trained technician using proper protocols",
+                "Incomplete remediation if the specific mold type is not identified, as some species require more aggressive treatment than others",
+                "Legal disputes without admissible lab data to prove the existence and severity of the mold condition"
+            ],
+            urgency: [
+                "If you suspect toxic mold, you need to know immediately to determine if evacuation is necessary",
+                "Insurance claims have strict deadlines; having a certified lab report expedites the approval process",
+                "Before buying a home, you have a limited inspection window; rapid testing ensures you don't buy a moldy money pit",
+                "Peace of mind is invaluable; knowing your air is safe allows you to sleep soundly without worrying about invisible threats"
+            ]
         },
         services: [
             { icon: "fas fa-lungs", title: "Air Testing", description: "Lab-grade air sampling to detect invisible mold spores.", image: "/images/mold-inspection.webp", link: "/restoration/mold-remediation/mold-testing" },
@@ -857,11 +1192,32 @@ export const stormContent = {
             cta: "Repair Storm Damage Today",
             bgImage: "/images/hero-storm.webp"
         },
+        education: {
+            overview: "Florida's severe weather—from daily thunderstorms to catastrophic hurricanes—poses a constant threat to property integrity. Storm damage is rarely limited to just one area; high winds tear off roof shingles, flying debris shatters windows, and driving rain floods interiors. The result is a complex mix of structural, water, and potential mold damage that requires a coordinated, multi-faceted restoration approach. Our storm damage team is equipped to handle every aspect of recovery: we deploy immediately to install emergency roof tarps and board up windows, remove hazardous fallen trees, extract standing water, and then begin the process of structural repair. We understand that after a storm, your home is vulnerable to the elements and looters, which is why our priority is securing the property envelope within hours of the event.",
+            causes: [
+                "Hurricane-force winds (74+ mph) lifting roof shingles, ripping off siding, and toppling trees onto structures",
+                "Wind-driven rain entering through compromised soffits, vents, and window seals, causing hidden water damage inside walls",
+                "Hail impacts damaging roof granules and cracking skylights, leading to long-term leaks and UV degradation",
+                "Tornadoes and microbursts causing sudden, localized structural failure and scattering dangerous debris across properties"
+            ],
+            risks: [
+                "Secondary water damage destroying insulation, drywall, and flooring if the roof or windows are not tarped immediately",
+                "Mold growth beginning within 24-48 hours in warm, humid post-storm conditions, especially when power outages prevent AC use",
+                "Structural collapse risks from weakened roof trusses or load-bearing walls impacted by fallen trees",
+                "Electrical hazards from exposed wiring, water-damaged outlets, and downed power lines on the property"
+            ],
+            urgency: [
+                "Insurance policies require 'mitigation of damages' (tarping/boarding) to maintain coverage; delays can lead to claim denial",
+                "Another storm could strike at any time; a compromised home cannot withstand a second impact without temporary protection",
+                "Security is compromised when windows and doors are broken; immediate board-up prevents theft and vandalism",
+                "Water trapped in walls causes rot and mold rapidly; immediate extraction is vital to save the structure"
+            ]
+        },
         services: [
-            { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Complete hurricane damage restoration", slug: "hurricane-damage", image: "/images/hurricane-damage.webp", link: "/restoration/storm-damage/hurricane-damage" },
-            { icon: "fas fa-wind", title: "Wind Damage", description: "Roof and siding wind damage repair", slug: "wind-damage", image: "/images/wind-damage.webp", link: "/restoration/storm-damage/wind-damage" },
-            { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/storm-debris-removal.webp", link: "/restoration/storm-damage/storm-debris-removal" },
-            { icon: "fas fa-ambulance", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/emergency-storm-repair.webp", link: "/restoration/storm-damage/emergency-storm-repair" }
+            { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Comprehensive hurricane recovery including emergency blue roof tarping, storm surge water extraction, and structural stabilization. We handle wind-torn siding, shattered windows, and flood-damaged interiors with rapid debris removal and mold prevention protocols.", slug: "hurricane-damage", image: "/images/hurricane-damage.webp", link: "/restoration/storm-damage/hurricane-damage", ctaText: "Restore Storm Damage", features: ["Blue Roof Tarping", "Storm Surge Cleanup", "Structural Stabilization"] },
+            { icon: "fas fa-wind", title: "Wind Damage", description: "Expert repair of wind-damaged roofs, siding, and gutters using hurricane-rated materials. We replace missing shingles, seal exposed underlayment, and restore structural integrity to prevent water intrusion and further deterioration.", slug: "wind-damage", image: "/images/wind-damage.webp", link: "/restoration/storm-damage/wind-damage", ctaText: "Repair Wind Damage", features: ["Hurricane-Rated Materials", "Roof Sealing", "Structural Integrity"] },
+            { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe removal of fallen trees, branches, and storm debris using heavy equipment and certified arborists. We clear roofs, yards, and driveways, then haul away all materials for eco-friendly disposal and site restoration.", slug: "storm-debris-removal", image: "/images/storm-debris-removal.webp", link: "/restoration/storm-damage/storm-debris-removal", ctaText: "Remove Debris", features: ["Certified Arborists", "Heavy Equipment", "Eco-Friendly Disposal"] },
+            { icon: "fas fa-ambulance", title: "Emergency Storm Repair", description: "Immediate 24/7 emergency response with roof tarping, window board-up, and water extraction to prevent secondary damage. We stabilize structures, document damage for insurance, and begin restoration while coordinating with adjusters.", slug: "emergency-storm-repair", image: "/images/emergency-storm-repair.webp", link: "/restoration/storm-damage/emergency-storm-repair", ctaText: "Get Emergency Help", features: ["24/7 Response", "Emergency Tarping", "Insurance Documentation"] }
         ],
         faqs: [
             { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
@@ -884,6 +1240,27 @@ export const stormContent = {
             description: "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
             cta: "Restore After Hurricane Now",
             bgImage: "/images/storm-damage.webp"
+        },
+        education: {
+            overview: "Hurricanes are the most destructive force of nature in Florida, capable of causing total property loss through a combination of wind, rain, and storm surge. The damage is often layered: high winds strip the roof, allowing rain to soak the interior, while rising floodwaters destroy the lower levels. Recovery requires a massive, coordinated effort involving debris removal, water extraction, demolition of ruined materials, and extensive structural rebuilding. Our hurricane response team monitors storms before they make landfall and pre-positions equipment to respond as soon as it is safe. We handle the entire recovery process, from the initial chaotic days of securing the property and removing wet materials to the final coat of paint during reconstruction, working closely with your insurance adjuster to document every inch of damage.",
+            causes: [
+                "Category 1-5 winds causing progressive damage from shingle loss to complete roof and wall failure",
+                "Storm surge inundating coastal properties with corrosive saltwater, destroying foundations, electrical systems, and interiors",
+                "Flying debris (missiles) penetrating building envelopes, allowing wind and water to pressurize and destroy structures from within",
+                "Prolonged rainfall during slow-moving storms causing freshwater flooding even in non-coastal, inland areas"
+            ],
+            risks: [
+                "Total structural failure if compromised load-bearing components are not identified and shored up immediately",
+                "Widespread black mold growth due to the combination of heat, humidity, and lack of power/AC for days or weeks",
+                "Contamination from sewage and chemicals mixed into floodwaters, creating hazardous conditions for occupants",
+                "Long-term corrosion of electrical wiring, HVAC components, and metal fasteners exposed to saltwater spray or surge"
+            ],
+            urgency: [
+                "The 'Golden Hour' for recovery is the first 48 hours; getting the property dry and secure determines if it can be saved",
+                "Insurance adjusters are overwhelmed after a storm; having a professional contractor document damage early speeds up your claim",
+                "Mold grows explosively in post-hurricane heat; waiting for power to return before drying guarantees a mold infestation",
+                "Supply shortages (tarps, plywood, generators) occur instantly; our pre-stocked inventory ensures your home gets protected while others wait"
+            ]
         },
         services: [
             { icon: "fas fa-home-damage", title: "Roof Leaks & Collapse Risks", description: "Wind and flying debris cause hidden roof damage.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/hurricane-damage" },
@@ -912,6 +1289,27 @@ export const stormContent = {
             cta: "Request Wind Damage Repair Now",
             bgImage: "/images/storm-damage.webp"
         },
+        education: {
+            overview: "You don't need a named hurricane to suffer severe wind damage. Florida's severe thunderstorms, microbursts, and tornadoes can generate wind speeds exceeding 60-100 mph, causing significant damage in seconds. Wind damage is often deceptive; while missing shingles are obvious, the real danger lies in the 'lift' that breaks the adhesive seals of your roof, or the stress fractures in siding and windows that allow water to seep in over time. Our wind damage experts inspect your property for these subtle signs of compromise. We provide immediate emergency tarping to seal the building envelope and prevent water intrusion, followed by permanent repairs using high-quality, wind-rated materials designed to withstand future storms.",
+            causes: [
+                "Microbursts and straight-line winds from thunderstorms hitting properties with sudden, explosive force",
+                "Tornadoes causing catastrophic localized damage, twisting structures and stripping exterior cladding",
+                "Uplift pressure on roof overhangs and eaves peeling back roofing materials and exposing the wood deck to rain",
+                "Impact damage from flying tree limbs, patio furniture, and loose debris shattering windows and puncturing siding"
+            ],
+            risks: [
+                "Slow leaks from unsealed shingles or flashing that rot roof decking and attic insulation over months without being noticed",
+                "Window seal failure leading to fogging, drafts, and water intrusion during subsequent rainstorms",
+                "Siding detachment allowing water to trap against the house wrap, causing hidden mold and wood rot in wall cavities",
+                "Diminished wind resistance of the roof, making it likely to fail completely during the next minor wind event"
+            ],
+            urgency: [
+                "Exposed roof decking absorbs water like a sponge; tarping must happen before the next rain shower to save the roof",
+                "Broken windows compromise home security and allow humidity to spike indoors; board-up is essential immediately",
+                "Insurance claims for wind damage often have time limits; prompt inspection proves the damage was storm-related, not wear-and-tear",
+                "Loose debris on your property can become dangerous projectiles in the next gust; cleanup prevents further damage"
+            ]
+        },
         services: [
             { icon: "fas fa-home", title: "Roof Shingle Loss", description: "Exposed underlayment leads to leaks.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/wind-damage" },
             { icon: "fas fa-window-maximize", title: "Broken Windows & Glass", description: "Flying debris causes breakage and safety risks.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/wind-damage" },
@@ -938,6 +1336,27 @@ export const stormContent = {
             cta: "Request Debris Cleanup Now",
             bgImage: "/images/storm-damage.webp"
         },
+        education: {
+            overview: "The aftermath of a storm leaves properties cluttered with dangerous debris—fallen trees, scattered roof shingles, twisted metal siding, and shattered glass. This debris isn't just unsightly; it poses a serious safety hazard to your family and blocks access for repair crews and emergency vehicles. Attempting to clear storm debris yourself can be dangerous, especially when dealing with heavy tree limbs or materials entangled with power lines. Our professional debris removal teams use heavy equipment—skid steers, grapple trucks, and chainsaws—to safely clear your property. We handle the heavy lifting, hauling, and eco-friendly disposal, ensuring your yard, driveway, and roof are clean and safe so that restoration work can begin.",
+            causes: [
+                "Fallen trees and large branches blocking driveways, crushing fences, or resting precariously on roof structures",
+                "Construction materials like shingles, siding, and aluminum fascia stripped from your home or neighboring properties",
+                "Flooded furniture, carpets, and drywall that have been removed from the home and need immediate disposal",
+                "Hazardous waste including broken glass, nails, and sharp metal fragments scattered across lawns and walkways"
+            ],
+            risks: [
+                "Physical injury from attempting to move heavy or unstable debris without proper equipment and training",
+                "Puncture wounds and tetanus risks from stepping on hidden nails or sharp metal in tall grass or piles",
+                "Further damage to the home if fallen trees are removed incorrectly, causing them to roll or snap back onto the structure",
+                "Pest infestations as piles of wet wood and debris attract termites, rodents, and mosquitoes"
+            ],
+            urgency: [
+                "Debris blocks access for insurance adjusters and repair contractors, delaying the start of your restoration claim",
+                "Wet debris against the house promotes termite activity and wood rot; clearing the perimeter is a priority",
+                "HOA and municipal codes often require rapid cleanup to maintain neighborhood safety and aesthetics",
+                "Loose debris becomes dangerous missiles if another storm approaches; clearing the yard protects your home"
+            ]
+        },
         services: [
             { icon: "fas fa-tree", title: "Tree & Branch Removal", description: "Cut, clear, and haul away fallen trees.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/storm-debris-removal" },
             { icon: "fas fa-trash", title: "Debris Collection", description: "Remove scattered siding, shingles, and rubble.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/storm-debris-removal" },
@@ -963,6 +1382,27 @@ export const stormContent = {
             description: "When storms strike, every minute matters. Our emergency crews secure, repair, and restore homes and businesses across Central, Tampa Bay & South Florida.",
             cta: "Request Emergency Storm Repair",
             bgImage: "/images/storm-damage.webp"
+        },
+        education: {
+            overview: "When a storm breaches your home's defenses, waiting for business hours isn't an option. Water pouring through a hole in the roof or a broken window causes exponential damage with every passing minute. Our emergency storm repair service is built for speed and reliability. We operate 24/7/365 to provide immediate stabilization of your property. This includes installing heavy-duty roof tarps, boarding up shattered windows, extracting standing water, and structurally shoring up weakened areas. Our goal is to stop the bleeding—preventing secondary damage like mold and rot—so that permanent repairs can be planned and executed properly. We also provide the critical documentation your insurance company needs to process your emergency claim immediately.",
+            causes: [
+                "Sudden structural breaches from fallen trees or wind-borne debris allowing water to flood the interior",
+                "Roof failures during active storms requiring immediate temporary waterproofing to protect contents",
+                "Shattered windows and sliding doors leaving the home exposed to wind, rain, and potential intruders",
+                "Electrical hazards and power outages requiring immediate safety assessments and temporary power solutions"
+            ],
+            risks: [
+                "Rapid mold growth and water damage spreading to unaffected rooms if the envelope isn't sealed immediately",
+                "Collapse of weakened ceilings or overhangs if water weight is not relieved and structures aren't shored up",
+                "Theft and vandalism of unsecured properties, especially when neighborhoods are evacuated or without power",
+                "Denial of insurance coverage for 'secondary damage' if the homeowner fails to take immediate steps to mitigate loss"
+            ],
+            urgency: [
+                "Emergency tarping and board-up stops water intrusion instantly, saving thousands in interior repair costs",
+                "Security is paramount; securing the home protects your family and your remaining possessions",
+                "Documentation of the emergency condition is vital for insurance; we take photos and notes before temporary repairs cover the damage",
+                "Peace of mind comes from knowing your home is stable and dry, allowing you to focus on the next steps of recovery"
+            ]
         },
         services: [
             { icon: "fas fa-tarp", title: "Immediate Roof Tarping & Board-Up", description: "Protect from rain, wind & further damage.", image: "/images/stormDamage.webp", link: "/restoration/storm-damage/emergency-storm-repair" },
@@ -997,11 +1437,32 @@ export const mitigationContent = {
             cta: "Prevent Further Damage",
             bgImage: "/images/mitigation.webp"
         },
+        education: {
+            overview: "Mitigation is the critical first step in any property damage event. While restoration focuses on repairing and rebuilding what was lost, mitigation is about stopping the damage from spreading further. In Florida's humid climate, the window for effective mitigation is incredibly short. Water wicks into drywall, soot corrodes metal, and mold spores colonize organic materials within hours. Our mitigation services are designed to 'stop the bleeding' immediately. Whether it's extracting standing water, boarding up a broken window, or setting up containment barriers around a mold source, our goal is to stabilize the environment. This proactive approach not only saves salvageable materials but also significantly reduces the overall cost and timeline of the insurance claim.",
+            causes: [
+                "Sudden water intrusion from burst pipes or appliance failures that needs immediate extraction to prevent structural saturation",
+                "Fire events leaving the property exposed to weather and filled with corrosive smoke residues that damage electronics",
+                "Mold discoveries that require instant containment to prevent spores from contaminating the HVAC system and other rooms",
+                "Storm damage leaving the building envelope compromised, requiring emergency tarping to stop rain from entering"
+            ],
+            risks: [
+                "Exponential increase in repair costs if water or smoke is allowed to sit for even 24 hours without mitigation",
+                "Denial of insurance claims if the policyholder fails to take 'reasonable steps' to prevent further damage (a standard policy clause)",
+                "Permanent damage to high-value items like hardwood floors, cabinets, and electronics that could have been saved",
+                "Cross-contamination of unaffected areas, turning a localized problem into a whole-home disaster"
+            ],
+            urgency: [
+                "Mitigation must start immediately; waiting for an adjuster to arrive days later often results in total loss of materials",
+                "Mold begins to grow in 24-48 hours; drying and containment must be established before this window closes",
+                "Acidic soot residues begin pitting metal and etching glass within minutes of a fire; immediate cleaning stops this corrosion",
+                "Security risks from open windows or doors require instant board-up to protect the property from theft and liability"
+            ]
+        },
         services: [
-            { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water damage mitigation", slug: "water-mitigation", image: "/images/water-damage.webp", link: "/restoration/mitigation-services/water-mitigation" },
-            { icon: "fas fa-fire-extinguisher", title: "Fire Mitigation", description: "Fire damage containment and mitigation", slug: "fire-mitigation", image: "/images/fire-damage.webp", link: "/restoration/mitigation-services/fire-mitigation" },
-            { icon: "fas fa-virus", title: "Mold Mitigation", description: "Mold containment and prevention", slug: "mold-mitigation", image: "/images/mold-damage.webp", link: "/restoration/mitigation-services/mold-mitigation" },
-            { icon: "fas fa-cloud-rain", title: "Storm Mitigation", description: "Storm damage prevention and securing", slug: "storm-mitigation", image: "/images/storm-damage.webp", link: "/restoration/mitigation-services/storm-mitigation" }
+            { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water extraction using truck-mounted pumps and industrial dehumidifiers to stop damage progression. We remove standing water, dry structural cavities, and apply antimicrobials to prevent mold growth before restoration begins.", slug: "water-mitigation", image: "/images/water-damage.webp", link: "/restoration/mitigation-services/water-mitigation", ctaText: "Stop Water Damage", features: ["Truck-Mounted Pumps", "Industrial Dehumidifiers", "Antimicrobial Treatment"] },
+            { icon: "fas fa-fire-extinguisher", title: "Fire Mitigation", description: "Immediate post-fire containment with emergency board-up, smoke sealing, and negative air machines to prevent soot spread. We extract firefighting water, stabilize structures, and protect salvageable contents before full restoration.", slug: "fire-mitigation", image: "/images/fire-damage.webp", link: "/restoration/mitigation-services/fire-mitigation", ctaText: "Contain Fire Damage", features: ["Negative Air Machines", "Smoke Sealing", "Content Protection"] },
+            { icon: "fas fa-virus", title: "Mold Mitigation", description: "Rapid mold containment using plastic barriers and HEPA air scrubbers to prevent spore migration. We control moisture sources, treat affected areas with antimicrobials, and stabilize humidity levels before remediation begins.", slug: "mold-mitigation", image: "/images/mold-damage.webp", link: "/restoration/mitigation-services/mold-mitigation", ctaText: "Contain Mold Spread", features: ["Plastic Barriers", "HEPA Air Scrubbers", "Spore Prevention"] },
+            { icon: "fas fa-cloud-rain", title: "Storm Mitigation", description: "Emergency storm securing with roof tarping, window board-up, and debris removal to prevent further property damage. We extract storm water, stabilize compromised structures, and document all damage for insurance claims.", slug: "storm-mitigation", image: "/images/storm-damage.webp", link: "/restoration/mitigation-services/storm-mitigation", ctaText: "Secure Storm Damage", features: ["Roof Tarping", "Window Board-Up", "Damage Documentation"] }
         ],
         faqs: [
             { q: "What are mitigation services?", a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss." },
@@ -1022,6 +1483,27 @@ export const mitigationContent = {
             description: "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
             cta: "Start Water Mitigation Now",
             bgImage: "/images/mitigation.webp"
+        },
+        education: {
+            overview: "Water mitigation is the science of drying. It's not just about vacuuming up water; it's about removing the moisture absorbed into the structural materials of your home. When water enters a building, it follows the path of least resistance, hiding behind baseboards, under flooring, and inside wall cavities. If left unchecked, this trapped moisture causes wood to warp, drywall to disintegrate, and mold to flourish. Our water mitigation process uses industrial-grade extractors to remove standing water, followed by the strategic placement of low-grain refrigerant (LGR) dehumidifiers and high-velocity air movers. We monitor the drying progress daily using moisture meters and thermal imaging to ensure that every material reaches its dry standard, preventing secondary damage and ensuring your home is truly dry.",
+            causes: [
+                "Plumbing failures like burst supply lines, leaking water heaters, or overflowing toilets that flood interiors rapidly",
+                "Appliance malfunctions such as dishwasher leaks or washing machine hose breaks releasing gallons of water",
+                "Roof leaks or window seal failures during storms allowing rainwater to saturate insulation and drywall",
+                "Sewage backups introducing contaminated water (Category 3) that requires specialized cleaning and sanitization"
+            ],
+            risks: [
+                "Structural weakening as water breaks down the cellular structure of wood framing and dissolves drywall gypsum",
+                "Microbial growth (mold and bacteria) beginning within 24-48 hours in wet, humid conditions",
+                "Delamination of carpet and warping of hardwood floors, rendering them unsalvageable if not dried immediately",
+                "Electrical hazards from water coming into contact with outlets, wiring, and appliances"
+            ],
+            urgency: [
+                "The first 24 hours are the 'Golden Window' to save porous materials; after this, replacement is often the only option",
+                "Standing water wicks up walls at a rate of one inch per hour, increasing the amount of drywall that needs removal",
+                "Insurance coverage depends on prompt action; delays can be interpreted as negligence",
+                "Humidity levels must be controlled instantly to prevent secondary moisture damage to unaffected furniture and electronics"
+            ]
         },
         services: [
             { icon: "fas fa-eye", title: "Emergency Inspection & Moisture Mapping", description: "Detect visible + hidden water.", image: "/images/water-damage.webp", link: "/restoration/mitigation-services/water-mitigation" },
@@ -1050,6 +1532,27 @@ export const mitigationContent = {
             cta: "Secure My Property Now",
             bgImage: "/images/mitigation.webp"
         },
+        education: {
+            overview: "The aftermath of a fire is a race against time. While the flames cause immediate destruction, the smoke and soot left behind continue to damage your property long after the fire trucks leave. Soot is highly acidic and will corrode metal fixtures, etch glass, and permanently stain plastics and appliances if not neutralized quickly. Fire mitigation involves immediate actions to stabilize the property: boarding up broken windows to secure the site, placing air scrubbers to remove airborne particulates, and applying corrosion inhibitors to at-risk surfaces. We also address the water damage left by firefighting efforts, which can cause mold if not dried immediately. Our goal is to preserve as much of the structure and contents as possible before the reconstruction phase begins.",
+            causes: [
+                "Kitchen fires releasing protein-based smoke residues that are sticky, pungent, and difficult to clean",
+                "Electrical fires causing synthetic materials to burn, creating toxic, black soot that coats surfaces",
+                "Water damage from fire hoses and sprinkler systems saturating flooring and walls during suppression",
+                "Breaches in the roof or windows from the fire itself or firefighter access, leaving the home exposed"
+            ],
+            risks: [
+                "Permanent etching and pitting of aluminum window frames, chrome fixtures, and glass surfaces from acidic soot",
+                "Deeply embedded smoke odors in porous materials like upholstery and carpet that become impossible to remove over time",
+                "Mold growth resulting from the water used to extinguish the fire, compounding the damage",
+                "Theft and vandalism if the property is not immediately boarded up and secured after the incident"
+            ],
+            urgency: [
+                "Corrosion begins within minutes; pre-cleaning metal and glass within the first 24 hours is essential to save them",
+                "Smoke odors penetrate deeper into structural framing with every passing hour, increasing deodorization costs",
+                "Water must be extracted immediately to prevent the 'double disaster' of fire followed by mold",
+                "Insurance adjusters need to see that you took steps to protect the property to approve the full claim"
+            ]
+        },
         services: [
             { icon: "fas fa-tarp", title: "Emergency Board-Up & Tarping", description: "Seal windows, doors & roofs against further water.", image: "/images/emergency-storm-repair.webp", link: "/restoration/mitigation-services/fire-mitigation" },
             { icon: "fas fa-hard-hat", title: "Smoke & Soot Containment", description: "Isolate affected areas to stop spread.", image: "/images/smoke-damage.webp", link: "/restoration/mitigation-services/fire-mitigation" },
@@ -1077,6 +1580,27 @@ export const mitigationContent = {
             cta: "Stop Mold Spread Today",
             bgImage: "/images/mitigation.webp"
         },
+        education: {
+            overview: "When mold is discovered, the immediate priority is not just removal, but containment. Disturbing a mold colony without proper precautions releases billions of spores into the air, which can travel through the HVAC system and contaminate the entire building. Mold mitigation focuses on isolating the affected area to protect the rest of the property and its occupants. We construct airtight containment barriers using heavy-duty plastic and establish negative air pressure using HEPA-filtered air scrubbers. This ensures that any spores released during the assessment or stabilization process are captured and not allowed to spread. We also address the moisture source immediately—whether it's a leak or high humidity—to stop the mold from growing further while a comprehensive remediation plan is developed.",
+            causes: [
+                "Discovery of visible mold growth during renovations or after moving furniture",
+                "Musty odors indicating hidden mold in wall cavities or crawlspaces",
+                "Recent water damage events that were not properly dried, leading to fungal growth",
+                "HVAC system malfunctions causing high indoor humidity and condensation on surfaces"
+            ],
+            risks: [
+                "Cross-contamination of clean areas (bedrooms, kitchens) with mold spores, endangering family health",
+                "Inhalation of mycotoxins by occupants if the area is not properly isolated",
+                "Colonization of the HVAC system, which can circulate spores to every room in the house",
+                "Increased remediation costs if the mold is allowed to spread beyond the initial source area"
+            ],
+            urgency: [
+                "Containment must be set up immediately upon discovery to protect air quality",
+                "Air scrubbers should be running 24/7 to reduce the ambient spore count and protect occupants",
+                "Moisture sources must be stopped instantly to cut off the mold's food supply",
+                "Protecting the HVAC system is critical; once contaminated, duct cleaning becomes a major expense"
+            ]
+        },
         services: [
             { icon: "fas fa-magnifying-glass", title: "Inspection & Moisture Assessment", description: "Detect leaks, water damage & humidity.", image: "/images/mold-inspection.webp", link: "/restoration/mitigation-services/mold-mitigation" },
             { icon: "fas fa-hard-hat", title: "Containment of Affected Areas", description: "Plastic barriers + negative air pressure.", image: "/images/black-mold-removal.webp", link: "/restoration/mitigation-services/mold-mitigation" },
@@ -1103,6 +1627,27 @@ export const mitigationContent = {
             description: "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact.",
             cta: "Request Storm Mitigation Now",
             bgImage: "/images/mitigation.webp"
+        },
+        education: {
+            overview: "After a storm passes, your home is often left vulnerable. A missing roof section, a broken window, or a collapsed fence isn't just damage—it's an entry point for more destruction. Storm mitigation is the emergency response phase that bridges the gap between the disaster and the permanent repair. Our teams deploy immediately to secure the building envelope. We install shrink-wrap or tarps on damaged roofs to prevent rain intrusion, board up shattered windows to deter looters and keep out weather, and remove hazardous debris that blocks access. By stabilizing the structure and making it watertight, we prevent the secondary wave of damage—water saturation and mold—that often causes more loss than the storm itself.",
+            causes: [
+                "Roof damage from high winds allowing rainwater to pour into the attic and living spaces",
+                "Broken windows and doors from flying debris compromising the home's security and weatherproofing",
+                "Structural instability caused by fallen trees or wind load requiring temporary shoring",
+                "Flooding from storm surge or heavy rain that needs immediate extraction to prevent mold"
+            ],
+            risks: [
+                "Catastrophic water damage to interiors if the roof is not tarped before the next rain band arrives",
+                "Looting and vandalism of unsecured properties in the chaotic aftermath of a storm",
+                "Collapse of weakened structural elements if not properly shored up and stabilized",
+                "Rapid mold growth in the hot, humid post-storm environment if the property is not dried out"
+            ],
+            urgency: [
+                "Emergency tarping is the single most effective way to limit loss; it must be done as soon as it is safe",
+                "Security board-ups protect your remaining valuables when you may not be able to stay in the home",
+                "Insurance policies require you to mitigate damage; failure to secure the home can affect your claim",
+                "Removing hazardous debris is essential to allow insurance adjusters and repair crews safe access"
+            ]
         },
         services: [
             { icon: "fas fa-tarp", title: "Emergency Board-Up & Roof Tarping", description: "Seal windows, doors & roofs against further water.", image: "/images/emergency-storm-repair.webp", link: "/restoration/mitigation-services/storm-mitigation" },

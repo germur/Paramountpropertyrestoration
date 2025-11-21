@@ -1,8 +1,6 @@
-/* =====================
-   RESTORATION CTA SECTION
-   ===================== */
+/* RestorationCTA.module.css */
 
-.restorationCtaSection {
+.ctaSection {
   margin: 10px;
   margin-bottom: 40px;
   border-radius: 21px;
@@ -10,9 +8,16 @@
   background: linear-gradient(135deg, #0c4e6e 0%, #2c3e50 100%);
   position: relative;
   overflow: hidden;
+  color: white;
 }
 
-.restorationCtaSection::before {
+.ctaSection.compact {
+  padding: 2rem;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.ctaSection::before {
   content: "";
   position: absolute;
   top: 0;
@@ -25,142 +30,121 @@
   z-index: 1;
 }
 
-.restorationCtaContainer {
+.container {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-.restorationCtaContent {
+.content {
   text-align: center;
   color: #ffffff;
 }
 
-.restorationCtaUrgency {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-4);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.restorationCtaTitle {
+.title {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-6);
+  margin-bottom: 1.5rem;
   color: #ffffff;
 }
 
-.restorationCtaSubtitle {
-  font-size: var(--font-size-xl);
+.compact .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: var(--spacing-8);
+  margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.restorationCtaButton {
+.compact .subtitle {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  margin-bottom: 1.5rem;
+}
+
+.primaryBtn {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-3);
-  background-color: var(--color-accent);
+  gap: 0.75rem;
+  background-color: #f59e0b;
+  /* Amber 500 */
   color: #ffffff;
   padding: 1.2rem 2.5rem;
   text-decoration: none;
-  border-radius: var(--border-radius-lg);
+  border-radius: 0.5rem;
   font-weight: 600;
-  font-size: var(--font-size-lg);
+  font-size: 1.125rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.restorationCtaButton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent);
-  transition: left 0.5s;
+.primaryBtn:hover {
+  background-color: #d97706;
+  /* Amber 600 */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.restorationCtaButton:hover::before {
-  left: 100%;
+.urgency {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fbbf24;
+  /* Amber 400 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.restorationCtaButton:hover {
-  background-color: #e88f00;
-  transform: translateY(-3px);
+.pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  /* Red 500 */
+  border-radius: 50%;
+  animation: pulse-animation 2s infinite;
 }
 
-.restorationCtaArrow {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
 }
 
-.restorationCtaButton:hover .restorationCtaArrow {
-  transform: translateX(5px);
-}
-
-/* =====================
-   RESPONSIVE STYLES
-   ===================== */
-
-/* Tablet */
+/* Responsive */
 @media (max-width: 768px) {
-  .restorationCtaSection {
+  .ctaSection {
     padding: 3rem 1.5rem;
   }
 
-  .restorationCtaTitle {
+  .title {
     font-size: 2rem;
-    margin-bottom: var(--spacing-4);
-  }
-
-  .restorationCtaSubtitle {
-    font-size: var(--font-size-base);
-    margin-bottom: var(--spacing-6);
-  }
-
-  .restorationCtaButton {
-    padding: 1rem 2rem;
-    font-size: var(--font-size-base);
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .restorationCtaSection {
-    padding: 2.5rem 1rem;
-  }
-
-  .restorationCtaTitle {
-    font-size: 1.75rem;
-  }
-
-  .restorationCtaSubtitle {
-    font-size: var(--font-size-sm);
-  }
-
-  .restorationCtaButton {
-    padding: 0.9rem 1.8rem;
-    font-size: var(--font-size-sm);
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-
-  .restorationCtaUrgency {
-    font-size: var(--font-size-base);
   }
 }

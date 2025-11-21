@@ -398,9 +398,27 @@ const heroAlt = getAltText(heroImage);
           <i class="fas fa-phone"></i>
           {serviceData.hero.ctaText}
         </a>
-        <a href="/portfolio" class="cta-button secondary">
-          <i class="fas fa-images"></i> See Our Remodeling Projects
-        </a>
+        {
+          ["kitchen-remodeling", "bathroom-remodeling"].includes(
+            group.slug,
+          ) && (
+            <a
+              href={`/services/${group.slug}/cost`}
+              class="cta-button secondary"
+            >
+              <i class="fas fa-calculator" /> View Cost Guide
+            </a>
+          )
+        }
+        {
+          !["kitchen-remodeling", "bathroom-remodeling"].includes(
+            group.slug,
+          ) && (
+            <a href="/portfolio" class="cta-button secondary">
+              <i class="fas fa-images" /> See Our Projects
+            </a>
+          )
+        }
       </div>
     </div>
   </section>
@@ -421,6 +439,92 @@ const heroAlt = getAltText(heroImage);
             </div>
           ))
         }
+      </div>
+
+      {
+        ["kitchen-remodeling", "bathroom-remodeling"].includes(group.slug) && (
+          <div class="mt-12 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">
+              Curious about costs?
+            </h3>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+              We've created a detailed cost guide and calculator specifically
+              for Florida homeowners. See what a {group.name.split("-")[0]}{" "}
+              remodel really costs in 2025.
+            </p>
+            <a
+              href={`/services/${group.slug}/cost`}
+              class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors"
+            >
+              <i class="fas fa-calculator" /> Calculate{" "}
+              {group.name.split("-")[0]} Cost
+            </a>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- Featured Projects Preview (Placeholder for Carousel) -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <h2 class="section-title">Featured Transformations</h2>
+      <p class="section-subtitle">
+        See the quality of our craftsmanship in homes across Florida.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div class="h-48 bg-gray-200 relative">
+            <div
+              class="absolute inset-0 flex items-center justify-center text-gray-400"
+            >
+              <i class="fas fa-image text-4xl"></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Modern Coastal Update</h4>
+            <p class="text-sm text-gray-500">Miami, FL</p>
+          </div>
+        </div>
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div class="h-48 bg-gray-200 relative">
+            <div
+              class="absolute inset-0 flex items-center justify-center text-gray-400"
+            >
+              <i class="fas fa-image text-4xl"></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Luxury Master Suite</h4>
+            <p class="text-sm text-gray-500">Orlando, FL</p>
+          </div>
+        </div>
+        <div
+          class="project-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div class="h-48 bg-gray-200 relative">
+            <div
+              class="absolute inset-0 flex items-center justify-center text-gray-400"
+            >
+              <i class="fas fa-image text-4xl"></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Open Concept Living</h4>
+            <p class="text-sm text-gray-500">Tampa, FL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/portfolio" class="text-blue-600 font-bold hover:text-blue-800"
+          >View Full Portfolio →</a
+        >
       </div>
     </div>
   </section>

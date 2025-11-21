@@ -8,86 +8,115 @@ export interface Props {
   popular?: boolean;
   ctaText?: string;
   ctaLink?: string;
-  variant?: 'default' | 'mold' | 'water' | 'fire' | 'storm';
+  variant?: "default" | "mold" | "water" | "fire" | "storm";
   imageUrl?: string;
 }
 
-const { 
-  title, 
-  description, 
-  icon, 
-  features, 
-  price, 
-  popular = false, 
+const {
+  title,
+  description,
+  icon,
+  features,
+  price,
+  popular = false,
   ctaText = "Learn More",
   ctaLink = "/contact",
-  variant = 'default',
-  imageUrl
+  variant = "default",
+  imageUrl,
 } = Astro.props;
 
 // Configuración de variantes por tipo de servicio
 const variantConfig = {
-  default: { color: 'var(--color-accent)', bgColor: 'var(--bg-primary)' },
-  mold: { color: 'var(--service-mold)', bgColor: '#f0fdf4' },
-  water: { color: 'var(--service-water)', bgColor: '#f0f9ff' },
-  fire: { color: 'var(--service-fire)', bgColor: '#fef2f2' },
-  storm: { color: 'var(--service-storm)', bgColor: '#faf5ff' }
+  default: { color: "var(--color-accent)", bgColor: "var(--bg-primary)" },
+  mold: { color: "var(--service-mold)", bgColor: "#f0fdf4" },
+  water: { color: "var(--service-water)", bgColor: "#f0f9ff" },
+  fire: { color: "var(--service-fire)", bgColor: "#fef2f2" },
+  storm: { color: "var(--service-storm)", bgColor: "#faf5ff" },
 };
 
 const config = variantConfig[variant] || variantConfig.default;
 ---
 
-<article class={`service-card service-card--${variant} ${popular ? 'service-card--popular' : ''}`}>
-  {popular && (
-    <div class="popular-badge">
-      <span>Most Popular</span>
-    </div>
-  )}
-  
-  {imageUrl && (
-    <div class="service-image">
-      <img 
-        src={imageUrl} 
-        alt={`${title} service visualization`}
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  )}
-  
-  <div class="service-icon" style={`--icon-color: ${config.color}; --icon-bg: ${config.bgColor}`}>
-    <Fragment set:html={icon} />
+<article
+  class={`service-card service-card--${variant} ${popular ? "service-card--popular" : ""}`}
+>
+  {
+    popular && (
+      <div class="popular-badge">
+        <span>Most Popular</span>
+      </div>
+    )
+  }
+
+  {
+    imageUrl && (
+      <div class="service-image">
+        <img src={imageUrl} alt={title} loading="lazy" decoding="async" />
+      </div>
+    )
+  }
+
+  <div
+    class="service-icon"
+    style={`--icon-color: ${config.color}; --icon-bg: ${config.bgColor}`}
+  >
+    <i class={icon} aria-hidden="true"></i>
   </div>
-  
+
   <div class="service-content">
     <h3 class="service-title">{title}</h3>
     <p class="service-description">{description}</p>
-    
-    {price && (
-      <div class="service-price">
-        <span class="price">{price}</span>
-        <span class="price-note">Starting from</span>
-      </div>
-    )}
-    
+
+    {
+      price && (
+        <div class="service-price">
+          <span class="price">{price}</span>
+          <span class="price-note">Starting from</span>
+        </div>
+      )
+    }
+
     <ul class="service-features" role="list">
-      {features.map((feature) => (
-        <li class="feature-item">
-          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M9 12l2 2 4-4"/>
-            <circle cx="12" cy="12" r="10"/>
-          </svg>
-          <span>{feature}</span>
-        </li>
-      ))}
+      {
+        features.map((feature) => (
+          <li class="feature-item">
+            <svg
+              class="check-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M9 12l2 2 4-4" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))
+      }
     </ul>
   </div>
-  
+
   <div class="service-footer">
-    <a href={ctaLink} class="service-cta" aria-label={`${ctaText} for ${title}`}>
+    <a
+      href={ctaLink}
+      class="service-cta"
+      aria-label={`${ctaText} for ${title}`}
+    >
       {ctaText}
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </a>
   </div>
@@ -132,19 +161,19 @@ const config = variantConfig[variant] || variantConfig.default;
   }
 
   .service-card--mold:hover {
-    border-color: var(--service-mold, #16A34A);
+    border-color: var(--service-mold, #16a34a);
   }
 
   .service-card--water:hover {
-    border-color: var(--service-water, #0EA5E9);
+    border-color: var(--service-water, #0ea5e9);
   }
 
   .service-card--fire:hover {
-    border-color: var(--service-fire, #DC2626);
+    border-color: var(--service-fire, #dc2626);
   }
 
   .service-card--storm:hover {
-    border-color: var(--service-storm, #8B5CF6);
+    border-color: var(--service-storm, #8b5cf6);
   }
 
   .popular-badge {
@@ -152,7 +181,11 @@ const config = variantConfig[variant] || variantConfig.default;
     top: -1px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--color-accent, #35c3e9), var(--color-accent-hover, #2a9fd1));
+    background: linear-gradient(
+      135deg,
+      var(--color-accent, #35c3e9),
+      var(--color-accent-hover, #2a9fd1)
+    );
     color: white;
     padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
     border-radius: 0 0 var(--radius, 8px) var(--radius, 8px);
@@ -288,39 +321,31 @@ const config = variantConfig[variant] || variantConfig.default;
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-2, 0.5rem);
-    background: var(--color-accent, #35c3e9);
-    color: white;
-    padding: var(--spacing-3, 0.75rem) var(--spacing-6, 1.5rem);
+    background: transparent;
+    color: var(--color-accent, #35c3e9);
+    border: 2px solid var(--color-accent, #35c3e9);
+    padding: 0.5rem 1.25rem;
     border-radius: var(--radius, 8px);
     text-decoration: none;
     font-weight: 600;
-    font-size: var(--font-size-base, 1rem);
-    transition: all 0.2s ease;
-    width: 100%;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: auto;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
   }
 
   .service-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-
-  .service-cta:hover::before {
-    left: 100%;
+    display: none;
   }
 
   .service-cta:hover {
-    background: var(--color-accent-hover, #2a9fd1);
+    background: var(--color-accent, #35c3e9);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(53, 195, 233, 0.3);
+    box-shadow: 0 4px 12px rgba(53, 195, 233, 0.2);
   }
 
   .service-cta:focus {
@@ -334,6 +359,47 @@ const config = variantConfig[variant] || variantConfig.default;
 
   .service-cta:hover svg {
     transform: translateX(4px);
+  }
+
+  /* Variant specific overrides for the ghost button */
+  .service-card--mold .service-cta {
+    color: var(--service-mold, #16a34a);
+    border-color: var(--service-mold, #16a34a);
+  }
+  .service-card--mold .service-cta:hover {
+    background: var(--service-mold, #16a34a);
+    color: white;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+  }
+
+  .service-card--water .service-cta {
+    color: var(--service-water, #0ea5e9);
+    border-color: var(--service-water, #0ea5e9);
+  }
+  .service-card--water .service-cta:hover {
+    background: var(--service-water, #0ea5e9);
+    color: white;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  }
+
+  .service-card--fire .service-cta {
+    color: var(--service-fire, #dc2626);
+    border-color: var(--service-fire, #dc2626);
+  }
+  .service-card--fire .service-cta:hover {
+    background: var(--service-fire, #dc2626);
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+  }
+
+  .service-card--storm .service-cta {
+    color: var(--service-storm, #8b5cf6);
+    border-color: var(--service-storm, #8b5cf6);
+  }
+  .service-card--storm .service-cta:hover {
+    background: var(--service-storm, #8b5cf6);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
   }
 
   /* Responsive design */
