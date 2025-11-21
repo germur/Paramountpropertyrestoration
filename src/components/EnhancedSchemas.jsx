@@ -271,37 +271,6 @@ export function generateBreadcrumbSchema(items = [], siteUrl = 'https://paramoun
   };
 }
 
-/**
- * Generate Review schema
- */
-export function generateReviewSchema({
-  itemReviewed,
-  reviews = []
-}) {
-  if (!reviews.length) return null;
-
-  return reviews.map((review, index) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Review',
-    '@id': `#review-${index}`,
-    itemReviewed: {
-      '@type': 'Service',
-      name: itemReviewed
-    },
-    author: {
-      '@type': 'Person',
-      name: review.author
-    },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: review.rating,
-      bestRating: '5',
-      worstRating: '1'
-    },
-    reviewBody: review.text,
-    datePublished: review.date
-  }));
-}
 
 /**
  * Generate Organization schema with full details
@@ -433,13 +402,7 @@ export default function EnhancedSchemas({ schemas = {} }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.webPage) }}
         />
       )}
-      {schemas.reviews && schemas.reviews.map((review, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(review) }}
-        />
-      ))}
+
     </>
   );
 }
