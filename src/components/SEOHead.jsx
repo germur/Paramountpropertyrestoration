@@ -7,8 +7,9 @@ import { slugify } from '../utils/slugify';
  **********************/
 
 const buildServicePath = ({ vertical = 'restoration', service, subservice, city }) => {
-  const parts = [slugify(vertical), slugify(service), slugify(subservice)].filter(Boolean);
-  const citySlug = slugify(city);
+  // Don't slugify - these parameters are already slugs!
+  const parts = [vertical, service, subservice].filter(Boolean);
+  const citySlug = city; // city is already a slug if provided
   const base = `/${parts.join('/')}`;
   return citySlug ? `${base}/${citySlug}` : base;
 };
