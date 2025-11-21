@@ -7,9 +7,13 @@ import { CONTACT_PHONE, BRAND_COLORS } from "../../../config/constants.js";
 import "../../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import { generateFAQSchema } from "../../EnhancedSchemas.jsx";
+import {
+  generateFAQSchema,
+  generateHowToSchema,
+} from "../../EnhancedSchemas.jsx";
 import { faqData } from "../../../data/faq.js";
 import { getRestorationContent } from "../../../data/restoration-content.js";
+import { processSteps } from "../../../data/process-steps.js";
 import {
   Info,
   Zap,
@@ -33,6 +37,22 @@ const categoryMap = {
 const faqCategory = categoryMap[group.slug] || "general";
 const faqQuestions = faqData[faqCategory] || faqData.general;
 const faqSchema = generateFAQSchema(faqQuestions);
+
+// Generate HowTo schema if process steps exist for this service
+const categorySteps = processSteps[faqCategory];
+const serviceSteps = categorySteps?.[sub.slug];
+let howToSchema = null;
+if (serviceSteps) {
+  const canonicalURL = `https://paramountpropertyrestoration.com/restoration/${group.slug}/${sub.slug}`;
+  howToSchema = generateHowToSchema({
+    name: serviceSteps.name,
+    description: serviceSteps.description,
+    image: serviceSteps.image,
+    totalTime: serviceSteps.totalTime,
+    steps: serviceSteps.steps,
+    url: canonicalURL,
+  });
+}
 
 // Enhanced data structure for the unified template
 const getEnhancedServiceData = (groupSlug, subSlug) => {
@@ -213,6 +233,12 @@ const cityRegions = getCitiesByRegion();
 
 <!-- Inject FAQ Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<!-- Inject HowTo Schema (if available) -->{
+  howToSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  )
+}
 
 <div class="unified-service-template">
   <!-- Compact Hero Section -->
