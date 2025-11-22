@@ -34,39 +34,43 @@ export const HealthRiskChart = () => {
             }
 
             const ctx = chartRef.current.getContext("2d");
-            chartInstance.current = new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                    labels: [
-                        "Allergies",
-                        ["Respiratory", "Issues"],
-                        ["Chronic", "Headaches"],
-                        ["Skin", "Irritation"],
-                        "Other",
-                    ],
-                    datasets: [
-                        {
-                            label: "Symptom Distribution",
-                            data: [40, 30, 15, 10, 5],
-                            backgroundColor: chartColors,
-                            borderColor: "#FFFFFF",
-                            borderWidth: 2,
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: "bottom",
-                        },
-                        tooltip: {
-                            callbacks: createTooltipCallback(),
+            try {
+                chartInstance.current = new Chart(ctx, {
+                    type: "doughnut",
+                    data: {
+                        labels: [
+                            "Allergies",
+                            ["Respiratory", "Issues"],
+                            ["Chronic", "Headaches"],
+                            ["Skin", "Irritation"],
+                            "Other",
+                        ],
+                        datasets: [
+                            {
+                                label: "Symptom Distribution",
+                                data: [40, 30, 15, 10, 5],
+                                backgroundColor: chartColors,
+                                borderColor: "#FFFFFF",
+                                borderWidth: 2,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "bottom",
+                            },
+                            tooltip: {
+                                callbacks: createTooltipCallback(),
+                            },
                         },
                     },
-                },
-            });
+                });
+            } catch (error) {
+                console.error("HealthRiskChart: Error creating chart", error);
+            }
         }
 
         return () => {
