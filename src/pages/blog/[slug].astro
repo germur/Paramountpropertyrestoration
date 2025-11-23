@@ -795,5 +795,34 @@ const readingTime = entry.data.readTime || Math.ceil(wordCount / 200);
         target.reset();
       }
     });
+
+    // Inject In-Article Ad
+    const prose = document.querySelector(".prose");
+    if (prose) {
+      const paragraphs = prose.querySelectorAll("p");
+      if (paragraphs.length >= 2) {
+        const adContainer = document.createElement("div");
+        adContainer.className = "in-article-ad-container";
+        adContainer.style.margin = "2rem 0";
+        adContainer.style.textAlign = "center";
+        adContainer.innerHTML = `
+          <ins class="adsbygoogle"
+               style="display:block; text-align:center;"
+               data-ad-layout="in-article"
+               data-ad-format="fluid"
+               data-ad-client="ca-pub-7161830191523275"
+               data-ad-slot="5630406674"></ins>
+        `;
+        paragraphs[1].after(adContainer);
+
+        // Initialize ad
+        try {
+          ((window as any).adsbygoogle =
+            (window as any).adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense error:", e);
+        }
+      }
+    }
   });
 </script>
