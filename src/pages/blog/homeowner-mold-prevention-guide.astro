@@ -311,6 +311,54 @@ const formattedDate = date.toLocaleDateString("es-ES", {
       </div>
     </div>
 
+    <!-- Local Services Section -->
+    <section class="local-services-section">
+      <div class="container-sm">
+        <h2 class="section-title">Professional Mold Prevention Services Near You</h2>
+        <p class="local-services-intro">
+          Need expert help with mold prevention or inspection? Our certified teams serve Florida communities with comprehensive mold control and prevention services.
+        </p>
+
+        <div class="city-links-grid">
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-prevention/clearwater" class="city-link">
+                Mold Prevention in Clearwater, FL
+              </a>
+            </h3>
+            <p>Protect your Tampa Bay home</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-inspection/jupiter" class="city-link">
+                Mold Inspection in Jupiter, FL
+              </a>
+            </h3>
+            <p>Professional assessments for Palm Beach County</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-testing/pensacola" class="city-link">
+                Mold Testing in Pensacola, FL
+              </a>
+            </h3>
+            <p>Comprehensive air quality analysis</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-prevention/naples" class="city-link">
+                Mold Prevention in Naples, FL
+              </a>
+            </h3>
+            <p>Southwest Florida specialists</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Post Footer -->
     <footer class="post-footer">
       <div class="container-sm">
@@ -880,6 +928,69 @@ const formattedDate = date.toLocaleDateString("es-ES", {
     .mold-hotspot-table {
       font-size: 0.875rem;
     }
+  }
+
+  /* Local Services Section */
+  .local-services-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-top: 3px solid #35c3e9;
+    margin-top: 3rem;
+  }
+
+  .local-services-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .city-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .city-link-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .city-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(53, 195, 233, 0.2);
+    border-color: #35c3e9;
+  }
+
+  .city-link-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  .city-link-card .city-link {
+    color: #2a9fd1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .city-link-card .city-link:hover {
+    color: #FF6B35;
+  }
+
+  .city-link-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
   }
 </style>
 

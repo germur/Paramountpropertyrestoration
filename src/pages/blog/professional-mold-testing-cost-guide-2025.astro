@@ -360,6 +360,72 @@ const formattedDate = date.toLocaleDateString("en-US", {
       </div>
     </section>
 
+    <!-- Local Mold Services Section -->
+    <section class="local-services-section">
+      <div class="container">
+        <h2 class="section-title">Local Mold Inspection & Testing Services in Florida</h2>
+        <p class="local-services-intro">
+          If you're ready to schedule a professional mold inspection or testing, our certified teams are available across Florida with 24/7 emergency response. We provide comprehensive testing services in these locations:
+        </p>
+
+        <div class="city-links-grid">
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-inspection/jupiter" class="city-link">
+                Mold Inspection in Jupiter, FL
+              </a>
+            </h3>
+            <p>Certified inspectors serving Palm Beach County</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-inspection/clearwater" class="city-link">
+                Mold Inspection in Clearwater, FL
+              </a>
+            </h3>
+            <p>Professional testing for Pinellas County homes</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-inspection/lakeland" class="city-link">
+                Mold Inspection in Lakeland, FL
+              </a>
+            </h3>
+            <p>Expert service in Polk County</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-inspection/naples" class="city-link">
+                Mold Inspection in Naples, FL
+              </a>
+            </h3>
+            <p>Southwest Florida mold specialists</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-damage-restoration/gainesville" class="city-link">
+                Mold Remediation in Gainesville, FL
+              </a>
+            </h3>
+            <p>Complete removal and restoration</p>
+          </div>
+
+          <div class="city-link-card">
+            <h3>
+              <a href="/restoration/mold-remediation/mold-testing/pensacola" class="city-link">
+                Mold Testing in Pensacola, FL
+              </a>
+            </h3>
+            <p>Laboratory-grade air quality analysis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Related Resources -->
     <section class="resources-section">
       <div class="container">
@@ -941,6 +1007,68 @@ const formattedDate = date.toLocaleDateString("en-US", {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     border: 2px solid white;
+  }
+
+  /* Local Services Section */
+  .local-services-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-top: 3px solid #35c3e9;
+  }
+
+  .local-services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .city-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .city-link-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .city-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(53, 195, 233, 0.2);
+    border-color: #35c3e9;
+  }
+
+  .city-link-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  .city-link-card .city-link {
+    color: #2a9fd1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .city-link-card .city-link:hover {
+    color: #FF6B35;
+  }
+
+  .city-link-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
   }
 
   /* Resources Section */

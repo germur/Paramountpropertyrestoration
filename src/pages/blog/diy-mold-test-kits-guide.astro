@@ -304,6 +304,63 @@ const formattedDate = date.toLocaleDateString("en-US", {
           </div>
         </div>
       </section>
+
+      <!-- Local Services Section -->
+      <section class="local-services-section">
+        <div class="container">
+          <h2 class="section-title">Professional Mold Testing Services Across Florida</h2>
+          <p class="local-services-intro">
+            Skip the DIY guesswork and get accurate results from certified professionals. We serve homeowners throughout Florida with comprehensive mold testing and inspection.
+          </p>
+
+          <div class="city-links-grid">
+            <div class="city-link-card">
+              <h3>
+                <a href="/restoration/mold-remediation/mold-inspection/lakeland" class="city-link">
+                  Mold Inspection in Lakeland, FL
+                </a>
+              </h3>
+              <p>Polk County certified inspectors</p>
+            </div>
+
+            <div class="city-link-card">
+              <h3>
+                <a href="/restoration/mold-remediation/mold-testing/pensacola" class="city-link">
+                  Mold Testing in Pensacola, FL
+                </a>
+              </h3>
+              <p>Professional lab analysis for Northwest Florida</p>
+            </div>
+
+            <div class="city-link-card">
+              <h3>
+                <a href="/restoration/mold-remediation/black-mold-removal/ocala" class="city-link">
+                  Black Mold Removal in Ocala, FL
+                </a>
+              </h3>
+              <p>Toxic mold specialists</p>
+            </div>
+
+            <div class="city-link-card">
+              <h3>
+                <a href="/restoration/mold-remediation/mold-inspection/naples" class="city-link">
+                  Mold Inspection in Naples, FL
+                </a>
+              </h3>
+              <p>Southwest Florida testing experts</p>
+            </div>
+
+            <div class="city-link-card">
+              <h3>
+                <a href="/restoration/mold-remediation/mold-testing/port-charlotte" class="city-link">
+                  Mold Testing in Port Charlotte, FL
+                </a>
+              </h3>
+              <p>Charlotte County services</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="guide-footer">
@@ -917,6 +974,69 @@ const formattedDate = date.toLocaleDateString("en-US", {
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     padding: 4rem 0;
     margin: 4rem 0;
+  }
+
+  /* Local Services Section */
+  .local-services-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-top: 3px solid #35c3e9;
+    margin-top: 3rem;
+  }
+
+  .local-services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .city-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .city-link-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .city-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(53, 195, 233, 0.2);
+    border-color: #35c3e9;
+  }
+
+  .city-link-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  .city-link-card .city-link {
+    color: #2a9fd1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .city-link-card .city-link:hover {
+    color: #FF6B35;
+  }
+
+  .city-link-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
   }
 </style>
 
