@@ -1,540 +1,919 @@
 ---
 import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
 
-const pageTitle = "Stop Hidden Mold Damage: IICRC Certified Testing 24/7 | Same-Day | Florida";
-const pageDescription = "60-minute dispatch. IICRC certified + DBPR licensed. Complete testing to remediation pathway. FREE visual inspection. Insurance documentation included. 24/7 emergency service across Florida.";
+const pageTitle =
+    "Stop Hidden Mold Damage: IICRC Certified Testing 24/7 | Same-Day | Florida";
+const pageDescription =
+    "60-minute dispatch. IICRC certified + DBPR licensed. Complete testing to remediation pathway. FREE visual inspection. Insurance documentation included. 24/7 emergency service across Florida.";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription}>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/faivicon.png">
-    <link rel="shortcut icon" href="/faivicon.png">
-    <link rel="apple-touch-icon" href="/faivicon.png">
-    
-    <script is:inline src="https://cdn.tailwindcss.com"></script>
-    <script is:inline src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 0;
-        }
-        .container { 
-            max-width: 1100px; 
-        }
-        
-        /* Navy background matching global styles */
-        .primary-bg { 
-            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-        }
-        
-        /* Brand accent blue for CTAs */
-        .accent-cta { 
-            background: #35c3e9;
-            box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4);
-            transition: all 0.3s ease;
-        }
-        .accent-cta:hover { 
-            background: #2a9fd1;
-            box-shadow: 0 15px 40px rgba(53, 195, 233, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .shadow-cta { 
-            box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4); 
-        }
-        
-        /* Button styling matching global */
-        .btn-blue {
-            background: #35c3e9;
-            transition: all 0.3s ease;
-        }
-        .btn-blue:hover {
-            background: #2a9fd1;
-            box-shadow: 0 8px 20px rgba(53, 195, 233, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        /* Accent color borders and text */
-        .border-accent {
-            border-color: #35c3e9 !important;
-        }
-        .text-accent {
-            color: #35c3e9 !important;
-        }
-        .bg-accent-light {
-            background-color: #e8f4fd;
-        }
-        
-        /* Navy accents */
-        .border-navy {
-            border-color: #1E293B !important;
-        }
-        .text-navy {
-            color: #1E293B !important;
-        }
-        .bg-navy-light {
-            background-color: #f1f5f9;
-        }
-        
-        /* Hero section with animated background */
-        .animated-hero-section {
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            padding: 80px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        /* Content layer */
-        .animated-hero-section .hero-content-wrapper {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-        }
-        
-        /* All cards MUST be fully opaque and visible */
-        .animated-hero-section .hero-card {
-            background-color: white !important;
-            position: relative;
-            z-index: 20;
-        }
-        
-        /* Ensure content sections appear above hero */
-        section:not(.animated-hero-section) {
-            position: relative;
-            z-index: 10;
-            background: white;
-        }
-        
-        .sticky-footer-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            display: none;
-            animation: slideUp 0.3s ease-out;
-        }
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+
+        <script is:inline src="https://cdn.tailwindcss.com"></script>
+        <script is:inline src="https://unpkg.com/lucide@latest"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-            to {
-                transform: translateY(0);
+            html {
+                scroll-behavior: smooth;
             }
-        }
-        @media (max-width: 768px) {
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #f7fafc;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 1100px;
+            }
+
+            /* Navy background matching global styles */
+            .primary-bg {
+                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            }
+
+            /* Brand accent blue for CTAs */
+            .accent-cta {
+                background: #35c3e9;
+                box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4);
+                transition: all 0.3s ease;
+            }
+            .accent-cta:hover {
+                background: #2a9fd1;
+                box-shadow: 0 15px 40px rgba(53, 195, 233, 0.5);
+                transform: translateY(-2px);
+            }
+
+            .shadow-cta {
+                box-shadow: 0 10px 30px rgba(53, 195, 233, 0.4);
+            }
+
+            /* Button styling matching global */
+            .btn-blue {
+                background: #35c3e9;
+                transition: all 0.3s ease;
+            }
+            .btn-blue:hover {
+                background: #2a9fd1;
+                box-shadow: 0 8px 20px rgba(53, 195, 233, 0.4);
+                transform: translateY(-2px);
+            }
+
+            /* Accent color borders and text */
+            .border-accent {
+                border-color: #35c3e9 !important;
+            }
+            .text-accent {
+                color: #35c3e9 !important;
+            }
+            .bg-accent-light {
+                background-color: #e8f4fd;
+            }
+
+            /* Navy accents */
+            .border-navy {
+                border-color: #1e293b !important;
+            }
+            .text-navy {
+                color: #1e293b !important;
+            }
+            .bg-navy-light {
+                background-color: #f1f5f9;
+            }
+
+            /* Hero section with animated background */
+            .animated-hero-section {
+                position: relative;
+                overflow: hidden;
+                margin: 0;
+                padding: 80px 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Content layer */
+            .animated-hero-section .hero-content-wrapper {
+                position: relative;
+                z-index: 10;
+                width: 100%;
+            }
+
+            /* All cards MUST be fully opaque and visible */
+            .animated-hero-section .hero-card {
+                background-color: white !important;
+                position: relative;
+                z-index: 20;
+            }
+
+            /* Ensure content sections appear above hero */
+            section:not(.animated-hero-section) {
+                position: relative;
+                z-index: 10;
+                background: white;
+            }
+
             .sticky-footer-cta {
-                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                display: none;
+                animation: slideUp 0.3s ease-out;
             }
-            .hero-form-container {
-                margin-top: 1rem;
+            @keyframes slideUp {
+                from {
+                    transform: translateY(100%);
+                }
+                to {
+                    transform: translateY(0);
+                }
             }
-        }
-        .dbpr-seal { 
-            border: 2px solid #35c3e9;
-            background: rgba(53, 195, 233, 0.1);
-        }
-    </style>
-</head>
-<body class="text-gray-800">
-
-    <header class="primary-bg text-white py-3 shadow-lg" style="margin: 0;">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-lg md:text-xl font-bold text-white">Paramount Property Restoration</span>
-            </div>
-            <div class="flex items-center gap-2 md:gap-4">
-                <span class="text-xs md:text-sm font-semibold dbpr-seal p-1 rounded-md hidden sm:inline-block">
-                    FL DBPR Licensed
-                </span>
-                <a href="tel:+17866022217" class="font-bold text-base md:text-lg hover:text-blue-300 transition whitespace-nowrap">
-                    (786) 602-2217
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="animated-hero-section">
-        <AnimatedBackground client:load />
-        <div class="hero-content-wrapper">
-            <div class="container mx-auto px-4 grid md:grid-cols-12 gap-10 items-center">
-                
-                <div class="md:col-span-7 hero-card p-6 rounded-xl shadow-2xl">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg border-2 border-accent">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-accent"></i>
-                        <span class="text-sm font-bold text-navy">IICRC Certified</span>
-                    </div>
-                    <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg border-2 border-accent">
-                        <i data-lucide="award" class="w-6 h-6 text-accent"></i>
-                        <span class="text-sm font-bold text-navy">FL Licensed</span>
-                    </div>
+            @media (max-width: 768px) {
+                .sticky-footer-cta {
+                    display: block;
+                }
+                .hero-form-container {
+                    margin-top: 1rem;
+                }
+            }
+            .dbpr-seal {
+                border: 2px solid #35c3e9;
+                background: rgba(53, 195, 233, 0.1);
+            }
+        </style>
+    </head>
+    <body class="text-gray-800">
+        <header class="primary-bg text-white py-3 shadow-lg" style="margin: 0;">
+            <div
+                class="container mx-auto px-4 flex justify-between items-center"
+            >
+                <div class="flex items-center">
+                    <span class="text-lg md:text-xl font-bold text-white"
+                        >Paramount Property Restoration</span
+                    >
                 </div>
-                
-                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
-                    Stop Hidden Mold Damage: <span class="text-accent">IICRC Certified Testing + Guaranteed Remediation Path</span>
-                </h1>
-                
-                <p class="text-xl mb-6 font-semibold text-gray-700 border-l-4 border-accent pl-3">
-                    DBPR-Licensed technicians identify the problem, document for insurance, and handle complete remediation. From inspection to restoration—one trusted team.
-                </p>
-                
-                <div class="bg-accent/10 border-l-4 border-accent p-4 rounded-lg mb-6">
-                    <div class="flex items-center gap-2 mb-2">
-                        <i data-lucide="zap" class="w-6 h-6 text-accent"></i>
-                        <p class="text-lg font-black text-navy">IMMEDIATE 60-MINUTE DISPATCH</p>
-                    </div>
-                    <p class="text-base font-semibold text-gray-700">Same-Day Testing Available. Call 24/7.</p>
+                <div class="flex items-center gap-2 md:gap-4">
+                    <span
+                        class="text-xs md:text-sm font-semibold dbpr-seal p-1 rounded-md hidden sm:inline-block"
+                    >
+                        FL DBPR Licensed
+                    </span>
+                    <a
+                        href="tel:+17866022217"
+                        class="font-bold text-base md:text-lg hover:text-blue-300 transition whitespace-nowrap"
+                    >
+                        (786) 602-2217
+                    </a>
                 </div>
-                
             </div>
+        </header>
 
-            <div id="form" class="md:col-span-5 w-full hero-form-container">
-                <div class="hero-card p-6 rounded-xl shadow-2xl border-t-4 border-accent">
-                    <div class="text-center mb-4">
-                        <div class="bg-yellow-50 border-2 border-yellow-500 rounded-lg px-3 py-2 mb-3 inline-block">
-                            <p class="text-xs font-black text-yellow-800 uppercase">⚠️ Mold Activates in 24-48 Hours</p>
+        <section class="animated-hero-section">
+            <AnimatedBackground client:load />
+            <div class="hero-content-wrapper">
+                <div
+                    class="container mx-auto px-4 grid md:grid-cols-12 gap-10 items-center"
+                >
+                    <div
+                        class="md:col-span-7 hero-card p-6 rounded-xl shadow-2xl"
+                    >
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg border-2 border-accent"
+                            >
+                                <i
+                                    data-lucide="shield-check"
+                                    class="w-6 h-6 text-accent"></i>
+                                <span class="text-sm font-bold text-navy"
+                                    >IICRC Certified</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg border-2 border-accent"
+                            >
+                                <i
+                                    data-lucide="award"
+                                    class="w-6 h-6 text-accent"></i>
+                                <span class="text-sm font-bold text-navy"
+                                    >FL Licensed</span
+                                >
+                            </div>
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2">
-                            Get Your FREE Visual Inspection
-                        </h2>
-                        <p class="text-sm text-gray-600">IICRC certified technician • Same-day available</p>
-                    </div>
-                    <form name="mold-landing" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="space-y-4">
-                        <input type="hidden" name="form-name" value="mold-landing">
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+
+                        <h1
+                            class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900"
+                        >
+                            Stop Hidden Mold Damage: <span class="text-accent"
+                                >IICRC Certified Testing + Guaranteed
+                                Remediation Path</span
+                            >
+                        </h1>
+
+                        <p
+                            class="text-xl mb-6 font-semibold text-gray-700 border-l-4 border-accent pl-3"
+                        >
+                            DBPR-Licensed technicians identify the problem,
+                            document for insurance, and handle complete
+                            remediation. From inspection to restoration—one
+                            trusted team.
                         </p>
-                        <div>
-                            <input type="text" name="name" placeholder="Your Full Name" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition">
-                        </div>
-                        <div>
-                            <input type="tel" name="phone" placeholder="Best Contact Phone" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition">
-                        </div>
-                        <div>
-                            <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition">
-                        </div>
-                        <div>
-                            <select name="property_type" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition bg-white">
-                                <option value="" disabled selected>Property Type</option>
-                                <option value="residential">Residential</option>
-                                <option value="commercial">Commercial</option>
-                            </select>
-                        </div>
-                        <div>
-                            <textarea name="description" placeholder="Describe your mold concerns (location, visible damage, water incident)" rows="3" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition"></textarea>
-                        </div>
-                        <div>
-                            <select name="urgency" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition bg-white">
-                                <option value="" disabled selected>When do you need inspection?</option>
-                                <option value="asap">ASAP / Same Day</option>
-                                <option value="48hrs">Within 48 Hours</option>
-                                <option value="this_week">This Week</option>
-                                <option value="flexible">Flexible / Planning Ahead</option>
-                            </select>
-                        </div>
-                        <div class="bg-blue-50 p-3 rounded-lg border border-accent/30">
-                            <div class="flex items-start gap-2 text-xs text-gray-600">
-                                <i data-lucide="lock" class="w-4 h-4 text-accent flex-shrink-0 mt-0.5"></i>
-                                <span>Your information is secure and will never be shared. We respect your privacy.</span>
+
+                        <div
+                            class="bg-accent/10 border-l-4 border-accent p-4 rounded-lg mb-6"
+                        >
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="zap" class="w-6 h-6 text-accent"
+                                ></i>
+                                <p class="text-lg font-black text-navy">
+                                    IMMEDIATE 60-MINUTE DISPATCH
+                                </p>
                             </div>
+                            <p class="text-base font-semibold text-gray-700">
+                                Same-Day Testing Available. Call 24/7.
+                            </p>
                         </div>
-                        <button type="submit" class="w-full btn-blue text-white font-extrabold py-4 rounded-lg shadow-xl transition uppercase text-base">
-                            GET MY FREE VISUAL INSPECTION
-                        </button>
-                        <p class="text-center text-xs text-gray-500 mt-2">No obligation • Expert technician on-site • Clear next steps</p>
-                    </form>
+                    </div>
+
+                    <div
+                        id="form"
+                        class="md:col-span-5 w-full hero-form-container"
+                    >
+                        <div
+                            class="hero-card p-6 rounded-xl shadow-2xl border-t-4 border-accent"
+                        >
+                            <div class="text-center mb-4">
+                                <div
+                                    class="bg-yellow-50 border-2 border-yellow-500 rounded-lg px-3 py-2 mb-3 inline-block"
+                                >
+                                    <p
+                                        class="text-xs font-black text-yellow-800 uppercase"
+                                    >
+                                        ⚠️ Mold Activates in 24-48 Hours
+                                    </p>
+                                </div>
+                                <h2
+                                    class="text-2xl font-bold text-gray-900 mb-2"
+                                >
+                                    Get Your FREE Visual Inspection
+                                </h2>
+                                <p class="text-sm text-gray-600">
+                                    IICRC certified technician • Same-day
+                                    available
+                                </p>
+                            </div>
+                            <form
+                                name="mold-landing"
+                                method="POST"
+                                data-netlify="true"
+                                netlify-honeypot="bot-field"
+                                action="/thank-you"
+                                class="space-y-4"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="form-name"
+                                    value="mold-landing"
+                                />
+                                <p class="hidden">
+                                    <label
+                                        >Don't fill this out if you're human: <input
+                                            name="bot-field"
+                                        /></label
+                                    >
+                                </p>
+                                <div>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Full Name"
+                                        required
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition"
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Best Contact Phone"
+                                        required
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition"
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email Address"
+                                        required
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition"
+                                    />
+                                </div>
+                                <div>
+                                    <select
+                                        name="property_type"
+                                        required
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition bg-white"
+                                    >
+                                        <option value="" disabled selected
+                                            >Property Type</option
+                                        >
+                                        <option value="residential"
+                                            >Residential</option
+                                        >
+                                        <option value="commercial"
+                                            >Commercial</option
+                                        >
+                                    </select>
+                                </div>
+                                <div>
+                                    <textarea
+                                        name="description"
+                                        placeholder="Describe your mold concerns (location, visible damage, water incident)"
+                                        rows="3"
+                                        required
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition"
+                                    ></textarea>
+                                </div>
+                                <div>
+                                    <select
+                                        name="urgency"
+                                        class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition bg-white"
+                                    >
+                                        <option value="" disabled selected
+                                            >When do you need inspection?</option
+                                        >
+                                        <option value="asap"
+                                            >ASAP / Same Day</option
+                                        >
+                                        <option value="48hrs"
+                                            >Within 48 Hours</option
+                                        >
+                                        <option value="this_week"
+                                            >This Week</option
+                                        >
+                                        <option value="flexible"
+                                            >Flexible / Planning Ahead</option
+                                        >
+                                    </select>
+                                </div>
+                                <div
+                                    class="bg-blue-50 p-3 rounded-lg border border-accent/30"
+                                >
+                                    <div
+                                        class="flex items-start gap-2 text-xs text-gray-600"
+                                    >
+                                        <i
+                                            data-lucide="lock"
+                                            class="w-4 h-4 text-accent flex-shrink-0 mt-0.5"
+                                        ></i>
+                                        <span
+                                            >Your information is secure and will
+                                            never be shared. We respect your
+                                            privacy.</span
+                                        >
+                                    </div>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="w-full btn-blue text-white font-extrabold py-4 rounded-lg shadow-xl transition uppercase text-base"
+                                >
+                                    GET MY FREE VISUAL INSPECTION
+                                </button>
+                                <p
+                                    class="text-center text-xs text-gray-500 mt-2"
+                                >
+                                    No obligation • Expert technician on-site •
+                                    Clear next steps
+                                </p>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold mb-3 text-gray-900">
-                    Why Trust Paramount for Mold Testing?
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold mb-3 text-gray-900">
+                        Why Trust Paramount for Mold Testing?
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We combine <strong>state-mandated licensing</strong>, <strong
+                            >industry certifications</strong
+                        >, and <strong>24/7 availability</strong> to protect your
+                        property and health.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 items-start">
+                    <div
+                        class="card p-6 shadow-xl bg-blue-50 rounded-xl border-t-4 border-accent text-center"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white p-4 rounded-full shadow-lg">
+                                <i
+                                    data-lucide="shield-check"
+                                    class="w-10 h-10 text-accent"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-navy">
+                            IICRC Certified Technicians
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-3">
+                            All technicians hold <strong
+                                >Applied Microbial Remediation Technician (AMRT)</strong
+                            > certification - the gold standard for mold expertise.
+                        </p>
+                        <div
+                            class="inline-block bg-accent/10 px-3 py-1 rounded-full text-accent text-xs font-bold"
+                        >
+                            Industry Standard
+                        </div>
+                    </div>
+
+                    <div
+                        class="card p-6 shadow-xl bg-navy-light rounded-xl border-t-4 border-navy text-center"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white p-4 rounded-full shadow-lg">
+                                <i
+                                    data-lucide="award"
+                                    class="w-10 h-10 text-navy"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-navy">
+                            Florida DBPR Licensed
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-3">
+                            Mandatory compliance with <strong
+                                >Florida Statutes 468.84</strong
+                            >. Fully licensed mold assessor with required
+                            insurance coverage.
+                        </p>
+                        <div
+                            class="inline-block bg-navy/10 px-3 py-1 rounded-full text-navy text-xs font-bold"
+                        >
+                            State Mandated
+                        </div>
+                    </div>
+
+                    <div
+                        class="card p-6 shadow-xl bg-yellow-50 rounded-xl border-t-4 border-yellow-600 text-center"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-white p-4 rounded-full shadow-lg">
+                                <i
+                                    data-lucide="clock"
+                                    class="w-10 h-10 text-yellow-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-navy">
+                            48-Hour Critical Window
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-3">
+                            Mold spores activate in 24 hours. Visible growth in <strong
+                                >48-72 hours</strong
+                            >. Every hour of delay = structural damage cost.
+                        </p>
+                        <div
+                            class="inline-block bg-yellow-600/10 px-3 py-1 rounded-full text-yellow-700 text-xs font-bold"
+                        >
+                            Act Now
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Inspection Offer Bridge -->
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <div
+                        class="bg-gradient-to-r from-accent/10 to-blue-50 p-8 rounded-2xl shadow-xl border-2 border-accent"
+                    >
+                        <div
+                            class="flex flex-col md:flex-row items-center gap-6"
+                        >
+                            <div class="md:w-1/3 text-center">
+                                <div
+                                    class="bg-white p-6 rounded-full shadow-lg inline-block"
+                                >
+                                    <i
+                                        data-lucide="eye"
+                                        class="w-16 h-16 text-accent"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3
+                                    class="text-2xl font-extrabold mb-3 text-navy"
+                                >
+                                    Start with a <span class="text-accent"
+                                        >FREE Visual Inspection</span
+                                    >
+                                </h3>
+                                <p class="text-gray-700 mb-4">
+                                    No obligation. Our certified technician will
+                                    assess your property, explain what we find,
+                                    and provide you with a clear path forward -
+                                    whether you need testing, remediation, or
+                                    just peace of mind.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i
+                                            data-lucide="check-circle"
+                                            class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"
+                                        ></i>
+                                        <span
+                                            ><strong
+                                                >Zero cost, zero commitment</strong
+                                            > - Expert evaluation of your concerns</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            data-lucide="check-circle"
+                                            class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"
+                                        ></i>
+                                        <span
+                                            ><strong
+                                                >Same-day availability</strong
+                                            > - We come to you at your convenience</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i
+                                            data-lucide="check-circle"
+                                            class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"
+                                        ></i>
+                                        <span
+                                            ><strong>Clear next steps</strong> -
+                                            If testing or remediation is needed,
+                                            we'll create your custom protocol</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-100" style="background: #f3f4f6;">
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-3xl font-extrabold mb-3 text-center text-gray-900"
+                >
+                    From Testing to Full Remediation: Our Proven 5-Step Protocol
                 </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    We combine <strong>state-mandated licensing</strong>, <strong>industry certifications</strong>, and <strong>24/7 availability</strong> to protect your property and health.
+                <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+                    One certified team handles your entire mold journey—from
+                    initial inspection through final clearance.
                 </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-3 gap-8 items-start">
-                
-                <div class="card p-6 shadow-xl bg-blue-50 rounded-xl border-t-4 border-accent text-center">
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-white p-4 rounded-full shadow-lg">
-                            <i data-lucide="shield-check" class="w-10 h-10 text-accent"></i>
-                        </div>
+                <div class="grid md:grid-cols-5 gap-6 text-center">
+                    <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                        <span class="text-3xl font-bold block mb-1">1</span>
+                        <i
+                            data-lucide="search"
+                            class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                        <p class="font-semibold text-sm">
+                            Visual & Moisture Mapping
+                        </p>
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-navy">IICRC Certified Technicians</h3>
-                    <p class="text-sm text-gray-600 mb-3">All technicians hold <strong>Applied Microbial Remediation Technician (AMRT)</strong> certification - the gold standard for mold expertise.</p>
-                    <div class="inline-block bg-accent/10 px-3 py-1 rounded-full text-accent text-xs font-bold">Industry Standard</div>
-                </div>
-                
-                <div class="card p-6 shadow-xl bg-navy-light rounded-xl border-t-4 border-navy text-center">
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-white p-4 rounded-full shadow-lg">
-                            <i data-lucide="award" class="w-10 h-10 text-navy"></i>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2 text-navy">Florida DBPR Licensed</h3>
-                    <p class="text-sm text-gray-600 mb-3">Mandatory compliance with <strong>Florida Statutes 468.84</strong>. Fully licensed mold assessor with required insurance coverage.</p>
-                    <div class="inline-block bg-navy/10 px-3 py-1 rounded-full text-navy text-xs font-bold">State Mandated</div>
-                </div>
-                
-                <div class="card p-6 shadow-xl bg-yellow-50 rounded-xl border-t-4 border-yellow-600 text-center">
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-white p-4 rounded-full shadow-lg">
-                            <i data-lucide="clock" class="w-10 h-10 text-yellow-600"></i>
-                        </div>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2 text-navy">48-Hour Critical Window</h3>
-                    <p class="text-sm text-gray-600 mb-3">Mold spores activate in 24 hours. Visible growth in <strong>48-72 hours</strong>. Every hour of delay = structural damage cost.</p>
-                    <div class="inline-block bg-yellow-600/10 px-3 py-1 rounded-full text-yellow-700 text-xs font-bold">Act Now</div>
-                </div>
-            </div>
-            
-            <!-- Free Inspection Offer Bridge -->
-            <div class="mt-12 max-w-4xl mx-auto">
-                <div class="bg-gradient-to-r from-accent/10 to-blue-50 p-8 rounded-2xl shadow-xl border-2 border-accent">
-                    <div class="flex flex-col md:flex-row items-center gap-6">
-                        <div class="md:w-1/3 text-center">
-                            <div class="bg-white p-6 rounded-full shadow-lg inline-block">
-                                <i data-lucide="eye" class="w-16 h-16 text-accent"></i>
-                            </div>
-                        </div>
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-extrabold mb-3 text-navy">
-                                Start with a <span class="text-accent">FREE Visual Inspection</span>
-                            </h3>
-                            <p class="text-gray-700 mb-4">
-                                No obligation. Our certified technician will assess your property, explain what we find, and provide you with a clear path forward - whether you need testing, remediation, or just peace of mind.
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li class="flex items-start">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
-                                    <span><strong>Zero cost, zero commitment</strong> - Expert evaluation of your concerns</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
-                                    <span><strong>Same-day availability</strong> - We come to you at your convenience</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5"></i>
-                                    <span><strong>Clear next steps</strong> - If testing or remediation is needed, we'll create your custom protocol</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="py-16 bg-gray-100" style="background: #f3f4f6;">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-extrabold mb-3 text-center text-gray-900">
-                From Testing to Full Remediation: Our Proven 5-Step Protocol
-            </h2>
-            <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-                One certified team handles your entire mold journey—from initial inspection through final clearance.
-            </p>
-            <div class="grid md:grid-cols-5 gap-6 text-center">
-                
-                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
-                    <span class="text-3xl font-bold block mb-1">1</span>
-                    <i data-lucide="search" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
-                    <p class="font-semibold text-sm">Visual & Moisture Mapping</p>
-                </div>
-                
-                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
-                    <span class="text-3xl font-bold block mb-1">2</span>
-                    <i data-lucide="cloud-lightning" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
-                    <p class="font-semibold text-sm">Air Quality Sampling</p>
-                </div>
-                
-                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
-                    <span class="text-3xl font-bold block mb-1">3</span>
-                    <i data-lucide="flask-conical" class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
-                    <p class="font-semibold text-sm">Third-Party Lab Analysis</p>
-                </div>
-                
-                <div class="p-4 rounded-xl primary-bg text-white shadow-lg transform scale-105 border-2 border-yellow-400">
-                    <span class="text-3xl font-bold block mb-1">4</span>
-                    <i data-lucide="file-text" class="w-8 h-8 mx-auto mb-2 text-yellow-300"></i>
-                    <p class="font-bold text-sm">Insurance Documentation</p>
-                    <p class="text-xs text-blue-200 mt-1">Claim-ready reports</p>
-                </div>
-                
-                <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
-                    <span class="text-3xl font-bold block mb-1">5</span>
-                    <i data-lucide="shield-check" class="w-8 h-8 mx-auto mb-2 text-green-300"></i>
-                    <p class="font-semibold text-sm">Complete Remediation + Clearance</p>
-                    <p class="text-xs text-blue-200 mt-1">Safe & certified</p>
-                </div>
-            </div>
 
-            <div class="mt-16 max-w-4xl mx-auto">
-                <div class="bg-white p-8 rounded-2xl shadow-2xl border-t-4 border-accent">
-                    <div class="text-center mb-6">
-                        <div class="bg-green-50 border-2 border-green-500 rounded-lg px-4 py-2 mb-4 inline-block">
-                            <p class="text-sm font-black text-green-800 uppercase flex items-center justify-center gap-2">
-                                <i data-lucide="trending-up" class="w-5 h-5"></i>
-                                Based on 150+ Florida Remediation Projects
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-center gap-2 mb-3">
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-yellow-500"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-yellow-500"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-yellow-500"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-yellow-500"></i>
-                            <i data-lucide="star" class="w-6 h-6 text-yellow-500 fill-yellow-500"></i>
-                            <span class="ml-2 text-xl font-bold text-gray-900">4.9/5.0</span>
-                        </div>
-                        <h3 class="text-2xl font-extrabold text-navy">Why Florida Homeowners Choose Paramount</h3>
-                        <p class="text-sm text-gray-500 mt-1">Real outcomes from real emergency situations</p>
+                    <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                        <span class="text-3xl font-bold block mb-1">2</span>
+                        <i
+                            data-lucide="cloud-lightning"
+                            class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                        <p class="font-semibold text-sm">
+                            Air Quality Sampling
+                        </p>
                     </div>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-accent">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="flex">
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-500">Verified Customer</span>
+
+                    <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                        <span class="text-3xl font-bold block mb-1">3</span>
+                        <i
+                            data-lucide="flask-conical"
+                            class="w-8 h-8 mx-auto mb-2 text-blue-300"></i>
+                        <p class="font-semibold text-sm">
+                            Third-Party Lab Analysis
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 rounded-xl primary-bg text-white shadow-lg transform scale-105 border-2 border-yellow-400"
+                    >
+                        <span class="text-3xl font-bold block mb-1">4</span>
+                        <i
+                            data-lucide="file-text"
+                            class="w-8 h-8 mx-auto mb-2 text-yellow-300"></i>
+                        <p class="font-bold text-sm">Insurance Documentation</p>
+                        <p class="text-xs text-blue-200 mt-1">
+                            Claim-ready reports
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl primary-bg text-white shadow-lg">
+                        <span class="text-3xl font-bold block mb-1">5</span>
+                        <i
+                            data-lucide="shield-check"
+                            class="w-8 h-8 mx-auto mb-2 text-green-300"></i>
+                        <p class="font-semibold text-sm">
+                            Complete Remediation + Clearance
+                        </p>
+                        <p class="text-xs text-blue-200 mt-1">
+                            Safe & certified
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-2xl border-t-4 border-accent"
+                    >
+                        <div class="text-center mb-6">
+                            <div
+                                class="bg-green-50 border-2 border-green-500 rounded-lg px-4 py-2 mb-4 inline-block"
+                            >
+                                <p
+                                    class="text-sm font-black text-green-800 uppercase flex items-center justify-center gap-2"
+                                >
+                                    <i data-lucide="trending-up" class="w-5 h-5"
+                                    ></i>
+                                    Based on 150+ Florida Remediation Projects
+                                </p>
                             </div>
-                            <p class="text-gray-700 mb-3 leading-relaxed">
-                                "Paramount responded in <strong>under 60 minutes</strong> after I called. The technician was IICRC certified and explained the entire testing process. Their detailed lab report gave my insurance company everything they needed—<strong>my claim was approved in 3 days</strong> with zero pushback. They handled testing AND the complete remediation. One team, start to finish."
+                            <div
+                                class="flex items-center justify-center gap-2 mb-3"
+                            >
+                                <i
+                                    data-lucide="star"
+                                    class="w-6 h-6 text-yellow-500 fill-yellow-500"
+                                ></i>
+                                <i
+                                    data-lucide="star"
+                                    class="w-6 h-6 text-yellow-500 fill-yellow-500"
+                                ></i>
+                                <i
+                                    data-lucide="star"
+                                    class="w-6 h-6 text-yellow-500 fill-yellow-500"
+                                ></i>
+                                <i
+                                    data-lucide="star"
+                                    class="w-6 h-6 text-yellow-500 fill-yellow-500"
+                                ></i>
+                                <i
+                                    data-lucide="star"
+                                    class="w-6 h-6 text-yellow-500 fill-yellow-500"
+                                ></i>
+                                <span
+                                    class="ml-2 text-xl font-bold text-gray-900"
+                                    >4.9/5.0</span
+                                >
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-navy">
+                                Why Florida Homeowners Choose Paramount
+                            </h3>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Real outcomes from real emergency situations
                             </p>
-                            <p class="text-sm font-semibold text-navy">- Jane D., Boca Raton, FL</p>
                         </div>
-                        
-                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-accent">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="flex">
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+
+                        <div class="space-y-6">
+                            <div
+                                class="bg-blue-50 p-6 rounded-xl border-l-4 border-accent"
+                            >
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="flex">
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                    </div>
+                                    <span
+                                        class="text-xs font-semibold text-gray-500"
+                                        >Verified Customer</span
+                                    >
                                 </div>
-                                <span class="text-xs font-semibold text-gray-500">Verified Customer</span>
+                                <p class="text-gray-700 mb-3 leading-relaxed">
+                                    "Paramount responded in <strong
+                                        >under 60 minutes</strong
+                                    > after I called. The technician was IICRC certified
+                                    and explained the entire testing process. Their
+                                    detailed lab report gave my insurance company
+                                    everything they needed—<strong
+                                        >my claim was approved in 3 days</strong
+                                    > with zero pushback. They handled testing AND
+                                    the complete remediation. One team, start to
+                                    finish."
+                                </p>
+                                <p class="text-sm font-semibold text-navy">
+                                    - Jane D., Boca Raton, FL
+                                </p>
                             </div>
-                            <p class="text-gray-700 mb-3 leading-relaxed">
-                                "I found mold behind my bathroom wall after a small leak. I was terrified it would spread. <strong>Paramount arrived same-day</strong>, ran air quality tests, and had lab results back within 48 hours. They coordinated directly with my insurance adjuster and handled the entire remediation—from containment to final clearance testing. My home is safe again."
-                            </p>
-                            <p class="text-sm font-semibold text-navy">- Michael V., Miami, FL</p>
+
+                            <div
+                                class="bg-blue-50 p-6 rounded-xl border-l-4 border-accent"
+                            >
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="flex">
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                        <i
+                                            data-lucide="star"
+                                            class="w-4 h-4 text-yellow-500 fill-yellow-500"
+                                        ></i>
+                                    </div>
+                                    <span
+                                        class="text-xs font-semibold text-gray-500"
+                                        >Verified Customer</span
+                                    >
+                                </div>
+                                <p class="text-gray-700 mb-3 leading-relaxed">
+                                    "I found mold behind my bathroom wall after
+                                    a small leak. I was terrified it would
+                                    spread. <strong
+                                        >Paramount arrived same-day</strong
+                                    >, ran air quality tests, and had lab
+                                    results back within 48 hours. They
+                                    coordinated directly with my insurance
+                                    adjuster and handled the entire
+                                    remediation—from containment to final
+                                    clearance testing. My home is safe again."
+                                </p>
+                                <p class="text-sm font-semibold text-navy">
+                                    - Michael V., Miami, FL
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-center">
+                            <a
+                                href="tel:+17866022217"
+                                class="inline-flex items-center text-accent font-bold hover:text-navy transition"
+                            >
+                                <span>Get the same expert service</span>
+                                <i
+                                    data-lucide="arrow-right"
+                                    class="w-5 h-5 ml-2"></i>
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="mt-6 text-center">
-                        <a href="tel:+17866022217" class="inline-flex items-center text-accent font-bold hover:text-navy transition">
-                            <span>Get the same expert service</span>
-                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="primary-bg py-12">
+            <div class="container mx-auto text-center px-4">
+                <div class="max-w-3xl mx-auto">
+                    <h2
+                        class="text-3xl md:text-4xl font-extrabold mb-3"
+                        style="color: #35c3e9;"
+                    >
+                        Don't Wait. Mold Damage Grows Every Hour.
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8" style="color: #35c3e9;">
+                        Start with a FREE visual inspection from our IICRC
+                        certified team. Same-day availability.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    >
+                        <a
+                            href="tel:+17866022217"
+                            class="accent-cta text-white font-extrabold py-4 px-8 md:px-12 rounded-full text-lg md:text-xl shadow-2xl uppercase transition duration-300 transform hover:scale-[1.03] inline-flex items-center justify-center"
+                        >
+                            <i
+                                data-lucide="phone-call"
+                                class="inline-block w-6 h-6 mr-3"></i> CALL NOW:
+                            (786) 602-2217
+                        </a>
+                        <a
+                            href="#form"
+                            class="bg-white text-navy font-extrabold py-4 px-8 md:px-12 rounded-full text-lg md:text-xl shadow-2xl uppercase transition duration-300 transform hover:scale-[1.03] inline-flex items-center justify-center hover:bg-blue-50"
+                        >
+                            <i
+                                data-lucide="calendar-check"
+                                class="inline-block w-6 h-6 mr-3"></i> SCHEDULE INSPECTION
                         </a>
                     </div>
+                    <div
+                        class="flex flex-wrap justify-center gap-4 mt-6 text-white text-sm"
+                    >
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            <span>IICRC Certified</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>24/7 Emergency</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="award" class="w-4 h-4"></i>
+                            <span>FL Licensed</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="primary-bg py-12">
-        <div class="container mx-auto text-center px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="color: #35c3e9;">
-                    Don't Wait. Mold Damage Grows Every Hour.
-                </h2>
-                <p class="text-lg md:text-xl mb-8" style="color: #35c3e9;">
-                    Start with a FREE visual inspection from our IICRC certified team. Same-day availability.
+        <div class="sticky-footer-cta primary-bg py-4 px-4 shadow-2xl">
+            <div class="container mx-auto">
+                <a
+                    href="tel:+17866022217"
+                    class="accent-cta w-full text-white font-black py-3 px-4 rounded-lg text-base uppercase flex items-center justify-center shadow-xl"
+                >
+                    <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i> 24/7 EMERGENCY:
+                    (786) 602-2217
+                </a>
+                <p class="text-center text-white text-xs mt-2">
+                    <i
+                        data-lucide="shield-check"
+                        class="inline-block w-3 h-3 mr-1"></i> IICRC Certified •
+                    Same-Day Service
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="tel:+17866022217" class="accent-cta text-white font-extrabold py-4 px-8 md:px-12 rounded-full text-lg md:text-xl shadow-2xl uppercase transition duration-300 transform hover:scale-[1.03] inline-flex items-center justify-center">
-                        <i data-lucide="phone-call" class="inline-block w-6 h-6 mr-3"></i> CALL NOW: (786) 602-2217
-                    </a>
-                    <a href="#form" class="bg-white text-navy font-extrabold py-4 px-8 md:px-12 rounded-full text-lg md:text-xl shadow-2xl uppercase transition duration-300 transform hover:scale-[1.03] inline-flex items-center justify-center hover:bg-blue-50">
-                        <i data-lucide="calendar-check" class="inline-block w-6 h-6 mr-3"></i> SCHEDULE INSPECTION
-                    </a>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4 mt-6 text-white text-sm">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        <span>IICRC Certified</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="clock" class="w-4 h-4"></i>
-                        <span>24/7 Emergency</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="award" class="w-4 h-4"></i>
-                        <span>FL Licensed</span>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
 
-    <div class="sticky-footer-cta primary-bg py-4 px-4 shadow-2xl">
-        <div class="container mx-auto">
-            <a href="tel:+17866022217" class="accent-cta w-full text-white font-black py-3 px-4 rounded-lg text-base uppercase flex items-center justify-center shadow-xl">
-                <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i> 24/7 EMERGENCY: (786) 602-2217
-            </a>
-            <p class="text-center text-white text-xs mt-2">
-                <i data-lucide="shield-check" class="inline-block w-3 h-3 mr-1"></i> IICRC Certified • Same-Day Service
-            </p>
-        </div>
-    </div>
+        <script is:inline>
+            lucide.createIcons();
 
-    <script is:inline>
-        lucide.createIcons();
-        
-        // Sticky CTA visibility on scroll (mobile)
-        let lastScrollTop = 0;
-        const stickyBar = document.querySelector('.sticky-footer-cta');
-        const heroSection = document.querySelector('.animated-hero-section');
-        
-        if (stickyBar && window.innerWidth <= 768) {
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const heroBottom = heroSection ? heroSection.offsetHeight : 800;
-                
-                if (scrollTop > heroBottom) {
-                    stickyBar.style.display = 'block';
-                } else {
-                    stickyBar.style.display = 'none';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-        }
-    </script>
-</body>
+            // Sticky CTA visibility on scroll (mobile)
+            let lastScrollTop = 0;
+            const stickyBar = document.querySelector(".sticky-footer-cta");
+            const heroSection = document.querySelector(
+                ".animated-hero-section",
+            );
+
+            if (stickyBar && window.innerWidth <= 768) {
+                window.addEventListener("scroll", function () {
+                    const scrollTop =
+                        window.pageYOffset ||
+                        document.documentElement.scrollTop;
+                    const heroBottom = heroSection
+                        ? heroSection.offsetHeight
+                        : 800;
+
+                    if (scrollTop > heroBottom) {
+                        stickyBar.style.display = "block";
+                    } else {
+                        stickyBar.style.display = "none";
+                    }
+
+                    lastScrollTop = scrollTop;
+                });
+            }
+        </script>
+    </body>
 </html>

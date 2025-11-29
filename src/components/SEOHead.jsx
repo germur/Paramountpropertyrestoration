@@ -95,7 +95,7 @@ const SEOHead = ({
   // Core SEO
   title,
   description,
-  image = '/images/og-image.jpg',
+  image = '/images/og-image.webp',
   pageType = 'website', // 'website' | 'article' | 'service'
   keywords = [],
 
@@ -147,7 +147,7 @@ const SEOHead = ({
     '@type': 'LocalBusiness',
     '@id': `${canonicalURL}#localbusiness`,
     name: businessName,
-    image: `${siteUrl}/images/ppr-logo-new.png`,
+    image: `${siteUrl}/images/ppr-logo-new.webp`,
     url: canonicalURL,
     telephone: phone,
     email: 'services@paramountpropertyrestoration.com',
@@ -275,7 +275,7 @@ const SEOHead = ({
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo-new.png`,
+        url: `${siteUrl}/images/ppr-logo-new.webp`,
         width: 600,
         height: 60
       },

@@ -9,7 +9,7 @@ function useOutsideClose(ref, onClose) {
     }, [ref, onClose]);
 }
 
-export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = "/images/LogoPrin.png" }) {
+export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = "/images/ppr-logo-main.webp" }) {
     // estado
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openDesktopKey, setOpenDesktopKey] = useState(null);        // "services" | "restoration" | null
@@ -45,7 +45,7 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
             document.body.style.overflow = '';
             document.body.style.paddingRight = '';
         }
-        
+
         // Cleanup on unmount
         return () => {
             document.body.classList.remove('mobile-menu-open');
@@ -267,7 +267,7 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
                                 </li>
                             );
                         })}
-                        
+
                         {/* Emergency CTA in mobile menu */}
                         <li className="nav-item mobile-emergency">
                             <a href="tel:+17866022217" className="nav-link emergency-mobile">

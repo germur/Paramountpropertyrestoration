@@ -3,8 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SEOHead from "../components/SEOHead.jsx";
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
 
-const pageTitle = "Project Portfolio | Restoration & Remodeling Projects in Florida";
-const pageDescription = "See before/after results for water & fire restoration, mold remediation, and kitchen/bath/home remodels across Florida.";
+const pageTitle =
+  "Project Portfolio | Restoration & Remodeling Projects in Florida";
+const pageDescription =
+  "See before/after results for water & fire restoration, mold remediation, and kitchen/bath/home remodels across Florida.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -34,7 +36,10 @@ const pageDescription = "See before/after results for water & fire restoration, 
           Our Successful Projects
         </div>
         <h1 class="hero-title">Project Portfolio</h1>
-        <p class="hero-description">Explore our completed restoration and remodeling projects across Florida. Quality work that speaks for itself.</p>
+        <p class="hero-description">
+          Explore our completed restoration and remodeling projects across
+          Florida. Quality work that speaks for itself.
+        </p>
         <div class="hero-actions">
           <a href="tel:+17866022217" class="btn-primary">
             <i class="fas fa-phone"></i>
@@ -54,13 +59,15 @@ const pageDescription = "See before/after results for water & fire restoration, 
     <div class="container">
       <div class="section-header">
         <h2>Our Completed Work</h2>
-        <p>Browse through our portfolio of restoration and remodeling projects</p>
+        <p>
+          Browse through our portfolio of restoration and remodeling projects
+        </p>
       </div>
 
       <div class="gallery-grid-custom">
         <div class="gallery-item-custom">
           <img
-            src="/images/remoKitchenHome.jpg"
+            src="/images/remoKitchenHome.webp"
             alt="Kitchen Remodeling Project"
             class="gallery-image-custom"
           />
@@ -72,7 +79,7 @@ const pageDescription = "See before/after results for water & fire restoration, 
 
         <div class="gallery-item-custom">
           <img
-            src="/images/habitacionModerna.jpg"
+            src="/images/habitacionModerna.webp"
             alt="Bedroom Remodeling Project"
             class="gallery-image-custom"
           />
@@ -84,7 +91,7 @@ const pageDescription = "See before/after results for water & fire restoration, 
 
         <div class="gallery-item-custom">
           <img
-            src="/images/bañoMinimalista.jpg"
+            src="/images/bañoMinimalista.webp"
             alt="Bathroom Remodeling Project"
             class="gallery-image-custom"
           />
@@ -96,7 +103,7 @@ const pageDescription = "See before/after results for water & fire restoration, 
 
         <div class="gallery-item-custom">
           <img
-            src="/images/livingDiningHero.jpg"
+            src="/images/livingDiningHero.webp"
             alt="Living & Dining Remodeling Project"
             class="gallery-image-custom"
           />
@@ -120,12 +127,14 @@ const pageDescription = "See before/after results for water & fire restoration, 
               <i class="fas fa-clipboard-check"></i>
             </div>
             <h3>Request Your Project Estimate</h3>
-            <p>Tell us about your project and we'll provide a detailed estimate</p>
+            <p>
+              Tell us about your project and we'll provide a detailed estimate
+            </p>
           </div>
-          
+
           <!-- NETLIFY FORM -->
-          <form 
-            class="contact-form" 
+          <form
+            class="contact-form"
             name="portfolio"
             method="POST"
             data-netlify="true"
@@ -139,29 +148,58 @@ const pageDescription = "See before/after results for water & fire restoration, 
             <div class="form-row">
               <div class="form-group">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" name="name" class="form-input" required>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form-input" required>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  required
+                />
               </div>
             </div>
 
             <div class="form-group">
               <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" required>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label for="project-type" class="form-label">Project Type</label>
-              <select id="project-type" name="project-type" class="form-select" required>
+              <select
+                id="project-type"
+                name="project-type"
+                class="form-select"
+                required
+              >
                 <option value="">Select a project type</option>
                 <option value="kitchen-remodel">🍳 Kitchen Remodeling</option>
                 <option value="bathroom-remodel">🚿 Bathroom Remodeling</option>
                 <option value="bedroom-remodel">🛏️ Bedroom Remodeling</option>
-                <option value="living-dining-remodel">🛋️ Living/Dining Remodeling</option>
-                <option value="water-restoration">💧 Water Damage Restoration</option>
-                <option value="fire-restoration">🔥 Fire Damage Restoration</option>
+                <option value="living-dining-remodel"
+                  >🛋️ Living/Dining Remodeling</option
+                >
+                <option value="water-restoration"
+                  >💧 Water Damage Restoration</option
+                >
+                <option value="fire-restoration"
+                  >🔥 Fire Damage Restoration</option
+                >
                 <option value="mold-remediation">🦠 Mold Remediation</option>
                 <option value="other">📋 Other Project</option>
               </select>
@@ -169,7 +207,13 @@ const pageDescription = "See before/after results for water & fire restoration, 
 
             <div class="form-group">
               <label for="message" class="form-label">Project Details</label>
-              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Describe your project, budget range, timeline, and any specific requirements..." required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                rows="5"
+                placeholder="Describe your project, budget range, timeline, and any specific requirements..."
+                required></textarea>
             </div>
 
             <button type="submit" class="btn-primary form-submit">
@@ -203,7 +247,7 @@ const pageDescription = "See before/after results for water & fire restoration, 
           <!-- Why Choose Us -->
           <div class="contact-methods-card">
             <h3>Why Choose Us</h3>
-            
+
             <div class="contact-method">
               <div class="method-icon">
                 <i class="fas fa-award"></i>
@@ -249,7 +293,6 @@ const pageDescription = "See before/after results for water & fire restoration, 
     </div>
   </section>
 </BaseLayout>
-
 
 <style>
   /* ===== HERO SECTION ===== */
@@ -659,33 +702,34 @@ const pageDescription = "See before/after results for water & fire restoration, 
 
 <script is:inline>
   // Smooth scroll for anchor links
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+
+    smoothScrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
-        
+
         if (targetElement) {
           targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+            behavior: "smooth",
+            block: "start",
           });
         }
       });
     });
 
     // Form success handling
-    const portfolioForm = document.querySelector('.contact-form');
+    const portfolioForm = document.querySelector(".contact-form");
     if (portfolioForm) {
-      portfolioForm.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('.form-submit');
+      portfolioForm.addEventListener("submit", function (e) {
+        const submitBtn = this.querySelector(".form-submit");
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
-        
+
         // Reset after potential redirect/reload
         setTimeout(() => {
           submitBtn.innerHTML = originalText;

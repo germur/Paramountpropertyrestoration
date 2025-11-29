@@ -10,7 +10,7 @@ const serviceDetails = {
                 "Ensuring durable materials that align with a clean aesthetic.",
                 "Delivering a premium design within a pre-defined budget."
             ],
-            image: "/images/kitchenSolutionsTwo.jpg"
+            image: "/images/kitchenSolutionsTwo.webp"
         },
         solution: {
             text: [
@@ -18,7 +18,7 @@ const serviceDetails = {
                 "Using neutral tones, natural wood, and polished concrete.",
                 "Prioritizing high-impact features to optimize costs."
             ],
-            image: "/images/kitchenSolutionsThree.jpg"
+            image: "/images/kitchenSolutionsThree.webp"
         },
         execution: {
             text: [
@@ -26,7 +26,7 @@ const serviceDetails = {
                 "Created detailed 3D renderings to preview the final look.",
                 "On-site coordination with contractors to ensure every detail."
             ],
-            image: "/images/cocinaClasica.jpg"
+            image: "/images/cocinaClasica.webp"
         },
         duration: {
             title: "Project Duration: 6-8 Weeks",
@@ -36,7 +36,7 @@ const serviceDetails = {
                 "Phase 3 (2-3 Weeks): Construction and Installation",
                 "Phase 4 (1 Week): Final Touches and Client Handover"
             ],
-            image: "/images/livingDiningSolutionsFour.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsFour.webp" // Reemplaza con tu imagen
         }
     },
     Bathrooms: {
@@ -46,7 +46,7 @@ const serviceDetails = {
                 "Ensuring proper waterproofing and ventilation.",
                 "Selecting fixtures that are both beautiful and durable."
             ],
-            image: "/images/banoPortfolioOne.jpg" // Reemplaza con tu imagen
+            image: "/images/banoPortfolioOne.webp" // Reemplaza con tu imagen
         },
         solution: {
             text: [
@@ -54,7 +54,7 @@ const serviceDetails = {
                 "Implementing high-quality membranes and silent extraction fans.",
                 "Sourcing from top brands known for quality and design."
             ],
-            image: "/images/banoPortfolioTwo.jpg" // Reemplaza con tu imagen
+            image: "/images/banoPortfolioTwo.webp" // Reemplaza con tu imagen
         },
         execution: {
             text: [
@@ -62,7 +62,7 @@ const serviceDetails = {
                 "Custom vanity and storage solutions built to fit.",
                 "Seamless integration of lighting for ambiance and function."
             ],
-            image: "/images/banoPortfolioThree.jpg" // Reemplaza con tu imagen
+            image: "/images/banoPortfolioThree.webp" // Reemplaza con tu imagen
         },
         duration: {
             title: "Project Duration: 4-6 Weeks",
@@ -72,7 +72,7 @@ const serviceDetails = {
                 "Phase 3 (2 Weeks): Installation and Finishing",
                 "Phase 4 (1 Week): Final Inspection and Handover"
             ],
-            image: "/images/livingDiningSolutionsFour.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsFour.webp" // Reemplaza con tu imagen
         }
     },
     Bedroom: {
@@ -82,7 +82,7 @@ const serviceDetails = {
                 "Integrating smart and efficient storage solutions like walk-in closets.",
                 "Designing lighting schemes that support both relaxation and activity."
             ],
-            image: "/images/bedroomSolutionOne.jpg" // Reemplaza con tu imagen
+            image: "/images/bedroomSolutionOne.webp" // Reemplaza con tu imagen
         },
         solution: {
             text: [
@@ -90,7 +90,7 @@ const serviceDetails = {
                 "Designing custom closet systems and built-in wardrobes.",
                 "Implementing layered lighting with dimmable ambient, task, and accent lights."
             ],
-            image: "/images/bedroomSolutionTwo.jpg" // Reemplaza con tu imagen
+            image: "/images/bedroomSolutionTwo.webp" // Reemplaza con tu imagen
         },
         execution: {
             text: [
@@ -98,7 +98,7 @@ const serviceDetails = {
                 "Custom millwork and installation of storage systems.",
                 "Electrical work for new lighting fixtures and smart controls."
             ],
-            image: "/images/bedroomSolutionThree.jpg" // Reemplaza con tu imagen
+            image: "/images/bedroomSolutionThree.webp" // Reemplaza con tu imagen
         },
         duration: {
             title: "Project Duration: 4-7 Weeks",
@@ -108,7 +108,7 @@ const serviceDetails = {
                 "Phase 3 (2-3 Weeks): Painting, Electrical, and Installation",
                 "Phase 4 (1 Week): Final Decoration and Staging"
             ],
-            image: "/images/livingDiningSolutionsFour.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsFour.webp" // Reemplaza con tu imagen
         }
     },
     "Home Additions": {
@@ -118,7 +118,7 @@ const serviceDetails = {
                 "Navigating complex building codes and permit requirements.",
                 "Managing structural engineering to guarantee safety and integrity."
             ],
-            image: "/images/homeAddSolutionsOne.jpg" // Reemplaza con tu imagen
+            image: "/images/homeAddSolutionsOne.webp" // Reemplaza con tu imagen
         },
         solution: {
             text: [
@@ -126,7 +126,7 @@ const serviceDetails = {
                 "Full management of the permitting process with local authorities.",
                 "Working with certified engineers to design foundations and support structures."
             ],
-            image: "/images/homeAddSolutionsTwo.jpg" // Reemplaza con tu imagen
+            image: "/images/homeAddSolutionsTwo.webp" // Reemplaza con tu imagen
         },
         execution: {
             text: [
@@ -134,7 +134,7 @@ const serviceDetails = {
                 "Exterior finishing, including siding, roofing, and windows.",
                 "Complete interior finishing, from drywall to flooring and paint."
             ],
-            image: "/images/homeAddSolutionsThree.jpg" // Reemplaza con tu imagen
+            image: "/images/homeAddSolutionsThree.webp" // Reemplaza con tu imagen
         },
         duration: {
             title: "Project Duration: 10-16 Weeks",
@@ -144,7 +144,7 @@ const serviceDetails = {
                 "Phase 3 (4-6 Weeks): Interior Systems and Finishes",
                 "Phase 4 (1 Week): Final Walkthrough and Project Completion"
             ],
-            image: "/images/livingDiningSolutionsFour.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsFour.webp" // Reemplaza con tu imagen
         }
     },
     "Living & Dining": {
@@ -154,7 +154,7 @@ const serviceDetails = {
                 "Designing custom built-ins for media, storage, or display.",
                 "Developing a lighting plan that defines zones and creates ambiance."
             ],
-            image: "/images/livingDiningSolutionsOne.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsOne.webp" // Reemplaza con tu imagen
         },
         solution: {
             text: [
@@ -162,7 +162,7 @@ const serviceDetails = {
                 "Designing and fabricating custom entertainment centers and shelving.",
                 "Using a mix of recessed lighting, chandeliers, and lamps to create layers of light."
             ],
-            image: "/images/livingDiningSolutionsTwo.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsTwo.webp" // Reemplaza con tu imagen
         },
         execution: {
             text: [
@@ -170,7 +170,7 @@ const serviceDetails = {
                 "Installation of custom cabinetry and millwork.",
                 "Flooring installation, painting, and final electrical work."
             ],
-            image: "/images/livingDiningSolutionsThree.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsThree.webp" // Reemplaza con tu imagen
         },
         duration: {
             title: "Project Duration: 5-9 Weeks",
@@ -180,7 +180,7 @@ const serviceDetails = {
                 "Phase 3 (2-4 Weeks): Installation of Floors, Built-ins, and Lighting",
                 "Phase 4 (1 Week): Painting and Final Touches"
             ],
-            image: "/images/livingDiningSolutionsFour.jpg" // Reemplaza con tu imagen
+            image: "/images/livingDiningSolutionsFour.webp" // Reemplaza con tu imagen
         }
     }
 };
@@ -241,7 +241,7 @@ export default function ProjectsFilter() {
                         <ul>{selectedServiceData.solution.text.map(item => <li>{item}</li>)}</ul>
                     </div>
                     <div className="feature-image">
-                        <img className="imgPortfolioCards"  src={selectedServiceData.solution.image} alt={`${activeCategory} Solution`} />
+                        <img className="imgPortfolioCards" src={selectedServiceData.solution.image} alt={`${activeCategory} Solution`} />
                     </div>
                 </div>
 
@@ -252,10 +252,10 @@ export default function ProjectsFilter() {
                         <ul>{selectedServiceData.execution.text.map(item => <li>{item}</li>)}</ul>
                     </div>
                     <div className="feature-image">
-                        <img className="imgPortfolioCards"  src={selectedServiceData.execution.image} alt={`${activeCategory} Execution`} />
+                        <img className="imgPortfolioCards" src={selectedServiceData.execution.image} alt={`${activeCategory} Execution`} />
                     </div>
                 </div>
-                
+
                 {/* Bloque 4: Duration */}
                 <div className="project-feature-block">
                     <div className="feature-content">
@@ -263,7 +263,7 @@ export default function ProjectsFilter() {
                         <ul>{selectedServiceData.duration.text.map(item => <li>{item}</li>)}</ul>
                     </div>
                     <div className="feature-image">
-                        <img className="imgPortfolioCards"  src={selectedServiceData.duration.image} alt={`${activeCategory} Duration`} />
+                        <img className="imgPortfolioCards" src={selectedServiceData.duration.image} alt={`${activeCategory} Duration`} />
                     </div>
                 </div>
             </div>

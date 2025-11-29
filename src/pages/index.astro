@@ -7,8 +7,10 @@ import LinkBuildingSection from "../components/linkBuilding.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import SEOHead from "../components/SEOHead.jsx";
-const pageTitle = "Paramount Property Restoration | Florida Restoration & Remodeling";
-const pageDescription = "24/7 water, fire, mold & storm restoration. Bathroom, kitchen, and home remodeling across Florida. Free inspection & estimates.";
+const pageTitle =
+  "Paramount Property Restoration | Florida Restoration & Remodeling";
+const pageDescription =
+  "24/7 water, fire, mold & storm restoration. Bathroom, kitchen, and home remodeling across Florida. Free inspection & estimates.";
 
 // Obtener posts destacados del blog
 let allPosts: CollectionEntry<"blog">[] = [];
@@ -24,10 +26,7 @@ try {
 }
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={pageDescription}
->
+<BaseLayout title={pageTitle} description={pageDescription}>
   <SEOHead
     title={pageTitle}
     description={pageDescription}
@@ -49,17 +48,19 @@ try {
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">Florida's Complete Property Partner</h1>
-          <h2 class="hero-subtitle">Emergency Restoration & Expert Remodeling</h2>
+          <h2 class="hero-subtitle">
+            Emergency Restoration & Expert Remodeling
+          </h2>
           <p class="hero-description">24/7 Response Available</p>
-          
+
           <div class="hero-cta-dual">
             <a href="tel:+17866022217" class="btn cta-action">
               <i class="fas fa-phone"></i>
-              <span>Emergency Help<br><strong>(786) 602-2217</strong></span>
+              <span>Emergency Help<br /><strong>(786) 602-2217</strong></span>
             </a>
             <a href="/contact" class="btn-outline cta-secondary">
               <i class="fas fa-calculator"></i>
-              <span>Free Estimate<br><strong>Get Quote</strong></span>
+              <span>Free Estimate<br /><strong>Get Quote</strong></span>
             </a>
           </div>
         </div>
@@ -72,7 +73,9 @@ try {
       <div class="services-category">
         <div class="category-header">
           <h2 class="category-title">Emergency Restoration Services</h2>
-          <p class="category-subtitle">When disaster strikes - We respond immediately</p>
+          <p class="category-subtitle">
+            When disaster strikes - We respond immediately
+          </p>
         </div>
 
         <div class="services-grid">
@@ -117,14 +120,20 @@ try {
       <div class="services-category">
         <div class="category-header">
           <h2 class="category-title">Construction & Remodeling Services</h2>
-          <p class="category-subtitle">Transform your space with professional remodeling</p>
+          <p class="category-subtitle">
+            Transform your space with professional remodeling
+          </p>
         </div>
 
         <div class="services-grid">
           <a href="/services/kitchen-remodeling" class="service-card">
             <div class="service-number">01</div>
             <div class="service-image">
-              <img src="/images/remoKitchenHome.jpg" alt="Kitchen Remodeling" loading="lazy" />
+              <img
+                src="/images/remoKitchenHome.webp"
+                alt="Kitchen Remodeling"
+                loading="lazy"
+              />
             </div>
             <h3>Kitchen Remodeling</h3>
             <div class="service-tags">
@@ -137,7 +146,11 @@ try {
           <a href="/services/bathroom-remodeling" class="service-card">
             <div class="service-number">02</div>
             <div class="service-image">
-              <img src="/images/remoBathroomHome.jpg" alt="Bathroom Remodeling" loading="lazy" />
+              <img
+                src="/images/remoBathroomHome.webp"
+                alt="Bathroom Remodeling"
+                loading="lazy"
+              />
             </div>
             <h3>Bathroom Remodeling</h3>
             <div class="service-tags">
@@ -150,7 +163,11 @@ try {
           <a href="/services/home-additions-remodeling" class="service-card">
             <div class="service-number">03</div>
             <div class="service-image">
-              <img src="/images/remoHomeAdditions.jpg" alt="Home Additions" loading="lazy" />
+              <img
+                src="/images/remoHomeAdditions.webp"
+                alt="Home Additions"
+                loading="lazy"
+              />
             </div>
             <h3>Home Additions</h3>
             <div class="service-tags">
@@ -163,7 +180,11 @@ try {
           <a href="/services/bedroom-remodeling" class="service-card">
             <div class="service-number">04</div>
             <div class="service-image">
-              <img src="/images/remoBedroom.jpg" alt="Bedroom Remodeling" loading="lazy" />
+              <img
+                src="/images/remoBedroom.webp"
+                alt="Bedroom Remodeling"
+                loading="lazy"
+              />
             </div>
             <h3>Bedroom Remodeling</h3>
             <div class="service-tags">
@@ -186,66 +207,99 @@ try {
   </section>
 
   <section class="minimal-services-section">
-  <div class="container">
-    <div class="minimal-header">
-      <h2>Emergency Restoration Services Across Florida</h2>
-      <p>Fast response in major Florida cities</p>
+    <div class="container">
+      <div class="minimal-header">
+        <h2>Emergency Restoration Services Across Florida</h2>
+        <p>Fast response in major Florida cities</p>
+      </div>
+
+      <div class="regions-grid">
+        <div class="region-column">
+          <h3 class="region-title">Central Florida</h3>
+          <div class="city-links">
+            <a href="/restoration/water-damage/flood-damage/orlando"
+              >Flood Damage Orlando</a
+            >
+            <a href="/restoration/fire-damage/fire-damage-repair/kissimmee"
+              >Fire Damage Kissimmee</a
+            >
+            <a href="/restoration/mold-remediation/mold-inspection/lakeland"
+              >Mold Inspection Lakeland</a
+            >
+            <a href="/restoration/storm-damage/hurricane-damage/winter-garden"
+              >Hurricane Damage Winter Garden</a
+            >
+          </div>
+        </div>
+
+        <div class="region-column">
+          <h3 class="region-title">Tampa Bay Region</h3>
+          <div class="city-links">
+            <a href="/restoration/water-damage/flood-damage/tampa"
+              >Flood Damage Tampa</a
+            >
+            <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg"
+              >Fire Damage St. Petersburg</a
+            >
+            <a href="/restoration/mold-remediation/mold-inspection/clearwater"
+              >Mold Inspection Clearwater</a
+            >
+            <a href="/restoration/storm-damage/hurricane-damage/sarasota"
+              >Hurricane Damage Sarasota</a
+            >
+          </div>
+        </div>
+
+        <div class="region-column">
+          <h3 class="region-title">South Florida</h3>
+          <div class="city-links">
+            <a href="/restoration/water-damage/flood-damage/miami"
+              >Flood Damage Miami</a
+            >
+            <a
+              href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale"
+              >Fire Damage Fort Lauderdale</a
+            >
+            <a href="/restoration/mold-remediation/mold-inspection/hollywood"
+              >Mold Inspection Hollywood</a
+            >
+            <a href="/restoration/storm-damage/hurricane-damage/coral-gables"
+              >Hurricane Damage Coral Gables</a
+            >
+          </div>
+        </div>
+
+        <div class="region-column">
+          <h3 class="region-title">Southwest Florida</h3>
+          <div class="city-links">
+            <a href="/restoration/water-damage/flood-damage/naples"
+              >Flood Damage Naples</a
+            >
+            <a href="/restoration/fire-damage/fire-damage-repair/cape-coral"
+              >Fire Damage Cape Coral</a
+            >
+            <a href="/restoration/mold-remediation/mold-inspection/fort-myers"
+              >Mold Inspection Fort Myers</a
+            >
+            <a href="/restoration/storm-damage/hurricane-damage/bonita-springs"
+              >Hurricane Damage Bonita Springs</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="regions-grid">
-      <div class="region-column">
-        <h3 class="region-title">Central Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/water-damage/flood-damage/orlando">Flood Damage Orlando</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/kissimmee">Fire Damage Kissimmee</a>
-          <a href="/restoration/mold-remediation/mold-inspection/lakeland">Mold Inspection Lakeland</a>
-          <a href="/restoration/storm-damage/hurricane-damage/winter-garden">Hurricane Damage Winter Garden</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">Tampa Bay Region</h3>
-        <div class="city-links">
-          <a href="/restoration/water-damage/flood-damage/tampa">Flood Damage Tampa</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg">Fire Damage St. Petersburg</a>
-          <a href="/restoration/mold-remediation/mold-inspection/clearwater">Mold Inspection Clearwater</a>
-          <a href="/restoration/storm-damage/hurricane-damage/sarasota">Hurricane Damage Sarasota</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">South Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/water-damage/flood-damage/miami">Flood Damage Miami</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale">Fire Damage Fort Lauderdale</a>
-          <a href="/restoration/mold-remediation/mold-inspection/hollywood">Mold Inspection Hollywood</a>
-          <a href="/restoration/storm-damage/hurricane-damage/coral-gables">Hurricane Damage Coral Gables</a>
-        </div>
-      </div>
-
-      <div class="region-column">
-        <h3 class="region-title">Southwest Florida</h3>
-        <div class="city-links">
-          <a href="/restoration/water-damage/flood-damage/naples">Flood Damage Naples</a>
-          <a href="/restoration/fire-damage/fire-damage-repair/cape-coral">Fire Damage Cape Coral</a>
-          <a href="/restoration/mold-remediation/mold-inspection/fort-myers">Mold Inspection Fort Myers</a>
-          <a href="/restoration/storm-damage/hurricane-damage/bonita-springs">Hurricane Damage Bonita Springs</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <Steps client:load />
 
   <section class="service-areas-section">
     <div class="container">
-      <LinkBuildingSection 
-        client:load 
-        showTitle={true} 
-        showStats={false} 
-        compact={false} 
-        categories="all" 
+      <LinkBuildingSection
+        client:load
+        showTitle={true}
+        showStats={false}
+        compact={false}
+        categories="all"
       />
     </div>
   </section>
@@ -297,13 +351,13 @@ try {
 <style>
   /* SISTEMA UNIFICADO AZUL PARAMOUNT */
   :root {
-    --color-navy: #1E293B;
-    --color-gray: #64748B;
-    --color-blue: #3cbced;          /* AZUL PRINCIPAL */
-    --color-blue-hover: #2a9fd1;    /* AZUL HOVER */
-    --color-white: #FFFFFF;
-    --color-light: #F8FAFC;
-    --color-border: #E2E8F0;
+    --color-navy: #1e293b;
+    --color-gray: #64748b;
+    --color-blue: #3cbced; /* AZUL PRINCIPAL */
+    --color-blue-hover: #2a9fd1; /* AZUL HOVER */
+    --color-white: #ffffff;
+    --color-light: #f8fafc;
+    --color-border: #e2e8f0;
     --shadow: 0 4px 16px rgba(30, 41, 59, 0.08);
     --radius: 8px;
     --transition: all 0.2s ease;
@@ -314,7 +368,8 @@ try {
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--color-navy);
     line-height: 1.6;
   }
@@ -325,16 +380,27 @@ try {
     padding: 0 1rem;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--color-navy);
     font-weight: 700;
     line-height: 1.3;
     margin: 0 0 1rem 0;
   }
 
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.25rem; }
-  h3 { font-size: 1.5rem; }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 
   p {
     color: var(--color-gray);
@@ -390,7 +456,7 @@ try {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/images/heroContact.jpg");
+    background-image: url("/images/heroContact.webp");
     background-size: cover;
     background-position: center;
     color: white;
@@ -435,7 +501,8 @@ try {
     flex-wrap: wrap;
   }
 
-  .cta-action, .cta-secondary {
+  .cta-action,
+  .cta-secondary {
     padding: 1.25rem 2rem;
     border-radius: var(--radius);
     text-decoration: none;
@@ -744,8 +811,12 @@ try {
   }
 
   /* UTILIDADES */
-  .text-center { text-align: center; }
-  .mb-12 { margin-bottom: 3rem; }
+  .text-center {
+    text-align: center;
+  }
+  .mb-12 {
+    margin-bottom: 3rem;
+  }
 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
@@ -759,23 +830,26 @@ try {
       flex-direction: column;
       align-items: center;
     }
-    
-    .cta-action, .cta-secondary {
+
+    .cta-action,
+    .cta-secondary {
       width: 100%;
       max-width: 280px;
     }
-    
-    .services-grid, .regions-grid {
+
+    .services-grid,
+    .regions-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .large-card {
       grid-column: span 1;
     }
   }
 
   @media (max-width: 480px) {
-    .services-grid, .regions-grid {
+    .services-grid,
+    .regions-grid {
       grid-template-columns: 1fr;
     }
   }

@@ -13,7 +13,7 @@ const { group, sub } = Astro.props;
 // Dynamic city grid for Level 4 distribution
 const getCitiesByRegion = () => {
   const regions = {};
-  cities.forEach(city => {
+  cities.forEach((city) => {
     if (!regions[city.region]) {
       regions[city.region] = [];
     }
@@ -30,136 +30,499 @@ const getStormContent = (subSlug) => {
     "storm-damage": {
       hero: {
         title: "Storm Damage Restoration Services in Florida",
-        description: "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
+        description:
+          "Our Florida storm restoration teams provide 24/7 emergency response for roof damage, flooding, and debris removal. From temporary tarps to full repairs, we restore homes and businesses quickly and safely.",
         cta: "Repair Storm Damage Today",
-        bgImage: "/images/heroStorm.jpg"
+        bgImage: "/images/heroStorm.webp",
       },
       services: [
-        { icon: "fas fa-hurricane", title: "Hurricane Damage", description: "Complete hurricane damage restoration", slug: "hurricane-damage", image: "/images/HurricaneDamage.jpg", link: "/restoration/storm-damage/hurricane-damage", tags: ["🌪️ Hurricane Ready", "🏠 Full Restoration", "📋 Insurance Help"], cta: "Fix Hurricane Damage →" },
-        { icon: "fas fa-wind", title: "Wind Damage", description: "Roof and siding wind damage repair", slug: "wind-damage", image: "/images/WindDamage.jpg", link: "/restoration/storm-damage/wind-damage", tags: ["💨 Wind Specialists", "🏚️ Roof Experts", "🔧 Quick Repairs"], cta: "Repair Wind Damage →" },
-        { icon: "fas fa-tree", title: "Storm Debris Removal", description: "Safe cleanup of fallen trees and debris", slug: "storm-debris-removal", image: "/images/StormDebrisRemoval.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🌳 Tree Removal", "🚛 Heavy Equipment", "♻️ Safe Disposal"], cta: "Clear Debris Now →" },
-        { icon: "fas fa-ambulance", title: "Emergency Storm Repair", description: "24/7 emergency storm response", slug: "emergency-storm-repair", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/storm-damage/emergency-storm-repair", tags: ["⚡ Fast Response", "🛡️ 24/7 Available", "🏥 Emergency Crews"], cta: "Get Emergency Help →" }
+        {
+          icon: "fas fa-hurricane",
+          title: "Hurricane Damage",
+          description: "Complete hurricane damage restoration",
+          slug: "hurricane-damage",
+          image: "/images/HurricaneDamage.webp",
+          link: "/restoration/storm-damage/hurricane-damage",
+          tags: [
+            "🌪️ Hurricane Ready",
+            "🏠 Full Restoration",
+            "📋 Insurance Help",
+          ],
+          cta: "Fix Hurricane Damage →",
+        },
+        {
+          icon: "fas fa-wind",
+          title: "Wind Damage",
+          description: "Roof and siding wind damage repair",
+          slug: "wind-damage",
+          image: "/images/WindDamage.webp",
+          link: "/restoration/storm-damage/wind-damage",
+          tags: ["💨 Wind Specialists", "🏚️ Roof Experts", "🔧 Quick Repairs"],
+          cta: "Repair Wind Damage →",
+        },
+        {
+          icon: "fas fa-tree",
+          title: "Storm Debris Removal",
+          description: "Safe cleanup of fallen trees and debris",
+          slug: "storm-debris-removal",
+          image: "/images/StormDebrisRemoval.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🌳 Tree Removal", "🚛 Heavy Equipment", "♻️ Safe Disposal"],
+          cta: "Clear Debris Now →",
+        },
+        {
+          icon: "fas fa-ambulance",
+          title: "Emergency Storm Repair",
+          description: "24/7 emergency storm response",
+          slug: "emergency-storm-repair",
+          image: "/images/EmergencyStormRepair.webp",
+          link: "/restoration/storm-damage/emergency-storm-repair",
+          tags: ["⚡ Fast Response", "🛡️ 24/7 Available", "🏥 Emergency Crews"],
+          cta: "Get Emergency Help →",
+        },
       ],
       faqs: [
-        { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
-        { q: "How to fix storm damage?", a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely." },
-        { q: "What is the most common storm damage?", a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage." },
-        { q: "How to recover from hurricane damage?", a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process." },
-        { q: "How much does storm damage restoration cost in Florida?", a: "Costs vary widely based on damage extent, ranging from $2,000 for minor repairs to $50,000+ for major reconstruction. Most homeowner's insurance policies cover storm damage, and we work directly with your insurer to ensure proper coverage." },
-        { q: "What should I do immediately after storm damage occurs?", a: "Prioritize safety first—avoid downed power lines and structural hazards. Document damage with photos, contact your insurance company, and call our 24/7 emergency line for immediate protective measures like tarping and boarding." }
+        {
+          q: "What does storm damage mean?",
+          a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold.",
+        },
+        {
+          q: "How to fix storm damage?",
+          a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely.",
+        },
+        {
+          q: "What is the most common storm damage?",
+          a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage.",
+        },
+        {
+          q: "How to recover from hurricane damage?",
+          a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process.",
+        },
+        {
+          q: "How much does storm damage restoration cost in Florida?",
+          a: "Costs vary widely based on damage extent, ranging from $2,000 for minor repairs to $50,000+ for major reconstruction. Most homeowner's insurance policies cover storm damage, and we work directly with your insurer to ensure proper coverage.",
+        },
+        {
+          q: "What should I do immediately after storm damage occurs?",
+          a: "Prioritize safety first—avoid downed power lines and structural hazards. Document damage with photos, contact your insurance company, and call our 24/7 emergency line for immediate protective measures like tarping and boarding.",
+        },
       ],
       steps: [
-        { title: "Emergency Response", text: "Tarping, boarding, and securing property after storm impact", icon: "fas fa-shield-alt" },
-        { title: "Damage Assessment", text: "Roofs, interiors, and structural inspections", icon: "fas fa-search" },
-        { title: "Cleanup & Water Extraction", text: "Remove debris, water, and damaged materials", icon: "fas fa-broom" },
-        { title: "Repairs & Restoration", text: "Roof replacement, structural repairs, and finish restoration", icon: "fas fa-hammer" }
-      ]
+        {
+          title: "Emergency Response",
+          text: "Tarping, boarding, and securing property after storm impact",
+          icon: "fas fa-shield-alt",
+        },
+        {
+          title: "Damage Assessment",
+          text: "Roofs, interiors, and structural inspections",
+          icon: "fas fa-search",
+        },
+        {
+          title: "Cleanup & Water Extraction",
+          text: "Remove debris, water, and damaged materials",
+          icon: "fas fa-broom",
+        },
+        {
+          title: "Repairs & Restoration",
+          text: "Roof replacement, structural repairs, and finish restoration",
+          icon: "fas fa-hammer",
+        },
+      ],
     },
     "hurricane-damage": {
       hero: {
         title: "Hurricane Damage? We Restore Homes & Businesses Across Florida",
-        description: "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
+        description:
+          "From roof leaks to major flooding, our hurricane restoration team provides emergency cleanup, debris removal, and full structural repairs. Available 24/7 across Florida.",
         cta: "Restore After Hurricane Now",
-        bgImage: "/images/stormDamage.jpg"
+        bgImage: "/images/stormDamage.webp",
       },
       services: [
-        { icon: "fas fa-home-damage", title: "Roof Leaks & Collapse Risks", description: "Wind and flying debris cause hidden roof damage.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/hurricane-damage", tags: ["🏠 Roof Specialists", "🔍 Damage Assessment", "🚑 Emergency Repairs"], cta: "Fix Roof Damage →" },
-        { icon: "fas fa-water", title: "Flooding & Water Intrusion", description: "Standing water weakens foundations & walls.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/hurricane-damage", tags: ["💧 Water Extraction", "💪 Structural Drying", "🌪️ Hurricane Recovery"], cta: "Stop Water Damage →" },
-        { icon: "fas fa-tree", title: "Fallen Trees & Debris", description: "Storm-force winds scatter debris across property.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🌳 Tree Services", "🚛 Debris Removal", "🛡️ Safety First"], cta: "Clear Trees & Debris →" },
-        { icon: "fas fa-bolt", title: "Power & Utility Hazards", description: "Downed lines and outages create safety risks.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/emergency-storm-repair", tags: ["⚡ Utility Assessment", "🛡️ Safety Inspection", "🏥 Professional Help"], cta: "Get Safety Help →" }
+        {
+          icon: "fas fa-home-damage",
+          title: "Roof Leaks & Collapse Risks",
+          description: "Wind and flying debris cause hidden roof damage.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/hurricane-damage",
+          tags: [
+            "🏠 Roof Specialists",
+            "🔍 Damage Assessment",
+            "🚑 Emergency Repairs",
+          ],
+          cta: "Fix Roof Damage →",
+        },
+        {
+          icon: "fas fa-water",
+          title: "Flooding & Water Intrusion",
+          description: "Standing water weakens foundations & walls.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/hurricane-damage",
+          tags: [
+            "💧 Water Extraction",
+            "💪 Structural Drying",
+            "🌪️ Hurricane Recovery",
+          ],
+          cta: "Stop Water Damage →",
+        },
+        {
+          icon: "fas fa-tree",
+          title: "Fallen Trees & Debris",
+          description: "Storm-force winds scatter debris across property.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🌳 Tree Services", "🚛 Debris Removal", "🛡️ Safety First"],
+          cta: "Clear Trees & Debris →",
+        },
+        {
+          icon: "fas fa-bolt",
+          title: "Power & Utility Hazards",
+          description: "Downed lines and outages create safety risks.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/emergency-storm-repair",
+          tags: [
+            "⚡ Utility Assessment",
+            "🛡️ Safety Inspection",
+            "🏥 Professional Help",
+          ],
+          cta: "Get Safety Help →",
+        },
       ],
       faqs: [
-        { q: "What does storm damage mean?", a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold." },
-        { q: "How to fix storm damage?", a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely." },
-        { q: "What is the most common storm damage?", a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage." },
-        { q: "How to recover from hurricane damage?", a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process." }
+        {
+          q: "What does storm damage mean?",
+          a: "Storm damage refers to harm caused by hurricanes, wind, hail, or flooding—often impacting roofs, siding, windows, and interiors. Immediate repairs help prevent further water intrusion and mold.",
+        },
+        {
+          q: "How to fix storm damage?",
+          a: "Fixing storm damage starts with securing the property—tarping roofs, boarding windows, and removing debris. Professional restoration teams then repair structural damage and restore the property safely.",
+        },
+        {
+          q: "What is the most common storm damage?",
+          a: "Roof damage is the most common, including missing shingles, leaks, and broken flashing. Other frequent issues are water intrusion, downed trees, and exterior siding damage.",
+        },
+        {
+          q: "How to recover from hurricane damage?",
+          a: "Recovery involves emergency response, debris removal, water extraction, and roof repair. Restoration professionals coordinate with insurance adjusters to speed up the rebuilding process.",
+        },
       ],
       steps: [
-        { title: "Emergency Board-Up & Roof Tarping", text: "Protect interiors from wind & rain", icon: "fas fa-shield-alt" },
-        { title: "Water Extraction & Drying", text: "Industrial pumps, dehumidifiers, air movers", icon: "fas fa-water" },
-        { title: "Debris & Tree Removal", text: "Clear fallen trees and hazardous debris", icon: "fas fa-tree" },
-        { title: "Structural Repair & Roofing", text: "Rebuild roofs, siding, drywall & interiors", icon: "fas fa-hammer" },
-        { title: "Insurance Claim Support", text: "Documentation & direct adjuster communication", icon: "fas fa-clipboard" }
-      ]
+        {
+          title: "Emergency Board-Up & Roof Tarping",
+          text: "Protect interiors from wind & rain",
+          icon: "fas fa-shield-alt",
+        },
+        {
+          title: "Water Extraction & Drying",
+          text: "Industrial pumps, dehumidifiers, air movers",
+          icon: "fas fa-water",
+        },
+        {
+          title: "Debris & Tree Removal",
+          text: "Clear fallen trees and hazardous debris",
+          icon: "fas fa-tree",
+        },
+        {
+          title: "Structural Repair & Roofing",
+          text: "Rebuild roofs, siding, drywall & interiors",
+          icon: "fas fa-hammer",
+        },
+        {
+          title: "Insurance Claim Support",
+          text: "Documentation & direct adjuster communication",
+          icon: "fas fa-clipboard",
+        },
+      ],
     },
     "wind-damage": {
       hero: {
-        title: "Wind Damage? We Repair Roofs, Siding & Structures Across Florida",
-        description: "Strong winds can tear shingles, break windows, and damage property. Our 24/7 emergency response team restores safety and structure fast.",
+        title:
+          "Wind Damage? We Repair Roofs, Siding & Structures Across Florida",
+        description:
+          "Strong winds can tear shingles, break windows, and damage property. Our 24/7 emergency response team restores safety and structure fast.",
         cta: "Request Wind Damage Repair Now",
-        bgImage: "/images/stormDamage.jpg"
+        bgImage: "/images/stormDamage.webp",
       },
       services: [
-        { icon: "fas fa-home", title: "Roof Shingle Loss", description: "Exposed underlayment leads to leaks.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/wind-damage", tags: ["🏠 Roofing Pros", "🔧 Shingle Repair", "💧 Leak Prevention"], cta: "Fix Roof Leaks →" },
-        { icon: "fas fa-window-maximize", title: "Broken Windows & Glass", description: "Flying debris causes breakage and safety risks.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/wind-damage", tags: ["👀 Glass Experts", "🛡️ Board-Up Service", "🎨 Window Replacement"], cta: "Replace Windows →" },
-        { icon: "fas fa-tree", title: "Fallen Branches & Debris", description: "Impacts puncture roofs and siding.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🌳 Branch Removal", "🏠 Roof Protection", "🚑 Damage Repair"], cta: "Remove Debris →" },
-        { icon: "fas fa-tools", title: "Siding & Gutter Damage", description: "High winds loosen or rip away exterior materials.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/wind-damage", tags: ["🏠 Exterior Repair", "🚜 Gutter Service", "💪 Wind Resistant"], cta: "Fix Exterior →" }
+        {
+          icon: "fas fa-home",
+          title: "Roof Shingle Loss",
+          description: "Exposed underlayment leads to leaks.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/wind-damage",
+          tags: ["🏠 Roofing Pros", "🔧 Shingle Repair", "💧 Leak Prevention"],
+          cta: "Fix Roof Leaks →",
+        },
+        {
+          icon: "fas fa-window-maximize",
+          title: "Broken Windows & Glass",
+          description: "Flying debris causes breakage and safety risks.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/wind-damage",
+          tags: [
+            "👀 Glass Experts",
+            "🛡️ Board-Up Service",
+            "🎨 Window Replacement",
+          ],
+          cta: "Replace Windows →",
+        },
+        {
+          icon: "fas fa-tree",
+          title: "Fallen Branches & Debris",
+          description: "Impacts puncture roofs and siding.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🌳 Branch Removal", "🏠 Roof Protection", "🚑 Damage Repair"],
+          cta: "Remove Debris →",
+        },
+        {
+          icon: "fas fa-tools",
+          title: "Siding & Gutter Damage",
+          description: "High winds loosen or rip away exterior materials.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/wind-damage",
+          tags: [
+            "🏠 Exterior Repair",
+            "🚜 Gutter Service",
+            "💪 Wind Resistant",
+          ],
+          cta: "Fix Exterior →",
+        },
       ],
       faqs: [
-        { q: "What is wind damage restoration?", a: "It's the process of repairing roofs, siding, windows, and interiors after wind-related destruction." },
-        { q: "How do you know if your roof has wind damage?", a: "Look for missing shingles, leaks, or visible debris impacts." },
-        { q: "Does insurance cover wind damage in Florida?", a: "Yes—most policies include windstorm coverage. We assist with claim documentation." },
-        { q: "Can you repair broken windows after wind damage?", a: "Absolutely—we provide emergency board-up and window replacement." }
+        {
+          q: "What is wind damage restoration?",
+          a: "It's the process of repairing roofs, siding, windows, and interiors after wind-related destruction.",
+        },
+        {
+          q: "How do you know if your roof has wind damage?",
+          a: "Look for missing shingles, leaks, or visible debris impacts.",
+        },
+        {
+          q: "Does insurance cover wind damage in Florida?",
+          a: "Yes—most policies include windstorm coverage. We assist with claim documentation.",
+        },
+        {
+          q: "Can you repair broken windows after wind damage?",
+          a: "Absolutely—we provide emergency board-up and window replacement.",
+        },
       ],
       steps: [
-        { title: "Emergency Tarping & Board-Up", text: "Prevent rain and debris from entering", icon: "fas fa-tarp" },
-        { title: "Roof & Siding Repair", text: "Replace missing shingles, siding, or panels", icon: "fas fa-home" },
-        { title: "Debris & Hazard Removal", text: "Clear fallen branches and dangerous objects", icon: "fas fa-tree" },
-        { title: "Structural & Interior Repairs", text: "Restore walls, ceilings, and insulation", icon: "fas fa-tools" }
-      ]
+        {
+          title: "Emergency Tarping & Board-Up",
+          text: "Prevent rain and debris from entering",
+          icon: "fas fa-tarp",
+        },
+        {
+          title: "Roof & Siding Repair",
+          text: "Replace missing shingles, siding, or panels",
+          icon: "fas fa-home",
+        },
+        {
+          title: "Debris & Hazard Removal",
+          text: "Clear fallen branches and dangerous objects",
+          icon: "fas fa-tree",
+        },
+        {
+          title: "Structural & Interior Repairs",
+          text: "Restore walls, ceilings, and insulation",
+          icon: "fas fa-tools",
+        },
+      ],
     },
     "storm-debris-removal": {
       hero: {
-        title: "Safe and fast cleanup of fallen trees, branches, and storm debris.",
-        description: "Fast storm debris removal in Florida. Safe cleanup of fallen trees, branches, siding & roofing debris. 24/7 emergency crews with heavy equipment.",
+        title:
+          "Safe and fast cleanup of fallen trees, branches, and storm debris.",
+        description:
+          "Fast storm debris removal in Florida. Safe cleanup of fallen trees, branches, siding & roofing debris. 24/7 emergency crews with heavy equipment.",
         cta: "Request Debris Cleanup Now",
-        bgImage: "/images/stormDamage.jpg"
+        bgImage: "/images/stormDamage.webp",
       },
       services: [
-        { icon: "fas fa-tree", title: "Tree & Branch Removal", description: "Cut, clear, and haul away fallen trees.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🌳 Tree Experts", "🚛 Heavy Equipment", "🚑 Fast Removal"], cta: "Remove Trees →" },
-        { icon: "fas fa-trash", title: "Debris Collection", description: "Remove scattered siding, shingles, and rubble.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["📦 Full Cleanup", "🏠 Property Clearing", "🚛 Hauling Service"], cta: "Clean Up Debris →" },
-        { icon: "fas fa-recycle", title: "Safe Disposal", description: "Transport debris for eco-friendly disposal.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["♻️ Eco-Friendly", "🚛 Proper Disposal", "🌍 Environmental Care"], cta: "Schedule Disposal →" },
-        { icon: "fas fa-hammer", title: "Site Restoration", description: "Prepare property for repair and safe use.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🏠 Site Prep", "🛡️ Safety Focus", "🔧 Ready for Repair"], cta: "Prepare Site →" }
+        {
+          icon: "fas fa-tree",
+          title: "Tree & Branch Removal",
+          description: "Cut, clear, and haul away fallen trees.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🌳 Tree Experts", "🚛 Heavy Equipment", "🚑 Fast Removal"],
+          cta: "Remove Trees →",
+        },
+        {
+          icon: "fas fa-trash",
+          title: "Debris Collection",
+          description: "Remove scattered siding, shingles, and rubble.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: [
+            "📦 Full Cleanup",
+            "🏠 Property Clearing",
+            "🚛 Hauling Service",
+          ],
+          cta: "Clean Up Debris →",
+        },
+        {
+          icon: "fas fa-recycle",
+          title: "Safe Disposal",
+          description: "Transport debris for eco-friendly disposal.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: [
+            "♻️ Eco-Friendly",
+            "🚛 Proper Disposal",
+            "🌍 Environmental Care",
+          ],
+          cta: "Schedule Disposal →",
+        },
+        {
+          icon: "fas fa-hammer",
+          title: "Site Restoration",
+          description: "Prepare property for repair and safe use.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🏠 Site Prep", "🛡️ Safety Focus", "🔧 Ready for Repair"],
+          cta: "Prepare Site →",
+        },
       ],
       faqs: [
-        { q: "What is storm debris removal?", a: "It's the process of clearing and safely disposing of trees, branches, and construction debris left after a storm." },
-        { q: "Can you remove large fallen trees?", a: "Yes. Our crews use heavy equipment to cut and haul away even the largest trees." },
-        { q: "Do you also haul away construction debris after storms?", a: "Absolutely. We clear siding, roofing, drywall, and other structural debris." },
-        { q: "Is storm debris removal covered by insurance?", a: "In most cases, yes. We document everything for smooth claim approval." }
+        {
+          q: "What is storm debris removal?",
+          a: "It's the process of clearing and safely disposing of trees, branches, and construction debris left after a storm.",
+        },
+        {
+          q: "Can you remove large fallen trees?",
+          a: "Yes. Our crews use heavy equipment to cut and haul away even the largest trees.",
+        },
+        {
+          q: "Do you also haul away construction debris after storms?",
+          a: "Absolutely. We clear siding, roofing, drywall, and other structural debris.",
+        },
+        {
+          q: "Is storm debris removal covered by insurance?",
+          a: "In most cases, yes. We document everything for smooth claim approval.",
+        },
       ],
       steps: [
-        { title: "Tree & Branch Removal", text: "Cut, clear, and haul away fallen trees", icon: "fas fa-tree" },
-        { title: "Debris Collection", text: "Remove scattered siding, shingles, and rubble", icon: "fas fa-trash" },
-        { title: "Safe Disposal", text: "Transport debris for eco-friendly disposal", icon: "fas fa-recycle" },
-        { title: "Site Restoration", text: "Prepare property for repair and safe use", icon: "fas fa-hammer" }
-      ]
+        {
+          title: "Tree & Branch Removal",
+          text: "Cut, clear, and haul away fallen trees",
+          icon: "fas fa-tree",
+        },
+        {
+          title: "Debris Collection",
+          text: "Remove scattered siding, shingles, and rubble",
+          icon: "fas fa-trash",
+        },
+        {
+          title: "Safe Disposal",
+          text: "Transport debris for eco-friendly disposal",
+          icon: "fas fa-recycle",
+        },
+        {
+          title: "Site Restoration",
+          text: "Prepare property for repair and safe use",
+          icon: "fas fa-hammer",
+        },
+      ],
     },
     "emergency-storm-repair": {
       hero: {
         title: "Florida Storm Damage? Get Emergency Repairs 24/7",
-        description: "When storms strike, every minute matters. Our emergency crews secure, repair, and restore homes and businesses across Central, Tampa Bay & South Florida.",
+        description:
+          "When storms strike, every minute matters. Our emergency crews secure, repair, and restore homes and businesses across Central, Tampa Bay & South Florida.",
         cta: "Request Emergency Storm Repair",
-        bgImage: "/images/stormDamage.jpg"
+        bgImage: "/images/stormDamage.webp",
       },
       services: [
-        { icon: "fas fa-tarp", title: "Immediate Roof Tarping & Board-Up", description: "Protect from rain, wind & further damage.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/emergency-storm-repair", tags: ["⚡ 1hr Response", "🛡️ Property Protection", "24/7 Available"], cta: "Get Emergency Help →" },
-        { icon: "fas fa-water", title: "Water Extraction & Drying", description: "Industrial pumps & dehumidifiers stop mold and structural weakening.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/emergency-storm-repair", tags: ["💪 High-Power Equipment", "🏠 Structural Drying", "🔬 Moisture Monitoring"], cta: "Stop Water Damage →" },
-        { icon: "fas fa-tree", title: "Debris & Hazard Cleanup", description: "Safe removal of fallen trees, branches, and shattered materials.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/storm-debris-removal", tags: ["🌳 Tree Removal", "🚛 Heavy Equipment", "♻️ Safe Disposal"], cta: "Clear Debris →" },
-        { icon: "fas fa-tools", title: "Structural & Interior Repairs", description: "Restore roofing, walls, insulation & finishes.", image: "/images/stormDamage.jpg", link: "/restoration/storm-damage/emergency-storm-repair", tags: ["🔨 Licensed Contractors", "🏗️ Full Restoration", "📋 Insurance Support"], cta: "Start Repairs →" }
+        {
+          icon: "fas fa-tarp",
+          title: "Immediate Roof Tarping & Board-Up",
+          description: "Protect from rain, wind & further damage.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/emergency-storm-repair",
+          tags: ["⚡ 1hr Response", "🛡️ Property Protection", "24/7 Available"],
+          cta: "Get Emergency Help →",
+        },
+        {
+          icon: "fas fa-water",
+          title: "Water Extraction & Drying",
+          description:
+            "Industrial pumps & dehumidifiers stop mold and structural weakening.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/emergency-storm-repair",
+          tags: [
+            "💪 High-Power Equipment",
+            "🏠 Structural Drying",
+            "🔬 Moisture Monitoring",
+          ],
+          cta: "Stop Water Damage →",
+        },
+        {
+          icon: "fas fa-tree",
+          title: "Debris & Hazard Cleanup",
+          description:
+            "Safe removal of fallen trees, branches, and shattered materials.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/storm-debris-removal",
+          tags: ["🌳 Tree Removal", "🚛 Heavy Equipment", "♻️ Safe Disposal"],
+          cta: "Clear Debris →",
+        },
+        {
+          icon: "fas fa-tools",
+          title: "Structural & Interior Repairs",
+          description: "Restore roofing, walls, insulation & finishes.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/storm-damage/emergency-storm-repair",
+          tags: [
+            "🔨 Licensed Contractors",
+            "🏗️ Full Restoration",
+            "📋 Insurance Support",
+          ],
+          cta: "Start Repairs →",
+        },
       ],
       faqs: [
-        { q: "What is emergency storm repair?", a: "It's immediate action after severe storm damage to secure, stabilize, and begin property restoration." },
-        { q: "How fast can storm repair teams respond?", a: "Our teams mobilize within hours, available 24/7 across Florida." },
-        { q: "Does insurance cover emergency storm repairs?", a: "Yes, most policies cover emergency tarping, water removal, and repairs after a storm." },
-        { q: "What should I do while waiting for emergency storm repair?", a: "Stay safe, avoid hazards like live wires, and document damages for your insurance claim." }
+        {
+          q: "What is emergency storm repair?",
+          a: "It's immediate action after severe storm damage to secure, stabilize, and begin property restoration.",
+        },
+        {
+          q: "How fast can storm repair teams respond?",
+          a: "Our teams mobilize within hours, available 24/7 across Florida.",
+        },
+        {
+          q: "Does insurance cover emergency storm repairs?",
+          a: "Yes, most policies cover emergency tarping, water removal, and repairs after a storm.",
+        },
+        {
+          q: "What should I do while waiting for emergency storm repair?",
+          a: "Stay safe, avoid hazards like live wires, and document damages for your insurance claim.",
+        },
       ],
       steps: [
-        { title: "Immediate Roof Tarping & Board-Up", text: "Protect from rain, wind & further damage", icon: "fas fa-tarp" },
-        { title: "Water Extraction & Drying", text: "Industrial pumps & dehumidifiers stop mold and structural weakening", icon: "fas fa-water" },
-        { title: "Debris & Hazard Cleanup", text: "Safe removal of fallen trees, branches, and shattered materials", icon: "fas fa-tree" },
-        { title: "Structural & Interior Repairs", text: "Restore roofing, walls, insulation & finishes", icon: "fas fa-tools" }
-      ]
-    }
+        {
+          title: "Immediate Roof Tarping & Board-Up",
+          text: "Protect from rain, wind & further damage",
+          icon: "fas fa-tarp",
+        },
+        {
+          title: "Water Extraction & Drying",
+          text: "Industrial pumps & dehumidifiers stop mold and structural weakening",
+          icon: "fas fa-water",
+        },
+        {
+          title: "Debris & Hazard Cleanup",
+          text: "Safe removal of fallen trees, branches, and shattered materials",
+          icon: "fas fa-tree",
+        },
+        {
+          title: "Structural & Interior Repairs",
+          text: "Restore roofing, walls, insulation & finishes",
+          icon: "fas fa-tools",
+        },
+      ],
+    },
   };
 
   return stormContent[subSlug] || stormContent["hurricane-damage"];
@@ -170,7 +533,12 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 ---
 
 <!-- Hero Section -->
-<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`} role="img" aria-label={getAltText(content.hero.bgImage)}>
+<section
+  class="hero-section"
+  style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}
+  role="img"
+  aria-label={getAltText(content.hero.bgImage)}
+>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -183,12 +551,14 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 <section>
   <div class="container">
     <div class="services-grid">
-      {content.services.map((service) => (
-        <a href={service.link} class="service-item-clickable">
-          <i class={service.icon}></i>
-          <h3>{service.title}</h3>
-        </a>
-      ))}
+      {
+        content.services.map((service) => (
+          <a href={service.link} class="service-item-clickable">
+            <i class={service.icon} />
+            <h3>{service.title}</h3>
+          </a>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -196,28 +566,37 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 <!-- Solutions Cards -->
 <section class="solutions-section">
   <div class="container">
-  <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
-  <div class="solutions-grid">
-    {content.services.map((service, index) => (
-      <div class="solution-card">
-        <div class="card-image">
-          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - hurricane and storm recovery`} loading="lazy" />
-        </div>
-        <div class="card-content">
-          <h3>{service.title}</h3>
-          <div class="service-description">
-            <p>{service.description}</p>
-            <div class="service-features">
-              {service.tags && service.tags.map(tag => (
-                <span class="feature-tag">{tag}</span>
-              ))}
+    <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
+    <div class="solutions-grid">
+      {
+        content.services.map((service, index) => (
+          <div class="solution-card">
+            <div class="card-image">
+              <img
+                src={service.image}
+                alt={`Professional ${service.title.toLowerCase()} restoration services in Florida - hurricane and storm recovery`}
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>{service.title}</h3>
+              <div class="service-description">
+                <p>{service.description}</p>
+                <div class="service-features">
+                  {service.tags &&
+                    service.tags.map((tag) => (
+                      <span class="feature-tag">{tag}</span>
+                    ))}
+                </div>
+              </div>
+              <a href={service.link || "/contact"} class="btn">
+                {service.cta || "Get Storm Help Now →"}
+              </a>
             </div>
           </div>
-          <a href={service.link || "/contact"} class="btn">{service.cta || "Get Storm Help Now →"}</a>
-        </div>
-      </div>
-    ))}
-  </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 
@@ -229,39 +608,66 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
       <div class="content-main">
         <div class="content-block">
           <h3>Warning Signs of {sub?.title || group.name}</h3>
-          <p>Florida's severe weather patterns create unique challenges for property owners. {sub?.title || group.name} can manifest in various ways, from obvious roof damage to subtle structural issues that worsen over time. Early identification is crucial for preventing secondary damage and reducing restoration costs.</p>
+          <p>
+            Florida's severe weather patterns create unique challenges for
+            property owners. {sub?.title || group.name} can manifest in various ways,
+            from obvious roof damage to subtle structural issues that worsen over
+            time. Early identification is crucial for preventing secondary damage
+            and reducing restoration costs.
+          </p>
           <ul class="warning-signs">
-            <li><i class="fas fa-home"></i> Missing or damaged roof shingles</li>
-            <li><i class="fas fa-eye"></i> Water stains on walls or ceilings</li>
-            <li><i class="fas fa-tree"></i> Fallen trees or large branches on property</li>
-            <li><i class="fas fa-window-maximize"></i> Broken or cracked windows</li>
-            <li><i class="fas fa-wind"></i> Exterior siding or gutters pulling away</li>
+            <li>
+              <i class="fas fa-home"></i> Missing or damaged roof shingles
+            </li>
+            <li>
+              <i class="fas fa-eye"></i> Water stains on walls or ceilings
+            </li>
+            <li>
+              <i class="fas fa-tree"></i> Fallen trees or large branches on property
+            </li>
+            <li>
+              <i class="fas fa-window-maximize"></i> Broken or cracked windows
+            </li>
+            <li>
+              <i class="fas fa-wind"></i> Exterior siding or gutters pulling away
+            </li>
           </ul>
         </div>
-        
+
         <div class="content-block">
           <h3>Our Detailed {sub?.title || group.name} Restoration Process</h3>
-          <p>Our IICRC-certified technicians follow proven protocols for storm damage restoration. We prioritize safety first, then move quickly to prevent secondary damage. Our industrial equipment and expertise ensure thorough restoration that meets Florida building codes.</p>
+          <p>
+            Our IICRC-certified technicians follow proven protocols for storm
+            damage restoration. We prioritize safety first, then move quickly to
+            prevent secondary damage. Our industrial equipment and expertise
+            ensure thorough restoration that meets Florida building codes.
+          </p>
           <div class="process-detailed">
-            {content.steps.map((step, index) => (
-              <div class="process-step-detailed">
-                <div class="step-number">{index + 1}</div>
-                <div class="step-content">
-                  <h4>{step.title}</h4>
-                  <p>{step.text}</p>
+            {
+              content.steps.map((step, index) => (
+                <div class="process-step-detailed">
+                  <div class="step-number">{index + 1}</div>
+                  <div class="step-content">
+                    <h4>{step.title}</h4>
+                    <p>{step.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </div>
-      
+
       <div class="content-sidebar">
         <div class="trust-indicators">
           <h3>Why Choose Paramount Property Restoration?</h3>
           <ul class="trust-list">
-            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
-            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li>
+              <i class="fas fa-certificate"></i> IICRC Certified Technicians
+            </li>
+            <li>
+              <i class="fas fa-shield-alt"></i> Licensed & Insured in Florida
+            </li>
             <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
             <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
             <li><i class="fas fa-hurricane"></i> Storm Damage Specialists</li>
@@ -278,23 +684,37 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
     <h2>Storm Damage Insurance Claims Support</h2>
     <div class="insurance-grid">
       <div class="insurance-content">
-        <p>Storm damage claims can be complex, especially in Florida where weather patterns create ongoing challenges. Our team specializes in documenting storm damage thoroughly, working directly with insurance adjusters, and ensuring you receive maximum compensation for your restoration needs.</p>
-        
+        <p>
+          Storm damage claims can be complex, especially in Florida where
+          weather patterns create ongoing challenges. Our team specializes in
+          documenting storm damage thoroughly, working directly with insurance
+          adjusters, and ensuring you receive maximum compensation for your
+          restoration needs.
+        </p>
+
         <div class="insurance-benefits">
           <div class="benefit-item">
             <i class="fas fa-camera"></i>
             <h4>Comprehensive Documentation</h4>
-            <p>Detailed storm damage reports with photos and measurements for your claim</p>
+            <p>
+              Detailed storm damage reports with photos and measurements for
+              your claim
+            </p>
           </div>
           <div class="benefit-item">
             <i class="fas fa-handshake"></i>
             <h4>Adjuster Meetings</h4>
-            <p>We represent your interests during insurance inspections and evaluations</p>
+            <p>
+              We represent your interests during insurance inspections and
+              evaluations
+            </p>
           </div>
           <div class="benefit-item">
             <i class="fas fa-dollar-sign"></i>
             <h4>Maximize Your Settlement</h4>
-            <p>Our expertise helps ensure all storm damage is properly covered</p>
+            <p>
+              Our expertise helps ensure all storm damage is properly covered
+            </p>
           </div>
         </div>
       </div>
@@ -306,43 +726,65 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
 <section class="section city-grid-section">
   <div class="container">
     <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
-    <p class="section-subtitle">Professional {sub?.title || group.name.toLowerCase()} services available across Florida. Click your city for immediate local assistance.</p>
-    
+    <p class="section-subtitle">
+      Professional {sub?.title || group.name.toLowerCase()} services available across
+      Florida. Click your city for immediate local assistance.
+    </p>
+
     <div class="unified-city-container">
-      {Object.entries(cityRegions).map(([regionName, cities]) => (
-        <div class="unified-region-card">
-          <h3 class="unified-region-title">{regionName}</h3>
-          <div class="unified-city-pills">
-            {cities.slice(0, 4).map(city => (
-              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/hurricane-damage/${city.slug}`} class="unified-city-pill">
-                {city.nombre}
-              </a>
-            ))}
-            {cities.length > 4 && (
-              <span class="unified-more-indicator">
-                +{cities.length - 4} more
-              </span>
-            )}
+      {
+        Object.entries(cityRegions).map(([regionName, cities]) => (
+          <div class="unified-region-card">
+            <h3 class="unified-region-title">{regionName}</h3>
+            <div class="unified-city-pills">
+              {cities.slice(0, 4).map((city) => (
+                <a
+                  href={
+                    sub
+                      ? `/restoration/${group.slug}/${sub.slug}/${city.slug}`
+                      : `/restoration/${group.slug}/hurricane-damage/${city.slug}`
+                  }
+                  class="unified-city-pill"
+                >
+                  {city.nombre}
+                </a>
+              ))}
+              {cities.length > 4 && (
+                <span class="unified-more-indicator">
+                  +{cities.length - 4} more
+                </span>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <div class="emergency-notice">
       <h3>Emergency {sub?.title || group.name} Response</h3>
-      <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
-      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+      <p>
+        Don't wait for damage to worsen. Our certified technicians are standing
+        by 24/7 to help protect your property.
+      </p>
+      <a href="tel:+17866022217" class="emergency-phone"
+        >Call (786) 602-2217 Now</a
+      >
     </div>
   </div>
 </section>
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
-    id: `${faqCategory}-${index}`,
-    question: faq.q,
-    answer: faq.a
-  }))} title="Frequently Asked Questions" />
+  <FAQ
+    client:load
+    category={faqCategory}
+    customQuestions={content.faqs.map((faq, index) => ({
+      id: `${faqCategory}-${index}`,
+      question: faq.q,
+      answer: faq.a,
+    }))}
+    title="Frequently Asked Questions"
+  />
 </section>
 
 <!-- Final CTA -->

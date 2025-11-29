@@ -1,6 +1,9 @@
 ---
 // src/pages/restoration/[service]/[subcategory]/[ciudad].astro
-import { getAllRestorationCombinations, cities } from "../../../../data/restoration.js";
+import {
+  getAllRestorationCombinations,
+  cities,
+} from "../../../../data/restoration.js";
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
 import { getCityGeo } from "../../../../data/cities-geo.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
@@ -17,10 +20,19 @@ import "../../../../styles/pages/programmatic-conversion.css";
 export async function getStaticPaths() {
   const combinations = getAllRestorationCombinations();
 
-  return combinations.map(({ service, subcategory, ciudad, servicioData, ciudadData, groupData }) => ({
-    params: { service, subcategory, ciudad },
-    props: { servicioData, ciudadData, groupData },
-  }));
+  return combinations.map(
+    ({
+      service,
+      subcategory,
+      ciudad,
+      servicioData,
+      ciudadData,
+      groupData,
+    }) => ({
+      params: { service, subcategory, ciudad },
+      props: { servicioData, ciudadData, groupData },
+    }),
+  );
 }
 
 // Extract params and props
@@ -33,8 +45,9 @@ const cityGeoData = getCityGeo(ciudad);
 // Page configuration (DETAIL: con ciudad)
 const pageConfig = {
   canonical: `/restoration/${service}/${subcategory}/${ciudad}`,
-  title: `${servicioData.title} in ${ciudadData.nombre}, ${ciudadData.region || 'FL'} | 24/7 Emergency Response`,
-  description: servicioData.seo?.description || 
+  title: `${servicioData.title} in ${ciudadData.nombre}, ${ciudadData.region || "FL"} | 24/7 Emergency Response`,
+  description:
+    servicioData.seo?.description ||
     `Emergency ${servicioData.title.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. 24/7 response, licensed technicians, insurance billing. Call (786) 602-2217 now!`,
 };
 
@@ -43,24 +56,31 @@ const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
 
 // Hero configuration
 const heroConfig = {
-  title: subserviceContent?.hero?.title || `${servicioData.title} in ${ciudadData.nombre}`,
-  subtitle: subserviceContent?.hero?.description || 
+  title:
+    subserviceContent?.hero?.title ||
+    `${servicioData.title} in ${ciudadData.nombre}`,
+  subtitle:
+    subserviceContent?.hero?.description ||
     `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
   ctaText: `Get Free Quote in ${ciudadData.nombre}`,
-  bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.jpg",
-  badge: subserviceContent?.hero?.badge || null
+  bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.webp",
+  badge: subserviceContent?.hero?.badge || null,
 };
 
 // Service features
 const serviceFeatures = subserviceContent?.features || [
   "24/7 emergency response team",
-  "Advanced equipment & techniques", 
+  "Advanced equipment & techniques",
   "Insurance claim assistance",
-  "Licensed & certified technicians"
+  "Licensed & certified technicians",
 ];
 
 // FAQs configuration
-const customQuestions = (subserviceContent?.faqs || servicioData?.faqs || []).map((faq, index) => ({
+const customQuestions = (
+  subserviceContent?.faqs ||
+  servicioData?.faqs ||
+  []
+).map((faq, index) => ({
   id: `faq-${index}`,
   question: faq.q ?? faq.question ?? "",
   answer: faq.a ?? faq.answer ?? "",
@@ -74,13 +94,17 @@ const ctaConfig = {
 };
 
 // Nearby cities for SEO copy
-const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Doral", "Kendall"];
+const nearbyAreas = [
+  "Weston",
+  "Pembroke Pines",
+  "Coral Gables",
+  "Aventura",
+  "Doral",
+  "Kendall",
+];
 ---
 
-<BaseLayout 
-  title={pageConfig.title} 
-  description={pageConfig.description}
->
+<BaseLayout title={pageConfig.title} description={pageConfig.description}>
   {/* SEO centralizado con ciudad (detalle) */}
   <SEOHead
     title={pageConfig.title}
@@ -91,7 +115,7 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     subservice={subcategory}
     city={ciudad}
     addressLocality={ciudadData.nombre}
-    addressRegion={ciudadData.region || 'FL'}
+    addressRegion={ciudadData.region || "FL"}
     phone={"+1-786-602-2217"}
     isHub={false}
     businessName="Paramount Property Restoration"
@@ -101,10 +125,10 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
 
   <!-- INVERTED SEO PYRAMID: Hero Híbrido (APEX - Transactional & Urgent) -->
   <section class="programmatic-hero">
-    <P5HeroAnimation 
-      client:load 
-      serviceType={servicioData.title.toLowerCase()} 
-      isActive={true} 
+    <P5HeroAnimation
+      client:load
+      serviceType={servicioData.title.toLowerCase()}
+      isActive={true}
     />
     <div class="container">
       <div class="hero-conversion-grid">
@@ -112,20 +136,25 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
         <div class="hero-main">
           <!-- H1: Focused on KW, Location, and Urgency -->
           <h1 class="conversion-h1">
-            Emergency <strong>{servicioData.title}</strong> in <span class="location-highlight">{ciudadData.nombre}</span>
+            Emergency <strong>{servicioData.title}</strong> in <span
+              class="location-highlight">{ciudadData.nombre}</span
+            >
           </h1>
-          
+
           <!-- UX Writing: Clear Value Proposition -->
           <p class="conversion-guarantee">
-            Guaranteed <strong>60-Minute Response</strong> from Local IICRC Certified Technicians.
+            Guaranteed <strong>60-Minute Response</strong> from Local IICRC Certified
+            Technicians.
           </p>
-          
+
           <!-- Massive Click-to-Call Button (Primary Conversion) -->
           <a href="tel:7866022217" class="mega-cta-button">
             <i class="fas fa-phone-alt"></i> CALL NOW: (786) 602-2217
           </a>
-          
-          <p class="availability-text">Available 24/7 for all {ciudadData.county} emergencies.</p>
+
+          <p class="availability-text">
+            Available 24/7 for all {ciudadData.county} emergencies.
+          </p>
         </div>
 
         <!-- Right: High-Conversion Form (MUST be on the first viewport) -->
@@ -134,10 +163,10 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
             <h2 class="form-title">
               Request Your FREE {ciudadData.nombre} Inspection
             </h2>
-            <form 
-              class="emergency-form" 
-              name="emergency-request" 
-              method="POST" 
+            <form
+              class="emergency-form"
+              name="emergency-request"
+              method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               netlify
@@ -147,28 +176,27 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="service" value={servicioData.title} />
               <input type="hidden" name="city" value={ciudadData.nombre} />
-              
-              <input 
-                type="text" 
+
+              <input
+                type="text"
                 name="name"
-                placeholder="Your Full Name" 
-                class="form-input" 
-                required 
-              />
-              <input 
-                type="tel" 
-                name="phone"
-                placeholder="Emergency Phone Number" 
-                class="form-input" 
-                required 
-              />
-              <textarea 
-                name="description"
-                placeholder={`Describe the ${servicioData.title.toLowerCase()} incident (e.g., Basement flooding, Pipe burst)`}
-                rows="3" 
+                placeholder="Your Full Name"
                 class="form-input"
                 required
-              ></textarea>
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Emergency Phone Number"
+                class="form-input"
+                required
+              />
+              <textarea
+                name="description"
+                placeholder={`Describe the ${servicioData.title.toLowerCase()} incident (e.g., Basement flooding, Pipe burst)`}
+                rows="3"
+                class="form-input"
+                required></textarea>
               <button type="submit" class="form-submit-btn">
                 Submit Emergency Request
               </button>
@@ -186,25 +214,32 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
         Why <strong>{ciudadData.nombre}</strong> Chooses Paramount Restoration
       </h2>
       <div class="trust-proof-grid">
-        
         <!-- Local Testimonial Card -->
         <div class="testimonial-card">
           <div class="testimonial-icon">
             <i class="fas fa-quote-left"></i>
           </div>
           <p class="testimonial-text">
-            "The fastest response I've ever seen in <strong>{ciudadData.region}</strong>. They knew all the <strong>{ciudadData.county}</strong> building codes for structural drying immediately. True professionals."
+            "The fastest response I've ever seen in <strong
+              >{ciudadData.region}</strong
+            >. They knew all the <strong>{ciudadData.county}</strong> building codes
+            for structural drying immediately. True professionals."
           </p>
-          <div class="testimonial-author">- Maria R., {ciudadData.nombre}, FL</div>
+          <div class="testimonial-author">
+            - Maria R., {ciudadData.nombre}, FL
+          </div>
         </div>
-        
+
         <!-- Local Guarantee 1: Insurance -->
         <div class="guarantee-card">
           <div class="guarantee-icon">
             <i class="fas fa-money-check-alt"></i>
           </div>
           <h3 class="guarantee-title">Direct Insurance Billing</h3>
-          <p class="guarantee-text">We handle the entire claim process with local carriers. Maximize your payout with Xactimate estimates.</p>
+          <p class="guarantee-text">
+            We handle the entire claim process with local carriers. Maximize
+            your payout with Xactimate estimates.
+          </p>
         </div>
 
         <!-- Local Guarantee 2: Compliance -->
@@ -213,7 +248,10 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
             <i class="fas fa-shield-check"></i>
           </div>
           <h3 class="guarantee-title">{ciudadData.county} Code Compliance</h3>
-          <p class="guarantee-text">Licensed and certified to meet all Florida restoration standards specific to {ciudadData.region}.</p>
+          <p class="guarantee-text">
+            Licensed and certified to meet all Florida restoration standards
+            specific to {ciudadData.region}.
+          </p>
         </div>
       </div>
     </div>
@@ -229,39 +267,52 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
             The Danger of {servicioData.title} in {ciudadData.region}
           </h2>
           <p class="problem-description">
-            Due to {ciudadData.region}'s high humidity and unique climate conditions, standard {servicioData.title.toLowerCase()} approaches are insufficient. We use specialized equipment and proven techniques designed specifically for {ciudadData.region}'s environmental challenges to prevent long-term damage and ensure complete restoration.
+            Due to {ciudadData.region}'s high humidity and unique climate
+            conditions, standard {servicioData.title.toLowerCase()} approaches are
+            insufficient. We use specialized equipment and proven techniques designed
+            specifically for {ciudadData.region}'s environmental challenges to
+            prevent long-term damage and ensure complete restoration.
           </p>
           <a href="#service-area" class="authority-link">
-            See Our Service Area in {ciudadData.county} <i class="fas fa-arrow-right"></i>
+            See Our Service Area in {ciudadData.county}
+            <i class="fas fa-arrow-right"></i>
           </a>
         </div>
-        
+
         <!-- Solution/Scope: Quick, technical list of services -->
         <div class="service-scope-card">
           <h3 class="scope-title">Our Immediate {servicioData.title} Scope</h3>
           <ul class="scope-list">
-            {subserviceContent?.technicalSpecs?.deliverables ? (
-              subserviceContent.technicalSpecs.deliverables.slice(0, 4).map((deliverable) => (
-                <li class="scope-item">
-                  <i class="fas fa-check-circle"></i> {deliverable}
-                </li>
-              ))
-            ) : (
-              <>
-                <li class="scope-item">
-                  <i class="fas fa-check-circle"></i> Rapid Assessment & Mitigation
-                </li>
-                <li class="scope-item">
-                  <i class="fas fa-check-circle"></i> Advanced Equipment & Technology
-                </li>
-                <li class="scope-item">
-                  <i class="fas fa-check-circle"></i> IICRC Certified Restoration Process
-                </li>
-                <li class="scope-item">
-                  <i class="fas fa-check-circle"></i> Complete Documentation & Insurance Support
-                </li>
-              </>
-            )}
+            {
+              subserviceContent?.technicalSpecs?.deliverables ? (
+                subserviceContent.technicalSpecs.deliverables
+                  .slice(0, 4)
+                  .map((deliverable) => (
+                    <li class="scope-item">
+                      <i class="fas fa-check-circle" /> {deliverable}
+                    </li>
+                  ))
+              ) : (
+                <>
+                  <li class="scope-item">
+                    <i class="fas fa-check-circle" /> Rapid Assessment &
+                    Mitigation
+                  </li>
+                  <li class="scope-item">
+                    <i class="fas fa-check-circle" /> Advanced Equipment &
+                    Technology
+                  </li>
+                  <li class="scope-item">
+                    <i class="fas fa-check-circle" /> IICRC Certified
+                    Restoration Process
+                  </li>
+                  <li class="scope-item">
+                    <i class="fas fa-check-circle" /> Complete Documentation &
+                    Insurance Support
+                  </li>
+                </>
+              )
+            }
           </ul>
         </div>
       </div>
@@ -275,17 +326,22 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
         <div class="overview-content">
           <h2>{servicioData.title} Services You Can Trust</h2>
           <p class="overview-text">
-            We deliver full-service {servicioData.title.toLowerCase()} in {ciudadData.nombre}
-            with expert technicians, clean work practices, and results you can rely on.
+            We deliver full-service {servicioData.title.toLowerCase()} in {
+              ciudadData.nombre
+            }
+            with expert technicians, clean work practices, and results you can rely
+            on.
           </p>
 
           <ul class="service-features">
-            {serviceFeatures.map((feature) => (
-              <li>
-                <span class="feature-icon">#</span>
-                {feature}
-              </li>
-            ))}
+            {
+              serviceFeatures.map((feature) => (
+                <li>
+                  <span class="feature-icon">#</span>
+                  {feature}
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -293,8 +349,9 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
           <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
           <p>
             We offer {servicioData.title.toLowerCase()} in {ciudadData.nombre} and
-            throughout {ciudadData.region}, including neighborhoods like {nearbyAreas.slice(0, 3).join(", ")}, 
-            and {nearbyAreas[3]}.
+            throughout {ciudadData.region}, including neighborhoods like {
+              nearbyAreas.slice(0, 3).join(", ")
+            }, and {nearbyAreas[3]}.
           </p>
           <a href="/contact" class="btn-outline">
             Check Availability in Your Neighborhood →
@@ -305,43 +362,48 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
   </section>
 
   <!-- Service Process Section -->
-  {subserviceContent?.process && (
-    <section class="section bg-secondary">
-      <div class="container">
-        <h2 class="section-title">{subserviceContent.process.title}</h2>
-        <div class="steps-container">
-          {subserviceContent.process.steps.map((step, index) => (
-            <div class="step-item" data-step={index + 1}>
-              <div class="step-icon">
-                <i class={step.icon}></i>
+  {
+    subserviceContent?.process && (
+      <section class="section bg-secondary">
+        <div class="container">
+          <h2 class="section-title">{subserviceContent.process.title}</h2>
+          <div class="steps-container">
+            {subserviceContent.process.steps.map((step, index) => (
+              <div class="step-item" data-step={index + 1}>
+                <div class="step-icon">
+                  <i class={step.icon} />
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 
   <!-- Services Grid -->
-  {subserviceContent?.services && (
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Our {servicioData.title} Services in {ciudadData.nombre}</h2>
-        <div class="services-grid">
-          {subserviceContent.services.map((service) => (
-            <div class="service-item">
-              <i class={service.icon}></i>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+  {
+    subserviceContent?.services && (
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">
+            Our {servicioData.title} Services in {ciudadData.nombre}
+          </h2>
+          <div class="services-grid">
+            {subserviceContent.services.map((service) => (
+              <div class="service-item">
+                <i class={service.icon} />
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
-
+      </section>
+    )
+  }
 
   <!-- Trust Indicators Section -->
   <section class="section trust-section">
@@ -366,7 +428,9 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
             <i class="fas fa-handshake"></i>
           </div>
           <h3>Insurance Assistance</h3>
-          <p>We work directly with your insurance company to streamline claims</p>
+          <p>
+            We work directly with your insurance company to streamline claims
+          </p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
@@ -388,58 +452,75 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
   />
 
   <!-- ZIP Codes & Neighborhoods Section -->
-  {cityGeoData && (cityGeoData.zipcodes?.length > 0 || cityGeoData.neighborhoods?.length > 0) && (
-    <section class="zip-neighborhoods-section">
-      <div class="container">
-        <h2 class="section-title-center">
-          Areas and ZIP Codes We Serve in {ciudadData.nombre}
-        </h2>
-        <p class="section-intro-text">
-          Our {servicioData.title.toLowerCase()} team serves all of {ciudadData.nombre}, {ciudadData.region} and nearby communities with rapid 24/7 emergency response.
-        </p>
+  {
+    cityGeoData &&
+      (cityGeoData.zipcodes?.length > 0 ||
+        cityGeoData.neighborhoods?.length > 0) && (
+        <section class="zip-neighborhoods-section">
+          <div class="container">
+            <h2 class="section-title-center">
+              Areas and ZIP Codes We Serve in {ciudadData.nombre}
+            </h2>
+            <p class="section-intro-text">
+              Our {servicioData.title.toLowerCase()} team serves all of{" "}
+              {ciudadData.nombre}, {ciudadData.region} and nearby communities
+              with rapid 24/7 emergency response.
+            </p>
 
-        <div class="zip-neighborhoods-grid">
-          {/* Neighborhoods Column */}
-          {cityGeoData.neighborhoods && cityGeoData.neighborhoods.length > 0 && (
-            <div class="local-coverage-card">
-              <h3 class="coverage-card-title">
-                <i class="fas fa-map-marker-alt"></i> Neighborhoods in {ciudadData.nombre}
-              </h3>
-              <ul class="coverage-list">
-                {cityGeoData.neighborhoods.slice(0, 10).map(neighborhood => (
-                  <li class="coverage-item">{neighborhood}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+            <div class="zip-neighborhoods-grid">
+              {/* Neighborhoods Column */}
+              {cityGeoData.neighborhoods &&
+                cityGeoData.neighborhoods.length > 0 && (
+                  <div class="local-coverage-card">
+                    <h3 class="coverage-card-title">
+                      <i class="fas fa-map-marker-alt" /> Neighborhoods in{" "}
+                      {ciudadData.nombre}
+                    </h3>
+                    <ul class="coverage-list">
+                      {cityGeoData.neighborhoods
+                        .slice(0, 10)
+                        .map((neighborhood) => (
+                          <li class="coverage-item">{neighborhood}</li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
 
-          {/* ZIP Codes Column */}
-          {cityGeoData.zipcodes && cityGeoData.zipcodes.length > 0 && (
-            <div class="local-coverage-card">
-              <h3 class="coverage-card-title">
-                <i class="fas fa-mail-bulk"></i> ZIP Codes in {ciudadData.nombre}
-              </h3>
-              <ul class="zip-code-list">
-                {cityGeoData.zipcodes.slice(0, 12).map(zip => (
-                  <li class="zip-code-item">{zip}</li>
-                ))}
-              </ul>
-              {cityGeoData.zipcodes.length > 12 && (
-                <p class="more-zips-note">+ {cityGeoData.zipcodes.length - 12} more ZIP codes</p>
+              {/* ZIP Codes Column */}
+              {cityGeoData.zipcodes && cityGeoData.zipcodes.length > 0 && (
+                <div class="local-coverage-card">
+                  <h3 class="coverage-card-title">
+                    <i class="fas fa-mail-bulk" /> ZIP Codes in{" "}
+                    {ciudadData.nombre}
+                  </h3>
+                  <ul class="zip-code-list">
+                    {cityGeoData.zipcodes.slice(0, 12).map((zip) => (
+                      <li class="zip-code-item">{zip}</li>
+                    ))}
+                  </ul>
+                  {cityGeoData.zipcodes.length > 12 && (
+                    <p class="more-zips-note">
+                      + {cityGeoData.zipcodes.length - 12} more ZIP codes
+                    </p>
+                  )}
+                </div>
               )}
             </div>
-          )}
-        </div>
 
-        <div class="zip-cta-box">
-          <p class="zip-cta-text">
-            <strong>Don't see your specific location?</strong> We serve the entire {ciudadData.county} area.
-            Call <a href="tel:7866022217" class="phone-link-inline">(786) 602-2217</a> to confirm service availability.
-          </p>
-        </div>
-      </div>
-    </section>
-  )}
+            <div class="zip-cta-box">
+              <p class="zip-cta-text">
+                <strong>Don't see your specific location?</strong> We serve the
+                entire {ciudadData.county} area. Call{" "}
+                <a href="tel:7866022217" class="phone-link-inline">
+                  (786) 602-2217
+                </a>{" "}
+                to confirm service availability.
+              </p>
+            </div>
+          </div>
+        </section>
+      )
+  }
 
   <!-- GEOGRAPHIC VALIDATION: Map and Service Area (BASE of Pyramid) -->
   <section id="service-area" class="geographic-validation-section">
@@ -450,25 +531,39 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
       <div class="geo-validation-grid">
         <!-- Interactive Service Area Map -->
         <div class="service-area-map">
-          <ServiceAreaMap 
+          <ServiceAreaMap
             client:load
-            city={ciudad} 
-            county={ciudadData.county} 
-            serviceCities={cities.filter(city => city.county === ciudadData.county || city.region === ciudadData.region)}
+            city={ciudad}
+            county={ciudadData.county}
+            serviceCities={cities.filter(
+              (city) =>
+                city.county === ciudadData.county ||
+                city.region === ciudadData.region,
+            )}
           />
         </div>
         <!-- Neighborhoods List (Long-tail local KWs) -->
         <div class="neighborhoods-coverage">
           <h3 class="coverage-title">Rapid Response in:</h3>
           <div class="neighborhoods-grid">
-            {cities.filter(city => city.county === ciudadData.county || city.region === ciudadData.region).slice(0, 8).map(nearbyCity => (
-              <span class="neighborhood-item">
-                <i class="fas fa-map-pin"></i> {nearbyCity.name}
-              </span>
-            ))}
+            {
+              cities
+                .filter(
+                  (city) =>
+                    city.county === ciudadData.county ||
+                    city.region === ciudadData.region,
+                )
+                .slice(0, 8)
+                .map((nearbyCity) => (
+                  <span class="neighborhood-item">
+                    <i class="fas fa-map-pin" /> {nearbyCity.name}
+                  </span>
+                ))
+            }
           </div>
           <p class="coverage-note">
-            Emergency {servicioData.title.toLowerCase()} services available 24/7 across {ciudadData.county} and surrounding areas.
+            Emergency {servicioData.title.toLowerCase()} services available 24/7
+            across {ciudadData.county} and surrounding areas.
           </p>
         </div>
       </div>
@@ -480,15 +575,19 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     <div class="container">
       <div class="final-cta-content">
         <h2 class="final-cta-title">
-          Don't Delay: Call Your Local {ciudadData.nombre} {servicioData.title} Experts Now.
+          Don't Delay: Call Your Local {ciudadData.nombre}
+          {servicioData.title} Experts Now.
         </h2>
         <p class="final-cta-urgency">
-          The longer you wait, the greater the risk of extensive damage and costly repairs.
+          The longer you wait, the greater the risk of extensive damage and
+          costly repairs.
         </p>
         <a href="tel:7866022217" class="final-mega-cta">
           <i class="fas fa-phone-alt"></i> GET HELP IN 60 MINUTES
         </a>
-        <p class="final-cta-guarantee">Licensed • Insured • Available 24/7 in {ciudadData.region}</p>
+        <p class="final-cta-guarantee">
+          Licensed • Insured • Available 24/7 in {ciudadData.region}
+        </p>
       </div>
     </div>
   </section>

@@ -11,16 +11,23 @@ const { group, sub, isHub = false } = Astro.props;
 const getEnhancedServiceData = (groupSlug, subSlug) => {
   const baseData = {
     hero: {
-      title: isHub ? `${group.name} in Florida` : (sub?.hero?.title || `${sub.title} Experts in Florida`),
-      description: isHub ? group.description : (sub?.hero?.description || `Professional ${sub.title.toLowerCase()} services across Florida. Quality craftsmanship, licensed contractors, and satisfaction guaranteed.`),
+      title: isHub
+        ? `${group.name} in Florida`
+        : sub?.hero?.title || `${sub.title} Experts in Florida`,
+      description: isHub
+        ? group.description
+        : sub?.hero?.description ||
+          `Professional ${sub.title.toLowerCase()} services across Florida. Quality craftsmanship, licensed contractors, and satisfaction guaranteed.`,
       ctaText: isHub ? "Get Free Consultation" : "Start Your Project",
       ctaPhone: "+1-786-602-2217",
-      badgeText: isHub ? "Licensed & Insured Contractors" : "Quality Guaranteed Work"
+      badgeText: isHub
+        ? "Licensed & Insured Contractors"
+        : "Quality Guaranteed Work",
     },
     services: getServicesForGroup(groupSlug),
     features: getFeaturesForGroup(groupSlug),
     warningSigns: getWarningSignsForGroup(groupSlug),
-    process: getProcessForGroup(groupSlug)
+    process: getProcessForGroup(groupSlug),
   };
   return baseData;
 };
@@ -29,45 +36,165 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
 const getServicesForGroup = (groupSlug) => {
   const serviceConfigs = {
     "kitchen-remodeling": [
-      { name: "Custom Cabinetry", icon: "fas fa-cube", description: "Premium cabinet design and installation" },
-      { name: "Countertop Installation", icon: "fas fa-gem", description: "Granite, quartz, and marble surfaces" },
-      { name: "Kitchen Islands", icon: "fas fa-th-large", description: "Functional island design and construction" },
-      { name: "Appliance Integration", icon: "fas fa-blender", description: "Modern appliance installation" },
-      { name: "Plumbing & Electrical", icon: "fas fa-bolt", description: "Complete utility upgrades" },
-      { name: "Lighting Design", icon: "fas fa-lightbulb", description: "Ambient and task lighting" }
+      {
+        name: "Custom Cabinetry",
+        icon: "fas fa-cube",
+        description: "Premium cabinet design and installation",
+      },
+      {
+        name: "Countertop Installation",
+        icon: "fas fa-gem",
+        description: "Granite, quartz, and marble surfaces",
+      },
+      {
+        name: "Kitchen Islands",
+        icon: "fas fa-th-large",
+        description: "Functional island design and construction",
+      },
+      {
+        name: "Appliance Integration",
+        icon: "fas fa-blender",
+        description: "Modern appliance installation",
+      },
+      {
+        name: "Plumbing & Electrical",
+        icon: "fas fa-bolt",
+        description: "Complete utility upgrades",
+      },
+      {
+        name: "Lighting Design",
+        icon: "fas fa-lightbulb",
+        description: "Ambient and task lighting",
+      },
     ],
     "bathroom-remodeling": [
-      { name: "Shower & Tub Installation", icon: "fas fa-shower", description: "Custom shower and bathtub design" },
-      { name: "Tile & Flooring", icon: "fas fa-th", description: "Premium tile installation and flooring" },
-      { name: "Vanity & Storage", icon: "fas fa-archive", description: "Custom vanities and storage solutions" },
-      { name: "Plumbing Fixtures", icon: "fas fa-faucet", description: "Modern fixtures and fittings" },
-      { name: "Ventilation Systems", icon: "fas fa-fan", description: "Proper ventilation and humidity control" },
-      { name: "Waterproofing", icon: "fas fa-shield-alt", description: "Complete waterproofing protection" }
+      {
+        name: "Shower & Tub Installation",
+        icon: "fas fa-shower",
+        description: "Custom shower and bathtub design",
+      },
+      {
+        name: "Tile & Flooring",
+        icon: "fas fa-th",
+        description: "Premium tile installation and flooring",
+      },
+      {
+        name: "Vanity & Storage",
+        icon: "fas fa-archive",
+        description: "Custom vanities and storage solutions",
+      },
+      {
+        name: "Plumbing Fixtures",
+        icon: "fas fa-faucet",
+        description: "Modern fixtures and fittings",
+      },
+      {
+        name: "Ventilation Systems",
+        icon: "fas fa-fan",
+        description: "Proper ventilation and humidity control",
+      },
+      {
+        name: "Waterproofing",
+        icon: "fas fa-shield-alt",
+        description: "Complete waterproofing protection",
+      },
     ],
     "bedroom-remodeling": [
-      { name: "Master Suite Design", icon: "fas fa-bed", description: "Luxury master bedroom design" },
-      { name: "Closet Organization", icon: "fas fa-hanger", description: "Custom closet systems and storage" },
-      { name: "Flooring Installation", icon: "fas fa-layer-group", description: "Hardwood, carpet, and luxury vinyl" },
-      { name: "Built-in Storage", icon: "fas fa-cube", description: "Custom built-in furniture and storage" },
-      { name: "Lighting & Electrical", icon: "fas fa-lightbulb", description: "Ambient and accent lighting" },
-      { name: "Window Treatments", icon: "fas fa-window-maximize", description: "Custom window solutions" }
+      {
+        name: "Master Suite Design",
+        icon: "fas fa-bed",
+        description: "Luxury master bedroom design",
+      },
+      {
+        name: "Closet Organization",
+        icon: "fas fa-hanger",
+        description: "Custom closet systems and storage",
+      },
+      {
+        name: "Flooring Installation",
+        icon: "fas fa-layer-group",
+        description: "Hardwood, carpet, and luxury vinyl",
+      },
+      {
+        name: "Built-in Storage",
+        icon: "fas fa-cube",
+        description: "Custom built-in furniture and storage",
+      },
+      {
+        name: "Lighting & Electrical",
+        icon: "fas fa-lightbulb",
+        description: "Ambient and accent lighting",
+      },
+      {
+        name: "Window Treatments",
+        icon: "fas fa-window-maximize",
+        description: "Custom window solutions",
+      },
     ],
     "living-dining-remodeling": [
-      { name: "Open Concept Design", icon: "fas fa-expand-arrows-alt", description: "Wall removal and space optimization" },
-      { name: "Fireplace Installation", icon: "fas fa-fire", description: "Custom fireplace design and installation" },
-      { name: "Flooring Systems", icon: "fas fa-layer-group", description: "Seamless flooring throughout spaces" },
-      { name: "Built-in Entertainment", icon: "fas fa-tv", description: "Custom entertainment centers" },
-      { name: "Lighting Design", icon: "fas fa-lightbulb", description: "Layered lighting systems" },
-      { name: "Ceiling Features", icon: "fas fa-home", description: "Coffered ceilings and architectural details" }
+      {
+        name: "Open Concept Design",
+        icon: "fas fa-expand-arrows-alt",
+        description: "Wall removal and space optimization",
+      },
+      {
+        name: "Fireplace Installation",
+        icon: "fas fa-fire",
+        description: "Custom fireplace design and installation",
+      },
+      {
+        name: "Flooring Systems",
+        icon: "fas fa-layer-group",
+        description: "Seamless flooring throughout spaces",
+      },
+      {
+        name: "Built-in Entertainment",
+        icon: "fas fa-tv",
+        description: "Custom entertainment centers",
+      },
+      {
+        name: "Lighting Design",
+        icon: "fas fa-lightbulb",
+        description: "Layered lighting systems",
+      },
+      {
+        name: "Ceiling Features",
+        icon: "fas fa-home",
+        description: "Coffered ceilings and architectural details",
+      },
     ],
     "home-additions-remodeling": [
-      { name: "Room Additions", icon: "fas fa-plus-square", description: "Single and multi-room expansions" },
-      { name: "Second Story Additions", icon: "fas fa-building", description: "Multi-level home expansions" },
-      { name: "Outdoor Structures", icon: "fas fa-leaf", description: "Patios, decks, and outdoor rooms" },
-      { name: "ADU Construction", icon: "fas fa-home", description: "Accessory dwelling units" },
-      { name: "Foundation Work", icon: "fas fa-layer-group", description: "Structural foundation extensions" },
-      { name: "Roofing Extensions", icon: "fas fa-roof", description: "Roof modifications and additions" }
-    ]
+      {
+        name: "Room Additions",
+        icon: "fas fa-plus-square",
+        description: "Single and multi-room expansions",
+      },
+      {
+        name: "Second Story Additions",
+        icon: "fas fa-building",
+        description: "Multi-level home expansions",
+      },
+      {
+        name: "Outdoor Structures",
+        icon: "fas fa-leaf",
+        description: "Patios, decks, and outdoor rooms",
+      },
+      {
+        name: "ADU Construction",
+        icon: "fas fa-home",
+        description: "Accessory dwelling units",
+      },
+      {
+        name: "Foundation Work",
+        icon: "fas fa-layer-group",
+        description: "Structural foundation extensions",
+      },
+      {
+        name: "Roofing Extensions",
+        icon: "fas fa-roof",
+        description: "Roof modifications and additions",
+      },
+    ],
   };
   return serviceConfigs[groupSlug] || [];
 };
@@ -76,11 +203,11 @@ const getFeaturesForGroup = (groupSlug) => {
   const features = {
     "kitchen-remodeling": [
       "Licensed Kitchen Contractors",
-      "Custom Cabinet Manufacturing", 
+      "Custom Cabinet Manufacturing",
       "Premium Material Selection",
       "3D Design Visualization",
       "Code-Compliant Installation",
-      "Warranty on All Work"
+      "Warranty on All Work",
     ],
     "bathroom-remodeling": [
       "Licensed Bathroom Contractors",
@@ -88,7 +215,7 @@ const getFeaturesForGroup = (groupSlug) => {
       "Premium Fixture Selection",
       "ADA Compliance Available",
       "Mold Prevention Techniques",
-      "Complete Project Management"
+      "Complete Project Management",
     ],
     "bedroom-remodeling": [
       "Custom Bedroom Design",
@@ -96,7 +223,7 @@ const getFeaturesForGroup = (groupSlug) => {
       "Premium Material Selection",
       "Energy-Efficient Solutions",
       "Smart Home Integration",
-      "Professional Color Consultation"
+      "Professional Color Consultation",
     ],
     "living-dining-remodeling": [
       "Open Concept Specialists",
@@ -104,7 +231,7 @@ const getFeaturesForGroup = (groupSlug) => {
       "Premium Flooring Installation",
       "Custom Built-in Features",
       "Smart Home Integration",
-      "Architectural Detail Work"
+      "Architectural Detail Work",
     ],
     "home-additions-remodeling": [
       "Licensed General Contractors",
@@ -112,8 +239,8 @@ const getFeaturesForGroup = (groupSlug) => {
       "City Permit Management",
       "Architectural Design Support",
       "Foundation to Finish Services",
-      "HOA Compliance Assistance"
-    ]
+      "HOA Compliance Assistance",
+    ],
   };
   return features[groupSlug] || [];
 };
@@ -123,48 +250,68 @@ const getWarningSignsForGroup = (groupSlug) => {
     "kitchen-remodeling": [
       "Outdated cabinets and countertops",
       "Insufficient storage and counter space",
-      "Poor lighting and ventilation", 
+      "Poor lighting and ventilation",
       "Inefficient layout and workflow",
-      "Aging appliances and fixtures"
+      "Aging appliances and fixtures",
     ],
     "bathroom-remodeling": [
       "Outdated fixtures and finishes",
       "Poor ventilation and moisture issues",
       "Insufficient storage space",
       "Accessibility concerns",
-      "Worn tile and grout"
+      "Worn tile and grout",
     ],
     "bedroom-remodeling": [
       "Lack of storage space",
       "Poor lighting and ambiance",
       "Outdated flooring and finishes",
       "Inadequate closet organization",
-      "Uncomfortable room temperature"
+      "Uncomfortable room temperature",
     ],
     "living-dining-remodeling": [
       "Closed-off room layout",
       "Poor traffic flow",
       "Inadequate lighting",
       "Lack of entertaining space",
-      "Outdated architectural features"
+      "Outdated architectural features",
     ],
     "home-additions-remodeling": [
       "Need for more living space",
       "Growing family requirements",
       "Home office needs",
       "Desire for better property value",
-      "Aging in place modifications"
-    ]
+      "Aging in place modifications",
+    ],
   };
   return signs[groupSlug] || [];
 };
 
 const getProcessForGroup = (groupSlug) => {
   return [
-    { step: 1, title: "Design Consultation", description: "Free in-home consultation and 3D design", icon: "fas fa-drafting-compass" },
-    { step: 2, title: "Material Selection", description: "Choose from premium materials and finishes", icon: "fas fa-palette" },
-    { step: 3, title: "Professional Installation", description: "Licensed contractors complete your project", icon: "fas fa-tools" },
-    { step: 4, title: "Final Walkthrough", description: "Quality inspection and project completion", icon: "fas fa-check-circle" }
+    {
+      step: 1,
+      title: "Design Consultation",
+      description: "Free in-home consultation and 3D design",
+      icon: "fas fa-drafting-compass",
+    },
+    {
+      step: 2,
+      title: "Material Selection",
+      description: "Choose from premium materials and finishes",
+      icon: "fas fa-palette",
+    },
+    {
+      step: 3,
+      title: "Professional Installation",
+      description: "Licensed contractors complete your project",
+      icon: "fas fa-tools",
+    },
+    {
+      step: 4,
+      title: "Final Walkthrough",
+      description: "Quality inspection and project completion",
+      icon: "fas fa-check-circle",
+    },
   ];
 };
 
@@ -173,7 +320,7 @@ const serviceData = getEnhancedServiceData(group.slug, sub?.slug);
 // City data for regional display
 const getCitiesByRegion = () => {
   const regions = {};
-  cities.forEach(city => {
+  cities.forEach((city) => {
     if (!regions[city.region]) {
       regions[city.region] = [];
     }
@@ -187,24 +334,29 @@ const cityRegions = getCitiesByRegion();
 // Get hero image based on service group
 const getHeroImage = (slug) => {
   const imageMap = {
-    'kitchen-remodeling': 'kitchenHero',
-    'bathroom-remodeling': 'bathroomHero',
-    'bedroom-remodeling': 'bedroomHero',
-    'living-dining-remodeling': 'livingDiningHero',
-    'home-additions-remodeling': 'home-additionsHero'
+    "kitchen-remodeling": "kitchenHero",
+    "bathroom-remodeling": "bathroomHero",
+    "bedroom-remodeling": "bedroomHero",
+    "living-dining-remodeling": "livingDiningHero",
+    "home-additions-remodeling": "home-additionsHero",
   };
-  return imageMap[slug] || 'portadaHome';
+  return imageMap[slug] || "portadaHome";
 };
 
 const heroImage = getHeroImage(group.slug);
 const heroImageWebP = `/images/${heroImage}.webp`;
-const heroImageJpg = `/images/${heroImage}.jpg`;
+const heroImageJpg = `/images/${heroImage}.webp`;
 const heroAlt = getAltText(heroImage);
 ---
 
 <div class="unified-service-template">
   <!-- Enhanced Hero Section -->
-  <section class="hero-section" style={`background-image: url('${heroImageJpg}'); min-height: 60vh;`} role="img" aria-label={heroAlt}>
+  <section
+    class="hero-section"
+    style={`background-image: url('${heroImageJpg}'); min-height: 60vh;`}
+    role="img"
+    aria-label={heroAlt}
+  >
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">
@@ -213,7 +365,7 @@ const heroAlt = getAltText(heroImage);
       </div>
       <h1>{serviceData.hero.title}</h1>
       <p>{serviceData.hero.description}</p>
-      
+
       <!-- Hero Features -->
       <div class="hero-features">
         <div class="feature-item">
@@ -232,7 +384,8 @@ const heroAlt = getAltText(heroImage);
 
       <div class="hero-actions">
         <a href="/contact" class="cta-button primary">
-          <i class="fas fa-phone"></i> {serviceData.hero.ctaText}
+          <i class="fas fa-phone"></i>
+          {serviceData.hero.ctaText}
         </a>
         <a href="/portfolio" class="cta-button secondary">
           <i class="fas fa-images"></i> See Our Remodeling Projects
@@ -246,19 +399,20 @@ const heroAlt = getAltText(heroImage);
     <div class="container">
       <h2 class="section-title">Our {group.name} Services</h2>
       <div class="services-grid">
-        {serviceData.services.map(service => (
-          <div class="service-item">
-            <div class="service-icon">
-              <i class={service.icon}></i>
+        {
+          serviceData.services.map((service) => (
+            <div class="service-item">
+              <div class="service-icon">
+                <i class={service.icon} />
+              </div>
+              <h3>{service.name}</h3>
+              <p>{service.description}</p>
             </div>
-            <h3>{service.name}</h3>
-            <p>{service.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
-
 
   <!-- Enhanced Features Section -->
   <section class="section features-section">
@@ -267,14 +421,16 @@ const heroAlt = getAltText(heroImage);
         <div class="features-content">
           <h2>Why Choose Our {group.name}?</h2>
           <ul class="features-list">
-            {serviceData.features.map((feature) => (
-              <li>
-                <span class="feature-check">✓</span>
-                {feature}
-              </li>
-            ))}
+            {
+              serviceData.features.map((feature) => (
+                <li>
+                  <span class="feature-check">✓</span>
+                  {feature}
+                </li>
+              ))
+            }
           </ul>
-          
+
           <div class="cta-section">
             <a href="/contact" class="btn-outline">
               Schedule Free Consultation →
@@ -287,9 +443,7 @@ const heroAlt = getAltText(heroImage);
           <div class="warning-signs-card">
             <h3>Signs You Need {group.name}</h3>
             <ul>
-              {serviceData.warningSigns.map((sign) => (
-                <li>{sign}</li>
-              ))}
+              {serviceData.warningSigns.map((sign) => <li>{sign}</li>)}
             </ul>
           </div>
         </div>
@@ -302,20 +456,23 @@ const heroAlt = getAltText(heroImage);
     <div class="container">
       <h2 class="section-title">Our Process</h2>
       <p class="section-subtitle">
-        From consultation to completion, we follow a proven process that ensures quality results.
+        From consultation to completion, we follow a proven process that ensures
+        quality results.
       </p>
-      
+
       <div class="process-horizontal-grid">
-        {serviceData.process.map(step => (
-          <div class="process-card">
-            <div class="process-icon">
-              <i class={step.icon}></i>
+        {
+          serviceData.process.map((step) => (
+            <div class="process-card">
+              <div class="process-icon">
+                <i class={step.icon} />
+              </div>
+              <div class="process-number">{step.step}</div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
             </div>
-            <div class="process-number">{step.step}</div>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -325,22 +482,37 @@ const heroAlt = getAltText(heroImage);
     <div class="container">
       <h2 class="section-title">Serving Florida Communities</h2>
       <p class="section-subtitle">
-        We provide {group.name.toLowerCase()} throughout Florida, with local teams in every major city to ensure fast response and personalized service.
+        We provide {group.name.toLowerCase()} throughout Florida, with local teams
+        in every major city to ensure fast response and personalized service.
       </p>
-      
+
       <!-- Featured Cities - Top 8 Most Important -->
-      <div class="featured-cities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
-        {[
-          cityRegions["South Florida"]?.find(c => c.slug === "miami"),
-          cityRegions["Central Florida"]?.find(c => c.slug === "orlando"),
-          cityRegions["Tampa Bay"]?.find(c => c.slug === "tampa"),
-          cityRegions["South Florida"]?.find(c => c.slug === "fort-lauderdale"),
-          cityRegions["Central Florida"]?.find(c => c.slug === "jacksonville"),
-          cityRegions["Southwest Florida"]?.find(c => c.slug === "naples"),
-          cityRegions["Tampa Bay"]?.find(c => c.slug === "st-petersburg"),
-          cityRegions["Central Florida"]?.find(c => c.slug === "gainesville"),
-        ].filter(Boolean).map((city) => (
-          <a href={`/services/${group.slug}/${city.slug}`} style="
+      <div
+        class="featured-cities-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;"
+      >
+        {
+          [
+            cityRegions["South Florida"]?.find((c) => c.slug === "miami"),
+            cityRegions["Central Florida"]?.find((c) => c.slug === "orlando"),
+            cityRegions["Tampa Bay"]?.find((c) => c.slug === "tampa"),
+            cityRegions["South Florida"]?.find(
+              (c) => c.slug === "fort-lauderdale",
+            ),
+            cityRegions["Central Florida"]?.find(
+              (c) => c.slug === "jacksonville",
+            ),
+            cityRegions["Southwest Florida"]?.find((c) => c.slug === "naples"),
+            cityRegions["Tampa Bay"]?.find((c) => c.slug === "st-petersburg"),
+            cityRegions["Central Florida"]?.find(
+              (c) => c.slug === "gainesville",
+            ),
+          ]
+            .filter(Boolean)
+            .map((city) => (
+              <a
+                href={`/services/${group.slug}/${city.slug}`}
+                style="
             background: linear-gradient(135deg, white 0%, #f8fafc 100%);
             border: 1px solid #e2e8f0;
             border-radius: 16px;
@@ -350,15 +522,21 @@ const heroAlt = getAltText(heroImage);
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(30, 41, 59, 0.06);
           "
-          onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.12)'; this.style.borderColor='#35c3e9'"
-          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(30, 41, 59, 0.06)'; this.style.borderColor='#e2e8f0'">
-            <div style="text-align: center;">
-              <div style="background: #35c3e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <h4 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">{city.nombre}</h4>
-              <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">{city.condado} County</p>
-              <span style="
+                onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(53, 195, 233, 0.12)'; this.style.borderColor='#35c3e9'"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(30, 41, 59, 0.06)'; this.style.borderColor='#e2e8f0'"
+              >
+                <div style="text-align: center;">
+                  <div style="background: #35c3e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">
+                    <i class="fas fa-map-marker-alt" />
+                  </div>
+                  <h4 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">
+                    {city.nombre}
+                  </h4>
+                  <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">
+                    {city.condado} County
+                  </p>
+                  <span
+                    style="
                 background: #35c3e9; 
                 color: white; 
                 padding: 0.6rem 1.2rem; 
@@ -366,27 +544,41 @@ const heroAlt = getAltText(heroImage);
                 font-size: 0.85rem; 
                 font-weight: 600; 
                 display: inline-block;
-              ">
-                Get Service Now →
-              </span>
-            </div>
-          </a>
-        ))}
+              "
+                  >
+                    Get Service Now →
+                  </span>
+                </div>
+              </a>
+            ))
+        }
       </div>
 
       <!-- Professional Notice -->
-      <div class="professional-notice" style="
+      <div
+        class="professional-notice"
+        style="
         margin-top: 3rem;
         background: linear-gradient(135deg, #35c3e9 0%, #2563eb 100%);
         color: white;
         padding: 2rem;
         border-radius: 12px;
         text-align: center;
-      ">
-        <i class="fas fa-tools" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.9;"></i>
-        <h3 style="margin-bottom: 0.5rem;">Professional {group.name} Available Statewide</h3>
-        <p style="margin-bottom: 1.5rem; opacity: 0.9;">Licensed contractors ready to transform your space. Get your free consultation today.</p>
-        <a href="/contact" style="
+      "
+      >
+        <i
+          class="fas fa-tools"
+          style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+        <h3 style="margin-bottom: 0.5rem;">
+          Professional {group.name} Available Statewide
+        </h3>
+        <p style="margin-bottom: 1.5rem; opacity: 0.9;">
+          Licensed contractors ready to transform your space. Get your free
+          consultation today.
+        </p>
+        <a
+          href="/contact"
+          style="
           background: white;
           color: #35c3e9;
           text-decoration: none;
@@ -399,8 +591,9 @@ const heroAlt = getAltText(heroImage);
           gap: 0.5rem;
           transition: all 0.3s ease;
         "
-        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
-        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+          onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(255,255,255,0.3)'"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+        >
           <i class="fas fa-calendar-alt"></i> SCHEDULE FREE CONSULTATION
         </a>
       </div>
@@ -408,20 +601,30 @@ const heroAlt = getAltText(heroImage);
       <!-- Regional Accordion for All Cities -->
       <div class="regional-accordion" style="margin-top: 3rem;">
         <div style="text-align: center; margin-bottom: 2rem;">
-          <h3 style="color: #333; margin-bottom: 0.5rem;">All Florida Service Areas</h3>
-          <p style="color: #666;">Click on any region to see all available cities</p>
+          <h3 style="color: #333; margin-bottom: 0.5rem;">
+            All Florida Service Areas
+          </h3>
+          <p style="color: #666;">
+            Click on any region to see all available cities
+          </p>
         </div>
-        
-        {Object.entries(cityRegions).map(([regionName, regionCities], index) => (
-          <div class="region-accordion-item" style="
+
+        {
+          Object.entries(cityRegions).map(
+            ([regionName, regionCities], index) => (
+              <div
+                class="region-accordion-item"
+                style="
             border: 1px solid #e9ecef;
             border-radius: 8px;
             margin-bottom: 0.5rem;
             background: white;
             overflow: hidden;
-          ">
-            <button class="region-toggle" 
-                    style="
+          "
+              >
+                <button
+                  class="region-toggle"
+                  style="
                       width: 100%;
                       background: #f8f9fa;
                       border: none;
@@ -435,32 +638,49 @@ const heroAlt = getAltText(heroImage);
                       align-items: center;
                       transition: background-color 0.2s ease;
                     "
-                    onclick={`toggleRegion('region-${index}')`}
-                    onmouseover="this.style.backgroundColor='#e9ecef'"
-                    onmouseout="this.style.backgroundColor='#f8f9fa'">
-              <span style="color: #2563eb;">
-                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #35c3e9;"></i>
-                {regionName} ({regionCities.length} Cities)
-              </span>
-              <i class="fas fa-chevron-down region-chevron" id={`chevron-${index}`} style="
+                  onclick={`toggleRegion('region-${index}')`}
+                  onmouseover="this.style.backgroundColor='#e9ecef'"
+                  onmouseout="this.style.backgroundColor='#f8f9fa'"
+                >
+                  <span style="color: #2563eb;">
+                    <i
+                      class="fas fa-map-marker-alt"
+                      style="margin-right: 0.5rem; color: #35c3e9;"
+                    />
+                    {regionName} ({regionCities.length} Cities)
+                  </span>
+                  <i
+                    class="fas fa-chevron-down region-chevron"
+                    id={`chevron-${index}`}
+                    style="
                 color: #6b7280;
                 transition: transform 0.3s ease;
-              "></i>
-            </button>
-            
-            <div class="region-content" id={`region-${index}`} style="
+              "
+                  />
+                </button>
+
+                <div
+                  class="region-content"
+                  id={`region-${index}`}
+                  style="
               max-height: 0;
               overflow: hidden;
               transition: max-height 0.3s ease;
-            ">
-              <div class="cities-grid" style="
+            "
+                >
+                  <div
+                    class="cities-grid"
+                    style="
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 0.75rem;
                 padding: 1.5rem;
-              ">
-                {regionCities.map((city) => (
-                  <a href={`/services/${group.slug}/${city.slug}`} style="
+              "
+                  >
+                    {regionCities.map((city) => (
+                      <a
+                        href={`/services/${group.slug}/${city.slug}`}
+                        style="
                     background: #f8fafc;
                     border: 1px solid #e2e8f0;
                     color: #374151;
@@ -473,16 +693,22 @@ const heroAlt = getAltText(heroImage);
                     align-items: center;
                     justify-content: space-between;
                   "
-                  onmouseover="this.style.backgroundColor='#35c3e9'; this.style.color='white'; this.style.borderColor='#35c3e9'"
-                  onmouseout="this.style.backgroundColor='#f8fafc'; this.style.color='#374151'; this.style.borderColor='#e2e8f0'">
-                    <span>{city.nombre}</span>
-                    <i class="fas fa-arrow-right" style="font-size: 0.75rem; opacity: 0.6;"></i>
-                  </a>
-                ))}
+                        onmouseover="this.style.backgroundColor='#35c3e9'; this.style.color='white'; this.style.borderColor='#35c3e9'"
+                        onmouseout="this.style.backgroundColor='#f8fafc'; this.style.color='#374151'; this.style.borderColor='#e2e8f0'"
+                      >
+                        <span>{city.nombre}</span>
+                        <i
+                          class="fas fa-arrow-right"
+                          style="font-size: 0.75rem; opacity: 0.6;"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ),
+          )
+        }
       </div>
     </div>
   </section>
@@ -490,7 +716,11 @@ const heroAlt = getAltText(heroImage);
   <!-- FAQ Section -->
   <section class="section">
     <div class="container">
-      <FAQ client:load category={group.slug.replace('-remodeling', '')} title={`${group.name} FAQs`} />
+      <FAQ
+        client:load
+        category={group.slug.replace("-remodeling", "")}
+        title={`${group.name} FAQs`}
+      />
     </div>
   </section>
 </div>
@@ -499,17 +729,19 @@ const heroAlt = getAltText(heroImage);
   // Regional accordion functionality
   function toggleRegion(regionId) {
     const content = document.getElementById(regionId);
-    const chevron = document.getElementById(regionId.replace('region-', 'chevron-'));
-    
-    if (content.style.maxHeight === '0px' || !content.style.maxHeight) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      chevron.style.transform = 'rotate(180deg)';
+    const chevron = document.getElementById(
+      regionId.replace("region-", "chevron-"),
+    );
+
+    if (content.style.maxHeight === "0px" || !content.style.maxHeight) {
+      content.style.maxHeight = content.scrollHeight + "px";
+      chevron.style.transform = "rotate(180deg)";
     } else {
-      content.style.maxHeight = '0px';
-      chevron.style.transform = 'rotate(0deg)';
+      content.style.maxHeight = "0px";
+      chevron.style.transform = "rotate(0deg)";
     }
   }
-  
+
   // Make function globally available
   window.toggleRegion = toggleRegion;
 </script>

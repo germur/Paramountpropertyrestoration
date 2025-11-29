@@ -5,7 +5,7 @@ export default function BlogCard({ title, description, author, date, slug, tags,
     day: 'numeric'
   });
 
-  const imageUrl = image ? (image.startsWith('/') ? image : `/${image}`) : '/images/blog/heroBlog.jpg';
+  const imageUrl = image ? (image.startsWith('/') ? image : `/${image}`) : '/images/blog/heroBlog.webp';
 
   return (
     <article className={`blog-card-modern ${featured ? 'featured' : ''} ${viewMode}`}>

@@ -13,7 +13,7 @@ const { group, sub } = Astro.props;
 // Dynamic city grid for Level 4 distribution
 const getCitiesByRegion = () => {
   const regions = {};
-  cities.forEach(city => {
+  cities.forEach((city) => {
     if (!regions[city.region]) {
       regions[city.region] = [];
     }
@@ -30,136 +30,420 @@ const getMitigationContent = (subSlug) => {
     "mitigation-services": {
       hero: {
         title: "Mitigation Services in Florida – Protect Before It Gets Worse",
-        description: "Our mitigation services across Florida focus on limiting property loss from water, fire, mold, and storms. By acting fast, we reduce risks, control costs, and keep your home or business safe.",
+        description:
+          "Our mitigation services across Florida focus on limiting property loss from water, fire, mold, and storms. By acting fast, we reduce risks, control costs, and keep your home or business safe.",
         cta: "Prevent Further Damage",
-        bgImage: "/images/mitigation.jpg"
+        bgImage: "/images/mitigation.webp",
       },
       services: [
-        { icon: "fas fa-tint", title: "Water Mitigation", description: "Emergency water damage mitigation", slug: "water-mitigation", image: "/images/waterDamage.jpg", link: "/restoration/mitigation-services/water-mitigation" },
-        { icon: "fas fa-fire-extinguisher", title: "Fire Mitigation", description: "Fire damage containment and mitigation", slug: "fire-mitigation", image: "/images/fireDamage.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
-        { icon: "fas fa-virus", title: "Mold Mitigation", description: "Mold containment and prevention", slug: "mold-mitigation", image: "/images/moldDamage.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
-        { icon: "fas fa-cloud-rain", title: "Storm Mitigation", description: "Storm damage prevention and securing", slug: "storm-mitigation", image: "/images/stormDamage.jpg", link: "/restoration/mitigation-services/storm-mitigation" }
+        {
+          icon: "fas fa-tint",
+          title: "Water Mitigation",
+          description: "Emergency water damage mitigation",
+          slug: "water-mitigation",
+          image: "/images/waterDamage.webp",
+          link: "/restoration/mitigation-services/water-mitigation",
+        },
+        {
+          icon: "fas fa-fire-extinguisher",
+          title: "Fire Mitigation",
+          description: "Fire damage containment and mitigation",
+          slug: "fire-mitigation",
+          image: "/images/fireDamage.webp",
+          link: "/restoration/mitigation-services/fire-mitigation",
+        },
+        {
+          icon: "fas fa-virus",
+          title: "Mold Mitigation",
+          description: "Mold containment and prevention",
+          slug: "mold-mitigation",
+          image: "/images/moldDamage.webp",
+          link: "/restoration/mitigation-services/mold-mitigation",
+        },
+        {
+          icon: "fas fa-cloud-rain",
+          title: "Storm Mitigation",
+          description: "Storm damage prevention and securing",
+          slug: "storm-mitigation",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/mitigation-services/storm-mitigation",
+        },
       ],
       faqs: [
-        { q: "What are mitigation services?", a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss." },
-        { q: "What is the difference between mitigation and restoration?", a: "Mitigation reduces the impact of damage immediately—like drying water or boarding windows—while restoration repairs and rebuilds the property to pre-loss condition." },
-        { q: "Why is mitigation important?", a: "Acting fast with mitigation saves money, reduces risks, and prevents small problems (like leaks or smoke) from becoming major structural issues." },
-        { q: "Does insurance cover mitigation?", a: "Most policies cover mitigation services as part of property loss claims, since they are critical to reducing overall damage." }
+        {
+          q: "What are mitigation services?",
+          a: "Mitigation services limit property damage before full restoration begins. This includes water extraction, mold containment, fire board-ups, and storm tarping to prevent further loss.",
+        },
+        {
+          q: "What is the difference between mitigation and restoration?",
+          a: "Mitigation reduces the impact of damage immediately—like drying water or boarding windows—while restoration repairs and rebuilds the property to pre-loss condition.",
+        },
+        {
+          q: "Why is mitigation important?",
+          a: "Acting fast with mitigation saves money, reduces risks, and prevents small problems (like leaks or smoke) from becoming major structural issues.",
+        },
+        {
+          q: "Does insurance cover mitigation?",
+          a: "Most policies cover mitigation services as part of property loss claims, since they are critical to reducing overall damage.",
+        },
       ],
       steps: [
-        { title: "Inspection & Risk Assessment", text: "Identify threats from water, fire, mold, or storms", icon: "fas fa-magnifying-glass" },
-        { title: "Containment & Control", text: "Limit exposure and stop further property loss", icon: "fas fa-hard-hat" },
-        { title: "Moisture & Air Quality Management", text: "Use drying, filtration, and antimicrobial methods", icon: "fas fa-wind" },
-        { title: "Temporary Protection", text: "Board-ups, tarps, and barriers until full restoration begins", icon: "fas fa-shield-alt" }
-      ]
+        {
+          title: "Inspection & Risk Assessment",
+          text: "Identify threats from water, fire, mold, or storms",
+          icon: "fas fa-magnifying-glass",
+        },
+        {
+          title: "Containment & Control",
+          text: "Limit exposure and stop further property loss",
+          icon: "fas fa-hard-hat",
+        },
+        {
+          title: "Moisture & Air Quality Management",
+          text: "Use drying, filtration, and antimicrobial methods",
+          icon: "fas fa-wind",
+        },
+        {
+          title: "Temporary Protection",
+          text: "Board-ups, tarps, and barriers until full restoration begins",
+          icon: "fas fa-shield-alt",
+        },
+      ],
     },
     "water-mitigation": {
       hero: {
         title: "Water Damage Mitigation Services in Florida",
-        description: "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
+        description:
+          "Water damage mitigation focuses on stopping the spread of water before it causes permanent structural issues or mold growth. Unlike restoration (which repairs after the damage), mitigation is the first and most critical step to protect your Florida property from further loss.",
         cta: "Start Water Mitigation Now",
-        bgImage: "/images/mitigation.jpg"
+        bgImage: "/images/mitigation.webp",
       },
       services: [
-        { icon: "fas fa-eye", title: "Emergency Inspection & Moisture Mapping", description: "Detect visible + hidden water.", image: "/images/waterDamage.jpg", link: "/restoration/mitigation-services/water-mitigation" },
-        { icon: "fas fa-pump-soap", title: "Rapid Water Extraction", description: "Pumps & wet vacs remove standing water fast.", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/mitigation-services/water-mitigation" },
-        { icon: "fas fa-fan", title: "Industrial Drying & Dehumidification", description: "Stabilize humidity with pro gear.", image: "/images/waterproofing.jpg", link: "/restoration/mitigation-services/water-mitigation" },
-        { icon: "fas fa-spray-can", title: "Antimicrobial Treatment", description: "Stop mold & bacteria before they spread.", image: "/images/moisture-repair.jpg", link: "/restoration/mitigation-services/water-mitigation" }
+        {
+          icon: "fas fa-eye",
+          title: "Emergency Inspection & Moisture Mapping",
+          description: "Detect visible + hidden water.",
+          image: "/images/waterDamage.webp",
+          link: "/restoration/mitigation-services/water-mitigation",
+        },
+        {
+          icon: "fas fa-pump-soap",
+          title: "Rapid Water Extraction",
+          description: "Pumps & wet vacs remove standing water fast.",
+          image: "/images/EmergencyWaterRemoval.webp",
+          link: "/restoration/mitigation-services/water-mitigation",
+        },
+        {
+          icon: "fas fa-fan",
+          title: "Industrial Drying & Dehumidification",
+          description: "Stabilize humidity with pro gear.",
+          image: "/images/waterproofing.webp",
+          link: "/restoration/mitigation-services/water-mitigation",
+        },
+        {
+          icon: "fas fa-spray-can",
+          title: "Antimicrobial Treatment",
+          description: "Stop mold & bacteria before they spread.",
+          image: "/images/moisture-repair.webp",
+          link: "/restoration/mitigation-services/water-mitigation",
+        },
       ],
       faqs: [
-        { q: "What is water damage mitigation vs restoration?", a: "Mitigation = stop further damage (extraction, drying, stabilization). Restoration = repairs & rebuild. Both are essential." },
-        { q: "Can I do water mitigation myself?", a: "Minor spills = yes. Floods, roof leaks, or burst pipes = need industrial drying to avoid mold & structural weakening." },
-        { q: "How long does water mitigation take?", a: "Usually 1–3 days, depending on severity. Large floods may require longer with daily monitoring." },
-        { q: "Does insurance cover water mitigation?", a: "Yes—most policies cover mitigation since it reduces total claim costs. We provide full documentation for insurers." }
+        {
+          q: "What is water damage mitigation vs restoration?",
+          a: "Mitigation = stop further damage (extraction, drying, stabilization). Restoration = repairs & rebuild. Both are essential.",
+        },
+        {
+          q: "Can I do water mitigation myself?",
+          a: "Minor spills = yes. Floods, roof leaks, or burst pipes = need industrial drying to avoid mold & structural weakening.",
+        },
+        {
+          q: "How long does water mitigation take?",
+          a: "Usually 1–3 days, depending on severity. Large floods may require longer with daily monitoring.",
+        },
+        {
+          q: "Does insurance cover water mitigation?",
+          a: "Yes—most policies cover mitigation since it reduces total claim costs. We provide full documentation for insurers.",
+        },
       ],
       steps: [
-        { title: "Emergency Inspection & Moisture Mapping", text: "Detect visible + hidden water", icon: "fas fa-eye" },
-        { title: "Rapid Water Extraction", text: "Pumps & wet vacs remove standing water fast", icon: "fas fa-pump-soap" },
-        { title: "Industrial Drying & Dehumidification", text: "Stabilize humidity with pro gear", icon: "fas fa-fan" },
-        { title: "Antimicrobial Treatment", text: "Stop mold & bacteria before they spread", icon: "fas fa-spray-can" },
-        { title: "Ongoing Monitoring", text: "Daily checks until property is fully dry", icon: "fas fa-chart-line" }
-      ]
+        {
+          title: "Emergency Inspection & Moisture Mapping",
+          text: "Detect visible + hidden water",
+          icon: "fas fa-eye",
+        },
+        {
+          title: "Rapid Water Extraction",
+          text: "Pumps & wet vacs remove standing water fast",
+          icon: "fas fa-pump-soap",
+        },
+        {
+          title: "Industrial Drying & Dehumidification",
+          text: "Stabilize humidity with pro gear",
+          icon: "fas fa-fan",
+        },
+        {
+          title: "Antimicrobial Treatment",
+          text: "Stop mold & bacteria before they spread",
+          icon: "fas fa-spray-can",
+        },
+        {
+          title: "Ongoing Monitoring",
+          text: "Daily checks until property is fully dry",
+          icon: "fas fa-chart-line",
+        },
+      ],
     },
     "fire-mitigation": {
       hero: {
         title: "Fire Damage Mitigation Services in Florida",
-        description: "After a fire, the damage doesn't end when the flames are out. Smoke, soot, and structural instability keep spreading harm. Fire damage mitigation focuses on securing, containing, and stabilizing your property to prevent further loss—while restoration repairs and rebuilds later.",
+        description:
+          "After a fire, the damage doesn't end when the flames are out. Smoke, soot, and structural instability keep spreading harm. Fire damage mitigation focuses on securing, containing, and stabilizing your property to prevent further loss—while restoration repairs and rebuilds later.",
         cta: "Secure My Property Now",
-        bgImage: "/images/mitigation.jpg"
+        bgImage: "/images/mitigation.webp",
       },
       services: [
-        { icon: "fas fa-tarp", title: "Emergency Board-Up & Tarping", description: "Seal windows, doors & roofs against further water.", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
-        { icon: "fas fa-hard-hat", title: "Smoke & Soot Containment", description: "Isolate affected areas to stop spread.", image: "/images/SmokeDamage.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
-        { icon: "fas fa-wind", title: "Ventilation & Air Scrubbing", description: "HEPA filters + negative air machines.", image: "/images/SootCleanup.jpg", link: "/restoration/mitigation-services/fire-mitigation" },
-        { icon: "fas fa-box", title: "Protection of Belongings", description: "Salvage & store safe items.", image: "/images/fireDamage.jpg", link: "/restoration/mitigation-services/fire-mitigation" }
+        {
+          icon: "fas fa-tarp",
+          title: "Emergency Board-Up & Tarping",
+          description: "Seal windows, doors & roofs against further water.",
+          image: "/images/EmergencyStormRepair.webp",
+          link: "/restoration/mitigation-services/fire-mitigation",
+        },
+        {
+          icon: "fas fa-hard-hat",
+          title: "Smoke & Soot Containment",
+          description: "Isolate affected areas to stop spread.",
+          image: "/images/SmokeDamage.webp",
+          link: "/restoration/mitigation-services/fire-mitigation",
+        },
+        {
+          icon: "fas fa-wind",
+          title: "Ventilation & Air Scrubbing",
+          description: "HEPA filters + negative air machines.",
+          image: "/images/SootCleanup.webp",
+          link: "/restoration/mitigation-services/fire-mitigation",
+        },
+        {
+          icon: "fas fa-box",
+          title: "Protection of Belongings",
+          description: "Salvage & store safe items.",
+          image: "/images/fireDamage.webp",
+          link: "/restoration/mitigation-services/fire-mitigation",
+        },
       ],
       faqs: [
-        { q: "What is fire damage mitigation?", a: "It's the process of securing & stabilizing a property after a fire—board-ups, smoke containment, ventilation." },
-        { q: "Why is fire mitigation important?", a: "Without mitigation, soot spreads, odors become permanent, and structures weaken—making restoration harder & costlier." },
-        { q: "What's the difference between fire mitigation and restoration?", a: "Mitigation = prevention of further damage. Restoration = rebuild to pre-loss condition." },
-        { q: "How fast should fire mitigation start?", a: "Immediately. The first 24 hours are critical." }
+        {
+          q: "What is fire damage mitigation?",
+          a: "It's the process of securing & stabilizing a property after a fire—board-ups, smoke containment, ventilation.",
+        },
+        {
+          q: "Why is fire mitigation important?",
+          a: "Without mitigation, soot spreads, odors become permanent, and structures weaken—making restoration harder & costlier.",
+        },
+        {
+          q: "What's the difference between fire mitigation and restoration?",
+          a: "Mitigation = prevention of further damage. Restoration = rebuild to pre-loss condition.",
+        },
+        {
+          q: "How fast should fire mitigation start?",
+          a: "Immediately. The first 24 hours are critical.",
+        },
       ],
       steps: [
-        { title: "Emergency Board-Up & Tarping", text: "Secure windows, doors, roofs", icon: "fas fa-tarp" },
-        { title: "Smoke & Soot Containment", text: "Isolate affected areas to stop spread", icon: "fas fa-hard-hat" },
-        { title: "Ventilation & Air Scrubbing", text: "HEPA filters + negative air machines", icon: "fas fa-wind" },
-        { title: "Protection of Belongings", text: "Salvage & store safe items", icon: "fas fa-box" },
-        { title: "Moisture Control from Firefighting", text: "Drying to prevent mold", icon: "fas fa-droplet" }
-      ]
+        {
+          title: "Emergency Board-Up & Tarping",
+          text: "Secure windows, doors, roofs",
+          icon: "fas fa-tarp",
+        },
+        {
+          title: "Smoke & Soot Containment",
+          text: "Isolate affected areas to stop spread",
+          icon: "fas fa-hard-hat",
+        },
+        {
+          title: "Ventilation & Air Scrubbing",
+          text: "HEPA filters + negative air machines",
+          icon: "fas fa-wind",
+        },
+        {
+          title: "Protection of Belongings",
+          text: "Salvage & store safe items",
+          icon: "fas fa-box",
+        },
+        {
+          title: "Moisture Control from Firefighting",
+          text: "Drying to prevent mold",
+          icon: "fas fa-droplet",
+        },
+      ],
     },
     "mold-mitigation": {
       hero: {
         title: "Mold Mitigation Services in Florida",
-        description: "Mold mitigation is about prevention and containment—stopping mold from spreading, controlling humidity, and protecting your property until full remediation can safely remove it. Unlike remediation, which eliminates colonies, mitigation is the first line of defense against contamination and health risks.",
+        description:
+          "Mold mitigation is about prevention and containment—stopping mold from spreading, controlling humidity, and protecting your property until full remediation can safely remove it. Unlike remediation, which eliminates colonies, mitigation is the first line of defense against contamination and health risks.",
         cta: "Stop Mold Spread Today",
-        bgImage: "/images/mitigation.jpg"
+        bgImage: "/images/mitigation.webp",
       },
       services: [
-        { icon: "fas fa-magnifying-glass", title: "Inspection & Moisture Assessment", description: "Detect leaks, water damage & humidity.", image: "/images/MoldInspection.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
-        { icon: "fas fa-hard-hat", title: "Containment of Affected Areas", description: "Plastic barriers + negative air pressure.", image: "/images/BlackMoldRemoval.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
-        { icon: "fas fa-filter", title: "HEPA Air Filtration", description: "Capture airborne spores with high-efficiency systems.", image: "/images/moldDamage.jpg", link: "/restoration/mitigation-services/mold-mitigation" },
-        { icon: "fas fa-spray-can", title: "Antimicrobial & Preventive Treatment", description: "Apply eco-safe treatments to surfaces.", image: "/images/MoldPrevention.jpg", link: "/restoration/mitigation-services/mold-mitigation" }
+        {
+          icon: "fas fa-magnifying-glass",
+          title: "Inspection & Moisture Assessment",
+          description: "Detect leaks, water damage & humidity.",
+          image: "/images/MoldInspection.webp",
+          link: "/restoration/mitigation-services/mold-mitigation",
+        },
+        {
+          icon: "fas fa-hard-hat",
+          title: "Containment of Affected Areas",
+          description: "Plastic barriers + negative air pressure.",
+          image: "/images/BlackMoldRemoval.webp",
+          link: "/restoration/mitigation-services/mold-mitigation",
+        },
+        {
+          icon: "fas fa-filter",
+          title: "HEPA Air Filtration",
+          description: "Capture airborne spores with high-efficiency systems.",
+          image: "/images/moldDamage.webp",
+          link: "/restoration/mitigation-services/mold-mitigation",
+        },
+        {
+          icon: "fas fa-spray-can",
+          title: "Antimicrobial & Preventive Treatment",
+          description: "Apply eco-safe treatments to surfaces.",
+          image: "/images/MoldPrevention.webp",
+          link: "/restoration/mitigation-services/mold-mitigation",
+        },
       ],
       faqs: [
-        { q: "What is mold mitigation?", a: "It's the process of containing mold, improving air quality, and controlling moisture before remediation begins." },
-        { q: "Does mold mitigation remove mold?", a: "No—mitigation prevents spread, but remediation removes colonies permanently." },
-        { q: "Why is mold mitigation important?", a: "It protects health, limits property damage, and reduces remediation costs." },
-        { q: "How long does mitigation take?", a: "Usually 1–3 days, depending on moisture and area size." }
+        {
+          q: "What is mold mitigation?",
+          a: "It's the process of containing mold, improving air quality, and controlling moisture before remediation begins.",
+        },
+        {
+          q: "Does mold mitigation remove mold?",
+          a: "No—mitigation prevents spread, but remediation removes colonies permanently.",
+        },
+        {
+          q: "Why is mold mitigation important?",
+          a: "It protects health, limits property damage, and reduces remediation costs.",
+        },
+        {
+          q: "How long does mitigation take?",
+          a: "Usually 1–3 days, depending on moisture and area size.",
+        },
       ],
       steps: [
-        { title: "Inspection & Moisture Assessment", text: "Detect leaks, water damage & humidity", icon: "fas fa-magnifying-glass" },
-        { title: "Containment of Affected Areas", text: "Plastic barriers + negative air pressure", icon: "fas fa-hard-hat" },
-        { title: "HEPA Air Filtration", text: "Capture airborne spores with high-efficiency systems", icon: "fas fa-filter" },
-        { title: "Antimicrobial & Preventive Treatment", text: "Apply eco-safe treatments to surfaces", icon: "fas fa-spray-can" },
-        { title: "Moisture Control & Monitoring", text: "Industrial dehumidifiers + continuous checks", icon: "fas fa-chart-line" }
-      ]
+        {
+          title: "Inspection & Moisture Assessment",
+          text: "Detect leaks, water damage & humidity",
+          icon: "fas fa-magnifying-glass",
+        },
+        {
+          title: "Containment of Affected Areas",
+          text: "Plastic barriers + negative air pressure",
+          icon: "fas fa-hard-hat",
+        },
+        {
+          title: "HEPA Air Filtration",
+          text: "Capture airborne spores with high-efficiency systems",
+          icon: "fas fa-filter",
+        },
+        {
+          title: "Antimicrobial & Preventive Treatment",
+          text: "Apply eco-safe treatments to surfaces",
+          icon: "fas fa-spray-can",
+        },
+        {
+          title: "Moisture Control & Monitoring",
+          text: "Industrial dehumidifiers + continuous checks",
+          icon: "fas fa-chart-line",
+        },
+      ],
     },
     "storm-mitigation": {
       hero: {
         title: "Storm Damage Mitigation Services in Florida",
-        description: "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact.",
+        description:
+          "Storms and hurricanes don't just cause immediate destruction—they leave homes and businesses exposed to secondary damage like flooding, mold, and structural collapse. Storm mitigation focuses on securing and stabilizing your property right after impact.",
         cta: "Request Storm Mitigation Now",
-        bgImage: "/images/mitigation.jpg"
+        bgImage: "/images/mitigation.webp",
       },
       services: [
-        { icon: "fas fa-tarp", title: "Emergency Board-Up & Roof Tarping", description: "Seal windows, doors & roofs against further water.", image: "/images/EmergencyStormRepair.jpg", link: "/restoration/mitigation-services/storm-mitigation" },
-        { icon: "fas fa-tree", title: "Debris & Tree Removal", description: "Clear dangerous debris, fallen trees, and damaged structures.", image: "/images/StormDebrisRemoval.jpg", link: "/restoration/mitigation-services/storm-mitigation" },
-        { icon: "fas fa-water", title: "Water Intrusion Control", description: "Extract standing water, dry interiors, apply antimicrobials.", image: "/images/HurricaneDamage.jpg", link: "/restoration/mitigation-services/storm-mitigation" },
-        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Shore up walls, ceilings, and framing until restoration starts.", image: "/images/stormDamage.jpg", link: "/restoration/mitigation-services/storm-mitigation" }
+        {
+          icon: "fas fa-tarp",
+          title: "Emergency Board-Up & Roof Tarping",
+          description: "Seal windows, doors & roofs against further water.",
+          image: "/images/EmergencyStormRepair.webp",
+          link: "/restoration/mitigation-services/storm-mitigation",
+        },
+        {
+          icon: "fas fa-tree",
+          title: "Debris & Tree Removal",
+          description:
+            "Clear dangerous debris, fallen trees, and damaged structures.",
+          image: "/images/StormDebrisRemoval.webp",
+          link: "/restoration/mitigation-services/storm-mitigation",
+        },
+        {
+          icon: "fas fa-water",
+          title: "Water Intrusion Control",
+          description:
+            "Extract standing water, dry interiors, apply antimicrobials.",
+          image: "/images/HurricaneDamage.webp",
+          link: "/restoration/mitigation-services/storm-mitigation",
+        },
+        {
+          icon: "fas fa-tools",
+          title: "Structural Stabilization",
+          description:
+            "Shore up walls, ceilings, and framing until restoration starts.",
+          image: "/images/stormDamage.webp",
+          link: "/restoration/mitigation-services/storm-mitigation",
+        },
       ],
       faqs: [
-        { q: "What is storm damage mitigation?", a: "It's securing & stabilizing a property after a storm—tarping roofs, boarding windows, removing debris." },
-        { q: "Why is storm mitigation important?", a: "Without it, rain, debris & humidity cause higher repair costs & safety risks." },
-        { q: "What's the difference between storm mitigation & restoration?", a: "Mitigation = prevent more damage. Restoration = repair & rebuild." },
-        { q: "How fast should storm mitigation start?", a: "Immediately after the storm clears. The sooner it's secured, the less secondary damage occurs." }
+        {
+          q: "What is storm damage mitigation?",
+          a: "It's securing & stabilizing a property after a storm—tarping roofs, boarding windows, removing debris.",
+        },
+        {
+          q: "Why is storm mitigation important?",
+          a: "Without it, rain, debris & humidity cause higher repair costs & safety risks.",
+        },
+        {
+          q: "What's the difference between storm mitigation & restoration?",
+          a: "Mitigation = prevent more damage. Restoration = repair & rebuild.",
+        },
+        {
+          q: "How fast should storm mitigation start?",
+          a: "Immediately after the storm clears. The sooner it's secured, the less secondary damage occurs.",
+        },
       ],
       steps: [
-        { title: "Emergency Board-Up & Roof Tarping", text: "Seal windows, doors & roofs against further water", icon: "fas fa-tarp" },
-        { title: "Debris & Tree Removal", text: "Clear dangerous debris, fallen trees, and damaged structures", icon: "fas fa-tree" },
-        { title: "Water Intrusion Control", text: "Extract standing water, dry interiors, apply antimicrobials", icon: "fas fa-water" },
-        { title: "Structural Stabilization", text: "Shore up walls, ceilings, and framing until restoration starts", icon: "fas fa-tools" }
-      ]
-    }
+        {
+          title: "Emergency Board-Up & Roof Tarping",
+          text: "Seal windows, doors & roofs against further water",
+          icon: "fas fa-tarp",
+        },
+        {
+          title: "Debris & Tree Removal",
+          text: "Clear dangerous debris, fallen trees, and damaged structures",
+          icon: "fas fa-tree",
+        },
+        {
+          title: "Water Intrusion Control",
+          text: "Extract standing water, dry interiors, apply antimicrobials",
+          icon: "fas fa-water",
+        },
+        {
+          title: "Structural Stabilization",
+          text: "Shore up walls, ceilings, and framing until restoration starts",
+          icon: "fas fa-tools",
+        },
+      ],
+    },
   };
 
   return mitigationContent[subSlug] || mitigationContent["water-mitigation"];
@@ -167,11 +451,15 @@ const getMitigationContent = (subSlug) => {
 
 const content = getMitigationContent(sub?.slug || group.slug);
 const faqCategory = `mitigation-${sub?.slug || group.slug}`;
-
 ---
 
 <!-- Hero Section -->
-<section class="hero-section" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`} role="img" aria-label={getAltText(content.hero.bgImage)}>
+<section
+  class="hero-section"
+  style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${content.hero.bgImage})`}
+  role="img"
+  aria-label={getAltText(content.hero.bgImage)}
+>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>{content.hero.title}</h1>
@@ -183,40 +471,50 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
 <!-- Services Grid -->
 <section>
   <div class="services-grid">
-    {content.services.map((service) => (
-      <a href={service.link} class="service-item-clickable">
-        <i class={service.icon}></i>
-        <h3>{service.title}</h3>
-      </a>
-    ))}
+    {
+      content.services.map((service) => (
+        <a href={service.link} class="service-item-clickable">
+          <i class={service.icon} />
+          <h3>{service.title}</h3>
+        </a>
+      ))
+    }
   </div>
 </section>
 
 <!-- Solutions Cards -->
 <section class="solutions-section">
   <div class="container">
-  <h2 class="solutions-title">Comprehensive Mitigation Solutions</h2>
-  <div class="solutions-grid">
-    {content.services.map((service, index) => (
-      <div class="solution-card">
-        <div class="card-image">
-          <img src={service.image} alt={`Professional ${service.title.toLowerCase()} services in Florida - damage prevention specialists`} loading="lazy" />
-        </div>
-        <div class="card-content">
-          <h3>{service.title}</h3>
-          <div class="service-description">
-            <p>{service.description}</p>
-            <div class="service-features">
-              <span class="feature-tag">🚨 24/7 Response</span>
-              <span class="feature-tag">🛡️ Prevention</span>
-              <span class="feature-tag">💰 Cost Savings</span>
+    <h2 class="solutions-title">Comprehensive Mitigation Solutions</h2>
+    <div class="solutions-grid">
+      {
+        content.services.map((service, index) => (
+          <div class="solution-card">
+            <div class="card-image">
+              <img
+                src={service.image}
+                alt={`Professional ${service.title.toLowerCase()} services in Florida - damage prevention specialists`}
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>{service.title}</h3>
+              <div class="service-description">
+                <p>{service.description}</p>
+                <div class="service-features">
+                  <span class="feature-tag">🚨 24/7 Response</span>
+                  <span class="feature-tag">🛡️ Prevention</span>
+                  <span class="feature-tag">💰 Cost Savings</span>
+                </div>
+              </div>
+              <a href={service.link || "/contact"} class="btn">
+                Get Emergency Mitigation Help →
+              </a>
             </div>
           </div>
-          <a href={service.link || "/contact"} class="btn">Get Emergency Mitigation Help →</a>
-        </div>
-      </div>
-    ))}
-  </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 
@@ -224,15 +522,17 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
 <section class="steps-section">
   <h2 class="steps-title">How It Works</h2>
   <div class="steps-container">
-    {content.steps.map((step, index) => (
-      <div class="step-item" data-step={index + 1}>
-        <div class="step-icon">
-          <i class={step.icon}></i>
+    {
+      content.steps.map((step, index) => (
+        <div class="step-item" data-step={index + 1}>
+          <div class="step-icon">
+            <i class={step.icon} />
+          </div>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
         </div>
-        <h3>{step.title}</h3>
-        <p>{step.text}</p>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
@@ -244,39 +544,66 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
       <div class="content-main">
         <div class="content-block">
           <h3>Warning Signs That Require {sub?.title || group.name}</h3>
-          <p>Mitigation services are the critical first step in property damage response. By acting immediately after water intrusion, fire, storm damage, or mold discovery, you can prevent secondary damage that often costs more than the original loss. Florida's climate makes rapid response especially important for preventing mold growth and structural deterioration.</p>
+          <p>
+            Mitigation services are the critical first step in property damage
+            response. By acting immediately after water intrusion, fire, storm
+            damage, or mold discovery, you can prevent secondary damage that
+            often costs more than the original loss. Florida's climate makes
+            rapid response especially important for preventing mold growth and
+            structural deterioration.
+          </p>
           <ul class="warning-signs">
-            <li><i class="fas fa-eye"></i> Visible damage from water, fire, or storms</li>
-            <li><i class="fas fa-clock"></i> Time-sensitive damage spreading rapidly</li>
+            <li>
+              <i class="fas fa-eye"></i> Visible damage from water, fire, or storms
+            </li>
+            <li>
+              <i class="fas fa-clock"></i> Time-sensitive damage spreading rapidly
+            </li>
             <li><i class="fas fa-home"></i> Structural integrity concerns</li>
-            <li><i class="fas fa-shield-alt"></i> Need for immediate containment</li>
-            <li><i class="fas fa-dollar-sign"></i> Risk of increased repair costs without action</li>
+            <li>
+              <i class="fas fa-shield-alt"></i> Need for immediate containment
+            </li>
+            <li>
+              <i class="fas fa-dollar-sign"></i> Risk of increased repair costs without
+              action
+            </li>
           </ul>
         </div>
-        
+
         <div class="content-block">
           <h3>Our Detailed {sub?.title || group.name} Process</h3>
-          <p>Our certified mitigation specialists follow industry best practices to contain damage, protect unaffected areas, and create stable conditions for restoration. We use advanced equipment and techniques to minimize loss and ensure your property is properly stabilized.</p>
+          <p>
+            Our certified mitigation specialists follow industry best practices
+            to contain damage, protect unaffected areas, and create stable
+            conditions for restoration. We use advanced equipment and techniques
+            to minimize loss and ensure your property is properly stabilized.
+          </p>
           <div class="process-detailed">
-            {content.steps.map((step, index) => (
-              <div class="process-step-detailed">
-                <div class="step-number">{index + 1}</div>
-                <div class="step-content">
-                  <h4>{step.title}</h4>
-                  <p>{step.text}</p>
+            {
+              content.steps.map((step, index) => (
+                <div class="process-step-detailed">
+                  <div class="step-number">{index + 1}</div>
+                  <div class="step-content">
+                    <h4>{step.title}</h4>
+                    <p>{step.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </div>
-      
+
       <div class="content-sidebar">
         <div class="trust-indicators">
           <h3>Why Choose Paramount Property Restoration?</h3>
           <ul class="trust-list">
-            <li><i class="fas fa-certificate"></i> IICRC Certified Technicians</li>
-            <li><i class="fas fa-shield-alt"></i> Licensed & Insured in Florida</li>
+            <li>
+              <i class="fas fa-certificate"></i> IICRC Certified Technicians
+            </li>
+            <li>
+              <i class="fas fa-shield-alt"></i> Licensed & Insured in Florida
+            </li>
             <li><i class="fas fa-clock"></i> 24/7 Emergency Response</li>
             <li><i class="fas fa-handshake"></i> Direct Insurance Billing</li>
             <li><i class="fas fa-tools"></i> Advanced Mitigation Equipment</li>
@@ -293,23 +620,38 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
     <h2>Mitigation Services Insurance Claims Support</h2>
     <div class="insurance-grid">
       <div class="insurance-content">
-        <p>Insurance companies recognize that proper mitigation saves money by preventing additional damage. Our team documents all mitigation efforts thoroughly, coordinates with adjusters, and ensures you receive full coverage for necessary emergency services that protect your property from further loss.</p>
-        
+        <p>
+          Insurance companies recognize that proper mitigation saves money by
+          preventing additional damage. Our team documents all mitigation
+          efforts thoroughly, coordinates with adjusters, and ensures you
+          receive full coverage for necessary emergency services that protect
+          your property from further loss.
+        </p>
+
         <div class="insurance-benefits">
           <div class="benefit-item">
             <i class="fas fa-camera"></i>
             <h4>Complete Damage Documentation</h4>
-            <p>Detailed before/during/after photos and reports for your insurance claim</p>
+            <p>
+              Detailed before/during/after photos and reports for your insurance
+              claim
+            </p>
           </div>
           <div class="benefit-item">
             <i class="fas fa-handshake"></i>
             <h4>Insurance Coordination</h4>
-            <p>We work directly with adjusters to explain mitigation necessity and scope</p>
+            <p>
+              We work directly with adjusters to explain mitigation necessity
+              and scope
+            </p>
           </div>
           <div class="benefit-item">
             <i class="fas fa-dollar-sign"></i>
             <h4>Cost Justification</h4>
-            <p>Our expertise helps demonstrate how mitigation reduces overall claim costs</p>
+            <p>
+              Our expertise helps demonstrate how mitigation reduces overall
+              claim costs
+            </p>
           </div>
         </div>
       </div>
@@ -321,43 +663,65 @@ const faqCategory = `mitigation-${sub?.slug || group.slug}`;
 <section class="section city-grid-section">
   <div class="container">
     <h2>Find Our Local {sub?.title || group.name} Experts Near You</h2>
-    <p class="section-subtitle">Professional {sub?.title || group.name.toLowerCase()} services available across Florida. Click your city for immediate local assistance.</p>
-    
+    <p class="section-subtitle">
+      Professional {sub?.title || group.name.toLowerCase()} services available across
+      Florida. Click your city for immediate local assistance.
+    </p>
+
     <div class="unified-city-container">
-      {Object.entries(cityRegions).map(([regionName, cities]) => (
-        <div class="unified-region-card">
-          <h3 class="unified-region-title">{regionName}</h3>
-          <div class="unified-city-pills">
-            {cities.slice(0, 4).map(city => (
-              <a href={sub ? `/restoration/${group.slug}/${sub.slug}/${city.slug}` : `/restoration/${group.slug}/water-mitigation/${city.slug}`} class="unified-city-pill">
-                {city.nombre}
-              </a>
-            ))}
-            {cities.length > 4 && (
-              <span class="unified-more-indicator">
-                +{cities.length - 4} more
-              </span>
-            )}
+      {
+        Object.entries(cityRegions).map(([regionName, cities]) => (
+          <div class="unified-region-card">
+            <h3 class="unified-region-title">{regionName}</h3>
+            <div class="unified-city-pills">
+              {cities.slice(0, 4).map((city) => (
+                <a
+                  href={
+                    sub
+                      ? `/restoration/${group.slug}/${sub.slug}/${city.slug}`
+                      : `/restoration/${group.slug}/water-mitigation/${city.slug}`
+                  }
+                  class="unified-city-pill"
+                >
+                  {city.nombre}
+                </a>
+              ))}
+              {cities.length > 4 && (
+                <span class="unified-more-indicator">
+                  +{cities.length - 4} more
+                </span>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <div class="emergency-notice">
       <h3>Emergency {sub?.title || group.name} Response</h3>
-      <p>Don't wait for damage to worsen. Our certified technicians are standing by 24/7 to help protect your property.</p>
-      <a href="tel:+17866022217" class="emergency-phone">Call (786) 602-2217 Now</a>
+      <p>
+        Don't wait for damage to worsen. Our certified technicians are standing
+        by 24/7 to help protect your property.
+      </p>
+      <a href="tel:+17866022217" class="emergency-phone"
+        >Call (786) 602-2217 Now</a
+      >
     </div>
   </div>
 </section>
 
 <!-- FAQ Section -->
 <section>
-  <FAQ client:load category={faqCategory} customQuestions={content.faqs.map((faq, index) => ({
-    id: `${faqCategory}-${index}`,
-    question: faq.q,
-    answer: faq.a
-  }))} title="Frequently Asked Questions" />
+  <FAQ
+    client:load
+    category={faqCategory}
+    customQuestions={content.faqs.map((faq, index) => ({
+      id: `${faqCategory}-${index}`,
+      question: faq.q,
+      answer: faq.a,
+    }))}
+    title="Frequently Asked Questions"
+  />
 </section>
 
 <!-- Final CTA -->

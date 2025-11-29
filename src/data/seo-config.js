@@ -31,7 +31,7 @@ export const seoTemplates = {
     keywordsTemplate: "{service} {city}, {service} contractor {city}, home renovation {city}, remodeling {city} FL",
     h1Template: "Professional {service} in {city}, Florida"
   },
-  
+
   // Para /restoration/[service]/[subcategory]/[ciudad]/
   restoration: {
     titleTemplate: "{subcategory} in {city}, FL | 24/7 Emergency Response",
@@ -65,7 +65,7 @@ export const generateLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": businessInfo.name,
-  "image": `${businessInfo.website}/images/og-image.jpg`,
+  "image": `${businessInfo.website}/images/og-image.webp`,
   "telephone": businessInfo.phone,
   "email": businessInfo.email,
   "address": {
