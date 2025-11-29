@@ -1,6 +1,5 @@
 // Enhanced Schema.org markup for rich snippets
 // Generates multiple schema types for better SERP visibility
-import { CONTACT_PHONE } from '../config/constants.js';
 
 /**
  * Generate enhanced LocalBusiness schema with all properties
@@ -8,7 +7,7 @@ import { CONTACT_PHONE } from '../config/constants.js';
 export function generateLocalBusinessSchema({
   name = 'Paramount Property Restoration',
   url = 'https://paramountpropertyrestoration.com',
-  phone = CONTACT_PHONE,
+  phone = '+1-786-602-2217',
   email = 'services@paramountpropertyrestoration.com',
   address = {
     streetAddress: '',
@@ -33,7 +32,7 @@ export function generateLocalBusinessSchema({
     '@type': 'LocalBusiness',
     '@id': `${url}/#localbusiness`,
     name,
-    image: `${url}/images/ppr-logo-new.webp`,
+    image: `${url}/images/ppr-logo-new.png`,
     url,
     telephone: phone,
     email,
@@ -176,7 +175,7 @@ export function generateArticleSchema({
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo-new.webp`,
+        url: `${siteUrl}/images/ppr-logo-new.png`,
         width: 600,
         height: 60
       }
@@ -271,6 +270,37 @@ export function generateBreadcrumbSchema(items = [], siteUrl = 'https://paramoun
   };
 }
 
+/**
+ * Generate Review schema
+ */
+export function generateReviewSchema({
+  itemReviewed,
+  reviews = []
+}) {
+  if (!reviews.length) return null;
+
+  return reviews.map((review, index) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    '@id': `#review-${index}`,
+    itemReviewed: {
+      '@type': 'Service',
+      name: itemReviewed
+    },
+    author: {
+      '@type': 'Person',
+      name: review.author
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: review.rating,
+      bestRating: '5',
+      worstRating: '1'
+    },
+    reviewBody: review.text,
+    datePublished: review.date
+  }));
+}
 
 /**
  * Generate Organization schema with full details
@@ -278,8 +308,8 @@ export function generateBreadcrumbSchema(items = [], siteUrl = 'https://paramoun
 export function generateOrganizationSchema({
   name = 'Paramount Property Restoration',
   url = 'https://paramountpropertyrestoration.com',
-  logo = '/images/ppr-logo-new.webp',
-  phone = CONTACT_PHONE,
+  logo = '/images/ppr-logo-new.png',
+  phone = '+1-786-602-2217',
   email = 'services@paramountpropertyrestoration.com',
   description = "Florida's premier property restoration and remodeling company. 24/7 emergency services for water, fire, mold, and storm damage. Professional home remodeling for kitchens, bathrooms, and more."
 }) {
@@ -402,7 +432,13 @@ export default function EnhancedSchemas({ schemas = {} }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.webPage) }}
         />
       )}
-
+      {schemas.reviews && schemas.reviews.map((review, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(review) }}
+        />
+      ))}
     </>
   );
 }

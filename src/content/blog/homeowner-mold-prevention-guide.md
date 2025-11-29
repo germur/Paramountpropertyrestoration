@@ -6,18 +6,18 @@ metaDescription: "Interactive mold prevention guide for Florida homeowners. Lear
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Mold Remediation", "Home Maintenance", "Florida Property"]
+tags: ["Mold Prevention", "Home Maintenance", "Mold Detection", "Florida Homes", "Water Damage"]
 keywords: ["mold prevention tips", "how to prevent mold", "Florida mold control", "home humidity control", "mold detection methods", "prevent mold growth"]
 category: "Home Maintenance & Prevention"
 featured: true
-image: "/images/blog/homeowner-mold-prevention-guide.png"
-ogImage: "/images/blog/homeowner-mold-prevention-guide.png"
+image: "/images/moldDamage.jpg"
+ogImage: "/images/moldDamage.jpg"
 readTime: 6
 ---
 
 # Homeowner's Complete Mold Prevention & Detection Guide
 
-Mold is a common concern for Florida homeowners due to our humid climate. This comprehensive interactive guide will help you understand, detect, prevent, and address [mold issues](/restoration/mold-remediation) in your home.
+Mold is a common concern for Florida homeowners due to our humid climate. This comprehensive interactive guide will help you understand, detect, prevent, and address mold issues in your home.
 
 ## What You'll Learn
 

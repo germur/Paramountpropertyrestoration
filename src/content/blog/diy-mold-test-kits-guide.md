@@ -6,18 +6,18 @@ metaDescription: "Complete guide to DIY mold testing kits for Florida homeowners
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Mold Testing", "Home Maintenance", "Florida Property"]
+tags: ["DIY Mold Testing", "Mold Kits", "Home Inspection", "Mold Detection", "Florida Homes"]
 keywords: ["DIY mold test kit", "mold testing kit for home", "home mold inspection", "Florida mold testing", "mold kit accuracy", "professional mold testing", "toxic black mold detection"]
 category: "Mold Prevention & Testing"
 featured: true
-image: "/images/blog/diy-mold-test-kits-guide.png"
-ogImage: "/images/blog/diy-mold-test-kits-guide.png"
+image: "/images/Moldtesting.jpg"
+ogImage: "/images/Moldtesting.jpg"
 readTime: 8
 ---
 
 # DIY Mold Test Kits: What Homeowners Need to Know Before Buying
 
-You suspect [mold in your home](/restoration/mold-remediation/mold-inspection). That musty smell or strange discoloration has you worried. Before spending money on a DIY mold test kit, read this comprehensive guide to understand what these kits can—and critically, can't—tell you.
+You suspect mold in your home. That musty smell or strange discoloration has you worried. Before spending money on a DIY mold test kit, read this comprehensive guide to understand what these kits can—and critically, can't—tell you.
 
 ## The Homeowner's Dilemma
 

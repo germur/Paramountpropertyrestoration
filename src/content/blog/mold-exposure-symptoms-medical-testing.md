@@ -6,18 +6,18 @@ metaDescription: "Complete guide to mold exposure symptoms, health risks, and me
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Health & Safety", "Mold Testing"]
+tags: ["Mold Symptoms", "Health Risks", "Medical Testing", "Mold Exposure", "Indoor Air Quality", "Mold Illness"]
 keywords: ["mold exposure symptoms", "mold illness signs", "mold health effects", "mold medical testing", "toxic mold symptoms", "indoor air quality health"]
 category: "Health & Safety"
 featured: true
-image: "/images/blog/mold-exposure-symptoms-medical-testing.png"
-ogImage: "/images/blog/mold-exposure-symptoms-medical-testing.png"
+image: "/images/heroMold.jpg"
+ogImage: "/images/heroMold.jpg"
 readTime: 12
 ---
 
 # Is Mold Making You Sick? Understanding Symptoms, Risks, and Medical Testing
 
-[Mold exposure](/restoration/mold-remediation) affects millions of people, yet symptoms are often mistaken for other conditions like allergies, chronic fatigue, or viral infections. This comprehensive infographic guide helps you understand the health impacts of mold, recognize warning signs, and navigate the medical testing process to protect yourself and your family.
+Mold exposure affects millions of people, yet symptoms are often mistaken for other conditions like allergies, chronic fatigue, or viral infections. This comprehensive infographic guide helps you understand the health impacts of mold, recognize warning signs, and navigate the medical testing process to protect yourself and your family.
 
 ---
 

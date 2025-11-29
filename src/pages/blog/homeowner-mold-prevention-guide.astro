@@ -3,11 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SEOHead from "../../components/SEOHead.jsx";
 
 const pageTitle = "Homeowner's Complete Mold Prevention & Detection Guide";
-const pageDescription =
-  "Master mold prevention with this interactive guide. Learn detection methods, understand when to call professionals, and use our prevention checklist to keep your Florida home mold-free.";
+const pageDescription = "Master mold prevention with this interactive guide. Learn detection methods, understand when to call professionals, and use our prevention checklist to keep your Florida home mold-free.";
 const author = "Paramount Property Restoration";
 const date = new Date("2025-11-11");
-const formattedDate = date.toLocaleDateString("en-US", {
+const formattedDate = date.toLocaleDateString("es-ES", {
   year: "numeric",
   month: "long",
   day: "numeric",
@@ -18,7 +17,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   <SEOHead
     title={pageTitle}
     description={pageDescription}
-    image="/images/blog/homeowner-mold-prevention-guide.webp"
+    image="/images/moldDamage.jpg"
     siteUrl="https://paramountpropertyrestoration.com"
     vertical="blog"
     service="blog"
@@ -90,7 +89,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     <!-- Featured Image -->
     <div class="post-image">
       <div class="container">
-        <img src="/images/mold-damage.webp" alt={pageTitle} />
+        <img src="/images/moldDamage.jpg" alt={pageTitle} />
       </div>
     </div>
 
@@ -99,73 +98,41 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <div class="container-sm">
         <div class="mold-header">
           <h2>Your Complete Mold Prevention Strategy</h2>
-          <p>
-            Demystifying mold from a certified inspector's perspective—control
-            moisture, control mold.
-          </p>
+          <p>Demystifying mold from a certified inspector's perspective—control moisture, control mold.</p>
         </div>
 
         <nav class="mold-nav">
           <div class="mold-nav-buttons">
-            <button
-              class="mold-nav-btn mold-nav-btn-active"
-              data-section="basics">The Basics</button
-            >
-            <button class="mold-nav-btn" data-section="detection"
-              >Detection & Hotspots</button
-            >
-            <button class="mold-nav-btn" data-section="action"
-              >Action & Cleanup</button
-            >
-            <button class="mold-nav-btn" data-section="prevention"
-              >Prevention Checklist</button
-            >
+            <button class="mold-nav-btn mold-nav-btn-active" data-section="basics">The Basics</button>
+            <button class="mold-nav-btn" data-section="detection">Detection & Hotspots</button>
+            <button class="mold-nav-btn" data-section="action">Action & Cleanup</button>
+            <button class="mold-nav-btn" data-section="prevention">Prevention Checklist</button>
           </div>
         </nav>
 
-        <div
-          id="mold-content-basics"
-          class="mold-content-section mold-content-section-active"
-        >
+        <div id="mold-content-basics" class="mold-content-section mold-content-section-active">
           <h3>1. What Mold Needs to Grow (The Recipe)</h3>
           <p class="section-intro">
-            Mold is a natural fungus, but it becomes a problem when it sets up
-            camp indoors. This section breaks down the three simple ingredients
-            it needs. Your power lies in controlling the most critical one: <strong
-              >moisture</strong
-            >.
+            Mold is a natural fungus, but it becomes a problem when it sets up camp indoors. This section breaks down the three simple ingredients it needs. Your power lies in controlling the most critical one: <strong>moisture</strong>.
           </p>
 
           <div class="mold-grid">
             <div class="mold-info-card text-center">
               <span class="mold-icon">💧</span>
               <h4 class="accent-title">1. Water/Moisture (Critical)</h4>
-              <p>
-                The essential fuel. Mold thrives when surfaces are damp or when
-                indoor humidity climbs above 55%. This is why prompt <a
-                  href="/restoration/water-damage"
-                  class="internal-link">water damage restoration</a
-                > is crucial to prevent mold growth.
-              </p>
+              <p>The essential fuel. Mold thrives when surfaces are damp or when indoor humidity climbs above 55%. This is why prompt <a href="/restoration/water-damage" class="internal-link">water damage restoration</a> is crucial to prevent mold growth.</p>
             </div>
 
             <div class="mold-info-card text-center">
               <span class="mold-icon">🍞</span>
               <h4>2. Food Source</h4>
-              <p>
-                Mold is non-discriminating: it feeds on organic materials like
-                wood, paper on drywall, fabrics, insulation, and even common
-                household dust.
-              </p>
+              <p>Mold is non-discriminating: it feeds on organic materials like wood, paper on drywall, fabrics, insulation, and even common household dust.</p>
             </div>
 
             <div class="mold-info-card text-center">
               <span class="mold-icon">🌡️</span>
               <h4>3. Temperature</h4>
-              <p>
-                Mold grows comfortably within the same range as humans, between
-                40°F and 99°F, making temperature difficult to control.
-              </p>
+              <p>Mold grows comfortably within the same range as humans, between 40°F and 99°F, making temperature difficult to control.</p>
             </div>
           </div>
         </div>
@@ -173,9 +140,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
         <div id="mold-content-detection" class="mold-content-section">
           <h3>2. Detection & Where Mold Loves to Hide</h3>
           <p class="section-intro">
-            Use your senses as your first defense. A musty smell or visual signs
-            of water damage can point to a problem. Knowing the hotspots lets
-            you anticipate where to look first.
+            Use your senses as your first defense. A musty smell or visual signs of water damage can point to a problem. Knowing the hotspots lets you anticipate where to look first.
           </p>
 
           <div class="mold-grid">
@@ -183,55 +148,23 @@ const formattedDate = date.toLocaleDateString("en-US", {
               <h4>How to Spot Mold</h4>
 
               <div class="mold-info-card">
-                <div class="mold-accordion-header" data-accordion="smell">
-                  👃 By Smell
-                </div>
+                <div class="mold-accordion-header" data-accordion="smell">👃 By Smell</div>
                 <div class="mold-accordion-content" id="smell-content">
-                  <p>
-                    Look for a persistent, musty odor, often described as wet
-                    cardboard, damp clothing, or an earthy scent. If you smell
-                    it but can't see it, the mold is likely hidden nearby.
-                    Consider scheduling a <a
-                      href="/restoration/mold-remediation/mold-inspection"
-                      class="internal-link">professional mold inspection</a
-                    > to identify hidden growth.
-                  </p>
+                  <p>Look for a persistent, musty odor, often described as wet cardboard, damp clothing, or an earthy scent. If you smell it but can't see it, the mold is likely hidden nearby. Consider scheduling a <a href="/restoration/mold-remediation/mold-inspection" class="internal-link">professional mold inspection</a> to identify hidden growth.</p>
                 </div>
               </div>
 
               <div class="mold-info-card">
-                <div class="mold-accordion-header" data-accordion="sight">
-                  👀 By Sight
-                </div>
+                <div class="mold-accordion-header" data-accordion="sight">👀 By Sight</div>
                 <div class="mold-accordion-content" id="sight-content">
-                  <p>
-                    Look for discolored patches (black, green-brown, white,
-                    pink, yellow) on walls or ceilings. The texture can be
-                    slimy, wet, powdery, or fuzzy. Also check for secondary
-                    signs of moisture like <strong
-                      >cracked paint, bubbling wallpaper, or warped walls</strong
-                    >. If you spot <a
-                      href="/restoration/mold-remediation/black-mold-removal"
-                      class="internal-link">black mold</a
-                    >, immediate professional removal is essential.
-                  </p>
+                  <p>Look for discolored patches (black, green-brown, white, pink, yellow) on walls or ceilings. The texture can be slimy, wet, powdery, or fuzzy. Also check for secondary signs of moisture like <strong>cracked paint, bubbling wallpaper, or warped walls</strong>. If you spot <a href="/restoration/mold-remediation/black-mold-removal" class="internal-link">black mold</a>, immediate professional removal is essential.</p>
                 </div>
               </div>
 
               <div class="mold-info-card">
-                <div class="mold-accordion-header" data-accordion="health">
-                  🤕 By Your Health
-                </div>
+                <div class="mold-accordion-header" data-accordion="health">🤕 By Your Health</div>
                 <div class="mold-accordion-content" id="health-content">
-                  <p>
-                    In sensitive individuals, mold exposure can cause wheezing,
-                    nasal congestion, irritation of the eyes/nose/throat, or
-                    skin rashes. If symptoms persist only when you're at home,
-                    consider <a
-                      href="/restoration/mold-remediation/mold-testing"
-                      class="internal-link">professional mold testing</a
-                    > to identify the specific type and concentration.
-                  </p>
+                  <p>In sensitive individuals, mold exposure can cause wheezing, nasal congestion, irritation of the eyes/nose/throat, or skin rashes. If symptoms persist only when you're at home, consider <a href="/restoration/mold-remediation/mold-testing" class="internal-link">professional mold testing</a> to identify the specific type and concentration.</p>
                 </div>
               </div>
             </div>
@@ -246,44 +179,11 @@ const formattedDate = date.toLocaleDateString("en-US", {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    ><td><strong>Basement</strong></td><td
-                      ><a
-                        href="/restoration/water-damage/basement-flooding"
-                        class="internal-link">Basement flooding</a
-                      >, foundation seepage, high humidity.</td
-                    ></tr
-                  >
-                  <tr
-                    ><td><strong>Bathroom</strong></td><td
-                      >High humidity/steam from showers, poor ventilation.
-                      Consider <a
-                        href="/services/bathroom-remodeling"
-                        class="internal-link">bathroom remodeling</a
-                      > with proper ventilation.</td
-                    ></tr
-                  >
-                  <tr
-                    ><td><strong>Kitchen</strong></td><td
-                      >Leaks under sinks, steam from cooking. <a
-                        href="/restoration/water-damage/leak-repair"
-                        class="internal-link">Leak repair</a
-                      > is essential.</td
-                    ></tr
-                  >
-                  <tr
-                    ><td><strong>Attic</strong></td><td
-                      >Leaking roofs, trapped warm, moist air. Address <a
-                        href="/restoration/water-damage/ceiling-water-damage"
-                        class="internal-link">ceiling water damage</a
-                      > immediately.</td
-                    ></tr
-                  >
-                  <tr
-                    ><td><strong>Around Windows</strong></td><td
-                      >Condensation build-up on sills and panes.</td
-                    ></tr
-                  >
+                  <tr><td><strong>Basement</strong></td><td><a href="/restoration/water-damage/basement-flooding" class="internal-link">Basement flooding</a>, foundation seepage, high humidity.</td></tr>
+                  <tr><td><strong>Bathroom</strong></td><td>High humidity/steam from showers, poor ventilation. Consider <a href="/services/bathroom-remodeling" class="internal-link">bathroom remodeling</a> with proper ventilation.</td></tr>
+                  <tr><td><strong>Kitchen</strong></td><td>Leaks under sinks, steam from cooking. <a href="/restoration/water-damage/leak-repair" class="internal-link">Leak repair</a> is essential.</td></tr>
+                  <tr><td><strong>Attic</strong></td><td>Leaking roofs, trapped warm, moist air. Address <a href="/restoration/water-damage/ceiling-water-damage" class="internal-link">ceiling water damage</a> immediately.</td></tr>
+                  <tr><td><strong>Around Windows</strong></td><td>Condensation build-up on sills and panes.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -293,106 +193,41 @@ const formattedDate = date.toLocaleDateString("en-US", {
         <div id="mold-content-action" class="mold-content-section">
           <h3>3. Taking Action: Cleanup & Professionals</h3>
           <p class="section-intro">
-            Before you clean, know your limits. This section defines when a
-            problem is small enough for DIY cleaning and, more importantly, when
-            you must call a professional to ensure safety and completeness.
+            Before you clean, know your limits. This section defines when a problem is small enough for DIY cleaning and, more importantly, when you must call a professional to ensure safety and completeness.
           </p>
 
           <div class="mold-grid">
             <div class="mold-info-card mold-warning-card">
               <h4 class="warning-title">🚨 The Independence Imperative</h4>
-              <p class="warning-text">
-                NEVER let the same company perform both testing (inspection) and
-                cleanup (remediation).
-              </p>
-              <p>
-                It creates a <strong>financial conflict of interest</strong>. An
-                independent, certified <a
-                  href="/restoration/mold-remediation/mold-inspection"
-                  class="internal-link">mold inspector</a
-                > gives you unbiased results. A company that does both has an incentive
-                to exaggerate the problem to increase their cleanup fee. Our team
-                provides independent inspections separate from <a
-                  href="/restoration/mold-remediation"
-                  class="internal-link">mold remediation services</a
-                >.
-              </p>
+              <p class="warning-text">NEVER let the same company perform both testing (inspection) and cleanup (remediation).</p>
+              <p>It creates a <strong>financial conflict of interest</strong>. An independent, certified <a href="/restoration/mold-remediation/mold-inspection" class="internal-link">mold inspector</a> gives you unbiased results. A company that does both has an incentive to exaggerate the problem to increase their cleanup fee. Our team provides independent inspections separate from <a href="/restoration/mold-remediation" class="internal-link">mold remediation services</a>.</p>
             </div>
 
             <div class="mold-info-card mold-warning-card">
               <h4 class="warning-title">🔴 Call a Professional If...</h4>
               <ul class="checklist">
-                <li>
-                  The affected area is <strong>larger than 10 sq ft</strong> - requires
-                  <a href="/restoration/mold-remediation" class="internal-link"
-                    >professional mold remediation</a
-                  >
-                </li>
-                <li>
-                  Mold is in your <strong>HVAC system</strong> or air ducts - specialized
-                  equipment needed
-                </li>
-                <li>
-                  Mold resulted from <strong
-                    >sewage or <a
-                      href="/restoration/water-damage/flood-damage"
-                      class="internal-link">floodwater</a
-                    ></strong
-                  > - contamination hazard
-                </li>
-                <li>
-                  Someone in the house has a <strong
-                    >respiratory condition</strong
-                  > or known sensitivity - health risk priority
-                </li>
+                <li>The affected area is <strong>larger than 10 sq ft</strong> - requires <a href="/restoration/mold-remediation" class="internal-link">professional mold remediation</a></li>
+                <li>Mold is in your <strong>HVAC system</strong> or air ducts - specialized equipment needed</li>
+                <li>Mold resulted from <strong>sewage or <a href="/restoration/water-damage/flood-damage" class="internal-link">floodwater</a></strong> - contamination hazard</li>
+                <li>Someone in the house has a <strong>respiratory condition</strong> or known sensitivity - health risk priority</li>
               </ul>
             </div>
 
             <div class="mold-info-card mold-success-card">
               <h4 class="success-title">🟢 DIY Safe Cleanup (Small Areas)</h4>
               <ol class="checklist">
-                <li>
-                  <strong>Protect Yourself:</strong> Wear gloves and non-porous goggles.
-                </li>
-                <li>
-                  <strong>Clean the Area:</strong> Scrub the mold with non-ammonia
-                  soap and hot water.
-                </li>
-                <li>
-                  <strong>Dry Thoroughly:</strong> Use fans/dehumidifiers. This is
-                  critical for <a
-                    href="/restoration/mold-remediation/mold-prevention"
-                    class="internal-link">mold prevention</a
-                  >!
-                </li>
-                <li>
-                  <strong>Dispose:</strong> Bag extensively moldy porous items (e.g.,
-                  drywall) before discarding.
-                </li>
+                <li><strong>Protect Yourself:</strong> Wear gloves and non-porous goggles.</li>
+                <li><strong>Clean the Area:</strong> Scrub the mold with non-ammonia soap and hot water.</li>
+                <li><strong>Dry Thoroughly:</strong> Use fans/dehumidifiers. This is critical for <a href="/restoration/mold-remediation/mold-prevention" class="internal-link">mold prevention</a>!</li>
+                <li><strong>Dispose:</strong> Bag extensively moldy porous items (e.g., drywall) before discarding.</li>
               </ol>
-              <p class="alert-text">
-                ⚠️ Do NOT mix ammonia and bleach! For larger areas, contact our <a
-                  href="/restoration/mold-remediation"
-                  class="internal-link">certified remediation team</a
-                >.
-              </p>
+              <p class="alert-text">⚠️ Do NOT mix ammonia and bleach! For larger areas, contact our <a href="/restoration/mold-remediation" class="internal-link">certified remediation team</a>.</p>
             </div>
           </div>
 
           <div class="mold-cta-card">
             <h4>📞 Need Professional Mold Inspection or Remediation?</h4>
-            <p>
-              Our certified team provides <a
-                href="/restoration/mold-remediation/mold-inspection"
-                class="cta-link">independent mold inspections</a
-              > and complete <a
-                href="/restoration/mold-remediation"
-                class="cta-link">mold remediation services</a
-              > across Florida. We also offer <a
-                href="/restoration/mitigation-services/mold-mitigation"
-                class="cta-link">emergency mold mitigation</a
-              > to stop damage fast.
-            </p>
+            <p>Our certified team provides <a href="/restoration/mold-remediation/mold-inspection" class="cta-link">independent mold inspections</a> and complete <a href="/restoration/mold-remediation" class="cta-link">mold remediation services</a> across Florida. We also offer <a href="/restoration/mitigation-services/mold-mitigation" class="cta-link">emergency mold mitigation</a> to stop damage fast.</p>
             <a href="/contact" class="cta-button-white">Contact Us Today</a>
           </div>
         </div>
@@ -400,10 +235,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
         <div id="mold-content-prevention" class="mold-content-section">
           <h3>4. Prevention Checklist: Keep Your Home Dry</h3>
           <p class="section-intro">
-            Prevention is the most powerful tool. By completing this checklist,
-            you are actively making your home an unwelcome environment for mold
-            by controlling moisture and humidity. Use the checklist to track
-            your progress.
+            Prevention is the most powerful tool. By completing this checklist, you are actively making your home an unwelcome environment for mold by controlling moisture and humidity. Use the checklist to track your progress.
           </p>
 
           <div class="prevention-container">
@@ -414,30 +246,16 @@ const formattedDate = date.toLocaleDateString("en-US", {
                 <h5>Control Moisture & Humidity</h5>
                 <ul class="mold-checklist">
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Fix all water leaks promptly (roofs, pipes, faucets) -
-                      Use our <a
-                        href="/restoration/water-damage/leak-repair"
-                        class="internal-link">leak repair services</a
-                      > for quick fixes</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Fix all water leaks promptly (roofs, pipes, faucets) - Use our <a href="/restoration/water-damage/leak-repair" class="internal-link">leak repair services</a> for quick fixes</span>
                   </li>
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Use dehumidifiers to keep indoor humidity low (ideally ≤
-                      50%) - Critical for <a
-                        href="/restoration/mold-remediation/mold-prevention"
-                        class="internal-link">mold prevention</a
-                      ></span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Use dehumidifiers to keep indoor humidity low (ideally ≤ 50%) - Critical for <a href="/restoration/mold-remediation/mold-prevention" class="internal-link">mold prevention</a></span>
                   </li>
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Run exhaust fans during/after showers and while cooking</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Run exhaust fans during/after showers and while cooking</span>
                   </li>
                 </ul>
               </div>
@@ -446,14 +264,12 @@ const formattedDate = date.toLocaleDateString("en-US", {
                 <h5>Promote Good Airflow</h5>
                 <ul class="mold-checklist">
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
+                    <input type="checkbox" class="mold-checkbox">
                     <span>Ensure attic/basement have adequate ventilation</span>
                   </li>
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Open windows for circulation when weather permits</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Open windows for circulation when weather permits</span>
                   </li>
                 </ul>
               </div>
@@ -462,28 +278,16 @@ const formattedDate = date.toLocaleDateString("en-US", {
                 <h5>General Home Maintenance</h5>
                 <ul class="mold-checklist">
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Keep your home clean and dust-free (dust is a food
-                      source)</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Keep your home clean and dust-free (dust is a food source)</span>
                   </li>
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Dry any water-damaged areas completely within 24-48 hours
-                      - Use <a
-                        href="/restoration/water-damage/emergency-water-removal"
-                        class="internal-link">emergency water removal</a
-                      > if needed</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Dry any water-damaged areas completely within 24-48 hours - Use <a href="/restoration/water-damage/emergency-water-removal" class="internal-link">emergency water removal</a> if needed</span>
                   </li>
                   <li class="mold-checklist-item">
-                    <input type="checkbox" class="mold-checkbox" />
-                    <span
-                      >Check ground slope to direct rainwater away from the
-                      foundation</span
-                    >
+                    <input type="checkbox" class="mold-checkbox">
+                    <span>Check ground slope to direct rainwater away from the foundation</span>
                   </li>
                 </ul>
               </div>
@@ -492,9 +296,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
             <div class="progress-section">
               <div class="mold-info-card text-center">
                 <h5>Your Progress</h5>
-                <div id="mold-progress-text" class="mold-progress-text">
-                  0/8 Tasks Complete
-                </div>
+                <div id="mold-progress-text" class="mold-progress-text">0/8 Tasks Complete</div>
                 <div class="mold-chart-container">
                   <canvas id="mold-progress-chart"></canvas>
                 </div>
@@ -504,21 +306,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
         </div>
 
         <div class="mold-footer">
-          <p>
-            This guide is based on certified home maintenance and mold
-            inspection principles. Knowledge is power—you're in control! For
-            comprehensive protection, explore our full range of <a
-              href="/restoration"
-              class="internal-link">restoration services</a
-            > including <a
-              href="/restoration/water-damage"
-              class="internal-link">water damage restoration</a
-            >, <a href="/restoration/fire-damage" class="internal-link"
-              >fire damage restoration</a
-            >, and <a href="/restoration/storm-damage" class="internal-link"
-              >storm damage repair</a
-            >.
-          </p>
+          <p>This guide is based on certified home maintenance and mold inspection principles. Knowledge is power—you're in control! For comprehensive protection, explore our full range of <a href="/restoration" class="internal-link">restoration services</a> including <a href="/restoration/water-damage" class="internal-link">water damage restoration</a>, <a href="/restoration/fire-damage" class="internal-link">fire damage restoration</a>, and <a href="/restoration/storm-damage" class="internal-link">storm damage repair</a>.</p>
         </div>
       </div>
     </div>
@@ -532,9 +320,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
           <div class="author-details">
             <h4>{author}</h4>
             <p>
-              Florida's premier property restoration and remodeling experts. We
-              provide 24/7 emergency services and certified mold inspections
-              across the state.
+              Florida's premier property restoration and remodeling experts. We provide 24/7 emergency services and certified mold inspections across the state.
             </p>
           </div>
         </div>
@@ -712,11 +498,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   /* Mold Guide Interactive Styles */
   .mold-guide-interactive {
-    font-family:
-      "Inter",
-      system-ui,
-      -apple-system,
-      sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   .mold-header {
@@ -732,7 +514,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   .mold-header p {
     font-size: 1.125rem;
-    color: #64748b;
+    color: #64748B;
   }
 
   .mold-nav {
@@ -754,7 +536,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     border-radius: 9999px;
     font-weight: 600;
     color: var(--color-primary);
-    background-color: #bdc3c7;
+    background-color: #BDC3C7;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -763,7 +545,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .mold-nav-btn:hover {
-    background-color: #2ecc71;
+    background-color: #2ECC71;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px -1px rgba(46, 204, 113, 0.3);
@@ -771,7 +553,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   .mold-nav-btn-active {
     color: white;
-    background-color: #2ecc71;
+    background-color: #2ECC71;
     box-shadow: 0 10px 15px -3px rgba(46, 204, 113, 0.4);
   }
 
@@ -785,14 +567,8 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
   }
 
   .mold-content-section h3 {
@@ -813,7 +589,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #bdc3c7;
+    border-left: 5px solid #BDC3C7;
     margin-bottom: 1.5rem;
   }
 
@@ -835,7 +611,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .accent-title {
-    color: #2ecc71;
+    color: #2ECC71;
     margin-bottom: 0.5rem;
   }
 
@@ -866,7 +642,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   .mold-accordion-content {
     display: none;
     padding: 0.5rem 1rem 1rem;
-    border-left: 2px solid #2ecc71;
+    border-left: 2px solid #2ECC71;
     margin-bottom: 1rem;
   }
 
@@ -901,7 +677,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   .mold-warning-card {
     background-color: #fef2f2;
-    border-left-color: #e74c3c;
+    border-left-color: #E74C3C;
   }
 
   .warning-title {
@@ -917,7 +693,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
   .mold-success-card {
     background-color: #f0fdf4;
-    border-left-color: #2ecc71;
+    border-left-color: #2ECC71;
   }
 
   .success-title {
@@ -926,7 +702,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .alert-text {
-    color: #e74c3c;
+    color: #E74C3C;
     font-weight: 700;
     margin-top: 1rem;
   }
@@ -984,7 +760,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .accent-border {
-    border-left-color: #2ecc71;
+    border-left-color: #2ECC71;
   }
 
   .mold-info-card h5 {
@@ -1010,14 +786,14 @@ const formattedDate = date.toLocaleDateString("en-US", {
     height: 1.25rem;
     margin-right: 0.75rem;
     cursor: pointer;
-    accent-color: #2ecc71;
+    accent-color: #2ECC71;
   }
 
   .mold-progress-text {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2ecc71;
+    color: #2ECC71;
     margin-bottom: 1rem;
   }
 
@@ -1035,14 +811,14 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .mold-footer p {
-    color: #64748b;
+    color: #64748B;
     font-size: 0.875rem;
     margin: 0;
   }
 
   /* Internal Links Styling */
   .internal-link {
-    color: #2ecc71;
+    color: #2ECC71;
     text-decoration: none;
     font-weight: 500;
     border-bottom: 1px solid transparent;
@@ -1050,8 +826,8 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 
   .internal-link:hover {
-    color: #27ae60;
-    border-bottom-color: #27ae60;
+    color: #27AE60;
+    border-bottom-color: #27AE60;
   }
 
   .cta-link {
@@ -1107,126 +883,113 @@ const formattedDate = date.toLocaleDateString("en-US", {
   }
 </style>
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script is:inline>
-  (function () {
-    const navButtons = document.querySelectorAll(".mold-nav-btn");
-    const sections = document.querySelectorAll(".mold-content-section");
-    const accordionHeaders = document.querySelectorAll(
-      ".mold-accordion-header",
-    );
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navButtons = document.querySelectorAll('.mold-nav-btn');
+  const sections = document.querySelectorAll('.mold-content-section');
+  const accordionHeaders = document.querySelectorAll('.mold-accordion-header');
 
-    function showSection(sectionId) {
-      sections.forEach((section) => {
-        section.classList.remove("mold-content-section-active");
-      });
-      navButtons.forEach((btn) => {
-        btn.classList.remove("mold-nav-btn-active");
-      });
-
-      const activeSection = document.getElementById(
-        `mold-content-${sectionId}`,
-      );
-      const activeButton = document.querySelector(
-        `[data-section="${sectionId}"]`,
-      );
-
-      if (activeSection) {
-        activeSection.classList.add("mold-content-section-active");
-      }
-      if (activeButton) {
-        activeButton.classList.add("mold-nav-btn-active");
-      }
-    }
-
-    navButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const sectionId = btn.dataset.section;
-        if (sectionId) showSection(sectionId);
-      });
+  function showSection(sectionId) {
+    sections.forEach(section => {
+      section.classList.remove('mold-content-section-active');
+    });
+    navButtons.forEach(btn => {
+      btn.classList.remove('mold-nav-btn-active');
     });
 
-    accordionHeaders.forEach((header) => {
-      header.addEventListener("click", () => {
-        const h = header;
-        const contentId = h.dataset.accordion + "-content";
-        const content = document.getElementById(contentId);
-        if (content) {
-          const isVisible = content.style.display === "block";
-          document
-            .querySelectorAll(".mold-accordion-content")
-            .forEach((c) => (c.style.display = "none"));
-          content.style.display = isVisible ? "none" : "block";
-        }
-      });
-    });
+    const activeSection = document.getElementById(`mold-content-${sectionId}`);
+    const activeButton = document.querySelector(`[data-section="${sectionId}"]`);
 
-    const totalTasks = document.querySelectorAll(".mold-checkbox").length;
-    const progressChartCtx = document.getElementById("mold-progress-chart");
-    let progressChart;
-
-    const chartData = {
-      labels: ["Complete", "Remaining"],
-      datasets: [
-        {
-          data: [0, totalTasks],
-          backgroundColor: ["#2ECC71", "#BDC3C7"],
-          hoverOffset: 4,
-        },
-      ],
-    };
-
-    const chartOptions = {
-      maintainAspectRatio: true,
-      responsive: true,
-      cutout: "75%",
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              return `${context.label}: ${context.parsed} task(s)`;
-            },
-          },
-        },
-      },
-    };
-
-    if (progressChartCtx) {
-      progressChart = new Chart(progressChartCtx, {
-        type: "doughnut",
-        data: chartData,
-        options: chartOptions,
-      });
+    if (activeSection) {
+      activeSection.classList.add('mold-content-section-active');
     }
+    if (activeButton) {
+      activeButton.classList.add('mold-nav-btn-active');
+    }
+  }
 
-    function updateProgress() {
-      const checkedTasks = document.querySelectorAll(
-        ".mold-checkbox:checked",
-      ).length;
-      const remainingTasks = totalTasks - checkedTasks;
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sectionId = btn.dataset.section;
+      showSection(sectionId);
+    });
+  });
 
-      if (progressChart) {
-        progressChart.data.datasets[0].data = [checkedTasks, remainingTasks];
-        progressChart.update();
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const contentId = header.dataset.accordion + '-content';
+      const content = document.getElementById(contentId);
+      if (content) {
+        const isVisible = content.style.display === 'block';
+        document.querySelectorAll('.mold-accordion-content').forEach(c => c.style.display = 'none');
+        content.style.display = isVisible ? 'none' : 'block';
       }
+    });
+  });
 
-      const progressTextEl = document.getElementById("mold-progress-text");
-      if (progressTextEl) {
-        if (checkedTasks === totalTasks) {
-          progressTextEl.innerText = "100% Complete! Great Job!";
-          progressTextEl.style.color = "#166534";
-        } else {
-          progressTextEl.innerText = `${checkedTasks}/${totalTasks} Tasks Complete`;
-          progressTextEl.style.color = "#2ECC71";
+  const totalTasks = document.querySelectorAll('.mold-checkbox').length;
+  const progressChartCtx = document.getElementById('mold-progress-chart');
+  let progressChart;
+
+  const chartData = {
+    labels: ['Complete', 'Remaining'],
+    datasets: [{
+      data: [0, totalTasks],
+      backgroundColor: ['#2ECC71', '#BDC3C7'],
+      hoverOffset: 4
+    }]
+  };
+
+  const chartOptions = {
+    maintainAspectRatio: true,
+    responsive: true,
+    cutout: '75%',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `${context.label}: ${context.parsed} task(s)`;
+          }
         }
       }
     }
+  };
 
-    document.querySelectorAll(".mold-checkbox").forEach((checkbox) => {
-      checkbox.addEventListener("change", updateProgress);
+  if (progressChartCtx) {
+    progressChart = new Chart(progressChartCtx, {
+      type: 'doughnut',
+      data: chartData,
+      options: chartOptions
     });
+  }
 
-    updateProgress();
-  })();
+  function updateProgress() {
+    const checkedTasks = document.querySelectorAll('.mold-checkbox:checked').length;
+    const remainingTasks = totalTasks - checkedTasks;
+
+    if (progressChart) {
+      progressChart.data.datasets[0].data = [checkedTasks, remainingTasks];
+      progressChart.update();
+    }
+
+    const progressTextEl = document.getElementById('mold-progress-text');
+    if (progressTextEl) {
+      if (checkedTasks === totalTasks) {
+        progressTextEl.innerText = '100% Complete! Great Job!';
+        progressTextEl.style.color = '#166534';
+      } else {
+        progressTextEl.innerText = `${checkedTasks}/${totalTasks} Tasks Complete`;
+        progressTextEl.style.color = '#2ECC71';
+      }
+    }
+  }
+
+  document.querySelectorAll('.mold-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', updateProgress);
+  });
+
+  updateProgress();
+});
 </script>

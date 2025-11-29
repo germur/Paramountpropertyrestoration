@@ -6,18 +6,18 @@ metaDescription: "Florida SB 2A changed mold testing requirements for insurance 
 author: "Paramount Property Restoration"
 date: 2025-11-11
 lastModified: 2025-11-11
-tags: ["Insurance & Claims", "Florida Property", "Mold Testing"]
+tags: ["Florida Mold", "SB 2A", "Insurance Claims", "Mold Testing", "Property Insurance", "Hurricane Damage"]
 keywords: ["Florida SB 2A", "mold insurance claims Florida", "certified mold inspector", "Florida property insurance", "mold testing requirements", "hurricane damage mold"]
 category: "Florida Property Law & Insurance"
 featured: true
-image: "/images/blog/florida-mold-challenge-sb2a-guide.png"
-ogImage: "/images/blog/florida-mold-challenge-sb2a-guide.png"
+image: "/images/heroMold.jpg"
+ogImage: "/images/heroMold.jpg"
 readTime: 10
 ---
 
 # Florida's Mold Challenge: Why Local Expertise is Vital After Senate Bill 2A
 
-Florida's climate creates the perfect storm for [mold growth](/restoration/mold-remediation). High humidity, frequent rainfall, and the constant threat of hurricanes make mold not just a nuisance—it's a significant threat to property value and family health. After the passage of Senate Bill 2A in 2022, the stakes for proper [mold testing](/restoration/mold-remediation/mold-testing) and documentation have never been higher.
+Florida's climate creates the perfect storm for mold growth. High humidity, frequent rainfall, and the constant threat of hurricanes make mold not just a nuisance—it's a significant threat to property value and family health. After the passage of Senate Bill 2A in 2022, the stakes for proper [mold testing](/restoration/mold-remediation/mold-testing) and documentation have never been higher.
 
 ---
 

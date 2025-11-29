@@ -1,34 +1,30 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import styles from './RestorationCTA.module.css';
+import '../styles/components/RestorationCTA.css';
 
-export default function RestorationCTA({
-    title = "Ready to Restore Your Property?",
-    subtitle = "Our 24/7 emergency team is standing by to help you recover.",
-    buttonText = "Call Now: (786) 602-2217",
-    buttonLink = "tel:7866022217",
-    urgencyMessage = "60-Minute Response Time • Licensed & Insured",
-    compact = false
-}) {
+const RestorationCTA = ({ 
+  title = "Don't let damage linger.", 
+  subtitle = "Schedule your free assessment now—restoration starts immediately.", 
+  buttonText = "Free Assessment →", 
+  buttonLink = "/contact",
+  urgencyMessage = ""
+}) => {
     return (
-        <section className={`${styles.ctaSection} ${compact ? styles.compact : ''}`}>
-            <div className={styles.container}>
-                <div className={styles.content}>
-                    <h2 className={`${styles.title} ${compact ? 'text-2xl font-bold mb-2' : ''}`}>{title}</h2>
-                    <p className={`${styles.subtitle} ${compact ? 'mb-4 text-sm' : ''}`}>{subtitle}</p>
-
-                    <div className={styles.actions}>
-                        <a href={buttonLink} className={`${styles.primaryBtn} ${compact ? 'py-2 px-4 text-sm' : ''}`}>
-                            {buttonText}
-                        </a>
-                    </div>
-
-                    {!compact && (
-                        <div className={styles.urgency}>
-                            <span className={styles.pulse}>●</span> {urgencyMessage}
-                        </div>
+        <section className="restoration-cta-section">
+            <div className="restoration-cta-container">
+                <div className="restoration-cta-content">
+                    {urgencyMessage && (
+                        <p className="restoration-cta-urgency">{urgencyMessage}</p>
                     )}
+                    <h2 className="restoration-cta-title">{title}</h2>
+                    <p className="restoration-cta-subtitle">{subtitle}</p>
+                    <a href={buttonLink} className="restoration-cta-button">
+                        {buttonText}
+                        <i className="fas fa-arrow-right restoration-cta-arrow"></i>
+                    </a>
                 </div>
             </div>
         </section>
     );
-}
+};
+
+export default RestorationCTA;

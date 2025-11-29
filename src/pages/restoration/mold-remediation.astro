@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MoldTemplate from "../../components/restoration/templates/MoldTemplate.astro";
+import SEOCityLinks from "../../components/SEOCityLinks.jsx";
+import { hubToGityLinks } from "../../data/seo-interlinking.js";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
@@ -49,4 +51,10 @@ const faqQuestions = [
   />
 
   <MoldTemplate group={pageData.group} sub={pageData.sub} />
+
+  <SEOCityLinks
+    links={hubToGityLinks['/restoration/mold-remediation/']}
+    title="Florida Mold Services - Cities We Serve"
+    client:load
+  />
 </BaseLayout>

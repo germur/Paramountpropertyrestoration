@@ -118,7 +118,7 @@ const MoldCalculator = () => {
   };
 
   const validateStep = () => {
-    switch (step) {
+    switch(step) {
       case 1:
         return formData.propertySize && formData.location;
       case 2:
@@ -147,12 +147,12 @@ const MoldCalculator = () => {
   };
 
   const getCoverageMessage = (level) => {
-    switch (level) {
+    switch(level) {
       case 'high':
         return {
           probability: 'High Probability',
           message: 'Your insurance likely covers this type of sudden, accidental damage. Document everything and contact your insurer immediately.',
-          color: 'var(--color-success)'
+          color: '#10b981'
         };
       case 'medium-high':
         return {
@@ -395,15 +395,6 @@ const MoldCalculator = () => {
 
         {step === 5 && result && (
           <div className="calculator-result">
-            {/* Prominent Disclaimer Banner */}
-            <div className="estimate-disclaimer-banner">
-              <div className="disclaimer-icon">⚠️</div>
-              <div className="disclaimer-content">
-                <strong>Tentative Estimate Only</strong>
-                <p>These are approximate costs based on typical market rates. Actual prices may vary depending on specific conditions found during inspection. Contact us for an exact quote.</p>
-              </div>
-            </div>
-
             <div className="result-header">
               <h2>Your Estimated Cost</h2>
               <p>Based on your property details and testing requirements</p>
@@ -475,7 +466,7 @@ const MoldCalculator = () => {
 
             <div className="result-actions">
               <a href="/contact" className="btn btn-primary">Schedule Inspection</a>
-              <a href="tel:+17866022217" className="btn btn-secondary">Call (786) 602-2217</a>
+              <a href="tel:+13212694816" className="btn btn-secondary">Call (321) 269-4816</a>
               <button className="btn btn-reset" onClick={resetCalculator}>
                 Calculate Again
               </button>
@@ -483,18 +474,9 @@ const MoldCalculator = () => {
 
             <div className="disclaimer">
               <small>
-                <strong>Important Disclaimer:</strong> This calculator provides tentative estimates only.
-                Actual costs can vary significantly based on:
-                <ul style={{ marginTop: '0.5rem', marginBottom: '0.5rem', paddingLeft: '1.5rem' }}>
-                  <li>Specific conditions discovered during the on-site inspection</li>
-                  <li>Extent and type of mold/moisture damage found</li>
-                  <li>Accessibility challenges and required safety measures</li>
-                  <li>Laboratory testing complexity and additional samples needed</li>
-                  <li>Current market rates and availability</li>
-                </ul>
-                Insurance coverage is subject to your policy terms, cause of damage, and insurer approval.
-                This tool is for informational purposes only and does not constitute a binding quote or guarantee of final pricing.
-                <strong>Contact us directly for an accurate, customized quote based on a professional assessment.</strong>
+                <strong>Disclaimer:</strong> This estimate is based on typical Florida market rates and your provided information.
+                Final costs may vary based on actual conditions discovered during inspection. Insurance coverage determination
+                is subject to your specific policy terms and insurer approval.
               </small>
             </div>
           </div>

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import WaterTemplate from "../../components/restoration/templates/WaterTemplate.astro";
+import SEOCityLinks from "../../components/SEOCityLinks.jsx";
+import { hubToGityLinks } from "../../data/seo-interlinking.js";
 import "../../styles/pages/water-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
@@ -9,18 +11,16 @@ import SEOHead from "../../components/SEOHead.jsx";
 const pageData = {
   group: {
     slug: "water-damage",
-    name: "Water Damage Restoration",
+    name: "Water Damage Restoration", 
     template: "water",
-    description: "Emergency water damage restoration and cleanup services",
+    description: "Emergency water damage restoration and cleanup services"
   },
-  sub: null,
+  sub: null
 };
 
 // SEO básico requerido por BaseLayout y SEOHead
-const pageTitle =
-  "Water Damage Restoration in Florida | 24/7 Emergency Service";
-const pageDescription =
-  "Florida water damage restoration experts with fast extraction, drying, and structural repairs. Statewide 24/7 emergency response with free assessments and licensed IICRC-certified technicians.";
+const pageTitle = "Water Damage Restoration in Florida | 24/7 Emergency Service";
+const pageDescription = "Florida water damage restoration experts—fast extraction, drying, and repairs. Serving Orlando, Miami, Tampa & beyond with 24/7 emergency response and free assessments.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -42,4 +42,10 @@ const pageDescription =
   />
 
   <WaterTemplate group={pageData.group} sub={pageData.sub} />
+
+  <SEOCityLinks
+    links={hubToGityLinks['/restoration/water-damage/']}
+    title="Florida Water Damage Services - Cities We Serve"
+    client:load
+  />
 </BaseLayout>

@@ -38,14 +38,10 @@ const { Content } = await entry.render();
 
 // SEO Meta
 const pageTitle = entry.data.metaTitle || entry.data.title;
-const pageDescription =
-  entry.data.metaDescription || entry.data.description || "";
-const ogImage =
-  entry.data.ogImage || entry.data.image || "/images/blog/hero-blog.webp";
+const pageDescription = entry.data.metaDescription || entry.data.description || "";
+const ogImage = entry.data.ogImage || entry.data.image || "/images/blog/heroBlog.jpg";
 const keywords = entry.data.keywords || entry.data.tags || [];
-const canonicalUrl =
-  entry.data.canonicalUrl ||
-  `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
+const canonicalUrl = entry.data.canonicalUrl || `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
 
 // Format date
 const formattedDate = entry.data.date.toLocaleDateString("en-US", {
@@ -250,9 +246,7 @@ const readingTime = entry.data.readTime || Math.ceil(wordCount / 200);
           <div class="author-details">
             <h4>{entry.data.author}</h4>
             <p>
-              Web Development and Digital Marketing Specialist. Passionate about
-              creating innovative solutions that help businesses grow in the
-              digital world.
+              Web Development and Digital Marketing Specialist. Passionate about creating innovative solutions that help businesses grow in the digital world.
             </p>
           </div>
         </div>
@@ -795,34 +789,5 @@ const readingTime = entry.data.readTime || Math.ceil(wordCount / 200);
         target.reset();
       }
     });
-
-    // Inject In-Article Ad
-    const prose = document.querySelector(".prose");
-    if (prose) {
-      const paragraphs = prose.querySelectorAll("p");
-      if (paragraphs.length >= 2) {
-        const adContainer = document.createElement("div");
-        adContainer.className = "in-article-ad-container";
-        adContainer.style.margin = "2rem 0";
-        adContainer.style.textAlign = "center";
-        adContainer.innerHTML = `
-          <ins class="adsbygoogle"
-               style="display:block; text-align:center;"
-               data-ad-layout="in-article"
-               data-ad-format="fluid"
-               data-ad-client="ca-pub-7161830191523275"
-               data-ad-slot="5630406674"></ins>
-        `;
-        paragraphs[1].after(adContainer);
-
-        // Initialize ad
-        try {
-          ((window as any).adsbygoogle =
-            (window as any).adsbygoogle || []).push({});
-        } catch (e) {
-          console.error("AdSense error:", e);
-        }
-      }
-    }
   });
 </script>

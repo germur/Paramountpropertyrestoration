@@ -1,15 +1,22 @@
 // src/components/SEOHead.jsx
 import React from 'react';
-import { slugify } from '../utils/slugify';
 
 /**********************
  * Helpers (JS only)
  **********************/
+const slugify = (input) => {
+  if (!input) return '';
+  return input
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+};
 
 const buildServicePath = ({ vertical = 'restoration', service, subservice, city }) => {
-  // Don't slugify - these parameters are already slugs!
-  const parts = [vertical, service, subservice].filter(Boolean);
-  const citySlug = city; // city is already a slug if provided
+  const parts = [slugify(vertical), slugify(service), slugify(subservice)].filter(Boolean);
+  const citySlug = slugify(city);
   const base = `/${parts.join('/')}`;
   return citySlug ? `${base}/${citySlug}` : base;
 };
@@ -78,55 +85,6 @@ function generateFAQSchema(questions = []) {
   };
 }
 
-/**
- * Build BreadcrumbList schema for JSON-LD
- */
-function generateBreadcrumbSchema({ vertical, service, subservice, city, siteUrl }) {
-  const breadcrumbs = [
-    { name: 'Home', url: '/' }
-  ];
-
-  if (vertical && vertical !== 'home') {
-    breadcrumbs.push({
-      name: humanize(vertical),
-      url: `/${vertical}`
-    });
-  }
-
-  if (service) {
-    breadcrumbs.push({
-      name: humanize(service),
-      url: `/${vertical}/${service}`
-    });
-  }
-
-  if (subservice) {
-    breadcrumbs.push({
-      name: humanize(subservice),
-      url: `/${vertical}/${service}/${subservice}`
-    });
-  }
-
-  if (city) {
-    breadcrumbs.push({
-      name: humanize(city),
-      url: `/${vertical}/${service}/${subservice}/${city}`
-    });
-  }
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `${siteUrl}/#breadcrumb`,
-    itemListElement: breadcrumbs.map((crumb, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: crumb.name,
-      item: crumb.url === '/' ? `${siteUrl}/` : `${siteUrl}${crumb.url}/`
-    }))
-  };
-}
-
 /**********************
  * Component
  **********************/
@@ -137,7 +95,7 @@ const SEOHead = ({
   // Core SEO
   title,
   description,
-  image = '/images/og-image.webp',
+  image = '/images/og-image.jpg',
   pageType = 'website', // 'website' | 'article' | 'service'
   keywords = [],
 
@@ -162,9 +120,9 @@ const SEOHead = ({
 
   // Article-specific fields
   author = 'Paramount Property Restoration',
-  datePublished = null,
-  dateModified = null,
-  category = 'General',
+  datePublished,
+  dateModified,
+  category,
 }) => {
   const parts = { vertical, service, subservice, city };
 
@@ -189,7 +147,7 @@ const SEOHead = ({
     '@type': 'LocalBusiness',
     '@id': `${canonicalURL}#localbusiness`,
     name: businessName,
-    image: `${siteUrl}/images/ppr-logo-new.webp`,
+    image: `${siteUrl}/images/ppr-logo-new.png`,
     url: canonicalURL,
     telephone: phone,
     email: 'services@paramountpropertyrestoration.com',
@@ -220,10 +178,16 @@ const SEOHead = ({
       '@type': 'State',
       name: 'Florida'
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '150'
+    },
     sameAs: [
       'https://www.facebook.com/paramountpropertyrestoration',
-      'https://www.instagram.com/paramountpropertyrestoration',
-      'https://g.page/r/CQtjSl3ISUEWEBA' // Google Business Profile - Google controls the reviews
+      'https://www.instagram.com/paramountpropertyrestoration'
     ]
   };
 
@@ -234,7 +198,10 @@ const SEOHead = ({
     name: humanize(subservice) || humanize(service),
     description: finalDesc,
     provider: {
-      '@id': `${canonicalURL}#localbusiness` // Reference to LocalBusiness in @graph
+      '@type': 'LocalBusiness',
+      name: businessName,
+      url: siteUrl,
+      telephone: phone
     },
     areaServed: city ? { '@type': 'City', name: addressLocality || humanize(city) } : { '@type': 'State', name: 'Florida' },
     serviceType: humanize(service) || 'Restoration',
@@ -291,7 +258,7 @@ const SEOHead = ({
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo-new.webp`,
+        url: `${siteUrl}/images/ppr-logo-new.png`,
         width: 600,
         height: 60
       },
@@ -357,25 +324,17 @@ const SEOHead = ({
         <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} />
       ))}
 
-      {/* JSON-LD: Use @graph to connect schemas properly */}
-      {pageType === 'article' ? (
-        // Articles: separate Article schema
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
-      ) : (
-        // Service pages: use @graph to show relationships
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              jsonLdLocalBusiness,
-              jsonLdService,
-              (vertical || service) && generateBreadcrumbSchema({ vertical, service, subservice, city, siteUrl })
-            ].filter(Boolean)
-          })
-        }} />
+      {/* JSON-LD */}
+      {pageType !== 'article' && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
       )}
-
-      {/* FAQPage schema JSON-LD (separate for better compatibility) */}
+      {jsonLdService && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+      )}
+      {jsonLdArticle && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+      )}
+      {/* FAQPage schema JSON-LD */}
       {faqQuestions.length > 0 && (
         <script
           type="application/ld+json"

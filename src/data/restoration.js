@@ -14,17 +14,15 @@ export const restorationGroups = [
         slug: "flood-damage",
         title: "Flood Damage Cleanup",
         short: "Cleanup & restoration after flooding",
-        ctaText: "Get 24/7 Flood Cleanup",
         nombre: "Flood Damage Cleanup",
         categoria: "restoration",
         seo: {
-          title: "24/7 Flood Damage Cleanup Florida | Paramount Property Restoration",
-          description: "Flood damage in Florida? We provide 24/7 emergency water extraction & drying. Arriving in 60 mins. Licensed & insured. Call now for a free estimate!",
+          title: "Flood Damage Cleanup Florida | 24/7 Water Extraction & Drying",
+          description: "Certified flood damage cleanup in Florida. Emergency water removal, drying, mold prevention & structural stabilization. 24/7 response across Orlando, Miami & Tampa.",
         },
         hero: {
           title: "Flood Damage? We Extract Water & Restore Homes Across Florida",
           description: "Need flood cleanup fast? Our Florida teams provide 24/7 flood damage cleanup, including water extraction, drying, and mold prevention. We stop water damage before it spreads, protect your home's structure, and restore safety.",
-          bgImage: "/images/flood-damage.webp",
         },
         technicalSpecs: {
           equipmentUsed: ["Truck-Mounted Extractors", "LGR Dehumidifiers", "Thermal Imaging Cameras", "Air Movers", "Moisture Meters"],
@@ -32,7 +30,7 @@ export const restorationGroups = [
           methodsApplied: ["Psychrometric Calculations", "Negative Air Pressure", "Controlled Demolition"],
           deliverables: [
             "Emergency flood water extraction and removal",
-            "Advanced moisture detection and mapping",
+            "Advanced moisture detection and mapping", 
             "Industrial-grade dehumidification and drying",
             "Antimicrobial treatment and sanitization",
             "Structural stabilization and repair",
@@ -47,70 +45,30 @@ export const restorationGroups = [
       {
         slug: "leak-repair",
         title: "Leak Repair",
-        short: "Hidden leak detection experts using thermal imaging to stop water damage at the source.",
-        ctaText: "Detect & Fix Leaks",
+        short: "Emergency water removal services",
         nombre: "Leak Repair",
-        categoria: "restoration",
-        seo: {
-          title: "Leak Detection & Repair Florida | Paramount Property Restoration",
-          description: "Hidden leaks causing damage? Our Florida experts use thermal imaging to find & fix leaks fast. Prevent mold & structural damage. Call for leak detection!",
-        },
-        hero: {
-          title: "Hidden Leaks? We Find & Fix Them Fast",
-          description: "Water leaks can cause hidden damage. We use advanced detection to find leaks and repair them immediately.",
-          bgImage: "/images/leak-repair.webp"
-        }
+        categoria: "restoration"
       },
       {
         slug: "basement-flooding",
         title: "Basement Flooding",
-        short: "Rapid basement water extraction and drying to prevent mold and structural damage.",
-        ctaText: "Dry Your Basement",
+        short: "Basement flooding restoration",
         nombre: "Basement Flooding",
-        categoria: "restoration",
-        seo: {
-          title: "Basement Flood Cleanup Florida | Paramount Property Restoration",
-          description: "Flooded basement in Florida? We provide rapid water extraction & drying services. Prevent mold growth & structural issues. 24/7 emergency response.",
-        },
-        hero: {
-          title: "Flooded Basement? Emergency Extraction 24/7",
-          description: "Basement flooding requires immediate action. We pump out water and dry your basement completely.",
-          bgImage: "/images/basement-flooding.webp"
-        }
+        categoria: "restoration"
       },
       {
         slug: "ceiling-water-damage",
         title: "Ceiling Water Damage",
-        short: "Emergency ceiling leak repair and water stain removal to prevent collapse.",
-        ctaText: "Repair Ceiling Damage",
+        short: "Ceiling water damage repair",
         nombre: "Ceiling Water Damage",
-        categoria: "restoration",
-        seo: {
-          title: "Ceiling Water Damage Repair Florida | Paramount Property Restoration",
-          description: "Water stains on your ceiling? We repair ceiling leaks & water damage across Florida. Fast response to prevent collapse & mold. Call for a free inspection!",
-        },
-        hero: {
-          title: "Ceiling Leaks? We Repair Water Damage Overhead",
-          description: "Water stains on your ceiling? We fix the source and repair the damage to prevent collapse or mold.",
-          bgImage: "/images/ceiling-water-damage.webp"
-        }
+        categoria: "restoration"
       },
       {
         slug: "emergency-water-removal",
         title: "Emergency Water Removal",
-        short: "Immediate 24/7 water extraction for any size emergency. We arrive in 60 minutes.",
-        ctaText: "Start Water Extraction",
+        short: "Emergency water extraction services",
         nombre: "Emergency Water Removal",
-        categoria: "restoration",
-        seo: {
-          title: "24/7 Emergency Water Removal Florida | Paramount Property Restoration",
-          description: "Need water removed fast? We offer 24/7 emergency water extraction services in Florida. Arriving in 60 mins to save your property. Call us now!",
-        },
-        hero: {
-          title: "24/7 Emergency Water Removal Services",
-          description: "Fast water extraction when you need it most. Our teams are ready to respond day or night.",
-          bgImage: "/images/emergency-water-removal.webp"
-        }
+        categoria: "restoration"
       }
     ]
   },
@@ -128,17 +86,15 @@ export const restorationGroups = [
         slug: "smoke-damage",
         title: "Smoke Damage Cleanup",
         short: "Professional smoke odor removal",
-        ctaText: "Remove Smoke Odors",
         nombre: "Smoke Damage Cleanup",
         categoria: "restoration",
         seo: {
-          title: "Smoke Damage Cleanup Florida | Paramount Property Restoration",
-          description: "Smoke odor problems? Our Florida experts remove smoke & soot permanently. 24/7 emergency response. Don't let the smell linger—call for a free inspection!",
+          title: "Smoke Damage Cleanup Florida | Professional Odor Removal",
+          description: "Expert smoke damage cleanup in Florida. Advanced odor neutralization, air purification & smoke residue removal. 24/7 emergency response.",
         },
         hero: {
           title: "Smoke Damage? We Remove Odors & Restore Air Quality Fast",
           description: "Smoke damage from fire? Our Florida teams provide complete smoke cleanup including odor neutralization, air purification, and residue removal. We eliminate smoke damage before it becomes permanent.",
-          bgImage: "/images/smoke-damage.webp",
         },
         technicalSpecs: {
           equipmentUsed: ["Hydroxyl Generators", "Ozone Machines", "HEPA Air Scrubbers", "Thermal Foggers", "Ultrasonic Cleaners"],
@@ -147,7 +103,7 @@ export const restorationGroups = [
           deliverables: [
             "Complete smoke residue removal from all surfaces",
             "Advanced odor neutralization and air purification",
-            "HVAC system cleaning and decontamination",
+            "HVAC system cleaning and decontamination", 
             "Content cleaning and restoration",
             "Structural deodorization treatments",
             "Air quality testing and certification"
@@ -162,51 +118,45 @@ export const restorationGroups = [
         slug: "soot-cleanup",
         title: "Soot Cleanup & Removal",
         short: "Professional soot removal services",
-        ctaText: "Clean Soot Now",
         nombre: "Soot Cleanup & Removal",
         categoria: "restoration",
         seo: {
-          title: "Soot Cleanup & Removal Florida | Paramount Property Restoration",
-          description: "Soot residue on your walls? We provide professional soot cleanup services in Florida. Safe removal from all surfaces. Protect your health—call us today!",
+          title: "Soot Cleanup Florida | Professional Fire Residue Removal",
+          description: "Professional soot cleanup services in Florida. Complete soot removal from walls, ceilings, furniture & HVAC systems after fire damage.",
         },
         hero: {
-          title: "Soot Cleanup: Restoring Cleanliness & Safety",
-          description: "Soot is toxic and corrosive. We professionally clean and remove soot from all surfaces.",
-          bgImage: "/images/soot-cleanup.webp"
+          title: "Soot Everywhere? We Clean All Surfaces & Systems",
+          description: "Soot contamination after a fire? Our certified technicians remove soot from all surfaces, clean HVAC systems, and restore your property's cleanliness and safety.",
         }
       },
       {
         slug: "fire-damage-repair",
         title: "Fire Damage Repair",
         short: "Complete fire damage restoration",
-        ctaText: "Repair Fire Damage",
         nombre: "Fire Damage Repair",
         categoria: "restoration",
         seo: {
-          title: "Fire Damage Repair Florida | Paramount Property Restoration",
-          description: "Recovering from a fire? We offer complete fire damage repair & reconstruction in Florida. Structural repairs & smoke cleanup. Licensed & insured.",
+          title: "Fire Damage Repair Florida | Complete Structural Restoration",
+          description: "Complete fire damage repair services in Florida. Structural restoration, rebuilding, smoke cleanup & content restoration. Insurance approved contractors.",
         },
         hero: {
-          title: "Complete Fire Damage Repair & Reconstruction",
-          description: "From structural repairs to final touches, we rebuild your home after fire damage.",
-          bgImage: "/images/fire-damage-repair.webp"
+          title: "Fire Damage Repair - We Rebuild What Fire Destroyed",
+          description: "Fire destroyed your property? Our licensed contractors provide complete fire damage repair including structural rebuilding, smoke cleanup, and content restoration. We work with your insurance.",
         }
       },
       {
         slug: "emergency-fire-response",
         title: "Emergency Fire Response",
         short: "24/7 emergency fire damage response",
-        ctaText: "Get Emergency Help",
         nombre: "Emergency Fire Response",
         categoria: "restoration",
         seo: {
-          title: "24/7 Emergency Fire Response Florida | Paramount Property Restoration",
-          description: "Fire emergency? We provide 24/7 rapid response for fire damage in Florida. Board-up, stabilization & smoke cleanup. Arriving in 60 mins!",
+          title: "Emergency Fire Response Florida | 24/7 Fire Damage Cleanup",
+          description: "24/7 emergency fire response in Florida. Immediate board-up, smoke cleanup, structural stabilization & damage assessment. Fast response guaranteed.",
         },
         hero: {
-          title: "24/7 Emergency Fire Response Team",
-          description: "Immediate board-up and securing services after a fire. We are here to help 24/7.",
-          bgImage: "/images/emergency-fire-response.webp"
+          title: "Fire Emergency? We Respond Within 60 Minutes",
+          description: "Fire emergency requiring immediate help? Our emergency teams provide 24/7 fire damage response including board-up services, structural stabilization, and damage assessment across Florida.",
         }
       }
     ]
@@ -225,37 +175,30 @@ export const restorationGroups = [
         slug: "mold-inspection",
         title: "Mold Inspection",
         short: "Professional mold testing and inspection",
-        ctaText: "Book Inspection",
         nombre: "Mold Inspection",
         categoria: "restoration",
         seo: {
-          title: "Mold Inspection Florida | Paramount Property Restoration",
-          description: "Suspect mold? Get a professional mold inspection in Florida. We identify hidden leaks & moisture. Certified inspectors. Book your assessment today!",
+          title: "Mold Inspection Florida | Professional Mold Testing & Detection",
+          description: "Professional mold inspection services in Florida. Certified inspectors using advanced detection methods, air quality testing & comprehensive mold assessments.",
         },
         hero: {
-          title: "Professional Mold Inspection & Detection",
-          description: "Suspect mold? Our certified inspectors identify hidden mold and moisture sources.",
-          bgImage: "/images/mold-inspection.webp"
-        },
-        cta: {
-          href: "/book-mold-inspection"
+          title: "Suspect Mold? Get Professional Testing & Inspection",
+          description: "Think you have mold? Our certified mold inspectors provide comprehensive testing including air quality analysis, moisture detection, and visual inspections to identify all mold issues.",
         }
       },
       {
         slug: "black-mold-removal",
         title: "Black Mold Removal",
         short: "Toxic black mold remediation",
-        ctaText: "Remove Black Mold",
         nombre: "Black Mold Removal",
         categoria: "restoration",
         seo: {
-          title: "Black Mold Removal Florida | Paramount Property Restoration",
-          description: "Toxic black mold found? We provide safe & effective black mold removal in Florida. HEPA filtration & containment. Protect your family—call now!",
+          title: "Black Mold Removal Florida | Toxic Mold Remediation",
+          description: "Safe black mold removal in Florida. Licensed specialists remove toxic black mold using containment, HEPA filtration & proper disposal methods.",
         },
         hero: {
-          title: "Safe & Effective Black Mold Removal",
-          description: "Black mold is dangerous. We safely remove toxic mold and sanitize your property.",
-          bgImage: "/images/black-mold-removal.webp"
+          title: "Black Mold Found? We Remove It Safely & Completely",
+          description: "Discovered black mold in your property? Our licensed specialists safely remove toxic black mold using proper containment, HEPA filtration, and disposal methods to protect your health.",
         },
         technicalSpecs: {
           equipmentUsed: ["HEPA Air Filtration Units", "Negative Air Machines", "Containment Systems", "Personal Protective Equipment", "Antimicrobial Foggers"],
@@ -265,7 +208,7 @@ export const restorationGroups = [
             "Complete containment and isolation of affected areas",
             "Safe removal and disposal of contaminated materials",
             "HEPA filtration and air purification",
-            "Antimicrobial treatment and surface disinfection",
+            "Antimicrobial treatment and surface disinfection", 
             "Moisture control and humidity management",
             "Post-remediation testing and clearance certification"
           ]
@@ -279,54 +222,45 @@ export const restorationGroups = [
         slug: "mold-prevention",
         title: "Mold Prevention Services",
         short: "Prevent future mold growth",
-        ctaText: "Prevent Mold",
         nombre: "Mold Prevention Services",
         categoria: "restoration",
         seo: {
-          title: "Mold Prevention Services Florida | Paramount Property Restoration",
-          description: "Stop mold before it starts! We offer long-term mold prevention solutions in Florida. Moisture control & ventilation improvements. Call for a consultation.",
+          title: "Mold Prevention Florida | Stop Mold Before It Grows",
+          description: "Professional mold prevention services in Florida. Moisture control, ventilation improvements, antimicrobial treatments & humidity management.",
         },
         hero: {
-          title: "Long-Term Mold Prevention Solutions",
-          description: "Stop mold before it starts. We implement moisture control and prevention strategies.",
-          bgImage: "/images/mold-prevention.webp"
+          title: "Prevent Mold Growth Before It Becomes a Problem",
+          description: "Want to prevent mold growth? Our prevention specialists provide moisture control solutions, ventilation improvements, and antimicrobial treatments to stop mold before it starts.",
         }
       },
       {
         slug: "mold-testing",
         title: "Mold Testing & Air Quality",
         short: "Comprehensive mold testing services",
-        ctaText: "Test Air Quality",
         nombre: "Mold Testing & Air Quality",
         categoria: "restoration",
         seo: {
-          title: "Mold Testing & Air Quality Florida | Paramount Property Restoration",
-          description: "Worried about air quality? We provide comprehensive mold testing & spore analysis in Florida. Get accurate results & peace of mind. Book testing now!",
+          title: "Mold Testing Florida | Air Quality & Spore Analysis",
+          description: "Professional mold testing services in Florida. Air quality testing, spore identification, moisture mapping & post-remediation verification.",
         },
         hero: {
-          title: "Air Quality Testing & Mold Analysis",
-          description: "Breathe easier with our professional air quality testing and mold analysis services.",
-          bgImage: "/images/mold-testing.webp"
-        },
-        cta: {
-          href: "/book-mold-inspection"
+          title: "Need Proof of Mold? Get Professional Testing & Analysis",
+          description: "Need documented proof of mold issues? Our certified labs provide comprehensive mold testing including air sampling, spore identification, and detailed analysis reports.",
         }
       },
       {
         slug: "mold-damage-restoration",
         title: "Mold Damage Restoration",
         short: "Complete mold damage repair",
-        ctaText: "Restore Mold Damage",
         nombre: "Mold Damage Restoration",
         categoria: "restoration",
         seo: {
-          title: "Mold Damage Restoration Florida | Paramount Property Restoration",
-          description: "Mold caused damage? We repair & restore properties affected by mold in Florida. Structural repairs & air purification. Licensed & insured.",
+          title: "Mold Damage Restoration Florida | Complete Property Repair",
+          description: "Complete mold damage restoration in Florida. Structural repairs, material replacement, air purification & final clearance testing after mold removal.",
         },
         hero: {
-          title: "Complete Mold Damage Restoration",
-          description: "Repairing damage caused by mold growth. We restore your home to a safe condition.",
-          bgImage: "/images/mold-damage.webp"
+          title: "Mold Damaged Your Property? We Restore It Completely",
+          description: "Mold caused structural damage? Our restoration team provides complete property repair including material replacement, structural repairs, and final air quality clearance testing.",
         }
       }
     ]
@@ -345,68 +279,60 @@ export const restorationGroups = [
         slug: "hurricane-damage",
         title: "Hurricane Damage Restoration",
         short: "Complete hurricane damage repair",
-        ctaText: "Restore Storm Damage",
         nombre: "Hurricane Damage Restoration",
         categoria: "restoration",
         seo: {
-          title: "Hurricane Damage Repair Florida | Paramount Property Restoration",
-          description: "Hurricane damage? We provide 24/7 emergency storm repairs & board-up services across Florida. Fast response to secure your home. Call now!",
+          title: "Hurricane Damage Restoration Florida | Emergency Storm Response",
+          description: "Expert hurricane damage repair services in Florida. Emergency response, roof repairs, water damage cleanup, wind damage restoration & reconstruction.",
         },
         hero: {
-          title: "Hurricane Damage Restoration Experts",
-          description: "Recovering from a hurricane? We provide comprehensive storm damage restoration.",
-          bgImage: "/images/hurricane-damage.webp"
+          title: "Hurricane Damage? We Restore Homes After Major Storms",
+          description: "Hurricane caused major damage to your property? Our storm restoration specialists provide complete hurricane damage repair including emergency board-up, water extraction, and structural reconstruction.",
         }
       },
       {
         slug: "wind-damage",
         title: "Wind Damage Repair",
         short: "Wind damage restoration services",
-        ctaText: "Repair Wind Damage",
         nombre: "Wind Damage Repair",
         categoria: "restoration",
         seo: {
-          title: "Wind Damage Repair Florida | Paramount Property Restoration",
-          description: "Wind damage to your roof or siding? We repair wind damage across Florida. Fast response for roof & structural repairs. Licensed contractors. Call today!",
+          title: "Wind Damage Repair Florida | Roof & Siding Storm Damage",
+          description: "Professional wind damage repair in Florida. Roof repairs, siding replacement, window damage, structural repairs after severe weather.",
         },
         hero: {
-          title: "Wind Damage Repair & Reconstruction",
-          description: "Strong winds can cause severe damage. We repair roofs, siding, and structural issues.",
-          bgImage: "/images/wind-damage.webp"
+          title: "Wind Damage to Roof or Siding? We Fix Storm Damage Fast",
+          description: "Severe winds damaged your property? Our certified contractors repair wind damage including roof repairs, siding replacement, window damage, and structural reinforcement.",
         }
       },
       {
         slug: "storm-debris-removal",
         title: "Storm Debris Removal",
         short: "Emergency debris cleanup services",
-        ctaText: "Remove Debris",
         nombre: "Storm Debris Removal",
         categoria: "restoration",
         seo: {
-          title: "Storm Debris Removal Florida | Paramount Property Restoration",
-          description: "Storm debris on your property? We provide fast debris removal & tree cleanup services in Florida. Clear your property quickly. Call for emergency cleanup!",
+          title: "Storm Debris Removal Florida | Emergency Cleanup Services",
+          description: "Professional storm debris removal in Florida. Tree removal, structural debris cleanup, emergency property clearing after hurricanes and storms.",
         },
         hero: {
-          title: "Fast Storm Debris Removal & Cleanup",
-          description: "Clearing the way for restoration. We remove fallen trees and storm debris quickly.",
-          bgImage: "/images/storm-debris-removal.webp"
+          title: "Storm Left Debris Everywhere? We Clear Your Property Fast",
+          description: "Storm debris blocking access or creating safety hazards? Our cleanup crews provide emergency debris removal including tree removal, structural debris, and complete property clearing.",
         }
       },
       {
         slug: "emergency-storm-repair",
         title: "Emergency Storm Repair",
         short: "24/7 emergency storm response",
-        ctaText: "Get Storm Help",
         nombre: "Emergency Storm Repair",
         categoria: "restoration",
         seo: {
-          title: "24/7 Emergency Storm Repair Florida | Paramount Property Restoration",
-          description: "Storm emergency? We offer 24/7 storm damage response in Florida. Tarping, board-up & temporary repairs. Arriving in 60 mins to secure your home!",
+          title: "Emergency Storm Repair Florida | 24/7 Storm Damage Response",
+          description: "24/7 emergency storm repair services in Florida. Immediate response, temporary repairs, board-up services & storm damage assessment.",
         },
         hero: {
-          title: "Emergency Storm Repair Services",
-          description: "Immediate repairs to secure your home after a storm. Tarping, board-up, and more.",
-          bgImage: "/images/emergency-storm-repair.webp"
+          title: "Storm Emergency? We Respond Within 60 Minutes",
+          description: "Need immediate storm damage help? Our emergency teams provide 24/7 storm repair services including emergency board-up, temporary repairs, and immediate damage assessment.",
         }
       },
     ]
@@ -428,13 +354,12 @@ export const restorationGroups = [
         nombre: "Water Damage Mitigation",
         categoria: "restoration",
         seo: {
-          title: "Emergency Water Mitigation Florida | Paramount Property Restoration",
-          description: "Prevent further damage with fast water mitigation services in Florida. We stop leaks & dry your property 24/7. Call Paramount Property Restoration now!",
+          title: "Water Damage Mitigation Florida | Emergency Water Protection",
+          description: "Emergency water damage mitigation in Florida. Immediate water extraction, moisture control, dehumidification & structural drying to prevent further damage.",
         },
         hero: {
-          title: "Water Damage Mitigation Services",
-          description: "Stopping water damage in its tracks. Immediate mitigation to prevent further loss.",
-          bgImage: "/images/mitigation-services.webp"
+          title: "Water Damage Spreading? We Stop It Before It Gets Worse",
+          description: "Water damage spreading through your property? Our mitigation specialists provide immediate water extraction, moisture control, and structural drying to minimize damage and prevent mold growth.",
         }
       },
       {
@@ -444,13 +369,12 @@ export const restorationGroups = [
         nombre: "Fire Damage Mitigation",
         categoria: "restoration",
         seo: {
-          title: "Fire Damage Mitigation Florida | Paramount Property Restoration",
-          description: "Fire damage mitigation in Florida. We secure & stabilize your property after fires. Board-up services & smoke sealing. 24/7 emergency response!",
+          title: "Fire Damage Mitigation Florida | Emergency Fire Protection",
+          description: "Emergency fire damage mitigation in Florida. Board-up services, smoke sealing, structure stabilization & content protection after fires.",
         },
         hero: {
-          title: "Fire Damage Mitigation Services",
-          description: "Immediate action to limit fire and smoke damage. We secure and stabilize your property.",
-          bgImage: "/images/fire-damage-repair.webp"
+          title: "Fire Damage Getting Worse? We Secure & Protect Immediately",
+          description: "Fire damage exposing your property to further harm? Our mitigation teams provide emergency board-up, smoke sealing, and structural protection to prevent additional damage.",
         }
       },
       {
@@ -460,13 +384,12 @@ export const restorationGroups = [
         nombre: "Mold Damage Mitigation",
         categoria: "restoration",
         seo: {
-          title: "Mold Damage Mitigation Florida | Paramount Property Restoration",
-          description: "Mold spreading? We provide emergency mold containment & mitigation in Florida. Stop mold growth with HEPA filtration & moisture control. Call now!",
+          title: "Mold Damage Mitigation Florida | Emergency Containment Services",
+          description: "Emergency mold damage mitigation in Florida. Immediate containment, air filtration, moisture control & prevention of mold spread.",
         },
         hero: {
-          title: "Mold Damage Mitigation Services",
-          description: "Containing mold growth and preventing spread. Expert mitigation for a safer home.",
-          bgImage: "/images/mold-prevention.webp"
+          title: "Mold Spreading? We Contain & Stop Growth Immediately",
+          description: "Discovered mold spreading in your property? Our mitigation specialists provide immediate containment, air filtration, and moisture control to stop mold growth and prevent health risks.",
         }
       },
       {
@@ -476,12 +399,12 @@ export const restorationGroups = [
         nombre: "Storm Damage Mitigation",
         categoria: "restoration",
         seo: {
-          title: "Storm Damage Mitigation Florida | Paramount Property Restoration",
-          description: "Storm damage mitigation in Florida. Emergency board-up, temporary roofing & structural bracing. Protect your property from further damage. Call 24/7!",
+          title: "Storm Damage Mitigation Florida | Emergency Weather Protection",
+          description: "Emergency storm damage mitigation in Florida. Immediate board-up, temporary roofing, structural bracing & weather protection services.",
         },
         hero: {
+          title: "Storm Damage Exposed Your Property? We Secure It Fast",
           description: "Storm left your property exposed to weather and intruders? Our mitigation teams provide emergency board-up, temporary roofing, and structural bracing to protect against further damage.",
-          bgImage: "/images/emergency-storm-repair.webp"
         }
       }
     ]
@@ -643,14 +566,14 @@ export const cities = [
 
 // Get all restoration services only
 export function getRestorationServices() {
-  return restorationGroups.filter(group =>
+  return restorationGroups.filter(group => 
     group.slug !== "remodeling-services"
   );
 }
 
 // Get all remodeling services only  
 export function getRemodelingServices() {
-  return restorationGroups.filter(group =>
+  return restorationGroups.filter(group => 
     group.slug === "remodeling-services"
   );
 }
@@ -679,7 +602,7 @@ export function getCityBySlug(slug) {
 // FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
   const combinations = [];
-
+  
   restorationGroups.forEach(group => {
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
@@ -697,7 +620,7 @@ export function getAllRestorationCombinations() {
       });
     });
   });
-
+  
   return combinations;
 }
 
@@ -705,7 +628,7 @@ export function getAllRestorationCombinations() {
 export function getAllRemodelingCombinations() {
   const remodelingServices = getRemodelingServices();
   const combinations = [];
-
+  
   remodelingServices.forEach(group => {
     group.subservices.forEach(service => {
       cities.forEach(city => {
@@ -721,7 +644,7 @@ export function getAllRemodelingCombinations() {
       });
     });
   });
-
+  
   return combinations;
 }
 
@@ -758,7 +681,7 @@ export function getCityData(citySlug) {
 export function getStats() {
   const restorationServices = getRestorationServices().reduce((total, group) => total + group.subservices.length, 0);
   const remodelingServices = getRemodelingServices().reduce((total, group) => total + group.subservices.length, 0);
-
+  
   return {
     totalGroups: restorationGroups.length,
     restorationServices,
@@ -768,37 +691,3 @@ export function getStats() {
     totalCombinations: getAllCombinations().length
   };
 }
-
-// ===========================
-// REGIONAL CONTENT DATA
-// ===========================
-export const regionalRisks = {
-  "South Florida": {
-    title: "High Humidity & Hurricane Risks",
-    description: "South Florida's tropical climate creates year-round humidity challenges that accelerate mold growth. Combined with frequent tropical storms and hurricanes, properties in this region face unique water intrusion risks that require specialized drying protocols."
-  },
-  "Central Florida": {
-    title: "Storm Surges & Sinkhole Risks",
-    description: "Central Florida faces a dual threat of severe afternoon thunderstorms and potential ground shifting. Our restoration protocols account for the region's specific soil conditions and rapid weather changes that can lead to sudden water damage."
-  },
-  "Tampa Bay": {
-    title: "Coastal Flooding & Saltwater Intrusion",
-    description: "The Tampa Bay area is particularly susceptible to coastal flooding and storm surges. Saltwater intrusion requires specific cleaning agents and corrosion inhibitors that standard restoration companies often overlook."
-  },
-  "Southwest Florida": {
-    title: "Tropical Storm Exposure",
-    description: "Southwest Florida's coastline is directly exposed to Gulf storms. We specialize in addressing the rapid mold development that occurs in this region's consistently high temperatures and humidity levels."
-  },
-  "Northeast Florida": {
-    title: "Nor'easter Storms & Coastal Erosion",
-    description: "Northeast Florida faces unique challenges from Nor'easters and coastal erosion. Our teams are equipped to handle the specific structural drying needs caused by these prolonged wind and rain events."
-  },
-  "Northwest Florida": {
-    title: "Panhandle Storm Tracks",
-    description: "The Panhandle often faces direct impacts from major Gulf storms. Our restoration approach focuses on rapid structural stabilization and heavy-duty water extraction designed for severe storm aftermaths."
-  },
-  "Treasure Coast": {
-    title: "Atlantic Storm Exposure",
-    description: "The Treasure Coast's direct Atlantic exposure brings salt-heavy air and frequent squalls. We use specialized corrosion-resistant materials and drying techniques suited for this coastal environment."
-  }
-};

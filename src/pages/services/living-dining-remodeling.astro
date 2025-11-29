@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import RemodelingServiceTemplate from "../../components/services/templates/RemodelingServiceTemplate.astro";
+import UnifiedServiceTemplate from "../../components/services/templates/UnifiedServiceTemplate.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
@@ -8,13 +8,11 @@ import { getServiceGroup } from "../../data/services.js";
 
 const pageData = {
   group: getServiceGroup("living-dining-remodeling"),
-  sub: null,
+  sub: null
 };
 
-const pageTitle =
-  "Living & Dining Room Remodeling | Paramount Property Restoration";
-const pageDescription =
-  "Upgrade your living spaces with stylish finishes, better lighting, and open-concept layouts.";
+const pageTitle = "Living & Dining Room Remodeling | Paramount Property Restoration";
+const pageDescription = "Upgrade your living spaces with stylish finishes, better lighting, and open-concept layouts.";
 ---
 
 <BaseLayout
@@ -38,9 +36,5 @@ const pageDescription =
     slot="head"
   />
 
-  <RemodelingServiceTemplate
-    group={pageData.group}
-    sub={pageData.sub}
-    isHub={true}
-  />
+  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
 </BaseLayout>

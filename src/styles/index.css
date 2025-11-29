@@ -2,7 +2,7 @@
 .hero-section {
     position: relative;
     min-height: 100vh;
-    background-image: url('/images/portadaHome.webp');
+    background-image: url('/images/portadaHome.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -59,8 +59,36 @@
     animation: slideInUp 1s ease-out 0.2s both;
 }
 
-.hero-content .cta-button {
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     animation: slideInUp 1s ease-out 0.4s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--color-accent) 0%, orange 100%);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.cta-button span {
+    display: block;
 }
 
 /* Animaciones */
@@ -440,7 +468,6 @@ div.cnt-ul>ul>li>a:hover {
         grid-template-columns: repeat(2, 1fr);
         padding: 30px;
     }
-
     .cnt-card {
         border-bottom: none;
     }
@@ -565,8 +592,8 @@ div.cnt-ul>ul>li>a:hover {
     }
 }
 
-@media (min-width: 2560px) {
-    .hero-section {
+@media (min-width: 2560px){
+        .hero-section {
         min-height: 50vh;
     }
 }

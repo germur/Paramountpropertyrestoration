@@ -1,4 +1,4 @@
-import styles from './linkBuilding.module.css'
+import '../styles/components/LinkBuildingSection.css'
 
 const LinkBuildingSection = ({
     baseUrl = "",
@@ -107,45 +107,45 @@ const LinkBuildingSection = ({
     const totalLinks = categoriesToShow.reduce((sum, cat) => sum + linkData[cat].links.length, 0);
 
     return (
-        <div className={`${styles.linkBuildingContainer} ${compact ? styles.full : ''}`}>
-            <div className={styles.linkBuildingInner}>
+        <div className={`link-building-container ${compact ? 'compact' : 'full'}`}>
+            <div className="link-building-inner">
                 {showTitle && (
-                    <div className={`${styles.linkBuildingHeader} ${compact ? styles.compact : ''}`}>
-                        <h2 className={`${styles.linkBuildingTitle} ${compact ? styles.compact : ''}`}>
+                    <div className={`link-building-header ${compact ? 'compact' : ''}`}>
+                        <h2 className={`link-building-title ${compact ? 'compact' : ''}`}>
                             Our Service Areas
                         </h2>
-                        <p className={`${styles.linkBuildingSubtitle} ${compact ? styles.compact : ''}`}>
+                        <p className={`link-building-subtitle ${compact ? 'compact' : ''}`}>
                             Providing expert remodeling and construction services across Florida's key regions.
                         </p>
                     </div>
                 )}
 
                 {showStats && (
-                    <div className={`${styles.linkBuildingStats} ${compact ? styles.compact : ''}`}></div>
+                    <div className={`link-building-stats ${compact ? 'compact' : ''}`}></div>
                 )}
 
-                <div className={`${styles.linkBuildingGrid} ${compact ? styles.compact : ''}`}>
+                <div className={`link-building-grid ${compact ? 'compact' : ''}`}>
                     {categoriesToShow.map((categoryKey) => {
                         const category = linkData[categoryKey];
                         return (
                             <div
                                 key={categoryKey}
-                                className={`${styles.linkCategory} ${compact ? styles.compact : ''}`}
+                                className={`link-category ${compact ? 'compact' : ''}`}
                             >
-                                <div className={`${styles.categoryHeader} ${compact ? styles.compact : ''}`}>
-                                    <div className={`${styles.categoryIcon} ${compact ? styles.compact : ''}`}>
+                                <div className={`category-header ${compact ? 'compact' : ''}`}>
+                                    <div className={`category-icon ${compact ? 'compact' : ''}`}>
                                         {category.icon}
                                     </div>
-                                    <h3 className={`${styles.categoryTitle} ${compact ? styles.compact : ''}`}>
+                                    <h3 className={`category-title ${compact ? 'compact' : ''}`}>
                                         {category.title}
                                     </h3>
                                 </div>
-                                <div className={`${styles.linksList} ${compact ? styles.compact : ''}`}>
+                                <div className={`links-list ${compact ? 'compact' : ''}`}>
                                     {category.links.map((link, index) => (
                                         <a target="_blank"
                                             key={index}
                                             href={`${baseUrl}${link.href}`}
-                                            className={`${styles.linkItem} ${compact ? styles.compact : ''}`}
+                                            className={`link-item ${compact ? 'compact' : ''}`}
                                         >
                                             {link.text}
                                         </a>

@@ -65,7 +65,7 @@ export const generateLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": businessInfo.name,
-  "image": `${businessInfo.website}/images/og-image.webp`,
+  "image": `${businessInfo.website}/images/og-image.jpg`,
   "telephone": businessInfo.phone,
   "email": businessInfo.email,
   "address": {

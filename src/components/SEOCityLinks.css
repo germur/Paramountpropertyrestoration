@@ -1,0 +1,88 @@
+.seo-city-links {
+  background: white;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.seo-links-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.seo-city-links h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.seo-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.seo-city-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #475569;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.seo-city-link:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.seo-link-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.seo-link-text {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .seo-city-links {
+    padding: 2rem 0;
+    margin: 2rem 0;
+  }
+
+  .seo-city-links h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .seo-links-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .seo-city-link {
+    padding: 0.875rem 1rem;
+  }
+
+  .seo-link-icon {
+    font-size: 1.125rem;
+  }
+
+  .seo-link-text {
+    font-size: 0.875rem;
+  }
+}

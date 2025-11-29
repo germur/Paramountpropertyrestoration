@@ -4,11 +4,13 @@ import AreasServed from "../components/AreasServed.jsx";
 import "../styles/services.css";
 import SEOHead from "../components/SEOHead.jsx";
 const pageTitle = "Restoration Services in Florida | Water, Fire, Mold & Storm";
-const pageDescription =
-    "Certified restoration services for water, fire, mold, and storm damage. 24/7 emergency response. Licensed & insured.";
+const pageDescription = "Certified restoration services for water, fire, mold, and storm damage. 24/7 emergency response. Licensed & insured.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout
+    title={pageTitle}
+    description={pageDescription}
+>
     <SEOHead
         title={pageTitle}
         description={pageDescription}
@@ -24,16 +26,12 @@ const pageDescription =
         phone={"+1-786-602-2217"}
         slot="head"
     />
-    <section
-        class="hero-section"
-        style="background-image: url('/images/hero-restoration.webp');"
-    >
+    <section class="hero-section" style="background-image: url('/images/heroRestoration.jpeg');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Professional Restoration Services</h1>
             <p class="hero-subtitle">
-                Restoring properties across Florida with certified expertise and
-                24/7 emergency response.
+                Restoring properties across Florida with certified expertise and 24/7 emergency response.
             </p>
             <a href="/contact" class="hero-cta-button">Get Emergency Help</a>
         </div>
@@ -67,10 +65,7 @@ const pageDescription =
                 </div>
 
                 <div class="cnt-iconsServices">
-                    <a
-                        href="/restoration/mitigation-services"
-                        class="tab-button"
-                    >
+                    <a href="/restoration/mitigation-services" class="tab-button">
                         <i class="fas fa-shield-alt"></i>Mitigation
                     </a>
                 </div>
@@ -82,54 +77,23 @@ const pageDescription =
         <div class="services-grid">
             <div class="service-card">
                 <img
-                    src="/images/water-damage.webp"
+                    src="/images/waterDamage.jpg"
                     alt="Water Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Water Damage</h2>
-                    <p class="card-description">
-                        Don't let water damage destroy your property investment.
-                        Our certified restoration specialists provide 24/7
-                        emergency response with industrial-grade extraction
-                        equipment and advanced structural drying techniques. We
-                        prevent costly mold growth and secondary damage while
-                        working directly with your insurance company to minimize
-                        out-of-pocket expenses. Every hour counts – our rapid
-                        response team can be at your property within 60 minutes
-                        to begin immediate stabilization and damage mitigation.
-                    </p>
+                    <p class="card-description">Don't let water damage destroy your property investment. Our certified restoration specialists provide 24/7 emergency response with industrial-grade extraction equipment and advanced structural drying techniques. We prevent costly mold growth and secondary damage while working directly with your insurance company to minimize out-of-pocket expenses. Every hour counts – our rapid response team can be at your property within 60 minutes to begin immediate stabilization and damage mitigation.</p>
                     <div class="cnt-tagsServices">
-                        <a
-                            href="/restoration/water-damage/flood-damage"
-                            class="service-tag">Flood Damage</a
-                        >
-                        <a
-                            href="/restoration/water-damage/leak-detection"
-                            class="service-tag">Leak Repair</a
-                        >
-                        <a
-                            href="/restoration/water-damage/basement-flooding"
-                            class="service-tag">Basement Flooding</a
-                        >
-                        <a
-                            href="/restoration/water-damage/ceiling-water-damage"
-                            class="service-tag">Ceiling Water Damage</a
-                        >
-                        <a
-                            href="/restoration/water-damage/emergency-water-removal"
-                            class="service-tag">Emergency Water Removal</a
-                        >
-                        <a
-                            href="/restoration/water-damage/water-extraction"
-                            class="service-tag">Water Extraction</a
-                        >
+                        <a href="/restoration/water-damage/flood-damage" class="service-tag">Flood Damage</a>
+                        <a href="/restoration/water-damage/leak-detection" class="service-tag">Leak Repair</a>
+                        <a href="/restoration/water-damage/basement-flooding" class="service-tag">Basement Flooding</a>
+                        <a href="/restoration/water-damage/ceiling-water-damage" class="service-tag">Ceiling Water Damage</a>
+                        <a href="/restoration/water-damage/emergency-water-removal" class="service-tag">Emergency Water Removal</a>
+                        <a href="/restoration/water-damage/water-extraction" class="service-tag">Water Extraction</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/water-damage/flood-damage"
-                            class="card-link"
-                        >
+                        <a href="/restoration/water-damage/flood-damage" class="card-link">
                             Fix My Water Damage Now →
                         </a>
                     </div>
@@ -138,55 +102,23 @@ const pageDescription =
 
             <div class="service-card">
                 <img
-                    src="/images/fire-damage.webp"
+                    src="/images/fireDamage.jpg"
                     alt="Fire Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Fire Damage</h2>
-                    <p class="card-description">
-                        Recover completely from devastating fire damage with our
-                        comprehensive restoration services. Beyond visible
-                        damage, fires leave behind toxic smoke residue,
-                        lingering odors, and hidden structural compromises that
-                        threaten your family's health. Our IICRC-certified
-                        technicians use advanced ozone treatment, thermal
-                        fogging, and specialized cleaning agents to eliminate
-                        all traces of smoke and soot while rebuilding damaged
-                        areas to pre-loss condition. We coordinate with your
-                        insurance adjuster throughout the entire process.
-                    </p>
+                    <p class="card-description">Recover completely from devastating fire damage with our comprehensive restoration services. Beyond visible damage, fires leave behind toxic smoke residue, lingering odors, and hidden structural compromises that threaten your family's health. Our IICRC-certified technicians use advanced ozone treatment, thermal fogging, and specialized cleaning agents to eliminate all traces of smoke and soot while rebuilding damaged areas to pre-loss condition. We coordinate with your insurance adjuster throughout the entire process.</p>
                     <div class="cnt-tagsServices">
-                        <a
-                            href="/restoration/fire-damage/smoke-damage"
-                            class="service-tag">Smoke Damage</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/soot-cleanup"
-                            class="service-tag">Soot Cleanup</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-damage-repair"
-                            class="service-tag">Fire Damage Repair</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/emergency-fire-response"
-                            class="service-tag">Emergency Fire Response</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/smoke-odor-removal"
-                            class="service-tag">Smoke Odor Removal</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-restoration"
-                            class="service-tag">Fire Restoration</a
-                        >
+                        <a href="/restoration/fire-damage/smoke-damage" class="service-tag">Smoke Damage</a>
+                        <a href="/restoration/fire-damage/soot-cleanup" class="service-tag">Soot Cleanup</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair" class="service-tag">Fire Damage Repair</a>
+                        <a href="/restoration/fire-damage/emergency-fire-response" class="service-tag">Emergency Fire Response</a>
+                        <a href="/restoration/fire-damage/smoke-odor-removal" class="service-tag">Smoke Odor Removal</a>
+                        <a href="/restoration/fire-damage/fire-restoration" class="service-tag">Fire Restoration</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/fire-damage/smoke-damage"
-                            class="card-link"
-                        >
+                        <a href="/restoration/fire-damage/smoke-damage" class="card-link">
                             Clean Up After Fire →
                         </a>
                     </div>
@@ -195,51 +127,22 @@ const pageDescription =
 
             <div class="service-card">
                 <img
-                    src="/images/storm-damage.webp"
+                    src="/images/stormDamage.jpg"
                     alt="Storm Damage Restoration"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Storm Damage</h2>
-                    <p class="card-description">
-                        Protect your property from Florida's unpredictable
-                        weather with our expert storm damage restoration
-                        services. Hurricane-force winds, hail, and flooding can
-                        cause catastrophic structural damage requiring immediate
-                        professional intervention. Our emergency response team
-                        secures your property with emergency board-ups and
-                        tarping while conducting thorough damage assessments for
-                        insurance claims. We're experienced with Florida's
-                        unique weather challenges and work year-round to restore
-                        properties quickly and safely.
-                    </p>
+                    <p class="card-description">Protect your property from Florida's unpredictable weather with our expert storm damage restoration services. Hurricane-force winds, hail, and flooding can cause catastrophic structural damage requiring immediate professional intervention. Our emergency response team secures your property with emergency board-ups and tarping while conducting thorough damage assessments for insurance claims. We're experienced with Florida's unique weather challenges and work year-round to restore properties quickly and safely.</p>
                     <div class="cnt-tagsServices">
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage"
-                            class="service-tag">Hurricane Damage</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/wind-damage"
-                            class="service-tag">Wind Damage</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/storm-debris-removal"
-                            class="service-tag">Storm Debris Removal</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/emergency-storm-repair"
-                            class="service-tag">Emergency Storm Repair</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/roof-damage"
-                            class="service-tag">Roof Damage</a
-                        >
+                        <a href="/restoration/storm-damage/hurricane-damage" class="service-tag">Hurricane Damage</a>
+                        <a href="/restoration/storm-damage/wind-damage" class="service-tag">Wind Damage</a>
+                        <a href="/restoration/storm-damage/storm-debris-removal" class="service-tag">Storm Debris Removal</a>
+                        <a href="/restoration/storm-damage/emergency-storm-repair" class="service-tag">Emergency Storm Repair</a>
+                        <a href="/restoration/storm-damage/roof-damage" class="service-tag">Roof Damage</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage"
-                            class="card-link"
-                        >
+                        <a href="/restoration/storm-damage/hurricane-damage" class="card-link">
                             Repair Storm Damage Today →
                         </a>
                     </div>
@@ -248,55 +151,23 @@ const pageDescription =
 
             <div class="service-card">
                 <img
-                    src="/images/mold-damage.webp"
+                    src="/images/moldDamage.jpg"
                     alt="Mold Remediation"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Mold Remediation</h2>
-                    <p class="card-description">
-                        Don't ignore potential mold problems – they multiply
-                        rapidly and pose serious health risks to your family.
-                        Our certified mold remediation specialists conduct
-                        thorough inspections using advanced moisture detection
-                        equipment and air quality testing to identify hidden
-                        mold colonies. We safely remove all contaminated
-                        materials using contained removal techniques, treat
-                        affected areas with antimicrobial solutions, and
-                        implement prevention strategies to keep your indoor air
-                        quality healthy long-term.
-                    </p>
+                    <p class="card-description">Don't ignore potential mold problems – they multiply rapidly and pose serious health risks to your family. Our certified mold remediation specialists conduct thorough inspections using advanced moisture detection equipment and air quality testing to identify hidden mold colonies. We safely remove all contaminated materials using contained removal techniques, treat affected areas with antimicrobial solutions, and implement prevention strategies to keep your indoor air quality healthy long-term.</p>
                     <div class="cnt-tagsServices">
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection"
-                            class="service-tag">Mold Inspection</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/black-mold-removal"
-                            class="service-tag">Black Mold Removal</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-prevention"
-                            class="service-tag">Mold Prevention</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-testing"
-                            class="service-tag">Mold Testing</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/air-quality-testing"
-                            class="service-tag">Air Quality Testing</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-cleanup"
-                            class="service-tag">Mold Cleanup</a
-                        >
+                        <a href="/restoration/mold-remediation/mold-inspection" class="service-tag">Mold Inspection</a>
+                        <a href="/restoration/mold-remediation/black-mold-removal" class="service-tag">Black Mold Removal</a>
+                        <a href="/restoration/mold-remediation/mold-prevention" class="service-tag">Mold Prevention</a>
+                        <a href="/restoration/mold-remediation/mold-testing" class="service-tag">Mold Testing</a>
+                        <a href="/restoration/mold-remediation/air-quality-testing" class="service-tag">Air Quality Testing</a>
+                        <a href="/restoration/mold-remediation/mold-cleanup" class="service-tag">Mold Cleanup</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection"
-                            class="card-link"
-                        >
+                        <a href="/restoration/mold-remediation/mold-inspection" class="card-link">
                             Remove Mold Fast →
                         </a>
                     </div>
@@ -305,51 +176,22 @@ const pageDescription =
 
             <div class="service-card">
                 <img
-                    src="/images/mitigation-services.webp"
+                    src="/images/mitigation.jpg"
                     alt="Mitigation Services"
                     class="card-image"
                 />
                 <div class="card-content">
                     <h2 class="card-title">Mitigation Services</h2>
-                    <p class="card-description">
-                        When disaster strikes, immediate action prevents
-                        thousands in additional damage costs. Our mitigation
-                        specialists arrive on-site quickly to stabilize your
-                        property, extract water, secure openings, and implement
-                        emergency containment procedures. We use advanced
-                        moisture monitoring and thermal imaging to identify
-                        hidden problems before they escalate. Swift mitigation
-                        services can reduce restoration costs by up to 40% while
-                        minimizing disruption to your daily life and business
-                        operations.
-                    </p>
+                    <p class="card-description">When disaster strikes, immediate action prevents thousands in additional damage costs. Our mitigation specialists arrive on-site quickly to stabilize your property, extract water, secure openings, and implement emergency containment procedures. We use advanced moisture monitoring and thermal imaging to identify hidden problems before they escalate. Swift mitigation services can reduce restoration costs by up to 40% while minimizing disruption to your daily life and business operations.</p>
                     <div class="cnt-tagsServices">
-                        <a
-                            href="/restoration/mitigation-services/water-mitigation"
-                            class="service-tag">Water Mitigation</a
-                        >
-                        <a
-                            href="/restoration/mitigation-services/fire-mitigation"
-                            class="service-tag">Fire Mitigation</a
-                        >
-                        <a
-                            href="/restoration/mitigation-services/mold-mitigation"
-                            class="service-tag">Mold Mitigation</a
-                        >
-                        <a
-                            href="/restoration/mitigation-services/storm-mitigation"
-                            class="service-tag">Storm Mitigation</a
-                        >
-                        <a
-                            href="/restoration/mitigation-services/emergency-response"
-                            class="service-tag">Emergency Response</a
-                        >
+                        <a href="/restoration/mitigation-services/water-mitigation" class="service-tag">Water Mitigation</a>
+                        <a href="/restoration/mitigation-services/fire-mitigation" class="service-tag">Fire Mitigation</a>
+                        <a href="/restoration/mitigation-services/mold-mitigation" class="service-tag">Mold Mitigation</a>
+                        <a href="/restoration/mitigation-services/storm-mitigation" class="service-tag">Storm Mitigation</a>
+                        <a href="/restoration/mitigation-services/emergency-response" class="service-tag">Emergency Response</a>
                     </div>
                     <div>
-                        <a
-                            href="/restoration/mitigation-services/water-mitigation"
-                            class="card-link"
-                        >
+                        <a href="/restoration/mitigation-services/water-mitigation" class="card-link">
                             Prevent Further Damage →
                         </a>
                     </div>
@@ -369,84 +211,40 @@ const pageDescription =
                 <div class="region-column">
                     <h3 class="region-title">Central Florida</h3>
                     <div class="city-links">
-                        <a href="/restoration/water-damage/flood-damage/orlando"
-                            >Flood Damage Orlando</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-damage-repair/kissimmee"
-                            >Fire Damage Kissimmee</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection/lakeland"
-                            >Mold Inspection Lakeland</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage/winter-garden"
-                            >Hurricane Damage Winter Garden</a
-                        >
+                        <a href="/restoration/water-damage/flood-damage/orlando">Flood Damage Orlando</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/kissimmee">Fire Damage Kissimmee</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/lakeland">Mold Inspection Lakeland</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/winter-garden">Hurricane Damage Winter Garden</a>
                     </div>
                 </div>
 
                 <div class="region-column">
                     <h3 class="region-title">Tampa Bay Region</h3>
                     <div class="city-links">
-                        <a href="/restoration/water-damage/flood-damage/tampa"
-                            >Flood Damage Tampa</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-damage-repair/st-petersburg"
-                            >Fire Damage St. Petersburg</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection/clearwater"
-                            >Mold Inspection Clearwater</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage/sarasota"
-                            >Hurricane Damage Sarasota</a
-                        >
+                        <a href="/restoration/water-damage/flood-damage/tampa">Flood Damage Tampa</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/st-petersburg">Fire Damage St. Petersburg</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/clearwater">Mold Inspection Clearwater</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/sarasota">Hurricane Damage Sarasota</a>
                     </div>
                 </div>
 
                 <div class="region-column">
                     <h3 class="region-title">South Florida</h3>
                     <div class="city-links">
-                        <a href="/restoration/water-damage/flood-damage/miami"
-                            >Flood Damage Miami</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale"
-                            >Fire Damage Fort Lauderdale</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection/hollywood"
-                            >Mold Inspection Hollywood</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage/coral-gables"
-                            >Hurricane Damage Coral Gables</a
-                        >
+                        <a href="/restoration/water-damage/flood-damage/miami">Flood Damage Miami</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/fort-lauderdale">Fire Damage Fort Lauderdale</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/hollywood">Mold Inspection Hollywood</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/coral-gables">Hurricane Damage Coral Gables</a>
                     </div>
                 </div>
 
                 <div class="region-column">
                     <h3 class="region-title">Southwest Florida</h3>
                     <div class="city-links">
-                        <a href="/restoration/water-damage/flood-damage/naples"
-                            >Flood Damage Naples</a
-                        >
-                        <a
-                            href="/restoration/fire-damage/fire-damage-repair/cape-coral"
-                            >Fire Damage Cape Coral</a
-                        >
-                        <a
-                            href="/restoration/mold-remediation/mold-inspection/fort-myers"
-                            >Mold Inspection Fort Myers</a
-                        >
-                        <a
-                            href="/restoration/storm-damage/hurricane-damage/bonita-springs"
-                            >Hurricane Damage Bonita Springs</a
-                        >
+                        <a href="/restoration/water-damage/flood-damage/naples">Flood Damage Naples</a>
+                        <a href="/restoration/fire-damage/fire-damage-repair/cape-coral">Fire Damage Cape Coral</a>
+                        <a href="/restoration/mold-remediation/mold-inspection/fort-myers">Mold Inspection Fort Myers</a>
+                        <a href="/restoration/storm-damage/hurricane-damage/bonita-springs">Hurricane Damage Bonita Springs</a>
                     </div>
                 </div>
             </div>

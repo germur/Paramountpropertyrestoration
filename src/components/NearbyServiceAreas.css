@@ -1,0 +1,131 @@
+.nearby-service-areas {
+  background: #f8fafc;
+  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+.nearby-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nearby-service-areas h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.nearby-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.nearby-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nearby-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+.nearby-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 10px;
+  color: white;
+}
+
+.nearby-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nearby-content {
+  flex: 1;
+}
+
+.nearby-content h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nearby-city {
+  font-size: 1.125rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .nearby-service-areas {
+    padding: 3rem 0;
+    margin-top: 3rem;
+  }
+
+  .nearby-service-areas h2 {
+    font-size: 1.75rem;
+  }
+
+  .nearby-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .nearby-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nearby-card {
+    padding: 1.25rem;
+  }
+
+  .nearby-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nearby-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nearby-content h3 {
+    font-size: 0.8125rem;
+  }
+
+  .nearby-city {
+    font-size: 1rem;
+  }
+}
