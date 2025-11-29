@@ -18,8 +18,10 @@ const slugify = (input) => {
 };
 
 const withBaseUrl = (path) => {
-  const clean = (path || '/').replace(/\/$/, '');
-  return `${SITE_URL}${clean.startsWith('/') ? clean : `/${clean}`}`;
+  const clean = (path || '/').replace(/\/$/, ''); // remove trailing slash temporarily
+  const fullUrl = `${SITE_URL}${clean.startsWith('/') ? clean : `/${clean}`}`;
+  // ALWAYS add trailing slash (except root which already has one)
+  return clean === '' || clean === '/' ? `${SITE_URL}/` : `${fullUrl}/`;
 };
 
 // --- build urls using real restoration data ---
