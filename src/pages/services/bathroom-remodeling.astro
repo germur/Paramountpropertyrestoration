@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import UnifiedServiceTemplate from "../../components/services/templates/UnifiedServiceTemplate.astro";
+import InvertedPyramidTemplate from "../../components/services/templates/InvertedPyramidTemplate.astro";
 import "../../styles/global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
@@ -36,5 +36,5 @@ const pageDescription = "Stylish, functional bathrooms with ADA conversions and 
     slot="head"
   />
 
-  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
+  <InvertedPyramidTemplate group={pageData.group} sub={pageData.sub} isHub={true} />
 </BaseLayout>

@@ -1,0 +1,223 @@
+---
+// src/components/services/templates/InvertedPyramidTemplate.astro
+// INVERTED PYRAMID ARCHITECTURE: Clean, semantic, data-driven
+
+import { cities } from "../../../data/restoration.js";
+import { getAltText } from "../../../data/image-alt-texts.js";
+import FAQ from "../../AcordeonServices";
+import {
+  getServicesForGroup,
+  getTrustSignalsForGroup,
+  getWarningSignsForGroup,
+  getServiceProcess,
+  getHeroConfig,
+  getHeroImage,
+  getCitiesByRegion
+} from "../../../utils/services-data.js";
+import "../../../styles/pages/inverted-pyramid-service.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+// Props
+const { group, sub, isHub = false } = Astro.props;
+
+// Data extraction (pure functions, no inline logic)
+const heroConfig = getHeroConfig(group, sub, isHub);
+const heroImage = getHeroImage(group.slug);
+const heroAlt = getAltText(heroImage.key);
+
+const coreServices = getServicesForGroup(group.slug);
+const trustSignals = getTrustSignalsForGroup(group.slug);
+const warningSigns = getWarningSignsForGroup(group.slug);
+const processSteps = getServiceProcess();
+const cityRegions = getCitiesByRegion(cities);
+---
+
+<!-- Semantic HTML5 Structure -->
+<main class="inverted-pyramid-service">
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       1. HERO SECTION (The Hook)
+       Purpose: Capture attention, communicate value, drive action
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <header class="pyramid-hero" role="banner">
+    <picture class="hero-background">
+      <source srcset={heroImage.webp} type="image/webp" />
+      <img src={heroImage.jpg} alt={heroAlt} class="hero-bg-image" />
+    </picture>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content-wrapper container">
+      <div class="hero-badge">
+        <i class="fas fa-certificate" aria-hidden="true"></i>
+        <span>{heroConfig.badgeText}</span>
+      </div>
+
+      <h1 class="hero-title">{heroConfig.title}</h1>
+
+      <p class="hero-description">{heroConfig.description}</p>
+
+      <div class="hero-cta-group">
+        <a href={`tel:${heroConfig.ctaPhone}`} class="cta-btn cta-primary">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>{heroConfig.ctaText}</span>
+        </a>
+        <a href="/portfolio" class="cta-btn cta-secondary">
+          <i class="fas fa-images" aria-hidden="true"></i>
+          <span>View Our Work</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       2. TRUST SIGNALS (Authority)
+       Purpose: Establish credibility immediately
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="pyramid-trust" aria-labelledby="trust-heading">
+    <div class="container">
+      <h2 id="trust-heading" class="section-title-center">Why Choose Paramount</h2>
+
+      <ul class="trust-grid" role="list">
+        {trustSignals.map((signal) => (
+          <li class="trust-item">
+            <i class="fas fa-check-circle trust-icon" aria-hidden="true"></i>
+            <span>{signal}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       3. CORE SERVICES (The Solution)
+       Purpose: Show what we offer
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="pyramid-services" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 id="services-heading" class="section-title-center">Our {group.name} Services</h2>
+
+      <div class="services-grid">
+        {coreServices.map((service) => (
+          <article class="service-card">
+            <header class="service-card-header">
+              <i class={service.icon} aria-hidden="true"></i>
+              <h3 class="service-card-title">{service.name}</h3>
+            </header>
+            <p class="service-card-desc">{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       4a. METHODOLOGY (Validation)
+       Purpose: Show our proven process
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="pyramid-methodology" aria-labelledby="methodology-heading">
+    <div class="container">
+      <h2 id="methodology-heading" class="section-title-center">Our 4-Step Process</h2>
+
+      <ol class="process-timeline" role="list">
+        {processSteps.map((step) => (
+          <li class="process-step">
+            <div class="process-number" aria-label={`Step ${step.step}`}>
+              {step.step}
+            </div>
+            <div class="process-content">
+              <h3 class="process-title">{step.title}</h3>
+              <p class="process-desc">{step.description}</p>
+            </div>
+            <i class={step.icon} class="process-icon" aria-hidden="true"></i>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       4b. PAIN POINTS (Urgency)
+       Purpose: Remind user why they need this service
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <aside class="pyramid-pain-points" aria-labelledby="pain-heading">
+    <div class="container">
+      <h2 id="pain-heading" class="section-title-center">Signs You Need {group.name}</h2>
+
+      <ul class="warning-list" role="list">
+        {warningSigns.map((sign) => (
+          <li class="warning-item">
+            <i class="fas fa-exclamation-triangle warning-icon" aria-hidden="true"></i>
+            <span>{sign}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="pain-cta-box">
+        <p class="pain-cta-text">
+          Don't wait until it's too late. Get a <strong>free consultation</strong> today.
+        </p>
+        <a href="/contact" class="cta-btn cta-primary">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i>
+          <span>Schedule Consultation</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       5. LOCAL SEO HUB (Relevancia)
+       Purpose: Establish geographic relevance
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="pyramid-local-hub" aria-labelledby="local-heading">
+    <div class="container">
+      <h2 id="local-heading" class="section-title-center">
+        {group.name} Across Florida
+      </h2>
+
+      <p class="local-intro">
+        We provide professional {group.name.toLowerCase()} services throughout Florida.
+        Select your city to learn more about local service availability.
+      </p>
+
+      <div class="regions-grid">
+        {Object.entries(cityRegions).map(([regionName, regionCities]) => (
+          <article class="region-card">
+            <h3 class="region-title">{regionName}</h3>
+            <ul class="city-links" role="list">
+              {regionCities.slice(0, 6).map((city) => (
+                <li>
+                  <a
+                    href={`/services/${group.slug}/${city.slug}/`}
+                    class="city-link"
+                  >
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    {city.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {regionCities.length > 6 && (
+              <p class="more-cities">
+                + {regionCities.length - 6} more cities
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       6. FAQ SECTION (Objection Handling)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="pyramid-faq" aria-labelledby="faq-heading">
+    <FAQ
+      category="general"
+      customQuestions={[]}
+      title={`Frequently Asked Questions About ${group.name}`}
+      client:load
+    />
+  </section>
+
+</main>
