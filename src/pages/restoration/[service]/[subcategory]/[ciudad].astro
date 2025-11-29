@@ -2,6 +2,7 @@
 // src/pages/restoration/[service]/[subcategory]/[ciudad].astro
 import { getAllRestorationCombinations, cities } from "../../../../data/restoration.js";
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
+import { getCityGeo } from "../../../../data/cities-geo.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
@@ -25,6 +26,9 @@ export async function getStaticPaths() {
 // Extract params and props
 const { service, subcategory, ciudad } = Astro.params;
 const { servicioData, ciudadData, groupData } = Astro.props;
+
+// Get city geo data (ZIP codes & neighborhoods)
+const cityGeoData = getCityGeo(ciudad);
 
 // Page configuration (DETAIL: con ciudad)
 const pageConfig = {
@@ -381,6 +385,60 @@ const nearbyAreas = ["Weston", "Pembroke Pines", "Coral Gables", "Aventura", "Do
     title={`Frequently Asked Questions About ${servicioData.title} in ${ciudadData.nombre}`}
     client:load
   />
+
+  <!-- ZIP Codes & Neighborhoods Section -->
+  {cityGeoData && (cityGeoData.zipcodes?.length > 0 || cityGeoData.neighborhoods?.length > 0) && (
+    <section class="zip-neighborhoods-section">
+      <div class="container">
+        <h2 class="section-title-center">
+          Areas and ZIP Codes We Serve in {ciudadData.nombre}
+        </h2>
+        <p class="section-intro-text">
+          Our {servicioData.title.toLowerCase()} team serves all of {ciudadData.nombre}, {ciudadData.region} and nearby communities with rapid 24/7 emergency response.
+        </p>
+
+        <div class="zip-neighborhoods-grid">
+          {/* Neighborhoods Column */}
+          {cityGeoData.neighborhoods && cityGeoData.neighborhoods.length > 0 && (
+            <div class="local-coverage-card">
+              <h3 class="coverage-card-title">
+                <i class="fas fa-map-marker-alt"></i> Neighborhoods in {ciudadData.nombre}
+              </h3>
+              <ul class="coverage-list">
+                {cityGeoData.neighborhoods.slice(0, 10).map(neighborhood => (
+                  <li class="coverage-item">{neighborhood}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* ZIP Codes Column */}
+          {cityGeoData.zipcodes && cityGeoData.zipcodes.length > 0 && (
+            <div class="local-coverage-card">
+              <h3 class="coverage-card-title">
+                <i class="fas fa-mail-bulk"></i> ZIP Codes in {ciudadData.nombre}
+              </h3>
+              <ul class="zip-code-list">
+                {cityGeoData.zipcodes.slice(0, 12).map(zip => (
+                  <li class="zip-code-item">{zip}</li>
+                ))}
+              </ul>
+              {cityGeoData.zipcodes.length > 12 && (
+                <p class="more-zips-note">+ {cityGeoData.zipcodes.length - 12} more ZIP codes</p>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div class="zip-cta-box">
+          <p class="zip-cta-text">
+            <strong>Don't see your specific location?</strong> We serve the entire {ciudadData.county} area.
+            Call <a href="tel:7866022217" class="phone-link-inline">(786) 602-2217</a> to confirm service availability.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- GEOGRAPHIC VALIDATION: Map and Service Area (BASE of Pyramid) -->
   <section id="service-area" class="geographic-validation-section">

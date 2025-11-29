@@ -203,7 +203,24 @@ const SEOHead = ({
       url: siteUrl,
       telephone: phone
     },
-    areaServed: city ? { '@type': 'City', name: addressLocality || humanize(city) } : { '@type': 'State', name: 'Florida' },
+    areaServed: city ? {
+      '@type': 'City',
+      name: addressLocality || humanize(city),
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: addressLocality || humanize(city),
+        addressRegion: addressRegion || 'FL',
+        addressCountry: 'US'
+      }
+    } : {
+      '@type': 'State',
+      name: 'Florida',
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: 'FL',
+        addressCountry: 'US'
+      }
+    },
     serviceType: humanize(service) || 'Restoration',
     url: canonicalURL,
     availableChannel: {
