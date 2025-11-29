@@ -5,10 +5,10 @@ const Accordion = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     const sections = [
-        { id: 1, title: "What is the process?", content: "This is the content for service 1.", image: "/images/carroManu1.jpg" },
-        { id: 2, title: "How long does it take?", content: "This is the content for service 2.", image: "/images/carroManu2.jpg" },
-        { id: 3, title: "Can I get an estimate?", content: "This is the content for service 3.", image: "/images/carroManu3.jpg" },
-        { id: 4, title: "What does the service include?", content: "This is the content for service 4.", image: "/images/carroManu4.jpg" },
+        { id: 1, title: "What is the process?", content: "This is the content for service 1.", image: "/images/carroManu1.webp" },
+        { id: 2, title: "How long does it take?", content: "This is the content for service 2.", image: "/images/carroManu2.webp" },
+        { id: 3, title: "Can I get an estimate?", content: "This is the content for service 3.", image: "/images/carroManu3.webp" },
+        { id: 4, title: "What does the service include?", content: "This is the content for service 4.", image: "/images/carroManu4.webp" },
     ];
 
     const toggleSection = (index) => {

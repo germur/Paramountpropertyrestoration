@@ -2,7 +2,7 @@
 .hero-section {
     position: relative;
     min-height: 100vh;
-    background-image: url('/images/portadaHome.jpg');
+    background-image: url('/images/portadaHome.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -468,6 +468,7 @@ div.cnt-ul>ul>li>a:hover {
         grid-template-columns: repeat(2, 1fr);
         padding: 30px;
     }
+
     .cnt-card {
         border-bottom: none;
     }
@@ -592,8 +593,8 @@ div.cnt-ul>ul>li>a:hover {
     }
 }
 
-@media (min-width: 2560px){
-        .hero-section {
+@media (min-width: 2560px) {
+    .hero-section {
         min-height: 50vh;
     }
 }

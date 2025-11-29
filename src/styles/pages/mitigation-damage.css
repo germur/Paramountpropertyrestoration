@@ -5,7 +5,7 @@
 .hero-section {
     position: relative;
     height: 600px;
-    background-image: url(/images/heroMitigation.jpg);
+    background-image: url(/images/mitigation-services.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -535,9 +535,9 @@
 
 /* Tablet - 768px */
 @media (max-width: 768px) {
-    
+
     /* Let global responsive system handle services grid layout */
-    
+
     .service-item,
     .service-item-static,
     .service-item-clickable {
@@ -548,7 +548,7 @@
         border: 1px solid #e9ecef !important;
         gap: 1rem !important;
     }
-    
+
     .service-item i,
     .service-item-static i,
     .service-item-clickable i {
@@ -558,7 +558,7 @@
         width: 40px !important;
         text-align: center !important;
     }
-    
+
     .service-item h3,
     .service-item-static h3,
     .service-item-clickable h3 {
@@ -606,40 +606,40 @@
     .city-grid-section {
         padding: 2rem 0;
     }
-    
+
     .unified-city-container {
         padding: 0 1rem;
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .unified-region-card {
         padding: 1.5rem;
     }
-    
+
     .unified-region-title {
         font-size: 1.125rem;
         margin-bottom: 1rem;
     }
-    
+
     .unified-city-pills {
         gap: 0.5rem;
     }
-    
+
     .unified-city-pill {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
-    
+
     .emergency-notice {
         padding: 2rem 1rem;
         margin-top: 2rem;
     }
-    
+
     .emergency-notice h3 {
         font-size: 1.25rem;
     }
-    
+
     .emergency-phone {
         padding: 0.85rem 1.5rem;
         font-size: 1rem;
@@ -664,23 +664,23 @@
 
 /* Mobile - 480px */
 @media (max-width: 480px) {
-    
+
     /* Let global responsive system handle services grid layout */
-    
+
     .service-item,
     .service-item-static,
     .service-item-clickable {
         padding: 0.875rem !important;
         gap: 0.75rem !important;
     }
-    
+
     .service-item i,
     .service-item-static i,
     .service-item-clickable i {
         font-size: 1.5rem !important;
         width: 36px !important;
     }
-    
+
     .service-item h3,
     .service-item-static h3,
     .service-item-clickable h3 {
@@ -717,31 +717,31 @@
     .city-grid-section {
         padding: 2rem 0;
     }
-    
+
     .unified-city-container {
         padding: 0 1rem;
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .unified-region-card {
         padding: 1.25rem;
     }
-    
+
     .unified-region-title {
         font-size: 1rem;
         margin-bottom: 1rem;
     }
-    
+
     .unified-city-pills {
         gap: 0.4rem;
     }
-    
+
     .unified-city-pill {
         padding: 0.35rem 0.75rem;
         font-size: 0.75rem;
     }
-    
+
     .emergency-notice {
         padding: 1.5rem 1rem;
         margin-top: 2rem;
@@ -787,22 +787,23 @@
 
 /* Better mobile hero and services layout */
 @media (max-width: 768px) {
+
     /* Override existing hero with better responsive design */
     .hero-content {
         padding: 1.5rem 1rem !important;
         max-width: 100% !important;
     }
-    
+
     .hero-content h1 {
         font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
         line-height: 1.2 !important;
     }
-    
+
     .hero-content p {
         font-size: clamp(0.95rem, 4vw, 1.125rem) !important;
         line-height: 1.5 !important;
     }
-    
+
     /* Better CTA button */
     .cta-button {
         padding: 0.875rem 1.75rem !important;
@@ -812,7 +813,7 @@
         display: block !important;
         margin: 0 auto !important;
     }
-    
+
     /* Improved services grid */
     .services-grid {
         display: grid !important;
@@ -822,7 +823,7 @@
         max-width: 400px !important;
         margin: 0 auto !important;
     }
-    
+
     .service-item,
     .service-item-static,
     .service-item-clickable {
@@ -835,9 +836,9 @@
         max-width: 100% !important;
         gap: 1rem !important;
         align-items: center !important;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .service-item i,
     .service-item-static i,
     .service-item-clickable i {
@@ -847,7 +848,7 @@
         width: 40px !important;
         text-align: center !important;
     }
-    
+
     .service-item h3,
     .service-item-static h3,
     .service-item-clickable h3 {
@@ -864,38 +865,38 @@
         height: 50vh !important;
         min-height: 350px !important;
     }
-    
+
     .hero-content {
         padding: 1rem 0.75rem !important;
     }
-    
+
     .hero-content h1 {
         font-size: clamp(1.5rem, 8vw, 1.875rem) !important;
     }
-    
+
     .hero-content p {
         font-size: clamp(0.875rem, 4vw, 1rem) !important;
     }
-    
+
     .services-grid {
         padding: 1rem 0.75rem !important;
         max-width: 100% !important;
     }
-    
+
     .service-item,
     .service-item-static,
     .service-item-clickable {
         padding: 0.875rem !important;
         gap: 0.75rem !important;
     }
-    
+
     .service-item i,
     .service-item-static i,
     .service-item-clickable i {
         font-size: 1.5rem !important;
         width: 36px !important;
     }
-    
+
     .service-item h3,
     .service-item-static h3,
     .service-item-clickable h3 {

@@ -12,7 +12,7 @@ import {
   getServiceProcess,
   getHeroConfig,
   getHeroImage,
-  getCitiesByRegion
+  getCitiesByRegion,
 } from "../../../utils/services-data.js";
 import "../../../styles/pages/inverted-pyramid-service.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -34,7 +34,6 @@ const cityRegions = getCitiesByRegion(cities);
 
 <!-- Semantic HTML5 Structure -->
 <main class="inverted-pyramid-service">
-
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        1. HERO SECTION (The Hook)
        Purpose: Capture attention, communicate value, drive action
@@ -42,7 +41,7 @@ const cityRegions = getCitiesByRegion(cities);
   <header class="pyramid-hero" role="banner">
     <picture class="hero-background">
       <source srcset={heroImage.webp} type="image/webp" />
-      <img src={heroImage.jpg} alt={heroAlt} class="hero-bg-image" />
+      <img src={heroImage.webp} alt={heroAlt} class="hero-bg-image" />
     </picture>
 
     <div class="hero-overlay"></div>
@@ -76,15 +75,19 @@ const cityRegions = getCitiesByRegion(cities);
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <section class="pyramid-trust" aria-labelledby="trust-heading">
     <div class="container">
-      <h2 id="trust-heading" class="section-title-center">Why Choose Paramount</h2>
+      <h2 id="trust-heading" class="section-title-center">
+        Why Choose Paramount
+      </h2>
 
       <ul class="trust-grid" role="list">
-        {trustSignals.map((signal) => (
-          <li class="trust-item">
-            <i class="fas fa-check-circle trust-icon" aria-hidden="true"></i>
-            <span>{signal}</span>
-          </li>
-        ))}
+        {
+          trustSignals.map((signal) => (
+            <li class="trust-item">
+              <i class="fas fa-check-circle trust-icon" aria-hidden="true" />
+              <span>{signal}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>
@@ -95,18 +98,22 @@ const cityRegions = getCitiesByRegion(cities);
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <section class="pyramid-services" aria-labelledby="services-heading">
     <div class="container">
-      <h2 id="services-heading" class="section-title-center">Our {group.name} Services</h2>
+      <h2 id="services-heading" class="section-title-center">
+        Our {group.name} Services
+      </h2>
 
       <div class="services-grid">
-        {coreServices.map((service) => (
-          <article class="service-card">
-            <header class="service-card-header">
-              <i class={service.icon} aria-hidden="true"></i>
-              <h3 class="service-card-title">{service.name}</h3>
-            </header>
-            <p class="service-card-desc">{service.description}</p>
-          </article>
-        ))}
+        {
+          coreServices.map((service) => (
+            <article class="service-card">
+              <header class="service-card-header">
+                <i class={service.icon} aria-hidden="true" />
+                <h3 class="service-card-title">{service.name}</h3>
+              </header>
+              <p class="service-card-desc">{service.description}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -117,21 +124,25 @@ const cityRegions = getCitiesByRegion(cities);
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <section class="pyramid-methodology" aria-labelledby="methodology-heading">
     <div class="container">
-      <h2 id="methodology-heading" class="section-title-center">Our 4-Step Process</h2>
+      <h2 id="methodology-heading" class="section-title-center">
+        Our 4-Step Process
+      </h2>
 
       <ol class="process-timeline" role="list">
-        {processSteps.map((step) => (
-          <li class="process-step">
-            <div class="process-number" aria-label={`Step ${step.step}`}>
-              {step.step}
-            </div>
-            <div class="process-content">
-              <h3 class="process-title">{step.title}</h3>
-              <p class="process-desc">{step.description}</p>
-            </div>
-            <i class={step.icon} class="process-icon" aria-hidden="true"></i>
-          </li>
-        ))}
+        {
+          processSteps.map((step) => (
+            <li class="process-step">
+              <div class="process-number" aria-label={`Step ${step.step}`}>
+                {step.step}
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">{step.title}</h3>
+                <p class="process-desc">{step.description}</p>
+              </div>
+              <i class={step.icon} class="process-icon" aria-hidden="true" />
+            </li>
+          ))
+        }
       </ol>
     </div>
   </section>
@@ -142,20 +153,29 @@ const cityRegions = getCitiesByRegion(cities);
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <aside class="pyramid-pain-points" aria-labelledby="pain-heading">
     <div class="container">
-      <h2 id="pain-heading" class="section-title-center">Signs You Need {group.name}</h2>
+      <h2 id="pain-heading" class="section-title-center">
+        Signs You Need {group.name}
+      </h2>
 
       <ul class="warning-list" role="list">
-        {warningSigns.map((sign) => (
-          <li class="warning-item">
-            <i class="fas fa-exclamation-triangle warning-icon" aria-hidden="true"></i>
-            <span>{sign}</span>
-          </li>
-        ))}
+        {
+          warningSigns.map((sign) => (
+            <li class="warning-item">
+              <i
+                class="fas fa-exclamation-triangle warning-icon"
+                aria-hidden="true"
+              />
+              <span>{sign}</span>
+            </li>
+          ))
+        }
       </ul>
 
       <div class="pain-cta-box">
         <p class="pain-cta-text">
-          Don't wait until it's too late. Get a <strong>free consultation</strong> today.
+          Don't wait until it's too late. Get a <strong
+            >free consultation</strong
+          > today.
         </p>
         <a href="/contact" class="cta-btn cta-primary">
           <i class="fas fa-calendar-check" aria-hidden="true"></i>
@@ -181,29 +201,31 @@ const cityRegions = getCitiesByRegion(cities);
       </p>
 
       <div class="regions-grid">
-        {Object.entries(cityRegions).map(([regionName, regionCities]) => (
-          <article class="region-card">
-            <h3 class="region-title">{regionName}</h3>
-            <ul class="city-links" role="list">
-              {regionCities.slice(0, 6).map((city) => (
-                <li>
-                  <a
-                    href={`/services/${group.slug}/${city.slug}/`}
-                    class="city-link"
-                  >
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    {city.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            {regionCities.length > 6 && (
-              <p class="more-cities">
-                + {regionCities.length - 6} more cities
-              </p>
-            )}
-          </article>
-        ))}
+        {
+          Object.entries(cityRegions).map(([regionName, regionCities]) => (
+            <article class="region-card">
+              <h3 class="region-title">{regionName}</h3>
+              <ul class="city-links" role="list">
+                {regionCities.slice(0, 6).map((city) => (
+                  <li>
+                    <a
+                      href={`/services/${group.slug}/${city.slug}/`}
+                      class="city-link"
+                    >
+                      <i class="fas fa-map-marker-alt" aria-hidden="true" />
+                      {city.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {regionCities.length > 6 && (
+                <p class="more-cities">
+                  + {regionCities.length - 6} more cities
+                </p>
+              )}
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -219,5 +241,4 @@ const cityRegions = getCitiesByRegion(cities);
       client:load
     />
   </section>
-
 </main>

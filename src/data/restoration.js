@@ -9,6 +9,9 @@ export const restorationGroups = [
     name: "Flood Damage Cleanup Florida | 24/7 Water Extraction & Drying",
     template: "water",
     description: "Certified flood damage cleanup in Florida. Emergency water removal, drying, mold prevention & structural stabilization. 24/7 response across Orlando, Miami & Tampa.",
+    features: [
+      { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/emergency-water-removal" },
+    ],
     subservices: [
       {
         slug: "flood-damage",
@@ -16,6 +19,9 @@ export const restorationGroups = [
         short: "Cleanup & restoration after flooding",
         nombre: "Flood Damage Cleanup",
         categoria: "restoration",
+        features: [
+          { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/flood-damage.webp", link: "/restoration/water-damage/flood-damage" },
+        ],
         seo: {
           title: "Flood Damage Cleanup Florida | 24/7 Water Extraction & Drying",
           description: "Certified flood damage cleanup in Florida. Emergency water removal, drying, mold prevention & structural stabilization. 24/7 response across Orlando, Miami & Tampa.",
@@ -30,7 +36,7 @@ export const restorationGroups = [
           methodsApplied: ["Psychrometric Calculations", "Negative Air Pressure", "Controlled Demolition"],
           deliverables: [
             "Emergency flood water extraction and removal",
-            "Advanced moisture detection and mapping", 
+            "Advanced moisture detection and mapping",
             "Industrial-grade dehumidification and drying",
             "Antimicrobial treatment and sanitization",
             "Structural stabilization and repair",
@@ -54,21 +60,30 @@ export const restorationGroups = [
         title: "Basement Flooding",
         short: "Basement flooding restoration",
         nombre: "Basement Flooding",
-        categoria: "restoration"
+        categoria: "restoration",
+        features: [
+          { icon: "fas fa-home", title: "Basement Flooding", description: "Basement water removal and drying", slug: "basement-flooding", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/basement-flooding" },
+        ]
       },
       {
         slug: "ceiling-water-damage",
         title: "Ceiling Water Damage",
         short: "Ceiling water damage repair",
         nombre: "Ceiling Water Damage",
-        categoria: "restoration"
+        categoria: "restoration",
+        features: [
+          { icon: "fas fa-cloud-rain", title: "Ceiling Water Damage", description: "Ceiling leak repair and restoration", slug: "ceiling-water-damage", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        ]
       },
       {
         slug: "emergency-water-removal",
         title: "Emergency Water Removal",
         short: "Emergency water extraction services",
         nombre: "Emergency Water Removal",
-        categoria: "restoration"
+        categoria: "restoration",
+        features: [
+          { icon: "fas fa-tint", title: "Emergency Water Removal", description: "24/7 rapid water extraction", slug: "emergency-water-removal", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/emergency-water-removal" }
+        ]
       }
     ]
   },
@@ -103,7 +118,7 @@ export const restorationGroups = [
           deliverables: [
             "Complete smoke residue removal from all surfaces",
             "Advanced odor neutralization and air purification",
-            "HVAC system cleaning and decontamination", 
+            "HVAC system cleaning and decontamination",
             "Content cleaning and restoration",
             "Structural deodorization treatments",
             "Air quality testing and certification"
@@ -139,6 +154,9 @@ export const restorationGroups = [
           title: "Fire Damage Repair Florida | Complete Structural Restoration",
           description: "Complete fire damage repair services in Florida. Structural restoration, rebuilding, smoke cleanup & content restoration. Insurance approved contractors.",
         },
+        features: [
+          { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        ],
         hero: {
           title: "Fire Damage Repair - We Rebuild What Fire Destroyed",
           description: "Fire destroyed your property? Our licensed contractors provide complete fire damage repair including structural rebuilding, smoke cleanup, and content restoration. We work with your insurance.",
@@ -208,7 +226,7 @@ export const restorationGroups = [
             "Complete containment and isolation of affected areas",
             "Safe removal and disposal of contaminated materials",
             "HEPA filtration and air purification",
-            "Antimicrobial treatment and surface disinfection", 
+            "Antimicrobial treatment and surface disinfection",
             "Moisture control and humidity management",
             "Post-remediation testing and clearance certification"
           ]
@@ -228,6 +246,9 @@ export const restorationGroups = [
           title: "Mold Prevention Florida | Stop Mold Before It Grows",
           description: "Professional mold prevention services in Florida. Moisture control, ventilation improvements, antimicrobial treatments & humidity management.",
         },
+        features: [
+          { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/flood-damage" },
+        ],
         hero: {
           title: "Prevent Mold Growth Before It Becomes a Problem",
           description: "Want to prevent mold growth? Our prevention specialists provide moisture control solutions, ventilation improvements, and antimicrobial treatments to stop mold before it starts.",
@@ -254,6 +275,9 @@ export const restorationGroups = [
         short: "Complete mold damage repair",
         nombre: "Mold Damage Restoration",
         categoria: "restoration",
+        features: [
+          { icon: "fas fa-hammer", title: "Property Restoration", description: "Complete restoration of damaged areas to pre-loss condition.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/flood-damage" }
+        ],
         seo: {
           title: "Mold Damage Restoration Florida | Complete Property Repair",
           description: "Complete mold damage restoration in Florida. Structural repairs, material replacement, air purification & final clearance testing after mold removal.",
@@ -274,6 +298,9 @@ export const restorationGroups = [
     name: "Storm Damage Restoration Florida | Hurricane & Wind Damage Repair",
     template: "storm",
     description: "Expert storm damage restoration in Florida. Hurricane damage repair, wind damage cleanup, emergency board-up & structural restoration. 24/7 storm response.",
+    features: [
+      { icon: "fas fa-wrench", title: "Leak Repair", description: "Fix burst pipes and hidden leaks", slug: "leak-repair", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+    ],
     subservices: [
       {
         slug: "hurricane-damage",
@@ -285,6 +312,9 @@ export const restorationGroups = [
           title: "Hurricane Damage Restoration Florida | Emergency Storm Response",
           description: "Expert hurricane damage repair services in Florida. Emergency response, roof repairs, water damage cleanup, wind damage restoration & reconstruction.",
         },
+        features: [
+          { icon: "fas fa-cloud-rain", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        ],
         hero: {
           title: "Hurricane Damage? We Restore Homes After Major Storms",
           description: "Hurricane caused major damage to your property? Our storm restoration specialists provide complete hurricane damage repair including emergency board-up, water extraction, and structural reconstruction.",
@@ -300,6 +330,9 @@ export const restorationGroups = [
           title: "Wind Damage Repair Florida | Roof & Siding Storm Damage",
           description: "Professional wind damage repair in Florida. Roof repairs, siding replacement, window damage, structural repairs after severe weather.",
         },
+        features: [
+          { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+        ],
         hero: {
           title: "Wind Damage to Roof or Siding? We Fix Storm Damage Fast",
           description: "Severe winds damaged your property? Our certified contractors repair wind damage including roof repairs, siding replacement, window damage, and structural reinforcement.",
@@ -357,6 +390,9 @@ export const restorationGroups = [
           title: "Water Damage Mitigation Florida | Emergency Water Protection",
           description: "Emergency water damage mitigation in Florida. Immediate water extraction, moisture control, dehumidification & structural drying to prevent further damage.",
         },
+        features: [
+          { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/flood-damage" },
+        ],
         hero: {
           title: "Water Damage Spreading? We Stop It Before It Gets Worse",
           description: "Water damage spreading through your property? Our mitigation specialists provide immediate water extraction, moisture control, and structural drying to minimize damage and prevent mold growth.",
@@ -423,7 +459,7 @@ export const restorationGroups = [
         slug: "kitchen-remodeling",
         title: "Kitchen Remodeling",
         short: "Complete kitchen renovation",
-        nombre: "Kitchen Remodeling",
+        bgImage: "/images/hero-water.webp",
         categoria: "remodeling",
         seo: {
           title: "Kitchen Remodeling Florida | Custom Kitchen Renovation",
@@ -566,14 +602,14 @@ export const cities = [
 
 // Get all restoration services only
 export function getRestorationServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug !== "remodeling-services"
   );
 }
 
 // Get all remodeling services only  
 export function getRemodelingServices() {
-  return restorationGroups.filter(group => 
+  return restorationGroups.filter(group =>
     group.slug === "remodeling-services"
   );
 }
@@ -602,7 +638,7 @@ export function getCityBySlug(slug) {
 // FUNCIÓN CORREGIDA - Generate all service + city combinations for restoration services
 export function getAllRestorationCombinations() {
   const combinations = [];
-  
+
   restorationGroups.forEach(group => {
     group.subservices.forEach(subservice => {
       cities.forEach(city => {
@@ -620,7 +656,7 @@ export function getAllRestorationCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -628,7 +664,7 @@ export function getAllRestorationCombinations() {
 export function getAllRemodelingCombinations() {
   const remodelingServices = getRemodelingServices();
   const combinations = [];
-  
+
   remodelingServices.forEach(group => {
     group.subservices.forEach(service => {
       cities.forEach(city => {
@@ -644,7 +680,7 @@ export function getAllRemodelingCombinations() {
       });
     });
   });
-  
+
   return combinations;
 }
 
@@ -681,7 +717,7 @@ export function getCityData(citySlug) {
 export function getStats() {
   const restorationServices = getRestorationServices().reduce((total, group) => total + group.subservices.length, 0);
   const remodelingServices = getRemodelingServices().reduce((total, group) => total + group.subservices.length, 0);
-  
+
   return {
     totalGroups: restorationGroups.length,
     restorationServices,
