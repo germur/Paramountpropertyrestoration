@@ -6,6 +6,8 @@ import { SERVICE_REGISTRY } from "../../../lib/routing";
 // Template imports
 import UnifiedServiceTemplate from "../../../components/restoration/templates/UnifiedServiceTemplate.astro";
 import SEOHead from "../../../components/SEOHead.jsx";
+import SEOCityLinks from "../../../components/SEOCityLinks.jsx";
+import { subserviceHubLinks } from "../../../data/seo-interlinking.js";
 
 export async function getStaticPaths() {
   const paths = [] as { params: { group: string; subservice: string }, props?: any }[];
@@ -115,6 +117,20 @@ const pageConfig = {
 
 // All subservices now use the unified template
 const SelectedTemplate = UnifiedServiceTemplate;
+
+// Check if this subservice hub has city links (Phase 2 SEO)
+const currentPath = `/restoration/${groupData.slug}/${subData.slug}/`;
+const cityLinks = subserviceHubLinks[currentPath];
+
+// Determine SEO title for city links section
+const getCityLinksTitle = () => {
+  if (subData.slug === 'mold-inspection') return 'Florida Mold Inspection - Cities We Serve';
+  if (subData.slug === 'mold-testing') return 'Florida Mold Testing - Cities We Serve';
+  if (subData.slug === 'black-mold-removal') return 'Florida Black Mold Removal - Cities We Serve';
+  if (subData.slug === 'emergency-water-removal') return 'Florida Emergency Water Removal - Cities We Serve';
+  if (subData.slug === 'flood-damage') return 'Florida Flood Damage Restoration - Cities We Serve';
+  return `${subData.title} - Florida Cities We Serve`;
+};
 ---
 
 <BaseLayout title={pageConfig.title} description={pageConfig.description}>
@@ -136,4 +152,13 @@ const SelectedTemplate = UnifiedServiceTemplate;
   />
 
   <SelectedTemplate group={groupData} sub={subData} />
+
+  {/* Phase 2 SEO: Subservice hub city links */}
+  {cityLinks && cityLinks.length > 0 && (
+    <SEOCityLinks
+      links={cityLinks}
+      title={getCityLinksTitle()}
+      client:load
+    />
+  )}
 </BaseLayout>

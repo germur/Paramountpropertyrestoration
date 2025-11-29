@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import UnifiedServiceTemplate from "../../../components/restoration/templates/UnifiedServiceTemplate.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
+import SEOCityLinks from "../../../components/SEOCityLinks.jsx";
+import { subserviceHubLinks } from "../../../data/seo-interlinking.js";
+import { restorationGroups } from "../../../data/restoration.js";
+
+// Find emergency-water-removal subservice data
+const waterGroup = restorationGroups.find(g => g.slug === 'water-damage');
+const waterRemovalSub = waterGroup?.subservices.find(s => s.slug === 'emergency-water-removal');
+
+const pageData = {
+  group: {
+    slug: "water-damage",
+    name: "Water Damage Restoration",
+    template: "water",
+    description: "Emergency water damage restoration and cleanup services"
+  },
+  sub: waterRemovalSub || {
+    slug: "emergency-water-removal",
+    title: "Emergency Water Removal",
+    short: "24/7 emergency water extraction services",
+    nombre: "Emergency Water Removal",
+    categoria: "restoration"
+  }
+};
+
+const pageTitle = "Florida Emergency Water Removal | 24/7 Fast Extraction Service";
+const pageDescription = "Emergency water removal in Florida. Rapid extraction, industrial drying, flood cleanup. Prevent mold & structural damage. Naples, Port St Lucie, Palm Coast & more. Call now 24/7.";
+
+// Get city links for this sub-hub
+const cityLinks = subserviceHubLinks['/restoration/water-damage/emergency-water-removal/'];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <SEOHead
+    title={pageTitle}
+    description={pageDescription}
+    siteUrl="https://paramountpropertyrestoration.com"
+    vertical="restoration"
+    service="water-damage"
+    subservice="emergency-water-removal"
+    city={null}
+    addressLocality={null}
+    isHub={true}
+    businessName="Paramount Property Restoration"
+    addressRegion="FL"
+    phone="+1-786-602-2217"
+    slot="head"
+  />
+
+  <UnifiedServiceTemplate group={pageData.group} sub={pageData.sub} />
+
+  {cityLinks && cityLinks.length > 0 && (
+    <SEOCityLinks
+      links={cityLinks}
+      title="Florida Emergency Water Removal - Cities We Serve"
+      client:load
+    />
+  )}
+</BaseLayout>
