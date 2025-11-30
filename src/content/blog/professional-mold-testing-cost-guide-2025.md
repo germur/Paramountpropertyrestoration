@@ -10,7 +10,7 @@ tags: ["Mold Testing", "Mold Inspection", "Cost Guide", "Florida Homes", "Mold D
 keywords: ["mold testing cost", "professional mold inspection price", "Florida mold testing", "air quality testing cost", "mold assessment fees", "certified mold inspector"]
 category: "Mold Testing & Inspection"
 featured: true
-image: "/images/Moldtesting.jpg"
+image: "/images/blog/professional-mold-testing-cost-guide-2025.webp"
 ogImage: "/images/Moldtesting.jpg"
 readTime: 7
 ---
