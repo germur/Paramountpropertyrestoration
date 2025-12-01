@@ -2,9 +2,9 @@
 import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
 
 const pageTitle =
-    "Stop Hidden Mold Damage: IICRC Certified Testing 24/7 | Same-Day | Florida";
+    "Professional Mold Testing Services | IICRC Certified | Same-Day | Florida";
 const pageDescription =
-    "60-minute dispatch. IICRC certified + DBPR licensed. Complete testing to remediation pathway. FREE visual inspection. Insurance documentation included. 24/7 emergency service across Florida.";
+    "Expert mold testing and inspection services. IICRC certified + DBPR licensed. Air quality sampling, moisture mapping, and lab analysis. FREE visual inspection. Insurance documentation included. 24/7 emergency service across Florida.";
 ---
 
 <!doctype html>
@@ -26,6 +26,23 @@ const pageDescription =
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
             rel="stylesheet"
         />
+
+        {/* Google Tag Manager */}
+        <script is:inline>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js",
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-WG5DT6GN");
+        </script>
 
         <style>
             * {
@@ -164,6 +181,15 @@ const pageDescription =
         </style>
     </head>
     <body class="text-gray-800">
+        {/* Google Tag Manager (noscript) */}
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-WG5DT6GN"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"></iframe></noscript
+        >
+
         <header class="primary-bg text-white py-3 shadow-lg" style="margin: 0;">
             <div
                 class="container mx-auto px-4 flex justify-between items-center"
@@ -224,19 +250,20 @@ const pageDescription =
                         <h1
                             class="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900"
                         >
-                            Stop Hidden Mold Damage: <span class="text-accent"
-                                >IICRC Certified Testing + Guaranteed
-                                Remediation Path</span
+                            Professional Mold Testing & Inspection: <span
+                                class="text-accent"
+                                >IICRC Certified Lab Analysis + Clear Action
+                                Plan</span
                             >
                         </h1>
 
                         <p
                             class="text-xl mb-6 font-semibold text-gray-700 border-l-4 border-accent pl-3"
                         >
-                            DBPR-Licensed technicians identify the problem,
-                            document for insurance, and handle complete
-                            remediation. From inspection to restoration—one
-                            trusted team.
+                            DBPR-Licensed mold assessors conduct thorough
+                            testing, air quality sampling, and lab analysis. Get
+                            accurate results and expert recommendations for your
+                            next steps.
                         </p>
 
                         <div
@@ -283,7 +310,7 @@ const pageDescription =
                                 </p>
                             </div>
                             <form
-                                name="mold-landing"
+                                name="mold-testing-landing"
                                 method="POST"
                                 data-netlify="true"
                                 netlify-honeypot="bot-field"
@@ -293,7 +320,7 @@ const pageDescription =
                                 <input
                                     type="hidden"
                                     name="form-name"
-                                    value="mold-landing"
+                                    value="mold-testing-landing"
                                 />
                                 <p class="hidden">
                                     <label
