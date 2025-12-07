@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/pages/cleaning.css";
 import ProtocolList from "../../components/cleaning/ProtocolList.jsx";
 import { cleaningServices } from "../../data/cleaning.js";
+import SEOHead from "../../components/SEOHead.jsx";
 
 export async function getStaticPaths() {
   return cleaningServices.map((service) => ({
@@ -16,11 +17,19 @@ const { service } = Astro.props;
 // Page Metadata
 const pageTitle = `${service.title} | Paramount Clinical Cleaning`;
 const pageDescription = service.shortDescription + " " + service.fullDescription.substring(0, 100) + "...";
-
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
   
+  <SEOHead
+    slot="head"
+    title={pageTitle}
+    description={pageDescription}
+    service={service.title}
+    subservice="Cleaning"
+    pageType="service"
+  />
+
   <div class="cleaning-page">
     
     <!-- Service Hero -->
