@@ -2,44 +2,44 @@ import { useState } from 'react';
 import { protocolSteps } from '../../data/cleaning.js';
 
 export default function ProtocolList() {
-    const [activeCategory, setActiveCategory] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(0);
 
-    return (
-        <div className="protocol-container">
-            <div className="protocol-tabs">
-                {protocolSteps.map((section, index) => (
-                    <button
-                        key={index}
-                        className={`protocol-tab ${activeCategory === index ? 'active' : ''} ${section.highlight ? 'highlight-tab' : ''}`}
-                        onClick={() => setActiveCategory(index)}
-                    >
-                        {section.category}
-                        {section.highlight && <span className="tab-badge">Exclusive</span>}
-                    </button>
-                ))}
-            </div>
+  return (
+    <div className="protocol-container">
+      <div className="protocol-tabs">
+        {protocolSteps.map((section, index) => (
+          <button
+            key={index}
+            className={`protocol-tab ${activeCategory === index ? 'active' : ''} ${section.highlight ? 'highlight-tab' : ''}`}
+            onClick={() => setActiveCategory(index)}
+          >
+            {section.category}
+            {section.highlight && <span className="tab-badge">Exclusive</span>}
+          </button>
+        ))}
+      </div>
 
-            <div className="protocol-content">
-                <h3 className="protocol-heading">
-                    {protocolSteps[activeCategory].category} Protocol
-                </h3>
-                <ul className="protocol-steps-list">
-                    {protocolSteps[activeCategory].steps.map((step, idx) => (
-                        <li key={idx} className="protocol-step-item">
-                            <span className="step-check">
-                                <i className="fas fa-check-circle"></i>
-                            </span>
-                            <span className="step-text">{step}</span>
-                        </li>
-                    ))}
-                </ul>
-                <div className="protocol-note">
-                    <i className="fas fa-shield-alt"></i>
-                    <span>Clinical Grade Hygiene Standard</span>
-                </div>
-            </div>
+      <div className="protocol-content">
+        <h3 className="protocol-heading">
+          {protocolSteps[activeCategory].category} Protocol
+        </h3>
+        <ul className="protocol-steps-list">
+          {protocolSteps[activeCategory].steps.map((step, idx) => (
+            <li key={idx} className="protocol-step-item">
+              <span className="step-check">
+                <i className="fas fa-check-circle"></i>
+              </span>
+              <span className="step-text">{step.text}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="protocol-note">
+          <i className="fas fa-shield-alt"></i>
+          <span>Clinical Grade Hygiene Standard</span>
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .protocol-container {
           background: white;
           border-radius: 16px;
@@ -138,6 +138,6 @@ export default function ProtocolList() {
           padding-top: 1rem;
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 }
