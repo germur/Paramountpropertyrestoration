@@ -7,6 +7,7 @@ import LinkBuildingSection from "../components/linkBuilding.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import SEOHead from "../components/SEOHead.jsx";
+import BentoServices from "../components/home/BentoServices.jsx";
 const pageTitle =
   "Paramount Property Restoration | Florida Restoration & Remodeling";
 const pageDescription =
@@ -78,35 +79,7 @@ try {
           </p>
         </div>
 
-        <div class="services-grid">
-          <a href="/restoration/water-damage/" class="service-card">
-            <div class="service-icon">💧</div>
-            <h3>Water Damage</h3>
-            <p>24/7 water extraction, drying & restoration</p>
-            <div class="service-tag">Emergency Response</div>
-          </a>
-
-          <a href="/restoration/fire-damage/" class="service-card">
-            <div class="service-icon">🔥</div>
-            <h3>Fire Damage</h3>
-            <p>Complete fire & smoke damage restoration</p>
-            <div class="service-tag">Emergency Response</div>
-          </a>
-
-          <a href="/restoration/mold-remediation/" class="service-card">
-            <div class="service-icon">🦠</div>
-            <h3>Mold Remediation</h3>
-            <p>Safe mold removal & air quality restoration</p>
-            <div class="service-tag">Health Priority</div>
-          </a>
-
-          <a href="/restoration/storm-damage/" class="service-card">
-            <div class="service-icon">🌪️</div>
-            <h3>Storm Damage</h3>
-            <p>Hurricane recovery & roof protection</p>
-            <div class="service-tag">Emergency Response</div>
-          </a>
-        </div>
+        <BentoServices client:visible />
 
         <div class="cta-container">
           <a href="tel:+17866022217" class="btn btn-blue">

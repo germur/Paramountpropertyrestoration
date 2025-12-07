@@ -28,7 +28,8 @@
 
 /* Main Header */
 .header {
-  position: relative;
+  position: sticky;
+  top: 1rem;
   z-index: 50;
   margin-bottom: 3rem;
   backdrop-filter: blur(20px);
@@ -115,6 +116,18 @@
   color: var(--color-accent);
   background: rgba(53, 195, 233, 0.1);
   transform: translateY(-1px);
+}
+
+.nav-link.nav-highlight {
+  background: var(--color-accent);
+  color: white;
+  box-shadow: 0 4px 10px rgba(53, 195, 233, 0.3);
+}
+
+.nav-link.nav-highlight:hover {
+  background: #2cb0d4;
+  transform: translateY(-2px);
+  color: white;
 }
 
 /* Dropdown Triggers */

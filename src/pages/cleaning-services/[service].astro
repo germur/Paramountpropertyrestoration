@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/cleaning.css";
+import ProtocolList from "../../components/cleaning/ProtocolList.jsx";
+import { cleaningServices } from "../../data/cleaning.js";
+
+export async function getStaticPaths() {
+  return cleaningServices.map((service) => ({
+    params: { service: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+// Page Metadata
+const pageTitle = `${service.title} | Paramount Clinical Cleaning`;
+const pageDescription = service.shortDescription + " " + service.fullDescription.substring(0, 100) + "...";
+
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  
+  <div class="cleaning-page">
+    
+    <!-- Service Hero -->
+    <header style="background: var(--cleaning-dark); color: white; padding: 8rem 0 4rem 0; text-align: center;">
+      <div class="container">
+        <span class="hero-tag" style="margin-bottom: 1rem;">Paramount Cleaning Vertical</span>
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">{service.title}</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto;">{service.shortDescription}</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+          
+          <!-- Left Column: Description & Benefits -->
+          <div>
+            <h2 class="section-title" style="font-size: 2rem;">Why Choose Clinical {service.title}?</h2>
+            <p style="margin-bottom: 2rem; line-height: 1.7; color: #334155;">{service.fullDescription}</p>
+            
+            <h3 style="margin-bottom: 1rem;">Key Benefits</h3>
+            <ul class="fa-ul" style="font-size: 1.1rem; line-height: 2; margin-left: 1.5rem;">
+              {service.benefits.map(benefit => (
+                <li><span class="fa-li"><i class="fas fa-check-circle" style="color: var(--cleaning-blue)"></i></span>{benefit}</li>
+              ))}
+            </ul>
+
+            <div style="margin-top: 3rem;">
+              <a href="/contact" class="conversion-btn" style="text-decoration: none; display: inline-block;">
+                Get a Quote for {service.title}
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Protocol Preview or Image -->
+          <div style="background: #f8fafc; padding: 2rem; border-radius: 16px;">
+             <h3 style="margin-top: 0;">Our Standard Protocol</h3>
+             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">Every service includes our core hygiene steps.</p>
+             <!-- We show the protocol list here too, but maybe a simplified version or the component itself -->
+             <div style="transform: scale(0.9); transform-origin: top left;">
+                <ProtocolList client:visible />
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / process could go here -->
+
+  </div>
+
+</BaseLayout>

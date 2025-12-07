@@ -153,7 +153,10 @@ export default function HeaderNav({ navItems = [], currentPath = "/", logoSrc = 
 
                                 return (
                                     <li className="nav-item" key={key}>
-                                        <a href={item.href} className={`nav-link ${isActive(item.href) ? "active" : ""}`}>{item.label}</a>
+                                        <a href={item.href} className={`nav-link ${isActive(item.href) ? "active" : ""} ${item.highlight ? "nav-highlight" : ""}`}>
+                                            {item.label}
+                                            {item.highlight && <i className="fas fa-sparkles" style={{ marginLeft: '8px' }}></i>}
+                                        </a>
                                     </li>
                                 );
                             })}

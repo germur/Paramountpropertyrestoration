@@ -224,18 +224,9 @@ export const serviceGroups = [
 ];
 
 // Cities data for services (can be imported from existing data if available)
-export const cities = [
-  { slug: "miami", nombre: "Miami", region: "FL", county: "Miami-Dade County" },
-  { slug: "orlando", nombre: "Orlando", region: "FL", county: "Orange County" },
-  { slug: "tampa", nombre: "Tampa", region: "FL", county: "Hillsborough County" },
-  { slug: "fort-lauderdale", nombre: "Fort Lauderdale", region: "FL", county: "Broward County" },
-  { slug: "jacksonville", nombre: "Jacksonville", region: "FL", county: "Duval County" },
-  { slug: "naples", nombre: "Naples", region: "FL", county: "Collier County" },
-  { slug: "west-palm-beach", nombre: "West Palm Beach", region: "FL", county: "Palm Beach County" },
-  { slug: "cape-coral", nombre: "Cape Coral", region: "FL", county: "Lee County" },
-  { slug: "gainesville", nombre: "Gainesville", region: "FL", county: "Alachua County" },
-  { slug: "tallahassee", nombre: "Tallahassee", region: "FL", county: "Leon County" }
-];
+// Cities data for services (can be imported from existing data if available)
+import { cities } from "./locations.js";
+export { cities };
 
 // Utility functions for service data
 export function getServiceData(slug) {

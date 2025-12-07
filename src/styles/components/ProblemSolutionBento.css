@@ -1,0 +1,263 @@
+/* Main Container */
+.ps-bento-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Base Bento Card */
+.ps-bento-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ps-card-base {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ps-card-base:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(30, 41, 59, 0.15);
+}
+
+/* Header Cards */
+.ps-header-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ps-header-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.ps-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Theme Colors */
+.problem-theme .ps-header-card {
+    background: linear-gradient(135deg, #fff1f2 0%, #fff 100%);
+    border-color: #fecdd3;
+}
+
+.problem-theme .ps-header-icon {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.problem-theme .ps-title {
+    color: #991b1b;
+}
+
+.solution-theme .ps-header-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #fff 100%);
+    border-color: #bbf7d0;
+}
+
+.solution-theme .ps-header-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.solution-theme .ps-title {
+    color: #166534;
+}
+
+.schedule-theme .ps-header-card {
+    background: linear-gradient(135deg, #eff6ff 0%, #fff 100%);
+    border-color: #bfdbfe;
+}
+
+.schedule-theme .ps-header-icon {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.schedule-theme .ps-title {
+    color: #1e40af;
+}
+
+/* Image Cards */
+.ps-image-card {
+    height: 280px;
+    /* Increased for Desktop */
+    position: relative;
+    transition: height 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .ps-image-card {
+        height: 220px;
+        /* Tablet */
+    }
+}
+
+@media (max-width: 640px) {
+    .ps-image-card {
+        height: 180px;
+        /* Mobile */
+    }
+}
+
+.ps-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ps-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* Alert Boxes / Stats */
+.ps-alert-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.ps-stat-number {
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.problem-theme .ps-alert-card {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-left: 4px solid #ef4444;
+}
+
+.solution-theme .ps-alert-card {
+    background: #f0fdf4;
+    color: #15803d;
+    border-left: 4px solid #22c55e;
+}
+
+/* Calendar Card Styles */
+.calendar-visual {
+    padding: 1.5rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.cal-day {
+    padding: 4px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.cal-num {
+    padding: 6px;
+    border-radius: 6px;
+    cursor: default;
+}
+
+.cal-num.today {
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+.cal-num.available {
+    background: #eff6ff;
+    color: #2563eb;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cal-num.available:hover {
+    background: #dbeafe;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .ps-bento-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+/* Button & State Styles */
+.cal-num.selected {
+    background: #1e40af !important;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.schedule-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.schedule-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.schedule-btn.disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.7;
+}

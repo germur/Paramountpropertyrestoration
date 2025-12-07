@@ -14,7 +14,7 @@ export default function CookieConsent() {
   const acceptCookies = () => {
     localStorage.setItem('cookieConsent', 'accepted');
     setIsVisible(false);
-    
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'cookie_consent_accepted',
@@ -26,7 +26,7 @@ export default function CookieConsent() {
   const rejectCookies = () => {
     localStorage.setItem('cookieConsent', 'rejected');
     setIsVisible(false);
-    
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'cookie_consent_rejected',
@@ -43,8 +43,8 @@ export default function CookieConsent() {
         <div className="cookie-text">
           <h3>🍪 We Use Cookies</h3>
           <p>
-            We use cookies to improve your experience on our website, 
-            analyze traffic and personalize content. By continuing to browse, 
+            We use cookies to improve your experience on our website,
+            analyze traffic and personalize content. By continuing to browse,
             you accept our use of cookies.
           </p>
           <a href="/terms" className="cookie-link">
@@ -52,14 +52,14 @@ export default function CookieConsent() {
           </a>
         </div>
         <div className="cookie-actions">
-          <button 
+          <button
             onClick={acceptCookies}
             className="cookie-btn accept"
             type="button"
           >
             Accept
           </button>
-          <button 
+          <button
             onClick={rejectCookies}
             className="cookie-btn reject"
             type="button"
@@ -75,13 +75,12 @@ export default function CookieConsent() {
           bottom: 0;
           left: 0;
           right: 0;
-          background: rgba(0, 0, 0, 0.95);
-          backdrop-filter: blur(10px);
+          background: #1e293b; /* Brand Dark Blue/Slate */
+          border-top: 3px solid #f97316; /* Brand Orange */
+          box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
           color: white;
-          padding: 20px;
+          padding: 24px;
           z-index: 9999;
-          border-top: 3px solid #35c3e9;
-          box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
           animation: slideUp 0.5s ease-out;
         }
 
@@ -102,32 +101,38 @@ export default function CookieConsent() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 20px;
+          gap: 32px;
         }
 
         .cookie-text h3 {
           margin: 0 0 8px 0;
           font-size: 18px;
-          font-weight: 600;
-          color: #35c3e9;
+          font-weight: 700;
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
 
         .cookie-text p {
-          margin: 0 0 8px 0;
+          margin: 0 0 12px 0;
           font-size: 14px;
           line-height: 1.5;
-          opacity: 0.9;
+          color: #cbd5e1; /* Light gray text */
         }
 
         .cookie-link {
-          color: #35c3e9;
-          text-decoration: underline;
-          font-size: 13px;
-          transition: color 0.3s ease;
+          color: #35c3e9; /* Brand Blue */
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 500;
+          border-bottom: 1px solid transparent;
+          transition: all 0.2s;
         }
 
         .cookie-link:hover {
-          color: #4dd5f5;
+          color: #7dd3fc;
+          border-bottom-color: #7dd3fc;
         }
 
         .cookie-actions {
@@ -137,77 +142,54 @@ export default function CookieConsent() {
         }
 
         .cookie-btn {
-          padding: 12px 24px;
+          padding: 12px 28px;
           border: none;
-          border-radius: 6px;
+          border-radius: 8px;
           font-size: 14px;
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.3s ease;
-          min-width: 100px;
+          transition: all 0.2s;
+          white-space: nowrap;
         }
 
         .accept {
-          background: #35c3e9;
+          background: #f97316; /* Brand Orange */
           color: white;
+          box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
         .accept:hover {
-          background: #2bb3d9;
+          background: #ea580c;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(53, 195, 233, 0.3);
+          box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
         }
 
         .reject {
           background: transparent;
-          color: #ccc;
-          border: 1px solid #666;
+          color: #94a3b8;
+          border: 1px solid #475569;
         }
 
         .reject:hover {
-          background: rgba(255, 255, 255, 0.1);
+          border-color: #cbd5e1;
           color: white;
-          border-color: #999;
+          background: rgba(255, 255, 255, 0.05);
         }
 
         @media (max-width: 768px) {
           .cookie-content {
             flex-direction: column;
-            text-align: center;
-            gap: 16px;
+            align-items: flex-start;
+            gap: 20px;
           }
 
           .cookie-actions {
             width: 100%;
-            justify-content: center;
           }
 
           .cookie-btn {
             flex: 1;
-            max-width: 140px;
-          }
-
-          .cookie-text h3 {
-            font-size: 16px;
-          }
-
-          .cookie-text p {
-            font-size: 13px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .cookie-banner {
-            padding: 16px;
-          }
-
-          .cookie-actions {
-            flex-direction: column;
-            gap: 8px;
-          }
-
-          .cookie-btn {
-            max-width: none;
+            text-align: center;
           }
         }
       `}</style>
