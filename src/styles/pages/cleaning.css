@@ -545,7 +545,16 @@
 
 @media (max-width: 768px) {
     .trust-bar {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .trust-item {
         justify-content: center;
+        width: 100%;
+        text-align: center;
     }
 }
 

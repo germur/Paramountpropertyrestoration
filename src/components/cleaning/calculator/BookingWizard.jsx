@@ -45,9 +45,10 @@ const BookingWizard = () => {
         // MOCK AI RESPONSE (No API Key required)
         setTimeout(() => {
             setAiQuote({
-                estimatedPrice: 350,
-                estimatedHours: 4,
-                recommendation: "For a facility of this nature, we recommend an initial Deep Clean followed by our Daily Porter service."
+                estimatedPrice: Math.round(booking.squareFootage * 0.15), // Ave $0.15/sqft
+                estimatedRange: `${Math.round(booking.squareFootage * 0.10)} - ${Math.round(booking.squareFootage * 0.20)}`,
+                estimatedHours: Math.round(booking.squareFootage / 1000), // Approx 1000 sqft/hr per person
+                recommendation: "Estimated range based on standard commercial rates ($0.10 - $0.20 / sq ft). Final price subject to site walkthrough."
             });
             setLoadingQuote(false);
         }, 1500);
@@ -129,17 +130,17 @@ const BookingWizard = () => {
                     </div>
 
                     <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
-                        <label className="calc-label">Estimated Area (Sq Ft): <span className="text-teal-700 font-bold">{booking.squareFootage}</span></label>
+                        <label className="calc-label">Estimated Area (Sq Ft): <span className="text-teal-700 font-bold">{booking.squareFootage.toLocaleString()}</span></label>
                         <input
                             type="range"
-                            min="1000" max="50000" step="500"
+                            min="1000" max="50000" step="1000"
                             value={booking.squareFootage}
                             onChange={(e) => updateBooking('squareFootage', parseInt(e.target.value))}
                             style={{ width: '100%', accentColor: '#0d9488' }}
                         />
-                        <div className="flex justify-between text-xs text-gray-400 mt-1">
-                            <span>1,000</span>
-                            <span>50,000+</span>
+                        <div className="flex justify-between text-xs text-gray-400 mt-1" style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                            <span>1,000 sqft</span>
+                            <span>50,000+ sqft</span>
                         </div>
                     </div>
 
@@ -157,46 +158,46 @@ const BookingWizard = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* AI Estimator Widget */}
-            <div className="ai-widget">
-                <div className="flex items-start gap-3" style={{ display: 'flex', gap: '1rem' }}>
-                    <Sparkles size={24} className="text-indigo-500 mt-1" style={{ color: '#6366f1' }} />
-                    <div style={{ width: '100%' }}>
-                        <h4 style={{ fontWeight: 600, color: '#312e81', marginBottom: '4px' }}>Smart Proposal Assistant</h4>
-                        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-                            <input
-                                type="text"
-                                placeholder="Ex: Medical office, high traffic lobby, needs nightly disinfection..."
-                                className="ai-input"
-                                value={customRequest}
-                                onChange={(e) => setCustomRequest(e.target.value)}
-                            />
-                            <button
-                                onClick={handleSmartQuote}
-                                disabled={loadingQuote || !customRequest}
-                                className="ai-btn"
-                            >
-                                {loadingQuote ? <Loader2 size={16} className="animate-spin" /> : 'Analyze'}
-                            </button>
+                    {/* Live Estimator Widget - INSIDE PANEL FOR VISIBILITY */}
+                    <div style={{
+                        gridColumn: '1 / -1',
+                        marginTop: '2rem',
+                        background: '#f8fafc',
+                        padding: '1.5rem',
+                        borderRadius: '1rem',
+                        border: '1px solid #e2e8f0'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                            <div style={{ background: '#d1fae5', padding: '0.5rem', borderRadius: '0.5rem', color: '#059669' }}>
+                                <DollarSign size={24} />
+                            </div>
+                            <div>
+                                <h4 style={{ fontWeight: 700, color: '#1e293b', fontSize: '1.1rem', margin: 0 }}>Estimated Service Range</h4>
+                                <p style={{ fontSize: '0.8rem', color: '#64748b', margin: 0 }}>Based on {booking.squareFootage.toLocaleString()} sq ft</p>
+                            </div>
                         </div>
 
-                        {aiQuote && (
-                            <div style={{ marginTop: '1rem', background: 'white', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #e0e7ff' }}>
-                                <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                                    <div style={{ color: '#16a34a', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                        <DollarSign size={16} /> Est. ${aiQuote.estimatedPrice}
-                                    </div>
-                                    <div style={{ color: '#2563eb', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                        <Clock size={16} /> {aiQuote.estimatedHours}h
-                                    </div>
-                                </div>
-                                <p style={{ fontSize: '0.85rem', color: '#4b5563' }}>{aiQuote.recommendation}</p>
-                            </div>
-                        )}
+                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                            <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>
+                                ${Math.round(booking.squareFootage * 0.10).toLocaleString()} - ${Math.round(booking.squareFootage * 0.20).toLocaleString()}
+                            </span>
+                            <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>/ month*</span>
+                        </div>
+
+                        <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: '0.5rem 0 1.5rem 0', fontStyle: 'italic' }}>
+                            * Tentative estimate. Final pricing determined at walkthrough.
+                        </p>
+
+                        <button
+                            onClick={nextStep}
+                            className="confirm-btn"
+                            style={{ marginTop: '0', background: '#0f172a' }}
+                        >
+                            Continue to Schedule <ArrowRight size={16} style={{ display: 'inline', marginLeft: '5px' }} />
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -363,7 +364,95 @@ const BookingWizard = () => {
 
             {/* Content */}
             <div style={{ minHeight: '400px' }}>
-                {step === 1 && <Step1Service />}
+                {step === 1 && (
+                    <div className="fade-in">
+                        <div className="calc-panel">
+                            <h3 className="text-lg font-semibold mb-4 text-gray-800" style={{ marginBottom: '1rem' }}>Facility Details</h3>
+
+                            <div className="calc-grid-2">
+                                <div style={{ gridColumn: '1 / -1' }}>
+                                    <label className="calc-label">Facility Type</label>
+                                    <div className="calc-types-grid">
+                                        {FACILITY_TYPES.slice(0, 6).map((type) => (
+                                            <button
+                                                key={type}
+                                                onClick={() => updateBooking('facilityType', type)}
+                                                className={`calc-type-btn ${booking.facilityType === type ? 'selected' : ''}`}
+                                                style={{ fontSize: '0.9rem' }}
+                                                type="button"
+                                            >
+                                                {type}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
+                                    <label className="calc-label">Estimated Area (Sq Ft): <span className="text-teal-700 font-bold">{booking.squareFootage.toLocaleString()}</span></label>
+                                    <input
+                                        type="range"
+                                        min="1000" max="50000" step="1000"
+                                        value={booking.squareFootage}
+                                        onChange={(e) => updateBooking('squareFootage', parseInt(e.target.value))}
+                                        style={{ width: '100%', accentColor: '#0d9488' }}
+                                    />
+                                    <div className="flex justify-between text-xs text-gray-400 mt-1" style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                                        <span>1,000 sqft</span>
+                                        <span>50,000+ sqft</span>
+                                    </div>
+                                </div>
+
+                                <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
+                                    <label className="calc-label">Service Frequency</label>
+                                    <div className="calc-types-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+                                        {['DAILY', 'WEEKLY', 'BI-WEEKLY', 'ONE-TIME'].map((freq) => (
+                                            <button
+                                                key={freq}
+                                                onClick={() => updateBooking('frequency', freq)}
+                                                className={`calc-type-btn ${booking.frequency === freq ? 'selected' : ''}`}
+                                                type="button"
+                                            >
+                                                {freq.replace('-', ' ')}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Live Estimator Widget - INSIDE PANEL FOR VISIBILITY */}
+                                <div style={{
+                                    gridColumn: '1 / -1',
+                                    marginTop: '2rem',
+                                    background: '#f8fafc',
+                                    padding: '1.5rem',
+                                    borderRadius: '1rem',
+                                    border: '1px solid #e2e8f0'
+                                }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                                        <div style={{ background: '#d1fae5', padding: '0.5rem', borderRadius: '0.5rem', color: '#059669' }}>
+                                            <DollarSign size={24} />
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontWeight: 700, color: '#1e293b', fontSize: '1.1rem', margin: 0 }}>Estimated Service Range</h4>
+                                            <p style={{ fontSize: '0.8rem', color: '#64748b', margin: 0 }}>Based on {booking.squareFootage.toLocaleString()} sq ft</p>
+                                        </div>
+                                    </div>
+
+                                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                                        <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>
+                                            ${Math.round(booking.squareFootage * 0.10).toLocaleString()} - ${Math.round(booking.squareFootage * 0.20).toLocaleString()}
+                                        </span>
+                                        <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>/ month*</span>
+                                    </div>
+
+                                    <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: '0.5rem 0 0 0', fontStyle: 'italic' }}>
+                                        * Tentative estimate. Final pricing determined at walkthrough.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                )}
                 {step === 2 && <Step2Schedule />}
                 {step === 3 && <Step3Details />}
                 {step === 4 && <Step4Summary />}
@@ -371,11 +460,11 @@ const BookingWizard = () => {
 
             {/* Navigation */}
             {step < 4 && !submitted && (
-                <div className="calc-nav">
+                <div className="calc-nav" style={{ marginTop: '2rem' }}>
                     <button
                         onClick={prevStep}
-                        disabled={step === 1}
                         className="calc-nav-btn btn-back"
+                        disabled={step === 1}
                         style={{ opacity: step === 1 ? 0 : 1 }}
                     >
                         <ArrowLeft size={16} /> Back
