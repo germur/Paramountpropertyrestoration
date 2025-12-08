@@ -363,7 +363,7 @@ const BookingWizard = () => {
             </div>
 
             {/* Content */}
-            <div style={{ minHeight: '400px' }}>
+            <div style={{ minHeight: 'auto' }}>
                 {step === 1 && (
                     <div className="fade-in">
                         <div className="calc-panel">
@@ -441,7 +441,7 @@ const BookingWizard = () => {
                                         <span style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a' }}>
                                             ${Math.round(booking.squareFootage * 0.10).toLocaleString()} - ${Math.round(booking.squareFootage * 0.20).toLocaleString()}
                                         </span>
-                                        <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>/ month*</span>
+                                        <span style={{ fontSize: '0.9rem', color: '#64748b', fontWeight: 500 }}>/ visit*</span>
                                     </div>
 
                                     <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: '0.5rem 0 0 0', fontStyle: 'italic' }}>

@@ -67,15 +67,15 @@ const Calendar = ({ selectedDate, selectedTime, onDateSelect, onTimeSelect }) =>
     ];
 
     const monthNames = [
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
     ];
 
     return (
         <div className="cal-wrapper">
             <h3 className="calc-label" style={{ fontSize: '1.1rem', marginBottom: '0', display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <Clock size={20} className="text-teal-600" style={{ color: '#0d9488' }} />
-                Selecciona Fecha y Hora
+                Select Date & Time
             </h3>
 
             <div className="flex flex-col md:flex-row gap-8" style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
@@ -88,7 +88,7 @@ const Calendar = ({ selectedDate, selectedTime, onDateSelect, onTimeSelect }) =>
                     </div>
 
                     <div className="cal-grid" style={{ marginBottom: '8px' }}>
-                        {['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'].map((d, i) => (
+                        {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((d, i) => (
                             <div key={i} className="cal-day-header">{d}</div>
                         ))}
                     </div>
@@ -99,9 +99,9 @@ const Calendar = ({ selectedDate, selectedTime, onDateSelect, onTimeSelect }) =>
 
                 {/* Time Slots */}
                 <div style={{ minWidth: '150px' }}>
-                    <h4 className="calc-step-label" style={{ marginBottom: '1rem' }}>Disponibilidad</h4>
+                    <h4 className="calc-step-label" style={{ marginBottom: '1rem' }}>Availability</h4>
                     {!selectedDate ? (
-                        <div className="text-sm text-gray-400 italic">Selecciona una fecha</div>
+                        <div className="text-sm text-gray-400 italic">Select a date first</div>
                     ) : (
                         <div className="cal-time-grid">
                             {timeSlots.map((time) => (
