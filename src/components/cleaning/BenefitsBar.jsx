@@ -2,48 +2,48 @@ import React from 'react';
 import { Microscope, Leaf, Award, ShieldCheck } from 'lucide-react';
 
 const BenefitsBar = () => {
-    const benefits = [
-        {
-            icon: <Microscope size={32} />,
-            title: "Scientific Approach",
-            desc: "ATP Testing & Moisture Control"
-        },
-        {
-            icon: <Leaf size={32} />,
-            title: "Eco-Friendly & Safe",
-            desc: "Hospital-grade, non-toxic products"
-        },
-        {
-            icon: <Award size={32} />,
-            title: "Certified Experts",
-            desc: "IICRC Trained Technicians"
-        },
-        {
-            icon: <ShieldCheck size={32} />,
-            title: "100% Guaranteed",
-            desc: "Satisfaction or we re-clean free"
-        }
-    ];
+  const benefits = [
+    {
+      icon: <Microscope size={32} />,
+      title: "ATP Audit Reports",
+      desc: "Verifiable Sanitation Metrics"
+    },
+    {
+      icon: <Leaf size={32} />,
+      title: "LEED Compliant",
+      desc: "Green Seal Certified Products"
+    },
+    {
+      icon: <Award size={32} />,
+      title: "Vetted Staff",
+      desc: "Background Checked & Uniformed"
+    },
+    {
+      icon: <ShieldCheck size={32} />,
+      title: "Bonded & Insured",
+      desc: "$2M Liability Coverage"
+    }
+  ];
 
-    return (
-        <div className="benefits-bar-wrapper">
-            <div className="container">
-                <div className="benefits-grid">
-                    {benefits.map((item, index) => (
-                        <div key={index} className="benefit-item">
-                            <div className="benefit-icon">
-                                {item.icon}
-                            </div>
-                            <div className="benefit-text">
-                                <h3 className="benefit-title">{item.title}</h3>
-                                <p className="benefit-desc">{item.desc}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <div className="benefits-bar-wrapper">
+      <div className="container">
+        <div className="benefits-grid">
+          {benefits.map((item, index) => (
+            <div key={index} className="benefit-item">
+              <div className="benefit-icon">
+                {item.icon}
+              </div>
+              <div className="benefit-text">
+                <h3 className="benefit-title">{item.title}</h3>
+                <p className="benefit-desc">{item.desc}</p>
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .benefits-bar-wrapper {
           background: white;
           padding: 3rem 0;
@@ -117,8 +117,8 @@ const BenefitsBar = () => {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default BenefitsBar;

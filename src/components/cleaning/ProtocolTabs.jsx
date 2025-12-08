@@ -5,14 +5,16 @@ import {
     Shield, Check, SprayCan as Spray, Sparkles, Grid, Fan,
     Droplets, CloudFog, Trash2, Wind, Waves, Activity,
     Armchair as Sofa, RectangleHorizontal, AlignJustify, Fingerprint,
-    Search, AirVent, ThermometerSun, TestTube, FileText
+    Search, AirVent, ThermometerSun, TestTube, FileText,
+    RefreshCw, Monitor, Disc, Sun, Footprints, HardHat, IdCard, Tablet, Microscope
 } from 'lucide-react';
 
 const iconMap = {
     Spray, Sparkles, Grid, Fan, Droplets,
     CloudFog, Trash2, Wind, Waves, Activity,
     Sofa, RectangleHorizontal, AlignJustify, Fingerprint,
-    Search, AirVent, ThermometerSun, TestTube, FileText
+    Search, AirVent, ThermometerSun, TestTube, FileText,
+    Shield, RefreshCw, Monitor, Disc, Sun, Footprints, HardHat, IdCard, Tablet, Microscope
 };
 
 const ProtocolTabs = () => {

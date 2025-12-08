@@ -61,7 +61,7 @@ const ProblemSolutionBento = () => {
                 <div className="ps-card-base ps-alert-card">
                     <div className="ps-stat-number" style={{ color: '#ef4444', fontSize: '1.25rem' }}>Why is it a risk?</div>
                     <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.5' }}>
-                        Standard cleaning only wipes surface dust. It misses the <strong>microbial growth</strong> fed by Florida's 70%+ humidity, leaving your home vulnerable to toxic mold.
+                        Standard janitorial services only wipe surface dust. They miss the <strong>microbial growth</strong> fed by Florida's humidity, leaving your facility vulnerable to Sick Building Syndrome.
                     </p>
                 </div>
             </div>
@@ -83,13 +83,13 @@ const ProblemSolutionBento = () => {
                         loading="lazy"
                         style={{ objectPosition: 'bottom center' }}
                     />
-                    <div className="ps-image-overlay">Clinical Precision</div>
+                    <div className="ps-image-overlay">Commercial Precision</div>
                 </div>
 
                 <div className="ps-card-base ps-alert-card">
                     <div className="ps-stat-number" style={{ color: '#22c55e', fontSize: '1.25rem' }}>How we fix it</div>
                     <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: '1.5' }}>
-                        We don't just clean; we <strong>sterilize</strong>. Using HEPA filtration and hospital-grade antimicrobials, we remove 99.9% of biological contaminants standard maids can't touch.
+                        We don't just clean; we <strong>sanitize</strong>. Using HEPA filtration and hospital-grade antimicrobials, we remove 99.9% of biological contaminants standard services can't touch.
                     </p>
                 </div>
             </div>

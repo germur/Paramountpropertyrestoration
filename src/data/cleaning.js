@@ -1,130 +1,128 @@
-// src/data/cleaning.js
 import { cities } from "./locations.js";
 
 export const cleaningVertical = {
-    title: "Clinical Grade Hygiene for Your Home",
-    subtitle: "We elevate the standard of residential cleaning in Florida. Restoration technology applied to daily home maintenance.",
+    title: "Commercial Grade Hygiene for Your Facility",
+    subtitle: "We elevate the standard of commercial cleaning in Florida. Restoration technology applied to daily facility maintenance.",
     heroVideo: "/videos/cleaning-hero.mp4", // Placeholder
 };
 
 export const pricingPackages = [
     {
-        id: "essential",
-        name: "Essential Maintenance",
-        tagline: "Weekly or Bi-weekly Clinical Care",
-        idealFor: "Regular maintenance to keep humidity and dust in check.",
+        id: "day-porter",
+        name: "Day Porter Service",
+        tagline: "Continuous Facility Care",
+        idealFor: "High-traffic offices, medical centers, and lobbies requiring constant upkeep.",
         features: [
-            "Surface sanitization",
-            "HEPA vacuuming of floors",
-            "Kitchen & Bathroom clinical clean",
-            "Dust removal",
-            "Touch-point disinfection"
+            "Restroom sanitation & restocking",
+            "Lobby & reception upkeep",
+            "Spill response & spot cleaning",
+            "High-touch point disinfection",
+            "Cafeteria/breakroom maintenance"
         ],
-        cta: "Schedule Weekly",
-        icon: "fas fa-sparkles"
+        cta: "Request Porter",
+        icon: "fas fa-user-tie"
     },
     {
-        id: "restorative",
-        name: "Restorative Deep Clean",
-        tagline: "The 'Reset Button' for Your Home",
+        id: "janitorial",
+        name: "Nightly Janitorial",
+        tagline: "Comprehensive After-Hours Care",
         isPopular: true,
-        idealFor: "First-time cleans, spring cleaning, or homes untouched for 3+ months.",
+        idealFor: "Offices, retail spaces, and banks requiring thorough nightly cleaning.",
         features: [
-            "All Essential features",
-            "Hand-washing baseboards",
-            "Interior cabinet cleaning (if requested)",
-            "Window treatment",
-            "A/C Vent inspection",
-            "Moisture check in wet areas"
+            "Full trash removal & liner replacement",
+            "Vacuuming & mopping of all floors",
+            "Restroom deep cleaning & sanitization",
+            "Desk & surface dusting",
+            "Secure facility lock-up protocol"
         ],
-        cta: "Schedule Deep Clean",
-        icon: "fas fa-hands-bubbles"
+        cta: "Schedule Walkthrough",
+        icon: "fas fa-moon"
     },
     {
-        id: "transitional",
-        name: "Transition & Move-In/Out",
-        tagline: "Security Deposit Guard",
-        idealFor: "Buying, selling, or changing tenants.",
+        id: "commercial-deep",
+        name: "Commercial Deep Clean",
+        tagline: "Restorative Facility Reset",
+        idealFor: "Quarterly maintenance, post-event cleaning, or new tenant prep.",
         features: [
-            "Guaranteed inspection pass",
-            "Appliance deep clean (interior)",
-            "Full sanitization fogging",
-            "Inside cupboards & drawers",
-            "Scuff mark removal"
+            "Carpet extraction & upholstery cleaning",
+            "VCT floor stripping & waxing",
+            "High dusting (vents, lights, ceilings)",
+            "Grout scrubbing & sealing",
+            "Window washing (interior/exterior)"
         ],
-        cta: "Get Moving Quote",
-        icon: "fas fa-box-open"
+        cta: "Get Project Quote",
+        icon: "fas fa-hands-bubbles"
     }
 ];
 
 export const protocolSteps = [
     {
-        category: "Kitchen Hygiene",
+        category: "Restroom Sanitation",
         steps: [
-            { text: "Hospital-grade disinfection of countertops", icon: "Spray" },
-            { text: "Deep cleaning of appliance exteriors & handles", icon: "Sparkles" },
-            { text: "Scrubbing and sealing of floor grout lines", icon: "Grid" },
-            { text: "Degreasing of range hoods and backsplashes", icon: "Fan" },
-            { text: "Sanitization of sinks and faucets", icon: "Droplets" }
+            { text: "Hospital-grade disinfection of all fixtures", icon: "Spray" },
+            { text: "Grout line scrubbing and organic waste removal", icon: "Grid" },
+            { text: "Partition wall and door sanitization", icon: "Shield" },
+            { text: "Restocking of all consumables (soap, paper, etc.)", icon: "RefreshCw" },
+            { text: "Odor neutralization treatment", icon: "Wind" }
         ]
     },
     {
-        category: "Bathroom Sanitization",
+        category: "Workspace & Common Areas",
         steps: [
-            { text: "Anti-mold treatment for shower walls and glass", icon: "CloudFog" },
-            { text: "High-level disinfection of toilets and bidets", icon: "Trash2" },
-            { text: "Exhaust fan cleaning and flow check", icon: "Wind" },
-            { text: "Descaling of faucets and showerheads", icon: "Waves" },
-            { text: "Moisture meter check around toilets/tubs (The PPR Factor)", icon: "Activity" }
+            { text: "HEPA vacuuming of carpets and mats", icon: "Fan" },
+            { text: "Damp wiping of desks, phones, and keyboards", icon: "Monitor" },
+            { text: "Glass and entryway door polishing", icon: "Sparkles" },
+            { text: "Trash and recycling removal with liner change", icon: "Trash2" },
+            { text: "Light switch and door handle disinfection", icon: "Fingerprint" }
         ]
     },
     {
-        category: "Air & Surfaces",
+        category: "Floor Care & Maintenance",
         steps: [
-            { text: "HEPA vacuuming of all upholstery", icon: "Sofa" },
-            { text: "Damp wiping of baseboards and door frames", icon: "RectangleHorizontal" },
-            { text: "Ceiling fan blade cleaning", icon: "Fan" },
-            { text: "Window sill and track vacuuming/wiping", icon: "AlignJustify" },
-            { text: "Light switch and doorknob disinfection", icon: "Fingerprint" }
+            { text: "Auto-scrubbing of hard surface floors", icon: "Disc" },
+            { text: "Burnishing for high-gloss finish", icon: "Sun" },
+            { text: "Spot carpet cleaning for high traffic lanes", icon: "Droplets" },
+            { text: "Baseboard detail cleaning", icon: "RectangleHorizontal" },
+            { text: "Safety mat placement and cleaning", icon: "Footprints" }
         ]
     },
     {
-        category: "The Paramount Factor (Exclusive)",
+        category: "The Paramount Standard (Exclusive)",
         highlight: true,
         steps: [
-            { text: "Visual leak inspection under sinks", icon: "Search" },
-            { text: "A/C filter check and return grill vacuuming", icon: "AirVent" },
-            { text: "Relative humidity spot-check in critical areas", icon: "ThermometerSun" },
-            { text: "Bio-load swab testing (optional add-on)", icon: "TestTube" },
-            { text: "Digital report of any structural concerns found", icon: "FileText" }
+            { text: "Monthly ATP surface testing reports", icon: "Microscope" },
+            { text: "Proactive HVAC filter check", icon: "AirVent" },
+            { text: "OSHA compliant safety protocols", icon: "HardHat" },
+            { text: "Uniformed, badged, and background-checked staff", icon: "IdCard" },
+            { text: "Digital communication log for facility managers", icon: "Tablet" }
         ]
     }
 ];
 
 export const cleaningServices = [
     {
-        slug: "deep-cleaning",
-        title: "Deep Cleaning Services",
-        shortDescription: "A thorough top-to-bottom clean to reset your home's hygiene.",
-        fullDescription: "Our Deep Cleaning service goes beyond aesthetics. We remove deep-seated dust, allergens, and potential mold food sources from every corner of your home, using restoration-grade equipment.",
-        benefits: ["Eliminates accumulated allergens", "Restores surface shine", "Prevents long-term material degradation"],
-        icon: "fas fa-layer-group"
+        slug: "janitorial-services",
+        title: "Janitorial Services",
+        shortDescription: "Daily or nightly cleaning for professional environments.",
+        fullDescription: "Consistent, reliable cleaning that keeps your business running smoothly. We customize our schedule to your operations, ensuring a pristine environment for employees and clients without disruption.",
+        benefits: ["Customized cleaning schedules", "Supply inventory management", "Dedicated account manager"],
+        icon: "fas fa-broom"
     },
     {
-        slug: "move-in-move-out",
-        title: "Move-In / Move-Out Cleaning",
-        shortDescription: "Ensure a fresh start or a full security deposit return.",
-        fullDescription: "Whether you are selling a home or moving into a new one, our transitional cleaning ensures the property is clinically clean and free of previous biological footprints.",
-        benefits: ["Security deposit guarantee", "Sanitized for new occupants", "Photo-documented results"],
-        icon: "fas fa-truck-moving"
+        slug: "commercial-floor-care",
+        title: "Commercial Floor Care",
+        shortDescription: "Specialized care for VCT, carpet, tile, and stone.",
+        fullDescription: "Protect your flooring investment with our specialized maintenance programs. From strip and wax for VCT to encapsulation cleaning for carpets, we extend the life of your commercial floors.",
+        benefits: ["VCT Strip & Wax", "Carpet Extraction", "Tile & Grout Restoration"],
+        icon: "fas fa-arrows-spin"
     },
     {
-        slug: "sanitization-disinfection",
-        title: "Sanitization & Disinfection",
-        shortDescription: "Hospital-grade protection against viruses and bacteria.",
-        fullDescription: "Using EPA-approved disinfectants and electrostatic fogging, we neutralize 99.9% of pathogens. Ideal for homes with immunocompromised residents or after illness.",
-        benefits: ["EPA-approved chemicals", "Electrostatic technology", "Safe for pets and kids"],
-        icon: "fas fa-virus-slash"
+        slug: "post-construction",
+        title: "Post-Construction",
+        shortDescription: "Final clean for new builds and renovations.",
+        fullDescription: "Turn your construction site into a showroom. We handle the heavy lifting of debris removal, fine dust cleaning, and final detail work to get your property ready for occupancy.",
+        benefits: ["Debris removal", "Fine dust extraction", "Window detailing"],
+        icon: "fas fa-hard-hat"
     }
 ];
 

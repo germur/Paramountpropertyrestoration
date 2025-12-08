@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import Calendar from './Calendar';
 import '../../../styles/components/Calculator.css';
 import {
-    Home, Building2, MapPin, Sparkles, CheckCircle,
-    ArrowRight, ArrowLeft, Loader2, Info, DollarSign, Clock
+    Building2, MapPin, Sparkles, CheckCircle,
+    ArrowRight, ArrowLeft, Loader2, Info, DollarSign, Clock,
+    LayoutDashboard
 } from 'lucide-react';
 
 const FLORIDA_CITIES = [
     "Miami", "Orlando", "Tampa", "Jacksonville", "Fort Lauderdale",
     "West Palm Beach", "Sarasota", "Naples", "Tallahassee"
+];
+
+const FACILITY_TYPES = [
+    "Corporate Office", "Medical / Dental", "Retail Store", "Industrial / Warehouse",
+    "School / Education", "Fitness Center", "HOA Common Areas", "Other"
 ];
 
 const BookingWizard = () => {
@@ -20,16 +26,15 @@ const BookingWizard = () => {
     const [submitted, setSubmitted] = useState(false);
 
     const [booking, setBooking] = useState({
-        category: 'RESIDENTIAL',
-        serviceType: 'STANDARD',
-        bedrooms: 2,
-        bathrooms: 2,
-        squareFootage: 1000,
+        category: 'COMMERCIAL',
+        facilityType: 'Corporate Office',
+        frequency: 'WEEKLY',
+        squareFootage: 2500,
         date: null,
         timeSlot: null,
         userDetails: {
-            firstName: '', lastName: '', email: '', phone: '',
-            address: '', city: 'Miami', zip: '', notes: ''
+            organization: '', firstName: '', lastName: '', email: '', phone: '',
+            address: '', city: 'Orlando', zip: '', notes: ''
         }
     });
 
@@ -40,9 +45,9 @@ const BookingWizard = () => {
         // MOCK AI RESPONSE (No API Key required)
         setTimeout(() => {
             setAiQuote({
-                estimatedPrice: 180,
-                estimatedHours: 3.5,
-                recommendation: "Based on your description, we recommend an initial Deep Clean to ensure total sanitization."
+                estimatedPrice: 350,
+                estimatedHours: 4,
+                recommendation: "For a facility of this nature, we recommend an initial Deep Clean followed by our Daily Porter service."
             });
             setLoadingQuote(false);
         }, 1500);
@@ -66,19 +71,20 @@ const BookingWizard = () => {
         setIsSubmitting(true);
         try {
             const formData = new FormData();
-            formData.append('form-name', 'booking-calculator');
+            formData.append('form-name', 'booking-calculator-commercial');
 
             // Append all booking fields
             formData.append('category', booking.category);
-            formData.append('serviceType', booking.serviceType);
-            formData.append('bedrooms', booking.bedrooms);
-            formData.append('bathrooms', booking.bathrooms);
+            formData.append('facilityType', booking.facilityType);
+            formData.append('frequency', booking.frequency);
             formData.append('squareFootage', booking.squareFootage);
             formData.append('date', booking.date ? booking.date.toLocaleDateString('en-US') : '');
             formData.append('timeSlot', booking.timeSlot || '');
+            formData.append('organization', booking.userDetails.organization);
             formData.append('firstName', booking.userDetails.firstName);
             formData.append('lastName', booking.userDetails.lastName);
             formData.append('email', booking.userDetails.email);
+            formData.append('phone', booking.userDetails.phone);
             formData.append('address', booking.userDetails.address);
             formData.append('city', booking.userDetails.city);
             formData.append('zip', booking.userDetails.zip);
@@ -90,7 +96,6 @@ const BookingWizard = () => {
             });
 
             setSubmitted(true);
-            // alert("Booking Submitted Successfully! Check your email.");
         } catch (error) {
             console.error("Submission error:", error);
             alert("There was an error submitting the form. Please try again.");
@@ -103,86 +108,56 @@ const BookingWizard = () => {
 
     const Step1Service = () => (
         <div className="fade-in">
-            <div className="calc-category-grid">
-                <button
-                    onClick={() => updateBooking('category', 'RESIDENTIAL')}
-                    className={`calc-category-btn ${booking.category === 'RESIDENTIAL' ? 'selected' : ''}`}
-                >
-                    <Home size={32} className={booking.category === 'RESIDENTIAL' ? 'text-teal-600' : ''} />
-                    <span className="font-semibold text-lg">Residential</span>
-                </button>
-                <button
-                    onClick={() => updateBooking('category', 'COMMERCIAL')}
-                    className={`calc-category-btn ${booking.category === 'COMMERCIAL' ? 'selected' : ''}`}
-                >
-                    <Building2 size={32} className={booking.category === 'COMMERCIAL' ? 'text-teal-600' : ''} />
-                    <span className="font-semibold text-lg">Commercial</span>
-                </button>
-            </div>
-
             <div className="calc-panel">
-                <h3 className="text-lg font-semibold mb-4 text-gray-800" style={{ marginBottom: '1rem' }}>Service Details</h3>
+                <h3 className="text-lg font-semibold mb-4 text-gray-800" style={{ marginBottom: '1rem' }}>Facility Details</h3>
 
-                {booking.category === 'RESIDENTIAL' ? (
-                    <div className="calc-grid-2">
-                        <div>
-                            <label className="calc-label">Bedrooms</label>
-                            <div className="calc-num-group">
-                                {[1, 2, 3, 4, 5].map(num => (
-                                    <button
-                                        key={num}
-                                        onClick={() => updateBooking('bedrooms', num)}
-                                        className={`calc-num-btn ${booking.bedrooms === num ? 'selected' : ''}`}
-                                    >
-                                        {num}{num === 5 ? '+' : ''}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                        <div>
-                            <label className="calc-label">Bathrooms</label>
-                            <div className="calc-num-group">
-                                {[1, 2, 3, 4, 5].map(num => (
-                                    <button
-                                        key={num}
-                                        onClick={() => updateBooking('bathrooms', num)}
-                                        className={`calc-num-btn ${booking.bathrooms === num ? 'selected' : ''}`}
-                                    >
-                                        {num}{num === 5 ? '+' : ''}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                        <div style={{ gridColumn: '1 / -1' }}>
-                            <label className="calc-label">Cleaning Type</label>
-                            <div className="calc-types-grid">
-                                {['STANDARD', 'DEEP', 'MOVE_IN_OUT'].map((type) => (
-                                    <button
-                                        key={type}
-                                        onClick={() => updateBooking('serviceType', type)}
-                                        className={`calc-type-btn ${booking.serviceType === type ? 'selected' : ''}`}
-                                    >
-                                        {type === 'STANDARD' && '✨ Standard'}
-                                        {type === 'DEEP' && '🧼 Deep Clean'}
-                                        {type === 'MOVE_IN_OUT' && '📦 Move In/Out'}
-                                    </button>
-                                ))}
-                            </div>
+                <div className="calc-grid-2">
+                    <div style={{ gridColumn: '1 / -1' }}>
+                        <label className="calc-label">Facility Type</label>
+                        <div className="calc-types-grid">
+                            {FACILITY_TYPES.slice(0, 6).map((type) => (
+                                <button
+                                    key={type}
+                                    onClick={() => updateBooking('facilityType', type)}
+                                    className={`calc-type-btn ${booking.facilityType === type ? 'selected' : ''}`}
+                                    style={{ fontSize: '0.9rem' }}
+                                >
+                                    {type}
+                                </button>
+                            ))}
                         </div>
                     </div>
-                ) : (
-                    <div>
-                        <label className="calc-label">Estimated Area (Sq Ft)</label>
+
+                    <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
+                        <label className="calc-label">Estimated Area (Sq Ft): <span className="text-teal-700 font-bold">{booking.squareFootage}</span></label>
                         <input
                             type="range"
-                            min="500" max="10000" step="100"
+                            min="1000" max="50000" step="500"
                             value={booking.squareFootage}
                             onChange={(e) => updateBooking('squareFootage', parseInt(e.target.value))}
                             style={{ width: '100%', accentColor: '#0d9488' }}
                         />
-                        <div className="text-right font-semibold text-teal-700 mt-2">{booking.squareFootage} sq ft</div>
+                        <div className="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>1,000</span>
+                            <span>50,000+</span>
+                        </div>
                     </div>
-                )}
+
+                    <div style={{ gridColumn: '1 / -1', marginTop: '1rem' }}>
+                        <label className="calc-label">Service Frequency</label>
+                        <div className="calc-types-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+                            {['DAILY', 'WEEKLY', 'BI-WEEKLY', 'ONE-TIME'].map((freq) => (
+                                <button
+                                    key={freq}
+                                    onClick={() => updateBooking('frequency', freq)}
+                                    className={`calc-type-btn ${booking.frequency === freq ? 'selected' : ''}`}
+                                >
+                                    {freq.replace('-', ' ')}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* AI Estimator Widget */}
@@ -190,11 +165,11 @@ const BookingWizard = () => {
                 <div className="flex items-start gap-3" style={{ display: 'flex', gap: '1rem' }}>
                     <Sparkles size={24} className="text-indigo-500 mt-1" style={{ color: '#6366f1' }} />
                     <div style={{ width: '100%' }}>
-                        <h4 style={{ fontWeight: 600, color: '#312e81', marginBottom: '4px' }}>Not sure? AI Smart Estimator</h4>
+                        <h4 style={{ fontWeight: 600, color: '#312e81', marginBottom: '4px' }}>Smart Proposal Assistant</h4>
                         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
                             <input
                                 type="text"
-                                placeholder="Ex: 3 bedroom house, very dusty..."
+                                placeholder="Ex: Medical office, high traffic lobby, needs nightly disinfection..."
                                 className="ai-input"
                                 value={customRequest}
                                 onChange={(e) => setCustomRequest(e.target.value)}
@@ -212,7 +187,7 @@ const BookingWizard = () => {
                             <div style={{ marginTop: '1rem', background: 'white', padding: '1rem', borderRadius: '0.5rem', border: '1px solid #e0e7ff' }}>
                                 <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
                                     <div style={{ color: '#16a34a', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                        <DollarSign size={16} /> ${aiQuote.estimatedPrice}
+                                        <DollarSign size={16} /> Est. ${aiQuote.estimatedPrice}
                                     </div>
                                     <div style={{ color: '#2563eb', display: 'flex', alignItems: 'center', gap: '4px' }}>
                                         <Clock size={16} /> {aiQuote.estimatedHours}h
@@ -229,25 +204,31 @@ const BookingWizard = () => {
 
     const Step2Schedule = () => (
         <div className="fade-in">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">Preferred Site Walkthrough Time</h3>
+            <p className="text-sm text-gray-500 mb-4">Select a time for our operations manager to visit your facility for a firm quote.</p>
             <Calendar
                 selectedDate={booking.date}
                 selectedTime={booking.timeSlot}
                 onDateSelect={(d) => updateBooking('date', d)}
                 onTimeSelect={(t) => updateBooking('timeSlot', t)}
             />
-            <div style={{ marginTop: '1rem', padding: '1rem', background: '#fefce8', borderRadius: '0.5rem', border: '1px solid #fef9c3', display: 'flex', gap: '0.75rem', color: '#854d0e', fontSize: '0.9rem' }}>
-                <Info size={20} />
-                <p>Time slots are subject to final confirmation.</p>
-            </div>
         </div>
     );
 
     const Step3Details = () => (
         <div className="calc-panel fade-in">
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1.5rem' }}>Contact Details</h3>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1.5rem' }}>Business Contact</h3>
             <div className="calc-grid-2">
+                <div style={{ gridColumn: '1 / -1' }}>
+                    <label className="calc-label">Organization / Company Name</label>
+                    <input
+                        type="text" className="input-field"
+                        value={booking.userDetails.organization}
+                        onChange={(e) => updateUserDetails('organization', e.target.value)}
+                    />
+                </div>
                 <div>
-                    <label className="calc-label">First Name</label>
+                    <label className="calc-label">Contact First Name</label>
                     <input
                         type="text" className="input-field"
                         value={booking.userDetails.firstName}
@@ -255,23 +236,31 @@ const BookingWizard = () => {
                     />
                 </div>
                 <div>
-                    <label className="calc-label">Last Name</label>
+                    <label className="calc-label">Contact Last Name</label>
                     <input
                         type="text" className="input-field"
                         value={booking.userDetails.lastName}
                         onChange={(e) => updateUserDetails('lastName', e.target.value)}
                     />
                 </div>
-                <div style={{ gridColumn: '1 / -1' }}>
-                    <label className="calc-label">Email</label>
+                <div>
+                    <label className="calc-label">Work Email</label>
                     <input
                         type="email" className="input-field"
                         value={booking.userDetails.email}
                         onChange={(e) => updateUserDetails('email', e.target.value)}
                     />
                 </div>
+                <div>
+                    <label className="calc-label">Phone Number</label>
+                    <input
+                        type="tel" className="input-field"
+                        value={booking.userDetails.phone}
+                        onChange={(e) => updateUserDetails('phone', e.target.value)}
+                    />
+                </div>
                 <div style={{ gridColumn: '1 / -1' }}>
-                    <label className="calc-label">Address</label>
+                    <label className="calc-label">Facility Address</label>
                     <input
                         type="text" className="input-field"
                         value={booking.userDetails.address}
@@ -309,8 +298,8 @@ const BookingWizard = () => {
                     <div className="success-icon-bg">
                         <CheckCircle size={32} />
                     </div>
-                    <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Success!</h2>
-                    <p style={{ color: '#64748b', marginBottom: '2rem' }}>Your request has been sent. We will contact you shortly.</p>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Request Received!</h2>
+                    <p style={{ color: '#64748b', marginBottom: '2rem' }}>We have received your proposal request. A dedicated account manager will contact you shortly to confirm the walkthrough.</p>
                 </div>
             );
         }
@@ -320,21 +309,25 @@ const BookingWizard = () => {
                 <div className="success-icon-bg">
                     <CheckCircle size={32} />
                 </div>
-                <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Almost Done!</h2>
-                <p style={{ color: '#64748b', marginBottom: '2rem' }}>Please review your booking details.</p>
+                <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Review & Submit</h2>
+                <p style={{ color: '#64748b', marginBottom: '2rem' }}>Please verify your commercial service request.</p>
 
                 <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '0.75rem', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#64748b' }}>Service</span>
-                        <span style={{ fontWeight: 500 }}>{booking.category} - {booking.serviceType}</span>
+                        <span style={{ color: '#64748b' }}>Facility</span>
+                        <span style={{ fontWeight: 500 }}>{booking.facilityType} ({booking.squareFootage} sq ft)</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#64748b' }}>Date</span>
+                        <span style={{ color: '#64748b' }}>Frequency</span>
+                        <span style={{ fontWeight: 500 }}>{booking.frequency}</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span style={{ color: '#64748b' }}>Walkthrough</span>
                         <span style={{ fontWeight: 500 }}>{booking.date ? booking.date.toLocaleDateString('en-US') : '-'} at {booking.timeSlot}</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <span style={{ color: '#64748b' }}>Location</span>
-                        <span style={{ fontWeight: 500 }}>{booking.userDetails.city}</span>
+                        <span style={{ color: '#64748b' }}>Contact</span>
+                        <span style={{ fontWeight: 500 }}>{booking.userDetails.organization}</span>
                     </div>
                 </div>
 
@@ -344,7 +337,7 @@ const BookingWizard = () => {
                     className="confirm-btn"
                     style={{ opacity: isSubmitting ? 0.7 : 1 }}
                 >
-                    {isSubmitting ? <span className="flex items-center justify-center gap-2"><Loader2 className="animate-spin" /> Sending...</span> : "Confirm Booking"}
+                    {isSubmitting ? <span className="flex items-center justify-center gap-2"><Loader2 className="animate-spin" /> Processing...</span> : "Submit Proposal Request"}
                 </button>
             </div>
         );
@@ -355,10 +348,10 @@ const BookingWizard = () => {
             {/* Progress Bar */}
             <div className="calc-progress-container">
                 <div className="calc-progress-labels">
-                    <span className={`calc-step-label ${step >= 1 ? 'active' : ''}`}>Service</span>
-                    <span className={`calc-step-label ${step >= 2 ? 'active' : ''}`}>Date</span>
-                    <span className={`calc-step-label ${step >= 3 ? 'active' : ''}`}>Details</span>
-                    <span className={`calc-step-label ${step >= 4 ? 'active' : ''}`}>Done</span>
+                    <span className={`calc-step-label ${step >= 1 ? 'active' : ''}`}>Facility</span>
+                    <span className={`calc-step-label ${step >= 2 ? 'active' : ''}`}>Walkthrough</span>
+                    <span className={`calc-step-label ${step >= 3 ? 'active' : ''}`}>Contact</span>
+                    <span className={`calc-step-label ${step >= 4 ? 'active' : ''}`}>Submit</span>
                 </div>
                 <div className="calc-progress-track">
                     <div

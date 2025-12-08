@@ -10,76 +10,92 @@ import { cleaningVertical } from "../../data/cleaning.js";
 import { Image } from "astro:assets";
 import cleaningHeroBg from "../../assets/images/cleaning-hero.jpg";
 
-const pageTitle = "Clinical Grade Home Cleaning Services | Paramount Property Restoration";
-const pageDescription = "More than just cleaning. We provide clinical grade hygiene and mold prevention for Florida homes. Experienced technicians.";
+const pageTitle =
+  "Commercial Cleaning Services & Janitorial | Paramount Property Restoration";
+const pageDescription =
+  "Reliable commercial cleaning and janitorial services for Florida businesses. Office cleaning, floor care, and day porters. Bonded & Insured.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  
   <!-- Hero Section -->
   <section class="cleaning-hero">
-    <Image 
-      src={cleaningHeroBg} 
-      alt="Professional clinical cleaning team in a modern Florida office - Paramount Property Restoration" 
+    <Image
+      src={cleaningHeroBg}
+      alt="Professional commercial cleaning team in a modern Florida office"
       class="hero-bg-img"
       widths={[640, 1024, 1920]}
       sizes="100vw"
       format="webp"
     />
     <div class="hero-overlay"></div>
-    
+
     <div class="hero-container">
       <!-- Left Content -->
       <div class="hero-content">
-        <span class="hero-tag">Services Available in All Florida</span>
+        <span class="hero-tag">Serving Florida Businesses</span>
         <h1 class="hero-title">
-          More than Cleaning.<br/>
-          <span class="text-orange">Clinical Hygiene</span> for your Home.
+          More than Janitorial.<br />
+          <span class="text-orange">Asset Protection</span> for your Facility.
         </h1>
         <p class="hero-subtitle">
-          We elevate the residential cleaning standard in Florida. Restoration technology applied to your home's daily maintenance. 100% Guaranteed.
+          We elevate the standard of commercial cleaning. Reliable, consistent,
+          and scientifically verified hygiene for offices, medical centers, and
+          retail.
         </p>
-        
+
         <div class="trust-bar">
-          <div class="trust-item"><i class="fas fa-shield-alt"></i> +10 Years Experience</div>
-          <div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Google Reviews</div>
-          <div class="trust-item"><i class="fas fa-award"></i> Satisfaction Guaranteed</div>
-          <div class="trust-item"><i class="fas fa-check-circle"></i> Bonded & Insured</div>
+          <div class="trust-item">
+            <i class="fas fa-shield-alt"></i> Licensed & Insured
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-user-tie"></i> Background Checked Staff
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-file-contract"></i> Monthly ATP Reporting
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-clock"></i> 24/7 Availability
+          </div>
         </div>
       </div>
 
       <!-- Right Form Card -->
       <div class="hero-form-card">
-        <h3 class="form-title">Get Fast Quote</h3>
+        <h3 class="form-title">Get Fast Proposal</h3>
         <p class="form-subtitle">
-          <i class="fas fa-clock"></i> No commitment • Response in &lt; 2 hours
+          <i class="fas fa-clock"></i> No commitment • Site walk in &lt; 24 hours
         </p>
-        
+
         <form action="/contact" class="hero-form">
           <div class="form-group">
             <input type="text" placeholder="Zip Code" class="form-input" />
           </div>
           <div class="form-group">
             <select class="form-select">
-              <option value="">Select Service Type...</option>
-              <option value="deep">Deep Cleaning (Restorative)</option>
-              <option value="maintenance">Weekly Maintenance</option>
-              <option value="move">Move-In / Move-Out</option>
+              <option value="">Facility Type...</option>
+              <option value="office">Corporate Office</option>
+              <option value="medical">Medical / Dental</option>
+              <option value="retail">Retail / Showroom</option>
+              <option value="industrial">Industrial / Warehouse</option>
+              <option value="hoa">HOA / Condo Common Areas</option>
             </select>
           </div>
           <div class="form-group">
             <select class="form-select">
-              <option value="">Approx. Home Size...</option>
-              <option value="small">Under 1,500 sq ft</option>
-              <option value="medium">1,500 - 2,500 sq ft</option>
-              <option value="large">Over 2,500 sq ft</option>
+              <option value="">Approx. Sq Footage...</option>
+              <option value="small">Under 2,500 sq ft</option>
+              <option value="medium">2,500 - 10,000 sq ft</option>
+              <option value="large">10,000 - 50,000 sq ft</option>
+              <option value="xlarge">Over 50,000 sq ft</option>
             </select>
           </div>
-          <button type="submit" class="hero-btn">Check Pricing & Availability</button>
+          <button type="submit" class="hero-btn"
+            >Request Commercial Quote</button
+          >
         </form>
-        
+
         <p class="form-footer">
-          By sending, you accept our terms of service and privacy policy.
+          Your privacy is protected. We never sell your data.
         </p>
       </div>
     </div>
@@ -88,13 +104,18 @@ const pageDescription = "More than just cleaning. We provide clinical grade hygi
   <!-- Benefits Bar with Modern Icons -->
   <BenefitsBar client:visible />
 
-  <!-- Problem/Solution: The Florida Factor -->
+  <!-- Problem/Solution: The Business Factor -->
   <section class="problem-solution">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <span class="section-tag">The Florida Challenge</span>
-        <h2 class="section-title">Is Your Home Really Clean?</h2>
-        <p class="section-desc">In Florida's subtropical climate, standard cleaning is not enough to protect your health and investment.</p>
+        <span class="section-tag">The Business Challenge</span>
+        <h2 class="section-title">
+          Is Your Facility Making a Good Impression?
+        </h2>
+        <p class="section-desc">
+          In Florida's competitive market, a spotless facility isn't just about
+          hygiene—it's about brand reputation and employee productivity.
+        </p>
       </div>
 
       <ProblemSolutionBento client:visible />
@@ -103,15 +124,21 @@ const pageDescription = "More than just cleaning. We provide clinical grade hygi
 
   <!-- NEW CALCULATOR SECTION -->
   <section class="py-20 bg-white" style="padding: 5rem 0; background: #fff;">
-    <div class="container mx-auto px-4" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-      <div style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-        <h2 class="section-title">Customize Your Service</h2>
+    <div
+      class="container mx-auto px-4"
+      style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;"
+    >
+      <div
+        style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;"
+      >
+        <h2 class="section-title">Customize Your Service Plan</h2>
         <p class="section-desc">
-          Use our smart calculator to build a plan that fits your exact needs. 
-          Get an instant estimate and schedule in minutes.
+          Build a janitorial plan that fits your facility's specific needs and
+          budget. Get an instant estimate for daily, weekly, or monthly
+          services.
         </p>
       </div>
-      
+
       <BookingWizard client:only="react" />
     </div>
   </section>
@@ -119,10 +146,17 @@ const pageDescription = "More than just cleaning. We provide clinical grade hygi
   <!-- The Protocol -->
   <section class="protocol-section">
     <div class="container">
-      <span class="section-tag" style="background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700;">Our Process</span>
-      <h2 class="section-title">25-Point Hygiene Protocol</h2>
-      <p class="section-desc">Each service follows our exhaustive protocol, developed by restoration experts and following industry best practices.</p>
-      
+      <span
+        class="section-tag"
+        style="background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700;"
+        >Our Process</span
+      >
+      <h2 class="section-title">Commercial Hygiene Protocol</h2>
+      <p class="section-desc">
+        Standardized workflows to ensure consistent results across your entire
+        property, every single night.
+      </p>
+
       <ProtocolTabs client:visible />
     </div>
   </section>
@@ -131,46 +165,72 @@ const pageDescription = "More than just cleaning. We provide clinical grade hygi
   <section class="pricing-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <h2 class="section-title">Transparent Pricing</h2>
-        <p class="section-desc">Choose the level of care your home needs. No contracts, ever.</p>
+        <h2 class="section-title">Service Tiers</h2>
+        <p class="section-desc">
+          From daily porter services to periodic deep cleans. Choose the level
+          of care your business demands.
+        </p>
       </div>
-      
+
       <PricingCards />
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section style="background: #0f172a; color: white; padding: 6rem 0; text-align: center; position: relative; overflow: hidden;">
+  <section
+    style="background: #0f172a; color: white; padding: 6rem 0; text-align: center; position: relative; overflow: hidden;"
+  >
     <!-- Simple Pattern Overlay -->
-    <div style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0.05; background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
-    
+    <div
+      style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0.05; background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"
+    >
+    </div>
+
     <div class="container" style="position: relative; z-index: 5;">
       <div style="margin-bottom: 2rem;">
-        <span style="border: 1px solid rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">100% Satisfaction Guarantee</span>
+        <span
+          style="border: 1px solid rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;"
+          >100% Satisfaction Guarantee</span
+        >
       </div>
-      
-      <h2 style="color: white; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;">
-        Your home is your biggest investment.<br/>
-        <span class="text-orange">Take care of it with the experts.</span>
+
+      <h2
+        style="color: white; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;"
+      >
+        Your facility reflects your brand.<br />
+        <span class="text-orange">Partner with the professionals.</span>
       </h2>
-      
-      <p style="color: white; margin-bottom: 3rem; font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;">
-        Request your free hygiene evaluation today and discover the Paramount difference. No commitment, no pressure.
+
+      <p
+        style="color: white; margin-bottom: 3rem; font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;"
+      >
+        Request a complimentary site walkthrough and custom proposal today.
       </p>
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/contact" class="hero-btn" style="width: auto; padding: 1rem 3rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-          <i class="fas fa-calendar-check"></i> Schedule Free Evaluation
+
+      <div
+        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;"
+      >
+        <a
+          href="/contact"
+          class="hero-btn"
+          style="width: auto; padding: 1rem 3rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"
+        >
+          <i class="fas fa-file-signature"></i> Request Proposal
         </a>
-        <a href="tel:4075550123" style="padding: 1rem 3rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 10px; color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='white'; this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.background='transparent'">
+        <a
+          href="tel:4075550123"
+          style="padding: 1rem 3rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 10px; color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s;"
+          onmouseover="this.style.borderColor='white'; this.style.background='rgba(255,255,255,0.05)'"
+          onmouseout="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.background='transparent'"
+        >
           <i class="fas fa-phone"></i> (407) 555-0123
         </a>
       </div>
-      
+
       <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.5;">
-        Service available in Orlando, Kissimmee, Sanford, Winter Park, Lake Mary and surrounding areas.
+        Serving commercial clients in Orlando, Kissimmee, Sanford, Winter Park,
+        Lake Mary and surrounding areas.
       </p>
     </div>
   </section>
-
 </BaseLayout>
