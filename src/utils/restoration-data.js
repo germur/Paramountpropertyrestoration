@@ -33,11 +33,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/herowater.jpg"
       },
       services: [
-        { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/flood-damage" },
-        { icon: "fas fa-wrench", title: "Leak Repair", description: "Fix burst pipes and hidden leaks", slug: "leak-repair", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/leak-repair" },
-        { icon: "fas fa-home", title: "Basement Flooding", description: "Basement water removal and drying", slug: "basement-flooding", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/basement-flooding" },
-        { icon: "fas fa-cloud-rain", title: "Ceiling Water Damage", description: "Ceiling leak repair and restoration", slug: "ceiling-water-damage", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/ceiling-water-damage" },
-        { icon: "fas fa-tint", title: "Emergency Water Removal", description: "24/7 rapid water extraction", slug: "emergency-water-removal", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/emergency-water-removal" }
+        { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/flood-damage.webp", link: "/restoration/water-damage/flood-damage" },
+        { icon: "fas fa-wrench", title: "Leak Repair", description: "Fix burst pipes and hidden leaks", slug: "leak-repair", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+        { icon: "fas fa-home", title: "Basement Flooding", description: "Basement water removal and drying", slug: "basement-flooding", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/basement-flooding" },
+        { icon: "fas fa-cloud-rain", title: "Ceiling Water Damage", description: "Ceiling leak repair and restoration", slug: "ceiling-water-damage", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        { icon: "fas fa-tint", title: "Emergency Water Removal", description: "24/7 rapid water extraction", slug: "emergency-water-removal", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/emergency-water-removal" }
       ],
       faqs: [
         { q: "What is water damage restoration?", a: "Water damage restoration is the process of cleaning, drying, and repairing property after water intrusion from floods, leaks, or storms. Our certified technicians use industrial-grade equipment to extract water, dry affected areas, and prevent secondary damage like mold growth." },
@@ -62,11 +62,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/waterDamage.jpg"
       },
       services: [
-        { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly.", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/emergency-water-removal" },
-        { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities.", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/flood-damage" },
-        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold.", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/flood-damage" },
-        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Support for weakened ceilings, floors, and framing.", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/flood-damage" },
-        { icon: "fas fa-hammer", title: "Property Restoration", description: "Complete restoration of damaged areas to pre-loss condition.", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/flood-damage" }
+        { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/emergency-water-removal" },
+        { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/flood-damage" },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/flood-damage" },
+        { icon: "fas fa-tools", title: "Structural Stabilization", description: "Support for weakened ceilings, floors, and framing.", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/flood-damage" },
+        { icon: "fas fa-hammer", title: "Property Restoration", description: "Complete restoration of damaged areas to pre-loss condition.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/flood-damage" }
       ],
       faqs: [
         { q: "How long does flood cleanup take?", a: "Most properties dry within 2–5 days depending on water levels and building materials. Continuous monitoring ensures safe humidity levels before restoration begins." },
@@ -90,11 +90,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/waterDamage.jpg"
       },
       services: [
-        { icon: "fas fa-cloud-rain", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation.", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/ceiling-water-damage" },
-        { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety.", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/leak-repair" },
-        { icon: "fas fa-search", title: "Hidden Leak Detection", description: "Advanced tools locate leaks inside walls, floors, or basements.", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/leak-repair" },
-        { icon: "fas fa-wind", title: "Drying & Dehumidification", description: "Complete moisture removal from affected areas.", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/leak-repair" },
-        { icon: "fas fa-shield-alt", title: "Preventive Treatments", description: "Antimicrobial applications to prevent mold growth.", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/leak-repair" }
+        { icon: "fas fa-cloud-rain", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+        { icon: "fas fa-search", title: "Hidden Leak Detection", description: "Advanced tools locate leaks inside walls, floors, or basements.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/leak-repair" },
+        { icon: "fas fa-wind", title: "Drying & Dehumidification", description: "Complete moisture removal from affected areas.", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/leak-repair" },
+        { icon: "fas fa-shield-alt", title: "Preventive Treatments", description: "Antimicrobial applications to prevent mold growth.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/leak-repair" }
       ],
       faqs: [
         { q: "How do I know if I have a hidden water leak?", a: "Signs include moldy odors, warped walls, and unexplained water bills. We use specialized tools to detect hidden leaks." },
@@ -118,11 +118,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/waterDamage.jpg"
       },
       services: [
-        { icon: "fas fa-pump-soap", title: "Basement Pump-Out", description: "Rapid water evacuation with high-volume pumps.", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/basement-flooding" },
-        { icon: "fas fa-wind", title: "Structural Drying", description: "Dry walls, subfloors, and insulation to protect the foundation.", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/basement-flooding" },
-        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Apply treatments and humidity control to stop mold growth.", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/basement-flooding" },
-        { icon: "fas fa-chart-line", title: "Moisture Monitoring", description: "Track safe drying progress with daily readings.", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/basement-flooding" },
-        { icon: "fas fa-home", title: "Foundation Restoration", description: "Repair and restore basement structure and finishes.", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/basement-flooding" }
+        { icon: "fas fa-pump-soap", title: "Basement Pump-Out", description: "Rapid water evacuation with high-volume pumps.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/basement-flooding" },
+        { icon: "fas fa-wind", title: "Structural Drying", description: "Dry walls, subfloors, and insulation to protect the foundation.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/basement-flooding" },
+        { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Apply treatments and humidity control to stop mold growth.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/basement-flooding" },
+        { icon: "fas fa-chart-line", title: "Moisture Monitoring", description: "Track safe drying progress with daily readings.", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/basement-flooding" },
+        { icon: "fas fa-home", title: "Foundation Restoration", description: "Repair and restore basement structure and finishes.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/basement-flooding" }
       ],
       faqs: [
         { q: "What causes basement flooding?", a: "Common causes include heavy rains, poor drainage, foundation cracks, burst pipes, or failed sump pumps." },
@@ -146,11 +146,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/waterDamage.jpg"
       },
       services: [
-        { icon: "fas fa-wrench", title: "Leak Source Repair", description: "Fix pipes, roof leaks, or AC condensation.", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/leak-repair" },
-        { icon: "fas fa-hammer", title: "Drywall & Ceiling Replacement", description: "Remove & replace water-damaged sections.", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/ceiling-water-damage" },
-        { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces.", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/ceiling-water-damage" },
-        { icon: "fas fa-virus", title: "Mold Remediation", description: "Long-term protection against hidden growth.", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/ceiling-water-damage" },
-        { icon: "fas fa-wind", title: "Advanced Drying Systems", description: "Industrial equipment for complete moisture removal.", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/ceiling-water-damage" }
+        { icon: "fas fa-wrench", title: "Leak Source Repair", description: "Fix pipes, roof leaks, or AC condensation.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/leak-repair" },
+        { icon: "fas fa-hammer", title: "Drywall & Ceiling Replacement", description: "Remove & replace water-damaged sections.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        { icon: "fas fa-virus", title: "Mold Remediation", description: "Long-term protection against hidden growth.", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+        { icon: "fas fa-wind", title: "Advanced Drying Systems", description: "Industrial equipment for complete moisture removal.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/ceiling-water-damage" }
       ],
       faqs: [
         { q: "How do I know if ceiling water damage is serious?", a: "Look for sagging, discoloration, musty odors, or peeling paint. These signal hidden water issues." },
@@ -174,11 +174,11 @@ export function getWaterDamageContent(subSlug) {
         bgImage: "/images/waterDamage.jpg"
       },
       services: [
-        { icon: "fas fa-tint", title: "24/7 Emergency Response", description: "Immediate water extraction deployment", image: "/images/FloodDamage.jpg", link: "/restoration/water-damage/emergency-water-removal" },
-        { icon: "fas fa-pump-soap", title: "High-Capacity Pumps", description: "Remove thousands of gallons quickly", image: "/images/LeakRepair.jpg", link: "/restoration/water-damage/emergency-water-removal" },
-        { icon: "fas fa-wind", title: "Industrial Dehumidifiers", description: "Stabilize humidity and prevent mold", image: "/images/BasementFlooding.jpg", link: "/restoration/water-damage/emergency-water-removal" },
-        { icon: "fas fa-chart-line", title: "Moisture Monitoring", description: "Track drying progress with precision tools", image: "/images/CeilingWaterDamage.jpg", link: "/restoration/water-damage/emergency-water-removal" },
-        { icon: "fas fa-file-invoice", title: "Insurance Documentation", description: "Complete reports for claims processing", image: "/images/EmergencyWaterRemoval.jpg", link: "/restoration/water-damage/emergency-water-removal" }
+        { icon: "fas fa-tint", title: "24/7 Emergency Response", description: "Immediate water extraction deployment", image: "/images/flood-damage.webp", link: "/restoration/water-damage/emergency-water-removal" },
+        { icon: "fas fa-pump-soap", title: "High-Capacity Pumps", description: "Remove thousands of gallons quickly", image: "/images/leak-repair.webp", link: "/restoration/water-damage/emergency-water-removal" },
+        { icon: "fas fa-wind", title: "Industrial Dehumidifiers", description: "Stabilize humidity and prevent mold", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/emergency-water-removal" },
+        { icon: "fas fa-chart-line", title: "Moisture Monitoring", description: "Track drying progress with precision tools", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/emergency-water-removal" },
+        { icon: "fas fa-file-invoice", title: "Insurance Documentation", description: "Complete reports for claims processing", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/emergency-water-removal" }
       ],
       faqs: [
         { q: "How fast can you remove water?", a: "We typically arrive within 60 minutes and begin extraction immediately with high-capacity pumps." },
