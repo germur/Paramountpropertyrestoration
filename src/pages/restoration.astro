@@ -4,7 +4,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SEOHead from "../components/SEOHead.jsx";
 // ✅ IMPORTAR TUS COMPONENTES DE CONFIANZA
 import TrustBar from "../components/sections/TrustBar.astro";
-import Steps from "../components/Steps.jsx"; // Reutilizamos el de home o creamos uno específico
+import Steps from "../components/Steps.jsx";
+import SmartFAQ from "../components/SmartFAQ.astro";
+import { commonFAQs } from "../data/faqs.js";
 import "../styles/services.css";
 
 const pageTitle = "Florida Restoration Services | We Restore Calm After Chaos";
@@ -256,3 +258,5 @@ const pageDescription =
         </div>
     </section>
 </BaseLayout>
+
+<SmartFAQ questions={commonFAQs} />

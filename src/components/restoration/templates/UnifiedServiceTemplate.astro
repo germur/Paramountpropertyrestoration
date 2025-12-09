@@ -1,7 +1,8 @@
 ---
 import { cities } from "../../../data/restoration.js";
-import FAQ from "../../AcordeonServices";
 import RestorationCTA from "../../RestorationCTA";
+import SmartFAQ from "../../SmartFAQ.astro";
+import { getFAQs } from "../../../data/faqs.js";
 // Importar el CSS limpio
 import "../../../styles/pages/restoration-responsive.css";
 
@@ -41,6 +42,9 @@ const getCitiesByRegion = () => {
 };
 
 const cityRegions = getCitiesByRegion();
+
+// Obtener las preguntas combinadas para este servicio (Smart FAQs)
+const faqList = getFAQs(sub.slug);
 ---
 
 <div class="unified-service-template">
@@ -239,29 +243,8 @@ const cityRegions = getCitiesByRegion();
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section faq-section" style="padding-top: 2rem;">
-    <div class="container">
-      <h2 class="section-title">
-        Frequently Asked Questions About {sub.title}
-      </h2>
-      <FAQ
-        customQuestions={[
-          {
-            question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
-            answer:
-              "We provide 24/7 emergency response and can typically arrive on-site within 60-90 minutes of your call. Our rapid response helps minimize damage and reduces restoration costs.",
-          },
-          {
-            question: "Do you work with insurance companies?",
-            answer:
-              "Yes, we work directly with insurance companies and adjusters. We provide detailed documentation, photos, and estimates to support your claim and ensure proper coverage.",
-          },
-        ]}
-        client:load
-      />
-    </div>
-  </section>
+  <!-- FAQ Section (Smart + Schema) -->
+  <SmartFAQ questions={faqList} />
 
   <!-- Final CTA -->
   <RestorationCTA

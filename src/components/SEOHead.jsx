@@ -1,5 +1,13 @@
 // src/components/SEOHead.jsx
 import React from 'react';
+import {
+  generateLocalBusinessSchema,
+  generateServiceSchema,
+  generateArticleSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+  generateOrganizationSchema
+} from './EnhancedSchemas';
 
 /**********************
  * Helpers (JS only)
@@ -67,24 +75,6 @@ function generateDescription({ service, subservice, city, region = 'FL' }) {
   return 'Property restoration services across Florida with 24/7 emergency response.';
 }
 
-/**
- * Build FAQPage schema for JSON-LD
- */
-function generateFAQSchema(questions = []) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: questions.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
-    })),
-  };
-}
-
 /**********************
  * Component
  **********************/
@@ -112,7 +102,7 @@ const SEOHead = ({
 
   // Business info (for schema)
   businessName = 'Paramount Property Restoration',
-  phone,
+  phone = '+1-786-602-2217',
   addressLocality, // visible city name (pretty), optional
   addressRegion = 'FL',
   // FAQ schema questions (optional)
@@ -141,164 +131,67 @@ const SEOHead = ({
   // hreflang alternates
   const hrefLangs = getHrefLangs({ siteUrl, locales, currentLocale, canonicalPath });
 
-  // JSON-LD: Enhanced LocalBusiness with more details
-  const jsonLdLocalBusiness = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${canonicalURL}#localbusiness`,
+  // 1. Organization Schema (Always present)
+  const orgSchema = generateOrganizationSchema({
     name: businessName,
-    image: `${siteUrl}/images/ppr-logo-new.webp`,
-    url: canonicalURL,
-    telephone: phone,
-    email: 'services@paramountpropertyrestoration.com',
-    priceRange: '$$',
-    address: addressLocality ? {
-      '@type': 'PostalAddress',
-      addressLocality: addressLocality,
-      addressRegion: addressRegion,
-      addressCountry: 'US',
-    } : {
-      '@type': 'PostalAddress',
-      addressLocality: 'Florida',
-      addressRegion: 'FL',
-      addressCountry: 'US',
-    },
-    geo: addressLocality ? undefined : {
-      '@type': 'GeoCoordinates',
-      latitude: '27.6648',
-      longitude: '-81.5158'
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59'
-    },
-    areaServed: city ? [{ '@type': 'City', name: addressLocality || humanize(city) }] : {
-      '@type': 'State',
-      name: 'Florida'
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '150'
-    },
-    sameAs: [
-      'https://www.facebook.com/paramountpropertyrestoration',
-      'https://www.instagram.com/paramountpropertyrestoration'
-    ]
-  };
+    url: siteUrl,
+    phone: phone
+  });
 
-  const jsonLdService = service ? {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': `${canonicalURL}#service`,
+  // 2. LocalBusiness Schema
+  // Removing hardcoded rating/reviews to avoid fake schema penalties
+  // Using addressLocality dynamically if available
+  const localBusinessSchema = pageType !== 'article' ? generateLocalBusinessSchema({
+    name: businessName,
+    url: canonicalURL,
+    phone: phone,
+    address: {
+      addressLocality: addressLocality || 'Florida',
+      addressRegion: addressRegion,
+      addressCountry: 'US'
+    },
+    // Only pass geo/areaServed if specific data available, otherwise generator handles defaults carefully
+    areaServed: city ? humanize(city) : 'Florida',
+    rating: undefined // Do not hardcode fake ratings
+  }) : null;
+
+  // 3. Service Schema
+  const serviceSchema = service ? generateServiceSchema({
     name: humanize(subservice) || humanize(service),
     description: finalDesc,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: businessName,
-      url: siteUrl,
-      telephone: phone
-    },
-    areaServed: city ? {
-      '@type': 'City',
-      name: addressLocality || humanize(city),
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: addressLocality || humanize(city),
-        addressRegion: addressRegion || 'FL',
-        addressCountry: 'US'
-      }
-    } : {
-      '@type': 'State',
-      name: 'Florida',
-      address: {
-        '@type': 'PostalAddress',
-        addressRegion: 'FL',
-        addressCountry: 'US'
-      }
-    },
-    serviceType: humanize(service) || 'Restoration',
     url: canonicalURL,
-    availableChannel: {
-      '@type': 'ServiceChannel',
-      serviceUrl: canonicalURL,
-      servicePhone: {
-        '@type': 'ContactPoint',
-        telephone: phone,
-        contactType: 'Emergency Service',
-        availableLanguage: ['en', 'es'],
-        hoursAvailable: '24/7'
-      }
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: `${humanize(service)} Services`,
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: `Emergency ${humanize(service)}`
-          }
-        }
-      ]
-    }
-  } : null;
+    serviceType: humanize(service),
+    areaServed: city ? humanize(city) : 'Florida'
+  }) : null;
 
-  // JSON-LD Enhanced Article Schema
-  const jsonLdArticle = pageType === 'article' ? {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    '@id': `${canonicalURL}#article`,
+  // 4. Breadcrumb Schema (New & Vital)
+  // Logic: Home > Vertical > Service > Subservice > City
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    vertical && { name: humanize(vertical), url: `/${vertical}` },
+    service && { name: humanize(service), url: `/${vertical}/${service}` },
+    subservice && { name: humanize(subservice), url: `/${vertical}/${service}/${subservice}` },
+    city && { name: humanize(city), url: canonicalPath }
+  ].filter(Boolean);
+
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, siteUrl);
+
+  // 5. Article Schema
+  const articleSchema = pageType === 'article' ? generateArticleSchema({
     headline: finalTitle,
     description: finalDesc,
-    image: {
-      '@type': 'ImageObject',
-      url: imageURL,
-      width: 1200,
-      height: 630
-    },
-    datePublished: datePublished ? new Date(datePublished).toISOString() : new Date().toISOString(),
-    dateModified: dateModified ? new Date(dateModified).toISOString() : datePublished ? new Date(datePublished).toISOString() : new Date().toISOString(),
-    author: {
-      '@type': 'Organization',
-      name: author || businessName,
-      url: siteUrl,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: businessName,
-      url: siteUrl,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteUrl}/images/ppr-logo-new.webp`,
-        width: 600,
-        height: 60
-      },
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalURL,
-    },
-    articleSection: category || 'Home Improvement',
-    keywords: keywords.length > 0 ? keywords.join(', ') : undefined,
-    inLanguage: 'en-US',
-    about: {
-      '@type': 'Thing',
-      name: category || 'Home Improvement'
-    },
-    isAccessibleForFree: true,
-    isPartOf: {
-      '@type': 'WebSite',
-      '@id': `${siteUrl}/#website`,
-      url: siteUrl,
-      name: businessName
-    }
-  } : null;
+    image: imageURL,
+    datePublished,
+    dateModified,
+    author,
+    url: canonicalURL,
+    siteUrl,
+    category,
+    keywords
+  }) : null;
+
+  // 6. FAQ Schema
+  const faqSchema = faqQuestions.length > 0 ? generateFAQSchema(faqQuestions) : null;
 
   return (
     <>
@@ -341,22 +234,27 @@ const SEOHead = ({
         <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} />
       ))}
 
-      {/* JSON-LD */}
-      {pageType !== 'article' && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }} />
+      {/* JSON-LD INJECTION */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+
+      {localBusinessSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       )}
-      {jsonLdService && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }} />
+
+      {serviceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       )}
-      {jsonLdArticle && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
+
+      {breadcrumbSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       )}
-      {/* FAQPage schema JSON-LD */}
-      {faqQuestions.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqQuestions)) }}
-        />
+
+      {articleSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      )}
+
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
     </>
   );

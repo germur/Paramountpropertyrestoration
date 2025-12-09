@@ -1,0 +1,77 @@
+---
+// src/components/SmartFAQ.astro
+import AcordeonServices from "./AcordeonServices.jsx";
+
+interface Props {
+    questions: {
+        id: string; // AcordeonServices expects an ID
+        question: string;
+        answer: string;
+    }[];
+}
+
+const { questions } = Astro.props;
+
+// Generación automática del Schema FAQPage
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+        "@type": "Question",
+        name: q.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: q.answer,
+        },
+    })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<section class="smart-faq-section">
+    <div class="container">
+        <div class="text-center mb-12">
+            <h2 class="section-heading-center">
+                Common Questions & Expert Answers
+            </h2>
+            <p class="section-subtitle">
+                Clear answers about our process, insurance, and recovery.
+            </p>
+        </div>
+
+        {/* Pasamos las preguntas personalizadas al componente React */}
+        <AcordeonServices
+            client:visible
+            customQuestions={questions}
+            showTitle={false}
+        />
+    </div>
+</section>
+
+<style>
+    .smart-faq-section {
+        padding: 4rem 0;
+        background-color: #f8fafc;
+    }
+    .mb-12 {
+        margin-bottom: 3rem;
+    }
+    .text-center {
+        text-align: center;
+    }
+
+    .section-heading-center {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: var(--color-primary, #1e293b);
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        color: var(--text-secondary, #64748b);
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>
