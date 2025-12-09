@@ -120,9 +120,9 @@ const SEOHead = ({
 
   // Article-specific fields
   author = 'Paramount Property Restoration',
-  datePublished,
-  dateModified,
-  category,
+  datePublished = null,
+  dateModified = null,
+  category = null,
 }) => {
   const parts = { vertical, service, subservice, city };
 

@@ -7,7 +7,6 @@ import {
 import { getEnrichedSubserviceContent } from "../../../../data/subservice-content.js";
 import { getCityGeo } from "../../../../data/cities-geo.js";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
-import RestorationCTA from "../../../../components/RestorationCTA.jsx";
 import FAQ from "../../../../components/AcordeonServices.jsx";
 import SEOHead from "../../../../components/SEOHead.jsx";
 import ServiceAreaMap from "../../../../components/ServiceAreaMap.jsx";
@@ -53,19 +52,6 @@ const pageConfig = {
 
 // Enriched content
 const subserviceContent = getEnrichedSubserviceContent(subcategory, ciudadData);
-
-// Hero configuration
-const heroConfig = {
-  title:
-    subserviceContent?.hero?.title ||
-    `${servicioData.title} in ${ciudadData.nombre}`,
-  subtitle:
-    subserviceContent?.hero?.description ||
-    `Fast, reliable ${(servicioData.nombre || servicioData.title).toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}.`,
-  ctaText: `Get Free Quote in ${ciudadData.nombre}`,
-  bgImage: servicioData.hero?.bg || "/images/restoration-hero-default.webp",
-  badge: subserviceContent?.hero?.badge || null,
-};
 
 // Service features
 const serviceFeatures = subserviceContent?.features || [

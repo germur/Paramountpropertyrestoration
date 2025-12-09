@@ -204,7 +204,7 @@ export function getWaterDamageContent(subSlug) {
  * @param {string} subSlug - Subservice slug
  * @returns {Object} Content configuration
  */
-export function getFireDamageContent(subSlug) {
+export function getFireDamageContent(_subSlug) {
   // Similar structure for Fire Damage
   // Will be populated from FireTemplate.astro
   return {
@@ -225,7 +225,7 @@ export function getFireDamageContent(subSlug) {
  * @param {string} subSlug - Subservice slug
  * @returns {Object} Content configuration
  */
-export function getMoldRemediationContent(subSlug) {
+export function getMoldRemediationContent(_subSlug) {
   // Similar structure for Mold Remediation
   // Will be populated from MoldTemplate.astro
   return {
@@ -246,7 +246,7 @@ export function getMoldRemediationContent(subSlug) {
  * @param {string} subSlug - Subservice slug
  * @returns {Object} Content configuration
  */
-export function getStormDamageContent(subSlug) {
+export function getStormDamageContent(_subSlug) {
   // Similar structure for Storm Damage
   // Will be populated from StormTemplate.astro
   return {
@@ -267,7 +267,7 @@ export function getStormDamageContent(subSlug) {
  * @param {string} subSlug - Subservice slug
  * @returns {Object} Content configuration
  */
-export function getMitigationContent(subSlug) {
+export function getMitigationContent(_subSlug) {
   // Similar structure for Mitigation
   // Will be populated from MitigationTemplate.astro
   return {

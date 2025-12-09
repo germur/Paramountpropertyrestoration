@@ -480,7 +480,7 @@ const cityRegions = getCitiesByRegion();
         Frequently Asked Questions About {sub.title}
       </h2>
       <FAQ
-        questions={[
+        customQuestions={[
           {
             question: `How quickly can you respond to ${sub.title.toLowerCase()} emergencies?`,
             answer:
@@ -511,7 +511,7 @@ const cityRegions = getCitiesByRegion();
   <RestorationCTA
     title="Need Expert Help Now?"
     subtitle="Don't wait - property damage gets worse over time"
-    ctaText="Get Emergency Help →"
+    buttonText="Get Emergency Help →"
     client:load
   />
 </div>

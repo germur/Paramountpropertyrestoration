@@ -1,17 +1,21 @@
 ---
 // src/pages/services/[servicio]/[ciudad].astro
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import '../../../styles/pages/[ciudad].css'
-import '../../../styles/pages/programmatic-conversion.css'
-import { serviceGroups, getAllGroupCityCombinations } from "../../../data/services.js";
-import { cities } from "../../../data/restoration.js";
-import { generateCityIntro, generateLocalRisks, generateNeighborhoodContent, hasCityContent } from "../../../lib/city-content-generator.js";
+import "../../../styles/pages/[ciudad].css";
+import "../../../styles/pages/programmatic-conversion.css";
+import { getAllGroupCityCombinations } from "../../../data/services.js";
+import {
+  generateCityIntro,
+  generateLocalRisks,
+  generateNeighborhoodContent,
+  hasCityContent,
+} from "../../../lib/city-content-generator.js";
 import SEOHead from "../../../components/SEOHead.jsx";
 import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export async function getStaticPaths() {
-  return getAllGroupCityCombinations().map(combo => ({
+  return getAllGroupCityCombinations().map((combo) => ({
     params: {
       servicio: combo.servicio,
       ciudad: combo.ciudad,
@@ -65,8 +69,8 @@ const serviceAreaCities = [
 const serviceFeatures = [
   "Free in-home consultation & design",
   "Licensed & insured contractors",
-  "Quality materials and craftsmanship", 
-  "Project management & timely completion"
+  "Quality materials and craftsmanship",
+  "Project management & timely completion",
 ];
 
 const serviceName = servicioData.name;
@@ -102,9 +106,15 @@ const serviceName = servicioData.name;
               <span
                 class="service-badge"
                 class:list={[
-                  service.name.replace(/[^a-zA-Z]/g, "").toLowerCase().includes(
-                    serviceName.replace(/[^a-zA-Z]/g, "").toLowerCase().substring(0, 7)
-                  ) && "active",
+                  service.name
+                    .replace(/[^a-zA-Z]/g, "")
+                    .toLowerCase()
+                    .includes(
+                      serviceName
+                        .replace(/[^a-zA-Z]/g, "")
+                        .toLowerCase()
+                        .substring(0, 7),
+                    ) && "active",
                 ]}
               >
                 <span class="badge-icon">{service.icon}</span>
@@ -134,9 +144,7 @@ const serviceName = servicioData.name;
 
         <!-- CTA Button -->
         <div class="hero-cta">
-          <a href="/contact" class="btn-primary">
-            Get Free Consultation →
-          </a>
+          <a href="/contact" class="btn-primary"> Get Free Consultation → </a>
         </div>
       </div>
     </div>
@@ -151,24 +159,28 @@ const serviceName = servicioData.name;
           <p class="overview-text">
             We deliver professional {serviceName.toLowerCase()} in {
               ciudadData.nombre
-            } with expert contractors, quality materials, and results that exceed expectations. Every project is customized to your specific needs and preferences.
+            } with expert contractors, quality materials, and results that exceed
+            expectations. Every project is customized to your specific needs and
+            preferences.
           </p>
 
           <ul class="service-features">
-            {serviceFeatures.map((feature) => (
-              <li>
-                <span class="feature-icon">✓</span>
-                {feature}
-              </li>
-            ))}
+            {
+              serviceFeatures.map((feature) => (
+                <li>
+                  <span class="feature-icon">✓</span>
+                  {feature}
+                </li>
+              ))
+            }
           </ul>
         </div>
 
         <div class="overview-sidebar">
           <h3>Serving {ciudadData.nombre} and All of {ciudadData.region}</h3>
           <p>
-            We offer {serviceName.toLowerCase()} in {ciudadData.nombre} and
-            throughout {ciudadData.region}, including neighborhoods like {
+            We offer {serviceName.toLowerCase()} in {ciudadData.nombre} and throughout
+            {ciudadData.region}, including neighborhoods like {
               serviceAreaCities.slice(0, 3).join(", ")
             }, and {serviceAreaCities[3]}.
           </p>
@@ -181,38 +193,40 @@ const serviceName = servicioData.name;
   </section>
 
   <!-- UNIQUE CITY CONTENT: SEO & Local Authority -->
-  {hasUniqueContent && cityIntro && (
-    <section class="city-unique-content">
-      <div class="container">
-        <div class="city-intro-card">
-          <h2 class="city-intro-title">
-            Expert {serviceName} Contractors Serving {ciudadData.nombre}
-          </h2>
-          <p class="city-intro-text">{cityIntro}</p>
+  {
+    hasUniqueContent && cityIntro && (
+      <section class="city-unique-content">
+        <div class="container">
+          <div class="city-intro-card">
+            <h2 class="city-intro-title">
+              Expert {serviceName} Contractors Serving {ciudadData.nombre}
+            </h2>
+            <p class="city-intro-text">{cityIntro}</p>
 
-          {neighborhoodContent && (
-            <div class="neighborhoods-section">
-              <h3 class="neighborhoods-title">
-                <i class="fas fa-map-marker-alt"></i>
-                Complete {ciudadData.county} Coverage
-              </h3>
-              <p class="neighborhoods-text">{neighborhoodContent}</p>
-            </div>
-          )}
+            {neighborhoodContent && (
+              <div class="neighborhoods-section">
+                <h3 class="neighborhoods-title">
+                  <i class="fas fa-map-marker-alt" />
+                  Complete {ciudadData.county} Coverage
+                </h3>
+                <p class="neighborhoods-text">{neighborhoodContent}</p>
+              </div>
+            )}
 
-          {localRisks && (
-            <div class="local-risks-section">
-              <h3 class="risks-title">
-                <i class="fas fa-home"></i>
-                Why {ciudadData.nombre} Homes Choose Our {serviceName}
-              </h3>
-              <p class="risks-text">{localRisks}</p>
-            </div>
-          )}
+            {localRisks && (
+              <div class="local-risks-section">
+                <h3 class="risks-title">
+                  <i class="fas fa-home" />
+                  Why {ciudadData.nombre} Homes Choose Our {serviceName}
+                </h3>
+                <p class="risks-text">{localRisks}</p>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 
   <!-- Why Choose Us Section -->
   <section class="section why-choose-section">
@@ -221,7 +235,8 @@ const serviceName = servicioData.name;
         Why Choose Our {serviceName} in {ciudadData.nombre}?
       </h2>
       <p class="section-subtitle">
-        We combine years of experience with the latest techniques to deliver exceptional results that stand the test of time.
+        We combine years of experience with the latest techniques to deliver
+        exceptional results that stand the test of time.
       </p>
 
       <div class="benefits-grid">
@@ -230,7 +245,11 @@ const serviceName = servicioData.name;
             <i class="fas fa-certificate"></i>
           </div>
           <h3>Licensed & Certified</h3>
-          <p>All contractors are licensed, insured, and certified to work in {ciudadData.county}.</p>
+          <p>
+            All contractors are licensed, insured, and certified to work in {
+              ciudadData.county
+            }.
+          </p>
         </div>
 
         <div class="benefit-item">
@@ -238,7 +257,10 @@ const serviceName = servicioData.name;
             <i class="fas fa-clock"></i>
           </div>
           <h3>On-Time Completion</h3>
-          <p>We stick to schedules and complete your {serviceName.toLowerCase()} project on time, every time.</p>
+          <p>
+            We stick to schedules and complete your {serviceName.toLowerCase()} project
+            on time, every time.
+          </p>
         </div>
 
         <div class="benefit-item">
@@ -246,7 +268,10 @@ const serviceName = servicioData.name;
             <i class="fas fa-shield-alt"></i>
           </div>
           <h3>Quality Guarantee</h3>
-          <p>Every project comes with comprehensive warranties covering materials and workmanship.</p>
+          <p>
+            Every project comes with comprehensive warranties covering materials
+            and workmanship.
+          </p>
         </div>
 
         <div class="benefit-item">
@@ -254,7 +279,10 @@ const serviceName = servicioData.name;
             <i class="fas fa-dollar-sign"></i>
           </div>
           <h3>Transparent Pricing</h3>
-          <p>No hidden fees or surprise costs. Get detailed estimates before work begins.</p>
+          <p>
+            No hidden fees or surprise costs. Get detailed estimates before work
+            begins.
+          </p>
         </div>
       </div>
     </div>
@@ -265,7 +293,8 @@ const serviceName = servicioData.name;
     <div class="container">
       <h2 class="section-title">Our {serviceName} Process</h2>
       <p class="section-subtitle">
-        From consultation to completion, we follow a proven process that ensures quality results.
+        From consultation to completion, we follow a proven process that ensures
+        quality results.
       </p>
 
       <div class="process-grid">
@@ -273,7 +302,10 @@ const serviceName = servicioData.name;
           <div class="step-number">1</div>
           <div class="step-content">
             <h3>Free Consultation</h3>
-            <p>We visit your {ciudadData.nombre} property to assess your needs and provide a detailed estimate.</p>
+            <p>
+              We visit your {ciudadData.nombre} property to assess your needs and
+              provide a detailed estimate.
+            </p>
           </div>
         </div>
 
@@ -281,7 +313,10 @@ const serviceName = servicioData.name;
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Design & Planning</h3>
-            <p>Create detailed plans and select materials that match your style and budget preferences.</p>
+            <p>
+              Create detailed plans and select materials that match your style
+              and budget preferences.
+            </p>
           </div>
         </div>
 
@@ -289,7 +324,10 @@ const serviceName = servicioData.name;
           <div class="step-number">3</div>
           <div class="step-content">
             <h3>Professional Installation</h3>
-            <p>Our certified team completes your {serviceName.toLowerCase()} with precision and attention to detail.</p>
+            <p>
+              Our certified team completes your {serviceName.toLowerCase()} with
+              precision and attention to detail.
+            </p>
           </div>
         </div>
 
@@ -297,13 +335,15 @@ const serviceName = servicioData.name;
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Final Inspection</h3>
-            <p>We conduct a thorough quality check and walkthrough to ensure your complete satisfaction.</p>
+            <p>
+              We conduct a thorough quality check and walkthrough to ensure your
+              complete satisfaction.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- FAQs Section -->
   <section class="section faq-section">
@@ -315,10 +355,14 @@ const serviceName = servicioData.name;
       <div class="faq-grid">
         <div class="faq-item">
           <h3 class="faq-question">
-            Do I need a permit for {serviceName.toLowerCase()} in {ciudadData.nombre}?
+            Do I need a permit for {serviceName.toLowerCase()} in {
+              ciudadData.nombre
+            }?
           </h3>
           <p class="faq-answer">
-            Yes, but we handle all permits and city documentation for you. Our team is familiar with {ciudadData.county} requirements and ensures full compliance.
+            Yes, but we handle all permits and city documentation for you. Our
+            team is familiar with {ciudadData.county} requirements and ensures full
+            compliance.
           </p>
         </div>
 
@@ -327,7 +371,8 @@ const serviceName = servicioData.name;
             How long does a typical {serviceName.toLowerCase()} project take?
           </h3>
           <p class="faq-answer">
-            Most {serviceName.toLowerCase()} projects in {ciudadData.nombre} are completed within 5–10 business days, depending on the scope and complexity.
+            Most {serviceName.toLowerCase()} projects in {ciudadData.nombre} are
+            completed within 5–10 business days, depending on the scope and complexity.
           </p>
         </div>
 
@@ -348,7 +393,8 @@ const serviceName = servicioData.name;
             Do you offer warranties on your {serviceName.toLowerCase()}?
           </h3>
           <p class="faq-answer">
-            Yes, all our {serviceName.toLowerCase()} work comes with comprehensive warranties covering both materials and labor for your peace of mind.
+            Yes, all our {serviceName.toLowerCase()} work comes with comprehensive
+            warranties covering both materials and labor for your peace of mind.
           </p>
         </div>
       </div>
