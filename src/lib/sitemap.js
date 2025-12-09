@@ -55,14 +55,14 @@ export async function getAllUrls() {
 
   // Restoration service group pages (without cities)
   for (const group of restorationGroups) {
-    if (group.template !== 'remodeling') {
+    if (group.template !== 'remodeling' && group.slug !== 'remodeling-services') {
       urls.add(withBaseUrl(`/restoration/${group.slug}`));
     }
   }
 
   // Restoration subservice pages (group/subservice without city)
   for (const group of restorationGroups) {
-    if (group.template !== 'remodeling' && group.subservices) {
+    if (group.template !== 'remodeling' && group.slug !== 'remodeling-services' && group.subservices) {
       for (const subservice of group.subservices) {
         urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}`));
       }
@@ -71,7 +71,7 @@ export async function getAllUrls() {
 
   // City-specific restoration pages (group/subservice/city)
   for (const group of restorationGroups) {
-    if (group.template !== 'remodeling' && group.subservices) {
+    if (group.template !== 'remodeling' && group.slug !== 'remodeling-services' && group.subservices) {
       for (const subservice of group.subservices) {
         for (const city of cities) {
           urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}/${city.slug}`));
@@ -82,7 +82,7 @@ export async function getAllUrls() {
 
   // Remodeling services (separate routing pattern)
   const remodelingServices = ['bathroom-remodeling', 'kitchen-remodeling', 'bedroom-remodeling', 'living-dining-remodeling', 'home-additions-remodeling'];
-  
+
   // Service pages without cities
   for (const service of remodelingServices) {
     urls.add(withBaseUrl(`/services/${service}`));

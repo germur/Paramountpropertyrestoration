@@ -10,45 +10,63 @@ import SEOCityLinks from "../../../components/SEOCityLinks.jsx";
 import { subserviceHubLinks } from "../../../data/seo-interlinking.js";
 
 export async function getStaticPaths() {
-  const paths = [] as { params: { group: string; subservice: string }, props?: any }[];
+  const paths = [] as {
+    params: { group: string; subservice: string };
+    props?: any;
+  }[];
 
   // 1) Collect existing combos from restorationGroups (if any)
-  restorationGroups.forEach((group) => {
-    group.subservices.forEach((sub) => {
-      paths.push({
-        params: { group: group.slug, subservice: sub.slug },
-        props: {
-          groupData: {
-            name: group.name,
-            slug: group.slug,
-            template: group.template || 'unified',
-            description: group.description,
+  restorationGroups
+    .filter((group) => group.slug !== "remodeling-services")
+    .forEach((group) => {
+      group.subservices.forEach((sub) => {
+        paths.push({
+          params: { group: group.slug, subservice: sub.slug },
+          props: {
+            groupData: {
+              name: group.name,
+              slug: group.slug,
+              template: group.template || "unified",
+              description: group.description,
+            },
+            subData: {
+              ...sub,
+              groupSlug: group.slug,
+              groupName: group.name,
+              template: group.template,
+            },
           },
-          subData: {
-            ...sub,
-            groupSlug: group.slug,
-            groupName: group.name,
-            template: group.template,
-          },
-        },
+        });
       });
     });
-  });
 
   // 2) Ensure new required combos exist regardless of external imports
   const ensure = (groupSlug, subSlug, groupName, template, desc) => {
-    const exists = paths.some(p => p.params.group === groupSlug && p.params.subservice === subSlug);
+    const exists = paths.some(
+      (p) => p.params.group === groupSlug && p.params.subservice === subSlug,
+    );
     if (!exists) {
       paths.push({
         params: { group: groupSlug, subservice: subSlug },
         props: {
-          groupData: { name: groupName, slug: groupSlug, template, description: desc },
+          groupData: {
+            name: groupName,
+            slug: groupSlug,
+            template,
+            description: desc,
+          },
           subData: {
             slug: subSlug,
-            title: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
-            nombre: (subSlug || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+            title: (subSlug || "")
+              .split("-")
+              .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+              .join(" "),
+            nombre: (subSlug || "")
+              .split("-")
+              .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+              .join(" "),
             short: desc,
-            categoria: 'restoration',
+            categoria: "restoration",
             template,
             groupSlug,
             groupName,
@@ -59,23 +77,67 @@ export async function getStaticPaths() {
   };
 
   // Fire
-  ensure('fire-damage', 'fire-restoration', 'Fire Damage', 'unified', 'Fire & smoke damage cleanup and repairs.');
+  ensure(
+    "fire-damage",
+    "fire-restoration",
+    "Fire Damage",
+    "unified",
+    "Fire & smoke damage cleanup and repairs.",
+  );
   // Storm
-  ensure('storm-damage', 'roof-damage', 'Storm Damage', 'unified', 'Hurricane, wind, and storm damage services.');
+  ensure(
+    "storm-damage",
+    "roof-damage",
+    "Storm Damage",
+    "unified",
+    "Hurricane, wind, and storm damage services.",
+  );
   // Mold
-  ensure('mold-remediation', 'air-quality-testing', 'Mold Remediation', 'unified', 'Mold inspection, cleanup & prevention.');
+  ensure(
+    "mold-remediation",
+    "air-quality-testing",
+    "Mold Remediation",
+    "unified",
+    "Mold inspection, cleanup & prevention.",
+  );
   // Mitigation
-  ensure('mitigation-services', 'emergency-response', 'Mitigation Services', 'unified', 'Rapid mitigation to prevent further damage.');
+  ensure(
+    "mitigation-services",
+    "emergency-response",
+    "Mitigation Services",
+    "unified",
+    "Rapid mitigation to prevent further damage.",
+  );
 
   return paths;
 }
 
 const groupMeta = {
-  'water-damage': { name: 'Water Damage', template: 'unified', description: 'Water damage restoration & mitigation.' },
-  'fire-damage': { name: 'Fire Damage', template: 'unified', description: 'Fire & smoke damage cleanup and repairs.' },
-  'storm-damage': { name: 'Storm Damage', template: 'unified', description: 'Hurricane, wind, and storm damage services.' },
-  'mold-remediation': { name: 'Mold Remediation', template: 'unified', description: 'Mold inspection, cleanup & prevention.' },
-  'mitigation-services': { name: 'Mitigation Services', template: 'unified', description: 'Rapid mitigation to prevent further damage.' },
+  "water-damage": {
+    name: "Water Damage",
+    template: "unified",
+    description: "Water damage restoration & mitigation.",
+  },
+  "fire-damage": {
+    name: "Fire Damage",
+    template: "unified",
+    description: "Fire & smoke damage cleanup and repairs.",
+  },
+  "storm-damage": {
+    name: "Storm Damage",
+    template: "unified",
+    description: "Hurricane, wind, and storm damage services.",
+  },
+  "mold-remediation": {
+    name: "Mold Remediation",
+    template: "unified",
+    description: "Mold inspection, cleanup & prevention.",
+  },
+  "mitigation-services": {
+    name: "Mitigation Services",
+    template: "unified",
+    description: "Rapid mitigation to prevent further damage.",
+  },
 };
 
 const params = Astro.params as { group: string; subservice: string };
@@ -84,9 +146,12 @@ let { groupData, subData } = Astro.props as any;
 
 if (!groupData || !subData) {
   const gm = groupMeta[params.group] || {
-    name: (params.group || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
-    template: 'unified',
-    description: ''
+    name: (params.group || "")
+      .split("-")
+      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .join(" "),
+    template: "unified",
+    description: "",
   };
   groupData = {
     name: gm.name,
@@ -96,10 +161,16 @@ if (!groupData || !subData) {
   };
   subData = {
     slug: params.subservice,
-    title: (params.subservice || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
-    nombre: (params.subservice || "").split("-").map(w => w ? w.charAt(0).toUpperCase() + w.slice(1) : "").join(" "),
+    title: (params.subservice || "")
+      .split("-")
+      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .join(" "),
+    nombre: (params.subservice || "")
+      .split("-")
+      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .join(" "),
     short: gm.description,
-    categoria: 'restoration',
+    categoria: "restoration",
     template: gm.template,
     groupSlug: params.group,
     groupName: gm.name,
@@ -110,9 +181,11 @@ if (!groupData || !subData) {
 const pageConfig = {
   canonical: `/restoration/${groupData.slug}/${subData.slug}`,
   title:
-    subData?.seo?.title ?? `${subData.title} | ${groupData.name} | Paramount Property Restoration`,
+    subData?.seo?.title ??
+    `${subData.title} | ${groupData.name} | Paramount Property Restoration`,
   description:
-    subData?.seo?.description ?? `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
+    subData?.seo?.description ??
+    `Professional ${subData.title} services in Florida by Paramount Property Restoration. 24/7 emergency response, licensed technicians, insurance assistance.`,
 };
 
 // All subservices now use the unified template
@@ -124,11 +197,16 @@ const cityLinks = subserviceHubLinks[currentPath];
 
 // Determine SEO title for city links section
 const getCityLinksTitle = () => {
-  if (subData.slug === 'mold-inspection') return 'Florida Mold Inspection - Cities We Serve';
-  if (subData.slug === 'mold-testing') return 'Florida Mold Testing - Cities We Serve';
-  if (subData.slug === 'black-mold-removal') return 'Florida Black Mold Removal - Cities We Serve';
-  if (subData.slug === 'emergency-water-removal') return 'Florida Emergency Water Removal - Cities We Serve';
-  if (subData.slug === 'flood-damage') return 'Florida Flood Damage Restoration - Cities We Serve';
+  if (subData.slug === "mold-inspection")
+    return "Florida Mold Inspection - Cities We Serve";
+  if (subData.slug === "mold-testing")
+    return "Florida Mold Testing - Cities We Serve";
+  if (subData.slug === "black-mold-removal")
+    return "Florida Black Mold Removal - Cities We Serve";
+  if (subData.slug === "emergency-water-removal")
+    return "Florida Emergency Water Removal - Cities We Serve";
+  if (subData.slug === "flood-damage")
+    return "Florida Flood Damage Restoration - Cities We Serve";
   return `${subData.title} - Florida Cities We Serve`;
 };
 ---
@@ -154,11 +232,9 @@ const getCityLinksTitle = () => {
   <SelectedTemplate group={groupData} sub={subData} />
 
   {/* Phase 2 SEO: Subservice hub city links */}
-  {cityLinks && cityLinks.length > 0 && (
-    <SEOCityLinks
-      links={cityLinks}
-      title={getCityLinksTitle()}
-      client:load
-    />
-  )}
+  {
+    cityLinks && cityLinks.length > 0 && (
+      <SEOCityLinks links={cityLinks} title={getCityLinksTitle()} client:load />
+    )
+  }
 </BaseLayout>

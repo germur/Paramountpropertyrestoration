@@ -3,14 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SEOHead from "../components/SEOHead.jsx";
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
 
-const pageTitle = "Contact Paramount Property Restoration | 24/7 Emergency Response";
-const pageDescription = "Call (786) 602-2217 for immediate help. Request free inspections or remodeling estimates across Florida.";
+const pageTitle =
+  "Contact Paramount Property Restoration | 24/7 Emergency Response";
+const pageDescription =
+  "Call (786) 602-2217 for immediate help. Request free inspections or remodeling estimates across Florida.";
 ---
 
-<BaseLayout
-  title={pageTitle}
-  description={pageDescription}
->
+<BaseLayout title={pageTitle} description={pageDescription}>
   <SEOHead
     title={pageTitle}
     description={pageDescription}
@@ -37,7 +36,10 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
           24/7 Emergency Response
         </div>
         <h1 class="hero-title">Get Professional Help Today</h1>
-        <p class="hero-description">Ready to transform your property? We're here 24/7 for emergencies and free consultations across Florida.</p>
+        <p class="hero-description">
+          Ready to transform your property? We're here 24/7 for emergencies and
+          free consultations across Florida.
+        </p>
         <div class="hero-actions">
           <a href="tel:+17866022217" class="btn-primary">
             <i class="fas fa-phone"></i>
@@ -70,10 +72,10 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
             <h3>Send Us a Message</h3>
             <p>Fill out the form below and we'll respond within 1 hour</p>
           </div>
-          
+
           <!-- NETLIFY FORM -->
-          <form 
-            class="contact-form" 
+          <form
+            class="contact-form"
             name="contact"
             method="POST"
             data-netlify="true"
@@ -87,24 +89,44 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
             <div class="form-row">
               <div class="form-group">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" name="name" class="form-input" required>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form-input" required>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  required
+                />
               </div>
             </div>
 
             <div class="form-group">
               <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" required>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label for="subject" class="form-label">Service Type</label>
               <select id="subject" name="subject" class="form-select" required>
                 <option value="">Select a service</option>
-                <option value="emergency-restoration">🚨 Emergency Restoration (Water, Fire, Mold, Storm)</option>
+                <option value="emergency-restoration"
+                  >🚨 Emergency Restoration (Water, Fire, Mold, Storm)</option
+                >
                 <option value="remodeling">🔨 Remodeling & Construction</option>
                 <option value="consultation">💬 General Consultation</option>
                 <option value="quote">💰 Request Quote</option>
@@ -112,8 +134,16 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Tell us about your project</label>
-              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Describe your situation, timeline, and any specific requirements..." required></textarea>
+              <label for="message" class="form-label"
+                >Tell us about your project</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                rows="5"
+                placeholder="Describe your situation, timeline, and any specific requirements..."
+                required></textarea>
             </div>
 
             <button type="submit" class="btn-primary form-submit">
@@ -147,14 +177,16 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
           <!-- Contact Methods -->
           <div class="contact-methods-card">
             <h3>Other Ways to Reach Us</h3>
-            
+
             <div class="contact-method">
               <div class="method-icon">
                 <i class="fas fa-envelope"></i>
               </div>
               <div class="method-info">
                 <h4>Email</h4>
-                <a href="mailto:services@paramountpropertyrestoration.com">services@paramountpropertyrestoration.com</a>
+                <a href="mailto:services@paramountpropertyrestoration.com"
+                  >services@paramountpropertyrestoration.com</a
+                >
               </div>
             </div>
 
@@ -164,7 +196,7 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               </div>
               <div class="method-info">
                 <h4>Business Hours</h4>
-                <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 3:00 PM</p>
+                <p>Mon-Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 3:00 PM</p>
               </div>
             </div>
 
@@ -174,7 +206,9 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
               </div>
               <div class="method-info">
                 <h4>Service Area</h4>
-                <p>All of Florida<br>Orlando, Tampa, Miami, Jacksonville & More</p>
+                <p>
+                  All of Florida<br />Orlando, Tampa, Miami, Jacksonville & More
+                </p>
               </div>
             </div>
 
@@ -192,8 +226,37 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
       </div>
     </div>
   </section>
-</BaseLayout>
 
+  <!-- POPULAR SERVICES SECTION -->
+  <section class="section popular-services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Restoration Services</h2>
+        <p>Expert solutions for every property emergency</p>
+      </div>
+      <div class="services-links-grid">
+        <a href="/restoration/water-damage" class="service-text-link">
+          <i class="fas fa-tint"></i> Water Damage
+        </a>
+        <a href="/restoration/fire-damage" class="service-text-link">
+          <i class="fas fa-fire"></i> Fire Damage
+        </a>
+        <a href="/restoration/mold-remediation" class="service-text-link">
+          <i class="fas fa-virus"></i> Mold Remediation
+        </a>
+        <a href="/restoration/storm-damage" class="service-text-link">
+          <i class="fas fa-wind"></i> Storm Damage
+        </a>
+        <a href="/services/kitchen-remodeling" class="service-text-link">
+          <i class="fas fa-hammer"></i> Kitchen Remodeling
+        </a>
+        <a href="/restoration/mitigation-services" class="service-text-link">
+          <i class="fas fa-shield-alt"></i> Mitigation
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 <style>
   /* ===== HERO SECTION ===== */
   .hero-section {
@@ -539,37 +602,79 @@ const pageDescription = "Call (786) 602-2217 for immediate help. Request free in
       font-size: var(--font-size-base);
     }
   }
+
+  /* ===== POPULAR SERVICES ===== */
+  .popular-services-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem 0;
+    margin-top: 0;
+  }
+
+  .services-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .service-text-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+
+  .service-text-link i {
+    color: var(--color-accent);
+  }
+
+  .service-text-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    color: var(--color-accent);
+  }
 </style>
 
 <script is:inline>
   // Smooth scroll for anchor links
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+
+    smoothScrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
-        
+
         if (targetElement) {
           targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+            behavior: "smooth",
+            block: "start",
           });
         }
       });
     });
 
     // Form success handling
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.querySelector(".contact-form");
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('.form-submit');
+      contactForm.addEventListener("submit", function (e) {
+        const submitBtn = this.querySelector(".form-submit");
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
-        
+
         // Reset after potential redirect/reload
         setTimeout(() => {
           submitBtn.innerHTML = originalText;

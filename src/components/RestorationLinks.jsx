@@ -1,18 +1,18 @@
 // src/components/RestorationLinks.jsx
 import React from 'react';
-import { restorationGroups, cities } from '../data/restoration.js';
+import { getRestorationServices, cities } from '../data/restoration.js';
 
-const RestorationLinks = ({ 
-  currentService = null, 
-  currentCity = null, 
+const RestorationLinks = ({
+  currentService = null,
+  currentCity = null,
   showTitle = true,
   maxServices = 6,
   maxCities = 8,
   groupFilter = null
 }) => {
-  const restorationServices = restorationGroups
+  const restorationServices = getRestorationServices()
     .filter(group => !groupFilter || group.slug === groupFilter)
-    .flatMap(group => 
+    .flatMap(group =>
       group.subservices.map(service => ({
         ...service,
         groupSlug: group.slug,
@@ -37,7 +37,7 @@ const RestorationLinks = ({
 
   const generateLinks = () => {
     const links = [];
-    
+
     if (currentService) {
       const currentServiceData = restorationServices.find(s => s.slug === currentService);
       if (currentServiceData) {
@@ -87,19 +87,19 @@ const RestorationLinks = ({
     <div className="restoration-links-component">
       {showTitle && (
         <h3 className="restoration-links-title">
-          {currentService && currentCity 
+          {currentService && currentCity
             ? "Related Restoration Services"
-            : currentService 
-            ? "Other Cities We Serve"
-            : currentCity
-            ? "Other Restoration Services"
-            : "Emergency Restoration Services"}
+            : currentService
+              ? "Other Cities We Serve"
+              : currentCity
+                ? "Other Restoration Services"
+                : "Emergency Restoration Services"}
         </h3>
       )}
-      
+
       <div className="restoration-links-grid">
         {links.map((link, index) => (
-          <a 
+          <a
             key={index}
             href={link.url}
             className={`restoration-link ${link.type}`}
@@ -137,7 +137,7 @@ export const StormDamageLinks = (props) => (
 export const RestorationByRegion = ({ region = "South Florida", maxServices = 4 }) => {
   const regionCities = cities.filter(c => c.region === region);
   const restorationServices = restorationGroups
-    .flatMap(group => 
+    .flatMap(group =>
       group.subservices.map(service => ({
         ...service,
         groupSlug: group.slug
@@ -151,7 +151,7 @@ export const RestorationByRegion = ({ region = "South Florida", maxServices = 4 
       <div className="region-links-grid">
         {restorationServices.map(service => (
           regionCities.slice(0, 2).map(city => (
-            <a 
+            <a
               key={`${service.slug}-${city.slug}`}
               href={`/restoration/${service.groupSlug}/${service.slug}/${city.slug}`}
               className="region-link"

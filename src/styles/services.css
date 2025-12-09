@@ -400,3 +400,106 @@
     box-shadow: 0 4px 15px rgba(53, 195, 233, 0.3);
     color: white;
 }
+/* Limpieza de tarjetas */
+.clean-card {
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.clean-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #35c3e9;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.card-header i {
+    font-size: 1.2rem;
+    color: #35c3e9; /* O color específico por servicio */
+}
+
+.card-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.card-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.card-benefits li i {
+    color: #22c55e; /* Green check */
+    font-size: 0.8rem;
+}
+
+.btn-text {
+    color: #35c3e9;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+    gap: 8px; /* Animación sutil de flecha */
+    transition: gap 0.2s;
+}
+
+/* Why Us Grid */
+.why-us-section { padding: 4rem 0; background: #f8fafc; }
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+.usp-item h3 { color: #1e293b; margin-bottom: 0.5rem; }
+
+/* Helper for centered section headings */
+.section-heading-center {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Ensure hero content is centered */
+.hero-content {
+    margin: 0 auto;
+    text-align: center;
+}

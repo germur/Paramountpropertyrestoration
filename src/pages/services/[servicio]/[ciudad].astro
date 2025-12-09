@@ -12,6 +12,7 @@ import {
 } from "../../../lib/city-content-generator.js";
 import SEOHead from "../../../components/SEOHead.jsx";
 import AnimatedBackground from "../../../components/AnimatedBackground.jsx";
+import NearbyZones from "../../../components/NearbyZones.astro";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export async function getStaticPaths() {
@@ -401,3 +402,6 @@ const serviceName = servicioData.name;
     </div>
   </section>
 </BaseLayout>
+
+<!-- NEARBY ZONES -->
+<NearbyZones currentCity={ciudad} currentService={servicio} />

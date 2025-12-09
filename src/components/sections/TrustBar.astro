@@ -2,44 +2,110 @@
 // Trust Bar component for displaying trust indicators
 ---
 
-<section class="section bg-primary py-8">
+<section class="trust-bar-compact">
   <div class="container">
-    <div class="flex flex-wrap justify-center items-center gap-8 text-center">
-      <div class="trust-item">
-        <div class="trust-icon">
+    <div class="trust-grid">
+      <div class="trust-item-compact">
+        <div class="icon-wrapper">
           <i class="fas fa-shield-alt"></i>
         </div>
-        <h3 class="font-semibold">Licensed & Insured</h3>
-        <p class="text-secondary text-sm">Florida State Licensed</p>
+        <div class="content-wrapper">
+          <h3 class="trust-title">Licensed & Insured</h3>
+          <p class="trust-desc">Florida State Licensed</p>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon">
+
+      <div class="trust-item-compact">
+        <div class="icon-wrapper">
           <i class="fas fa-certificate"></i>
         </div>
-        <h3 class="font-semibold">IICRC Certified</h3>
-        <p class="text-secondary text-sm">Industry Standards</p>
+        <div class="content-wrapper">
+          <h3 class="trust-title">IICRC Certified</h3>
+          <p class="trust-desc">Industry Standards</p>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon">
+
+      <div class="trust-item-compact">
+        <div class="icon-wrapper">
           <i class="fas fa-star"></i>
         </div>
-        <h3 class="font-semibold">4.9★ Rating</h3>
-        <p class="text-secondary text-sm">Customer Satisfaction</p>
+        <div class="content-wrapper">
+          <h3 class="trust-title">4.9★ Rating</h3>
+          <p class="trust-desc">Customer Satisfaction</p>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon">
+
+      <div class="trust-item-compact">
+        <div class="icon-wrapper">
           <i class="fas fa-clock"></i>
         </div>
-        <h3 class="font-semibold">24/7 Response</h3>
-        <p class="text-secondary text-sm">Emergency Available</p>
+        <div class="content-wrapper">
+          <h3 class="trust-title">24/7 Response</h3>
+          <p class="trust-desc">Emergency Available</p>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon">
+
+      <div class="trust-item-compact">
+        <div class="icon-wrapper">
           <i class="fas fa-handshake"></i>
         </div>
-        <h3 class="font-semibold">Insurance Billing</h3>
-        <p class="text-secondary text-sm">Direct Processing</p>
+        <div class="content-wrapper">
+          <h3 class="trust-title">Insurance Billing</h3>
+          <p class="trust-desc">Direct Processing</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .trust-bar-compact {
+    padding: 1.5rem 0;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .trust-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .trust-item-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem; /* Minimal padding */
+  }
+
+  .icon-wrapper {
+    font-size: 1.5rem;
+    color: #35c3e9;
+    flex-shrink: 0;
+  }
+
+  .content-wrapper {
+    text-align: left;
+  }
+
+  .trust-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .trust-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.2;
+  }
+</style>

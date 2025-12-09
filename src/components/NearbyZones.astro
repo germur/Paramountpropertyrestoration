@@ -1,0 +1,112 @@
+---
+import { cities } from "../data/locations.js";
+
+const { currentCity, currentService } = Astro.props;
+
+// Find current city data
+const cityData = cities.find((c) => c.slug === currentCity);
+
+// Find nearby cities logic
+let nearbyCities = [];
+if (cityData) {
+    // 1. Same county, excluding current
+    const sameCounty = cities.filter(
+        (c) => c.county === cityData.county && c.slug !== currentCity,
+    );
+    nearbyCities = [...sameCounty];
+
+    // 2. Same region, if we need more (target ~6)
+    if (nearbyCities.length < 6) {
+        const sameRegion = cities.filter(
+            (c) => c.region === cityData.region && c.slug !== currentCity,
+        );
+        // Filter out duplicates if any (though county check should usually handle it)
+        const uniqueRegion = sameRegion.filter(
+            (rc) => !nearbyCities.some((nc) => nc.slug === rc.slug),
+        );
+
+        nearbyCities = [...nearbyCities, ...uniqueRegion];
+    }
+}
+
+// Slice to max 6
+const displayCities = nearbyCities.slice(0, 6);
+---
+
+{
+    displayCities.length > 0 && (
+        <section class="nearby-zones-section">
+            <div class="container">
+                <h3 class="nearby-title">Nearby Service Areas</h3>
+                <div class="nearby-grid">
+                    {displayCities.map((city) => (
+                        <a
+                            href={`/services/${currentService}/${city.slug}`}
+                            class="nearby-link"
+                        >
+                            <span class="city-name">{city.name}</span>
+                            <span class="city-county">{city.county}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+<style>
+    .nearby-zones-section {
+        padding: 3rem 0;
+        background: var(--color-light, #f8fafc);
+        border-top: 1px solid var(--color-border, #e2e8f0);
+        margin-top: 2rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .nearby-title {
+        font-size: 1.5rem;
+        color: var(--color-navy, #1e293b);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    .nearby-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+
+    .nearby-link {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--color-border, #e2e8f0);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .nearby-link:hover {
+        transform: translateY(-2px);
+        border-color: var(--color-blue, #3cbced);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .city-name {
+        color: var(--color-navy, #1e293b);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .city-county {
+        color: var(--color-gray, #64748b);
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+    }
+</style>

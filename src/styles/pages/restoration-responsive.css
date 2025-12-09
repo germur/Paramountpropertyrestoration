@@ -35,6 +35,7 @@
 
 /* Mobile landscape and portrait */
 @media (max-width: 768px) {
+
   /* Hero Section */
   .hero-section {
     min-height: 45vh;
@@ -43,7 +44,7 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55));
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55));
   }
 
   .hero-content {
@@ -412,6 +413,7 @@
 
 /* Touch-friendly adjustments */
 @media (hover: none) and (pointer: coarse) {
+
   .service-item-clickable,
   .solution-card,
   .city-card,
@@ -425,4 +427,82 @@
   button {
     -webkit-tap-highlight-color: rgba(53, 195, 233, 0.2);
   }
+}
+
+/* --- QUICK RELIEF BAR (New) --- */
+.quick-relief-bar {
+  background-color: #f0f9ff;
+  border-bottom: 1px solid #bae6fd;
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+}
+
+.relief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.relief-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.relief-step .step-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #e0f2fe;
+  /* Azul muy claro */
+  line-height: 1;
+  -webkit-text-stroke: 1px #0ea5e9;
+  /* Borde azul vibrante */
+}
+
+.relief-step .step-info strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+
+.relief-step .step-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --- OPTIMIZED SERVICE CARDS (Para restoration.astro) --- */
+.service-tags-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag-pill {
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+  border: 1px solid #e2e8f0;
+}
+
+.tag-pill:hover {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.view-more-link {
+  font-size: 0.85rem;
+  color: #0ea5e9;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  text-decoration: none;
 }

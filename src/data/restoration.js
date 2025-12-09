@@ -19,6 +19,15 @@ export const restorationGroups = [
         short: "Cleanup & restoration after flooding",
         nombre: "Flood Damage Cleanup",
         categoria: "restoration",
+        overview: {
+          heading: "Emergency Flood Cleanup: We Stop the Water Fast",
+          content: "Flooding requires immediate action to prevent permanent structural damage. Our certified team extracts standing water within minutes of arrival, then uses industrial-grade drying technology to stabilize your property. We don't just remove water; we save your home from mold and decay."
+        },
+        quickSteps: [
+          { title: "Call 24/7", desc: "Immediate Dispatch" },
+          { title: "Water Removal", desc: "Advanced Extraction" },
+          { title: "Insurance Direct", desc: "We Bill Them" }
+        ],
         features: [
           { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/flood-damage.webp", link: "/restoration/water-damage/flood-damage" },
         ],
@@ -566,23 +575,25 @@ export function getCityBySlug(slug) {
 export function getAllRestorationCombinations() {
   const combinations = [];
 
-  restorationGroups.forEach(group => {
-    group.subservices.forEach(subservice => {
-      cities.forEach(city => {
-        combinations.push({
-          service: group.slug,
-          subcategory: subservice.slug,
-          ciudad: city.slug,
-          servicioData: subservice,
-          ciudadData: city,
-          groupData: group,
-          serviceName: subservice.title,
-          cityName: city.name,
-          path: `/restoration/${group.slug}/${subservice.slug}/${city.slug}`
+  restorationGroups
+    .filter((group) => group.slug !== "remodeling-services")
+    .forEach((group) => {
+      group.subservices.forEach((sub) => {
+        cities.forEach((city) => {
+          combinations.push({
+            service: group.slug,
+            subcategory: sub.slug,
+            ciudad: city.slug,
+            servicioData: sub,
+            ciudadData: city,
+            groupData: group,
+            serviceName: sub.title,
+            cityName: city.name,
+            path: `/restoration/${group.slug}/${sub.slug}/${city.slug}`
+          });
         });
       });
     });
-  });
 
   return combinations;
 }
