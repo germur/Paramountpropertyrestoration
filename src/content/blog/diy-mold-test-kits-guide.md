@@ -181,7 +181,7 @@ Never remediate mold without addressing the underlying moisture issue. Whether i
 Small areas (< 10 square feet) might be cleanable by homeowners with proper safety equipment. Larger areas require [professional mold remediation](/restoration/mold-remediation).
 
 ### 3. Follow Proper Protocols
-Professional remediators follow IICRC S520 standards for safe mold removal, including:
+Professional remediators follow industry standards for safe mold removal, including:
 - Containment to prevent spore spread
 - HEPA filtration of air
 - Proper disposal of contaminated materials
@@ -309,4 +309,4 @@ Skip the DIY guesswork and get accurate results from certified professionals. We
 
 ---
 
-*This educational guide is based on IICRC S520 mold remediation standards and EPA guidelines. For professional assistance with [mold inspection](/restoration/mold-remediation/mold-inspection), [water damage](/restoration/water-damage), or [emergency restoration services](/restoration/mitigation-services), contact our certified specialists serving Orlando, Miami, Tampa, and all of Florida.*
+*This educational guide is based on industry mold remediation standards and EPA guidelines. For professional assistance with [mold inspection](/restoration/mold-remediation/mold-inspection), [water damage](/restoration/water-damage), or [emergency restoration services](/restoration/mitigation-services), contact our licensed specialists serving Orlando, Miami, Tampa, and all of Florida.*

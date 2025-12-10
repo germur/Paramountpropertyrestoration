@@ -69,7 +69,7 @@ Homeowners must report [water damage](/restoration/water-damage), [storm damage]
 **Higher Burden of Proof**
 Insurance companies now demand flawless documentation. This means professional [mold inspection](/restoration/mold-remediation/mold-inspection) reports must be:
 - Scientifically accurate
-- Properly formatted according to industry standards (IICRC S520)
+- Properly formatted according to industry standards
 - Supported by laboratory analysis
 - Comprehensive in scope and detail
 
@@ -220,7 +220,7 @@ Local inspectors understand Florida insurance requirements and provide documenta
 **National Chains/Non-Specialists: 55% Approval Rate**
 Generic reports often lack Florida-specific details, leading to claim denials and disputes.
 
-### Report Accuracy (IICRC Standards)
+### Report Accuracy (Industry Standards)
 
 **Local Experts: 95% Compliance**
 Certified Florida professionals follow industry standards precisely, ensuring reports withstand insurance scrutiny.
@@ -321,7 +321,7 @@ Claims denied as preventable maintenance issues. Protect yourself with:
 **"Insufficient Documentation"**
 Incomplete or unprofessional reports lead to automatic denial. Ensure:
 - Certified inspector credentials
-- IICRC-compliant reporting
+- Industry-compliant reporting
 - Complete laboratory analysis
 - Clear causation documentation
 
@@ -337,7 +337,7 @@ SB 2A's shortened timelines demand instant response to [water damage](/restorati
 Document regular maintenance, [mold prevention](/restoration/mold-remediation/mold-prevention) efforts, and prompt repairs.
 
 **Use Qualified Contractors:**
-Choose certified [mold remediation](/restoration/mold-remediation) companies following IICRC standards.
+Choose licensed [mold remediation](/restoration/mold-remediation) companies following industry standards.
 
 ---
 
@@ -499,7 +499,7 @@ In Florida's challenging climate and under the strict requirements of SB 2A, pro
 - Insurance-ready reporting
 
 **Mold Remediation:**
-- Complete [mold remediation](/restoration/mold-remediation) following IICRC standards
+- Complete [mold remediation](/restoration/mold-remediation) following industry standards
 - [Black mold removal](/restoration/mold-remediation/black-mold-removal) with proper containment
 - Post-remediation verification testing
 
@@ -540,4 +540,4 @@ Available 24/7 for emergency [mold inspection](/restoration/mold-remediation/mol
 
 ---
 
-*This guide is based on Florida Senate Bill 2A regulations, IICRC S520 mold remediation standards, and EPA mold guidelines. For professional assistance with [mold inspection](/restoration/mold-remediation/mold-inspection), [water damage](/restoration/water-damage), or [storm damage restoration](/restoration/storm-damage), contact our certified specialists serving all of Florida.*
+*This guide is based on Florida Senate Bill 2A regulations, industry mold remediation standards, and EPA mold guidelines. For professional assistance with [mold inspection](/restoration/mold-remediation/mold-inspection), [water damage](/restoration/water-damage), or [storm damage restoration](/restoration/storm-damage), contact our licensed specialists serving all of Florida.*

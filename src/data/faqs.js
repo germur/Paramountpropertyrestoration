@@ -10,7 +10,7 @@ export const commonFAQs = [
     {
         id: 'global-2',
         question: "Are your technicians licensed and certified?",
-        answer: "Absolutely. Our team holds IICRC certifications for Water, Fire, and Mold restoration. We are also fully licensed and insured to operate in the state of Florida."
+        answer: "Absolutely. Our team holds professional certifications for Water, Fire, and Mold restoration. We are also fully licensed and insured to operate in the state of Florida."
     },
     {
         id: 'global-3',

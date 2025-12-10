@@ -6,14 +6,16 @@ const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      {urgencyBadge && (
-        <div class="hero-badge">
-          <i class="fas fa-clock"></i> {urgencyBadge}
-        </div>
-      )}
+      {
+        urgencyBadge && (
+          <div class="hero-badge">
+            <i class="fas fa-clock" /> {urgencyBadge}
+          </div>
+        )
+      }
       <h1 class="hero-title">{title}</h1>
       <p class="hero-description">{description}</p>
-      
+
       <div class="hero-features">
         <div class="feature-item">
           <i class="fas fa-bolt"></i>
@@ -21,20 +23,23 @@ const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
         </div>
         <div class="feature-item">
           <i class="fas fa-shield-alt"></i>
-          <span>IICRC Certified</span>
+          <span>Licensed & Insured</span>
         </div>
         <div class="feature-item">
           <i class="fas fa-handshake"></i>
           <span>Insurance Direct Billing</span>
         </div>
       </div>
-      
+
       <div class="hero-actions">
-        {ctaPhone && (
-          <a href={`tel:${ctaPhone}`} class="cta-button primary">
-            <i class="fas fa-phone"></i> {ctaText || "CALL FOR IMMEDIATE RESPONSE"}
-          </a>
-        )}
+        {
+          ctaPhone && (
+            <a href={`tel:${ctaPhone}`} class="cta-button primary">
+              <i class="fas fa-phone" />{" "}
+              {ctaText || "CALL FOR IMMEDIATE RESPONSE"}
+            </a>
+          )
+        }
       </div>
     </div>
   </div>
@@ -47,10 +52,14 @@ const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-dark) 100%
+    );
     color: white;
   }
-  
+
   .hero-overlay {
     position: absolute;
     top: 0;
@@ -60,7 +69,7 @@ const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
   }
-  
+
   .hero-content {
     position: relative;
     z-index: 2;
@@ -69,7 +78,7 @@ const { title, description, ctaText, ctaPhone, urgencyBadge } = Astro.props;
     margin: 0 auto;
     padding: 4rem 1rem;
   }
-  
+
   @media (max-width: 768px) {
     .hero-content {
       padding: 3rem 1rem;

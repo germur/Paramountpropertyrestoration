@@ -41,7 +41,7 @@ export const restorationGroups = [
         },
         technicalSpecs: {
           equipmentUsed: ["Truck-Mounted Extractors", "LGR Dehumidifiers", "Thermal Imaging Cameras", "Air Movers", "Moisture Meters"],
-          certificationsRequired: ["IICRC S500 Water Damage", "IICRC S520 Mold Remediation"],
+          certificationsRequired: ["Water Damage Restoration Standards", "Mold Remediation Protocols"],
           methodsApplied: ["Psychrometric Calculations", "Negative Air Pressure", "Controlled Demolition"],
           deliverables: [
             "Emergency flood water extraction and removal",
@@ -122,7 +122,7 @@ export const restorationGroups = [
         },
         technicalSpecs: {
           equipmentUsed: ["Hydroxyl Generators", "Ozone Machines", "HEPA Air Scrubbers", "Thermal Foggers", "Ultrasonic Cleaners"],
-          certificationsRequired: ["IICRC S520 Applied Microbial Remediation", "IICRC S500 Water Damage", "IICRC S700 Fire Damage"],
+          certificationsRequired: ["Applied Microbial Remediation Protocols", "Water Damage Standards", "Fire Damage Protocols"],
           methodsApplied: ["Dry Chemical Sponging", "Wet Cleaning", "Spray and Wipe", "Foam Cleaning", "Abrasive Cleaning"],
           deliverables: [
             "Complete smoke residue removal from all surfaces",
@@ -229,7 +229,7 @@ export const restorationGroups = [
         },
         technicalSpecs: {
           equipmentUsed: ["HEPA Air Filtration Units", "Negative Air Machines", "Containment Systems", "Personal Protective Equipment", "Antimicrobial Foggers"],
-          certificationsRequired: ["IICRC S520 Mold Remediation", "EPA RRP Lead-Safe Work Practices", "OSHA 40-Hour HAZWOPER"],
+          certificationsRequired: ["Mold Remediation Standards", "EPA RRP Lead-Safe Work Practices", "OSHA 40-Hour HAZWOPER"],
           methodsApplied: ["Full Containment Protocols", "HEPA Vacuuming", "Wet Wiping with Antimicrobials", "Controlled Material Removal", "Post-Remediation Verification"],
           deliverables: [
             "Complete containment and isolation of affected areas",

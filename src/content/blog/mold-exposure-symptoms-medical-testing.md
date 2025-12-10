@@ -606,7 +606,7 @@ Medical testing diagnoses your body's response to mold, but environmental testin
 
 ### Professional Mold Inspection Process
 
-A certified mold inspector provides comprehensive evaluation following IICRC standards:
+A licensed mold inspector provides comprehensive evaluation following industry standards:
 
 **Phase 1: Visual Assessment & Moisture Mapping**
 
@@ -664,7 +664,7 @@ A certified mold inspector provides comprehensive evaluation following IICRC sta
 - Clear summary of contamination extent and severity
 
 **Remediation Protocol:**
-Step-by-step plan following IICRC S520 standards:
+Step-by-step plan following industry standards:
 - Specific containment procedures required
 - List of materials requiring removal
 - HEPA filtration specifications
@@ -941,7 +941,7 @@ Medications and treatments provide symptom relief, but true recovery requires re
 - Essential for peace of mind
 
 **Remediation Standards:**
-All professional work should follow **IICRC S520** standards for mold remediation, ensuring:
+All professional work should follow **industry standards** for mold remediation, ensuring:
 - Proper worker protection
 - Effective containment procedures
 - Complete mold removal
@@ -1465,7 +1465,7 @@ Available 24/7 throughout Florida when mold threatens your health:
 
 **Remediation Services:**
 - [Professional Mold Remediation](/restoration/mold-remediation)
-  - IICRC S520 certified process
+  - Industry standard process
   - Health-protective containment
   - Complete spore removal
   - Post-remediation verification
@@ -1524,7 +1524,7 @@ Available 24/7 throughout Florida when mold threatens your health:
 ### External Resources
 - EPA Mold Guidance: [www.epa.gov/mold](https://www.epa.gov/mold)
 - CDC Mold Information: [www.cdc.gov/mold](https://www.cdc.gov/mold)
-- IICRC Standards: [www.iicrc.org](https://www.iicrc.org)
+- Industry Standards: [www.iicrc.org](https://www.iicrc.org)
 
 ---
 

@@ -146,7 +146,7 @@ const faqData = {
         {
             id: 'water-8',
             question: 'Is my property safe during water damage restoration?',
-            answer: 'Absolutely. We isolate affected areas, use professional-grade equipment, follow IICRC standards, and maintain clear safety protocols. We protect unaffected areas and ensure safe conditions for occupants and workers throughout the process.'
+            answer: 'Absolutely. We isolate affected areas, use professional-grade equipment, follow industry standards, and maintain clear safety protocols. We protect unaffected areas and ensure safe conditions for occupants and workers throughout the process.'
         },
         {
             id: 'water-9',
@@ -592,7 +592,7 @@ const faqData = {
         {
             id: 'gen-4',
             question: 'Are you licensed and insured in Florida?',
-            answer: 'Yes, we are fully licensed, insured, and bonded in Florida. We maintain all required certifications including general contractor licenses, damage restoration, and IICRC certifications.'
+            answer: 'Yes, we are fully licensed, insured, and bonded in Florida. We maintain all required certifications including general contractor licenses, damage restoration, and professional certifications.'
         },
         {
             id: 'gen-5',
@@ -671,11 +671,11 @@ const FAQ = ({
         ? allQuestions.filter(item =>
             item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.answer.toLowerCase().includes(searchTerm.toLowerCase())
-          )
+        )
         : allQuestions;
 
-    const displayQuestions = maxItems 
-        ? filteredQuestions.slice(0, maxItems) 
+    const displayQuestions = maxItems
+        ? filteredQuestions.slice(0, maxItems)
         : filteredQuestions;
 
     const toggleItem = (id) => {
@@ -709,7 +709,7 @@ const FAQ = ({
                     )}
                 </div>
             )}
-            
+
             <div className="accordionWrapper">
                 {displayQuestions.length > 0 ? (
                     displayQuestions.map((item) => (
