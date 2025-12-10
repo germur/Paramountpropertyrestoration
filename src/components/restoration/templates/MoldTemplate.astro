@@ -7,6 +7,7 @@ import RestorationCTA from "../../RestorationCTA";
 import "../../../styles/global.css";
 import { cities } from "../../../data/restoration.js";
 import { getAltText } from "../../../data/image-alt-texts.js";
+import { getFAQs } from "../../../data/faqs.js";
 
 const { group, sub } = Astro.props;
 
@@ -714,10 +715,10 @@ const faqCategory = `mold-${sub?.slug || group.slug}`;
   <FAQ
     client:load
     category={faqCategory}
-    customQuestions={content.faqs.map((faq, index) => ({
+    customQuestions={getFAQs("mold-remediation").map((faq, index) => ({
       id: `${faqCategory}-${index}`,
-      question: faq.q,
-      answer: faq.a,
+      question: faq.question,
+      answer: faq.answer,
     }))}
     title="Frequently Asked Questions"
   />

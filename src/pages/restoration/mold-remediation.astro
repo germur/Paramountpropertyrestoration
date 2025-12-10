@@ -6,6 +6,7 @@ import { hubToGityLinks } from "../../data/seo-interlinking.js";
 import "../../styles/pages/mold-damage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SEOHead from "../../components/SEOHead.jsx";
+import { getFAQs } from "../../data/faqs.js";
 
 // Page data configuration (hub sin ciudad)
 const pageData = {
@@ -13,22 +14,24 @@ const pageData = {
     slug: "mold-remediation",
     name: "Mold Remediation",
     template: "mold",
-    description: "Professional mold inspection, testing, and removal services"
+    description: "Professional mold inspection, testing, and removal services",
   },
-  sub: null
+  sub: null,
 };
 
 // SEO básico requerido por BaseLayout y SEOHead
-const pageTitle = "Florida Certified Mold Testing & Inspection | DBPR License & Claim Support";
-const pageDescription = "24/7 Florida Mold Testing by DBPR Licensed Assessor. We provide expert reports & claim documentation needed for your insurance company. Immediate response. Call (786) 602-2217.";
+const pageTitle =
+  "Florida Certified Mold Testing & Inspection | DBPR License & Claim Support";
+const pageDescription =
+  "24/7 Florida Mold Testing by DBPR Licensed Assessor. We provide expert reports & claim documentation needed for your insurance company. Immediate response. Call (786) 602-2217.";
 
 // Preguntas para FAQ Schema (FAQPage JSON-LD)
-const faqQuestions = [
-  { question: "¿Cubre mi seguro de casa el moho en Florida?", answer: "Las pólizas estándar tienen limitaciones. El moho debe ser el resultado de un daño cubierto (ej. tubería rota). Por eso, nuestra documentación certificada es crítica para respaldar tu reclamo." },
-  { question: "¿Necesito un asesor de moho (Assessor) o un remediador (Remediator) en Florida?", answer: "La ley de FL exige que el asesor que hace la prueba sea independiente del remediador. Nosotros somos asesores licenciados por el DBPR para evitar conflictos de interés." },
-  { question: "¿Cuánto tiempo tarda en crecer el moho después de una inundación?", answer: "El moho puede comenzar a activarse en 24 horas y el crecimiento visible puede ocurrir en 48-72 horas. La acción inmediata es esencial para limitar los daños estructurales y los costos." },
-  { question: "¿Qué incluye el servicio de prueba de moho certificado?", answer: "Incluye inspección visual, muestreo de aire, análisis de laboratorio, lecturas de humedad y temperatura, y un protocolo de remediación detallado para su seguro." }
-];
+// Preguntas para FAQ Schema (FAQPage JSON-LD) - Generado dinámicamente
+const questions = getFAQs("mold-remediation");
+const faqQuestions = questions.map((q) => ({
+  question: q.question,
+  answer: q.answer,
+}));
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -53,7 +56,7 @@ const faqQuestions = [
   <MoldTemplate group={pageData.group} sub={pageData.sub} />
 
   <SEOCityLinks
-    links={hubToGityLinks['/restoration/mold-remediation/']}
+    links={hubToGityLinks["/restoration/mold-remediation/"]}
     title="Florida Mold Services - Cities We Serve"
     client:load
   />
