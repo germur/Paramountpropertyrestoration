@@ -47,6 +47,83 @@ if (!data) {
         slot="head"
     />
 
+    <script
+        type="application/ld+json"
+        slot="head"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "LocalBusiness",
+                    "@id": `https://paramountpropertyrestoration.com/service-areas/${regionSlug}/#regional-branch`,
+                    name: `Paramount Property Restoration - ${data.title}`,
+                    url: `https://paramountpropertyrestoration.com/service-areas/${regionSlug}/`,
+                    telephone: "+1-786-602-2217",
+                    image: "https://paramountpropertyrestoration.com/images/og-image.webp",
+                    address: {
+                        "@type": "PostalAddress",
+                        addressRegion: "FL",
+                        addressCountry: "US",
+                    },
+                    areaServed: data.counties.map((county) => ({
+                        "@type": "AdministrativeArea",
+                        name: county,
+                        containsPlace: {
+                            "@type": "State",
+                            name: "Florida",
+                        },
+                    })),
+                },
+                {
+                    "@type": "Service",
+                    name: `Restoration Services in ${data.title}`,
+                    serviceType: "Disaster Restoration",
+                    provider: {
+                        "@id": `https://paramountpropertyrestoration.com/service-areas/${regionSlug}/#regional-branch`,
+                    },
+                    areaServed: data.counties.map((county) => ({
+                        "@type": "AdministrativeArea",
+                        name: county,
+                    })),
+                    hasOfferCatalog: {
+                        "@type": "OfferCatalog",
+                        name: "Restoration Services",
+                        itemListElement: [
+                            {
+                                "@type": "Offer",
+                                itemOffered: {
+                                    "@type": "Service",
+                                    name: "Water Damage Restoration",
+                                },
+                            },
+                            {
+                                "@type": "Offer",
+                                itemOffered: {
+                                    "@type": "Service",
+                                    name: "Fire Damage Restoration",
+                                },
+                            },
+                            {
+                                "@type": "Offer",
+                                itemOffered: {
+                                    "@type": "Service",
+                                    name: "Mold Remediation",
+                                },
+                            },
+                            {
+                                "@type": "Offer",
+                                itemOffered: {
+                                    "@type": "Service",
+                                    name: "Storm Damage Restoration",
+                                },
+                            },
+                        ],
+                    },
+                },
+            ],
+        })}
+    />
+
     <section class="region-hero">
         <div class="container hero-content">
             <span class="region-badge"
