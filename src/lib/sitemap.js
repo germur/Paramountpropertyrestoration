@@ -17,37 +17,88 @@ const slugify = (input) => {
     .replace(/^-+|-+$/g, '');
 };
 
+// Batch 1 Redirects - Exclude from Sitemap
+const EXCLUDED_PATHS = new Set([
+  '/restoration/fire-damage/fire-damage-repair/orlando',
+  '/restoration/fire-damage/fire-damage-repair/tampa',
+  '/restoration/fire-damage/fire-damage-repair/miami',
+  '/restoration/fire-damage/fire-damage-repair/apopka',
+  '/restoration/fire-damage/fire-damage-repair/naples',
+  '/restoration/fire-damage/fire-damage-repair/port-st-lucie',
+
+  '/restoration/fire-damage/smoke-damage/orlando',
+  '/restoration/fire-damage/smoke-damage/clearwater',
+  '/restoration/fire-damage/smoke-damage/fort-lauderdale',
+  '/restoration/fire-damage/smoke-damage/lakeland',
+  '/restoration/fire-damage/smoke-damage/estero',
+  '/restoration/fire-damage/smoke-damage/stuart',
+
+  '/restoration/fire-damage/soot-cleanup/orlando',
+  '/restoration/fire-damage/soot-cleanup/tampa',
+  '/restoration/fire-damage/soot-cleanup/miami',
+  '/restoration/fire-damage/soot-cleanup/winter-haven',
+  '/restoration/fire-damage/soot-cleanup/immokalee',
+  '/restoration/fire-damage/soot-cleanup/jupiter',
+
+  '/restoration/mitigation-services/fire-mitigation/orlando',
+  '/restoration/mitigation-services/fire-mitigation/st-petersburg',
+  '/restoration/mitigation-services/fire-mitigation/hollywood',
+  '/restoration/mitigation-services/fire-mitigation/sanford',
+  '/restoration/mitigation-services/fire-mitigation/labelle',
+  '/restoration/mitigation-services/fire-mitigation/hobe-sound',
+]);
+
 const withBaseUrl = (path) => {
-  const clean = (path || '/').replace(/\/$/, ''); // remove trailing slash temporarily
+  const clean = (path || '/').replace(/\/$/, '');
+
+  // Exclude redirected paths
+  if (EXCLUDED_PATHS.has(clean)) {
+    return null; // Signal to skip
+  }
+
   const fullUrl = `${SITE_URL}${clean.startsWith('/') ? clean : `/${clean}`}`;
-  // ALWAYS add trailing slash (except root which already has one)
   return clean === '' || clean === '/' ? `${SITE_URL}/` : `${fullUrl}/`;
 };
 
 // --- build urls using real restoration data ---
+// --- build urls using real restoration data ---
 export async function getAllUrls() {
   const urls = new Set();
 
+  // Helper to add safely
+  const addUrl = (path) => {
+    const url = withBaseUrl(path);
+    if (url) urls.add(url);
+  };
+
   // Static pages
-  urls.add(withBaseUrl('/'));
-  urls.add(withBaseUrl('/services'));
-  urls.add(withBaseUrl('/restoration'));
-  urls.add(withBaseUrl('/portfolio'));
-  urls.add(withBaseUrl('/contact'));
-  urls.add(withBaseUrl('/blog'));
-  urls.add(withBaseUrl('/privacy-policy'));
-  urls.add(withBaseUrl('/terms'));
+  addUrl('/');
+  addUrl('/services');
+  addUrl('/restoration');
+  addUrl('/portfolio');
+  addUrl('/contact');
+  addUrl('/blog');
+  addUrl('/privacy-policy');
+  addUrl('/terms');
   // Landing page for booking Mold Inspection
-  urls.add(withBaseUrl('/book-mold-inspection'));
-  urls.add(withBaseUrl('/landing/mold-remediation'));
+  addUrl('/book-mold-inspection');
+  addUrl('/landing/mold-remediation');
   // Tools
-  urls.add(withBaseUrl('/tools/mold-testing-cost-calculator'));
+  addUrl('/tools/mold-testing-cost-calculator');
+  // Regional Hubs
+  addUrl('/service-areas');
+  addUrl('/service-areas/central-florida');
+  addUrl('/service-areas/tampa-bay');
+  addUrl('/service-areas/south-florida');
+  addUrl('/service-areas/southwest-florida');
+  addUrl('/service-areas/treasure-coast');
+
 
   // Blog articles (dynamic from content collection)
   try {
     const blogPosts = await getCollection('blog');
     for (const post of blogPosts) {
-      urls.add(withBaseUrl(`/blog/${post.slug}`));
+      addUrl(`/blog/${post.slug}`);
     }
   } catch (error) {
     console.warn('Could not load blog collection:', error);
@@ -56,7 +107,7 @@ export async function getAllUrls() {
   // Restoration service group pages (without cities)
   for (const group of restorationGroups) {
     if (group.template !== 'remodeling' && group.slug !== 'remodeling-services') {
-      urls.add(withBaseUrl(`/restoration/${group.slug}`));
+      addUrl(`/restoration/${group.slug}`);
     }
   }
 
@@ -64,7 +115,7 @@ export async function getAllUrls() {
   for (const group of restorationGroups) {
     if (group.template !== 'remodeling' && group.slug !== 'remodeling-services' && group.subservices) {
       for (const subservice of group.subservices) {
-        urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}`));
+        addUrl(`/restoration/${group.slug}/${subservice.slug}`);
       }
     }
   }
@@ -74,7 +125,7 @@ export async function getAllUrls() {
     if (group.template !== 'remodeling' && group.slug !== 'remodeling-services' && group.subservices) {
       for (const subservice of group.subservices) {
         for (const city of cities) {
-          urls.add(withBaseUrl(`/restoration/${group.slug}/${subservice.slug}/${city.slug}`));
+          addUrl(`/restoration/${group.slug}/${subservice.slug}/${city.slug}`);
         }
       }
     }
@@ -85,13 +136,13 @@ export async function getAllUrls() {
 
   // Service pages without cities
   for (const service of remodelingServices) {
-    urls.add(withBaseUrl(`/services/${service}`));
+    addUrl(`/services/${service}`);
   }
 
   // Service-city combinations for remodeling
   for (const service of remodelingServices) {
     for (const city of cities) {
-      urls.add(withBaseUrl(`/services/${service}/${city.slug}`));
+      addUrl(`/services/${service}/${city.slug}`);
     }
   }
 

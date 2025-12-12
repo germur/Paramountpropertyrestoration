@@ -1,0 +1,202 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
+
+const pageTitle =
+    "Certified Mold Testing & Lab Analysis | Florida Mold Assessor";
+const pageDescription =
+    "Independent lab testing for mold types and spore counts. We provide the scientific proof you need for real estate transactions and insurance claims.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="restoration"
+        service="mold-remediation"
+        subservice="testing"
+        isHub={false}
+        slot="head"
+    />
+
+    <section class="testing-hero">
+        <div class="container">
+            <h1>Certified Mold Testing & Lab Analysis</h1>
+            <p class="hero-sub">
+                Get scientific proof. Identified spore types, regulated counts,
+                and official chain-of-custody documentation.
+            </p>
+            <a href="tel:7866022217" class="btn-primary">Request Lab Test</a>
+        </div>
+    </section>
+
+    <section class="testing-details">
+        <div class="container">
+            <div class="intro-block">
+                <h2>Why Test? Conflict of Interest Protection.</h2>
+                <p>
+                    Florida law protects you by separating the <strong
+                        >Assessor</strong
+                    > (who finds the mold) from the <strong>Remediator</strong> (who
+                    cleans it). Our testing services provide unbiased data to verify
+                    if remediation is truly necessary, or if it was successful (Clearance
+                    Testing).
+                </p>
+            </div>
+
+            <div class="test-types-grid">
+                <div class="test-card">
+                    <div class="icon-box"><i class="fas fa-wind"></i></div>
+                    <h3>Air Quality Sampling</h3>
+                    <p>
+                        Compares inside spore counts to outside baselines to
+                        detect elevated levels.
+                    </p>
+                </div>
+                <div class="test-card">
+                    <div class="icon-box">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <h3>Surface Swab/Tape Lift</h3>
+                    <p>
+                        Identifies the specific genus (e.g., Aspergillus,
+                        Stachybotrys) growing on a visible surface.
+                    </p>
+                </div>
+                <div class="test-card">
+                    <div class="icon-box">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>Post-Remediation Clearance</h3>
+                    <p>
+                        The final "pass/fail" test required to close your permit
+                        and insurance claim.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Testing FAQs</h2>
+            <div class="faq-item">
+                <h3>Do I need testing if I can see the mold?</h3>
+                <p>
+                    Not always for removal, but <strong>YES</strong> for insurance.
+                    Carriers require laboratory proof of the mold type to approve
+                    coverage limits.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3>How long do results take?</h3>
+                <p>
+                    Standard turnaround is 48 hours. Rush service (24 hours) is
+                    available for emergencies.
+                </p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .testing-hero {
+        background: #2c3e50; /* Fallback */
+        color: white;
+        padding: 5rem 1rem;
+        text-align: center;
+    }
+
+    .testing-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+        background: #3498db;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .testing-details {
+        padding: 5rem 1rem;
+        background: #fff;
+    }
+
+    .intro-block {
+        max-width: 800px;
+        margin: 0 auto 4rem;
+        text-align: center;
+    }
+
+    .intro-block h2 {
+        color: #0b2545;
+        margin-bottom: 1rem;
+    }
+
+    .test-types-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .test-card {
+        background: #f8f9fa;
+        padding: 2.5rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+    .test-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+        font-size: 2.5rem;
+        color: #3498db;
+        margin-bottom: 1.5rem;
+    }
+
+    .test-card h3 {
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .faq-section {
+        padding: 4rem 1rem;
+        background: #f4f6f7;
+    }
+
+    .faq-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .faq-item {
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 8px;
+    }
+
+    .faq-item h3 {
+        margin-bottom: 0.5rem;
+        color: #0b2545;
+    }
+</style>

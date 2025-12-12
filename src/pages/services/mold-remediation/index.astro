@@ -1,0 +1,242 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
+import TriageMatrix from "../../../components/mold/TriageMatrix.astro";
+import InsuranceBlock from "../../../components/mold/InsuranceBlock.astro";
+import MethodologyIcons from "../../../components/mold/MethodologyIcons.astro";
+
+const pageTitle =
+    "Florida Certified Mold Remediation & Assessment Services | MRSR & MRSA";
+const pageDescription =
+    "Licensed mold remediation (MRSR) and assessment (MRSA) services in Florida. We define the protocol and execute the cleanup. 24/7 Response.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="services"
+        service="mold-remediation"
+        subservice={null}
+        city={null}
+        addressLocality={null}
+        isHub={true}
+        slot="head"
+    />
+
+    {/* HERO SECTION */}
+    <section class="mold-hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="license-badge"
+                    ><i class="fas fa-certificate"></i> LICENSED MRSR & MRSA</span
+                >
+                <h1>
+                    Florida Certified Mold Remediation & Assessment Services
+                </h1>
+                <p class="hero-sub">
+                    Protect Your Health & Property. Licensed Experts Serving
+                    Miami, Orlando, & Tampa. We separate the science (Testing)
+                    from the solution (Removal) to give you honest,
+                    conflict-free results.
+                </p>
+                <div class="hero-actions">
+                    {/* Directs to Triage Section below */}
+                    <a href="#triage" class="btn-primary">Find Your Solution</a>
+                    <a href="tel:7866022217" class="btn-secondary"
+                        ><i class="fas fa-phone"></i> (786) 602-2217</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* TRIAGE MATRIX (The Navigation Core) */}
+    <div id="triage">
+        <TriageMatrix />
+    </div>
+
+    {/* INSURANCE / SB 2A EDUCATION */}
+    <InsuranceBlock />
+
+    {/* METHODOLOGY / TRUST */}
+    <MethodologyIcons />
+
+    {/* WHY US / PROBLEM STATEMENT */}
+    <section class="problem-solution-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="text-block">
+                    <h2>Why Florida Homes Are at Risk</h2>
+                    <p>
+                        Florida's high humidity and frequent storms create the
+                        perfect breeding ground for mold. Once moisture
+                        intrudes, mold can grow within 24-48 hours.
+                    </p>
+                    <p>
+                        <strong>The Regulatory Reality (SB 2A):</strong> Recent Florida
+                        laws require precise documentation for insurance claims.
+                        Guesswork doesn't get paid. Our dual-license approach ensures
+                        you have the
+                        <strong>Medical-Grade Protocol</strong> (from our Assessors)
+                        and the <strong>Certified Execution</strong> (from our Remediators)
+                        to satisfy strict carrier requirements.
+                    </p>
+                </div>
+                <div class="visual-block">
+                    {/* Placeholder for containment/tech image */}
+                    <div class="tech-card">
+                        <h3>Standard Process</h3>
+                        <ol>
+                            <li>Assess (Thermal Imaging)</li>
+                            <li>Contain (Negative Air)</li>
+                            <li>Remove (HEPA/Demo)</li>
+                            <li>Restore (Build Back)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .mold-hero {
+        background:
+            linear-gradient(rgba(11, 37, 69, 0.9), rgba(11, 37, 69, 0.8)),
+            url("/images/hero-mold.webp");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 1rem;
+        text-align: center;
+    }
+
+    .hero-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .license-badge {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .mold-hero h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        background: #e67e22;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: #d35400;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid white;
+        transition:
+            background 0.3s,
+            color 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background: white;
+        color: #0b2545;
+    }
+
+    .problem-solution-section {
+        padding: 5rem 1rem;
+        background: #fff;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .text-block h2 {
+        font-size: 2.2rem;
+        color: #0b2545;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-block p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .tech-card {
+        background: #f8f9fa;
+        padding: 2.5rem;
+        border-radius: 12px;
+        border-left: 5px solid #0b2545;
+    }
+
+    .tech-card h3 {
+        margin-bottom: 1.5rem;
+        color: #0b2545;
+    }
+
+    .tech-card ol {
+        padding-left: 1.5rem;
+    }
+
+    .tech-card li {
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .mold-hero h1 {
+            font-size: 2.2rem;
+        }
+        .hero-actions {
+            flex-direction: column;
+        }
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

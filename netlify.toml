@@ -64,15 +64,33 @@
     """
 
 # Redirects and headers for SEO
+# Force trailing slash for services pages
 [[redirects]]
-  from = "/services/*"
-  to = "/services/:splat"
+  from = "/services/:servicio/:ciudad"
+  to = "/services/:servicio/:ciudad/"
   status = 301
+  force = true
 
-[[redirects]]  
-  from = "/restoration/*"
-  to = "/restoration/:splat"
+# Force trailing slash for restoration city pages
+[[redirects]]
+  from = "/restoration/:service/:subcategory/:ciudad"
+  to = "/restoration/:service/:subcategory/:ciudad/"
   status = 301
+  force = true
+
+# Force trailing slash for restoration hub pages
+[[redirects]]
+  from = "/restoration/:service/:subcategory"
+  to = "/restoration/:service/:subcategory/"
+  status = 301
+  force = true
+
+# Force trailing slash for blog pages
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug/"
+  status = 301
+  force = true
 
 # Headers for better performance
 [[headers]]

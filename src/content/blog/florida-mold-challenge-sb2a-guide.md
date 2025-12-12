@@ -194,7 +194,7 @@ The final deliverable includes:
 - Clear summary of contamination extent
 
 **Remediation Protocol:**
-Step-by-step plan following IICRC S520 standards for:
+Step-by-step plan following industry standards for:
 - Containment procedures
 - Material removal requirements
 - HEPA filtration specifications

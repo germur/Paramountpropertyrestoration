@@ -1,0 +1,308 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
+
+const pageTitle = "Emergency Black Mold Removal & Remediation | Florida MRSR";
+const pageDescription =
+    "Safe removal of toxic black mold (Stachybotrys). Licensed Mold Remediators (MRSR) with hospital-grade containment protocols. 24/7 Response.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="restoration"
+        service="mold-remediation"
+        subservice="removal"
+        isHub={false}
+        slot="head"
+    />
+
+    <section class="removal-hero">
+        <div class="container">
+            <span class="warning-flasher"
+                ><i class="fas fa-exclamation-triangle"></i> EMERGENCY SERVICE</span
+            >
+            <h1>Emergency Black Mold Removal & Remediation</h1>
+            <p class="hero-sub">
+                Safe, contained removal of toxic mold. 60-Minute Response Time.
+                We protect your family/employees from spore contamination.
+            </p>
+            <a href="tel:7866022217" class="btn-emergency pulse-animation"
+                ><i class="fas fa-phone-alt"></i> CALL NOW: (786) 602-2217</a
+            >
+            <p class="license-note">Licensed Mold Remediator: MRSR #1234</p>
+        </div>
+    </section>
+
+    <!-- WARNING BLOCK -->
+    <section class="warning-block">
+        <div class="container">
+            <div class="alert-box">
+                <h3>
+                    <i class="fas fa-skull-crossbones"></i> WARNING: Do Not Scrub
+                    Black Mold!
+                </h3>
+                <p>
+                    DIY removal methods (bleach, scrubbing) often fail and cause
+                    spores to release into the air, spreading contamination to
+                    your HVAC system and lungs. <strong
+                        >Stop. Do not touch it. Call a professional.</strong
+                    >
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAFETY PROTOCOL -->
+    <section class="protocol-section">
+        <div class="container">
+            <h2 class="section-title">Our Hospital-Grade Safety Protocol</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Isolation Barriers</h3>
+                    <p>
+                        We seal off the affected room with plastic sheeting to
+                        prevent cross-contamination.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Negative Air Pressure</h3>
+                    <p>
+                        Industrial scrubbers vent air OUT, ensuring spores
+                        cannot escape the workspace.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>HEPA Filtration</h3>
+                    <p>
+                        We scrub the air to capture 99.97% of particles down to
+                        0.3 microns.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3>Antimicrobial Treat</h3>
+                    <p>
+                        EPA-registered disinfectants kill remaining surface mold
+                        and prevent regrowth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEALTH FOCUS -->
+    <section class="health-section">
+        <div class="container">
+            <div class="health-content">
+                <h2>Protect Your Health</h2>
+                <p>
+                    Mold isn't just ugly; it's dangerous. "Black Mold"
+                    (Stachybotrys) produces mycotoxins that can cause:
+                </p>
+                <ul class="health-list">
+                    <li>
+                        <i class="fas fa-lungs-virus"></i> Respiratory Issues & Asthma
+                        Attacks
+                    </li>
+                    <li>
+                        <i class="fas fa-head-side-cough"></i> Chronic Fatigue &
+                        Headaches
+                    </li>
+                    <li>
+                        <i class="fas fa-allergies"></i> Skin Rashes & Eye Irritation
+                    </li>
+                </ul>
+                <div class="clearance-badge">
+                    <i class="fas fa-shield-check"></i>
+                    <span
+                        >CLEARANCE GUARANTEE: We don't leave until an
+                        independent test confirms your air is safe.</span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .removal-hero {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #2c3e50; /* Add image later */
+        color: white;
+        padding: 6rem 1rem;
+        text-align: center;
+    }
+
+    .warning-flasher {
+        background: #e74c3c;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        animation: fadeInOut 2s infinite;
+    }
+
+    .removal-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+    .hero-sub {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        opacity: 0.9;
+    }
+
+    .btn-emergency {
+        background: #e74c3c;
+        color: white;
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    }
+
+    .license-note {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+
+    /* Warning Block */
+    .warning-block {
+        padding: 2rem 1rem;
+        background: #fff0f0;
+    }
+
+    .alert-box {
+        border: 2px solid #e74c3c;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .alert-box h3 {
+        color: #c0392b;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Protocol */
+    .protocol-section {
+        padding: 5rem 1rem;
+        background: #fff;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .step-card {
+        text-align: center;
+        padding: 2rem;
+        background: #f9f9f9;
+        border-radius: 8px;
+        transition: transform 0.3s;
+    }
+
+    .step-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-num {
+        background: #0b2545;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin: 0 auto 1rem;
+    }
+
+    /* Health */
+    .health-section {
+        padding: 5rem 1rem;
+        background: #0b2545;
+        color: white;
+    }
+
+    .health-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .health-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .health-list li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .clearance-badge {
+        background: #27ae60;
+        padding: 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    @keyframes pulse-animation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .pulse-animation {
+        animation: pulse-animation 2s infinite;
+    }
+</style>

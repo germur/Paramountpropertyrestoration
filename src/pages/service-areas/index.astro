@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SEOHead from "../../components/SEOHead.jsx";
+import RegionalMap from "../../components/RegionalMap.astro";
+
+const pageTitle = "Florida Service Areas | Paramount Property Restoration";
+const pageDescription =
+    "We serve homeowners across 5 major Florida regions: Central Florida, Tampa Bay, Southwest Florida, South Florida, and the Treasure Coast. 24/7 Response.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="locations"
+        slot="head"
+    />
+
+    <section class="areas-hero">
+        <div class="container">
+            <h1>Florida Restoration Service Areas</h1>
+            <p class="lead">
+                Proudly serving over 30 counties across the Sunshine State.
+                Choose your region below to find local experts near you.
+            </p>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <RegionalMap />
+        </div>
+    </section>
+
+    <section class="coverage-details">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>Why Local Matters</h2>
+                <p>
+                    Restoration is a race against time. We have positioned our
+                    rapid-response teams strategically across these 5 key
+                    regions to ensure we can reach any emergency within <strong
+                        >60 minutes</strong
+                    >.
+                </p>
+                <p>
+                    By operating regionally, we understand the specific building
+                    codes, climate challenges (from Atlantic hurricanes to Gulf
+                    coast storm surge), and insurance requirements unique to
+                    your area.
+                </p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .areas-hero {
+        background: #0b2545;
+        color: white;
+        padding: 5rem 1rem;
+        text-align: center;
+    }
+
+    .areas-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+
+    .map-section {
+        padding: 4rem 1rem;
+        background: #fff;
+    }
+
+    .coverage-details {
+        background: #f4f6f7;
+        padding: 5rem 1rem;
+        text-align: center;
+    }
+
+    .content-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .content-wrapper h2 {
+        color: #0b2545;
+        margin-bottom: 1.5rem;
+    }
+
+    .content-wrapper p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+</style>

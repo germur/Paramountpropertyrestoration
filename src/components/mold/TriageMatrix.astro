@@ -1,0 +1,177 @@
+---
+const triageOptions = [
+    {
+        title: "I Suspect Mold",
+        description:
+            "Smell musty odors? Feel sick at home? Recent water leak? Don't wait for it to spread.",
+        icon: "fas fa-question-circle",
+        action: "Schedule Inspection",
+        href: "/services/mold-remediation/inspection",
+        class: "triage-suspect",
+    },
+    {
+        title: "I See Mold",
+        description:
+            "Visible black, green, or white spots? Water damage visible on walls or ceilings?",
+        icon: "fas fa-exclamation-triangle",
+        action: "Emergency Removal",
+        href: "/services/mold-remediation/removal",
+        class: "triage-emergency",
+    },
+    {
+        title: "I Need Testing",
+        description:
+            "Need a lab report for insurance? Buying or selling a home? Liability protection?",
+        icon: "fas fa-file-medical-alt",
+        action: "Get Certified Test",
+        href: "/services/mold-remediation/testing",
+        class: "triage-testing",
+    },
+];
+---
+
+<section class="triage-section">
+    <div class="container">
+        <div class="triage-header">
+            <h2>How Can We Help You Today?</h2>
+            <p>
+                Select your situation to get the right expert help immediately.
+            </p>
+        </div>
+
+        <div class="triage-grid">
+            {
+                triageOptions.map((option) => (
+                    <div class={`triage-card ${option.class}`}>
+                        <div class="card-icon">
+                            <i class={option.icon} />
+                        </div>
+                        <h3>{option.title}</h3>
+                        <p>{option.description}</p>
+                        <a href={option.href} class="triage-btn">
+                            {option.action} <i class="fas fa-arrow-right" />
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .triage-section {
+        padding: 4rem 1rem;
+        background: #f8f9fa;
+    }
+
+    .triage-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .triage-header h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color, #0b2545);
+        margin-bottom: 1rem;
+    }
+
+    .triage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .triage-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        border-top: 5px solid transparent;
+    }
+
+    .triage-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .triage-suspect {
+        border-color: #3498db;
+    }
+    .triage-emergency {
+        border-color: #e74c3c;
+    }
+    .triage-testing {
+        border-color: #27ae60;
+    }
+
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .triage-suspect .card-icon {
+        color: #3498db;
+    }
+    .triage-emergency .card-icon {
+        color: #e74c3c;
+    }
+    .triage-testing .card-icon {
+        color: #27ae60;
+    }
+
+    .triage-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .triage-card p {
+        color: #666;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .triage-btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .triage-suspect .triage-btn {
+        background: #3498db;
+        color: white;
+    }
+    .triage-emergency .triage-btn {
+        background: #e74c3c;
+        color: white;
+    }
+    .triage-testing .triage-btn {
+        background: #27ae60;
+        color: white;
+    }
+
+    .triage-suspect .triage-btn:hover {
+        background: #2980b9;
+    }
+    .triage-emergency .triage-btn:hover {
+        background: #c0392b;
+    }
+    .triage-testing .triage-btn:hover {
+        background: #219150;
+    }
+
+    @media (max-width: 768px) {
+        .triage-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

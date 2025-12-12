@@ -473,7 +473,12 @@ export const restorationGroups = [
         seo: {
           title: "Kitchen Remodeling Florida | Custom Kitchen Renovation",
           description: "Professional kitchen remodeling services in Florida. Custom cabinets, countertops, and complete kitchen renovations.",
-        }
+        },
+        faqs: [
+          { q: "How much does a kitchen remodel cost in Florida?", a: "Costs vary by size and finishes, but typical projects range from $15,000 to $50,000+. We offer free estimates to give you an exact price." },
+          { q: "Do you need a permit to remodel a kitchen?", a: "Yes, most structural, electrical, or plumbing changes require a permit. We handle all city permitting and inspections for you." },
+          { q: "How long does a kitchen renovation take?", a: "A full kitchen remodel typically takes 3-6 weeks, depending on the scope of work and material availability." }
+        ]
       },
       {
         slug: "bathroom-remodeling",
@@ -484,7 +489,12 @@ export const restorationGroups = [
         seo: {
           title: "Bathroom Remodeling Florida | Professional Renovation Services",
           description: "Expert bathroom remodeling services in Florida. Custom designs, quality materials, and professional installation.",
-        }
+        },
+        faqs: [
+          { q: "What is included in a bathroom remodel?", a: "Our service includes demolition, plumbing, electrical, tiling, vanity installation, and final fixtures. We handle everything from floor to ceiling." },
+          { q: "Can you change the layout of my bathroom?", a: "Absolutely. We specialize in moving plumbing and walls to create the most functional and spacious layout for your needs." },
+          { q: "How long can I not use my bathroom during remodeling?", a: "We aim to minimize downtime, but a full remodel usually renders the bath unusable for 2-3 weeks. We can work in phases if you only have one bathroom." }
+        ]
       },
       {
         slug: "bedroom-remodeling",
@@ -495,7 +505,12 @@ export const restorationGroups = [
         seo: {
           title: "Bedroom Remodeling Florida | Custom Bedroom Renovation",
           description: "Transform your bedroom with professional remodeling services in Florida. Custom designs and quality craftsmanship.",
-        }
+        },
+        faqs: [
+          { q: "What are popular bedroom remodeling trends?", a: "Current trends include walk-in closets, accent walls, improved lighting, and en-suite bathroom integrations." },
+          { q: "Can you add a closet to a bedroom?", a: "Yes, framing and finishing a new closet is a common request that adds significant value and storage to any room." },
+          { q: "reflooring a bedroom worth it?", a: "New flooring (hardwood or luxury vinyl) is one of the highest ROI updates you can make for both comfort and resale value." }
+        ]
       },
       {
         slug: "living-dining-remodeling",
@@ -506,7 +521,12 @@ export const restorationGroups = [
         seo: {
           title: "Living & Dining Remodeling Florida | Open Concept Renovation",
           description: "Professional living and dining room remodeling in Florida. Create open, modern spaces for entertaining.",
-        }
+        },
+        faqs: [
+          { q: "Can you remove a wall to create an open concept?", a: "Yes, we specialize in removing load-bearing and non-load-bearing walls to connect kitchens, dining, and living areas." },
+          { q: "What lighting is best for living rooms?", a: "We recommend a layered approach: recessed lighting for ambient light, chandeliers for focal points, and dimmer switches for versatility." },
+          { q: "Do you install built-in shelving?", a: "Yes, custom built-ins are a perfect way to add character and storage to your living or dining space." }
+        ]
       },
       {
         slug: "home-additions-remodeling",
@@ -517,7 +537,12 @@ export const restorationGroups = [
         seo: {
           title: "Home Additions Florida | Room Additions & Expansions",
           description: "Expert home additions and expansion services in Florida. Add space and value to your home.",
-        }
+        },
+        faqs: [
+          { q: "How much does a home addition cost per square foot?", a: "Additions generally range from $200 to $400+ per square foot depending on the complexity (plumbing vs. just room)." },
+          { q: "How long does building a room addition take?", a: "Timeline is usually 3-4 months, including permitting, foundation pouring, framing, and finishing." },
+          { q: "Does an addition increase home value?", a: "Yes, adding square footage (especially bedrooms or bathrooms) is one of the most reliable ways to increase property appraisal value." }
+        ]
       }
     ]
   }

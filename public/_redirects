@@ -1,0 +1,43 @@
+# 404 Fixes - Sprint 1
+/restoration/mold-remediation  /services/mold-remediation  301
+/restoration/mold-remediation/mold-inspection  /services/mold-remediation/inspection  301
+/restoration/mold-remediation/black-mold-removal  /services/mold-remediation/removal  301
+/restoration/mold-remediation/mold-testing  /services/mold-remediation/testing  301
+/restoration/remodeling-services  /services  301
+/tools  /tools/mold-testing-cost-calculator  301
+/services/kitchen-remodeling/altamonte-springs  /services/kitchen-remodeling/orlando  301
+/restoration/mold-remediation/mold-cleanup  /restoration/mold-remediation  301
+/restoration/fire-damage/smoke-odor-removal  /restoration/fire-damage/smoke-damage  301
+/restoration/water-damage/water-extraction  /restoration/water-damage/emergency-water-removal  301
+/restoration/water-damage/leak-detection  /restoration/water-damage/leak-repair  301
+/restoration/fire-damage/fire-restoration/*  /restoration/fire-damage/fire-damage-repair/:splat  301
+/restoration/storm-damage/roof-damage/pembroke-pines  /restoration/storm-damage/wind-damage/pembroke-pines  301
+
+# Batch 1: Fire Damage Zombies -> Regional Hubs (Strict 301)
+/restoration/fire-damage/fire-damage-repair/orlando/  /service-areas/central-florida/  301
+/restoration/fire-damage/fire-damage-repair/tampa/  /service-areas/tampa-bay/  301
+/restoration/fire-damage/fire-damage-repair/miami/  /service-areas/south-florida/  301
+/restoration/fire-damage/fire-damage-repair/apopka/  /service-areas/central-florida/  301
+/restoration/fire-damage/fire-damage-repair/naples/  /service-areas/southwest-florida/  301
+/restoration/fire-damage/fire-damage-repair/port-st-lucie/  /service-areas/treasure-coast/  301
+
+/restoration/fire-damage/smoke-damage/orlando/  /service-areas/central-florida/  301
+/restoration/fire-damage/smoke-damage/clearwater/  /service-areas/tampa-bay/  301
+/restoration/fire-damage/smoke-damage/fort-lauderdale/  /service-areas/south-florida/  301
+/restoration/fire-damage/smoke-damage/lakeland/  /service-areas/central-florida/  301
+/restoration/fire-damage/smoke-damage/estero/  /service-areas/southwest-florida/  301
+/restoration/fire-damage/smoke-damage/stuart/  /service-areas/treasure-coast/  301
+
+/restoration/fire-damage/soot-cleanup/orlando/  /service-areas/central-florida/  301
+/restoration/fire-damage/soot-cleanup/tampa/  /service-areas/tampa-bay/  301
+/restoration/fire-damage/soot-cleanup/miami/  /service-areas/south-florida/  301
+/restoration/fire-damage/soot-cleanup/winter-haven/  /service-areas/central-florida/  301
+/restoration/fire-damage/soot-cleanup/immokalee/  /service-areas/southwest-florida/  301
+/restoration/fire-damage/soot-cleanup/jupiter/  /service-areas/treasure-coast/  301
+
+/restoration/mitigation-services/fire-mitigation/orlando/  /service-areas/central-florida/  301
+/restoration/mitigation-services/fire-mitigation/st-petersburg/  /service-areas/tampa-bay/  301
+/restoration/mitigation-services/fire-mitigation/hollywood/  /service-areas/south-florida/  301
+/restoration/mitigation-services/fire-mitigation/sanford/  /service-areas/central-florida/  301
+/restoration/mitigation-services/fire-mitigation/labelle/  /service-areas/southwest-florida/  301
+/restoration/mitigation-services/fire-mitigation/hobe-sound/  /service-areas/treasure-coast/  301

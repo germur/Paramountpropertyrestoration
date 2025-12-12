@@ -1,0 +1,312 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SEOHead from "../../../components/SEOHead.jsx";
+import MethodologyIcons from "../../../components/mold/MethodologyIcons.astro";
+
+const pageTitle =
+    "Licensed Mold Inspection & Air Quality Testing | Florida MRSA";
+const pageDescription =
+    "Certified Mold Assessment (MRSA) in Florida. We use thermal imaging and air sampling to detect hidden mold. Get your official report today.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        siteUrl="https://paramountpropertyrestoration.com"
+        vertical="restoration"
+        service="mold-remediation"
+        subservice="inspection"
+        isHub={false}
+        slot="head"
+    />
+
+    <section class="inspection-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="sub-label">STATE LICENSED ASSESSMENT</span>
+                <h1>Licensed Mold Inspection & Air Quality Testing</h1>
+                <p class="hero-lead">
+                    Find hidden moisture behind walls with Thermal Imaging. Get
+                    unbiased, lab-certified results for your insurance claim.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="tel:7866022217" class="btn-primary"
+                        >Schedule Inspection</a
+                    >
+                    <span class="price-note"
+                        >Visual Inspections Starting at $0*</span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELF DIAGNOSIS CHECKLIST -->
+    <section class="checklist-section">
+        <div class="container">
+            <div class="checklist-card">
+                <h2>Do You Need an Inspection?</h2>
+                <div class="check-grid">
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> Musty, earthy odors?
+                    </div>
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> Recent water leak or flood?
+                    </div>
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> Unexplained allergies/headaches?
+                    </div>
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> Buying a new home?
+                    </div>
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> Visible discoloration on walls?
+                    </div>
+                    <div class="check-item">
+                        <i class="fas fa-check"></i> High indoor humidity (>60%)?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY FROM COMPONENT -->
+    <MethodologyIcons />
+
+    <!-- DELIVERABLE / REPORT -->
+    <section class="deliverable-section">
+        <div class="container">
+            <div class="report-preview">
+                <div class="report-text">
+                    <h3>The Product: Your Comprehensive Report</h3>
+                    <p>
+                        You aren't just paying for a visit; you are paying for
+                        data. Our <strong>Mold Assessment Report</strong> is a legally
+                        defensible document that includes:
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-file-alt"></i>
+                            <strong>Spore Count Analysis:</strong> Lab results showing
+                            exactly what you are breathing.
+                        </li>
+                        <li>
+                            <i class="fas fa-temperature-low"></i>
+                            <strong>Thermal Images:</strong> Visual proof of moisture
+                            pockets.
+                        </li>
+                        <li>
+                            <i class="fas fa-clipboard-list"></i>
+                            <strong>Remediation Protocol:</strong> The exact steps
+                            required to fix it (required by SB 2A).
+                        </li>
+                    </ul>
+                </div>
+                <div class="report-visual">
+                    <div class="mockup-doc">
+                        <span>OFFICIAL MOLD ASSESSMENT REPORT (MRSA)</span>
+                        <div class="mockup-lines"></div>
+                        <div class="mockup-lines"></div>
+                        <div class="mockup-stamp">APPROVED</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't Guess. Know the Truth.</h2>
+            <a href="tel:7866022217" class="btn-primary-large"
+                >Call (786) 602-2217 to Test</a
+            >
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .inspection-hero {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("/images/hero-water.webp"); /* Fallback image until specific mold image */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 1rem;
+        text-align: center;
+    }
+
+    .sub-label {
+        background: #27ae60;
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+    .hero-lead {
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 1rem auto 2rem;
+    }
+
+    .btn-primary {
+        background: #27ae60;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: inline-block;
+    }
+
+    .price-note {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    .checklist-section {
+        padding: 4rem 1rem;
+        background: #f4f4f4;
+    }
+
+    .checklist-card {
+        background: white;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        max-width: 900px;
+        margin: -6rem auto 0; /* Pull up overlap */
+        position: relative;
+        z-index: 2;
+    }
+
+    .checklist-card h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    .check-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .check-item {
+        font-size: 1.1rem;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .check-item i {
+        color: #27ae60;
+    }
+
+    .deliverable-section {
+        padding: 5rem 1rem;
+    }
+
+    .report-preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .report-text ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1.5rem;
+    }
+
+    .report-text li {
+        margin-bottom: 1rem;
+    }
+
+    .report-text i {
+        color: #0b2545;
+        margin-right: 0.5rem;
+    }
+
+    .mockup-doc {
+        background: white;
+        border: 1px solid #ccc;
+        height: 350px;
+        width: 280px;
+        margin: 0 auto;
+        padding: 2rem;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mockup-lines {
+        height: 2px;
+        width: 80%;
+        background: #eee;
+        margin: 1rem 0;
+    }
+
+    .mockup-stamp {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        border: 3px solid #e74c3c;
+        color: #e74c3c;
+        padding: 0.5rem;
+        font-weight: bold;
+        transform: rotate(-15deg);
+        opacity: 0.7;
+    }
+
+    .cta-section {
+        padding: 4rem 1rem;
+        background: #0b2545;
+        text-align: center;
+        color: white;
+    }
+
+    .cta-section h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-primary-large {
+        background: #e67e22;
+        color: white;
+        padding: 1rem 3rem;
+        border-radius: 6px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: transform 0.2s;
+        display: inline-block;
+    }
+
+    .btn-primary-large:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .check-grid {
+            grid-template-columns: 1fr;
+        }
+        .report-preview {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

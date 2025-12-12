@@ -1,0 +1,93 @@
+---
+const methods = [
+    {
+        title: "Thermal Imaging",
+        description: "Sees moisture hidden inside walls without demolition.",
+        icon: "fas fa-camera",
+        color: "#e67e22",
+    },
+    {
+        title: "Moisture Meters",
+        description: "Exact saturation levels to determine drying goals.",
+        icon: "fas fa-tint",
+        color: "#3498db",
+    },
+    {
+        title: "Air Sampling",
+        description: "Identifies spore types & counts to confirm safety.",
+        icon: "fas fa-microscope",
+        color: "#9b59b6",
+    },
+];
+---
+
+<section class="methodology-section">
+    <div class="container">
+        <h2 class="section-title">Our Advanced Detection Technology</h2>
+        <div class="method-grid">
+            {
+                methods.map((method) => (
+                    <div class="method-card">
+                        <div
+                            class="icon-circle"
+                            style={`color: ${method.color}; border-color: ${method.color}20; background: ${method.color}10;`}
+                        >
+                            <i class={method.icon} />
+                        </div>
+                        <h3>{method.title}</h3>
+                        <p>{method.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .methodology-section {
+        padding: 4rem 1rem;
+        background: #fff;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+        color: #333;
+    }
+
+    .method-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .method-card {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: 2px solid;
+    }
+
+    .method-card h3 {
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .method-card p {
+        color: #666;
+        line-height: 1.5;
+    }
+</style>

@@ -1,0 +1,109 @@
+---
+const regions = [
+    {
+        id: "central-florida",
+        name: "Central Florida",
+        cities: "Orlando, Kissimmee",
+    },
+    { id: "tampa-bay", name: "Tampa Bay", cities: "Tampa, St. Pete" },
+    {
+        id: "southwest-florida",
+        name: "Southwest Florida",
+        cities: "Fort Myers, Naples",
+    },
+    {
+        id: "south-florida",
+        name: "South Florida",
+        cities: "Miami, Fort Lauderdale",
+    },
+    {
+        id: "treasure-coast",
+        name: "Treasure Coast",
+        cities: "Port St. Lucie, Jupiter",
+    },
+];
+---
+
+<div class="regional-map-container">
+    <div class="map-grid">
+        {
+            regions.map((region) => (
+                <a href={`/service-areas/${region.id}`} class="region-card">
+                    <div class="region-icon">
+                        <i class="fas fa-map-marker-alt" />
+                    </div>
+                    <h3>{region.name}</h3>
+                    <p>Serving {region.cities} & surrounding areas.</p>
+                    <span class="link-text">
+                        View Service Area <i class="fas fa-arrow-right" />
+                    </span>
+                </a>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .regional-map-container {
+        padding: 2rem 0;
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .region-card {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+        border: 1px solid #eee;
+        display: block;
+    }
+
+    .region-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        background: white;
+        border-color: #3498db;
+    }
+
+    .region-icon {
+        font-size: 2rem;
+        color: #3498db;
+        margin-bottom: 1rem;
+    }
+
+    .region-card h3 {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+        color: #0b2545;
+    }
+
+    .region-card p {
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .link-text {
+        color: #3498db;
+        font-weight: bold;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .region-card:hover .link-text {
+        color: #2980b9;
+    }
+</style>

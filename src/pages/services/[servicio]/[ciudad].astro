@@ -32,8 +32,8 @@ const { servicio, ciudad } = Astro.params;
 const { servicioData, ciudadData } = Astro.props;
 
 // Generar contenido dinámico
-const pageTitle = `${servicioData.name} in ${ciudadData.nombre} | Paramount Property Restoration`;
-const pageDescription = `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre}, ${ciudadData.region}. Licensed contractors with quality guaranteed work and free consultations.`;
+const pageTitle = `${servicioData.name} ${ciudadData.nombre} | Custom Design & Renovation`;
+const pageDescription = `Transform your home with expert ${servicioData.name.toLowerCase()} in ${ciudadData.nombre}. Custom designs, licensed contractors & quality guaranteed. Call for Free Consultation!`;
 
 // Generate unique city content for services pages
 const cityIntro = generateCityIntro(ciudad, servicioData.name, false);
@@ -44,7 +44,7 @@ const hasUniqueContent = hasCityContent(ciudad);
 // Contenido dinámico
 const heroContent = {
   title: `${servicioData.name} in ${ciudadData.nombre}`,
-  subtitle: `Professional ${servicioData.name.toLowerCase()} services in ${ciudadData.nombre} with quality craftsmanship and guaranteed results.`,
+  subtitle: `Ranked #1 for ${servicioData.name.toLowerCase()} in ${ciudadData.nombre}. Superior craftsmanship, transparent pricing, and results you'll love.`,
   ctaText: `Get Free Consultation in ${ciudadData.nombre}`,
 };
 
