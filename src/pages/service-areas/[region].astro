@@ -94,14 +94,22 @@ if (!data) {
                 <ul class="city-links">
                     {
                         regionCities.map((city) => (
-                            <li>
-                                <a href={`/services/water-damage/${city.slug}`}>
-                                    <i class="fas fa-map-pin" /> {city.name}
-                                </a>
+                            <li style="color: #64748b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i
+                                    class="fas fa-map-pin"
+                                    style="color: #cbd5e1;"
+                                />
+                                <span>{city.name}</span>
                             </li>
                         ))
                     }
                 </ul>
+                <p
+                    style="font-size: 0.9rem; color: #94a3b8; margin-top: 1rem; font-style: italic;"
+                >
+                    * Individual city pages are currently being consolidated
+                    into this Regional Hub.
+                </p>
             </section>
         </main>
 
