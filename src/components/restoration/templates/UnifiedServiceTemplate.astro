@@ -72,7 +72,7 @@ const faqList = getFAQs(sub.slug);
     <div class="container">
       <div class="relief-grid">
         {
-          quickSteps.map((step, index) => (
+          quickSteps.map((step: any, index: any) => (
             <div class="relief-step">
               <span class="step-num">0{index + 1}</span>
               <div class="step-info">
@@ -119,14 +119,16 @@ const faqList = getFAQs(sub.slug);
         <div class="overview-sidebar">
           <h3><i class="fas fa-clipboard-list"></i> Our Process</h3>
           {
-            sub.technicalSpecs?.deliverables?.slice(0, 4).map((step, index) => (
-              <div class="process-step">
-                <div class="step-number">{index + 1}</div>
-                <div class="step-content">
-                  <p>{step}</p>
+            sub.technicalSpecs?.deliverables
+              ?.slice(0, 4)
+              .map((step: any, index: any) => (
+                <div class="process-step">
+                  <div class="step-number">{index + 1}</div>
+                  <div class="step-content">
+                    <p>{step}</p>
+                  </div>
                 </div>
-              </div>
-            )) || (
+              )) || (
               <p>
                 We follow a strict industry protocol to ensure your property is
                 restored safely and efficiently.
@@ -157,7 +159,7 @@ const faqList = getFAQs(sub.slug);
       </h2>
       <div class="services-grid">
         {
-          serviceFeatures.map((feature) => (
+          serviceFeatures.map((feature: any) => (
             <div class="service-item">
               <i class={feature.icon} />
               <h3>{feature.title}</h3>
@@ -189,7 +191,7 @@ const faqList = getFAQs(sub.slug);
 
         {
           Object.entries(cityRegions).map(
-            ([regionName, regionCities], index) => (
+            ([regionName, regionCities], _index) => (
               <div
                 class="region-accordion-item"
                 style="border: 1px solid #e9ecef; border-radius: 8px; margin-bottom: 0.5rem; background: white; overflow: hidden;"
@@ -204,7 +206,7 @@ const faqList = getFAQs(sub.slug);
                       class="fas fa-map-marked-alt"
                       style="color: #35c3e9; margin-right: 0.5rem;"
                     />
-                    {regionName} ({regionCities.length} cities)
+                    {regionName} ({(regionCities as any[]).length} cities)
                   </span>
                   <i
                     class="fas fa-chevron-down toggle-icon"
@@ -220,7 +222,7 @@ const faqList = getFAQs(sub.slug);
                     class="cities-grid"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; padding: 1.5rem;"
                   >
-                    {regionCities.map((city) => (
+                    {(regionCities as any[]).map((city: any) => (
                       <a
                         href={`/restoration/${group.slug}/${sub.slug}/${city.slug}`}
                         class="city-link-item"

@@ -91,9 +91,9 @@ const SEOHead = ({
 
   // Route parts
   vertical = 'restoration',
-  service,
-  subservice,
-  city,
+  service = null,
+  subservice = null,
+  city = null,
   isHub = false, // hub => canonical sin city; detail => con city
 
   // i18n (optional)
@@ -103,7 +103,7 @@ const SEOHead = ({
   // Business info (for schema)
   businessName = 'Paramount Property Restoration',
   phone = '+1-786-602-2217',
-  addressLocality, // visible city name (pretty), optional
+  addressLocality = null, // visible city name (pretty), optional
   addressRegion = 'FL',
   // FAQ schema questions (optional)
   faqQuestions = [],

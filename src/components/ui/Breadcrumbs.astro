@@ -5,20 +5,22 @@ const { items } = Astro.props;
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <div class="container">
     <ol class="breadcrumbs-list">
-      {items.map((item, index) => (
-        <li class="breadcrumbs-item">
-          {index > 0 && <span class="breadcrumbs-separator">›</span>}
-          {item.current ? (
-            <span class="breadcrumbs-current" aria-current="page">
-              {item.label}
-            </span>
-          ) : (
-            <a href={item.url} class="breadcrumbs-link">
-              {item.label}
-            </a>
-          )}
-        </li>
-      ))}
+      {
+        items.map((item: any, index: any) => (
+          <li class="breadcrumbs-item">
+            {index > 0 && <span class="breadcrumbs-separator">›</span>}
+            {item.current ? (
+              <span class="breadcrumbs-current" aria-current="page">
+                {item.label}
+              </span>
+            ) : (
+              <a href={item.url} class="breadcrumbs-link">
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))
+      }
     </ol>
   </div>
 </nav>

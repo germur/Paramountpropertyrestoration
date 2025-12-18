@@ -43,9 +43,6 @@ const pageDescription =
 const ogImage =
   entry.data.ogImage || entry.data.image || "/images/blog/heroBlog.webp";
 const keywords = entry.data.keywords || entry.data.tags || [];
-const canonicalUrl =
-  entry.data.canonicalUrl ||
-  `https://paramountpropertyrestoration.com/blog/${entry.slug}`;
 
 // Format date
 const formattedDate = entry.data.date.toLocaleDateString("en-US", {

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { restorationGroups } from "../../../data/restoration.js";
-import { SERVICE_REGISTRY } from "../../../lib/routing";
+// import { SERVICE_REGISTRY } from "../../../lib/routing";
 
 // Template imports
 import UnifiedServiceTemplate from "../../../components/restoration/templates/UnifiedServiceTemplate.astro";
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
         group.slug !== "mold-remediation",
     )
     .forEach((group) => {
-      group.subservices.forEach((sub) => {
+      group.subservices.forEach((sub: any) => {
         paths.push({
           params: { group: group.slug, subservice: sub.slug },
           props: {
@@ -45,7 +45,13 @@ export async function getStaticPaths() {
     });
 
   // 2) Ensure new required combos exist regardless of external imports
-  const ensure = (groupSlug, subSlug, groupName, template, desc) => {
+  const ensure = (
+    groupSlug: any,
+    subSlug: any,
+    groupName: any,
+    template: any,
+    desc: any,
+  ) => {
     const exists = paths.some(
       (p) => p.params.group === groupSlug && p.params.subservice === subSlug,
     );
@@ -63,11 +69,15 @@ export async function getStaticPaths() {
             slug: subSlug,
             title: (subSlug || "")
               .split("-")
-              .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+              .map((w: any) =>
+                w ? w.charAt(0).toUpperCase() + w.slice(1) : "",
+              )
               .join(" "),
             nombre: (subSlug || "")
               .split("-")
-              .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+              .map((w: any) =>
+                w ? w.charAt(0).toUpperCase() + w.slice(1) : "",
+              )
               .join(" "),
             short: desc,
             categoria: "restoration",
@@ -152,7 +162,7 @@ if (!groupData || !subData) {
   const gm = groupMeta[params.group] || {
     name: (params.group || "")
       .split("-")
-      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .map((w: any) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
       .join(" "),
     template: "unified",
     description: "",
@@ -167,11 +177,11 @@ if (!groupData || !subData) {
     slug: params.subservice,
     title: (params.subservice || "")
       .split("-")
-      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .map((w: any) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
       .join(" "),
     nombre: (params.subservice || "")
       .split("-")
-      .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
+      .map((w: any) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ""))
       .join(" "),
     short: gm.description,
     categoria: "restoration",

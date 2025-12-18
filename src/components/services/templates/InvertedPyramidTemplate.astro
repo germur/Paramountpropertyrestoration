@@ -206,7 +206,7 @@ const cityRegions = getCitiesByRegion(cities);
             <article class="region-card">
               <h3 class="region-title">{regionName}</h3>
               <ul class="city-links" role="list">
-                {regionCities.slice(0, 6).map((city) => (
+                {(regionCities as any[]).slice(0, 6).map((city: any) => (
                   <li>
                     <a
                       href={`/services/${group.slug}/${city.slug}/`}
@@ -218,9 +218,9 @@ const cityRegions = getCitiesByRegion(cities);
                   </li>
                 ))}
               </ul>
-              {regionCities.length > 6 && (
+              {(regionCities as any[]).length > 6 && (
                 <p class="more-cities">
-                  + {regionCities.length - 6} more cities
+                  + {(regionCities as any[]).length - 6} more cities
                 </p>
               )}
             </article>

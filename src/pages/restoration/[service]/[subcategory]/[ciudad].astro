@@ -66,18 +66,13 @@ const customQuestions = (
   subserviceContent?.faqs ||
   servicioData?.faqs ||
   []
-).map((faq, index) => ({
+).map((faq: any, index: any) => ({
   id: `faq-${index}`,
   question: faq.q ?? faq.question ?? "",
   answer: faq.a ?? faq.answer ?? "",
 }));
 
-// CTA configuration
-const ctaConfig = {
-  title: `Start your ${servicioData.title.toLowerCase()} in ${ciudadData.nombre}`,
-  cta: `Request Your Free Estimate`,
-  href: servicioData.cta?.href ?? "/contact",
-};
+// CTA configuration removed (unused)
 
 // Nearby cities for SEO copy
 const nearbyAreas = [
@@ -155,7 +150,6 @@ const nearbyAreas = [
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              netlify
             >
               {/* Hidden fields for Netlify Forms */}
               <input type="hidden" name="form-name" value="emergency-request" />
@@ -273,7 +267,7 @@ const nearbyAreas = [
               subserviceContent?.technicalSpecs?.deliverables ? (
                 subserviceContent.technicalSpecs.deliverables
                   .slice(0, 4)
-                  .map((deliverable) => (
+                  .map((deliverable: any) => (
                     <li class="scope-item">
                       <i class="fas fa-check-circle" /> {deliverable}
                     </li>
@@ -321,7 +315,7 @@ const nearbyAreas = [
 
           <ul class="service-features">
             {
-              serviceFeatures.map((feature) => (
+              serviceFeatures.map((feature: any) => (
                 <li>
                   <span class="feature-icon">#</span>
                   {feature}
@@ -354,7 +348,7 @@ const nearbyAreas = [
         <div class="container">
           <h2 class="section-title">{subserviceContent.process.title}</h2>
           <div class="steps-container">
-            {subserviceContent.process.steps.map((step, index) => (
+            {subserviceContent.process.steps.map((step: any, index: any) => (
               <div class="step-item" data-step={index + 1}>
                 <div class="step-icon">
                   <i class={step.icon} />
@@ -378,7 +372,7 @@ const nearbyAreas = [
             Our {servicioData.title} Services in {ciudadData.nombre}
           </h2>
           <div class="services-grid">
-            {subserviceContent.services.map((service) => (
+            {subserviceContent.services.map((service: any) => (
               <div class="service-item">
                 <i class={service.icon} />
                 <h3>{service.title}</h3>
@@ -465,7 +459,7 @@ const nearbyAreas = [
                     <ul class="coverage-list">
                       {cityGeoData.neighborhoods
                         .slice(0, 10)
-                        .map((neighborhood) => (
+                        .map((neighborhood: any) => (
                           <li class="coverage-item">{neighborhood}</li>
                         ))}
                     </ul>
@@ -480,7 +474,7 @@ const nearbyAreas = [
                     {ciudadData.nombre}
                   </h3>
                   <ul class="zip-code-list">
-                    {cityGeoData.zipcodes.slice(0, 12).map((zip) => (
+                    {cityGeoData.zipcodes.slice(0, 12).map((zip: any) => (
                       <li class="zip-code-item">{zip}</li>
                     ))}
                   </ul>
@@ -548,8 +542,8 @@ const nearbyAreas = [
             }
           </div>
           <p class="coverage-note">
-            Emergency {servicioData.title.toLowerCase()} services available 24/7
-            across {ciudadData.county} and surrounding areas.
+            Emergency {servicioData.title.toLowerCase()} services available 24/7 across
+            {ciudadData.county} and surrounding areas.
           </p>
         </div>
       </div>

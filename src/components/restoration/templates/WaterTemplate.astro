@@ -5,7 +5,7 @@
 // MOVED: Data logic to src/utils/restoration-data.js
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-import BaseLayout from "../../../layouts/BaseLayout.astro";
+// import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/pages/water-damage.css";
 import "../../../styles/pages/restoration-responsive.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -46,7 +46,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
 <section>
   <div class="services-grid">
     {
-      content.services.map((service) => (
+      content.services.map((service: any) => (
         <a href={service.link} class="service-item-clickable">
           <i class={service.icon} />
           <h3>{service.title}</h3>
@@ -62,7 +62,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
     <h2 class="solutions-title">Comprehensive Water Damage Solutions</h2>
     <div class="solutions-grid">
       {
-        content.services.map((service, index) => (
+        content.services.map((service: any, _index: any) => (
           <div class="solution-card">
             <div class="card-image">
               <img
@@ -97,7 +97,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
   <h2 class="steps-title">How It Works</h2>
   <div class="steps-container">
     {
-      content.steps.map((step, index) => (
+      content.steps.map((step: any, index: any) => (
         <div class="step-item" data-step={index + 1}>
           <div class="step-icon">
             <i class={step.icon} />
@@ -121,8 +121,8 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
           <p>
             Recognizing {sub?.title || group.name.toLowerCase()} early is crucial
             for preventing extensive property damage. Look for water stains on ceilings
-            or walls, musty odors that indicate hidden moisture, warped flooring
-            or baseboards, and unexplained increases in your water bill. In Florida's
+            or walls, musty odors that indicate hidden moisture, warped flooring or
+            baseboards, and unexplained increases in your water bill. In Florida's
             humid climate, even small leaks can quickly escalate into major restoration
             projects.
           </p>
@@ -155,7 +155,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
           </p>
           <div class="process-detailed">
             {
-              content.steps.map((step, index) => (
+              content.steps.map((step: any, index: any) => (
                 <div class="process-step-detailed">
                   <div class="step-number">{index + 1}</div>
                   <div class="step-content">
@@ -245,7 +245,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
           <div class="unified-region-card">
             <h3 class="unified-region-title">{regionName}</h3>
             <div class="unified-city-pills">
-              {cities.slice(0, 4).map((city) => (
+              {(cities as any[]).slice(0, 4).map((city: any) => (
                 <a
                   href={
                     sub
@@ -257,9 +257,9 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
                   {city.nombre}
                 </a>
               ))}
-              {cities.length > 4 && (
+              {(cities as any[]).length > 4 && (
                 <span class="unified-more-indicator">
-                  +{cities.length - 4} more
+                  +{(cities as any[]).length - 4} more cities available{" "}
                 </span>
               )}
             </div>
@@ -286,7 +286,7 @@ const faqCategory = `water-${sub?.slug || group.slug}`;
   <FAQ
     client:load
     category={faqCategory}
-    customQuestions={content.faqs.map((faq, index) => ({
+    customQuestions={content.faqs.map((faq: any, index: any) => ({
       id: `${faqCategory}-${index}`,
       question: faq.q,
       answer: faq.a,

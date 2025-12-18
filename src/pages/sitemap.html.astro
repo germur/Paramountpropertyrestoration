@@ -3,20 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SEOHead from "../components/SEOHead.jsx";
 
 // Get all services data to build the sitemap
-import { cities, restorationGroups, getRestorationServices, getRemodelingServices } from "../data/restoration.js";
+import {
+  cities,
+  restorationGroups,
+  getRemodelingServices,
+} from "../data/restoration.js";
 import { getCollection } from "astro:content";
 
 // Get all blog posts
 const allBlogPosts = await getCollection("blog");
 
 // Get services by category
-const restorationServices = getRestorationServices();
+
 const remodelingServices = getRemodelingServices();
-const allServices = [...restorationServices, ...remodelingServices];
 
 // 📄 Sitemap HTML Page
 const pageTitle = "Mapa del Sitio | Paramount Property Restoration";
-const pageDescription = "Explore todas las páginas de nuestro sitio web, incluyendo servicios de remodelación, restauración y contenido del blog en toda Florida.";
+const pageDescription =
+  "Explore todas las páginas de nuestro sitio web, incluyendo servicios de remodelación, restauración y contenido del blog en toda Florida.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -40,7 +44,10 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
     <div class="container">
       <header class="sitemap-header">
         <h1>Mapa del Sitio</h1>
-        <p>Encuentra fácilmente todas las páginas y servicios disponibles en nuestro sitio web</p>
+        <p>
+          Encuentra fácilmente todas las páginas y servicios disponibles en
+          nuestro sitio web
+        </p>
       </header>
 
       <div class="sitemap-grid">
@@ -49,12 +56,12 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
           <h2>Páginas Principales</h2>
           <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="/services">Servicios de Remodelación</a></li>
-            <li><a href="/restoration">Servicios de Restauración</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contacto</a></li>
-            <li><a href="/terms">Términos y Condiciones</a></li>
-            <li><a href="/privacy-policy">Política de Privacidad</a></li>
+            <li><a href="/services/">Servicios de Remodelación</a></li>
+            <li><a href="/restoration/">Servicios de Restauración</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contacto</a></li>
+            <li><a href="/terms/">Términos y Condiciones</a></li>
+            <li><a href="/privacy-policy/">Política de Privacidad</a></li>
           </ul>
         </div>
 
@@ -62,24 +69,33 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
         <div class="sitemap-section">
           <h2>Servicios de Remodelación</h2>
           <ul>
-            {remodelingServices.map(group => (
-              group.subservices.map(servicio => (
-                <li>
-                  <a href={`/services/${servicio.slug}`}>{servicio.title}</a>
-                  <div class="subsection">
-                    <strong>Por Ciudad:</strong>
-                    <div class="city-grid">
-                      {cities.slice(0, 8).map(ciudad => (
-                        <a href={`/services/${servicio.slug}/${ciudad.slug}`} class="city-link">
-                          {ciudad.name}
-                        </a>
-                      ))}
-                      {cities.length > 8 && <span class="more-cities">+ {cities.length - 8} más</span>}
+            {
+              remodelingServices.map((group) =>
+                group.subservices.map((servicio: any) => (
+                  <li>
+                    <a href={`/services/${servicio.slug}/`}>{servicio.title}</a>
+                    <div class="subsection">
+                      <strong>Por Ciudad:</strong>
+                      <div class="city-grid">
+                        {cities.slice(0, 8).map((ciudad) => (
+                          <a
+                            href={`/services/${servicio.slug}/${ciudad.slug}/`}
+                            class="city-link"
+                          >
+                            {ciudad.name}
+                          </a>
+                        ))}
+                        {cities.length > 8 && (
+                          <span class="more-cities">
+                            + {cities.length - 8} más
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </li>
-              ))
-            ))}
+                  </li>
+                )),
+              )
+            }
           </ul>
         </div>
 
@@ -87,25 +103,29 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
         <div class="sitemap-section">
           <h2>Servicios de Restauración</h2>
           <ul>
-            {restorationGroups.map(group => (
-              <li>
-                <a href={`/restoration/${group.slug}`}>{group.name}</a>
-                {group.subservices && group.subservices.length > 0 && (
-                  <div class="subsection">
-                    <strong>Servicios Específicos:</strong>
-                    <ul class="subservice-list">
-                      {group.subservices.map(subservice => (
-                        <li>
-                          <a href={`/restoration/${group.slug}/${subservice.slug}`}>
-                            {subservice.title}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
+            {
+              restorationGroups.map((group) => (
+                <li>
+                  <a href={`/restoration/${group.slug}/`}>{group.name}</a>
+                  {group.subservices && group.subservices.length > 0 && (
+                    <div class="subsection">
+                      <strong>Servicios Específicos:</strong>
+                      <ul class="subservice-list">
+                        {group.subservices.map((subservice: any) => (
+                          <li>
+                            <a
+                              href={`/restoration/${group.slug}/${subservice.slug}/`}
+                            >
+                              {subservice.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -113,20 +133,25 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
         <div class="sitemap-section">
           <h2>Artículos del Blog</h2>
           <ul>
-            {allBlogPosts
-              .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-              .map(post => (
-                <li>
-                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-                  <span class="post-date">
-                    {new Date(post.data.date).toLocaleDateString('es-ES', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </span>
-                </li>
-              ))
+            {
+              allBlogPosts
+                .sort(
+                  (a, b) =>
+                    new Date(b.data.date).getTime() -
+                    new Date(a.data.date).getTime(),
+                )
+                .map((post) => (
+                  <li>
+                    <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                    <span class="post-date">
+                      {new Date(post.data.date).toLocaleDateString("es-ES", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </li>
+                ))
             }
           </ul>
         </div>
@@ -135,21 +160,30 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
         <div class="sitemap-section">
           <h2>Ciudades que Servimos en Florida</h2>
           <div class="cities-grid">
-            {cities.map(ciudad => (
-              <div class="city-card">
-                <h3>{ciudad.name}</h3>
-                <div class="service-links">
-                  {remodelingServices[0]?.subservices.slice(0, 3).map(servicio => (
-                    <a href={`/services/${servicio.slug}/${ciudad.slug}`} class="service-link">
-                      {servicio.title}
-                    </a>
-                  ))}
-                  {remodelingServices[0]?.subservices.length > 3 && (
-                    <span class="more-services">+ {remodelingServices[0].subservices.length - 3} más</span>
-                  )}
+            {
+              cities.map((ciudad) => (
+                <div class="city-card">
+                  <h3>{ciudad.name}</h3>
+                  <div class="service-links">
+                    {remodelingServices[0]?.subservices
+                      .slice(0, 3)
+                      .map((servicio: any) => (
+                        <a
+                          href={`/services/${servicio.slug}/${ciudad.slug}/`}
+                          class="service-link"
+                        >
+                          {servicio.title}
+                        </a>
+                      ))}
+                    {remodelingServices[0]?.subservices.length > 3 && (
+                      <span class="more-services">
+                        + {remodelingServices[0].subservices.length - 3} más
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </div>
@@ -157,8 +191,11 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
       <footer class="sitemap-footer">
         <div class="contact-info">
           <h3>¿No encuentras lo que buscas?</h3>
-          <p>Contáctanos directamente para más información sobre nuestros servicios</p>
-          <a href="/contact" class="contact-btn">Contactar Ahora</a>
+          <p>
+            Contáctanos directamente para más información sobre nuestros
+            servicios
+          </p>
+          <a href="/contact/" class="contact-btn">Contactar Ahora</a>
         </div>
       </footer>
     </div>
@@ -271,7 +308,8 @@ const pageDescription = "Explore todas las páginas de nuestro sitio web, incluy
       color: white !important;
     }
 
-    .more-cities, .more-services {
+    .more-cities,
+    .more-services {
       font-size: 0.875rem;
       color: #718096;
       font-style: italic;

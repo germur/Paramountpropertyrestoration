@@ -328,7 +328,8 @@ const formattedDate = date.toLocaleDateString("es-ES", {
                 <li>
                   The affected area is <strong>larger than 10 sq ft</strong> - requires
                   <a href="/restoration/mold-remediation" class="internal-link"
-                    >professional mold remediation</a>
+                    >professional mold remediation</a
+                  >
                 </li>
                 <li>
                   Mold is in your <strong>HVAC system</strong> or air ducts - specialized
@@ -1238,6 +1239,7 @@ const formattedDate = date.toLocaleDateString("es-ES", {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+  declare const Chart: any;
   document.addEventListener("DOMContentLoaded", () => {
     const navButtons = document.querySelectorAll(".mold-nav-btn");
     const sections = document.querySelectorAll(".mold-content-section");
@@ -1245,7 +1247,7 @@ const formattedDate = date.toLocaleDateString("es-ES", {
       ".mold-accordion-header",
     );
 
-    function showSection(sectionId) {
+    function showSection(sectionId: any) {
       sections.forEach((section) => {
         section.classList.remove("mold-content-section-active");
       });
@@ -1270,20 +1272,21 @@ const formattedDate = date.toLocaleDateString("es-ES", {
 
     navButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const sectionId = btn.dataset.section;
+        const sectionId = (btn as HTMLElement).dataset.section;
         showSection(sectionId);
       });
     });
 
     accordionHeaders.forEach((header) => {
       header.addEventListener("click", () => {
-        const contentId = header.dataset.accordion + "-content";
+        const contentId =
+          (header as HTMLElement).dataset.accordion + "-content";
         const content = document.getElementById(contentId);
         if (content) {
           const isVisible = content.style.display === "block";
           document
             .querySelectorAll(".mold-accordion-content")
-            .forEach((c) => (c.style.display = "none"));
+            .forEach((c) => ((c as HTMLElement).style.display = "none"));
           content.style.display = isVisible ? "none" : "block";
         }
       });
@@ -1291,7 +1294,7 @@ const formattedDate = date.toLocaleDateString("es-ES", {
 
     const totalTasks = document.querySelectorAll(".mold-checkbox").length;
     const progressChartCtx = document.getElementById("mold-progress-chart");
-    let progressChart;
+    let progressChart: any;
 
     const chartData = {
       labels: ["Complete", "Remaining"],
@@ -1312,7 +1315,7 @@ const formattedDate = date.toLocaleDateString("es-ES", {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: function (context) {
+            label: function (context: any) {
               return `${context.label}: ${context.parsed} task(s)`;
             },
           },

@@ -14,7 +14,6 @@ export interface Props {
 const {
   title,
   description = "Florida's complete property partner: 24/7 emergency restoration (water, fire, mold, storm) + professional remodeling services. Licensed, insured, rapid response.",
-  image = "/images/og-image.webp",
 } = Astro.props;
 
 // Lógica para generar migas de pan dinámicamente a partir de la ruta.
@@ -29,7 +28,7 @@ const crumbs = segments.map((segment) => {
 
   return {
     label: label,
-    href: pathSoFar,
+    href: pathSoFar + "/",
   };
 });
 const breadcrumbData = [{ label: "Home", href: "/" }, ...crumbs];
@@ -77,6 +76,7 @@ const breadcrumbData = [{ label: "Home", href: "/" }, ...crumbs];
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     {/* Google AdSense */}
     <script
+      is:inline
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7161830191523275"
       crossorigin="anonymous"></script>

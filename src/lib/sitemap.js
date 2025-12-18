@@ -7,15 +7,6 @@ const BATCH_SIZE = 5000;
 const TODAY_ISO = new Date().toISOString(); // used for <lastmod>
 
 // --- helpers ---
-const slugify = (input) => {
-  if (!input) return '';
-  return input
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-};
 
 // Batch 1 Redirects - Exclude from Sitemap
 const EXCLUDED_PATHS = new Set([

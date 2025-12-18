@@ -139,7 +139,6 @@ const pageDescription =
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            netlify
           >
             <!-- Hidden fields for Netlify -->
             <input type="hidden" name="form-name" value="portfolio" />
@@ -723,7 +722,7 @@ const pageDescription =
     // Form success handling
     const portfolioForm = document.querySelector(".contact-form");
     if (portfolioForm) {
-      portfolioForm.addEventListener("submit", function (e) {
+      portfolioForm.addEventListener("submit", function () {
         const submitBtn = this.querySelector(".form-submit");
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML =

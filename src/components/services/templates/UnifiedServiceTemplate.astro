@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 const { group, sub, isHub = false } = Astro.props;
 
 // Enhanced data structure for services template
-const getEnhancedServiceData = (groupSlug, subSlug) => {
+const getEnhancedServiceData = (groupSlug: any, _subSlug: any) => {
   const baseData = {
     hero: {
       title: isHub
@@ -33,7 +33,7 @@ const getEnhancedServiceData = (groupSlug, subSlug) => {
 };
 
 // Service-specific configurations
-const getServicesForGroup = (groupSlug) => {
+const getServicesForGroup = (groupSlug: any) => {
   const serviceConfigs = {
     "kitchen-remodeling": [
       {
@@ -199,7 +199,7 @@ const getServicesForGroup = (groupSlug) => {
   return serviceConfigs[groupSlug] || [];
 };
 
-const getFeaturesForGroup = (groupSlug) => {
+const getFeaturesForGroup = (groupSlug: any) => {
   const features = {
     "kitchen-remodeling": [
       "Licensed Kitchen Contractors",
@@ -245,7 +245,7 @@ const getFeaturesForGroup = (groupSlug) => {
   return features[groupSlug] || [];
 };
 
-const getWarningSignsForGroup = (groupSlug) => {
+const getWarningSignsForGroup = (groupSlug: any) => {
   const signs = {
     "kitchen-remodeling": [
       "Outdated cabinets and countertops",
@@ -286,7 +286,7 @@ const getWarningSignsForGroup = (groupSlug) => {
   return signs[groupSlug] || [];
 };
 
-const getProcessForGroup = (groupSlug) => {
+const getProcessForGroup = (_groupSlug: any) => {
   return [
     {
       step: 1,
@@ -332,7 +332,7 @@ const getCitiesByRegion = () => {
 const cityRegions = getCitiesByRegion();
 
 // Get hero image based on service group
-const getHeroImage = (slug) => {
+const getHeroImage = (slug: any) => {
   const imageMap = {
     "kitchen-remodeling": "kitchenHero",
     "bathroom-remodeling": "bathroomHero",
@@ -344,7 +344,7 @@ const getHeroImage = (slug) => {
 };
 
 const heroImage = getHeroImage(group.slug);
-const heroImageWebP = `/images/${heroImage}.webp`;
+
 const heroImageJpg = `/images/${heroImage}.webp`;
 const heroAlt = getAltText(heroImage);
 ---
@@ -400,7 +400,7 @@ const heroAlt = getAltText(heroImage);
       <h2 class="section-title">Our {group.name} Services</h2>
       <div class="services-grid">
         {
-          serviceData.services.map((service) => (
+          serviceData.services.map((service: any) => (
             <div class="service-item">
               <div class="service-icon">
                 <i class={service.icon} />
@@ -422,7 +422,7 @@ const heroAlt = getAltText(heroImage);
           <h2>Why Choose Our {group.name}?</h2>
           <ul class="features-list">
             {
-              serviceData.features.map((feature) => (
+              serviceData.features.map((feature: any) => (
                 <li>
                   <span class="feature-check">✓</span>
                   {feature}
@@ -443,7 +443,7 @@ const heroAlt = getAltText(heroImage);
           <div class="warning-signs-card">
             <h3>Signs You Need {group.name}</h3>
             <ul>
-              {serviceData.warningSigns.map((sign) => <li>{sign}</li>)}
+              {serviceData.warningSigns.map((sign: any) => <li>{sign}</li>)}
             </ul>
           </div>
         </div>
@@ -493,19 +493,25 @@ const heroAlt = getAltText(heroImage);
       >
         {
           [
-            cityRegions["South Florida"]?.find((c) => c.slug === "miami"),
-            cityRegions["Central Florida"]?.find((c) => c.slug === "orlando"),
-            cityRegions["Tampa Bay"]?.find((c) => c.slug === "tampa"),
+            cityRegions["South Florida"]?.find((c: any) => c.slug === "miami"),
+            cityRegions["Central Florida"]?.find(
+              (c: any) => c.slug === "orlando",
+            ),
+            cityRegions["Tampa Bay"]?.find((c: any) => c.slug === "tampa"),
             cityRegions["South Florida"]?.find(
-              (c) => c.slug === "fort-lauderdale",
+              (c: any) => c.slug === "fort-lauderdale",
             ),
             cityRegions["Central Florida"]?.find(
-              (c) => c.slug === "jacksonville",
+              (c: any) => c.slug === "jacksonville",
             ),
-            cityRegions["Southwest Florida"]?.find((c) => c.slug === "naples"),
-            cityRegions["Tampa Bay"]?.find((c) => c.slug === "st-petersburg"),
+            cityRegions["Southwest Florida"]?.find(
+              (c: any) => c.slug === "naples",
+            ),
+            cityRegions["Tampa Bay"]?.find(
+              (c: any) => c.slug === "st-petersburg",
+            ),
             cityRegions["Central Florida"]?.find(
-              (c) => c.slug === "gainesville",
+              (c: any) => c.slug === "gainesville",
             ),
           ]
             .filter(Boolean)
@@ -611,7 +617,7 @@ const heroAlt = getAltText(heroImage);
 
         {
           Object.entries(cityRegions).map(
-            ([regionName, regionCities], index) => (
+            ([regionName, regionCities]: [string, any[]], index) => (
               <div
                 class="region-accordion-item"
                 style="
@@ -727,7 +733,7 @@ const heroAlt = getAltText(heroImage);
 
 <script>
   // Regional accordion functionality
-  function toggleRegion(regionId) {
+  function toggleRegion(regionId: any) {
     const content = document.getElementById(regionId);
     const chevron = document.getElementById(
       regionId.replace("region-", "chevron-"),
@@ -743,5 +749,5 @@ const heroAlt = getAltText(heroImage);
   }
 
   // Make function globally available
-  window.toggleRegion = toggleRegion;
+  (window as any).toggleRegion = toggleRegion;
 </script>

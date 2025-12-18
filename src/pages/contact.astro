@@ -80,7 +80,6 @@ const pageDescription =
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            netlify
           >
             <!-- Hidden fields for Netlify -->
             <input type="hidden" name="form-name" value="contact" />
@@ -668,7 +667,7 @@ const pageDescription =
     // Form success handling
     const contactForm = document.querySelector(".contact-form");
     if (contactForm) {
-      contactForm.addEventListener("submit", function (e) {
+      contactForm.addEventListener("submit", function () {
         const submitBtn = this.querySelector(".form-submit");
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML =

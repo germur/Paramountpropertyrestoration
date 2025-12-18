@@ -189,7 +189,7 @@ const defaultContent = {
     <h2>Comprehensive {sub.title} Solutions</h2>
     <div class="services-overview-grid">
       {
-        defaultContent.features.map((feature, index) => (
+        defaultContent.features.map((feature: any, _index: any) => (
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-check-circle" />
@@ -255,7 +255,7 @@ const defaultContent = {
           <div class="unified-region-card">
             <h3 class="unified-region-title">{regionName}</h3>
             <div class="unified-city-pills">
-              {cities.slice(0, 4).map((city) => (
+              {(cities as any[]).slice(0, 4).map((city: any) => (
                 <a
                   href={
                     sub
@@ -267,9 +267,9 @@ const defaultContent = {
                   {city.nombre}
                 </a>
               ))}
-              {cities.length > 4 && (
+              {(cities as any[]).length > 4 && (
                 <span class="unified-more-indicator">
-                  +{cities.length - 4} more
+                  +{(cities as any[]).length - 4} more
                 </span>
               )}
             </div>
@@ -297,7 +297,7 @@ const defaultContent = {
     <h2>Frequently Asked Questions</h2>
     <div class="faq-grid">
       {
-        defaultContent.faqs.map((faq, index) => (
+        defaultContent.faqs.map((faq: any, _index: any) => (
           <div class="faq-item">
             <h3>{faq.question}</h3>
             <p>{faq.answer}</p>

@@ -25,7 +25,7 @@ const getCitiesByRegion = () => {
 const cityRegions = getCitiesByRegion();
 
 // Contenido específico para storm damage basado en el subservicio
-const getStormContent = (subSlug) => {
+const getStormContent = (subSlug: any) => {
   const stormContent = {
     "storm-damage": {
       hero: {
@@ -552,7 +552,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
   <div class="container">
     <div class="services-grid">
       {
-        content.services.map((service) => (
+        content.services.map((service: any) => (
           <a href={service.link} class="service-item-clickable">
             <i class={service.icon} />
             <h3>{service.title}</h3>
@@ -569,7 +569,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
     <h2 class="solutions-title">Comprehensive Storm Damage Solutions</h2>
     <div class="solutions-grid">
       {
-        content.services.map((service, index) => (
+        content.services.map((service: any, _index: any) => (
           <div class="solution-card">
             <div class="card-image">
               <img
@@ -584,7 +584,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
                 <p>{service.description}</p>
                 <div class="service-features">
                   {service.tags &&
-                    service.tags.map((tag) => (
+                    service.tags.map((tag: any) => (
                       <span class="feature-tag">{tag}</span>
                     ))}
                 </div>
@@ -644,7 +644,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
           </p>
           <div class="process-detailed">
             {
-              content.steps.map((step, index) => (
+              content.steps.map((step: any, index: any) => (
                 <div class="process-step-detailed">
                   <div class="step-number">{index + 1}</div>
                   <div class="step-content">
@@ -737,7 +737,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
           <div class="unified-region-card">
             <h3 class="unified-region-title">{regionName}</h3>
             <div class="unified-city-pills">
-              {cities.slice(0, 4).map((city) => (
+              {(cities as any[]).slice(0, 4).map((city: any) => (
                 <a
                   href={
                     sub
@@ -749,9 +749,9 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
                   {city.nombre}
                 </a>
               ))}
-              {cities.length > 4 && (
+              {(cities as any[]).length > 4 && (
                 <span class="unified-more-indicator">
-                  +{cities.length - 4} more
+                  +{(cities as any[]).length - 4} more
                 </span>
               )}
             </div>
@@ -778,7 +778,7 @@ const faqCategory = `storm-${sub?.slug || group.slug}`;
   <FAQ
     client:load
     category={faqCategory}
-    customQuestions={content.faqs.map((faq, index) => ({
+    customQuestions={content.faqs.map((faq: any, index: any) => ({
       id: `${faqCategory}-${index}`,
       question: faq.q,
       answer: faq.a,
