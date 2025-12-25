@@ -35,6 +35,8 @@ const RestorationLinks = ({
   const services = getRandomServices();
   const citiesList = getRandomCities();
 
+  const cleanUrl = (path) => path.replace(/\/\/+/g, '/');
+
   const generateLinks = () => {
     const links = [];
 
@@ -43,7 +45,7 @@ const RestorationLinks = ({
       if (currentServiceData) {
         citiesList.forEach(city => {
           links.push({
-            url: `/restoration/${currentServiceData.groupSlug}/${currentService}/${city.slug}/`,
+            url: cleanUrl(`/restoration/${currentServiceData.groupSlug}/${currentService}/${city.slug}/`),
             text: `${currentServiceData.title} in ${city.nombre}`,
             type: 'same-service'
           });
@@ -56,7 +58,7 @@ const RestorationLinks = ({
       if (currentCityData) {
         services.forEach(service => {
           links.push({
-            url: `/restoration/${service.groupSlug}/${service.slug}/${currentCity}/`,
+            url: cleanUrl(`/restoration/${service.groupSlug}/${service.slug}/${currentCity}/`),
             text: `${service.title} in ${currentCityData.nombre}`,
             type: 'same-city'
           });
@@ -68,7 +70,7 @@ const RestorationLinks = ({
       services.slice(0, 3).forEach(service => {
         citiesList.slice(0, 3).forEach(city => {
           links.push({
-            url: `/restoration/${service.groupSlug}/${service.slug}/${city.slug}/`,
+            url: cleanUrl(`/restoration/${service.groupSlug}/${service.slug}/${city.slug}/`),
             text: `${service.title} in ${city.nombre}`,
             type: 'random'
           });
@@ -153,7 +155,7 @@ export const RestorationByRegion = ({ region = "South Florida", maxServices = 4 
           regionCities.slice(0, 2).map(city => (
             <a
               key={`${service.slug}-${city.slug}`}
-              href={`/restoration/${service.groupSlug}/${service.slug}/${city.slug}/`}
+              href={cleanUrl(`/restoration/${service.groupSlug}/${service.slug}/${city.slug}/`)}
               className="region-link"
             >
               {service.title} in {city.nombre}

@@ -12,8 +12,8 @@ export const priorityPagesSEO = {
       { from: '/restoration/mold-remediation/mold-testing/', anchor: 'mold testing Jupiter', type: 'hub-to-city' },
       { from: '/restoration/mold-remediation/black-mold-removal/', anchor: 'black mold removal Jupiter FL', type: 'hub-to-city' },
       { from: '/blog/professional-mold-testing-cost-guide-2025/', anchor: 'mold inspection cost Jupiter', type: 'blog-to-city' },
-      { from: '/services/kitchen-remodeling/jupiter', anchor: 'home services in Jupiter', type: 'city-cluster' },
-      { from: '/services/bathroom-remodeling/jupiter', anchor: 'restoration in Jupiter', type: 'city-cluster' }
+      { from: '/services/kitchen-remodeling/jupiter/', anchor: 'home services in Jupiter', type: 'city-cluster' },
+      { from: '/services/bathroom-remodeling/jupiter/', anchor: 'restoration in Jupiter', type: 'city-cluster' }
     ],
     nearbyCities: [
       { city: 'Palm Beach Gardens', slug: 'palm-beach-gardens' },
@@ -31,7 +31,7 @@ export const priorityPagesSEO = {
       { from: '/restoration/mold-remediation/mold-testing/', anchor: 'mold testing Clearwater', type: 'hub-to-city' },
       { from: '/restoration/mold-remediation/black-mold-removal/', anchor: 'black mold Clearwater', type: 'hub-to-city' },
       { from: '/blog/professional-mold-testing-cost-guide-2025/', anchor: 'mold inspection cost Clearwater FL', type: 'blog-to-city' },
-      { from: '/services/kitchen-remodeling/clearwater', anchor: 'Clearwater home services', type: 'city-cluster' }
+      { from: '/services/kitchen-remodeling/clearwater/', anchor: 'Clearwater home services', type: 'city-cluster' }
     ],
     nearbyCities: [
       { city: 'Safety Harbor', slug: 'safety-harbor' },
@@ -48,8 +48,8 @@ export const priorityPagesSEO = {
       { from: '/restoration/mold-remediation/mold-inspection/', anchor: 'Lakeland mold inspection', type: 'hub-to-city' },
       { from: '/restoration/mold-remediation/mold-testing/', anchor: 'mold testing Lakeland FL', type: 'hub-to-city' },
       { from: '/blog/professional-mold-testing-cost-guide-2025/', anchor: 'mold inspection costs Lakeland', type: 'blog-to-city' },
-      { from: '/services/kitchen-remodeling/lakeland', anchor: 'Lakeland home restoration', type: 'city-cluster' },
-      { from: '/services/bathroom-remodeling/lakeland', anchor: 'Lakeland renovation services', type: 'city-cluster' }
+      { from: '/services/kitchen-remodeling/lakeland/', anchor: 'Lakeland home restoration', type: 'city-cluster' },
+      { from: '/services/bathroom-remodeling/lakeland/', anchor: 'Lakeland renovation services', type: 'city-cluster' }
     ],
     nearbyCities: [
       { city: 'Winter Haven', slug: 'winter-haven' },
@@ -221,59 +221,59 @@ export const priorityPagesSEO = {
 // Hub pages that should link out to cities
 export const hubToGityLinks = {
   '/restoration/mold-remediation/': [
-    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter', anchor: 'mold inspection in Jupiter' },
-    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater', anchor: 'mold inspection Clearwater' },
-    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland', anchor: 'mold inspection Lakeland' },
-    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples', anchor: 'mold inspection Naples' },
-    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville', anchor: 'mold remediation Gainesville' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola', anchor: 'mold testing Pensacola' }
+    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter/', anchor: 'mold inspection in Jupiter' },
+    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater/', anchor: 'mold inspection Clearwater' },
+    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland/', anchor: 'mold inspection Lakeland' },
+    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples/', anchor: 'mold inspection Naples' },
+    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville/', anchor: 'mold remediation Gainesville' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola/', anchor: 'mold testing Pensacola' }
   ],
 
   '/restoration/mold-remediation/mold-inspection/': [
-    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter', anchor: 'Jupiter mold inspection' },
-    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater', anchor: 'Clearwater mold inspection' },
-    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland', anchor: 'Lakeland mold inspection' },
-    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples', anchor: 'Naples mold inspection' },
-    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-inspection/gainesville', anchor: 'mold inspection Gainesville' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-inspection/pensacola', anchor: 'mold inspection Pensacola' }
+    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter/', anchor: 'Jupiter mold inspection' },
+    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater/', anchor: 'Clearwater mold inspection' },
+    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland/', anchor: 'Lakeland mold inspection' },
+    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples/', anchor: 'Naples mold inspection' },
+    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-inspection/gainesville/', anchor: 'mold inspection Gainesville' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-inspection/pensacola/', anchor: 'mold inspection Pensacola' }
   ],
 
   '/restoration/mold-remediation/mold-testing/': [
-    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-testing/jupiter', anchor: 'mold testing Jupiter' },
-    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-testing/clearwater', anchor: 'mold testing Clearwater' },
-    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-testing/lakeland', anchor: 'mold testing Lakeland FL' },
-    { city: 'Naples', url: '/restoration/mold-remediation/mold-testing/naples', anchor: 'mold testing Naples' },
-    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-testing/gainesville', anchor: 'mold testing Gainesville' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola', anchor: 'mold testing Pensacola' }
+    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-testing/jupiter/', anchor: 'mold testing Jupiter' },
+    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-testing/clearwater/', anchor: 'mold testing Clearwater' },
+    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-testing/lakeland/', anchor: 'mold testing Lakeland FL' },
+    { city: 'Naples', url: '/restoration/mold-remediation/mold-testing/naples/', anchor: 'mold testing Naples' },
+    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-testing/gainesville/', anchor: 'mold testing Gainesville' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola/', anchor: 'mold testing Pensacola' }
   ],
 
   '/restoration/mold-remediation/black-mold-removal/': [
-    { city: 'Jupiter', url: '/restoration/mold-remediation/black-mold-removal/jupiter', anchor: 'black mold removal Jupiter FL' },
-    { city: 'Clearwater', url: '/restoration/mold-remediation/black-mold-removal/clearwater', anchor: 'black mold Clearwater' },
-    { city: 'Lakeland', url: '/restoration/mold-remediation/black-mold-removal/lakeland', anchor: 'black mold removal Lakeland' },
-    { city: 'Naples', url: '/restoration/mold-remediation/black-mold-removal/naples', anchor: 'black mold removal Naples' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/black-mold-removal/pensacola', anchor: 'black mold Pensacola' }
+    { city: 'Jupiter', url: '/restoration/mold-remediation/black-mold-removal/jupiter/', anchor: 'black mold removal Jupiter FL' },
+    { city: 'Clearwater', url: '/restoration/mold-remediation/black-mold-removal/clearwater/', anchor: 'black mold Clearwater' },
+    { city: 'Lakeland', url: '/restoration/mold-remediation/black-mold-removal/lakeland/', anchor: 'black mold removal Lakeland' },
+    { city: 'Naples', url: '/restoration/mold-remediation/black-mold-removal/naples/', anchor: 'black mold removal Naples' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/black-mold-removal/pensacola/', anchor: 'black mold Pensacola' }
   ],
 
   '/restoration/water-damage/': [
-    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples', anchor: 'water removal Naples' },
-    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie', anchor: 'water removal Port St Lucie' },
-    { city: 'Deerfield Beach', url: '/restoration/water-damage/ceiling-water-damage/deerfield-beach', anchor: 'ceiling water damage Deerfield Beach' },
-    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast', anchor: 'water damage Palm Coast' },
-    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala', anchor: 'flood damage Ocala' }
+    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples/', anchor: 'water removal Naples' },
+    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie/', anchor: 'water removal Port St Lucie' },
+    { city: 'Deerfield Beach', url: '/restoration/water-damage/ceiling-water-damage/deerfield-beach/', anchor: 'ceiling water damage Deerfield Beach' },
+    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast/', anchor: 'water damage Palm Coast' },
+    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala/', anchor: 'flood damage Ocala' }
   ],
 
   '/restoration/water-damage/emergency-water-removal/': [
-    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples', anchor: 'emergency water removal Naples' },
-    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie', anchor: 'emergency water removal Port St Lucie' },
-    { city: 'Ocala', url: '/restoration/water-damage/emergency-water-removal/ocala', anchor: 'emergency water removal Ocala' }
+    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples/', anchor: 'emergency water removal Naples' },
+    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie/', anchor: 'emergency water removal Port St Lucie' },
+    { city: 'Ocala', url: '/restoration/water-damage/emergency-water-removal/ocala/', anchor: 'emergency water removal Ocala' }
   ],
 
   '/restoration/water-damage/flood-damage/': [
-    { city: 'Naples', url: '/restoration/water-damage/flood-damage/naples', anchor: 'flood damage Naples' },
-    { city: 'Port St. Lucie', url: '/restoration/water-damage/flood-damage/port-st-lucie', anchor: 'flood damage PSL' },
-    { city: 'Palm Coast', url: '/restoration/water-damage/flood-damage/palm-coast', anchor: 'basement flooding Palm Coast' },
-    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala', anchor: 'flood damage Ocala' }
+    { city: 'Naples', url: '/restoration/water-damage/flood-damage/naples/', anchor: 'flood damage Naples' },
+    { city: 'Port St. Lucie', url: '/restoration/water-damage/flood-damage/port-st-lucie/', anchor: 'flood damage PSL' },
+    { city: 'Palm Coast', url: '/restoration/water-damage/flood-damage/palm-coast/', anchor: 'basement flooding Palm Coast' },
+    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala/', anchor: 'flood damage Ocala' }
   ]
 };
 
@@ -282,49 +282,49 @@ export const hubToGityLinks = {
 export const subserviceHubLinks = {
   // MOLD INSPECTION SUB-HUB
   '/restoration/mold-remediation/mold-inspection/': [
-    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter', anchor: 'mold inspection in Jupiter' },
-    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater', anchor: 'mold inspection in Clearwater' },
-    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland', anchor: 'mold inspection in Lakeland' },
-    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples', anchor: 'mold inspection in Naples' },
-    { city: 'Hollywood', url: '/restoration/mold-remediation/mold-inspection/hollywood', anchor: 'mold inspection Broward County' },
-    { city: 'South Florida', url: '/restoration/mold-remediation/mold-inspection/hollywood', anchor: 'mold inspection South Florida' }
+    { city: 'Jupiter', url: '/restoration/mold-remediation/mold-inspection/jupiter/', anchor: 'mold inspection in Jupiter' },
+    { city: 'Clearwater', url: '/restoration/mold-remediation/mold-inspection/clearwater/', anchor: 'mold inspection in Clearwater' },
+    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland/', anchor: 'mold inspection in Lakeland' },
+    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples/', anchor: 'mold inspection in Naples' },
+    { city: 'Hollywood', url: '/restoration/mold-remediation/mold-inspection/hollywood/', anchor: 'mold inspection Broward County' },
+    { city: 'South Florida', url: '/restoration/mold-remediation/mold-inspection/hollywood/', anchor: 'mold inspection South Florida' }
   ],
 
   // MOLD TESTING SUB-HUB
   '/restoration/mold-remediation/mold-testing/': [
-    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland', anchor: 'mold testing Lakeland FL' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola', anchor: 'mold testing Pensacola' },
-    { city: 'Port Charlotte', url: '/restoration/mold-remediation/mold-testing/port-charlotte', anchor: 'mold testing Port Charlotte' },
-    { city: 'Hollywood', url: '/restoration/mold-remediation/mold-inspection/hollywood', anchor: 'mold testing Broward County' },
-    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples', anchor: 'mold testing Naples' },
-    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville', anchor: 'mold testing Gainesville' }
+    { city: 'Lakeland', url: '/restoration/mold-remediation/mold-inspection/lakeland/', anchor: 'mold testing Lakeland FL' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/mold-testing/pensacola/', anchor: 'mold testing Pensacola' },
+    { city: 'Port Charlotte', url: '/restoration/mold-remediation/mold-testing/port-charlotte/', anchor: 'mold testing Port Charlotte' },
+    { city: 'Hollywood', url: '/restoration/mold-remediation/mold-inspection/hollywood/', anchor: 'mold testing Broward County' },
+    { city: 'Naples', url: '/restoration/mold-remediation/mold-inspection/naples/', anchor: 'mold testing Naples' },
+    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville/', anchor: 'mold testing Gainesville' }
   ],
 
   // BLACK MOLD REMOVAL SUB-HUB
   '/restoration/mold-remediation/black-mold-removal/': [
-    { city: 'Lakeland', url: '/restoration/mold-remediation/black-mold-removal/lakeland', anchor: 'black mold removal Lakeland' },
-    { city: 'Naples', url: '/restoration/mold-remediation/black-mold-removal/naples', anchor: 'black mold removal Naples' },
-    { city: 'Pensacola', url: '/restoration/mold-remediation/black-mold-removal/pensacola', anchor: 'black mold removal Pensacola' },
-    { city: 'Ocala', url: '/restoration/mold-remediation/black-mold-removal/ocala', anchor: 'black mold removal Ocala' },
-    { city: 'Pembroke Pines', url: '/restoration/mold-remediation/black-mold-removal/pembroke-pines', anchor: 'black mold removal Pembroke Pines' },
-    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville', anchor: 'toxic mold removal Gainesville' }
+    { city: 'Lakeland', url: '/restoration/mold-remediation/black-mold-removal/lakeland/', anchor: 'black mold removal Lakeland' },
+    { city: 'Naples', url: '/restoration/mold-remediation/black-mold-removal/naples/', anchor: 'black mold removal Naples' },
+    { city: 'Pensacola', url: '/restoration/mold-remediation/black-mold-removal/pensacola/', anchor: 'black mold removal Pensacola' },
+    { city: 'Ocala', url: '/restoration/mold-remediation/black-mold-removal/ocala/', anchor: 'black mold removal Ocala' },
+    { city: 'Pembroke Pines', url: '/restoration/mold-remediation/black-mold-removal/pembroke-pines/', anchor: 'black mold removal Pembroke Pines' },
+    { city: 'Gainesville', url: '/restoration/mold-remediation/mold-damage-restoration/gainesville/', anchor: 'toxic mold removal Gainesville' }
   ],
 
   // EMERGENCY WATER REMOVAL SUB-HUB
   '/restoration/water-damage/emergency-water-removal/': [
-    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples', anchor: 'water removal Naples' },
-    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie', anchor: 'water removal Port St Lucie' },
-    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala', anchor: 'water removal Ocala' },
-    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast', anchor: 'water removal Palm Coast' },
-    { city: 'Deerfield Beach', url: '/restoration/water-damage/ceiling-water-damage/deerfield-beach', anchor: 'water removal Deerfield Beach' }
+    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples/', anchor: 'water removal Naples' },
+    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie/', anchor: 'water removal Port St Lucie' },
+    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala/', anchor: 'water removal Ocala' },
+    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast/', anchor: 'water removal Palm Coast' },
+    { city: 'Deerfield Beach', url: '/restoration/water-damage/ceiling-water-damage/deerfield-beach/', anchor: 'water removal Deerfield Beach' }
   ],
 
   // FLOOD DAMAGE SUB-HUB
   '/restoration/water-damage/flood-damage/': [
-    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala', anchor: 'flood damage Ocala' },
-    { city: 'Panama City', url: '/restoration/storm-damage/hurricane-damage/panama-city', anchor: 'flood damage Panama City' },
-    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples', anchor: 'flood damage Naples' },
-    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast', anchor: 'flood damage Palm Coast' },
-    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie', anchor: 'flood damage Port St Lucie' }
+    { city: 'Ocala', url: '/restoration/water-damage/flood-damage/ocala/', anchor: 'flood damage Ocala' },
+    { city: 'Panama City', url: '/restoration/storm-damage/hurricane-damage/panama-city/', anchor: 'flood damage Panama City' },
+    { city: 'Naples', url: '/restoration/water-damage/emergency-water-removal/naples/', anchor: 'flood damage Naples' },
+    { city: 'Palm Coast', url: '/restoration/water-damage/basement-flooding/palm-coast/', anchor: 'flood damage Palm Coast' },
+    { city: 'Port St. Lucie', url: '/restoration/water-damage/emergency-water-removal/port-st-lucie/', anchor: 'flood damage Port St Lucie' }
   ]
 };

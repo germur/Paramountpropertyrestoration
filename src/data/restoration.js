@@ -10,7 +10,7 @@ export const restorationGroups = [
     template: "water",
     description: "Certified flood damage cleanup in Florida. Emergency water removal, drying, mold prevention & structural stabilization. 24/7 response across Orlando, Miami & Tampa.",
     features: [
-      { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/emergency-water-removal" },
+      { icon: "fas fa-tint", title: "Emergency Water Extraction", description: "Pumps and vacuums remove large volumes of water quickly.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/emergency-water-removal/" },
     ],
     subservices: [
       {
@@ -29,7 +29,7 @@ export const restorationGroups = [
           { title: "Insurance Direct", desc: "We Bill Them" }
         ],
         features: [
-          { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/flood-damage.webp", link: "/restoration/water-damage/flood-damage" },
+          { icon: "fas fa-water", title: "Flood Damage", description: "Emergency flood cleanup and water extraction", slug: "flood-damage", image: "/images/flood-damage.webp", link: "/restoration/water-damage/flood-damage/" },
         ],
         seo: {
           title: "Flood Damage Cleanup Florida | 24/7 Water Extraction & Drying",
@@ -71,7 +71,7 @@ export const restorationGroups = [
         nombre: "Basement Flooding",
         categoria: "restoration",
         features: [
-          { icon: "fas fa-home", title: "Basement Flooding", description: "Basement water removal and drying", slug: "basement-flooding", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/basement-flooding" },
+          { icon: "fas fa-home", title: "Basement Flooding", description: "Basement water removal and drying", slug: "basement-flooding", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/basement-flooding/" },
         ]
       },
       {
@@ -81,7 +81,7 @@ export const restorationGroups = [
         nombre: "Ceiling Water Damage",
         categoria: "restoration",
         features: [
-          { icon: "fas fa-cloud-rain", title: "Ceiling Water Damage", description: "Ceiling leak repair and restoration", slug: "ceiling-water-damage", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+          { icon: "fas fa-cloud-rain", title: "Ceiling Water Damage", description: "Ceiling leak repair and restoration", slug: "ceiling-water-damage", image: "/images/ceiling-water-damage.webp", link: "/restoration/water-damage/ceiling-water-damage/" },
         ]
       },
       {
@@ -91,7 +91,7 @@ export const restorationGroups = [
         nombre: "Emergency Water Removal",
         categoria: "restoration",
         features: [
-          { icon: "fas fa-tint", title: "Emergency Water Removal", description: "24/7 rapid water extraction", slug: "emergency-water-removal", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/emergency-water-removal" }
+          { icon: "fas fa-tint", title: "Emergency Water Removal", description: "24/7 rapid water extraction", slug: "emergency-water-removal", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/emergency-water-removal/" }
         ]
       }
     ]
@@ -164,7 +164,7 @@ export const restorationGroups = [
           description: "Complete fire damage repair services in Florida. Structural restoration, rebuilding, smoke cleanup & content restoration. Insurance approved contractors.",
         },
         features: [
-          { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+          { icon: "fas fa-paint-roller", title: "Stain & Finish Restoration", description: "Prime, paint, and re-texture surfaces.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/ceiling-water-damage/" },
         ],
         hero: {
           title: "Fire Damage Repair - We Rebuild What Fire Destroyed",
@@ -256,7 +256,7 @@ export const restorationGroups = [
           description: "Professional mold prevention services in Florida. Moisture control, ventilation improvements, antimicrobial treatments & humidity management.",
         },
         features: [
-          { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/flood-damage" },
+          { icon: "fas fa-shield-alt", title: "Mold Prevention", description: "Antimicrobial treatments protect against bacteria and mold.", image: "/images/basement-flooding.webp", link: "/restoration/water-damage/flood-damage/" },
         ],
         hero: {
           title: "Prevent Mold Growth Before It Becomes a Problem",
@@ -285,7 +285,7 @@ export const restorationGroups = [
         nombre: "Mold Damage Restoration",
         categoria: "restoration",
         features: [
-          { icon: "fas fa-hammer", title: "Property Restoration", description: "Complete restoration of damaged areas to pre-loss condition.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/flood-damage" }
+          { icon: "fas fa-hammer", title: "Property Restoration", description: "Complete restoration of damaged areas to pre-loss condition.", image: "/images/emergency-water-removal.webp", link: "/restoration/water-damage/flood-damage/" }
         ],
         seo: {
           title: "Mold Damage Restoration Florida | Complete Property Repair",
@@ -308,7 +308,7 @@ export const restorationGroups = [
     template: "storm",
     description: "Expert storm damage restoration in Florida. Hurricane damage repair, wind damage cleanup, emergency board-up & structural restoration. 24/7 storm response.",
     features: [
-      { icon: "fas fa-wrench", title: "Leak Repair", description: "Fix burst pipes and hidden leaks", slug: "leak-repair", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+      { icon: "fas fa-wrench", title: "Leak Repair", description: "Fix burst pipes and hidden leaks", slug: "leak-repair", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair/" },
     ],
     subservices: [
       {
@@ -322,7 +322,7 @@ export const restorationGroups = [
           description: "Expert hurricane damage repair services in Florida. Emergency response, roof repairs, water damage cleanup, wind damage restoration & reconstruction.",
         },
         features: [
-          { icon: "fas fa-cloud-rain", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/ceiling-water-damage" },
+          { icon: "fas fa-cloud-rain", title: "Ceiling Leak Repair", description: "Repair water-damaged ceilings, replace drywall & insulation.", image: "/images/flood-damage.webp", link: "/restoration/water-damage/ceiling-water-damage/" },
         ],
         hero: {
           title: "Hurricane Damage? We Restore Homes After Major Storms",
@@ -340,7 +340,7 @@ export const restorationGroups = [
           description: "Professional wind damage repair in Florida. Roof repairs, siding replacement, window damage, structural repairs after severe weather.",
         },
         features: [
-          { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair" },
+          { icon: "fas fa-wrench", title: "Pipe Leak Repair", description: "Fix burst, corroded, or leaking pipes to restore flow & safety.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/leak-repair/" },
         ],
         hero: {
           title: "Wind Damage to Roof or Siding? We Fix Storm Damage Fast",
@@ -400,7 +400,7 @@ export const restorationGroups = [
           description: "Emergency water damage mitigation in Florida. Immediate water extraction, moisture control, dehumidification & structural drying to prevent further damage.",
         },
         features: [
-          { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/flood-damage" },
+          { icon: "fas fa-wind", title: "Industrial Drying", description: "Air movers and dehumidifiers dry walls, floors, and cavities.", image: "/images/leak-repair.webp", link: "/restoration/water-damage/flood-damage/" },
         ],
         hero: {
           title: "Water Damage Spreading? We Stop It Before It Gets Worse",
@@ -614,7 +614,7 @@ export function getAllRestorationCombinations() {
             groupData: group,
             serviceName: sub.title,
             cityName: city.name,
-            path: `/restoration/${group.slug}/${sub.slug}/${city.slug}`
+            path: `/restoration/${group.slug}/${sub.slug}/${city.slug}/`
           });
         });
       });
@@ -638,7 +638,7 @@ export function getAllRemodelingCombinations() {
           cityData: city,
           serviceName: service.title,
           cityName: city.name,
-          path: `/services/${service.slug}/${city.slug}`
+          path: `/services/${service.slug}/${city.slug}/`
         });
       });
     });

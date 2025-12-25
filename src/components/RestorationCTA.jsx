@@ -1,12 +1,12 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/components/RestorationCTA.css';
 
-const RestorationCTA = ({ 
-  title = "Don't let damage linger.", 
-  subtitle = "Schedule your free assessment now—restoration starts immediately.", 
-  buttonText = "Free Assessment →", 
-  buttonLink = "/contact",
-  urgencyMessage = ""
+const RestorationCTA = ({
+    title = "Don't let damage linger.",
+    subtitle = "Schedule your free assessment now—restoration starts immediately.",
+    buttonText = "Free Assessment →",
+    buttonLink = "/contact/",
+    urgencyMessage = ""
 }) => {
     return (
         <section className="restoration-cta-section">

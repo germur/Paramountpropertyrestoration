@@ -106,6 +106,8 @@ const LinkBuildingSection = ({
     const categoriesToShow = getCategoriesToShow();
     const totalLinks = categoriesToShow.reduce((sum, cat) => sum + linkData[cat].links.length, 0);
 
+    const cleanUrl = (path) => path.replace(/\/\/+/g, '/');
+
     return (
         <div className={`link-building-container ${compact ? 'compact' : 'full'}`}>
             <div className="link-building-inner">
@@ -144,7 +146,7 @@ const LinkBuildingSection = ({
                                     {category.links.map((link, index) => (
                                         <a target="_blank"
                                             key={index}
-                                            href={`${baseUrl}${link.href}`}
+                                            href={cleanUrl(`${baseUrl}${link.href}`)}
                                             className={`link-item ${compact ? 'compact' : ''}`}
                                         >
                                             {link.text}

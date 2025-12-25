@@ -18,7 +18,10 @@ const {
 
 // Lógica para generar migas de pan dinámicamente a partir de la ruta.
 const pathname = Astro.url.pathname;
-const segments = pathname.split("/").filter(Boolean);
+const segments = pathname
+  .split("/")
+  .filter(Boolean)
+  .filter((s) => s !== "index");
 let pathSoFar = "";
 const crumbs = segments.map((segment) => {
   pathSoFar += `/${segment}`;
