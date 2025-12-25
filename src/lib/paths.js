@@ -13,23 +13,29 @@ export function buildServicePath({
   unified = true // <-- usa false para que coincida con tus rutas actuales
 }) {
   const citySlug = typeof city === 'string' ? city : (city?.slug || '');
-  const unit = subservice?.slug ?? service?.slug;
+  const unit = subservice?.slug || service?.slug || '';
 
   if (!unified) {
     // ====== MODO LEGACY (tus rutas actuales) ======
     if (vertical === 'restoration') {
       // /restoration/{group}/{unit}/{city}
-      return `/restoration/${group}/${unit}/${citySlug}`;
+      // Filter empty segments to avoid '//' or 'null'
+      const parts = ['restoration', group, unit, citySlug].filter(Boolean);
+      return `/${parts.join('/')}`;
     }
-    // remodeling actual: /services/{unit}/{city}
-    // (si en el futuro añades group, quedaría /services/{group}/{unit}/{city})
-    return group
-      ? `/services/${group}/${unit}/${citySlug}`
-      : `/services/${unit}/${citySlug}`;
+    // remodeling: /services/{group?}/{unit}/{city}
+    const parts = ['services'];
+    if (group) parts.push(group);
+    if (unit) parts.push(unit);
+    if (citySlug) parts.push(citySlug);
+    return `/${parts.join('/')}`;
   }
 
   // ====== MODO UNIFICADO (para cuando migres) ======
-  const base = `/services/${vertical}`;
-  const mid = group ? `/${group}` : '';
-  return `${base}${mid}/${unit}/${citySlug}`;
+  // /services/{vertical}/{group?}/{unit}/{city}
+  const parts = ['services', vertical];
+  if (group) parts.push(group);
+  if (unit) parts.push(unit);
+  if (citySlug) parts.push(citySlug);
+  return `/${parts.join('/')}`;
 }
