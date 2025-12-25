@@ -17,11 +17,7 @@ export async function getStaticPaths() {
 
   // 1) Collect existing combos from restorationGroups (if any)
   restorationGroups
-    .filter(
-      (group) =>
-        group.slug !== "remodeling-services" &&
-        group.slug !== "mold-remediation",
-    )
+    .filter((group) => group.slug !== "remodeling-services")
     .forEach((group) => {
       group.subservices.forEach((sub: any) => {
         paths.push({
